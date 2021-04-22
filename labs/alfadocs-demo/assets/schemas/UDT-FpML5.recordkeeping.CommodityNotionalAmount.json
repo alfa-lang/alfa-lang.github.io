@@ -1,0 +1,92 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A complex type to specify the notional amount.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A complex type to specify the notional amount.\n #/\nrecord FpML5.recordkeeping.CommodityNotionalAmount {\n  # The currency in which an amount is denominated.\n  currency : string\n\n  # The non negative monetary quantity in currency units.\n  amount : decimal\n\n  # This element indicates whether the notional amount (or equivalent) is constant across each Calculation Period or whether the notional amount in each Calculation Period (\"false\") is the notional amount in the previous period multiplied by 1 + commodity index return in the current period (\"true\"). In cases where reinstementFeature = true the 'amount' element is the Initial Notional Amount (or equivalent).\n  reinvestmentFeature : boolean?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityInterestLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityReturnLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityVarianceLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which an amount is denominated.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25500
+      }
+    },
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The non negative monetary quantity in currency units.",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25503
+      }
+    },
+    "reinvestmentFeature" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element indicates whether the notional amount (or equivalent) is constant across each Calculation Period or whether the notional amount in each Calculation Period (\"false\") is the notional amount in the previous period multiplied by 1 + commodity index return in the current period (\"true\"). In cases where reinstementFeature = true the 'amount' element is the Initial Notional Amount (or equivalent).",
+      "Name" : "reinvestmentFeature",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25506
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25509
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency", "amount", "reinvestmentFeature", "id" ],
+  "IsSynthetic" : false
+}

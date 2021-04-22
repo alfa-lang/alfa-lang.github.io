@@ -1,0 +1,117 @@
+.. _typeSystem:
+
+===========
+Type System
+===========
+
+
+Top level constructs
+--------------------
+These **optional** constructs can be used to organise your definitions better, 
+reuse declarations, and define reusable fields types.
+
+.. toctree::
+    :maxdepth: 1
+
+    constructs/fields
+    constructs/include
+    constructs/import
+    constructs/namespace
+    constructs/typedefs
+
+
+User-defined types
+------------------
+These are the user-defined-types ( UDTs ) used to define the data model.
+UDTs can be nested within :ref:`namespaceExpr` declarations or be top-level 
+declarations themselves by having namespace prefixed as part of the 
+declaration. UDTs can be declared in any order.
+
+UDTs that define fields (:ref:`entityType`, :ref:`keyType`, :ref:`recordType`, :ref:`traitType`, :ref:`unionType`), optionally support
+a nested :ref:`assertExpr` declaration allowing object level validation to be performed.
+
+**Structural**
+
+.. toctree::
+    :maxdepth: 1
+
+    constructs/entity
+    constructs/enum
+    constructs/key
+    constructs/record
+    constructs/trait
+    constructs/union
+
+**Behavioural**
+
+.. toctree::
+    :maxdepth: 1
+
+    constructs/service
+    expressions/library
+    expressions/assert
+
+
+Scalar types
+------------
+ALFA supports a wide range of primitive scalar types. Some of these will not translate directly a primitive type
+in target languages. However ALFA runtime libraries will encapsulate the required validation required.
+
+Where applicable, scalar types accept optional size constraints to be enforced by the runtime code.
+This can further improve data quality. Refer to individual types for further details.
+
+.. toctree::
+    :maxdepth: 1
+
+    datatypes/scalar/binary 
+    datatypes/scalar/boolean
+    datatypes/scalar/date
+    datatypes/scalar/datetime 
+    datatypes/scalar/decimal
+    datatypes/scalar/double
+    datatypes/scalar/duration
+    datatypes/scalar/int
+    datatypes/scalar/long
+    datatypes/scalar/short
+    datatypes/scalar/string
+    datatypes/scalar/time
+    datatypes/scalar/uuid
+    datatypes/scalar/void
+
+Vector and composite types
+--------------------------
+
+All ALFA parameterized types can nested, unless otherwise stated.
+e.g. `map< string, list< int ? > >` or `map< string, map< int, string > >` are valid declarations.
+
+Vector types accept optional size constraints to be enforced by the runtime code. This can be used to safeguard
+against under or over supply of values. Refer to individual types for further details.
+
+.. toctree::
+    :maxdepth: 1
+
+    datatypes/vectors/enum
+    datatypes/vectors/map
+    datatypes/vectors/list
+    datatypes/vectors/set
+    datatypes/vectors/tuple
+    datatypes/vectors/union
+
+
+Auxiliary types
+---------------
+
+.. toctree::
+    :maxdepth: 1
+
+    prodatatypes/templated/compress
+    datatypes/templated/either
+    prodatatypes/templated/encrypt
+    datatypes/templated/future
+    datatypes/templated/optional
+    datatypes/templated/stream
+    prodatatypes/templated/table
+    datatypes/templated/templates
+    datatypes/templated/try
+    datatype/metatypes
+

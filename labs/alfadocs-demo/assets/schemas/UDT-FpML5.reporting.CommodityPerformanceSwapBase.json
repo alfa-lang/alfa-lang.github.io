@@ -1,0 +1,277 @@
+{
+  "@type" : "alfa.rt.model.Trait",
+  "Doc" : "A product with which to represent return swaps, total return swaps and excess return swaps.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityPerformanceSwapBase",
+    "UdtType" : "traitType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A product with which to represent return swaps, total return swaps and excess return swaps.\n #/\ntrait FpML5.reporting.CommodityPerformanceSwapBase {\n  # A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  primaryAssetClass : string?\n\n  # A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.\n  secondaryAssetClass : string?\n\n  # A classification of the type of product. FpML defines a simple product categorization using a coding scheme.\n  productType : string?\n\n  # A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.\n  productId : string?\n\n  # A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  assetClass : string?\n\n  # Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.\n  embeddedOptionType : string?\n\n  # Specifies the Eeffective Date of the swap. It is an optional element because not all confirmations of total return swaps specify an Effective Date. In these cases the Term of the contract begins on the Trade Date.\n  effectiveDate : FpML5.reporting.AdjustableOrRelativeDate?\n\n  # Specifies the Termination Date of the swap.\n  terminationDate : FpML5.reporting.AdjustableOrRelativeDate?\n\n  # The currency in which the commodity performance swap transaction will settle. It is an optional element because not all confirmations of performance swaps specify a Settlement Currency.\n  settlementCurrency : string?\n\n  # A placeholder within 'commodityPerformanceSwap' structure for the actual commodity swap legs (e.g. 'commodityReturnLeg' and 'commodityInterestLeg').\n  commodityPerformanceSwapLeg : FpML5.reporting.CommodityPerformanceSwapLeg?\n\n  # If Common Pricing is elected (“true”) for a Transaction with referencing more than one Commodity Reference Price then no date will be a Pricing Date unless such a date is a day on which all Commodity Reference Prices are scheduled to be published.\n  commonPricing : boolean?\n\n  # Contains contract terms related to triggers and responses to market disruptions as defined in the 1993 or 2005 Commodity Definitions.\n  marketDisruption : FpML5.reporting.CommodityMarketDisruption?\n\n  # Describes contract terms related to the consequences of Bullion Settlement Disruption Events.\n  settlementDisruption : string?\n\n  # Rounding direction and precision for amounts.\n  rounding : FpML5.reporting.Rounding?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "primaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "primaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4590
+      }
+    },
+    "secondaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "secondaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4593
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the type of product. FpML defines a simple product categorization using a coding scheme.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4596
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4599
+      }
+    },
+    "assetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "assetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4602
+      }
+    },
+    "embeddedOptionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.",
+      "Name" : "embeddedOptionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4605
+      }
+    },
+    "effectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Eeffective Date of the swap. It is an optional element because not all confirmations of total return swaps specify an Effective Date. In these cases the Term of the contract begins on the Trade Date.",
+      "Name" : "effectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4608
+      }
+    },
+    "terminationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Termination Date of the swap.",
+      "Name" : "terminationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4611
+      }
+    },
+    "settlementCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which the commodity performance swap transaction will settle. It is an optional element because not all confirmations of performance swaps specify a Settlement Currency.",
+      "Name" : "settlementCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4614
+      }
+    },
+    "commodityPerformanceSwapLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A placeholder within 'commodityPerformanceSwap' structure for the actual commodity swap legs (e.g. 'commodityReturnLeg' and 'commodityInterestLeg').",
+      "Name" : "commodityPerformanceSwapLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityPerformanceSwapLeg",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4617
+      }
+    },
+    "commonPricing" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If Common Pricing is elected (“true”) for a Transaction with referencing more than one Commodity Reference Price then no date will be a Pricing Date unless such a date is a day on which all Commodity Reference Prices are scheduled to be published.",
+      "Name" : "commonPricing",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4620
+      }
+    },
+    "marketDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Contains contract terms related to triggers and responses to market disruptions as defined in the 1993 or 2005 Commodity Definitions.",
+      "Name" : "marketDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityMarketDisruption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4623
+      }
+    },
+    "settlementDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes contract terms related to the consequences of Bullion Settlement Disruption Events.",
+      "Name" : "settlementDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4626
+      }
+    },
+    "rounding" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rounding direction and precision for amounts.",
+      "Name" : "rounding",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Rounding",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4629
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4632
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryAssetClass", "secondaryAssetClass", "productType", "productId", "assetClass", "embeddedOptionType", "effectiveDate", "terminationDate", "settlementCurrency", "commodityPerformanceSwapLeg", "commonPricing", "marketDisruption", "settlementDisruption", "rounding", "id" ],
+  "IsSynthetic" : false
+}

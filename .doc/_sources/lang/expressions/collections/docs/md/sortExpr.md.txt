@@ -1,0 +1,24 @@
+sort
+====
+
+Sorts data in a :ref:`mapVectorType`, :ref:`listVectorType`,
+or :ref:`setVectorType`.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType`|The object to be sorted|
+|2|A lambda that accepts 2 parameters and returns an `int`|Expects -1, 0 or 1, similar to output of :ref:`compareExpr`|
+
+
+__Returns:__
+
+A :ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType` that has been sorted.
+
+
+__Usages:__
+
+>- `sort( v:list<T>, e => int-expression ) : list<T>`
+>- `sort( v:set<T>, e => int-expression ) : set<T>`
+>- `sort( v:map<K, V>, (k, v) => int-expression ) : map<K, V>`

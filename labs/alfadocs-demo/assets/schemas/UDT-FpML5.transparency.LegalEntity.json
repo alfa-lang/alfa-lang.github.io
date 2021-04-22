@@ -1,0 +1,90 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a legal entity.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.LegalEntity",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a legal entity.\n #/\nrecord FpML5.transparency.LegalEntity {\n  # The name of the reference entity. A free format string. FpML does not define usage rules for this element.\n  entityName : string\n\n  # A legal entity identifier (e.g. RED entity code).\n  entityId : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CreditEventNoticeDocument",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Loan",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Mortgage",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ReferenceInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ReferencePair",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.TradeUnderlyer2",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "entityName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the reference entity. A free format string. FpML does not define usage rules for this element.",
+      "Name" : "entityName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10168
+      }
+    },
+    "entityId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A legal entity identifier (e.g. RED entity code).",
+      "Name" : "entityId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10171
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10174
+      }
+    }
+  },
+  "LocalFieldNames" : [ "entityName", "entityId", "id" ],
+  "IsSynthetic" : false
+}

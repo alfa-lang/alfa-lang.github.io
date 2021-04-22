@@ -1,0 +1,65 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Provides information about a regulator or other supervisory body that an organization is registered with.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.SupervisorRegistration",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Provides information about a regulator or other supervisory body that an organization is registered with.\n #/\nrecord FpML5.pretrade.SupervisorRegistration {\n  # The regulator or other supervisory body the organization is registered with (e.g. SEC).\n  supervisoryBody : string?\n\n  # The ID assigned by the regulator (e.g. SEC's Central Index Key).\n  registrationNumber : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.EndUserExceptionDeclaration",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FacilityExecutionExceptionDeclaration",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ReportingRegime",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "supervisoryBody" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The regulator or other supervisory body the organization is registered with (e.g. SEC).",
+      "Name" : "supervisoryBody",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5527
+      }
+    },
+    "registrationNumber" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ID assigned by the regulator (e.g. SEC's Central Index Key).",
+      "Name" : "registrationNumber",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5530
+      }
+    }
+  },
+  "LocalFieldNames" : [ "supervisoryBody", "registrationNumber" ],
+  "IsSynthetic" : false
+}

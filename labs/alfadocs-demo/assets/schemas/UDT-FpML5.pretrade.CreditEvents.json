@@ -1,0 +1,297 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.CreditEvents",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.pretrade.CreditEvents {\n  # A credit event. The reference entity has been dissolved or has become insolvent. It also covers events that may be a precursor to insolvency such as instigation of bankruptcy or insolvency proceedings. Sovereign trades are not subject to Bankruptcy as \"technically\" a Sovereign cannot become bankrupt. ISDA 2003 Term: Bankruptcy.\n  bankruptcy : boolean?\n\n  # A credit event. This credit event triggers, after the expiration of any applicable grace period, if the reference entity fails to make due payments in an aggregrate amount of not less than the payment requirement on one or more obligations (e.g. a missed coupon payment). ISDA 2003 Term: Failure to Pay.\n  failureToPay : FpML5.pretrade.FailureToPay?\n\n  # A credit event. Corresponds to the failure by the Reference Entity to pay an expected principal amount or the payment of an actual principal amount that is less than the expected principal amount. ISDA 2003 Term: Failure to Pay Principal.\n  failureToPayPrincipal : boolean?\n\n  # A credit event. Corresponds to the failure by the Reference Entity to pay an expected interest amount or the payment of an actual interest amount that is less than the expected interest amount. ISDA 2003 Term: Failure to Pay Interest.\n  failureToPayInterest : boolean?\n\n  # A credit event. One or more of the obligations have become capable of being declared due and payable before they would otherwise have been due and payable as a result of, or on the basis of, the occurrence of a default, event of default or other similar condition or event other than failure to pay. ISDA 2003 Term: Obligation Default.\n  obligationDefault : boolean?\n\n  # A credit event. One or more of the obligations have been declared due and payable before they would otherwise have been due and payable as a result of, or on the basis of, the occurrence of a default, event of default or other similar condition or event other than failure to pay (preferred by the market over Obligation Default, because more definitive and encompasses the definition of Obligation Default - this is more favorable to the Seller). Subject to the default requirement amount. ISDA 2003 Term: Obligation Acceleration.\n  obligationAcceleration : boolean?\n\n  # A credit event. The reference entity, or a governmental authority, either refuses to recognise or challenges the validity of one or more obligations of the reference entity, or imposes a moratorium thereby postponing payments on one or more of the obligations of the reference entity. Subject to the default requirement amount. ISDA 2003 Term: Repudiation/Moratorium.\n  repudiationMoratorium : boolean?\n\n  # A credit event. A restructuring is an event that materially impacts the reference entity's obligations, such as an interest rate reduction, principal reduction, deferral of interest or principal, change in priority ranking, or change in currency or composition of payment. ISDA 2003 Term: Restructuring.\n  restructuring : FpML5.pretrade.Restructuring?\n\n  # A credit event. A governmental intervention is an event resulting from an action by a governmental authority that materially impacts the reference entity's obligations, such as an interest rate reduction, principal reduction, deferral of interest or principal, change in priority ranking, or change in currency or composition of payment. ISDA 2014 Term: Governmental Intervention.\n  governmentalIntervention : boolean?\n\n  # A credit event. Results from the fact that the rating of the reference obligation is downgraded to a distressed rating level. From a usage standpoint, this credit event is typically not applicable in case of RMBS trades.\n  distressedRatingsDowngrade : boolean?\n\n  # A credit event. Results from the fact that the underlier fails to make principal payments as expected.\n  maturityExtension : boolean?\n\n  # A credit event. Results from the fact that the underlier writes down its outstanding principal amount.\n  writedown : boolean?\n\n  # A credit event. Results from the fact that losses occur to the underlying instruments that do not result in reductions of the outstanding principal of the reference obligation.\n  impliedWritedown : boolean?\n\n  # In relation to certain credit events, serves as a threshold for Obligation Acceleration, Obligation Default, Repudiation/Moratorium and Restructuring. Market standard is USD 10,000,000 (JPY 1,000,000,000 for all Japanese Yen trades). This is applied on an aggregate or total basis across all Obligations of the Reference Entity. Used to prevent technical/operational errors from triggering credit events. ISDA 2003 Term: Default Requirement.\n  defaultRequirement : FpML5.pretrade.Money?\n\n  # A specified condition to settlement. An irrevocable written or verbal notice that describes a credit event that has occurred. The notice is sent from the notifying party (either the buyer or the seller) to the counterparty. It provides information relevant to determining that a credit event has occurred. This is typically accompanied by Publicly Available Information. ISDA 2003 Term: Credit Event Notice.\n  creditEventNotice : FpML5.pretrade.CreditEventNotice?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ProtectionTerms",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "bankruptcy" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. The reference entity has been dissolved or has become insolvent. It also covers events that may be a precursor to insolvency such as instigation of bankruptcy or insolvency proceedings. Sovereign trades are not subject to Bankruptcy as \"technically\" a Sovereign cannot become bankrupt. ISDA 2003 Term: Bankruptcy.",
+      "Name" : "bankruptcy",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9273
+      }
+    },
+    "failureToPay" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. This credit event triggers, after the expiration of any applicable grace period, if the reference entity fails to make due payments in an aggregrate amount of not less than the payment requirement on one or more obligations (e.g. a missed coupon payment). ISDA 2003 Term: Failure to Pay.",
+      "Name" : "failureToPay",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FailureToPay",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9276
+      }
+    },
+    "failureToPayPrincipal" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. Corresponds to the failure by the Reference Entity to pay an expected principal amount or the payment of an actual principal amount that is less than the expected principal amount. ISDA 2003 Term: Failure to Pay Principal.",
+      "Name" : "failureToPayPrincipal",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9279
+      }
+    },
+    "failureToPayInterest" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. Corresponds to the failure by the Reference Entity to pay an expected interest amount or the payment of an actual interest amount that is less than the expected interest amount. ISDA 2003 Term: Failure to Pay Interest.",
+      "Name" : "failureToPayInterest",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9282
+      }
+    },
+    "obligationDefault" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. One or more of the obligations have become capable of being declared due and payable before they would otherwise have been due and payable as a result of, or on the basis of, the occurrence of a default, event of default or other similar condition or event other than failure to pay. ISDA 2003 Term: Obligation Default.",
+      "Name" : "obligationDefault",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9285
+      }
+    },
+    "obligationAcceleration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. One or more of the obligations have been declared due and payable before they would otherwise have been due and payable as a result of, or on the basis of, the occurrence of a default, event of default or other similar condition or event other than failure to pay (preferred by the market over Obligation Default, because more definitive and encompasses the definition of Obligation Default - this is more favorable to the Seller). Subject to the default requirement amount. ISDA 2003 Term: Obligation Acceleration.",
+      "Name" : "obligationAcceleration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9288
+      }
+    },
+    "repudiationMoratorium" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. The reference entity, or a governmental authority, either refuses to recognise or challenges the validity of one or more obligations of the reference entity, or imposes a moratorium thereby postponing payments on one or more of the obligations of the reference entity. Subject to the default requirement amount. ISDA 2003 Term: Repudiation/Moratorium.",
+      "Name" : "repudiationMoratorium",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9291
+      }
+    },
+    "restructuring" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. A restructuring is an event that materially impacts the reference entity's obligations, such as an interest rate reduction, principal reduction, deferral of interest or principal, change in priority ranking, or change in currency or composition of payment. ISDA 2003 Term: Restructuring.",
+      "Name" : "restructuring",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Restructuring",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9294
+      }
+    },
+    "governmentalIntervention" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. A governmental intervention is an event resulting from an action by a governmental authority that materially impacts the reference entity's obligations, such as an interest rate reduction, principal reduction, deferral of interest or principal, change in priority ranking, or change in currency or composition of payment. ISDA 2014 Term: Governmental Intervention.",
+      "Name" : "governmentalIntervention",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9297
+      }
+    },
+    "distressedRatingsDowngrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. Results from the fact that the rating of the reference obligation is downgraded to a distressed rating level. From a usage standpoint, this credit event is typically not applicable in case of RMBS trades.",
+      "Name" : "distressedRatingsDowngrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9300
+      }
+    },
+    "maturityExtension" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. Results from the fact that the underlier fails to make principal payments as expected.",
+      "Name" : "maturityExtension",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9303
+      }
+    },
+    "writedown" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. Results from the fact that the underlier writes down its outstanding principal amount.",
+      "Name" : "writedown",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9306
+      }
+    },
+    "impliedWritedown" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A credit event. Results from the fact that losses occur to the underlying instruments that do not result in reductions of the outstanding principal of the reference obligation.",
+      "Name" : "impliedWritedown",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9309
+      }
+    },
+    "defaultRequirement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "In relation to certain credit events, serves as a threshold for Obligation Acceleration, Obligation Default, Repudiation/Moratorium and Restructuring. Market standard is USD 10,000,000 (JPY 1,000,000,000 for all Japanese Yen trades). This is applied on an aggregate or total basis across all Obligations of the Reference Entity. Used to prevent technical/operational errors from triggering credit events. ISDA 2003 Term: Default Requirement.",
+      "Name" : "defaultRequirement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9312
+      }
+    },
+    "creditEventNotice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A specified condition to settlement. An irrevocable written or verbal notice that describes a credit event that has occurred. The notice is sent from the notifying party (either the buyer or the seller) to the counterparty. It provides information relevant to determining that a credit event has occurred. This is typically accompanied by Publicly Available Information. ISDA 2003 Term: Credit Event Notice.",
+      "Name" : "creditEventNotice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.CreditEventNotice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9315
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9318
+      }
+    }
+  },
+  "LocalFieldNames" : [ "bankruptcy", "failureToPay", "failureToPayPrincipal", "failureToPayInterest", "obligationDefault", "obligationAcceleration", "repudiationMoratorium", "restructuring", "governmentalIntervention", "distressedRatingsDowngrade", "maturityExtension", "writedown", "impliedWritedown", "defaultRequirement", "creditEventNotice", "id" ],
+  "IsSynthetic" : false
+}

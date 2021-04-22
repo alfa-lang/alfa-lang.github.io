@@ -1,0 +1,169 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure describing an option expiring (i.e. passing its last exercise time and becoming worthless.)",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionExpiry",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure describing an option expiring (i.e. passing its last exercise time and becoming worthless.)\n #/\nrecord FpML5.reporting.OptionExpiry {\n  eventIdentifier : FpML5.reporting.BusinessEventIdentifier?\n\n  # Fully describes the original trade (prior to the exercise).\n  originalTrade : FpML5.reporting.Trade\n\n  tradeIdentifier : FpML5.reporting.PartyTradeIdentifier\n\n  `date` : date?\n\n  `time` : time?\n\n  exerciseProcedure : FpML5.reporting.ExerciseProcedureOption?\n\n  actionOnExpiration : FpML5.reporting.ActionOnExpiration?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EventActivityReport",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NonpublicExecutionReport",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NonpublicExecutionReportRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionHistory",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionUpdateReason",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eventIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "eventIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessEventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21194
+      }
+    },
+    "originalTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fully describes the original trade (prior to the exercise).",
+      "Name" : "originalTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21196
+      }
+    },
+    "tradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.PartyTradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21199
+      }
+    },
+    "date" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "date",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21201
+      }
+    },
+    "time" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "time",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "timeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21203
+      }
+    },
+    "exerciseProcedure" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseProcedure",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExerciseProcedureOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21205
+      }
+    },
+    "actionOnExpiration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "actionOnExpiration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ActionOnExpiration",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21207
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eventIdentifier", "originalTrade", "tradeIdentifier", "date", "time", "exerciseProcedure", "actionOnExpiration" ],
+  "IsSynthetic" : false
+}

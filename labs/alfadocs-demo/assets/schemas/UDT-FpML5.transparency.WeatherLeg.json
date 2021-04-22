@@ -1,0 +1,156 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A weather leg of a Commodity Swap defines Weather Index Swap transactions. Weather Index Swap transactions are OTC derivative transactions which settle financially based on an index calculated from observations of temperature, precipitation and other weather-related measurements at weather stations throughout the world. Sub-Annex C of the 2005 ISDA Commodity Definitions provides definitions and terms for a number of types of weather indices. These indices include: HDD (heating degree days), CDD (cooling degree days), CPD (critical precipitation days). Weather Index Swap transactions result in a cash flow to one of the two counterparties each Calculation Period depending on the relationship between the Settlement Level and the Weather Index Level. A Weather Index swap transaction always consists of a commodity swap element as a parent to two weatherLeg elements.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.WeatherLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A weather leg of a Commodity Swap defines Weather Index Swap transactions. Weather Index Swap transactions are OTC derivative transactions which settle financially based on an index calculated from observations of temperature, precipitation and other weather-related measurements at weather stations throughout the world. Sub-Annex C of the 2005 ISDA Commodity Definitions provides definitions and terms for a number of types of weather indices. These indices include: HDD (heating degree days), CDD (cooling degree days), CPD (critical precipitation days). Weather Index Swap transactions result in a cash flow to one of the two counterparties each Calculation Period depending on the relationship between the Settlement Level and the Weather Index Level. A Weather Index swap transaction always consists of a commodity swap element as a parent to two weatherLeg elements.\n #/\nrecord FpML5.transparency.WeatherLeg {\n  # Defining the Weather Index Level or Weather Index Strike Level.\n  weatherIndexLevel : FpML5.transparency.WeatherIndex\n\n  weatherCalculationPeriods : FpML5.transparency.WeatherCalculationPeriods\n\n  # Defines the price per weather index unit.\n  weatherNotionalAmount : FpML5.transparency.NonNegativeMoney\n\n  # Defines details relevant to the calculation of the aggregate weather index amount.\n  calculation : FpML5.transparency.WeatherLegCalculation\n\n  # Specifies where the data (e.g. CPD) have been collected, an actual physical reference point (weather station) and various fall back arrangements.\n  weatherIndexData : FpML5.transparency.WeatherIndexData?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommoditySwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommoditySwaptionUnderlying",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "weatherIndexLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defining the Weather Index Level or Weather Index Strike Level.",
+      "Name" : "weatherIndexLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.WeatherIndex",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.WeatherIndex",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.WeatherIndex",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8714
+      }
+    },
+    "weatherCalculationPeriods" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "weatherCalculationPeriods",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.WeatherCalculationPeriods",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.WeatherCalculationPeriods",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.WeatherCalculationPeriods",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8717
+      }
+    },
+    "weatherNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the price per weather index unit.",
+      "Name" : "weatherNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8719
+      }
+    },
+    "calculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines details relevant to the calculation of the aggregate weather index amount.",
+      "Name" : "calculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.WeatherLegCalculation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.WeatherLegCalculation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.WeatherLegCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8722
+      }
+    },
+    "weatherIndexData" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies where the data (e.g. CPD) have been collected, an actual physical reference point (weather station) and various fall back arrangements.",
+      "Name" : "weatherIndexData",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.WeatherIndexData",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8725
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8728
+      }
+    }
+  },
+  "LocalFieldNames" : [ "weatherIndexLevel", "weatherCalculationPeriods", "weatherNotionalAmount", "calculation", "weatherIndexData", "id" ],
+  "IsSynthetic" : false
+}

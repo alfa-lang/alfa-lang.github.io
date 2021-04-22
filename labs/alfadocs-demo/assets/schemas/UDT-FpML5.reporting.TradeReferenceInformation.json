@@ -1,0 +1,123 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defines a type that allows trade identifiers and/or trade information to be represented for a trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeReferenceInformation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defines a type that allows trade identifiers and/or trade information to be represented for a trade.\n #/\nrecord FpML5.reporting.TradeReferenceInformation {\n  # This may be used to describe why a trade was created. This can be used to provide context for a newly created trade that is not part of a post-trade event. For example, it can report that the trade was created as a result of netting activity, or due to a transfer, an allocation process, etc. Omitting this implies that the trade record was created as a result of a negotiated new trade.\n  originatingEvent : string\n\n  # This may be used to describe why a trade was terminated.\n  terminatingEvent : string\n\n  # This allows the acknowledging party to supply additional trade identifiers for a trade underlying a request relating to a business event.\n  partyTradeIdentifier : FpML5.reporting.PartyTradeIdentifier?\n\n  # This allows the acknowledging party to supply additional trade information about a trade underlying a request relating to a business event.\n  partyTradeInformation : FpML5.reporting.PartyTradeInformation?\n\n  productType : string?\n\n  productId : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ClearingStatusItem",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradePackage",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "originatingEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This may be used to describe why a trade was created. This can be used to provide context for a newly created trade that is not part of a post-trade event. For example, it can report that the trade was created as a result of netting activity, or due to a transfer, an allocation process, etc. Omitting this implies that the trade record was created as a result of a negotiated new trade.",
+      "Name" : "originatingEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22440
+      }
+    },
+    "terminatingEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This may be used to describe why a trade was terminated.",
+      "Name" : "terminatingEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22443
+      }
+    },
+    "partyTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This allows the acknowledging party to supply additional trade identifiers for a trade underlying a request relating to a business event.",
+      "Name" : "partyTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22446
+      }
+    },
+    "partyTradeInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This allows the acknowledging party to supply additional trade information about a trade underlying a request relating to a business event.",
+      "Name" : "partyTradeInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22449
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22452
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22454
+      }
+    }
+  },
+  "LocalFieldNames" : [ "originatingEvent", "terminatingEvent", "partyTradeIdentifier", "partyTradeInformation", "productType", "productId" ],
+  "IsSynthetic" : false
+}

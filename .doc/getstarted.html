@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Runtime APIs &amp; Guides" href="apis/runtimeapis.html" />
+    <link rel="prev" title="JDBC Schema" href="exporters/jdbc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cli-command-line-tool-setup">CLI (Command Line Tool) Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verify-installation">Verify Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#maven-plugin-setup">Maven plugin setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-drive">Test Drive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#export-to-java">Export to Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-to-protocol-buffers">Export to Protocol Buffers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dealing-with-compilation-errors">Dealing with compilation errors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<span id="getstarted"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>There are 2 ways to get started using the ALFA modeling toolset.</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="tools/alfacli.html#alfacli"><span class="std std-ref">ALFA CLI</span></a></li>
+<li><a class="reference internal" href="tools/mvnplugin.html#mvnplugin"><span class="std std-ref">ALFA Maven Plugin</span></a></li>
+</ol>
+<p><strong>Prerequisite</strong>:
+Java 1.8 or higher is required for the <a class="reference internal" href="tools/alfacli.html#alfacli"><span class="std std-ref">ALFA CLI</span></a>. To confirm the version of Java you have installed, run <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-version</span></code>, on a shell/command window.
+ALFA has been tested with <code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">14</span></code>. Java can be downloaded from <a class="reference external" href="http://www.java.com/en/download">www.java.com/en/download</a>.</p>
+<p>Provided you have Java installed, you will able install and run the ALFA CLI in under 3 minutes.</p>
+<div class="section" id="cli-command-line-tool-setup">
+<h2>CLI (Command Line Tool) Setup<a class="headerlink" href="#cli-command-line-tool-setup" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="tools/alfacli.html#alfacli"><span class="std std-ref">ALFA CLI</span></a> should be downloaded and installed as per the platform in use.</p>
+<blockquote>
+<div><p><strong>Mac/Linux</strong></p>
+<p>Create a directory <code class="docutils literal notranslate"><span class="pre">$HOME/tools/alfa</span></code> to install the ALFA CLI. If an alternate path is used, change the path in the steps below accordingly.
+The remaining steps downloads the AlfaCLI-0.9.0-RC1.zip and unzips the contents.</p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>mkdir -p $HOME/tools/alfa
+cd $HOME/tools/alfa
+curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip --output AlfaCLI-0.9.0-RC1.zip
+unzip AlfaCLI-0.9.0-RC1.zip
+</pre></div>
+</div>
+</div></blockquote>
+<p>Add the following to your <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code>, or shell profile file (e.g: On a Mac <code class="docutils literal notranslate"><span class="pre">~/.zprofile</span></code>, <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> etc.)</p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span># ALFA settings after unzipping AlfaCLI-0.9.0-RC1.zip
+export ALFA_HOME=<span class="nv">$HOME</span>/tools/alfa
+PATH=&quot;<span class="nv">$ALFA_HOME</span>/bin:<span class="cp">${</span><span class="n">PATH</span><span class="cp">}</span>&quot;
+export PATH
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Windows</strong></p>
+<ul class="simple">
+<li>Download <a class="reference external" href="https://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip">AlfaCLI-0.9.0-RC1.zip</a></li>
+<li>Unzip AlfaCLI-0.9.0-RC1.zip to a local directory, e.g. <code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%\alfa\</span></code>.
+This path has been suggested as some users may have restrictions in creating directories elsewhere.</li>
+</ul>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">%</span><span class="n">LOCALAPPDATA</span><span class="o">%</span>\<span class="n">alfa</span>
+<span class="n">cd</span> <span class="o">%</span><span class="n">LOCALAPPDATA</span><span class="o">%</span>\<span class="n">alfa</span>
+
+ <span class="o">&lt;</span> <span class="n">download</span> <span class="n">AlfaCLI</span><span class="o">-</span><span class="mf">0.9</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">RC1</span><span class="o">.</span><span class="n">zip</span> <span class="ow">and</span> <span class="n">extract</span> <span class="o">&gt;</span>
+
+<span class="nb">set</span> <span class="n">ALFA_HOME</span><span class="o">=%</span><span class="n">LOCALAPPDATA</span><span class="o">%</span>\<span class="n">alfa</span>
+<span class="nb">set</span> <span class="n">PATH</span><span class="o">=%</span><span class="n">ALFA_HOME</span><span class="o">%</span>\<span class="nb">bin</span><span class="p">;</span><span class="o">%</span><span class="n">PATH</span><span class="o">%</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>To have the settings permanantly defined, do the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Set a new Windows environment variable <code class="docutils literal notranslate"><span class="pre">ALFA_HOME</span></code> and assign its value to the unzipped path, e.g. <a href="#id1"><span class="problematic" id="id2">`</span></a>%LOCALAPPDATA%alfa.</li>
+<li>Append <code class="docutils literal notranslate"><span class="pre">%ALFA_HOME%\bin</span></code> to the user environment variable <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="verify-installation">
+<h3>Verify Installation<a class="headerlink" href="#verify-installation" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Once setup on Mac/Linux/Windows, it should be possible to open a <strong>new</strong> terminal or command window and
+type <code class="docutils literal notranslate"><span class="pre">alfa</span> <span class="pre">-h</span></code> and view command line usage help.</div></blockquote>
+</div>
+</div>
+<div class="section" id="maven-plugin-setup">
+<h2>Maven plugin setup<a class="headerlink" href="#maven-plugin-setup" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Prerequisite</strong>:
+Maven (version 3 or higher) command line tool, confirm by running <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">-v</span></code> on your terminal window.</p>
+<p>For details on using the plugin and a <strong>complete example</strong> of using Maven, see <a class="reference internal" href="tools/mvnplugin.html#mvnplugin"><span class="std std-ref">ALFA Maven Plugin</span></a>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="test-drive">
+<h2>Test Drive<a class="headerlink" href="#test-drive" title="Permalink to this headline">¶</a></h2>
+<p>ALFA CLI is the simplest way to compile an ALFA model. Once installed, you can trail with the samples provided.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c $ALFA_HOME/samples/demo/
+</pre></div>
+</div>
+<p>Alternatively, you can create a new project directory and create a <code class="docutils literal notranslate"><span class="pre">src/demo.alfa</span></code> file and write a model such
+as the one shown below.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Club</span><span class="p">.</span><span class="n">Player</span> <span class="p">{</span>
+  <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+  <span class="n">Age</span> <span class="p">:</span> <span class="kt">int</span>
+  <span class="n">Average</span> <span class="p">:</span> <span class="kt">double</span>
+  <span class="n">RankingByYear</span> <span class="p">:</span> <span class="k">map</span><span class="p">&lt;</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compile the model by running:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c src/demo.alfa
+</pre></div>
+</div>
+<p>The path can be a directory or a file ( e.g. to compile all files under <code class="docutils literal notranslate"><span class="pre">src</span></code>, run <code class="docutils literal notranslate"><span class="pre">alfa</span> <span class="pre">-c</span> <span class="pre">src</span></code> ).</p>
+<div class="section" id="export-to-java">
+<h3>Export to Java<a class="headerlink" href="#export-to-java" title="Permalink to this headline">¶</a></h3>
+<p>You can generate a Java POJO data model by adding <code class="docutils literal notranslate"><span class="pre">-g</span> <span class="pre">java</span> <span class="pre">-o</span> <span class="pre">generated/java</span></code> to the command:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c -e java -o generated/java src
+</pre></div>
+</div>
+<p>This runs the <a class="reference internal" href="exporters/java.html#java"><span class="std std-ref">Java</span></a>.</p>
+<p>The generated Java code will be written to the <code class="docutils literal notranslate"><span class="pre">generated/java</span></code> directory. In order to
+compile the generated code, you will need the ALFA Java runtime library.</p>
+<blockquote>
+<div><p>The Runtime library dependency can be expressed in Maven:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>alfa-rt-java-core<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;groupId&gt;</span>io.alfa-lang.rt<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>0.9.0-RC1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+</div>
+<p>Or Gradle:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>compile group: &#39;io.alfa-lang.rt&#39;, name: &#39;alfa-rt-java-core&#39;, version: &#39;0.9.0-RC1&#39;
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="export-to-protocol-buffers">
+<h3>Export to Protocol Buffers<a class="headerlink" href="#export-to-protocol-buffers" title="Permalink to this headline">¶</a></h3>
+<p>A Protocol Buffers definition can be generated off the model using the command line:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c -e protobuf -o generated/pb src
+</pre></div>
+</div>
+<p>Assuming the <code class="docutils literal notranslate"><span class="pre">protoc</span></code> compiler is available in the path, the generated Protocol Buffer model can be compiled.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>protoc --java_out=generated/pbjava -Igenerated/pb3 generated/pb3/Club/Player.proto
+</pre></div>
+</div>
+<p>This runs the <a class="reference internal" href="exporters/protobuf.html#protobuf"><span class="std std-ref">Protocol Buffers</span></a>.</p>
+</div>
+<div class="section" id="dealing-with-compilation-errors">
+<h3>Dealing with compilation errors<a class="headerlink" href="#dealing-with-compilation-errors" title="Permalink to this headline">¶</a></h3>
+<p>The ALFA compiler emits succinct error messages, and they are displayed by the CLI in a manner that errors
+will be easy to identify and resolve quickly.</p>
+<p>See below for an example of multiple errors being reported. For each error, the source line is printed with
+the problematic area in the line being underlined in red text.</p>
+<p>The error messages should have sufficient details to understand and resolve the problem.</p>
+<a class="reference internal image-reference" href="_images/alfa-cli-example.png"><img alt="_images/alfa-cli-example.png" src="_images/alfa-cli-example.png" style="width: 100%;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

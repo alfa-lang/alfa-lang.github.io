@@ -1,0 +1,60 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "The specification of whether an OTC option will be exercised.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ExerciseActionEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n The specification of whether an OTC option will be exercised.\n #/\nenum FpML5.recordkeeping.ExerciseActionEnum {\n    # The option was or is to be exercised fully.\n    FullExercise \n    # The option was or is to be exercised partially. The amount of the exercise is specified elsewhere in the document than in the exercise amount; for example, in the case of a physical exercise the size of the resulting trade is the same as the amount that was exercise, so if it is specified it is not necessary to specify the amount of the partial exercise.\n    PartialExercise \n    # The option was or is to be allowed to expire without being exercised, i.e. it is being abandoned.\n    Abandon \n\n}"
+  },
+  "AllFields" : {
+    "FullExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The option was or is to be exercised fully.",
+      "Name" : "FullExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5601
+      }
+    },
+    "PartialExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The option was or is to be exercised partially. The amount of the exercise is specified elsewhere in the document than in the exercise amount; for example, in the case of a physical exercise the size of the resulting trade is the same as the amount that was exercise, so if it is specified it is not necessary to specify the amount of the partial exercise.",
+      "Name" : "PartialExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5603
+      }
+    },
+    "Abandon" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The option was or is to be allowed to expire without being exercised, i.e. it is being abandoned.",
+      "Name" : "Abandon",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5605
+      }
+    }
+  },
+  "LocalFieldNames" : [ "FullExercise", "PartialExercise", "Abandon" ],
+  "IsSynthetic" : false
+}

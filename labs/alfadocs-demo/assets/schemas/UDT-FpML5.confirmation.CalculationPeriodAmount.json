@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the parameters used in the calculation of fixed or floating rate calculation period amounts or for specifying a known calculation period amount or known amount schedule.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the parameters used in the calculation of fixed or floating rate calculation period amounts or for specifying a known calculation period amount or known amount schedule.\n #/\nrecord FpML5.confirmation.CalculationPeriodAmount {\n  # The parameters used in the calculation of fixed or floaring rate calculation period amounts.\n  calculation : FpML5.confirmation.Calculation\n\n  # The known calculation period amount or a known amount schedule expressed as explicit known amounts and dates. In the case of a schedule, the step dates may be subject to adjustment in accordance with any adjustments specified in calculationPeriodDatesAdjustments.\n  knownAmountSchedule : FpML5.confirmation.AmountSchedule\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.InterestRateStream",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters used in the calculation of fixed or floaring rate calculation period amounts.",
+      "Name" : "calculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Calculation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Calculation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Calculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 24421
+      }
+    },
+    "knownAmountSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The known calculation period amount or a known amount schedule expressed as explicit known amounts and dates. In the case of a schedule, the step dates may be subject to adjustment in accordance with any adjustments specified in calculationPeriodDatesAdjustments.",
+      "Name" : "knownAmountSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AmountSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AmountSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AmountSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 24424
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculation", "knownAmountSchedule" ],
+  "IsSynthetic" : false
+}

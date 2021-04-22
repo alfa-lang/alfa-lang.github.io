@@ -1,0 +1,148 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining an early termination provision where either or both parties have the right to exercise.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionalEarlyTermination",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining an early termination provision where either or both parties have the right to exercise.\n #/\nrecord FpML5.reporting.OptionalEarlyTermination {\n  # If optional early termination is not available to both parties then this component specifies the buyer and seller of the option.\n  singlePartyOption : FpML5.reporting.SinglePartyOption?\n\n  # An placeholder for the actual option exercise definitions.\n  exercise : FpML5.reporting.Exercise?\n\n  # Definition of the party to whom notice of exercise should be given.\n  exerciseNotice : FpML5.reporting.ExerciseNotice?\n\n  # A flag to indicate whether follow-up confirmation of exercise (written or electronic) is required following telephonic notice by the buyer to the seller or seller's agent.\n  followUpConfirmation : boolean?\n\n  # The ISDA Calculation Agent responsible for performing duties associated with an optional early termination.\n  calculationAgent : FpML5.reporting.CalculationAgent?\n\n  # If specified, this means that cash settlement is applicable to the transaction and defines the parameters associated with the cash settlement prodcedure. If not specified, then physical settlement is applicable.\n  cashSettlement : FpML5.reporting.CashSettlement?\n\n  # An early termination provision to terminate the trade at fair value where one or both parties have the right to decide on termination.\n  optionalEarlyTerminationAdjustedDates : FpML5.reporting.OptionalEarlyTerminationAdjustedDates?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EarlyTerminationProvision",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "singlePartyOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If optional early termination is not available to both parties then this component specifies the buyer and seller of the option.",
+      "Name" : "singlePartyOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SinglePartyOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1716
+      }
+    },
+    "exercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An placeholder for the actual option exercise definitions.",
+      "Name" : "exercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Exercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1719
+      }
+    },
+    "exerciseNotice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Definition of the party to whom notice of exercise should be given.",
+      "Name" : "exerciseNotice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExerciseNotice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1722
+      }
+    },
+    "followUpConfirmation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A flag to indicate whether follow-up confirmation of exercise (written or electronic) is required following telephonic notice by the buyer to the seller or seller's agent.",
+      "Name" : "followUpConfirmation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1725
+      }
+    },
+    "calculationAgent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISDA Calculation Agent responsible for performing duties associated with an optional early termination.",
+      "Name" : "calculationAgent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationAgent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1728
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If specified, this means that cash settlement is applicable to the transaction and defines the parameters associated with the cash settlement prodcedure. If not specified, then physical settlement is applicable.",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CashSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1731
+      }
+    },
+    "optionalEarlyTerminationAdjustedDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An early termination provision to terminate the trade at fair value where one or both parties have the right to decide on termination.",
+      "Name" : "optionalEarlyTerminationAdjustedDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.OptionalEarlyTerminationAdjustedDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1734
+      }
+    }
+  },
+  "LocalFieldNames" : [ "singlePartyOption", "exercise", "exerciseNotice", "followUpConfirmation", "calculationAgent", "cashSettlement", "optionalEarlyTerminationAdjustedDates" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,214 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.VolatilitySwapTransactionSupplement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.VolatilitySwapTransactionSupplement {\n  # A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  primaryAssetClass : string?\n\n  # A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.\n  secondaryAssetClass : string?\n\n  # A classification of the type of product. FpML defines a simple product categorization using a coding scheme.\n  productType : string?\n\n  # A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.\n  productId : string?\n\n  # A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  assetClass : string?\n\n  # Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.\n  embeddedOptionType : string?\n\n  volatilityLeg : FpML5.reporting.VolatilityLeg?\n\n  # For an index option transaction, a flag to indicate whether a relevant Multiple Exchange Index Annex is applicable to the transaction. This annex defines additional provisions which are applicable where an index is comprised of component securities that are traded on multiple exchanges.\n  multipleExchangeIndexAnnexFallback : boolean\n\n  # For an index option transaction, a flag to indicate whether a relevant Component Security Index Annex is applicable to the transaction.\n  componentSecurityIndexAnnexFallback : boolean\n\n  # Local Jurisdiction is a term used in the AEJ Master Confirmation, which is used to determine local taxes, which shall mean taxes, duties, and similar charges imposed by the taxing authority of the Local Jurisdiction If this element is not present Local Jurisdiction is Not Applicable.\n  localJurisdiction : string?\n\n  # Relevent Jurisdiction is a term used in the AEJ Master Confirmation, which is used to determine local taxes, which shall mean taxes, duties and similar charges that would be imposed by the taxing authority of the Country of Underlyer on a Hypothetical Broker Dealer assuming the Applicable Hedge Positions are held by its office in the Relevant Jurisdiction. If this element is not present Relevant Jurisdiction is Not Applicable.\n  relevantJurisdiction : string?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "primaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "primaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19629
+      }
+    },
+    "secondaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "secondaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19632
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the type of product. FpML defines a simple product categorization using a coding scheme.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19635
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19638
+      }
+    },
+    "assetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "assetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19641
+      }
+    },
+    "embeddedOptionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.",
+      "Name" : "embeddedOptionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19644
+      }
+    },
+    "volatilityLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "volatilityLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.VolatilityLeg",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19647
+      }
+    },
+    "multipleExchangeIndexAnnexFallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For an index option transaction, a flag to indicate whether a relevant Multiple Exchange Index Annex is applicable to the transaction. This annex defines additional provisions which are applicable where an index is comprised of component securities that are traded on multiple exchanges.",
+      "Name" : "multipleExchangeIndexAnnexFallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19649
+      }
+    },
+    "componentSecurityIndexAnnexFallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For an index option transaction, a flag to indicate whether a relevant Component Security Index Annex is applicable to the transaction.",
+      "Name" : "componentSecurityIndexAnnexFallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19652
+      }
+    },
+    "localJurisdiction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Local Jurisdiction is a term used in the AEJ Master Confirmation, which is used to determine local taxes, which shall mean taxes, duties, and similar charges imposed by the taxing authority of the Local Jurisdiction If this element is not present Local Jurisdiction is Not Applicable.",
+      "Name" : "localJurisdiction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19655
+      }
+    },
+    "relevantJurisdiction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Relevent Jurisdiction is a term used in the AEJ Master Confirmation, which is used to determine local taxes, which shall mean taxes, duties and similar charges that would be imposed by the taxing authority of the Country of Underlyer on a Hypothetical Broker Dealer assuming the Applicable Hedge Positions are held by its office in the Relevant Jurisdiction. If this element is not present Relevant Jurisdiction is Not Applicable.",
+      "Name" : "relevantJurisdiction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19658
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19661
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryAssetClass", "secondaryAssetClass", "productType", "productId", "assetClass", "embeddedOptionType", "volatilityLeg", "multipleExchangeIndexAnnexFallback", "componentSecurityIndexAnnexFallback", "localJurisdiction", "relevantJurisdiction", "id" ],
+  "IsSynthetic" : false
+}

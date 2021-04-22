@@ -1,0 +1,55 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A Disruption Fallback with the sequence in which it should be applied relative to other Disruption Fallbacks.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SequencedDisruptionFallback",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A Disruption Fallback with the sequence in which it should be applied relative to other Disruption Fallbacks.\n #/\nrecord FpML5.confirmation.SequencedDisruptionFallback {\n  # Disruption fallback that applies to the trade.\n  fallback : string\n\n  # Sequence in which the reference to the disruption fallback should be applied.\n  sequence : int( 1, * )\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityMarketDisruption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Disruption fallback that applies to the trade.",
+      "Name" : "fallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15639
+      }
+    },
+    "sequence" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Sequence in which the reference to the disruption fallback should be applied.",
+      "Name" : "sequence",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "min" : {
+          "@type" : "alfa.rt.model.RangeValue",
+          "intValue" : 1
+        },
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15642
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fallback", "sequence" ],
+  "IsSynthetic" : false
+}

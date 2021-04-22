@@ -1,0 +1,72 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PhysicalSettlementPeriod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.PhysicalSettlementPeriod {\n  # An explicit indication that a number of business days are not specified and therefore ISDA fallback provisions should apply.\n  businessDaysNotSpecified : boolean\n\n  # A number of business days. Its precise meaning is dependant on the context in which this element is used. ISDA 2003 Term: Business Day\n  businessDays : int( 0, * )\n\n  # A maximum number of business days. Its precise meaning is dependant on the context in which this element is used. Intended to be used to limit a particular ISDA fallback provision.\n  maximumBusinessDays : int( 0, * )\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PhysicalSettlementTerms",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "businessDaysNotSpecified" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An explicit indication that a number of business days are not specified and therefore ISDA fallback provisions should apply.",
+      "Name" : "businessDaysNotSpecified",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20784
+      }
+    },
+    "businessDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A number of business days. Its precise meaning is dependant on the context in which this element is used. ISDA 2003 Term: Business Day",
+      "Name" : "businessDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "min" : {
+          "@type" : "alfa.rt.model.RangeValue",
+          "intValue" : 0
+        },
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20787
+      }
+    },
+    "maximumBusinessDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A maximum number of business days. Its precise meaning is dependant on the context in which this element is used. Intended to be used to limit a particular ISDA fallback provision.",
+      "Name" : "maximumBusinessDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "min" : {
+          "@type" : "alfa.rt.model.RangeValue",
+          "intValue" : 0
+        },
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20790
+      }
+    }
+  },
+  "LocalFieldNames" : [ "businessDaysNotSpecified", "businessDays", "maximumBusinessDays" ],
+  "IsSynthetic" : false
+}

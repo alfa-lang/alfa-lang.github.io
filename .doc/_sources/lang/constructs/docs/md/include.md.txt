@@ -1,0 +1,23 @@
+# include
+
+An `include` declaration can be used to include definitions from 
+other `.alfa` files.
+
+
+This is only required if when compiling an ALFA project, a root **file** is specified, as opposed to a directory.
+If a directory is specified, the ALFA compiler compiles all files in the directory and there
+is no need to use `include`. 
+
+If on the other hand, there is a usecase to only compile a subset of files,
+those can be grouped together using `include`.
+
+`include` is a top level declaration, and is required to be at the beginning of a file before any other declarations.
+
+
+```csharp
+include "commontypes.alfa" 
+```
+
+Use of `include` is optional. Including the same file more than once or
+reaching the same file multiple times transitively has no
+side-effects as the ALFA compiler will read the file only once.

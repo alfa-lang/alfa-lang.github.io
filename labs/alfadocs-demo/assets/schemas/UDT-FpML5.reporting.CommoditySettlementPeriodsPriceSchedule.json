@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The fixed price schedule for electricity that applies to one or more groups of Settlement Periods.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommoditySettlementPeriodsPriceSchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The fixed price schedule for electricity that applies to one or more groups of Settlement Periods.\n #/\nrecord FpML5.reporting.CommoditySettlementPeriodsPriceSchedule {\n  # For an electricity transaction, the Fixed Price for a given Calculation Period during the life of the trade which applies to the range(s) of Settlement Periods referenced by settlementPeriods Reference. There must be a Fixed Price step specified for each Calculation Period, regardless of whether the Fixed Price changes or remains the same between periods.\n  settlementPeriodsPriceStep : FpML5.reporting.FixedPrice?\n\n  # The range(s) of Settlement Periods to which the Fixed Price steps apply.\n  settlementPeriodsReference : FpML5.reporting.SettlementPeriodsReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityFixedPriceSchedule",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementPeriodsPriceStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For an electricity transaction, the Fixed Price for a given Calculation Period during the life of the trade which applies to the range(s) of Settlement Periods referenced by settlementPeriods Reference. There must be a Fixed Price step specified for each Calculation Period, regardless of whether the Fixed Price changes or remains the same between periods.",
+      "Name" : "settlementPeriodsPriceStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FixedPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10694
+      }
+    },
+    "settlementPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The range(s) of Settlement Periods to which the Fixed Price steps apply.",
+      "Name" : "settlementPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10697
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementPeriodsPriceStep", "settlementPeriodsReference" ],
+  "IsSynthetic" : false
+}

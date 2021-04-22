@@ -1,0 +1,60 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxSettlementRateSource",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.pretrade.FxSettlementRateSource {\n  # Indicates that an officially defined rate settlement rate option will be the used for the fixing.\n  settlementRateOption : string\n\n  # Indicates that a non-standard rate source will be used for the fixing.\n  nonstandardSettlementRate : FpML5.pretrade.FxInformationSource\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxRateSourceFixing",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementRateOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that an officially defined rate settlement rate option will be the used for the fixing.",
+      "Name" : "settlementRateOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 290
+      }
+    },
+    "nonstandardSettlementRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that a non-standard rate source will be used for the fixing.",
+      "Name" : "nonstandardSettlementRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.FxInformationSource",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.FxInformationSource",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxInformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 293
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementRateOption", "nonstandardSettlementRate" ],
+  "IsSynthetic" : false
+}

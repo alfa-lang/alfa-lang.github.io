@@ -1,0 +1,111 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NoTouchUpperBarrierObservation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.NoTouchUpperBarrierObservation {\n  # The rate value (level) which was attained/breached, in order to trigger the barrier event.\n  triggerRate : decimal?\n\n  # Defines the currency pair and quote basis for an FX rate.\n  quotedCurrencyPair : FpML5.reporting.QuotedCurrencyPair?\n\n  # The maximum value observed during the condition period\n  maximumObservedRate : FpML5.reporting.ObservedRate?\n\n  # The price value (level) which was attained/breached, in order to trigger the barrier event.\n  triggerPrice : FpML5.reporting.PositiveMoney?\n\n  # The maximum value observed during the condition period\n  maximumObservedPrice : FpML5.reporting.ObservedPrice?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NoTouchRateObservation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "triggerRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate value (level) which was attained/breached, in order to trigger the barrier event.",
+      "Name" : "triggerRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13784
+      }
+    },
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the currency pair and quote basis for an FX rate.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13787
+      }
+    },
+    "maximumObservedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum value observed during the condition period",
+      "Name" : "maximumObservedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ObservedRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13790
+      }
+    },
+    "triggerPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The price value (level) which was attained/breached, in order to trigger the barrier event.",
+      "Name" : "triggerPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositiveMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13793
+      }
+    },
+    "maximumObservedPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum value observed during the condition period",
+      "Name" : "maximumObservedPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ObservedPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13796
+      }
+    }
+  },
+  "LocalFieldNames" : [ "triggerRate", "quotedCurrencyPair", "maximumObservedRate", "triggerPrice", "maximumObservedPrice" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,60 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "The method of rounding a fractional number. - For use with pre-trade Credit Limit Check messages.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.RoundingDirectionEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n The method of rounding a fractional number. - For use with pre-trade Credit Limit Check messages.\n #/\nenum FpML5.pretrade.RoundingDirectionEnum {\n    # A fractional number will be rounded up to the specified number of decimal places (the precision). For example, 5.21 and 5.25 rounded up to 1 decimal place are 5.3 and 5.3 respectively.\n    Up \n    # A fractional number will be rounded down to the specified number of decimal places (the precision). For example, 5.29 and 5.25 rounded down to 1 decimal place are 5.2 and 5.2 respectively.\n    Down \n    # A fractional number will be rounded either up or down to the specified number of decimal places (the precision) depending on its value. For example, 5.24 would be rounded down to 5.2 and 5.25 would be rounded up to 5.3 if a precision of 1 decimal place were specified.\n    Nearest \n\n}"
+  },
+  "AllFields" : {
+    "Up" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A fractional number will be rounded up to the specified number of decimal places (the precision). For example, 5.21 and 5.25 rounded up to 1 decimal place are 5.3 and 5.3 respectively.",
+      "Name" : "Up",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5287
+      }
+    },
+    "Down" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A fractional number will be rounded down to the specified number of decimal places (the precision). For example, 5.29 and 5.25 rounded down to 1 decimal place are 5.2 and 5.2 respectively.",
+      "Name" : "Down",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5289
+      }
+    },
+    "Nearest" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A fractional number will be rounded either up or down to the specified number of decimal places (the precision) depending on its value. For example, 5.24 would be rounded down to 5.2 and 5.25 would be rounded up to 5.3 if a precision of 1 decimal place were specified.",
+      "Name" : "Nearest",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5291
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Up", "Down", "Nearest" ],
+  "IsSynthetic" : false
+}

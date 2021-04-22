@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to define the adjusted dates for a cancelable provision on a swap transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CancelableProvisionAdjustedDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to define the adjusted dates for a cancelable provision on a swap transaction.\n #/\nrecord FpML5.reporting.CancelableProvisionAdjustedDates {\n  # The adjusted dates for an individual cancellation date.\n  cancellationEvent : FpML5.reporting.CancellationEvent?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CancelableProvision",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "cancellationEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted dates for an individual cancellation date.",
+      "Name" : "cancellationEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CancellationEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24186
+      }
+    }
+  },
+  "LocalFieldNames" : [ "cancellationEvent" ],
+  "IsSynthetic" : false
+}

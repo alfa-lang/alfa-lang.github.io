@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies the amount of the fee along with, when applicable, the formula that supports its determination.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AdditionalPaymentAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies the amount of the fee along with, when applicable, the formula that supports its determination.\n #/\nrecord FpML5.reporting.AdditionalPaymentAmount {\n  # The currency amount of the payment.\n  paymentAmount : FpML5.reporting.NonNegativeMoney?\n\n  # Specifies a formula, with its description and components.\n  formula : FpML5.reporting.Formula?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReturnSwapAdditionalPayment",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "paymentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency amount of the payment.",
+      "Name" : "paymentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16034
+      }
+    },
+    "formula" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies a formula, with its description and components.",
+      "Name" : "formula",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Formula",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16037
+      }
+    }
+  },
+  "LocalFieldNames" : [ "paymentAmount", "formula" ],
+  "IsSynthetic" : false
+}

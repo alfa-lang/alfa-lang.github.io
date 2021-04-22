@@ -1,0 +1,125 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The Expiration Dates of the trade relative to the Calculation Periods.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityRelativeExpirationDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The Expiration Dates of the trade relative to the Calculation Periods.\n #/\nrecord FpML5.reporting.CommodityRelativeExpirationDates {\n  # Specifies whether the payment(s) occur relative to the date of a physical event.\n  expireRelativeToEvent : string?\n\n  # Specifies any offset from the adjusted Calculation Period start date or adjusted Calculation Period end date applicable to each Payment Date.\n  expirationDateOffset : FpML5.reporting.DateOffset?\n\n  # A pointer style reference to a set of financial business centers defined elsewhere in the document. This set of business centers is used to determine whether a particular day is a business day or not.\n  businessCentersReference : FpML5.reporting.BusinessCentersReference\n\n  businessCenters : FpML5.reporting.BusinessCenters\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityPhysicalAmericanExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityPhysicalEuropeanExercise",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "expireRelativeToEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the payment(s) occur relative to the date of a physical event.",
+      "Name" : "expireRelativeToEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20063
+      }
+    },
+    "expirationDateOffset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies any offset from the adjusted Calculation Period start date or adjusted Calculation Period end date applicable to each Payment Date.",
+      "Name" : "expirationDateOffset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.DateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20066
+      }
+    },
+    "businessCentersReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a set of financial business centers defined elsewhere in the document. This set of business centers is used to determine whether a particular day is a business day or not.",
+      "Name" : "businessCentersReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.BusinessCentersReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.BusinessCentersReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCentersReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20069
+      }
+    },
+    "businessCenters" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "businessCenters",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.BusinessCenters",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.BusinessCenters",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenters",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20072
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20074
+      }
+    }
+  },
+  "LocalFieldNames" : [ "expireRelativeToEvent", "expirationDateOffset", "businessCentersReference", "businessCenters", "id" ],
+  "IsSynthetic" : false
+}

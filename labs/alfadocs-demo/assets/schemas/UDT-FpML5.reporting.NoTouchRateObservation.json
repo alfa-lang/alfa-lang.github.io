@@ -1,0 +1,224 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NoTouchRateObservation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.NoTouchRateObservation {\n  observationStartDate : date?\n\n  observationEndDate : date?\n\n  lowerBarrier : FpML5.reporting.NoTouchLowerBarrierObservation\n\n  upperBarrier : FpML5.reporting.NoTouchUpperBarrierObservation\n\n  exerciseSide : FpML5.reporting.ExerciseSideEnum?\n\n  settlementType : string\n\n  cashSettlement : FpML5.reporting.SimplePayment\n\n  physicalSettlement : FpML5.reporting.PhysicalSettlement\n\n  payment : FpML5.reporting.NonNegativePayment?\n\n  clearingInstructions : FpML5.reporting.ClearingInstructions?\n\n  # If the touch or no touch event hasn't generated an exercise, then we specify whether the option is exercisable or not.\n  isExercisable : boolean\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionEvent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "observationStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "observationStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9240
+      }
+    },
+    "observationEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "observationEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9242
+      }
+    },
+    "lowerBarrier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "lowerBarrier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.NoTouchLowerBarrierObservation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.NoTouchLowerBarrierObservation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NoTouchLowerBarrierObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9244
+      }
+    },
+    "upperBarrier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "upperBarrier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.NoTouchUpperBarrierObservation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.NoTouchUpperBarrierObservation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NoTouchUpperBarrierObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9246
+      }
+    },
+    "exerciseSide" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseSide",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExerciseSideEnum",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9248
+      }
+    },
+    "settlementType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "settlementType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9250
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.SimplePayment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.SimplePayment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SimplePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9252
+      }
+    },
+    "physicalSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "physicalSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.PhysicalSettlement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.PhysicalSettlement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PhysicalSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9254
+      }
+    },
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9256
+      }
+    },
+    "clearingInstructions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "clearingInstructions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ClearingInstructions",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9258
+      }
+    },
+    "isExercisable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If the touch or no touch event hasn't generated an exercise, then we specify whether the option is exercisable or not.",
+      "Name" : "isExercisable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9260
+      }
+    }
+  },
+  "LocalFieldNames" : [ "observationStartDate", "observationEndDate", "lowerBarrier", "upperBarrier", "exerciseSide", "settlementType", "cashSettlement", "physicalSettlement", "payment", "clearingInstructions", "isExercisable" ],
+  "IsSynthetic" : false
+}

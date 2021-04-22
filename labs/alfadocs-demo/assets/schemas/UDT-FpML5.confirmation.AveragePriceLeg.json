@@ -1,0 +1,425 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The average price leg of an average price commodity bullion or non-precious metal forward transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AveragePriceLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The average price leg of an average price commodity bullion or non-precious metal forward transaction.\n #/\nrecord FpML5.confirmation.AveragePriceLeg {\n  # A reference to the party responsible for making the payments defined by this structure.\n  payerPartyReference : FpML5.confirmation.PartyReference\n\n  # A reference to the account responsible for making the payments defined by this structure.\n  payerAccountReference : FpML5.confirmation.AccountReference?\n\n  # A reference to the party that receives the payments corresponding to this structure.\n  receiverPartyReference : FpML5.confirmation.PartyReference\n\n  # A reference to the account that receives the payments corresponding to this structure.\n  receiverAccountReference : FpML5.confirmation.AccountReference?\n\n  # The Calculation Period dates for this leg of the trade where the Calculation Periods are all one day long. Only dates explicitly included determine the Calculation Periods and there is a Calculation Period for each date specified. As such one-day Calculation Period are typical a physically-settled emissions or metals trades it is expected that this element will not be used in performance swaps.\n  calculationDates : FpML5.confirmation.AdjustableDates\n\n  # The Calculation Period start dates for this leg of the swap. This type is only intended to be used if the Calculation Periods differ on each leg. If Calculation Periods mirror another leg, then the calculationPeriodsReference element should be used to point to the Calculation Periods on that leg - or the calculationPeriodsScheduleReference can be used to point to the Calculation Periods Schedule for that leg.\n  calculationPeriods : FpML5.confirmation.AdjustableDates\n\n  # The Calculation Periods for this leg of the swap. This type is only intended to be used if the Calculation Periods differ on each leg. If Calculation Periods mirror another leg, then the calculationPeriodsReference element should be used to point to the Calculation Periods on the other leg - or the calculationPeriodsScheduleReference can be used to point to the Calculation Periods Schedule for that leg.\n  calculationPeriodsSchedule : FpML5.confirmation.CommodityCalculationPeriodsSchedule\n\n  # A pointer style reference to the Calculation Periods defined on another leg.\n  calculationPeriodsReference : FpML5.confirmation.CalculationPeriodsReference\n\n  # A pointer style reference to the Calculation Periods Schedule defined on another leg.\n  calculationPeriodsScheduleReference : FpML5.confirmation.CalculationPeriodsScheduleReference\n\n  # A pointer style reference to single-day-duration Calculation Periods defined on another leg.\n  calculationPeriodsDatesReference : FpML5.confirmation.CalculationPeriodsDatesReference\n\n  # Identifies the underlying asset when it is a listed commodity.\n  commodity : FpML5.confirmation.Commodity\n\n  # A pointer to a specification of quantity defined elsewhere.\n  quantityReference : FpML5.confirmation.QuantityReference\n\n  # Defines the Start of the Pricing period. PricingStartDate is optional when discrete pricingDates are supplied and is not recommended to be included. Should they coexist, pricingStartDate is expected to be the same as the earliest pricing date or earlier for a Term deal as the discrete dates will take precedence.\n  pricingStartDate : FpML5.confirmation.AdjustableDate\n\n  # Captures details relevant to the calculation of the floating price.\n  calculation : FpML5.confirmation.FloatingLegCalculation\n\n  # The Payment Dates of the trade relative to the Calculation Periods.\n  relativePaymentDates : FpML5.confirmation.CommodityRelativePaymentDates\n\n  # Dates on which payments will be made.\n  paymentDates : FpML5.confirmation.AdjustableDatesOrRelativeDateOffset\n\n  # If present and true indicates that the Payment Date(s) are specified in the relevant master agreement.\n  masterAgreementPaymentDates : boolean\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityForward",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "payerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for making the payments defined by this structure.",
+      "Name" : "payerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9264
+      }
+    },
+    "payerAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account responsible for making the payments defined by this structure.",
+      "Name" : "payerAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9267
+      }
+    },
+    "receiverPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that receives the payments corresponding to this structure.",
+      "Name" : "receiverPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9270
+      }
+    },
+    "receiverAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account that receives the payments corresponding to this structure.",
+      "Name" : "receiverAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9273
+      }
+    },
+    "calculationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Calculation Period dates for this leg of the trade where the Calculation Periods are all one day long. Only dates explicitly included determine the Calculation Periods and there is a Calculation Period for each date specified. As such one-day Calculation Period are typical a physically-settled emissions or metals trades it is expected that this element will not be used in performance swaps.",
+      "Name" : "calculationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9276
+      }
+    },
+    "calculationPeriods" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Calculation Period start dates for this leg of the swap. This type is only intended to be used if the Calculation Periods differ on each leg. If Calculation Periods mirror another leg, then the calculationPeriodsReference element should be used to point to the Calculation Periods on that leg - or the calculationPeriodsScheduleReference can be used to point to the Calculation Periods Schedule for that leg.",
+      "Name" : "calculationPeriods",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9279
+      }
+    },
+    "calculationPeriodsSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Calculation Periods for this leg of the swap. This type is only intended to be used if the Calculation Periods differ on each leg. If Calculation Periods mirror another leg, then the calculationPeriodsReference element should be used to point to the Calculation Periods on the other leg - or the calculationPeriodsScheduleReference can be used to point to the Calculation Periods Schedule for that leg.",
+      "Name" : "calculationPeriodsSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityCalculationPeriodsSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityCalculationPeriodsSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityCalculationPeriodsSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9282
+      }
+    },
+    "calculationPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodsReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CalculationPeriodsReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9285
+      }
+    },
+    "calculationPeriodsScheduleReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods Schedule defined on another leg.",
+      "Name" : "calculationPeriodsScheduleReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodsScheduleReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CalculationPeriodsScheduleReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodsScheduleReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9288
+      }
+    },
+    "calculationPeriodsDatesReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to single-day-duration Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsDatesReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodsDatesReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CalculationPeriodsDatesReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodsDatesReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9291
+      }
+    },
+    "commodity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a listed commodity.",
+      "Name" : "commodity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Commodity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Commodity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Commodity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9294
+      }
+    },
+    "quantityReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer to a specification of quantity defined elsewhere.",
+      "Name" : "quantityReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.QuantityReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.QuantityReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.QuantityReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9297
+      }
+    },
+    "pricingStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the Start of the Pricing period. PricingStartDate is optional when discrete pricingDates are supplied and is not recommended to be included. Should they coexist, pricingStartDate is expected to be the same as the earliest pricing date or earlier for a Term deal as the discrete dates will take precedence.",
+      "Name" : "pricingStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9300
+      }
+    },
+    "calculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Captures details relevant to the calculation of the floating price.",
+      "Name" : "calculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FloatingLegCalculation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FloatingLegCalculation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FloatingLegCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9303
+      }
+    },
+    "relativePaymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Payment Dates of the trade relative to the Calculation Periods.",
+      "Name" : "relativePaymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityRelativePaymentDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityRelativePaymentDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityRelativePaymentDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9306
+      }
+    },
+    "paymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Dates on which payments will be made.",
+      "Name" : "paymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableDatesOrRelativeDateOffset",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableDatesOrRelativeDateOffset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableDatesOrRelativeDateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9309
+      }
+    },
+    "masterAgreementPaymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and true indicates that the Payment Date(s) are specified in the relevant master agreement.",
+      "Name" : "masterAgreementPaymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9312
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9315
+      }
+    }
+  },
+  "LocalFieldNames" : [ "payerPartyReference", "payerAccountReference", "receiverPartyReference", "receiverAccountReference", "calculationDates", "calculationPeriods", "calculationPeriodsSchedule", "calculationPeriodsReference", "calculationPeriodsScheduleReference", "calculationPeriodsDatesReference", "commodity", "quantityReference", "pricingStartDate", "calculation", "relativePaymentDates", "paymentDates", "masterAgreementPaymentDates", "id" ],
+  "IsSynthetic" : false
+}

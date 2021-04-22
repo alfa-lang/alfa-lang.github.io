@@ -1,0 +1,104 @@
+# Python
+
+### Introduction
+
+Similar to the Java generator and runtime support from Alfa, this Exporter generates CSharp representations of Alfa definitions.
+
+The CSharp support has been built for `.NET Core 2.1` or higher. If other versions are required, please contact info@alfa-lang.io.
+
+The CSharp generator is provided as part of the 'Alfa Professional' version of Alfa. Please contact us at info@alfa-lang.io
+for an evaluation.
+
+### Usage Steps
+
+- Similar to generating Java, CSharp is generated using the following commandline.
+
+>```
+>alfa -c -e csharp -o generated/csharp src
+>```
+
+
+- The generated CSharp depends on a library `Alfa.Net.Runtime` which is made available as a NuGet package. Follow the steps below
+to download and install `Alfa.Net.Runtime`. On windows use `%USERPROFILE%` instead of `$HOME`. If `curl` command not available,
+download using the browser and use the nuget command.
+
+>```
+>curl -L --http1.1 https://github.com/alfa-lang/distributions/raw/master/downloads/Alfa.Net.Runtime.0.8.0.nupkg --output Alfa.Net.Runtime.0.8.0.nupkg
+>nuget add Alfa.Net.Runtime.0.8.0.nupkg  -Source $HOME/.nuget/packages/
+>```
+
+- Once the NuGet package is installed, create a `.csproj` file and compile the generated code. Refer to the example below for
+contents of the csproj file. Save the contents into a `Alfa.Demo.csproj` file. The subdirectory `generated/csharp` will already
+contain the generated code from the previous step.
+>```
+><Project Sdk="Microsoft.NET.Sdk">
+>    <PropertyGroup>
+>        <OutputType>Library</OutputType>
+>        <AssemblyName>Alfa.Pro.Demo</AssemblyName>
+>        <TargetFramework>netcoreapp2.1</TargetFramework>
+>        <VersionPrefix>0.8.0</VersionPrefix>
+>        <VersionSuffix></VersionSuffix>
+>    </PropertyGroup>
+>
+>    <ItemGroup>
+>      <Folder Include="src\generated" />
+>      <Folder Include="src\main" />
+>    </ItemGroup>
+>
+>    <ItemGroup>
+>      <PackageReference Include="Alfa.Net.Runtime" Version="0.8.0" />
+>    </ItemGroup>
+>
+></Project>
+>```
+
+- In the directory containing the `.csproj` file, run `dotnet build`. This will build the generated code and produce a `dll`. Congratulations! You have built your first Alfa .Net type library!
+
+
+- If the `.csproj` is opened using an .NET IDE, you can proceed to write some sample code that uses the generated library.
+> Given the Alfa definition below:
+>```csharp
+>record Club.Player {
+>  Name : string
+>  Age : int
+>  Average : double
+>  RankingByYear : map< int, int >
+>}
+>```
+> The following CSharp code can be written to run against the generated code.
+>
+>```csharp
+>using System;
+>
+>using System.Collections.Generic;
+>
+>using alfa.rt;
+>using Club;
+>
+>namespace Alfa.Pro.Demo
+>{
+>    public class App
+>    {
+>        static void Main(string[] args)
+>        {
+>            var rankings = new Dictionary<int, int>{
+>                { 2018, 1 },
+>                { 2019, 3 }
+>            };
+>
+>            // Use a builder to incrementally construct the object
+>            var builder = new Club.Player.Builder();
+>            builder.setAge(10).setName("Bob").setAverage(10.12).putAllRankingByYear(rankings);
+>            // Finalise and build immutable object
+>            var player1 = builder.build();
+>
+>            // Round trip object <> JSON
+>            var json = Codec.toJson(player1);
+>            var decoded = Codec.fromJson<Player>(json);
+>
+>            // Access field as a Property - will print "Bob"
+>            Console.WriteLine( decoded.Name );
+>        }
+>    }
+>}
+>```

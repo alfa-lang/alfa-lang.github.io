@@ -1,0 +1,57 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The type that indicates the length of the resource.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ResourceLength",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The type that indicates the length of the resource.\n #/\nrecord FpML5.pretrade.ResourceLength {\n  # The length unit of the resource. For example, pages (pdf, text documents) or time (audio, video files).\n  lengthUnit : string?\n\n  # The length value of the resource.\n  lengthValue : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Resource",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "lengthUnit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The length unit of the resource. For example, pages (pdf, text documents) or time (audio, video files).",
+      "Name" : "lengthUnit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2463
+      }
+    },
+    "lengthValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The length value of the resource.",
+      "Name" : "lengthValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2466
+      }
+    }
+  },
+  "LocalFieldNames" : [ "lengthUnit", "lengthValue" ],
+  "IsSynthetic" : false
+}

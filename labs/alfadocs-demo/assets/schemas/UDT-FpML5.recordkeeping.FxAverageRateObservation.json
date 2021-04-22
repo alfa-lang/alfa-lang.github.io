@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that, for average rate options, is used to describe each specific observation date, as opposed to a parametric frequency of rate observations.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAverageRateObservation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that, for average rate options, is used to describe each specific observation date, as opposed to a parametric frequency of rate observations.\n #/\nrecord FpML5.recordkeeping.FxAverageRateObservation {\n  # A specific date for which an observation against a particular rate will be made and will be used for subsequent computations.\n  `date` : date?\n\n  # An optional factor that can be used for weighting certain observation dates. Typically, firms will weight each date with a factor of 1 if there are standard, unweighted adjustments.\n  averageRateWeightingFactor : decimal?\n\n  # The observed rate of exchange between the two option currencies. In the absence of rateObservationQuoteBasis, the rate is assumed to be quoted as per option strike/strikeQuoteBasis.\n  rate : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAsianFeature",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "date" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A specific date for which an observation against a particular rate will be made and will be used for subsequent computations.",
+      "Name" : "date",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12085
+      }
+    },
+    "averageRateWeightingFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An optional factor that can be used for weighting certain observation dates. Typically, firms will weight each date with a factor of 1 if there are standard, unweighted adjustments.",
+      "Name" : "averageRateWeightingFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12088
+      }
+    },
+    "rate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The observed rate of exchange between the two option currencies. In the absence of rateObservationQuoteBasis, the rate is assumed to be quoted as per option strike/strikeQuoteBasis.",
+      "Name" : "rate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12091
+      }
+    }
+  },
+  "LocalFieldNames" : [ "date", "averageRateWeightingFactor", "rate" ],
+  "IsSynthetic" : false
+}

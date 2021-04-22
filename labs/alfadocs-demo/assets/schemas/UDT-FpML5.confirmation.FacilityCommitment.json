@@ -1,0 +1,145 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Represents the commitment amount against a facility or facility portion. Also shows the utilization levels against the total commitment amount (in facility currency).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityCommitment",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Represents the commitment amount against a facility or facility portion. Also shows the utilization levels against the total commitment amount (in facility currency).\n #/\nrecord FpML5.confirmation.FacilityCommitment {\n  # The total commitment level associated with the facility or facility portion (in facility currency).\n  totalCommitmentAmount : FpML5.confirmation.MoneyWithParticipantShare\n\n  # The amount of utilization which is funded.\n  fundedUtilizedAmount : FpML5.confirmation.MoneyWithParticipantShare?\n\n  # The amount of utilization which is unfunded.\n  unfundedUtilizedAmount : FpML5.confirmation.MoneyWithParticipantShare\n\n  # The portion of the commitment amount which is NOT available for the borrower to draw against.\n  unavailableToUtilizeAmount : FpML5.confirmation.MoneyWithParticipantShare\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommitmentAdjustment",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DelayedDraw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Facility",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityOutstandingsPosition",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityPosition",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilitySummary",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LetterOfCreditFacility",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Revolver",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TermLoan",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "totalCommitmentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The total commitment level associated with the facility or facility portion (in facility currency).",
+      "Name" : "totalCommitmentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20218
+      }
+    },
+    "fundedUtilizedAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of utilization which is funded.",
+      "Name" : "fundedUtilizedAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20221
+      }
+    },
+    "unfundedUtilizedAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of utilization which is unfunded.",
+      "Name" : "unfundedUtilizedAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20224
+      }
+    },
+    "unavailableToUtilizeAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The portion of the commitment amount which is NOT available for the borrower to draw against.",
+      "Name" : "unavailableToUtilizeAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20227
+      }
+    }
+  },
+  "LocalFieldNames" : [ "totalCommitmentAmount", "fundedUtilizedAmount", "unfundedUtilizedAmount", "unavailableToUtilizeAmount" ],
+  "IsSynthetic" : false
+}

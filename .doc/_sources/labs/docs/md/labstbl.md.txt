@@ -1,0 +1,45 @@
+# Table Runtime
+
+The `table<T>` type will be highly useful in being able to represent hierarchical Afla UDT structures in a tabular manner.
+This can be useful for storage, display purposes and various other use-cases.
+
+Given there are several representations of a 'table' in various platforms/languages, the ALFA table will be
+represented differently based on usage (e.g. Java SQL ResultSet, Spark DataFrame, Pandas DataFrame) instead of expecting
+developers to adapt another new table-like API.
+
+In addition the generic flattener utility is available that is capable for flattening *any* ALFA object. The example below
+shows this in action.
+
+### Generic Flattening of ALFA Object
+
+Given the following ALFA definition:
+```csharp
+record SalesPerson {
+    Name : string
+    Customers : list< Customer >
+}
+
+record Customer {
+    Id : uuid
+    Name : string
+    DateOfBirth : date
+    Accounts : set< string >
+    CustomerType : enum< Standard, Gold, Platinum >
+}
+```
+
+ALFA runtime implementations are able to create a flattened table representation. The output below is a Pandas Dataframe
+created from the ALFA's Python library for an instance of the SalesPerson record above.
+
+```
+   Name  __Customers__Id                          Customers_Id Customers_Name Customers_DateOfBirth Customers_CustomerType   __Customers_Accounts__Id_L1 Customers_Accounts
+0  Fred                1  f75b85fc-c713-4e4d-971e-6a23c6642507         George            1998-03-05               Platinum                             1           G6450981
+1  Fred                1  f75b85fc-c713-4e4d-971e-6a23c6642507         George            1998-03-05               Platinum                             2           G5234523
+2  Fred                1  f75b85fc-c713-4e4d-971e-6a23c6642507         George            1998-03-05               Platinum                             3           G2323612
+3  Fred                2  e6c4aae7-9472-4245-b6cf-faa8acd6f8e3            Bob            2002-05-22                   Gold                             1           J2323975
+4  Fred                2  e6c4aae7-9472-4245-b6cf-faa8acd6f8e3            Bob            2002-05-22                   Gold                             2           J6458031
+5  Fred                2  e6c4aae7-9472-4245-b6cf-faa8acd6f8e3            Bob            2002-05-22                   Gold                             3           J5234523
+6  Fred                3  199a8266-572a-4c02-b573-4c1de0c21dcc           Fred            2000-10-12               Standard                             1           F6458764
+7  Fred                3  199a8266-572a-4c02-b573-4c1de0c21dcc           Fred            2000-10-12               Standard                             2           F2323431
+8  Fred                3  199a8266-572a-4c02-b573-4c1de0c21dcc           Fred            2000-10-12               Standard                             3           F5234523
+```

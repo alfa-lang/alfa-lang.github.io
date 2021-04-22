@@ -1,0 +1,227 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The details of a fixed payment. Can be used for a forward transaction or as the base for a more complex fixed leg component such as the fixed leg of a swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NonPeriodicFixedPriceLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The details of a fixed payment. Can be used for a forward transaction or as the base for a more complex fixed leg component such as the fixed leg of a swap.\n #/\nrecord FpML5.reporting.NonPeriodicFixedPriceLeg {\n  # A reference to the party responsible for making the payments defined by this structure.\n  payerPartyReference : FpML5.reporting.PartyReference?\n\n  # A reference to the account responsible for making the payments defined by this structure.\n  payerAccountReference : FpML5.reporting.AccountReference?\n\n  # A reference to the party that receives the payments corresponding to this structure.\n  receiverPartyReference : FpML5.reporting.PartyReference?\n\n  # A reference to the account that receives the payments corresponding to this structure.\n  receiverAccountReference : FpML5.reporting.AccountReference?\n\n  # Fixed price on which fixed payments are based.\n  fixedPrice : FpML5.reporting.FixedPrice?\n\n  # The total amount of the fixed payment for all units of the underlying commodity.\n  totalPrice : FpML5.reporting.NonNegativeMoney?\n\n  # A pointer style reference to a quantity defined on another leg.\n  quantityReference : FpML5.reporting.QuantityReference?\n\n  # The Payment Dates of the trade relative to the Calculation Periods.\n  relativePaymentDates : FpML5.reporting.CommodityRelativePaymentDates\n\n  # Dates on which payments will be made.\n  paymentDates : FpML5.reporting.AdjustableDatesOrRelativeDateOffset\n\n  # If present and true indicates that the Payment Date(s) are specified in the relevant master agreement.\n  masterAgreementPaymentDates : boolean\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityForward",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "payerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for making the payments defined by this structure.",
+      "Name" : "payerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29850
+      }
+    },
+    "payerAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account responsible for making the payments defined by this structure.",
+      "Name" : "payerAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29853
+      }
+    },
+    "receiverPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that receives the payments corresponding to this structure.",
+      "Name" : "receiverPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29856
+      }
+    },
+    "receiverAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account that receives the payments corresponding to this structure.",
+      "Name" : "receiverAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29859
+      }
+    },
+    "fixedPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fixed price on which fixed payments are based.",
+      "Name" : "fixedPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FixedPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29862
+      }
+    },
+    "totalPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The total amount of the fixed payment for all units of the underlying commodity.",
+      "Name" : "totalPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29865
+      }
+    },
+    "quantityReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a quantity defined on another leg.",
+      "Name" : "quantityReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.QuantityReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29868
+      }
+    },
+    "relativePaymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Payment Dates of the trade relative to the Calculation Periods.",
+      "Name" : "relativePaymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CommodityRelativePaymentDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CommodityRelativePaymentDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityRelativePaymentDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29871
+      }
+    },
+    "paymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Dates on which payments will be made.",
+      "Name" : "paymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.AdjustableDatesOrRelativeDateOffset",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.AdjustableDatesOrRelativeDateOffset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableDatesOrRelativeDateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29874
+      }
+    },
+    "masterAgreementPaymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and true indicates that the Payment Date(s) are specified in the relevant master agreement.",
+      "Name" : "masterAgreementPaymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29877
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29880
+      }
+    }
+  },
+  "LocalFieldNames" : [ "payerPartyReference", "payerAccountReference", "receiverPartyReference", "receiverAccountReference", "fixedPrice", "totalPrice", "quantityReference", "relativePaymentDates", "paymentDates", "masterAgreementPaymentDates", "id" ],
+  "IsSynthetic" : false
+}

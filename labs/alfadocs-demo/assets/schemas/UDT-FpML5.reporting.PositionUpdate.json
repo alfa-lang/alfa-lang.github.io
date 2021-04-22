@@ -1,0 +1,96 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that allows a position to be defined. It includes identification information (ID and version), trade information, etc.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionUpdate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that allows a position to be defined. It includes identification information (ID and version), trade information, etc.\n #/\nrecord FpML5.reporting.PositionUpdate {\n  # Records when the update occurred.\n  timestamp : datetime?\n\n  # Records the type of update that occurred (created, modified, deleted).\n  type : string\n\n  # Allows information about reason for the update to be record.\n  reason : FpML5.reporting.PositionUpdateReason?\n\n  # The affected position.\n  position : FpML5.reporting.Position\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionActivityReport",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "timestamp" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Records when the update occurred.",
+      "Name" : "timestamp",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6606
+      }
+    },
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Records the type of update that occurred (created, modified, deleted).",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6609
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows information about reason for the update to be record.",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositionUpdateReason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6612
+      }
+    },
+    "position" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The affected position.",
+      "Name" : "position",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Position",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Position",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Position",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6615
+      }
+    }
+  },
+  "LocalFieldNames" : [ "timestamp", "type", "reason", "position" ],
+  "IsSynthetic" : false
+}

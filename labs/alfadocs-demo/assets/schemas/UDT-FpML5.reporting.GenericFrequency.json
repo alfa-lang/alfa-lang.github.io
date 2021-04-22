@@ -1,0 +1,123 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.GenericFrequency",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.GenericFrequency {\n  # A time period multiplier, e.g. 1, 2 or 3 etc. If the period value is T (Term) then periodMultiplier must contain the value 1.\n  periodMultiplier : int( 1, * )?\n\n  # A time period, e.g. a day, week, month, year or term of the stream.\n  period : FpML5.reporting.PeriodExtendedEnum?\n\n  payerPartyReference : FpML5.reporting.PartyReference\n\n  underlyerReference : FpML5.reporting.UnderlyerReference\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.GenericProduct",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "periodMultiplier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A time period multiplier, e.g. 1, 2 or 3 etc. If the period value is T (Term) then periodMultiplier must contain the value 1.",
+      "Name" : "periodMultiplier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4290
+      }
+    },
+    "period" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A time period, e.g. a day, week, month, year or term of the stream.",
+      "Name" : "period",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PeriodExtendedEnum",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4293
+      }
+    },
+    "payerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "payerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4296
+      }
+    },
+    "underlyerReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "underlyerReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.UnderlyerReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.UnderlyerReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.UnderlyerReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4298
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4300
+      }
+    }
+  },
+  "LocalFieldNames" : [ "periodMultiplier", "period", "payerPartyReference", "underlyerReference", "id" ],
+  "IsSynthetic" : false
+}

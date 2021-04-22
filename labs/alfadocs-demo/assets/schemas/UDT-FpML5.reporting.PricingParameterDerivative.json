@@ -1,0 +1,116 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A definition of the mathematical derivative with respect to a specific pricing parameter.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PricingParameterDerivative",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A definition of the mathematical derivative with respect to a specific pricing parameter.\n #/\nrecord FpML5.reporting.PricingParameterDerivative {\n  # A description, if needed, of how the derivative is computed.\n  description : string?\n\n  # A reference to the pricing input parameter to which the sensitivity is computed. If it is omitted, the derivative definition is generic, and applies to any input point in the valuation set.\n  parameterReference : FpML5.reporting.AssetOrTermPointOrPricingStructureReference?\n\n  # Reference(s) to the pricing input dates that are shifted when the sensitivity is computed. Depending on the time advance method used, this list could vary. Used for describing time-advance derivatives (theta, carry, etc.)\n  inputDateReference : FpML5.reporting.ValuationReference\n\n  # The method by which a derivative is computed, e.g. analytic, numerical model, perturbation, etc., and the corresponding parameters\n  calculationProcedure : FpML5.reporting.DerivativeCalculationProcedure?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SensitivityDefinition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "description" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A description, if needed, of how the derivative is computed.",
+      "Name" : "description",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5285
+      }
+    },
+    "parameterReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the pricing input parameter to which the sensitivity is computed. If it is omitted, the derivative definition is generic, and applies to any input point in the valuation set.",
+      "Name" : "parameterReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AssetOrTermPointOrPricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5288
+      }
+    },
+    "inputDateReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference(s) to the pricing input dates that are shifted when the sensitivity is computed. Depending on the time advance method used, this list could vary. Used for describing time-advance derivatives (theta, carry, etc.)",
+      "Name" : "inputDateReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ValuationReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ValuationReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ValuationReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5291
+      }
+    },
+    "calculationProcedure" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which a derivative is computed, e.g. analytic, numerical model, perturbation, etc., and the corresponding parameters",
+      "Name" : "calculationProcedure",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.DerivativeCalculationProcedure",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5294
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5297
+      }
+    }
+  },
+  "LocalFieldNames" : [ "description", "parameterReference", "inputDateReference", "calculationProcedure", "id" ],
+  "IsSynthetic" : false
+}

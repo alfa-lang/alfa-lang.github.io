@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ClearingInstructions",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.ClearingInstructions {\n  requestedClearingAction : string?\n\n  requestedClearingOrganizationPartyReference : FpML5.confirmation.PartyReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.NoTouchRateObservation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TouchRateObservation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "requestedClearingAction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "requestedClearingAction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 14681
+      }
+    },
+    "requestedClearingOrganizationPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "requestedClearingOrganizationPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 14683
+      }
+    }
+  },
+  "LocalFieldNames" : [ "requestedClearingAction", "requestedClearingOrganizationPartyReference" ],
+  "IsSynthetic" : false
+}

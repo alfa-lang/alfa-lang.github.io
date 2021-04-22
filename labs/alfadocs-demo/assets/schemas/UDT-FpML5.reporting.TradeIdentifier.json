@@ -1,0 +1,158 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a trade identifier issued by the indicated party.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeIdentifier",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a trade identifier issued by the indicated party.\n #/\nrecord FpML5.reporting.TradeIdentifier {\n  issuer : string\n\n  tradeId : string\n\n  # Reference to a party.\n  partyReference : FpML5.reporting.PartyReference?\n\n  # Reference to an account.\n  accountReference : FpML5.reporting.AccountReference?\n\n  # Identifies the role of this party in reporting this trade (e.g. originator, counterparty, recipient).\n  reportingRole : string?\n\n  # A trade identifier accompanied by a version number. In regulatory reporting views, this should be avoided except for internal mnessaging.\n  versionedTradeId : FpML5.reporting.VersionedTradeId\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Allocation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ClearingStatusItem",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EventIdentifier",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifier",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradePackage",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "issuer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "issuer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1204
+      }
+    },
+    "tradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1206
+      }
+    },
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1208
+      }
+    },
+    "accountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an account.",
+      "Name" : "accountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1211
+      }
+    },
+    "reportingRole" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the role of this party in reporting this trade (e.g. originator, counterparty, recipient).",
+      "Name" : "reportingRole",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1214
+      }
+    },
+    "versionedTradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A trade identifier accompanied by a version number. In regulatory reporting views, this should be avoided except for internal mnessaging.",
+      "Name" : "versionedTradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.VersionedTradeId",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.VersionedTradeId",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.VersionedTradeId",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1217
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1220
+      }
+    }
+  },
+  "LocalFieldNames" : [ "issuer", "tradeId", "partyReference", "accountReference", "reportingRole", "versionedTradeId", "id" ],
+  "IsSynthetic" : false
+}

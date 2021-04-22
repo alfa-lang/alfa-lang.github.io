@@ -1,0 +1,81 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A description of the underlying asset of the transaction",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExposureUnderlyingAsset",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A description of the underlying asset of the transaction\n #/\nrecord FpML5.reporting.ExposureUnderlyingAsset {\n  # A textual description of the asset that underlies the exposure.\n  description : string?\n\n  # Define the underlying asset, either a listed security or other instrument.\n  underlyingAsset : FpML5.reporting.Asset\n\n  # Identification of the underlying asset, using public and/or private identifiers.\n  instrumentId : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReportedExposure",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "description" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A textual description of the asset that underlies the exposure.",
+      "Name" : "description",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18410
+      }
+    },
+    "underlyingAsset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Define the underlying asset, either a listed security or other instrument.",
+      "Name" : "underlyingAsset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Asset",
+        "UdtType" : "traitType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Asset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Asset",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18413
+      }
+    },
+    "instrumentId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the underlying asset, using public and/or private identifiers.",
+      "Name" : "instrumentId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18416
+      }
+    }
+  },
+  "LocalFieldNames" : [ "description", "underlyingAsset", "instrumentId" ],
+  "IsSynthetic" : false
+}

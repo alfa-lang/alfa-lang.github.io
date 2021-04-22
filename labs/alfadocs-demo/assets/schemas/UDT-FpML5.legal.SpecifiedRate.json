@@ -1,0 +1,78 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to specify an interest rate.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.SpecifiedRate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to specify an interest rate.\n #/\nrecord FpML5.legal.SpecifiedRate {\n  currency : string\n\n  fixedRate : decimal\n\n  floatingRate : string\n\n  spread : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.IndependentAmountInterestRate",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1595
+      }
+    },
+    "fixedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "fixedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1597
+      }
+    },
+    "floatingRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "floatingRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1599
+      }
+    },
+    "spread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "spread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1601
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency", "fixedRate", "floatingRate", "spread" ],
+  "IsSynthetic" : false
+}

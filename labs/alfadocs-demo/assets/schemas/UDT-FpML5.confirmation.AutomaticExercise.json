@@ -1,0 +1,37 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to define automatic exercise of a swaption. With automatic exercise the option is deemed to have exercised if it is in the money by more than the threshold amount on the exercise date.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AutomaticExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to define automatic exercise of a swaption. With automatic exercise the option is deemed to have exercised if it is in the money by more than the threshold amount on the exercise date.\n #/\nrecord FpML5.confirmation.AutomaticExercise {\n  # A threshold rate. The threshold of 0.10% would be represented as 0.001\n  thresholdRate : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExerciseProcedure",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "thresholdRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A threshold rate. The threshold of 0.10% would be represented as 0.001",
+      "Name" : "thresholdRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5054
+      }
+    }
+  },
+  "LocalFieldNames" : [ "thresholdRate" ],
+  "IsSynthetic" : false
+}

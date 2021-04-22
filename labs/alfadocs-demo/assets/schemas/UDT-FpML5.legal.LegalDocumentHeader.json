@@ -1,0 +1,127 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The legal document header.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.LegalDocumentHeader",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The legal document header.\n #/\nrecord FpML5.legal.LegalDocumentHeader {\n  partyRoles : FpML5.legal.PartyRoles\n\n  # The date on which the legal document has been agreed between the parties.\n  agreementDate : date\n\n  # The date on which the agreement is effective. It is expected that it will most often correspond to the agreement date, although there could be situations where the parties will explictly agree on a distinct effective date.\n  effectiveDate : date\n\n  # The legal document identifier. Several identifiers can be specified.\n  partyDocumentIdentifier : FpML5.legal.PartyDocumentIdentifier?\n\n  # The reference to the document that is amended by this legal document.\n  amendedDocument : FpML5.legal.DocumentReference?\n\n  documentHistory : FpML5.legal.LegalDocumentHistory?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.LegalDocument",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyRoles" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "partyRoles",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.PartyRoles",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.PartyRoles",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyRoles",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2841
+      }
+    },
+    "agreementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the legal document has been agreed between the parties.",
+      "Name" : "agreementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2843
+      }
+    },
+    "effectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the agreement is effective. It is expected that it will most often correspond to the agreement date, although there could be situations where the parties will explictly agree on a distinct effective date.",
+      "Name" : "effectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2846
+      }
+    },
+    "partyDocumentIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The legal document identifier. Several identifiers can be specified.",
+      "Name" : "partyDocumentIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyDocumentIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2849
+      }
+    },
+    "amendedDocument" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The reference to the document that is amended by this legal document.",
+      "Name" : "amendedDocument",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.DocumentReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2852
+      }
+    },
+    "documentHistory" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "documentHistory",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.LegalDocumentHistory",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2855
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyRoles", "agreementDate", "effectiveDate", "partyDocumentIdentifier", "amendedDocument", "documentHistory" ],
+  "IsSynthetic" : false
+}

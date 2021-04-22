@@ -1,0 +1,120 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Physically settled leg of a physically settled electricity transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ElectricityPhysicalLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Physically settled leg of a physically settled electricity transaction.\n #/\nrecord FpML5.transparency.ElectricityPhysicalLeg {\n  # LoadType is a summary of the full description of the settlement periods with respect to the region. Used for describing Electricity delivery schedules (e.g. Base, Peak, Off-Peak, Custom).\n  loadType : string\n\n  # The specification of the electricity to be delivered.\n  electricity : FpML5.transparency.ElectricityProduct\n\n  # The physical delivery conditions for the transaction.\n  deliveryConditions : FpML5.transparency.ElectricityDelivery\n\n  # The different options for specifying the quantity.\n  deliveryQuantity : FpML5.transparency.ElectricityPhysicalQuantity\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "loadType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "LoadType is a summary of the full description of the settlement periods with respect to the region. Used for describing Electricity delivery schedules (e.g. Base, Peak, Off-Peak, Custom).",
+      "Name" : "loadType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 2713
+      }
+    },
+    "electricity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specification of the electricity to be delivered.",
+      "Name" : "electricity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.ElectricityProduct",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.ElectricityProduct",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ElectricityProduct",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 2716
+      }
+    },
+    "deliveryConditions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The physical delivery conditions for the transaction.",
+      "Name" : "deliveryConditions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.ElectricityDelivery",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.ElectricityDelivery",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ElectricityDelivery",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 2719
+      }
+    },
+    "deliveryQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The different options for specifying the quantity.",
+      "Name" : "deliveryQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.ElectricityPhysicalQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.ElectricityPhysicalQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ElectricityPhysicalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 2722
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 2725
+      }
+    }
+  },
+  "LocalFieldNames" : [ "loadType", "electricity", "deliveryConditions", "deliveryQuantity", "id" ],
+  "IsSynthetic" : false
+}

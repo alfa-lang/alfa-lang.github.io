@@ -1,0 +1,236 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Physically settled leg of a physically settled Bullion Transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.BullionPhysicalLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Physically settled leg of a physically settled Bullion Transaction.\n #/\nrecord FpML5.confirmation.BullionPhysicalLeg {\n  # A reference to the party responsible for making the payments defined by this structure.\n  payerPartyReference : FpML5.confirmation.PartyReference\n\n  # A reference to the account responsible for making the payments defined by this structure.\n  payerAccountReference : FpML5.confirmation.AccountReference?\n\n  # A reference to the party that receives the payments corresponding to this structure.\n  receiverPartyReference : FpML5.confirmation.PartyReference\n\n  # A reference to the account that receives the payments corresponding to this structure.\n  receiverAccountReference : FpML5.confirmation.AccountReference?\n\n  # The type of Bullion underlying a Bullion Transaction.\n  bullionType : string\n\n  # The physical delivery location for the transaction.\n  deliveryLocation : string\n\n  # The Quantity per Delivery Period.\n  physicalQuantity : FpML5.confirmation.CommodityNotionalQuantity\n\n  # Allows the documentation of a shaped quantity trade where the quantity changes over the life of the transaction.\n  physicalQuantitySchedule : FpML5.confirmation.CommodityPhysicalQuantitySchedule\n\n  # The Total Quantity of the commodity to be delivered.\n  totalPhysicalQuantity : FpML5.confirmation.UnitQuantity?\n\n  # Date on which the bullion will settle.\n  settlementDate : FpML5.confirmation.AdjustableOrRelativeDate\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "payerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for making the payments defined by this structure.",
+      "Name" : "payerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8823
+      }
+    },
+    "payerAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account responsible for making the payments defined by this structure.",
+      "Name" : "payerAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8826
+      }
+    },
+    "receiverPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that receives the payments corresponding to this structure.",
+      "Name" : "receiverPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8829
+      }
+    },
+    "receiverAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account that receives the payments corresponding to this structure.",
+      "Name" : "receiverAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8832
+      }
+    },
+    "bullionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of Bullion underlying a Bullion Transaction.",
+      "Name" : "bullionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8835
+      }
+    },
+    "deliveryLocation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The physical delivery location for the transaction.",
+      "Name" : "deliveryLocation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8838
+      }
+    },
+    "physicalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quantity per Delivery Period.",
+      "Name" : "physicalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityNotionalQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityNotionalQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8841
+      }
+    },
+    "physicalQuantitySchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows the documentation of a shaped quantity trade where the quantity changes over the life of the transaction.",
+      "Name" : "physicalQuantitySchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityPhysicalQuantitySchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityPhysicalQuantitySchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityPhysicalQuantitySchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8844
+      }
+    },
+    "totalPhysicalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Total Quantity of the commodity to be delivered.",
+      "Name" : "totalPhysicalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.UnitQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8847
+      }
+    },
+    "settlementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which the bullion will settle.",
+      "Name" : "settlementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8850
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8853
+      }
+    }
+  },
+  "LocalFieldNames" : [ "payerPartyReference", "payerAccountReference", "receiverPartyReference", "receiverAccountReference", "bullionType", "deliveryLocation", "physicalQuantity", "physicalQuantitySchedule", "totalPhysicalQuantity", "settlementDate", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,187 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OptionEvent",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.OptionEvent {\n  eventIdentifier : FpML5.recordkeeping.BusinessEventIdentifier?\n\n  # Fully describes the original trade (prior to the exercise).\n  originalTrade : FpML5.recordkeeping.Trade\n\n  # Identified the trade to which the option event applies.\n  tradeIdentifier : FpML5.recordkeeping.PartyTradeIdentifier\n\n  # A structure describing a barrier knock in event\n  knockIn : FpML5.recordkeeping.TriggerRateObservation\n\n  # A structure describing a barrier knock out event\n  knockOut : FpML5.recordkeeping.KnockOutRateObservation\n\n  # A structure describing a touch event\n  touch : FpML5.recordkeeping.TouchRateObservation\n\n  # A structure describing the outcome of an option having no touch events\n  noTouch : FpML5.recordkeeping.NoTouchRateObservation\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.NonpublicExecutionReport",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.NonpublicExecutionReportRetracted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eventIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "eventIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BusinessEventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2142
+      }
+    },
+    "originalTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fully describes the original trade (prior to the exercise).",
+      "Name" : "originalTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2144
+      }
+    },
+    "tradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identified the trade to which the option event applies.",
+      "Name" : "tradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2147
+      }
+    },
+    "knockIn" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A structure describing a barrier knock in event",
+      "Name" : "knockIn",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.TriggerRateObservation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.TriggerRateObservation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TriggerRateObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2150
+      }
+    },
+    "knockOut" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A structure describing a barrier knock out event",
+      "Name" : "knockOut",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.KnockOutRateObservation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.KnockOutRateObservation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.KnockOutRateObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2153
+      }
+    },
+    "touch" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A structure describing a touch event",
+      "Name" : "touch",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.TouchRateObservation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.TouchRateObservation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TouchRateObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2156
+      }
+    },
+    "noTouch" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A structure describing the outcome of an option having no touch events",
+      "Name" : "noTouch",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.NoTouchRateObservation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.NoTouchRateObservation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.NoTouchRateObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2159
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eventIdentifier", "originalTrade", "tradeIdentifier", "knockIn", "knockOut", "touch", "noTouch" ],
+  "IsSynthetic" : false
+}

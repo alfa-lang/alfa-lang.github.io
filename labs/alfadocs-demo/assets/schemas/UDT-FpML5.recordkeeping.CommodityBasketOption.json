@@ -1,0 +1,595 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityBasketOption",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.CommodityBasketOption {\n  # A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  primaryAssetClass : string\n\n  # A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.\n  secondaryAssetClass : string?\n\n  # A classification of the type of product. FpML defines a simple product categorization using a coding scheme.\n  productType : string\n\n  # A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.\n  productId : string\n\n  # Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.\n  embeddedOptionType : string?\n\n  # A reference to the party that buys this instrument, ie. pays for this instrument and receives the rights defined by it. See 2000 ISDA definitions Article 11.1 (b). In the case of FRAs this the fixed rate payer.\n  buyerPartyReference : FpML5.recordkeeping.PartyReference\n\n  # A reference to the account that buys this instrument.\n  buyerAccountReference : FpML5.recordkeeping.AccountReference?\n\n  # A reference to the party that sells (\"writes\") this instrument, i.e. that grants the rights defined by this instrument and in return receives a payment for it. See 2000 ISDA definitions Article 11.1 (a). In the case of FRAs this is the floating rate payer.\n  sellerPartyReference : FpML5.recordkeeping.PartyReference\n\n  # A reference to the account that sells this instrument.\n  sellerAccountReference : FpML5.recordkeeping.AccountReference?\n\n  # The type of option transaction.\n  optionType : string\n\n  # The effective date of the Commodity Option Transaction. Note that the Termination/Expiration Date should be specified in expirationDate within the CommodityAmericanExercise type or the CommodityEuropeanExercise type, as applicable.\n  effectiveDate : FpML5.recordkeeping.AdjustableOrRelativeDate?\n\n  # Specifies the termination date of the Commodity Option Transaction. In some confirmations this will be indicated as the second date in \"Option Term\" or \"Term\". Note: If provided, terminationDate should not be before specified expirationDate within the CommodityAmericanExercise type or the CommodityEuropeanExercise type.\n  terminationDate : FpML5.recordkeeping.AdjustableOrRelativeDate?\n\n  # A parametric representation of the Calculation Periods of the Commodity Option Transaction.\n  calculationPeriodsSchedule : FpML5.recordkeeping.CommodityCalculationPeriodsSchedule\n\n  # An absolute representation of the Calculation Period start dates of the Commodity Option Transaction.\n  calculationPeriods : FpML5.recordkeeping.AdjustableDates\n\n  notionalQuantityBasket : FpML5.recordkeeping.CommodityBasketByNotional\n\n  notionalAmountBasket : FpML5.recordkeeping.CommodityBasketByPercentage\n\n  strikePriceUnderlyingReference : FpML5.recordkeeping.StrikePriceUnderlyingReference\n\n  strikePriceBasketReference : FpML5.recordkeeping.StrikePriceBasketReference\n\n  # The currency amount of the strike price per unit.\n  strikePricePerUnit : FpML5.recordkeeping.NonNegativeMoney\n\n  strikePricePerUnitSchedule : FpML5.recordkeeping.CommodityStrikeSchedule\n\n  # The currency amount of the strike price per unit.\n  floatingStrikePricePerUnit : FpML5.recordkeeping.FloatingStrikePrice\n\n  floatingStrikePricePerUnitSchedule : FpML5.recordkeeping.CommodityCalculationPeriodsSchedule\n\n  # The parameters for defining how the commodity option can be exercised and how it is settled.\n  exercise : FpML5.recordkeeping.CommodityExerciseBasket\n\n  # The option premium payable by the buyer to the seller.\n  premium : FpML5.recordkeeping.CommodityPremium\n\n  # If Common Pricing is elected (“true”) for a Transaction with referencing more than one Commodity Reference Price then no date will be a Pricing Date unless such a date is a day on which all Commodity Reference Prices are scheduled to be published.\n  commonPricing : boolean?\n\n  # Contains contract terms related to triggers and responses to market disruptions as defined in the 1993 or 2005 Commodity Definitions.\n  marketDisruption : FpML5.recordkeeping.CommodityMarketDisruption?\n\n  # Describes contract terms related to the consequences of Bullion Settlement Disruption Events.\n  settlementDisruption : string?\n\n  # Rounding direction and precision for amounts.\n  rounding : FpML5.recordkeeping.Rounding?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "primaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "primaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 204
+      }
+    },
+    "secondaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "secondaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 207
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the type of product. FpML defines a simple product categorization using a coding scheme.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 210
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 213
+      }
+    },
+    "embeddedOptionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.",
+      "Name" : "embeddedOptionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 216
+      }
+    },
+    "buyerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that buys this instrument, ie. pays for this instrument and receives the rights defined by it. See 2000 ISDA definitions Article 11.1 (b). In the case of FRAs this the fixed rate payer.",
+      "Name" : "buyerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 219
+      }
+    },
+    "buyerAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account that buys this instrument.",
+      "Name" : "buyerAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 222
+      }
+    },
+    "sellerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that sells (\"writes\") this instrument, i.e. that grants the rights defined by this instrument and in return receives a payment for it. See 2000 ISDA definitions Article 11.1 (a). In the case of FRAs this is the floating rate payer.",
+      "Name" : "sellerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 225
+      }
+    },
+    "sellerAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account that sells this instrument.",
+      "Name" : "sellerAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 228
+      }
+    },
+    "optionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of option transaction.",
+      "Name" : "optionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 231
+      }
+    },
+    "effectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The effective date of the Commodity Option Transaction. Note that the Termination/Expiration Date should be specified in expirationDate within the CommodityAmericanExercise type or the CommodityEuropeanExercise type, as applicable.",
+      "Name" : "effectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 234
+      }
+    },
+    "terminationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the termination date of the Commodity Option Transaction. In some confirmations this will be indicated as the second date in \"Option Term\" or \"Term\". Note: If provided, terminationDate should not be before specified expirationDate within the CommodityAmericanExercise type or the CommodityEuropeanExercise type.",
+      "Name" : "terminationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 237
+      }
+    },
+    "calculationPeriodsSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A parametric representation of the Calculation Periods of the Commodity Option Transaction.",
+      "Name" : "calculationPeriodsSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityCalculationPeriodsSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityCalculationPeriodsSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityCalculationPeriodsSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 240
+      }
+    },
+    "calculationPeriods" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An absolute representation of the Calculation Period start dates of the Commodity Option Transaction.",
+      "Name" : "calculationPeriods",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.AdjustableDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 243
+      }
+    },
+    "notionalQuantityBasket" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "notionalQuantityBasket",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityBasketByNotional",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityBasketByNotional",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityBasketByNotional",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 246
+      }
+    },
+    "notionalAmountBasket" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "notionalAmountBasket",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityBasketByPercentage",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityBasketByPercentage",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityBasketByPercentage",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 248
+      }
+    },
+    "strikePriceUnderlyingReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "strikePriceUnderlyingReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.StrikePriceUnderlyingReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.StrikePriceUnderlyingReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.StrikePriceUnderlyingReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 250
+      }
+    },
+    "strikePriceBasketReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "strikePriceBasketReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.StrikePriceBasketReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.StrikePriceBasketReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.StrikePriceBasketReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 252
+      }
+    },
+    "strikePricePerUnit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency amount of the strike price per unit.",
+      "Name" : "strikePricePerUnit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 254
+      }
+    },
+    "strikePricePerUnitSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "strikePricePerUnitSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityStrikeSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityStrikeSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityStrikeSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 257
+      }
+    },
+    "floatingStrikePricePerUnit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency amount of the strike price per unit.",
+      "Name" : "floatingStrikePricePerUnit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FloatingStrikePrice",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FloatingStrikePrice",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FloatingStrikePrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 259
+      }
+    },
+    "floatingStrikePricePerUnitSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "floatingStrikePricePerUnitSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityCalculationPeriodsSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityCalculationPeriodsSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityCalculationPeriodsSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 262
+      }
+    },
+    "exercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters for defining how the commodity option can be exercised and how it is settled.",
+      "Name" : "exercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityExerciseBasket",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityExerciseBasket",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityExerciseBasket",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 264
+      }
+    },
+    "premium" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The option premium payable by the buyer to the seller.",
+      "Name" : "premium",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPremium",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityPremium",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPremium",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 267
+      }
+    },
+    "commonPricing" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If Common Pricing is elected (“true”) for a Transaction with referencing more than one Commodity Reference Price then no date will be a Pricing Date unless such a date is a day on which all Commodity Reference Prices are scheduled to be published.",
+      "Name" : "commonPricing",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 270
+      }
+    },
+    "marketDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Contains contract terms related to triggers and responses to market disruptions as defined in the 1993 or 2005 Commodity Definitions.",
+      "Name" : "marketDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityMarketDisruption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 273
+      }
+    },
+    "settlementDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes contract terms related to the consequences of Bullion Settlement Disruption Events.",
+      "Name" : "settlementDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 276
+      }
+    },
+    "rounding" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rounding direction and precision for amounts.",
+      "Name" : "rounding",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Rounding",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 279
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 282
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryAssetClass", "secondaryAssetClass", "productType", "productId", "embeddedOptionType", "buyerPartyReference", "buyerAccountReference", "sellerPartyReference", "sellerAccountReference", "optionType", "effectiveDate", "terminationDate", "calculationPeriodsSchedule", "calculationPeriods", "notionalQuantityBasket", "notionalAmountBasket", "strikePriceUnderlyingReference", "strikePriceBasketReference", "strikePricePerUnit", "strikePricePerUnitSchedule", "floatingStrikePricePerUnit", "floatingStrikePricePerUnitSchedule", "exercise", "premium", "commonPricing", "marketDisruption", "settlementDisruption", "rounding", "id" ],
+  "IsSynthetic" : false
+}

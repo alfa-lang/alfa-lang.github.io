@@ -1,0 +1,85 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An entity for defining the master confirmation agreement executed between the parties.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.MasterConfirmation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An entity for defining the master confirmation agreement executed between the parties.\n #/\nrecord FpML5.confirmation.MasterConfirmation {\n  # The type of master confirmation executed between the parties.\n  masterConfirmationType : string\n\n  # The date of the confirmation executed between the parties and intended to govern all relevant transactions between those parties.\n  masterConfirmationDate : date\n\n  # The date that an annex to the master confirmation was executed between the parties.\n  masterConfirmationAnnexDate : date?\n\n  # The type of master confirmation annex executed between the parties.\n  masterConfirmationAnnexType : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Documentation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "masterConfirmationType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of master confirmation executed between the parties.",
+      "Name" : "masterConfirmationType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 10287
+      }
+    },
+    "masterConfirmationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date of the confirmation executed between the parties and intended to govern all relevant transactions between those parties.",
+      "Name" : "masterConfirmationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 10290
+      }
+    },
+    "masterConfirmationAnnexDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date that an annex to the master confirmation was executed between the parties.",
+      "Name" : "masterConfirmationAnnexDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 10293
+      }
+    },
+    "masterConfirmationAnnexType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of master confirmation annex executed between the parties.",
+      "Name" : "masterConfirmationAnnexType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 10296
+      }
+    }
+  },
+  "LocalFieldNames" : [ "masterConfirmationType", "masterConfirmationDate", "masterConfirmationAnnexDate", "masterConfirmationAnnexType" ],
+  "IsSynthetic" : false
+}

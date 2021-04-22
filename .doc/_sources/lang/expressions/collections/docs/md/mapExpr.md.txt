@@ -1,0 +1,25 @@
+map
+===
+
+Apply a lambda over data in a :ref:`mapVectorType`, :ref:`listVectorType`,
+or :ref:`setVectorType`.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType`|The object on which the lambda should be applied|
+|2|A lambda that accepts 1 or 2 parameter| When 1st parameter to `map` is a :ref:`listVectorType` or :ref:`setVectorType`,then the 1st parameter to lambda is one of its elements.<br/>When 1st parameter to `map` is a :ref:`mapVectorType`, the lambda accepts 2 parameters, the key and value per entry. The return value is to be used as the key of the output map entry.|
+|3| lambda that accepts 2 parameters|When 1st parameter to `map` is a :ref:`mapVectorType`, the lambda accepts 2 parameters, the key and value per entry. The return value is to be used as the value of the output map entry.|
+
+__Returns:__
+
+A :ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType` that has has lambda applied per entry of the collection.
+
+
+__Usages:__
+
+>- `map( v:list<T>, e => result : R ) : list<R>`
+>- `map( v:set<T>, e => result : R ) : set<R>`
+> For the input is a map, the 2 lambdas are supplied to produce the key and value per new output entry.
+>- `map( v:map<K, V>, (k, v) => result : K1, (k, v) => result : V1 ) : map<K1, V1>`

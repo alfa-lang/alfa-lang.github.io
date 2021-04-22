@@ -1,0 +1,118 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A set of index values that identify a pricing data point. For example: (strike = 17%, expiration = 6M, term = 1Y.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PricingDataPointCoordinate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A set of index values that identify a pricing data point. For example: (strike = 17%, expiration = 6M, term = 1Y.\n #/\nrecord FpML5.confirmation.PricingDataPointCoordinate {\n  # A time dimension that represents the term of a financial instrument, e.g. of a zero-coupon bond on a curve, or of an underlying caplet or swap for an option.\n  term : FpML5.confirmation.TimeDimension\n\n  # A time dimension that represents the time to expiration of an option.\n  expiration : FpML5.confirmation.TimeDimension\n\n  # A numerical dimension that represents the strike rate or price of an option.\n  strike : decimal\n\n  generic : string\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PricingStructurePoint",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SensitivityDefinition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "term" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A time dimension that represents the term of a financial instrument, e.g. of a zero-coupon bond on a curve, or of an underlying caplet or swap for an option.",
+      "Name" : "term",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.TimeDimension",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.TimeDimension",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TimeDimension",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1134
+      }
+    },
+    "expiration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A time dimension that represents the time to expiration of an option.",
+      "Name" : "expiration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.TimeDimension",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.TimeDimension",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TimeDimension",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1137
+      }
+    },
+    "strike" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A numerical dimension that represents the strike rate or price of an option.",
+      "Name" : "strike",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1140
+      }
+    },
+    "generic" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "generic",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1143
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1145
+      }
+    }
+  },
+  "LocalFieldNames" : [ "term", "expiration", "strike", "generic", "id" ],
+  "IsSynthetic" : false
+}

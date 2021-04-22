@@ -1,0 +1,149 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A value point that can have a time dimension. Allows bid, mid, ask, and spread values to be represented.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TermPoint",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A value point that can have a time dimension. Allows bid, mid, ask, and spread values to be represented.\n #/\nrecord FpML5.confirmation.TermPoint {\n  # The time dimension of the point (tenor and/or date)\n  term : FpML5.confirmation.TimeDimension\n\n  # A price \"bid\" by a buyer for an asset, i.e. the price a buyer is willing to pay.\n  bid : decimal?\n\n  # A price midway between the bid and the ask price.\n  mid : decimal?\n\n  # A price \"asked\" by a seller for an asset, i.e. the price at which a seller is willing to sell.\n  ask : decimal?\n\n  # The spread value can be used in conjunction with the \"mid\" value to define the bid and the ask value.\n  spreadValue : decimal?\n\n  # An optional reference to an underlying asset that defines the meaning of the value, i.e. the product that the value corresponds to. For example, this could be a discount instrument.\n  definition : FpML5.confirmation.AssetReference?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TermCurve",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "term" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time dimension of the point (tenor and/or date)",
+      "Name" : "term",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.TimeDimension",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.TimeDimension",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TimeDimension",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19747
+      }
+    },
+    "bid" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A price \"bid\" by a buyer for an asset, i.e. the price a buyer is willing to pay.",
+      "Name" : "bid",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19750
+      }
+    },
+    "mid" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A price midway between the bid and the ask price.",
+      "Name" : "mid",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19753
+      }
+    },
+    "ask" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A price \"asked\" by a seller for an asset, i.e. the price at which a seller is willing to sell.",
+      "Name" : "ask",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19756
+      }
+    },
+    "spreadValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The spread value can be used in conjunction with the \"mid\" value to define the bid and the ask value.",
+      "Name" : "spreadValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19759
+      }
+    },
+    "definition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An optional reference to an underlying asset that defines the meaning of the value, i.e. the product that the value corresponds to. For example, this could be a discount instrument.",
+      "Name" : "definition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19762
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19765
+      }
+    }
+  },
+  "LocalFieldNames" : [ "term", "bid", "mid", "ask", "spreadValue", "definition", "id" ],
+  "IsSynthetic" : false
+}

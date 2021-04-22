@@ -1,0 +1,25 @@
+join
+====
+
+Combine multiples values of the same type into a single value.
+Depending on the target object, the meaning of 'join' will be different and the
+parameters expected will differ.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|#|:ref:`stringType` :ref:`listVectorType` or :ref:`setVectorType`|Objects to be combined|
+
+\# Variable number of arguments.
+
+__Returns:__
+
+:ref:`stringType` :ref:`listVectorType` or :ref:`setVectorType` - The joined value.
+For strings, it will be a concatenated string, for `list` and `set`, a unioned value.
+
+__Usages:__
+
+>- `add( v1:list<T>, v2:list<T>, v3:list<T>, ... ) : list<T>`
+>- `add( v1:set<T>, v2:set<T>, v3:set<T>, ... ) : set<T>`
+>- `add( v1:string, v2:string, v3:string, ... ) : string`

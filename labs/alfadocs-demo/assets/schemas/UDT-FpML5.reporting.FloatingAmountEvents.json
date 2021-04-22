@@ -1,0 +1,127 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FloatingAmountEvents",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.FloatingAmountEvents {\n  # A floating rate payment event. Corresponds to the failure by the Reference Entity to pay an expected principal amount or the payment of an actual principal amount that is less than the expected principal amount. ISDA 2003 Term: Failure to Pay Principal.\n  failureToPayPrincipal : boolean?\n\n  # A floating rate payment event. With respect to any Reference Obligation Payment Date, either (a) the non-payment of an Expected Interest Amount or (b) the payment of an Actual Interest Amount that is less than the Expected Interest Amount. ISDA 2003 Term: Interest Shortfall.\n  interestShortfall : FpML5.reporting.InterestShortFall?\n\n  # A floating rate payment event. Results from the fact that the underlyer writes down its outstanding principal amount. ISDA 2003 Term: Writedown.\n  writedown : boolean?\n\n  # A floating rate payment event. Results from the fact that losses occur to the underlying instruments that do not result in reductions of the outstanding principal of the reference obligation.\n  impliedWritedown : boolean?\n\n  # Specifies the floating amount provisions associated with the floatingAmountEvents.\n  floatingAmountProvisions : FpML5.reporting.FloatingAmountProvisions?\n\n  # Specifies the events that will give rise to the payment a additional fixed payments.\n  additionalFixedPayments : FpML5.reporting.AdditionalFixedPayments?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ProtectionTerms",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "failureToPayPrincipal" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A floating rate payment event. Corresponds to the failure by the Reference Entity to pay an expected principal amount or the payment of an actual principal amount that is less than the expected principal amount. ISDA 2003 Term: Failure to Pay Principal.",
+      "Name" : "failureToPayPrincipal",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24556
+      }
+    },
+    "interestShortfall" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A floating rate payment event. With respect to any Reference Obligation Payment Date, either (a) the non-payment of an Expected Interest Amount or (b) the payment of an Actual Interest Amount that is less than the Expected Interest Amount. ISDA 2003 Term: Interest Shortfall.",
+      "Name" : "interestShortfall",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InterestShortFall",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24559
+      }
+    },
+    "writedown" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A floating rate payment event. Results from the fact that the underlyer writes down its outstanding principal amount. ISDA 2003 Term: Writedown.",
+      "Name" : "writedown",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24562
+      }
+    },
+    "impliedWritedown" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A floating rate payment event. Results from the fact that losses occur to the underlying instruments that do not result in reductions of the outstanding principal of the reference obligation.",
+      "Name" : "impliedWritedown",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24565
+      }
+    },
+    "floatingAmountProvisions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the floating amount provisions associated with the floatingAmountEvents.",
+      "Name" : "floatingAmountProvisions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FloatingAmountProvisions",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24568
+      }
+    },
+    "additionalFixedPayments" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the events that will give rise to the payment a additional fixed payments.",
+      "Name" : "additionalFixedPayments",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdditionalFixedPayments",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24571
+      }
+    }
+  },
+  "LocalFieldNames" : [ "failureToPayPrincipal", "interestShortfall", "writedown", "impliedWritedown", "floatingAmountProvisions", "additionalFixedPayments" ],
+  "IsSynthetic" : false
+}

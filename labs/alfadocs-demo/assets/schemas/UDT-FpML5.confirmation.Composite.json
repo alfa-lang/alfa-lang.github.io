@@ -1,0 +1,76 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies the conditions to be applied for converting into a reference currency when the actual currency rate is not determined upfront.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Composite",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies the conditions to be applied for converting into a reference currency when the actual currency rate is not determined upfront.\n #/\nrecord FpML5.confirmation.Composite {\n  # Specifies the method according to which an amount or a date is determined.\n  determinationMethod : string?\n\n  # A date specified as some offset to another date (the anchor date).\n  relativeDate : FpML5.confirmation.RelativeDateOffset?\n\n  # Specifies the methodology (reference source and, optionally, fixing time) to be used for determining a currency conversion rate.\n  fxSpotRateSource : FpML5.confirmation.FxSpotRateSource?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxFeature",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "determinationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the method according to which an amount or a date is determined.",
+      "Name" : "determinationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29950
+      }
+    },
+    "relativeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A date specified as some offset to another date (the anchor date).",
+      "Name" : "relativeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RelativeDateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29953
+      }
+    },
+    "fxSpotRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the methodology (reference source and, optionally, fixing time) to be used for determining a currency conversion rate.",
+      "Name" : "fxSpotRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxSpotRateSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29956
+      }
+    }
+  },
+  "LocalFieldNames" : [ "determinationMethod", "relativeDate", "fxSpotRateSource" ],
+  "IsSynthetic" : false
+}

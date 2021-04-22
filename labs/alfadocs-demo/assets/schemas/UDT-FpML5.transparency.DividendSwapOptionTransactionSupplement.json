@@ -1,0 +1,272 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.DividendSwapOptionTransactionSupplement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.transparency.DividendSwapOptionTransactionSupplement {\n  # A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  primaryAssetClass : string?\n\n  # A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.\n  secondaryAssetClass : string?\n\n  # A classification of the type of product. FpML defines a simple product categorization using a coding scheme.\n  productType : string?\n\n  # A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.\n  productId : string?\n\n  # Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.\n  embeddedOptionType : string?\n\n  # A reference to the party that buys this instrument, ie. pays for this instrument and receives the rights defined by it. See 2000 ISDA definitions Article 11.1 (b). In the case of FRAs this the fixed rate payer.\n  buyerPartyReference : FpML5.transparency.PartyReference?\n\n  # A reference to the party that sells (\"writes\") this instrument, i.e. that grants the rights defined by this instrument and in return receives a payment for it. See 2000 ISDA definitions Article 11.1 (a). In the case of FRAs this is the floating rate payer.\n  sellerPartyReference : FpML5.transparency.PartyReference?\n\n  # The type of option transaction. From a usage standpoint, put/call is the default option type, while payer/receiver indicator is used for options index credit default swaps, consistently with the industry practice. Straddle is used for the case of straddle strategy, that combine a call and a put with the same strike.\n  optionType : FpML5.transparency.OptionTypeEnum\n\n  # The variance option premium payable by the buyer to the seller.\n  equityPremium : FpML5.transparency.EquityPremium?\n\n  # The parameters for defining how the equity option can be exercised, how it is valued and how it is settled.\n  equityExercise : FpML5.transparency.EquityExerciseValuationSettlement\n\n  # The number of shares per option comprised in the option transaction supplement.\n  optionEntitlement : decimal\n\n  # Specifies the contract multiplier that can be associated with an index option.\n  multiplier : decimal\n\n  # The variance swap details.\n  dividendSwapTransactionSupplement : FpML5.transparency.DividendSwapTransactionSupplement\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "primaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "primaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7800
+      }
+    },
+    "secondaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "secondaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7803
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the type of product. FpML defines a simple product categorization using a coding scheme.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7806
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7809
+      }
+    },
+    "embeddedOptionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.",
+      "Name" : "embeddedOptionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7812
+      }
+    },
+    "buyerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that buys this instrument, ie. pays for this instrument and receives the rights defined by it. See 2000 ISDA definitions Article 11.1 (b). In the case of FRAs this the fixed rate payer.",
+      "Name" : "buyerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7815
+      }
+    },
+    "sellerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that sells (\"writes\") this instrument, i.e. that grants the rights defined by this instrument and in return receives a payment for it. See 2000 ISDA definitions Article 11.1 (a). In the case of FRAs this is the floating rate payer.",
+      "Name" : "sellerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7818
+      }
+    },
+    "optionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of option transaction. From a usage standpoint, put/call is the default option type, while payer/receiver indicator is used for options index credit default swaps, consistently with the industry practice. Straddle is used for the case of straddle strategy, that combine a call and a put with the same strike.",
+      "Name" : "optionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.OptionTypeEnum",
+        "UdtType" : "enumType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.OptionTypeEnum",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.OptionTypeEnum",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7821
+      }
+    },
+    "equityPremium" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The variance option premium payable by the buyer to the seller.",
+      "Name" : "equityPremium",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.EquityPremium",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7824
+      }
+    },
+    "equityExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters for defining how the equity option can be exercised, how it is valued and how it is settled.",
+      "Name" : "equityExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.EquityExerciseValuationSettlement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.EquityExerciseValuationSettlement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.EquityExerciseValuationSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7827
+      }
+    },
+    "optionEntitlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of shares per option comprised in the option transaction supplement.",
+      "Name" : "optionEntitlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7830
+      }
+    },
+    "multiplier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the contract multiplier that can be associated with an index option.",
+      "Name" : "multiplier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7833
+      }
+    },
+    "dividendSwapTransactionSupplement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The variance swap details.",
+      "Name" : "dividendSwapTransactionSupplement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.DividendSwapTransactionSupplement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.DividendSwapTransactionSupplement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.DividendSwapTransactionSupplement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7836
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7839
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryAssetClass", "secondaryAssetClass", "productType", "productId", "embeddedOptionType", "buyerPartyReference", "sellerPartyReference", "optionType", "equityPremium", "equityExercise", "optionEntitlement", "multiplier", "dividendSwapTransactionSupplement", "id" ],
+  "IsSynthetic" : false
+}

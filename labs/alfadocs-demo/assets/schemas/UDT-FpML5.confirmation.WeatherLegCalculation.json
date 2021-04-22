@@ -1,0 +1,179 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to capture details of the calculation of the Payment Amount on a Weather Index Transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.WeatherLegCalculation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to capture details of the calculation of the Payment Amount on a Weather Index Transaction.\n #/\nrecord FpML5.confirmation.WeatherLegCalculation {\n  # The Settlement Level means either the cumulative number of Weather Index Units for each day in the Calculation Period (Cumulative) or the cumulative number of Weather Index Units for each day in the Calculation Period divided by the number of days in the Calculation Period (Average) or the maximum number of Weather Index Units for any day in the Calculation Period (Maximum) or the minimum number of Weather Index Units for any day in the Calculation Period.\n  settlementLevel : string\n\n  # If Reference Level Equals Zero is specified to be applicable then CPD means, for any day during the Calculation Period, (A) 1 if the Daily Precipitation for that day is greater than or equal to the CPD Reference Level or (B) zero if the the Daily Precipitation for that day is less than the CPD Reference Level. If Reference Level Equals Zero is specified not to be applicable then CPD means, for any day during the Calculation Period, (A) 1 if the Daily Precipitation for that day is greater than the CPD Reference Level or 0 if the Daily Precipitation for that day is less than or equal to the CPD Reference Level.\n  referenceLevelEqualsZero : boolean\n\n  # The number of days following the final day of the Calculation Period specified in the Confirmation on which is is practicable to provide the notice that the Calculation Agent is required to give for that Settlement Date or Payment Date.\n  calculationDate : FpML5.confirmation.Period\n\n  # A day on which commmercial banks settle payments and are open for general business in the place(s) specified in the Confirmation. See Section 1.3 of the ISDA 2005 Commodity Definitions.\n  businessDays : string\n\n  # The date payment often revised after its publication, this indicates if the payment date could be recalculated.\n  dataCorrection : boolean\n\n  # If 'dataCorrection'=true, this indicates how long after the initial publication of the data corrections can be made.\n  correctionPeriod : FpML5.confirmation.Period?\n\n  # The maximum total payment amount that will be paid in any particular transaction.\n  maximumPaymentAmount : FpML5.confirmation.NonNegativeMoney?\n\n  # The maximum payment amount that will be paid in any particular Calculation Period.\n  maximumTransactionPaymentAmount : FpML5.confirmation.NonNegativeMoney?\n\n  # Rounding direction and precision for price values.\n  rounding : FpML5.confirmation.Rounding?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.WeatherLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Settlement Level means either the cumulative number of Weather Index Units for each day in the Calculation Period (Cumulative) or the cumulative number of Weather Index Units for each day in the Calculation Period divided by the number of days in the Calculation Period (Average) or the maximum number of Weather Index Units for any day in the Calculation Period (Maximum) or the minimum number of Weather Index Units for any day in the Calculation Period.",
+      "Name" : "settlementLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28036
+      }
+    },
+    "referenceLevelEqualsZero" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If Reference Level Equals Zero is specified to be applicable then CPD means, for any day during the Calculation Period, (A) 1 if the Daily Precipitation for that day is greater than or equal to the CPD Reference Level or (B) zero if the the Daily Precipitation for that day is less than the CPD Reference Level. If Reference Level Equals Zero is specified not to be applicable then CPD means, for any day during the Calculation Period, (A) 1 if the Daily Precipitation for that day is greater than the CPD Reference Level or 0 if the Daily Precipitation for that day is less than or equal to the CPD Reference Level.",
+      "Name" : "referenceLevelEqualsZero",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28039
+      }
+    },
+    "calculationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of days following the final day of the Calculation Period specified in the Confirmation on which is is practicable to provide the notice that the Calculation Agent is required to give for that Settlement Date or Payment Date.",
+      "Name" : "calculationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Period",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Period",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28042
+      }
+    },
+    "businessDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A day on which commmercial banks settle payments and are open for general business in the place(s) specified in the Confirmation. See Section 1.3 of the ISDA 2005 Commodity Definitions.",
+      "Name" : "businessDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28045
+      }
+    },
+    "dataCorrection" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date payment often revised after its publication, this indicates if the payment date could be recalculated.",
+      "Name" : "dataCorrection",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28048
+      }
+    },
+    "correctionPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If 'dataCorrection'=true, this indicates how long after the initial publication of the data corrections can be made.",
+      "Name" : "correctionPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28051
+      }
+    },
+    "maximumPaymentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum total payment amount that will be paid in any particular transaction.",
+      "Name" : "maximumPaymentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28054
+      }
+    },
+    "maximumTransactionPaymentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum payment amount that will be paid in any particular Calculation Period.",
+      "Name" : "maximumTransactionPaymentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28057
+      }
+    },
+    "rounding" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rounding direction and precision for price values.",
+      "Name" : "rounding",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Rounding",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 28060
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementLevel", "referenceLevelEqualsZero", "calculationDate", "businessDays", "dataCorrection", "correctionPeriod", "maximumPaymentAmount", "maximumTransactionPaymentAmount", "rounding" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,28 @@
+# service
+
+A `service` defines an interface or API.
+
+A `service` can be used to describe a programming language interface, REST API, Open API, Serverless functions etc. As a modeller, you purely focus on the API abstractions, not implementation details.
+
+In addition to describing what methods are available on the API, an ALFA
+service declaration also captures how to create or instantiate the `service`. In the declaration below, the OrderService can be created by passing in an authToken attribute.
+
+```csharp 
+service OrderService( authToken : uuid ) {
+    placeOrder( ord : Order ) : try< ConfirmedOrder >
+    getOrder( Id : uuid ) : Order
+    getOrders() : list< Order >
+}
+
+service UserMetrics {
+    loginEvents() : stream< LoginEvent >
+    purge( category : string ) : future< EventCompletion >
+}
+```
+
+Unlike some languages, there are no Exceptions thrown from ALFA
+service functions. Error or exceptional conditions can be modelled 
+using `either< Result, Error >` or `try<Result>`. The benefit is that Error conditions are made part of the result,
+and encourage them to be handled appropriately.
+
+

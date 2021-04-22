@@ -1,0 +1,84 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A classified non negative payment.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ClassifiablePayment",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A classified non negative payment.\n #/\nrecord FpML5.transparency.ClassifiablePayment {\n  # Non negative payment amount.\n  paymentAmount : FpML5.transparency.NonNegativeMoney\n\n  # Payment classification.\n  paymentType : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CorrelationSwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.NettedSwapBase",
+    "UdtType" : "traitType"
+  } ],
+  "AllFields" : {
+    "paymentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Non negative payment amount.",
+      "Name" : "paymentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8145
+      }
+    },
+    "paymentType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Payment classification.",
+      "Name" : "paymentType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8148
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8151
+      }
+    }
+  },
+  "LocalFieldNames" : [ "paymentAmount", "paymentType", "id" ],
+  "IsSynthetic" : false
+}

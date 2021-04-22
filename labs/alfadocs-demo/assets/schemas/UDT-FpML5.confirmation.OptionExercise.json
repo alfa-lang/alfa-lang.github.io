@@ -1,0 +1,487 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure describing an option exercise. The OptionExercise type supports partial exercise (specify the number of options or amount to exercise), full exercise (use fullExercise flag), as well as the option to request options not to be exercised.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure describing an option exercise. The OptionExercise type supports partial exercise (specify the number of options or amount to exercise), full exercise (use fullExercise flag), as well as the option to request options not to be exercised.\n #/\nrecord FpML5.confirmation.OptionExercise {\n  eventIdentifier : FpML5.confirmation.BusinessEventIdentifier?\n\n  optionSeller : FpML5.confirmation.PartyReference?\n\n  optionBuyer : FpML5.confirmation.PartyReference?\n\n  # Fully describes the original trade (prior to the exercise).\n  originalTrade : FpML5.confirmation.Trade\n\n  tradeIdentifier : FpML5.confirmation.PartyTradeIdentifier\n\n  exerciseDate : date?\n\n  exerciseTime : time?\n\n  exerciseTiming : string\n\n  exerciseAction : string\n\n  expiry : boolean\n\n  fullExercise : boolean\n\n  # Specifies the fixed amount by which the option should be exercised expressed as notional amount.\n  exerciseInNotionalAmount : FpML5.confirmation.Money\n\n  # Specifies the Notional amount after the Change\n  outstandingNotionalAmount : FpML5.confirmation.Money\n\n  # Specifies the fixed amount by which the option should be exercised expressed as number of options.\n  exerciseInNumberOfOptions : decimal\n\n  # Specifies the Number of Options after the Change.\n  outstandingNumberOfOptions : decimal\n\n  # Specifies the fixed amount by which the option should be exercised express as number of units.\n  exerciseInNumberOfUnits : decimal\n\n  # Specifies the Number of Units\n  outstandingNumberOfUnits : decimal\n\n  # Specifies the Number of Units\n  specifiedExercise : FpML5.confirmation.OptionExerciseAmounts\n\n  exerciseSide : FpML5.confirmation.ExerciseSideEnum?\n\n  settlementType : string\n\n  cashSettlement : FpML5.confirmation.SimplePayment\n\n  physicalSettlement : FpML5.confirmation.PhysicalSettlement\n\n  payment : FpML5.confirmation.NonNegativePayment?\n\n  clearingInstructions : FpML5.confirmation.ClearingInstructions?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ConfirmationAgreed",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ConfirmationDisputed",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ConfirmationRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EventProposedMatch",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EventsChoice",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExecutionAdvice",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExecutionAdviceRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExecutionNotification",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExecutionRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RequestConfirmation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RequestExecution",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RequestExecutionRetracted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eventIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "eventIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessEventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22503
+      }
+    },
+    "optionSeller" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "optionSeller",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22505
+      }
+    },
+    "optionBuyer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "optionBuyer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22507
+      }
+    },
+    "originalTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fully describes the original trade (prior to the exercise).",
+      "Name" : "originalTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22509
+      }
+    },
+    "tradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyTradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyTradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22512
+      }
+    },
+    "exerciseDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22514
+      }
+    },
+    "exerciseTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "timeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22516
+      }
+    },
+    "exerciseTiming" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseTiming",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22518
+      }
+    },
+    "exerciseAction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseAction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22520
+      }
+    },
+    "expiry" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "expiry",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22522
+      }
+    },
+    "fullExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "fullExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22524
+      }
+    },
+    "exerciseInNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixed amount by which the option should be exercised expressed as notional amount.",
+      "Name" : "exerciseInNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Money",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Money",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22526
+      }
+    },
+    "outstandingNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Notional amount after the Change",
+      "Name" : "outstandingNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Money",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Money",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22529
+      }
+    },
+    "exerciseInNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixed amount by which the option should be exercised expressed as number of options.",
+      "Name" : "exerciseInNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22532
+      }
+    },
+    "outstandingNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Number of Options after the Change.",
+      "Name" : "outstandingNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22535
+      }
+    },
+    "exerciseInNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixed amount by which the option should be exercised express as number of units.",
+      "Name" : "exerciseInNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22538
+      }
+    },
+    "outstandingNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Number of Units",
+      "Name" : "outstandingNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22541
+      }
+    },
+    "specifiedExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Number of Units",
+      "Name" : "specifiedExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.OptionExerciseAmounts",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.OptionExerciseAmounts",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.OptionExerciseAmounts",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22544
+      }
+    },
+    "exerciseSide" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseSide",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ExerciseSideEnum",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22547
+      }
+    },
+    "settlementType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "settlementType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22549
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.SimplePayment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.SimplePayment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.SimplePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22551
+      }
+    },
+    "physicalSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "physicalSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PhysicalSettlement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PhysicalSettlement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PhysicalSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22553
+      }
+    },
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22555
+      }
+    },
+    "clearingInstructions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "clearingInstructions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ClearingInstructions",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22557
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eventIdentifier", "optionSeller", "optionBuyer", "originalTrade", "tradeIdentifier", "exerciseDate", "exerciseTime", "exerciseTiming", "exerciseAction", "expiry", "fullExercise", "exerciseInNotionalAmount", "outstandingNotionalAmount", "exerciseInNumberOfOptions", "outstandingNumberOfOptions", "exerciseInNumberOfUnits", "outstandingNumberOfUnits", "specifiedExercise", "exerciseSide", "settlementType", "cashSettlement", "physicalSettlement", "payment", "clearingInstructions" ],
+  "IsSynthetic" : false
+}

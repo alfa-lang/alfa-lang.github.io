@@ -1,0 +1,83 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Correlation Amount.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CorrelationAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Correlation Amount.\n #/\nrecord FpML5.transparency.CorrelationAmount {\n  # Specifies the date on which a calculation or an observation will be performed for the purpose of calculating the amount.\n  calculationDates : FpML5.transparency.AdjustableRelativeOrPeriodicDates?\n\n  # The start of the period over which observations are made which are used in the calculation Used when the observation start date differs from the trade date such as for forward starting swaps. Observation Start Date in accordance with the ISDA 2002 Equity Derivatives Definitions. Observation Period Start Date in accordance with the ISDA 2011 Equity Derivatives Definitions.\n  observationStartDate : FpML5.transparency.AdjustableOrRelativeDate?\n\n  # Specifies Correlation.\n  correlation : FpML5.transparency.Correlation\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CorrelationLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date on which a calculation or an observation will be performed for the purpose of calculating the amount.",
+      "Name" : "calculationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableRelativeOrPeriodicDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3489
+      }
+    },
+    "observationStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The start of the period over which observations are made which are used in the calculation Used when the observation start date differs from the trade date such as for forward starting swaps. Observation Start Date in accordance with the ISDA 2002 Equity Derivatives Definitions. Observation Period Start Date in accordance with the ISDA 2011 Equity Derivatives Definitions.",
+      "Name" : "observationStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3492
+      }
+    },
+    "correlation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies Correlation.",
+      "Name" : "correlation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.Correlation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.Correlation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Correlation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3495
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationDates", "observationStartDate", "correlation" ],
+  "IsSynthetic" : false
+}

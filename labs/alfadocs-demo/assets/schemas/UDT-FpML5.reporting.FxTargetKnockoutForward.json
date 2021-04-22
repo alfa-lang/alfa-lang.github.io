@@ -1,0 +1,429 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structured forward product which consists of a strip of forwards. Each forward may be settled as an exchange of currencies or cash settled. At each settlement, the amount of gain that one party achieves is measured. The product has a target level of gain. Once the accumulated gain exceeds the target level, the product terminates and there are no further settlements.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxTargetKnockoutForward",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structured forward product which consists of a strip of forwards. Each forward may be settled as an exchange of currencies or cash settled. At each settlement, the amount of gain that one party achieves is measured. The product has a target level of gain. Once the accumulated gain exceeds the target level, the product terminates and there are no further settlements.\n #/\nrecord FpML5.reporting.FxTargetKnockoutForward {\n  # A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  primaryAssetClass : string?\n\n  # A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.\n  secondaryAssetClass : string?\n\n  # A classification of the type of product. FpML defines a simple product categorization using a coding scheme.\n  productType : string?\n\n  # A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.\n  productId : string?\n\n  # A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  assetClass : string?\n\n  # Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.\n  embeddedOptionType : string?\n\n  # The Quoted Currency Pair that is used accross the product.\n  quotedCurrencyPair : FpML5.reporting.QuotedCurrencyPair\n\n  # Notional amount of the Target.\n  notionalAmount : FpML5.reporting.NonNegativeAmountSchedule\n\n  # It defines the target level of gain. Once the accumulated gain exceeds the target level, the product terminates and there are no further settlements.\n  target : FpML5.reporting.FxTarget\n\n  # Defines the expiry/observation schedule of the target product.\n  expirySchedule : FpML5.reporting.FxExpirySchedule\n\n  # Defines the settlement/payment schedule of the target product.\n  settlementSchedule : FpML5.reporting.FxSettlementSchedule?\n\n  # Information source for fixing the exchange rate. It is the same for all fixing periods.\n  fixingInformationSource : FpML5.reporting.FxInformationSource?\n\n  # Spot rate\n  spotRate : decimal?\n\n  # The boundary where the contract flips from being long and short is the pivot point. So the pivot indicates the level in which there is a change in direction of the currencies exchanged by the parties.\n  pivot : FpML5.reporting.FxPivot\n\n  # It defines a region in which a digital payment occurs.\n  constantPayoffRegion : FpML5.reporting.FxTargetConstantPayoffRegion\n\n  # A region in which linear payoff applies i.e. the payoff bears a linear relationship to the fixing value (increases/decreases linearly with the fixing).\n  linearPayoffRegion : FpML5.reporting.FxTargetLinearPayoffRegion\n\n  # Generic FxTarget barrier. Element \"scope\" specifies whether the barrier has effect for the expiry period in which it is observed, or globally for whole product. Optional element \"rebate\" may be produced in conjunction with a Global Knockout barrier, to specify a rebate payable in the event of knockout.\n  barrier : FpML5.reporting.FxTargetBarrier?\n\n  # It supports the representation of premiums, fees, etc.\n  additionalPayment : FpML5.reporting.SimplePayment?\n\n  # Cash settlement currency.\n  cashSettlement : FpML5.reporting.FxCashSettlementSimple?\n\n  # It supports the representation of a matrix/tabular approach of the product by defining a set of settlement periods.\n  settlementPeriodSchedule : FpML5.reporting.FxTargetSettlementPeriodSchedule?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "primaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "primaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5590
+      }
+    },
+    "secondaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "secondaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5593
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the type of product. FpML defines a simple product categorization using a coding scheme.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5596
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5599
+      }
+    },
+    "assetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "assetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5602
+      }
+    },
+    "embeddedOptionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the type of any embedded optionality in the transaction that might not otherwise be apparent. Can be used to represent embedded optionality such as early termination provisions, extendible provisions, or cancelable provisions, etc., where applicable. If omitted, no embedded optionality is applicable.",
+      "Name" : "embeddedOptionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5605
+      }
+    },
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quoted Currency Pair that is used accross the product.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.QuotedCurrencyPair",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.QuotedCurrencyPair",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5608
+      }
+    },
+    "notionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Notional amount of the Target.",
+      "Name" : "notionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.NonNegativeAmountSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.NonNegativeAmountSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeAmountSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5611
+      }
+    },
+    "target" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "It defines the target level of gain. Once the accumulated gain exceeds the target level, the product terminates and there are no further settlements.",
+      "Name" : "target",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxTarget",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxTarget",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxTarget",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5614
+      }
+    },
+    "expirySchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the expiry/observation schedule of the target product.",
+      "Name" : "expirySchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxExpirySchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxExpirySchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxExpirySchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5617
+      }
+    },
+    "settlementSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the settlement/payment schedule of the target product.",
+      "Name" : "settlementSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxSettlementSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5620
+      }
+    },
+    "fixingInformationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information source for fixing the exchange rate. It is the same for all fixing periods.",
+      "Name" : "fixingInformationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxInformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5623
+      }
+    },
+    "spotRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Spot rate",
+      "Name" : "spotRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5626
+      }
+    },
+    "pivot" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The boundary where the contract flips from being long and short is the pivot point. So the pivot indicates the level in which there is a change in direction of the currencies exchanged by the parties.",
+      "Name" : "pivot",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxPivot",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxPivot",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxPivot",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5629
+      }
+    },
+    "constantPayoffRegion" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "It defines a region in which a digital payment occurs.",
+      "Name" : "constantPayoffRegion",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxTargetConstantPayoffRegion",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxTargetConstantPayoffRegion",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxTargetConstantPayoffRegion",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5632
+      }
+    },
+    "linearPayoffRegion" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A region in which linear payoff applies i.e. the payoff bears a linear relationship to the fixing value (increases/decreases linearly with the fixing).",
+      "Name" : "linearPayoffRegion",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxTargetLinearPayoffRegion",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxTargetLinearPayoffRegion",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxTargetLinearPayoffRegion",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5635
+      }
+    },
+    "barrier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Generic FxTarget barrier. Element \"scope\" specifies whether the barrier has effect for the expiry period in which it is observed, or globally for whole product. Optional element \"rebate\" may be produced in conjunction with a Global Knockout barrier, to specify a rebate payable in the event of knockout.",
+      "Name" : "barrier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxTargetBarrier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5638
+      }
+    },
+    "additionalPayment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "It supports the representation of premiums, fees, etc.",
+      "Name" : "additionalPayment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SimplePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5641
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Cash settlement currency.",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxCashSettlementSimple",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5644
+      }
+    },
+    "settlementPeriodSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "It supports the representation of a matrix/tabular approach of the product by defining a set of settlement periods.",
+      "Name" : "settlementPeriodSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxTargetSettlementPeriodSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5647
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5650
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryAssetClass", "secondaryAssetClass", "productType", "productId", "assetClass", "embeddedOptionType", "quotedCurrencyPair", "notionalAmount", "target", "expirySchedule", "settlementSchedule", "fixingInformationSource", "spotRate", "pivot", "constantPayoffRegion", "linearPayoffRegion", "barrier", "additionalPayment", "cashSettlement", "settlementPeriodSchedule", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,139 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "A day type classification used in counting the number of days between two dates for a commodity transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityDayTypeEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n A day type classification used in counting the number of days between two dates for a commodity transaction.\n #/\nenum FpML5.recordkeeping.CommodityDayTypeEnum {\n    # When calculating the number of days between two dates the count includes only business days.\n    Business \n    # When calculating the number of days between two dates the count includes all calendar days.\n    Calendar \n    # When calculating the number of days between two dates the count includes only commodity business days.\n    CommodityBusiness \n    # When calculating the number of days between two dates the count includes only currency business days.\n    CurrencyBusiness \n    # When calculating the number of days between two dates the count includes only stock exchange business days.\n    ExchangeBusiness \n    # When calculating the number of days between two dates the count includes only scheduled trading days.\n    ScheduledTradingDay \n    # When calculating the number of days between two dates the count includes only gas flow days (dates on which gas is delivered).\n    GasFlow \n    # The days that are starting from the end of the prior nearby futures/option contract through the nearby futures/option contract as specified in the message. For example: If referring to the Z21 WTI contract, first day of this type will be 21-Oct-21 and the last day of this type will be 19-Nov-21.\n    NearbyContractDay \n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPricingDates",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityValuationDates",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "Business" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When calculating the number of days between two dates the count includes only business days.",
+      "Name" : "Business",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13828
+      }
+    },
+    "Calendar" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When calculating the number of days between two dates the count includes all calendar days.",
+      "Name" : "Calendar",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13830
+      }
+    },
+    "CommodityBusiness" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When calculating the number of days between two dates the count includes only commodity business days.",
+      "Name" : "CommodityBusiness",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13832
+      }
+    },
+    "CurrencyBusiness" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When calculating the number of days between two dates the count includes only currency business days.",
+      "Name" : "CurrencyBusiness",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13834
+      }
+    },
+    "ExchangeBusiness" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When calculating the number of days between two dates the count includes only stock exchange business days.",
+      "Name" : "ExchangeBusiness",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13836
+      }
+    },
+    "ScheduledTradingDay" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When calculating the number of days between two dates the count includes only scheduled trading days.",
+      "Name" : "ScheduledTradingDay",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13838
+      }
+    },
+    "GasFlow" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When calculating the number of days between two dates the count includes only gas flow days (dates on which gas is delivered).",
+      "Name" : "GasFlow",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13840
+      }
+    },
+    "NearbyContractDay" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The days that are starting from the end of the prior nearby futures/option contract through the nearby futures/option contract as specified in the message. For example: If referring to the Z21 WTI contract, first day of this type will be 21-Oct-21 and the last day of this type will be 19-Nov-21.",
+      "Name" : "NearbyContractDay",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13842
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Business", "Calendar", "CommodityBusiness", "CurrencyBusiness", "ExchangeBusiness", "ScheduledTradingDay", "GasFlow", "NearbyContractDay" ],
+  "IsSynthetic" : false
+}

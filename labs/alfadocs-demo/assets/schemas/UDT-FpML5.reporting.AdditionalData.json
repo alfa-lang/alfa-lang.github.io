@@ -1,0 +1,116 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Provides extra information not represented in the model that may be useful in processing the message i.e. diagnosing the reason for failure.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AdditionalData",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Provides extra information not represented in the model that may be useful in processing the message i.e. diagnosing the reason for failure.\n #/\nrecord FpML5.reporting.AdditionalData {\n  # Indicates the type of media used to provide the extra information. mimeType is used to determine the software product(s) that can read the content. MIME Types are described in RFC 2046.\n  mimeType : string?\n\n  # Provides extra information as string. In case the extra information is in XML format, a CDATA section must be placed around the source message to prevent its interpretation as XML content.\n  `string` : string\n\n  # Provides extra information as binary contents coded in hexadecimal.\n  hexadecimalBinary : binary\n\n  # Provides extra information as binary contents coded in base64.\n  base64Binary : binary\n\n  # Provides extra information as binary contents coded in base64.\n  originalMessage : tuple< Wildcard : binary >\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Exception",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Reason",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "mimeType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the type of media used to provide the extra information. mimeType is used to determine the software product(s) that can read the content. MIME Types are described in RFC 2046.",
+      "Name" : "mimeType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8072
+      }
+    },
+    "string" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides extra information as string. In case the extra information is in XML format, a CDATA section must be placed around the source message to prevent its interpretation as XML content.",
+      "Name" : "string",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8075
+      }
+    },
+    "hexadecimalBinary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides extra information as binary contents coded in hexadecimal.",
+      "Name" : "hexadecimalBinary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "binaryType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8078
+      }
+    },
+    "base64Binary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides extra information as binary contents coded in base64.",
+      "Name" : "base64Binary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "binaryType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8081
+      }
+    },
+    "originalMessage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides extra information as binary contents coded in base64.",
+      "Name" : "originalMessage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.TupleDataType",
+        "SynthFullyQualifiedName" : "FpML5.reporting.AdditionalData_originalMessage_",
+        "Fields" : {
+          "Wildcard" : {
+            "@type" : "alfa.rt.model.Field",
+            "Name" : "Wildcard",
+            "DataType" : {
+              "@type" : "alfa.rt.model.ScalarDataType",
+              "ScalarType" : "binaryType"
+            },
+            "SrcLocation" : {
+              "@type" : "alfa.rt.model.Location",
+              "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+              "line" : 8085
+            }
+          }
+        },
+        "SyntheticFieldNames" : false
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8084
+      }
+    }
+  },
+  "LocalFieldNames" : [ "mimeType", "string", "hexadecimalBinary", "base64Binary", "originalMessage" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,95 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A limited version of the CDS type used as an underlyer to CDS options in Transparency view, to avoid requiring product type etc.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.LimitedCreditDefaultSwap",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A limited version of the CDS type used as an underlyer to CDS options in Transparency view, to avoid requiring product type etc.\n #/\nrecord FpML5.transparency.LimitedCreditDefaultSwap {\n  # This element contains all the data that appears in the section entitled \"1. General Terms\" in the 2003 ISDA Credit Derivatives Confirmation.\n  generalTerms : FpML5.transparency.GeneralTerms\n\n  # This element contains all the terms relevant to defining the fixed amounts/payments per the applicable ISDA definitions.\n  feeLeg : FpML5.transparency.FeeLeg\n\n  # This element contains all the terms relevant to defining the applicable floating rate payer calculation amount, credit events and associated conditions to settlement, and reference obligations.\n  protectionTerms : FpML5.transparency.ProtectionTerms\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CreditDefaultSwapOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "generalTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element contains all the data that appears in the section entitled \"1. General Terms\" in the 2003 ISDA Credit Derivatives Confirmation.",
+      "Name" : "generalTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.GeneralTerms",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.GeneralTerms",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.GeneralTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10526
+      }
+    },
+    "feeLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element contains all the terms relevant to defining the fixed amounts/payments per the applicable ISDA definitions.",
+      "Name" : "feeLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.FeeLeg",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.FeeLeg",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.FeeLeg",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10529
+      }
+    },
+    "protectionTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element contains all the terms relevant to defining the applicable floating rate payer calculation amount, credit events and associated conditions to settlement, and reference obligations.",
+      "Name" : "protectionTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.ProtectionTerms",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.ProtectionTerms",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ProtectionTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10532
+      }
+    }
+  },
+  "LocalFieldNames" : [ "generalTerms", "feeLeg", "protectionTerms" ],
+  "IsSynthetic" : false
+}

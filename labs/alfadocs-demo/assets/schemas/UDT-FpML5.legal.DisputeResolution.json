@@ -1,0 +1,51 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The time by which a dispute needs to be resolved. Initially developed for the Standard CSA, in reference to margin call disputes.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.DisputeResolution",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The time by which a dispute needs to be resolved. Initially developed for the Standard CSA, in reference to margin call disputes.\n #/\nrecord FpML5.legal.DisputeResolution {\n  # The time (expressed as time + reference business center) by which the parties are expected to resolve a valuation dispute on the Local Business Day following the date on which the notice is given, in accordance to Paragraph 5 (New York Law) and Paragraph 4 (English Law).\n  resolutionTime : FpML5.legal.BusinessCenterTime\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013EnglishLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013NewYorkLaw",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "resolutionTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time (expressed as time + reference business center) by which the parties are expected to resolve a valuation dispute on the Local Business Day following the date on which the notice is given, in accordance to Paragraph 5 (New York Law) and Paragraph 4 (English Law).",
+      "Name" : "resolutionTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.BusinessCenterTime",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.BusinessCenterTime",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2879
+      }
+    }
+  },
+  "LocalFieldNames" : [ "resolutionTime" ],
+  "IsSynthetic" : false
+}

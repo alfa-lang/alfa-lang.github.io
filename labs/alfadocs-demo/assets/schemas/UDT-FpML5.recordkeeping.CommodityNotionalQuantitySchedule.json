@@ -1,0 +1,171 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The Notional Quantity per Calculation Period. There must be a Notional Quantity step specified for each Calculation Period, regardless of whether the Notional Quantity changes or remains the same between periods.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalQuantitySchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The Notional Quantity per Calculation Period. There must be a Notional Quantity step specified for each Calculation Period, regardless of whether the Notional Quantity changes or remains the same between periods.\n #/\nrecord FpML5.recordkeeping.CommodityNotionalQuantitySchedule {\n  # The Notional Quantity per Calculation Period. There must be a Notional Quantity specified for each Calculation Period, regardless of whether the quantity changes or remains the same between periods.\n  notionalStep : FpML5.recordkeeping.CommodityNotionalQuantity\n\n  # For an electricity transaction, the Notional Quantity schedule for a one or more groups of Settlement Periods to which the Notional Quantity is based. If the schedule differs for different groups of Settlement Periods, this element should be repeated.\n  settlementPeriodsNotionalQuantitySchedule : FpML5.recordkeeping.CommoditySettlementPeriodsNotionalQuantitySchedule\n\n  # A pointer style reference to the Calculation Periods defined on another leg.\n  calculationPeriodsReference : FpML5.recordkeeping.CalculationPeriodsReference\n\n  # A pointer style reference to the Calculation Periods Schedule defined on another leg.\n  calculationPeriodsScheduleReference : FpML5.recordkeeping.CalculationPeriodsScheduleReference\n\n  # A pointer style reference to single-day-duration Calculation Periods defined on another leg.\n  calculationPeriodsDatesReference : FpML5.recordkeeping.CalculationPeriodsDatesReference\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityBasketUnderlyingByNotional",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FixedPriceLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FloatingPriceLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "notionalStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Notional Quantity per Calculation Period. There must be a Notional Quantity specified for each Calculation Period, regardless of whether the quantity changes or remains the same between periods.",
+      "Name" : "notionalStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityNotionalQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 66
+      }
+    },
+    "settlementPeriodsNotionalQuantitySchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For an electricity transaction, the Notional Quantity schedule for a one or more groups of Settlement Periods to which the Notional Quantity is based. If the schedule differs for different groups of Settlement Periods, this element should be repeated.",
+      "Name" : "settlementPeriodsNotionalQuantitySchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommoditySettlementPeriodsNotionalQuantitySchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommoditySettlementPeriodsNotionalQuantitySchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommoditySettlementPeriodsNotionalQuantitySchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 69
+      }
+    },
+    "calculationPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CalculationPeriodsReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 72
+      }
+    },
+    "calculationPeriodsScheduleReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods Schedule defined on another leg.",
+      "Name" : "calculationPeriodsScheduleReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsScheduleReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CalculationPeriodsScheduleReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsScheduleReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 75
+      }
+    },
+    "calculationPeriodsDatesReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to single-day-duration Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsDatesReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsDatesReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CalculationPeriodsDatesReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsDatesReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 78
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 81
+      }
+    }
+  },
+  "LocalFieldNames" : [ "notionalStep", "settlementPeriodsNotionalQuantitySchedule", "calculationPeriodsReference", "calculationPeriodsScheduleReference", "calculationPeriodsDatesReference", "id" ],
+  "IsSynthetic" : false
+}

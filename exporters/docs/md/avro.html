@@ -1,0 +1,677 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Avro Exporter &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Avro Exporter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="avro-exporter">
+<h1>Avro Exporter<a class="headerlink" href="#avro-exporter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This document defines the translation methodology for ALFA to <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html">Avro 1.9.1 IDL</a>.
+Some translations will inevitably have not direct corresponding type. However, Avro annotations are used to indicate
+additional attributes where required to provide information in the Avro IDL schema to be used where necessary.</p>
+<p>The Avro exporter continues to be refined in terms of its translation capabilities. Feedback is most welcome on how to
+improve the translation into Avro, to make the best use of Avro features.</p>
+<p>Usage:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c -e avro -o generated/avro src
+</pre></div>
+</div>
+<p>For use with the <a class="reference internal" href="../../../tools/mvnplugin.html#mvnplugin"><span class="std std-ref">ALFA Maven Plugin</span></a>, set <code class="docutils literal notranslate"><span class="pre">&lt;exportType&gt;avro&lt;/exportType&gt;</span></code> in the plugin configuration.</p>
+</div>
+<div class="section" id="primitive-types">
+<h2>Primitive types<a class="headerlink" href="#primitive-types" title="Permalink to this headline">¶</a></h2>
+<p>ALFA primitives are mapped to Avro as defined in the following table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ALFA</th>
+<th class="head">Avro</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>binary</td>
+<td>bytes</td>
+</tr>
+<tr class="row-odd"><td>boolean</td>
+<td>boolean</td>
+</tr>
+<tr class="row-even"><td>byte</td>
+<td>bytes</td>
+</tr>
+<tr class="row-odd"><td>char</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>date</td>
+<td>date</td>
+</tr>
+<tr class="row-odd"><td>datetime</td>
+<td>timestamp_ms</td>
+</tr>
+<tr class="row-even"><td>decimal</td>
+<td>decimal</td>
+</tr>
+<tr class="row-odd"><td>decimal(s,p)</td>
+<td>decimal(s,p)</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>duration</td>
+</tr>
+<tr class="row-odd"><td>double</td>
+<td>double</td>
+</tr>
+<tr class="row-even"><td>float</td>
+<td>float</td>
+</tr>
+<tr class="row-odd"><td>int</td>
+<td>int</td>
+</tr>
+<tr class="row-even"><td>long</td>
+<td>long</td>
+</tr>
+<tr class="row-odd"><td>pattern</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>short</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>string</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>time</td>
+<td>time_ms</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>uuid</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>void</td>
+<td>void</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vectors-types">
+<h2>Vectors types<a class="headerlink" href="#vectors-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="map">
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/map.html#mapvectortype"><span class="std std-ref">map&lt; K, V &gt;</span></a> where scalar keys are used, are represented as a Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#maps">map&lt; V &gt;</a>. For complex key types, use array of a record tuple.
+Given an ALFA definition ( assume Person is an existing record ):</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Team</span> <span class="p">{</span>
+    <span class="n">salaries</span> <span class="p">:</span> <span class="k">map</span><span class="p">&lt;</span><span class="n">Person</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>@alfa-synthetic( &quot;map-tuple&quot; )
+record __TeamSalariesEntry {
+    Person key;
+    double value;
+}
+
+record Team {
+    array&lt; __TeamSalariesEntry &gt; salaries;
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;alfa-synthetic(</span> <span class="pre">&quot;map-tuple&quot;</span> <span class="pre">)</span></code> Avro annotation serves as a marker on the record indicate the <code class="docutils literal notranslate"><span class="pre">array&lt;</span> <span class="pre">__TeamSalariesEntry</span> <span class="pre">&gt;</span></code>
+type, should be treated as a map if the target programming model support non-scalar map keys.</p>
+</div>
+<div class="section" id="set">
+<h3>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/set.html#setvectortype"><span class="std std-ref">set&lt; T &gt;</span></a> is represented as an Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#arrays">array&lt; T &gt;</a> with an annotation to indicate it should be treated as a <code class="docutils literal notranslate"><span class="pre">set&lt;T&gt;</span></code> if
+the target programming model supports <code class="docutils literal notranslate"><span class="pre">set&lt;T&gt;</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Team</span> <span class="p">{</span>
+    <span class="n">members</span> <span class="p">:</span> <span class="k">set</span><span class="p">&lt;</span> <span class="n">Person</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Team {
+    @alfa-isSet( &quot;true&quot; )
+    array&lt; Person &gt; members;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="seq">
+<h3>Seq<a class="headerlink" href="#seq" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <span class="xref std std-ref">seqVectorType</span> translates directly to Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#arrays">array&lt; T &gt;</a>.</p>
+</div>
+<div class="section" id="enum">
+<h3>Enum<a class="headerlink" href="#enum" title="Permalink to this headline">¶</a></h3>
+<p>ALFA supports <code class="docutils literal notranslate"><span class="pre">enum&lt;</span> <span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">C</span> <span class="pre">&gt;</span></code> directly as a field type instead of having to declare it as a standalone <a class="reference internal" href="../../../lang/datatypes/vectors/enum.html#enumvectortype"><span class="std std-ref">enum&lt; C1, C2, … &gt;</span></a> type.
+Such field type declarations translates to an Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#format_enums">enum</a> and a reference to that declaration. So given:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Velocity</span> <span class="p">{</span>
+    <span class="n">direction</span> <span class="p">:</span> <span class="k">enum</span><span class="p">&lt;</span> <span class="n">N</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">W</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Velocity {
+    direction : __VelocityDirection;
+}
+
+@alfa-synthetic( &quot;true&quot; )
+enum __VelocityDirection {
+    N, S, E, W
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple">
+<h3>Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/tuple.html#tuplevectortype"><span class="std std-ref">tuple&lt; :T1, :T2, .. &gt;</span></a> type translates to an Avro record and and a reference to that declaration. So given:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Drawing</span> <span class="p">{</span>
+    <span class="n">resolution</span> <span class="p">:</span> <span class="k">tuple</span><span class="p">&lt;</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span> <span class="p">&gt;</span>
+    <span class="n">origin</span> <span class="p">:</span> <span class="k">tuple</span><span class="p">&lt;</span> <span class="n">X</span> <span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">Y</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will be ( notice the generated field naming ):</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Drawing {
+    resolution : __DrawingResolution
+    origin : __DrawingOrigin
+}
+
+@alfa-synthetic( &quot;true&quot; )
+record __DrawingResolution {
+    int _1;
+    int _2;
+}
+
+@alfa-synthetic( &quot;true&quot; )
+record __DrawingOrigin {
+    int X;
+    int Y;
+    int Z;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="union">
+<h3>Union<a class="headerlink" href="#union" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/union.html#unionvectortype"><span class="std std-ref">union&lt; :T1, :T2, ..&gt;</span></a> field type translates naturally to an Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#unions">union</a> field type. So given:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Result</span> <span class="p">{</span>
+    <span class="n">value</span> <span class="p">:</span> <span class="k">union</span><span class="p">&lt;</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">string</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will simply be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Result {
+    union{ double, int, string } value;
+}
+</pre></div>
+</div>
+<p>ALFA union field type can optionally have tagged names, therefore can have different tagged names with the same type.
+Consider:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Payment</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="p">:</span> <span class="k">union</span><span class="p">&lt;</span> <span class="n">Paypal</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">BankAccount</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">,</span> <span class="n">Cash</span> <span class="p">:</span> <span class="k">void</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above contains 2 fields of type string, which will not translate as-is to an Avro union. Also a <code class="docutils literal notranslate"><span class="pre">Cash</span></code> field of type
+<code class="docutils literal notranslate"><span class="pre">void</span></code> which is not supported in Avro. When duplicate type or <code class="docutils literal notranslate"><span class="pre">void</span></code> is encountered in an ALFA union, those are
+wrapped as records in Avro as shown below.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Payment {
+    union{ string, __PaymentMethodBankAccount, __PaymentMethodCash } method;
+}
+
+record __PaymentMethodBankAccount {
+    string BankAccount;
+}
+
+record __PaymentMethodCash {
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="user-defined-types">
+<h2>User-defined types<a class="headerlink" href="#user-defined-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="record">
+<h3>record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/record.html#recordtype"><span class="std std-ref">record</span></a> will be an Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#format_records">record</a>.</p>
+</div>
+<div class="section" id="key">
+<h3>key<a class="headerlink" href="#key" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/key.html#keytype"><span class="std std-ref">key</span></a> will be an Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#format_records">record</a>.</p>
+</div>
+<div class="section" id="id6">
+<h3>enum<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/enum.html#enumtype"><span class="std std-ref">enum</span></a> will be an Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#format_enums">enum</a>.</p>
+</div>
+<div class="section" id="trait">
+<h3>trait<a class="headerlink" href="#trait" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/trait.html#traittype"><span class="std std-ref">trait</span></a> is translated to an Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#unions">union</a> as the ALFA transitive closure of implementations of the
+trait. Given an ALFA definition:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">trait</span> <span class="n">Shape</span> <span class="p">{</span> <span class="n">area</span> <span class="p">:</span> <span class="kt">double</span> <span class="p">}</span>
+
+<span class="k">trait</span> <span class="n">Rectangle</span> <span class="k">includes</span> <span class="n">Shape</span> <span class="p">{</span> <span class="n">height</span> <span class="p">:</span> <span class="kt">int</span> <span class="n">width</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Square</span> <span class="k">includes</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Circle</span> <span class="k">includes</span> <span class="n">Shape</span> <span class="p">{</span> <span class="n">radius</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Triangle</span> <span class="k">includes</span> <span class="n">Shape</span> <span class="p">{</span> <span class="n">side</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Drawing</span> <span class="p">{</span> <span class="n">item</span> <span class="p">:</span> <span class="n">Shape</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will be the following:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Square { double area; int height; int width; }
+
+record Circle { double area; int radius; }
+
+record Triangle { double area; int side; }
+
+record Shape {
+    union { Square, Circle, Triangle } shape;
+}
+
+record Rectangle {
+    union { Square } rectangle;
+}
+
+record Drawing { Shape item; }
+</pre></div>
+</div>
+<p>Notice the ALFA traits are Avro records with unions of its transitive closure from ALFA .</p>
+</div>
+<div class="section" id="entity">
+<h3>entity<a class="headerlink" href="#entity" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/entity.html#entitytype"><span class="std std-ref">entity</span></a> will be translated to a Avro record with a field named <code class="docutils literal notranslate"><span class="pre">__key</span></code> appearing as the 1st field.
+This field represents the key of the entity, if one is defined ( ALFA permits keyless entity to represent
+singletons ).</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span> <span class="n">Order</span> <span class="nf">key</span><span class="p">(</span> <span class="n">id</span> <span class="p">:</span> <span class="k">uuid</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">items</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="n">Item</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will be the following:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record OrderKey {
+    id : string
+}
+
+record Order {
+    OrderKey __key;
+    array&lt; Item &gt; items;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>union<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/union.html#uniontype"><span class="std std-ref">union</span></a> gets translated to a Avro <a class="reference external" href="https://avro.apache.org/docs/1.9.1/idl.html#format_records">record</a> with a single union field containing ALFA union fields. This is identical
+to ALFA in-lined union field type translation.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span> <span class="n">Payment</span> <span class="p">{</span>
+    <span class="n">Paypal</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">Cash</span> <span class="p">:</span> <span class="k">void</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avro translation will be the following:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Payment {
+    union{ string, __PaymentMethodBankAccount, __PaymentMethodCash } method;
+}
+
+record __PaymentMethodBankAccount {
+    string BankAccount;
+}
+
+record __PaymentMethodCash {
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="service">
+<h3>service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a> will be translated to a new Avro Protocol definition file containing
+the set of methods. All definitions required by the interface will be available in a seperate
+file containing only Avro records.</p>
+<p>Given the ALFA definition:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">com.acme</span>
+
+<span class="k">record</span> <span class="n">Order</span> <span class="p">{}</span>
+
+<span class="k">service</span> <span class="n">OrderProcessing</span> <span class="p">{</span>
+    <span class="n">createEmptyOrder</span><span class="p">()</span> <span class="p">:</span> <span class="n">Order</span>
+    <span class="n">saveOrder</span><span class="p">(</span> <span class="n">order</span> <span class="p">:</span> <span class="n">Order</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The 2 following Avro definitions will be generated:</p>
+<p>File <code class="docutils literal notranslate"><span class="pre">com.acme.OrderProcessing.avdl</span></code>. An Avro Protocol definition per ALFA service.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@namespace (&quot;com.acme&quot;)
+protocol OrderProcessing
+{
+    import idl &quot;com.acme.avdl&quot;;
+
+    com.acme.Order createEmptyOrder();
+    void saveOrder( com.acme.Order order );
+}
+</pre></div>
+</div>
+<p>File <code class="docutils literal notranslate"><span class="pre">com.acme.avdl</span></code>.  An Avro Protocol definition by ALFA namespace.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>@namespace (&quot;com.acme&quot;)
+protocol com_acme
+{
+    record Order { }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="other-alfa-features">
+<h2>Other ALFA features<a class="headerlink" href="#other-alfa-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="optional-fields">
+<h3>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this headline">¶</a></h3>
+<p>Fields marked as optional in ALFA using <code class="docutils literal notranslate"><span class="pre">T?</span></code> will be converted to Avro as <code class="docutils literal notranslate"><span class="pre">union{T,</span> <span class="pre">null}</span></code>.</p>
+</div>
+<div class="section" id="key-t">
+<h3>key<span class="raw-html-m2r"><T></span><a class="headerlink" href="#key-t" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <code class="docutils literal notranslate"><span class="pre">key&lt;T&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is an entity will be translated to the key declaration of <code class="docutils literal notranslate"><span class="pre">TKey</span></code>, where the ALFA key would have been
+generated as a Avro record.</p>
+</div>
+</div>
+<div class="section" id="building-an-alfa-to-avro-project">
+<h2>Building an ALFA to Avro Project<a class="headerlink" href="#building-an-alfa-to-avro-project" title="Permalink to this headline">¶</a></h2>
+<p>This step can be performed in Maven using the following build configuration.
+The configuration below will invoke the ALFA compiler to generate Avro, invoke Avro schema to Java generator, and finally compile
+the generated Java.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.apache.avro<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>avro<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.9.1<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+
+<span class="nt">&lt;build&gt;</span>
+    <span class="nt">&lt;plugins&gt;</span>
+        <span class="nt">&lt;plugin&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>build-helper-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.7<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;executions&gt;</span>
+                <span class="nt">&lt;execution&gt;</span>
+                    <span class="nt">&lt;id&gt;</span>add-source<span class="nt">&lt;/id&gt;</span>
+                    <span class="nt">&lt;phase&gt;</span>generate-sources<span class="nt">&lt;/phase&gt;</span>
+                    <span class="nt">&lt;goals&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>add-source<span class="nt">&lt;/goal&gt;</span>
+                    <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;configuration&gt;</span>
+                        <span class="nt">&lt;sources&gt;</span>
+                            <span class="nt">&lt;source&gt;</span><span class="cp">${</span><span class="n">project</span><span class="o">.</span><span class="n">build</span><span class="o">.</span><span class="n">directory</span><span class="cp">}</span>/generated-sources/java<span class="nt">&lt;/source&gt;</span>
+                        <span class="nt">&lt;/sources&gt;</span>
+                    <span class="nt">&lt;/configuration&gt;</span>
+                <span class="nt">&lt;/execution&gt;</span>
+            <span class="nt">&lt;/executions&gt;</span>
+        <span class="nt">&lt;/plugin&gt;</span>
+
+        <span class="nt">&lt;plugin&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>io.alfa.utils<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>alfa-pro-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>0.8.1-RC1<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;executions&gt;</span>
+                <span class="nt">&lt;execution&gt;</span>
+                    <span class="nt">&lt;id&gt;</span>alfa-build<span class="nt">&lt;/id&gt;</span>
+                    <span class="nt">&lt;goals&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>package<span class="nt">&lt;/goal&gt;</span>
+                    <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;configuration&gt;</span>
+                        <span class="nt">&lt;srcPath&gt;</span><span class="cp">${</span><span class="n">basedir</span><span class="cp">}</span>/src/alfa/<span class="nt">&lt;/srcPath&gt;</span>
+                        <span class="nt">&lt;exportSettings&gt;</span>
+                            <span class="nt">&lt;exportSetting&gt;</span>
+                                <span class="nt">&lt;exportType&gt;</span>avro<span class="nt">&lt;/exportType&gt;</span>
+                            <span class="nt">&lt;/exportSetting&gt;</span>
+                        <span class="nt">&lt;/exportSettings&gt;</span>
+                    <span class="nt">&lt;/configuration&gt;</span>
+                <span class="nt">&lt;/execution&gt;</span>
+            <span class="nt">&lt;/executions&gt;</span>
+        <span class="nt">&lt;/plugin&gt;</span>
+
+        <span class="nt">&lt;plugin&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.apache.avro<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>avro-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span><span class="cp">${</span><span class="n">avro</span><span class="o">.</span><span class="n">version</span><span class="cp">}</span><span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;executions&gt;</span>
+                <span class="nt">&lt;execution&gt;</span>
+                    <span class="nt">&lt;phase&gt;</span>generate-sources<span class="nt">&lt;/phase&gt;</span>
+                    <span class="nt">&lt;goals&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>schema<span class="nt">&lt;/goal&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>protocol<span class="nt">&lt;/goal&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>idl-protocol<span class="nt">&lt;/goal&gt;</span>
+                    <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;configuration&gt;</span>
+                        <span class="nt">&lt;sourceDirectory&gt;</span>
+                            <span class="cp">${</span><span class="n">project</span><span class="o">.</span><span class="n">build</span><span class="o">.</span><span class="n">directory</span><span class="cp">}</span>/generated-sources/avro
+                        <span class="nt">&lt;/sourceDirectory&gt;</span>
+                        <span class="nt">&lt;outputDirectory&gt;</span>
+                            <span class="cp">${</span><span class="n">project</span><span class="o">.</span><span class="n">build</span><span class="o">.</span><span class="n">directory</span><span class="cp">}</span>/generated-sources/java
+                        <span class="nt">&lt;/outputDirectory&gt;</span>
+                    <span class="nt">&lt;/configuration&gt;</span>
+                <span class="nt">&lt;/execution&gt;</span>
+            <span class="nt">&lt;/executions&gt;</span>
+        <span class="nt">&lt;/plugin&gt;</span>
+
+    <span class="nt">&lt;/plugins&gt;</span>
+<span class="nt">&lt;/build&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

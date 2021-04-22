@@ -1,0 +1,154 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a trade identifier with a reference to the party that this trade is associated with.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.TradeIdentifierExtended",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a trade identifier with a reference to the party that this trade is associated with.\n #/\nrecord FpML5.legal.TradeIdentifierExtended {\n  issuer : string\n\n  tradeId : string\n\n  # Reference to a party.\n  partyReference : FpML5.legal.PartyReference\n\n  # Reference to an account.\n  accountReference : FpML5.legal.AccountReference?\n\n  # A trade identifier accompanied by a version number. In regulatory reporting views, this should be avoided except for internal mnessaging.\n  versionedTradeId : FpML5.legal.VersionedTradeId\n\n  associatedPartyReference : FpML5.legal.PartyReference\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.PartyTradeIdentifier",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "issuer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "issuer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 70
+      }
+    },
+    "tradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 72
+      }
+    },
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 74
+      }
+    },
+    "accountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an account.",
+      "Name" : "accountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 77
+      }
+    },
+    "versionedTradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A trade identifier accompanied by a version number. In regulatory reporting views, this should be avoided except for internal mnessaging.",
+      "Name" : "versionedTradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.VersionedTradeId",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.VersionedTradeId",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.VersionedTradeId",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 80
+      }
+    },
+    "associatedPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "associatedPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 83
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 85
+      }
+    }
+  },
+  "LocalFieldNames" : [ "issuer", "tradeId", "partyReference", "accountReference", "versionedTradeId", "associatedPartyReference", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,181 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The Fixed Price for a given Calculation Period during the life of the trade. There must be a Fixed Price step specified for each Calculation Period, regardless of whether the Fixed Price changes or remains the same between periods.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityFixedPriceSchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The Fixed Price for a given Calculation Period during the life of the trade. There must be a Fixed Price step specified for each Calculation Period, regardless of whether the Fixed Price changes or remains the same between periods.\n #/\nrecord FpML5.recordkeeping.CommodityFixedPriceSchedule {\n  # The Fixed Price for a given Calculation Period during the life of the trade. There must be a Fixed Price step specified for each Calculation Period, regardless of whether the Fixed Price changes or remains the same between periods.\n  fixedPriceStep : FpML5.recordkeeping.FixedPrice\n\n  # For a Wet Voyager Charter Freight Swap, the number of Worldscale Points for purposes of the calculation of a Fixed Amount for a given Calculation Period during the life of the trade. There must be Worldscale Rate Step specified for each Calculation Period, regardless of whether the Worldscale Rate Step changes or remains the same between periods.\n  worldscaleRateStep : decimal\n\n  # For a DRY Voyage Charter or Time Charter Freight Swap, the price per relevant unit for pruposes of the calculation of a Fixed Amount for a given Calculation Period during the life of the trade. There must be Worldscale Rate Step specified for each Calculation Period, regardless of whether the Worldscale Rate Step changes or remains the same between periods.\n  contractRateStep : FpML5.recordkeeping.NonNegativeMoney\n\n  # For an electricity transaction, the fixed price schedule for one or more groups of Settlement Periods on which fixed payments are based. if the schedule differs for different groups of Settlement Periods, this element should be repeated.\n  settlementPeriodsPriceSchedule : FpML5.recordkeeping.CommoditySettlementPeriodsPriceSchedule\n\n  # A pointer style reference to the Calculation Periods defined on another leg.\n  calculationPeriodsReference : FpML5.recordkeeping.CalculationPeriodsReference\n\n  # A pointer style reference to the Calculation Periods Schedule defined on another leg.\n  calculationPeriodsScheduleReference : FpML5.recordkeeping.CalculationPeriodsScheduleReference\n\n  # A pointer style reference to single-day-duration Calculation Periods defined on another leg.\n  calculationPeriodsDatesReference : FpML5.recordkeeping.CalculationPeriodsDatesReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FixedPriceLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fixedPriceStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Fixed Price for a given Calculation Period during the life of the trade. There must be a Fixed Price step specified for each Calculation Period, regardless of whether the Fixed Price changes or remains the same between periods.",
+      "Name" : "fixedPriceStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FixedPrice",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FixedPrice",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FixedPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20698
+      }
+    },
+    "worldscaleRateStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For a Wet Voyager Charter Freight Swap, the number of Worldscale Points for purposes of the calculation of a Fixed Amount for a given Calculation Period during the life of the trade. There must be Worldscale Rate Step specified for each Calculation Period, regardless of whether the Worldscale Rate Step changes or remains the same between periods.",
+      "Name" : "worldscaleRateStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20701
+      }
+    },
+    "contractRateStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For a DRY Voyage Charter or Time Charter Freight Swap, the price per relevant unit for pruposes of the calculation of a Fixed Amount for a given Calculation Period during the life of the trade. There must be Worldscale Rate Step specified for each Calculation Period, regardless of whether the Worldscale Rate Step changes or remains the same between periods.",
+      "Name" : "contractRateStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20704
+      }
+    },
+    "settlementPeriodsPriceSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For an electricity transaction, the fixed price schedule for one or more groups of Settlement Periods on which fixed payments are based. if the schedule differs for different groups of Settlement Periods, this element should be repeated.",
+      "Name" : "settlementPeriodsPriceSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommoditySettlementPeriodsPriceSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommoditySettlementPeriodsPriceSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommoditySettlementPeriodsPriceSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20707
+      }
+    },
+    "calculationPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CalculationPeriodsReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20710
+      }
+    },
+    "calculationPeriodsScheduleReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods Schedule defined on another leg.",
+      "Name" : "calculationPeriodsScheduleReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsScheduleReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CalculationPeriodsScheduleReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsScheduleReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20713
+      }
+    },
+    "calculationPeriodsDatesReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to single-day-duration Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsDatesReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsDatesReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CalculationPeriodsDatesReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodsDatesReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20716
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fixedPriceStep", "worldscaleRateStep", "contractRateStep", "settlementPeriodsPriceSchedule", "calculationPeriodsReference", "calculationPeriodsScheduleReference", "calculationPeriodsDatesReference" ],
+  "IsSynthetic" : false
+}

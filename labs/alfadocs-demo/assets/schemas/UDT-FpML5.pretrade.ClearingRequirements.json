@@ -1,0 +1,68 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ClearingRequirements",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.pretrade.ClearingRequirements {\n  # The regulator or other supervisory body to which the clearing requirements apply.\n  supervisoryBody : string\n\n  # Whether the particular trade type in question is required by this regulator to be cleared.\n  mandatorilyClearable : boolean\n\n  # Indicates a reason supporting why the trade is mandatorily clearable or not.\n  reason : FpML5.pretrade.Reason?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ClearingEligibility",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "supervisoryBody" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The regulator or other supervisory body to which the clearing requirements apply.",
+      "Name" : "supervisoryBody",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6001
+      }
+    },
+    "mandatorilyClearable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether the particular trade type in question is required by this regulator to be cleared.",
+      "Name" : "mandatorilyClearable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6004
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates a reason supporting why the trade is mandatorily clearable or not.",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Reason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6007
+      }
+    }
+  },
+  "LocalFieldNames" : [ "supervisoryBody", "mandatorilyClearable", "reason" ],
+  "IsSynthetic" : false
+}

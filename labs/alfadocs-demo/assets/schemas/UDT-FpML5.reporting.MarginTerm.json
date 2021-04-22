@@ -1,0 +1,91 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Margin Terms can be defined as they apply to Variation Margin and/or Segregated Independent Amount. For Variation Margin Terms a threshold, minimumTransferAmount and transferRounding are defined. For Segregated Independent Amount it is only necessary to provide a minimumTransferAmount and transferRounding.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MarginTerm",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Margin Terms can be defined as they apply to Variation Margin and/or Segregated Independent Amount. For Variation Margin Terms a threshold, minimumTransferAmount and transferRounding are defined. For Segregated Independent Amount it is only necessary to provide a minimumTransferAmount and transferRounding.\n #/\nrecord FpML5.reporting.MarginTerm {\n  currency : string?\n\n  # variation margin terms\n  variationMargin : FpML5.reporting.VariationMarginTerm\n\n  # segregated independent amount terms\n  segregatedIndependentAmount : FpML5.reporting.SegregatedIndependentAmountMarginTerm\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MarginCallStatus",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RequestMargin",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5001
+      }
+    },
+    "variationMargin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "variation margin terms",
+      "Name" : "variationMargin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.VariationMarginTerm",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.VariationMarginTerm",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.VariationMarginTerm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5003
+      }
+    },
+    "segregatedIndependentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "segregated independent amount terms",
+      "Name" : "segregatedIndependentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.SegregatedIndependentAmountMarginTerm",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.SegregatedIndependentAmountMarginTerm",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SegregatedIndependentAmountMarginTerm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5006
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency", "variationMargin", "segregatedIndependentAmount" ],
+  "IsSynthetic" : false
+}

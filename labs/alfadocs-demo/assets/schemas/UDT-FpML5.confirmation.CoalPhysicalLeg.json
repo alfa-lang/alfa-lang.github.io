@@ -1,0 +1,214 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Physically settled leg of a physically settled coal transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CoalPhysicalLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Physically settled leg of a physically settled coal transaction.\n #/\nrecord FpML5.confirmation.CoalPhysicalLeg {\n  # A reference to the party responsible for making the payments defined by this structure.\n  payerPartyReference : FpML5.confirmation.PartyReference\n\n  # A reference to the account responsible for making the payments defined by this structure.\n  payerAccountReference : FpML5.confirmation.AccountReference?\n\n  # A reference to the party that receives the payments corresponding to this structure.\n  receiverPartyReference : FpML5.confirmation.PartyReference\n\n  # A reference to the account that receives the payments corresponding to this structure.\n  receiverAccountReference : FpML5.confirmation.AccountReference?\n\n  # The period during which delivery/deliveries of Coal Products may be scheduled. Equivalent to Nomination Period(s) for US Coal.\n  deliveryPeriods : FpML5.confirmation.CommodityDeliveryPeriods\n\n  # The specification of the Coal Product to be delivered.\n  coal : FpML5.confirmation.CoalProduct\n\n  # The physical delivery conditions for the transaction.\n  deliveryConditions : FpML5.confirmation.CoalDelivery\n\n  # The different options for specifying the quantity.\n  deliveryQuantity : FpML5.confirmation.CommodityPhysicalQuantity\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "payerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for making the payments defined by this structure.",
+      "Name" : "payerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25153
+      }
+    },
+    "payerAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account responsible for making the payments defined by this structure.",
+      "Name" : "payerAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25156
+      }
+    },
+    "receiverPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party that receives the payments corresponding to this structure.",
+      "Name" : "receiverPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25159
+      }
+    },
+    "receiverAccountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the account that receives the payments corresponding to this structure.",
+      "Name" : "receiverAccountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25162
+      }
+    },
+    "deliveryPeriods" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The period during which delivery/deliveries of Coal Products may be scheduled. Equivalent to Nomination Period(s) for US Coal.",
+      "Name" : "deliveryPeriods",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityDeliveryPeriods",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityDeliveryPeriods",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityDeliveryPeriods",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25165
+      }
+    },
+    "coal" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specification of the Coal Product to be delivered.",
+      "Name" : "coal",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CoalProduct",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CoalProduct",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CoalProduct",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25168
+      }
+    },
+    "deliveryConditions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The physical delivery conditions for the transaction.",
+      "Name" : "deliveryConditions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CoalDelivery",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CoalDelivery",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CoalDelivery",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25171
+      }
+    },
+    "deliveryQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The different options for specifying the quantity.",
+      "Name" : "deliveryQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityPhysicalQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityPhysicalQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityPhysicalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25174
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25177
+      }
+    }
+  },
+  "LocalFieldNames" : [ "payerPartyReference", "payerAccountReference", "receiverPartyReference", "receiverAccountReference", "deliveryPeriods", "coal", "deliveryConditions", "deliveryQuantity", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the parameters required for each of the ISDA defined yield curve methods for cash settlement.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.YieldCurveMethod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the parameters required for each of the ISDA defined yield curve methods for cash settlement.\n #/\nrecord FpML5.pretrade.YieldCurveMethod {\n  # The method for obtaining a settlement rate. This may be from some information source (e.g. Reuters) or from a set of reference banks.\n  settlementRateSource : FpML5.pretrade.SettlementRateSource?\n\n  # Which rate quote is to be observed, either Bid, Mid, Offer or Exercising Party Pays. The meaning of Exercising Party Pays is defined in the 2000 ISDA Definitions, Section 17.2. Certain Definitions Relating to Cash Settlement, paragraph (j)\n  quotationRateType : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.CashSettlement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method for obtaining a settlement rate. This may be from some information source (e.g. Reuters) or from a set of reference banks.",
+      "Name" : "settlementRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.SettlementRateSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2917
+      }
+    },
+    "quotationRateType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Which rate quote is to be observed, either Bid, Mid, Offer or Exercising Party Pays. The meaning of Exercising Party Pays is defined in the 2000 ISDA Definitions, Section 17.2. Certain Definitions Relating to Cash Settlement, paragraph (j)",
+      "Name" : "quotationRateType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2920
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementRateSource", "quotationRateType" ],
+  "IsSynthetic" : false
+}

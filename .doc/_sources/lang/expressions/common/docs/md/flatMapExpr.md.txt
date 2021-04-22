@@ -1,0 +1,68 @@
+flatMap
+=======
+
+Allows safely extracting a value expressed as a path containing optional or try values.
+
+Using `flatMap` allows concise and safe expressions avoiding the need to check if optional or try values have
+valid values. Usage is not limited to optional and try type fields. Mandatory fields can also be traversed using `flatMap`.
+
+
+
+Given the definition below:
+
+```csharp
+record RecA {
+   A : int
+}
+
+record RecB {
+   B : try< RecA >
+}
+
+record RecC {
+   C : RecB?
+
+   assert IsValid {
+      let optA : int? = flatMap( C.B.A )
+   }
+}
+```
+
+Observe the use of `flatMap( C.B.A )`. `flatMap` allows traversing optional and try objects
+to access a nested field. If there is **no** value present in the optional or try type field at any point in the nested 
+access, `flatMap` returns `none`. For example if C contained a `none` value or if B contained a failure value, a `none`
+value is returned.
+
+Without `flatmap`, `C.B.A` is an invalid expression as `C.B` is an invalid expression given `C` is an optional value.
+
+
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|Any field, variable|Path to a nested field|
+
+__Returns:__
+`T`? - If the target field type is `T ?`, the same type will be returned. If target is `T` ( not optional ), `T ?` will be returned.
+
+__Usages:__
+
+>- `flatMap( Field1.NestedField1.NestedField2 ) : T ?`
+
+
+__Example:__
+
+Using `flatMap` to access value deeply nested within optional fields.
+
+```csharp
+    assert ValidDates {
+        let effective = flatMap( EffectiveDate.UnadjustedDate.Value )
+        let termination = flatMap( TerminationDate.UnadjustedDate.Value )
+
+        return if ( !isNone(effective) && !isNone(termination) && get( effective ) > get( termination ) )
+                   some("Effective date ${effective} greater than Termination date ${termination}")
+               else
+                   none
+    }
+```

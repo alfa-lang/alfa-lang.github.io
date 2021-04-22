@@ -1,0 +1,146 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies the calculation method of the interest rate leg of the return swap. Includes the floating or fixed rate calculation definitions, along with the determination of the day count fraction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.InterestCalculation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies the calculation method of the interest rate leg of the return swap. Includes the floating or fixed rate calculation definitions, along with the determination of the day count fraction.\n #/\nrecord FpML5.recordkeeping.InterestCalculation {\n  # The floating rate calculation definitions\n  floatingRateCalculation : FpML5.recordkeeping.FloatingRateCalculation\n\n  # The calculation period fixed rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05.\n  fixedRate : decimal\n\n  # The day count fraction.\n  dayCountFraction : string?\n\n  # Defines compounding rates on the Interest Leg.\n  compounding : FpML5.recordkeeping.Compounding?\n\n  # Specifies the type of interpolation used.\n  interpolationMethod : string?\n\n  # Defines applicable periods for interpolation.\n  interpolationPeriod : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.InterestLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "floatingRateCalculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The floating rate calculation definitions",
+      "Name" : "floatingRateCalculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FloatingRateCalculation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FloatingRateCalculation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FloatingRateCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 3745
+      }
+    },
+    "fixedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period fixed rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05.",
+      "Name" : "fixedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 3748
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count fraction.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 3751
+      }
+    },
+    "compounding" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines compounding rates on the Interest Leg.",
+      "Name" : "compounding",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Compounding",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 3754
+      }
+    },
+    "interpolationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the type of interpolation used.",
+      "Name" : "interpolationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 3757
+      }
+    },
+    "interpolationPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines applicable periods for interpolation.",
+      "Name" : "interpolationPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 3760
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 3763
+      }
+    }
+  },
+  "LocalFieldNames" : [ "floatingRateCalculation", "fixedRate", "dayCountFraction", "compounding", "interpolationMethod", "interpolationPeriod", "id" ],
+  "IsSynthetic" : false
+}

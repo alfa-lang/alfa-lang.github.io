@@ -1,0 +1,97 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the rate source and fixing time for an fx rate.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxSpotRateSource",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the rate source and fixing time for an fx rate.\n #/\nrecord FpML5.reporting.FxSpotRateSource {\n  # The primary source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.\n  primaryRateSource : FpML5.reporting.InformationSource?\n\n  # An alternative, or secondary, source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.\n  secondaryRateSource : FpML5.reporting.InformationSource?\n\n  # The time at which the spot currency exchange rate will be observed. It is specified as a time in a business day calendar location, e.g. 11:00am London time.\n  fixingTime : FpML5.reporting.BusinessCenterTime?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Composite",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxFixing",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxLinkedNotionalSchedule",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxPerformanceSwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxRateAsset",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Quanto",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "primaryRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The primary source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.",
+      "Name" : "primaryRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6703
+      }
+    },
+    "secondaryRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An alternative, or secondary, source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.",
+      "Name" : "secondaryRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6706
+      }
+    },
+    "fixingTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time at which the spot currency exchange rate will be observed. It is specified as a time in a business day calendar location, e.g. 11:00am London time.",
+      "Name" : "fixingTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6709
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryRateSource", "secondaryRateSource", "fixingTime" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,37 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery obligation options specific to a firm transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityDeliveryFirm",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery obligation options specific to a firm transaction.\n #/\nrecord FpML5.confirmation.ElectricityDeliveryFirm {\n  # If true, indicates that the buyer and seller should be excused of their delivery obligations when such performance is prevented by Force Majeure. For EEI transactions, this would indicate \"Firm (LD)\" If false, indicates that the buyer and seller should not be excused of their delivery obligations when such performance is prevented by Force Majeure. For EEI transactions, this would indicate \"Firm (No Force Majeure)\"\n  forceMajeure : boolean\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityDeliveryType",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "forceMajeure" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, indicates that the buyer and seller should be excused of their delivery obligations when such performance is prevented by Force Majeure. For EEI transactions, this would indicate \"Firm (LD)\" If false, indicates that the buyer and seller should not be excused of their delivery obligations when such performance is prevented by Force Majeure. For EEI transactions, this would indicate \"Firm (No Force Majeure)\"",
+      "Name" : "forceMajeure",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17542
+      }
+    }
+  },
+  "LocalFieldNames" : [ "forceMajeure" ],
+  "IsSynthetic" : false
+}

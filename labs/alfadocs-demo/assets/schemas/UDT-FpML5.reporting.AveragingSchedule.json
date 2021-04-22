@@ -1,0 +1,79 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Method of generating a series of dates.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AveragingSchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Method of generating a series of dates.\n #/\nrecord FpML5.reporting.AveragingSchedule {\n  # Date on which this period begins.\n  startDate : date?\n\n  # Date on which this period ends.\n  endDate : date?\n\n  # The frequency at which averaging period occurs with the regular part of the valuation schedule and their roll date convention.\n  averagingPeriodFrequency : FpML5.reporting.CalculationPeriodFrequency?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AveragingPeriod",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TriggerEvent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period begins.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21055
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period ends.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21058
+      }
+    },
+    "averagingPeriodFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The frequency at which averaging period occurs with the regular part of the valuation schedule and their roll date convention.",
+      "Name" : "averagingPeriodFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodFrequency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21061
+      }
+    }
+  },
+  "LocalFieldNames" : [ "startDate", "endDate", "averagingPeriodFrequency" ],
+  "IsSynthetic" : false
+}

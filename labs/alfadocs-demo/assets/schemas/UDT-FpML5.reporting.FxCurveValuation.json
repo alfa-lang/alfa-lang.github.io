@@ -1,0 +1,258 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A valuation of an FX curve object., which includes pricing inputs and term structures for fx forwards.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxCurveValuation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A valuation of an FX curve object., which includes pricing inputs and term structures for fx forwards.\n #/\nrecord FpML5.reporting.FxCurveValuation {\n  # A reference to the asset or pricing structure that this values.\n  objectReference : FpML5.reporting.AnyAssetReference?\n\n  # A reference to the valuation scenario used to calculate this valuation. If the Valuation occurs within a ValuationSet, this value is optional and is defaulted from the ValuationSet. If this value occurs in both places, the lower level value (i.e. the one here) overrides that in the higher (i.e. ValuationSet).\n  valuationScenarioReference : FpML5.reporting.ValuationScenarioReference?\n\n  # The base date for which the structure applies, i.e. the curve date. Normally this will align with the valuation date.\n  baseDate : date?\n\n  # The spot settlement date for which the structure applies, normally 0-2 days after the base date. The difference between the baseDate and the spotDate is termed the settlement lag, and is sometimes called \"days to spot\".\n  spotDate : date?\n\n  # The date from which the input data used to construct the pricing input was obtained. Often the same as the baseDate, but sometimes the pricing input may be \"rolled forward\", in which input data from one date is used to generate a curve for a later date.\n  inputDataDate : date?\n\n  # The last date for which data is supplied in this pricing input.\n  endDate : date?\n\n  # The date and time when the pricing input was generated.\n  buildDateTime : datetime?\n\n  settlementCurrencyYieldCurve : FpML5.reporting.PricingStructureReference?\n\n  forecastCurrencyYieldCurve : FpML5.reporting.PricingStructureReference?\n\n  spotRate : FpML5.reporting.FxRateSet?\n\n  # A curve of fx forward rates.\n  fxForwardCurve : FpML5.reporting.TermCurve?\n\n  # A curve of fx forward point spreads.\n  fxForwardPointsCurve : FpML5.reporting.TermCurve?\n\n  id : string?\n\n  definitionRef : string?\n\n}"
+  },
+  "AllFields" : {
+    "objectReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the asset or pricing structure that this values.",
+      "Name" : "objectReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AnyAssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8757
+      }
+    },
+    "valuationScenarioReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the valuation scenario used to calculate this valuation. If the Valuation occurs within a ValuationSet, this value is optional and is defaulted from the ValuationSet. If this value occurs in both places, the lower level value (i.e. the one here) overrides that in the higher (i.e. ValuationSet).",
+      "Name" : "valuationScenarioReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ValuationScenarioReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8760
+      }
+    },
+    "baseDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The base date for which the structure applies, i.e. the curve date. Normally this will align with the valuation date.",
+      "Name" : "baseDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8763
+      }
+    },
+    "spotDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The spot settlement date for which the structure applies, normally 0-2 days after the base date. The difference between the baseDate and the spotDate is termed the settlement lag, and is sometimes called \"days to spot\".",
+      "Name" : "spotDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8766
+      }
+    },
+    "inputDataDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date from which the input data used to construct the pricing input was obtained. Often the same as the baseDate, but sometimes the pricing input may be \"rolled forward\", in which input data from one date is used to generate a curve for a later date.",
+      "Name" : "inputDataDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8769
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last date for which data is supplied in this pricing input.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8772
+      }
+    },
+    "buildDateTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date and time when the pricing input was generated.",
+      "Name" : "buildDateTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8775
+      }
+    },
+    "settlementCurrencyYieldCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "settlementCurrencyYieldCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8778
+      }
+    },
+    "forecastCurrencyYieldCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "forecastCurrencyYieldCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8780
+      }
+    },
+    "spotRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "spotRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxRateSet",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8782
+      }
+    },
+    "fxForwardCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A curve of fx forward rates.",
+      "Name" : "fxForwardCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TermCurve",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8784
+      }
+    },
+    "fxForwardPointsCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A curve of fx forward point spreads.",
+      "Name" : "fxForwardPointsCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TermCurve",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8787
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8790
+      }
+    },
+    "definitionRef" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "definitionRef",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8792
+      }
+    }
+  },
+  "LocalFieldNames" : [ "objectReference", "valuationScenarioReference", "baseDate", "spotDate", "inputDataDate", "endDate", "buildDateTime", "settlementCurrencyYieldCurve", "forecastCurrencyYieldCurve", "spotRate", "fxForwardCurve", "fxForwardPointsCurve", "id", "definitionRef" ],
+  "IsSynthetic" : false
+}

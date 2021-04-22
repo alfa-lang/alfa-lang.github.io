@@ -1,0 +1,52 @@
+# union
+
+A `union` is similar to a `record`, however only 1 field can have a value assigned at any one time.
+ALFA unions are tagged unions with a field name and datatype.
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation.
+
+```csharp
+union Delivery {
+    Post : PostalRequest
+    Courier : CourierRequest
+    EMail : string
+    Message : InstantMessage
+    HandDelivered : void
+}
+```
+
+In the example above, the void type is required even if the field is merely tagged. Simply having `HandDelivered`
+( without a datatype ) indicates the field is declared in a shared `fields {}` block.
+
+
+
+ALFA unions are tagged unions, therefore entries can share the same datatype. E.g.
+```csharp
+union Distance {
+    Miles : int
+    Km : int
+}
+```
+
+
+When a union `includes` a :ref:`traitType`, the fields of the trait conform to the behaviour
+of a union, i.e. only a single field can be assigned on the union at any one time.
+
+```csharp
+trait Menu {
+    Starters : list< Starter >
+    Mains : list< Main >
+    Desserts : list< Dessert >
+}
+
+record CustomerOrder includes Menu {
+    TableNumber : int
+    Waiter : string
+}
+
+// There will be offers on one of the categories in the menu
+union SpecialOffer includes Menu {
+}
+```
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation.

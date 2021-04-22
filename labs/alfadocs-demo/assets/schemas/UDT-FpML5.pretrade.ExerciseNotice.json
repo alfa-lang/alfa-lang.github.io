@@ -1,0 +1,87 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining to whom and where notice of execution should be given. The partyReference refers to one of the principal parties of the trade. If present the exerciseNoticePartyReference refers to a party, other than the principal party, to whome notice should be given.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ExerciseNotice",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining to whom and where notice of execution should be given. The partyReference refers to one of the principal parties of the trade. If present the exerciseNoticePartyReference refers to a party, other than the principal party, to whome notice should be given.\n #/\nrecord FpML5.pretrade.ExerciseNotice {\n  # The party referenced has allocated the trade identifier.\n  partyReference : FpML5.pretrade.PartyReference?\n\n  # The party referenced is the party to which notice of exercise should be given by the buyer.\n  exerciseNoticePartyReference : FpML5.pretrade.PartyReference?\n\n  businessCenter : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.CancelableProvision",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ExtendibleProvision",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ManualExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.OptionalEarlyTermination",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party referenced has allocated the trade identifier.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 777
+      }
+    },
+    "exerciseNoticePartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party referenced is the party to which notice of exercise should be given by the buyer.",
+      "Name" : "exerciseNoticePartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 780
+      }
+    },
+    "businessCenter" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "businessCenter",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 783
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyReference", "exerciseNoticePartyReference", "businessCenter" ],
+  "IsSynthetic" : false
+}

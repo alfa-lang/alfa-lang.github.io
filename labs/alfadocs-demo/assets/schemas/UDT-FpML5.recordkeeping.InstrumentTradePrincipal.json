@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure describing the value in \"native\" currency of an instrument that was traded.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.InstrumentTradePrincipal",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure describing the value in \"native\" currency of an instrument that was traded.\n #/\nrecord FpML5.recordkeeping.InstrumentTradePrincipal {\n  # The net and/or gross value of the amount traded in native currency.\n  principalAmount : FpML5.recordkeeping.NetAndGross?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.InstrumentTradeDetails",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "principalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The net and/or gross value of the amount traded in native currency.",
+      "Name" : "principalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.NetAndGross",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 4794
+      }
+    }
+  },
+  "LocalFieldNames" : [ "principalAmount" ],
+  "IsSynthetic" : false
+}

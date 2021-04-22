@@ -1,0 +1,62 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes a rate source to be fixed and the date the fixing occurs",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxRateSourceFixing",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes a rate source to be fixed and the date the fixing occurs\n #/\nrecord FpML5.reporting.FxRateSourceFixing {\n  settlementRateSource : FpML5.reporting.FxSettlementRateSource?\n\n  # The date on which the fixing is scheduled to occur.\n  fixingDate : FpML5.reporting.AdjustableDate?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxCashSettlement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxCashSettlementSimple",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "settlementRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxSettlementRateSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25731
+      }
+    },
+    "fixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the fixing is scheduled to occur.",
+      "Name" : "fixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25733
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementRateSource", "fixingDate" ],
+  "IsSynthetic" : false
+}

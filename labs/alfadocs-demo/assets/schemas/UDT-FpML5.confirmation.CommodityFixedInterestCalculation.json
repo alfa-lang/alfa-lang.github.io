@@ -1,0 +1,50 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityFixedInterestCalculation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.CommodityFixedInterestCalculation {\n  # The calculation period fixed rate or \"fee\" rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05. When multiplied by the Notional Amount and the number of calendar days in the Calculation Period divided by the calendar days basis, is the fixed amount payed per Calculation Period.\n  fixedRate : decimal\n\n  # Specifies the basis for the adjustment of a rate from an annual rate to a rate appropriate for the Calculation Period: e.g. the number of calendar days in the Calculation Period divided by the calendar days basis e.g. actual number of days in the Calculation Period divided by 365.\n  dayCountFraction : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityInterestLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fixedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period fixed rate or \"fee\" rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05. When multiplied by the Notional Amount and the number of calendar days in the Calculation Period divided by the calendar days basis, is the fixed amount payed per Calculation Period.",
+      "Name" : "fixedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4765
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the basis for the adjustment of a rate from an annual rate to a rate appropriate for the Calculation Period: e.g. the number of calendar days in the Calculation Period divided by the calendar days basis e.g. actual number of days in the Calculation Period divided by 365.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4768
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fixedRate", "dayCountFraction" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>table&lt; T &gt; &mdash; Alfa</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../exporters/exporters.html">Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../labs/labs.html">Alfa Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>table&lt; T &gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="table-t">
+<h1>table&lt; T &gt;<a class="headerlink" href="#table-t" title="Permalink to this headline">¶</a></h1>
+<p>A tabular representation of the type <code class="docutils literal notranslate"><span class="pre">T</span></code>. The tabular result will contain columns of scalar types similar to a relational table.</p>
+<p>Given an example such as:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span> <span class="n">Person</span> <span class="nf">key</span><span class="p">(</span> <span class="n">Id</span> <span class="p">:</span> <span class="kt">long</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">Age</span> <span class="p">:</span> <span class="kt">int</span>
+    <span class="n">Phone</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A example value of type <code class="docutils literal notranslate"><span class="pre">table&lt;</span> <span class="pre">Person</span> <span class="pre">&gt;</span></code> can be considered to be represented as:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Id :long</th>
+<th class="head">Name :string</th>
+<th class="head">Age :int</th>
+<th class="head"><a href="#id1"><span class="problematic" id="id2">Phone_Id__</span></a> :int</th>
+<th class="head">Phone :string</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>001</td>
+<td>Bob</td>
+<td>23</td>
+<td>0</td>
+<td>02930918290</td>
+</tr>
+<tr class="row-odd"><td>001</td>
+<td>Bob</td>
+<td>23</td>
+<td>1</td>
+<td>02949084509</td>
+</tr>
+<tr class="row-even"><td>002</td>
+<td>Joe</td>
+<td>25</td>
+<td>0</td>
+<td>07940938092</td>
+</tr>
+</tbody>
+</table>
+<p>The flatten rules are:</p>
+<ol class="arabic simple">
+<li>A scalar becomes a column.</li>
+<li>Some flattening will result in auxiliary columns being added.
+Auxiliary column will be prefixed with string in form of ‘_usage__’ where <code class="docutils literal notranslate"><span class="pre">usage</span></code> will be replaced with an appropriate name given the context, such as <code class="docutils literal notranslate"><span class="pre">index</span></code>.
+Naming conflicts are possible, for this reason, Alfa compiler reports a warning if fields are declared with 2 consecutive underscores, which
+may result in conflict with internally generated names.</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">map&lt;</span> <span class="pre">K,</span> <span class="pre">V&gt;</span></code> becomes a minimum of 2 columns, more based on how K or V flatten.</li>
+<li>The key and value fields of a map will name such that <code class="docutils literal notranslate"><span class="pre">Key</span></code> and <code class="docutils literal notranslate"><span class="pre">Value</span></code> are appended to the field name.</li>
+<li>The default Map column names can be overridden by specifying them in the declaration - <code class="docutils literal notranslate"><span class="pre">map&lt;</span> <span class="pre">KeyName</span> <span class="pre">:</span> <span class="pre">K,</span> <span class="pre">ValueName</span> <span class="pre">:</span> <span class="pre">V&gt;</span></code></li>
+<li>A <code class="docutils literal notranslate"><span class="pre">set&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span></code> becomes a minimum of 2 columns, containing an _identity__ column and flattening for T</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">list&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span></code> becomes a minimum of 2 columns, containing an _index__ column and flattening for T</li>
+<li>When <code class="docutils literal notranslate"><span class="pre">T</span></code> is a trait, the set of columns are derived from the trait, however there can be more columns based on implementations of the trait.
+Therefore the columns will be a union of all trait implementations.</li>
+<li>An optional <code class="docutils literal notranslate"><span class="pre">T?</span></code> value will be represented by a minimum of 2 columns. An _isSet__ prefixed field and flattening for T.</li>
+</ol>
+<p>TODO Add exhaustive list of all Alfa flattening for table<span class="raw-html-m2r"><T></span></p>
+<p><strong>Optional Parameters</strong></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">table&lt;</span> <span class="pre">T</span> <span class="pre">&gt;(</span> <span class="pre">...</span> <span class="pre">)</span></code>
+Optional parameters can be specified to table to manipulate the <code class="docutils literal notranslate"><span class="pre">table</span></code> type. Currently the usage and types for the parameters are undefined.</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020, Schematiks Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

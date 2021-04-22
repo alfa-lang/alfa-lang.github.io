@@ -1,0 +1,180 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A sensitivity report definition, consisting of a collection of sensitivity definitions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.SensitivitySetDefinition",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A sensitivity report definition, consisting of a collection of sensitivity definitions.\n #/\nrecord FpML5.recordkeeping.SensitivitySetDefinition {\n  # The name of the sensitivity set definition, e.g. \"USDLIBOR curve sensitivities\".\n  name : string?\n\n  # The default characteristics of the quotation, e.g. type, units, etc.\n  sensitivityCharacteristics : FpML5.recordkeeping.QuotationCharacteristics?\n\n  # Reference to the valuation scenario to which this sensitivity definition applies, e.g. a reference to the EOD valuation scenario. If not supplied, this sensitivity set definition is generic to a variety of valuation scenarios.\n  valuationScenarioReference : FpML5.recordkeeping.ValuationScenarioReference?\n\n  # The type of the pricing input to which the sensitivity is shown, e.g. a yield curve or volatility matrix.\n  pricingInputType : string?\n\n  # A reference to the pricing input to which the sensitivity is shown, e.g. a reference to a USDLIBOR yield curve.\n  pricingInputReference : FpML5.recordkeeping.PricingStructureReference?\n\n  # The size of the denominator, e.g. 0.0001 = 1 bp. For derivatives with respect to time, the default period is 1 day.\n  scale : decimal?\n\n  # A set of sensitivity definitions. Either one per point reported, or one generic definition that applies to all points.\n  sensitivityDefinition : FpML5.recordkeeping.SensitivityDefinition?\n\n  # The method by which each derivative is computed, e.g. analytic, numerical model, perturbation, etc., and the corresponding parameters (eg. shift amounts).\n  calculationProcedure : FpML5.recordkeeping.DerivativeCalculationProcedure?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ValuationSet",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "name" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the sensitivity set definition, e.g. \"USDLIBOR curve sensitivities\".",
+      "Name" : "name",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15415
+      }
+    },
+    "sensitivityCharacteristics" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The default characteristics of the quotation, e.g. type, units, etc.",
+      "Name" : "sensitivityCharacteristics",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.QuotationCharacteristics",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15418
+      }
+    },
+    "valuationScenarioReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the valuation scenario to which this sensitivity definition applies, e.g. a reference to the EOD valuation scenario. If not supplied, this sensitivity set definition is generic to a variety of valuation scenarios.",
+      "Name" : "valuationScenarioReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ValuationScenarioReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15421
+      }
+    },
+    "pricingInputType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of the pricing input to which the sensitivity is shown, e.g. a yield curve or volatility matrix.",
+      "Name" : "pricingInputType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15424
+      }
+    },
+    "pricingInputReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the pricing input to which the sensitivity is shown, e.g. a reference to a USDLIBOR yield curve.",
+      "Name" : "pricingInputReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15427
+      }
+    },
+    "scale" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The size of the denominator, e.g. 0.0001 = 1 bp. For derivatives with respect to time, the default period is 1 day.",
+      "Name" : "scale",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15430
+      }
+    },
+    "sensitivityDefinition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of sensitivity definitions. Either one per point reported, or one generic definition that applies to all points.",
+      "Name" : "sensitivityDefinition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.SensitivityDefinition",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15433
+      }
+    },
+    "calculationProcedure" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which each derivative is computed, e.g. analytic, numerical model, perturbation, etc., and the corresponding parameters (eg. shift amounts).",
+      "Name" : "calculationProcedure",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.DerivativeCalculationProcedure",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15436
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15439
+      }
+    }
+  },
+  "LocalFieldNames" : [ "name", "sensitivityCharacteristics", "valuationScenarioReference", "pricingInputType", "pricingInputReference", "scale", "sensitivityDefinition", "calculationProcedure", "id" ],
+  "IsSynthetic" : false
+}

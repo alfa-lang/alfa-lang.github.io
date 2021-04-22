@@ -1,0 +1,70 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that describes the rate of exchange between the two currencies of the leg of a deal.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxForwardStrikePrice",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that describes the rate of exchange between the two currencies of the leg of a deal.\n #/\nrecord FpML5.transparency.FxForwardStrikePrice {\n  # The initial rate or amount, as the case may be. An initial rate of 5% would be represented as 0.05.\n  initialValue : decimal\n\n  # The Quoted Currency Pair that is used across the product.\n  quoteBasis : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxAccrualLinearPayoffRegion",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "initialValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The initial rate or amount, as the case may be. An initial rate of 5% would be represented as 0.05.",
+      "Name" : "initialValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6220
+      }
+    },
+    "quoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quoted Currency Pair that is used across the product.",
+      "Name" : "quoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6223
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6226
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialValue", "quoteBasis", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,215 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Allocation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.Allocation {\n  # Unique ID for the allocation. Multiple allocation trade IDs are provided to allow for the use of USI/UTI representations along with party-specific trade identifiers.\n  allocationTradeId : FpML5.confirmation.TradeIdentifier\n\n  # Reference to a party.\n  partyReference : FpML5.confirmation.PartyReference\n\n  # Reference to an account.\n  accountReference : FpML5.confirmation.AccountReference?\n\n  # The fractional allocation (0.45 = 45%) of the notional and \"block\" fees to this particular client subaccount.\n  allocatedFraction : decimal\n\n  # The notional allocation (amount and currency) to this particular client account.\n  allocatedNotional : FpML5.confirmation.Money\n\n  # The sum that must be posted upfront to collateralize against counterparty credit risk.\n  collateral : FpML5.confirmation.Collateral?\n\n  # Special credit fee assessed to certain institutions.\n  creditChargeAmount : FpML5.confirmation.Money?\n\n  # A container for approval states in the workflow.\n  approvals : FpML5.confirmation.Approvals?\n\n  # The date of the confirmation executed between the parties and intended to govern the allocated trade between those parties.\n  masterConfirmationDate : date?\n\n  # Specifies any relevant parties to the allocation which should be referenced.\n  relatedParty : FpML5.confirmation.RelatedParty?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Allocations",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "allocationTradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Unique ID for the allocation. Multiple allocation trade IDs are provided to allow for the use of USI/UTI representations along with party-specific trade identifiers.",
+      "Name" : "allocationTradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.TradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.TradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30742
+      }
+    },
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30745
+      }
+    },
+    "accountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an account.",
+      "Name" : "accountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30748
+      }
+    },
+    "allocatedFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The fractional allocation (0.45 = 45%) of the notional and \"block\" fees to this particular client subaccount.",
+      "Name" : "allocatedFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30751
+      }
+    },
+    "allocatedNotional" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The notional allocation (amount and currency) to this particular client account.",
+      "Name" : "allocatedNotional",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Money",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Money",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30754
+      }
+    },
+    "collateral" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The sum that must be posted upfront to collateralize against counterparty credit risk.",
+      "Name" : "collateral",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Collateral",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30757
+      }
+    },
+    "creditChargeAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Special credit fee assessed to certain institutions.",
+      "Name" : "creditChargeAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30760
+      }
+    },
+    "approvals" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A container for approval states in the workflow.",
+      "Name" : "approvals",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Approvals",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30763
+      }
+    },
+    "masterConfirmationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date of the confirmation executed between the parties and intended to govern the allocated trade between those parties.",
+      "Name" : "masterConfirmationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30766
+      }
+    },
+    "relatedParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies any relevant parties to the allocation which should be referenced.",
+      "Name" : "relatedParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RelatedParty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30769
+      }
+    }
+  },
+  "LocalFieldNames" : [ "allocationTradeId", "partyReference", "accountReference", "allocatedFraction", "allocatedNotional", "collateral", "creditChargeAmount", "approvals", "masterConfirmationDate", "relatedParty" ],
+  "IsSynthetic" : false
+}

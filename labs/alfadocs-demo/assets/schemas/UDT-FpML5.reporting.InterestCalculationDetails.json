@@ -1,0 +1,40 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InterestCalculationDetails",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.InterestCalculationDetails {\n  # Specifies the interest calculations for one day of the interest period.\n  dailyInterestCalculation : FpML5.reporting.DailyInterestCalculation?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InterestAccrued",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "dailyInterestCalculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the interest calculations for one day of the interest period.",
+      "Name" : "dailyInterestCalculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.DailyInterestCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23706
+      }
+    }
+  },
+  "LocalFieldNames" : [ "dailyInterestCalculation" ],
+  "IsSynthetic" : false
+}

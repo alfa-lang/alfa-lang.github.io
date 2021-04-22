@@ -1,0 +1,214 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that represents information about a person connected with a trade or business process.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Person",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that represents information about a person connected with a trade or business process.\n #/\nrecord FpML5.confirmation.Person {\n  # An honorific title, such as Mr., Ms., Dr. etc.\n  honorific : string?\n\n  # Given name, such as John or Mary.\n  firstName : string\n\n  middleName : string\n\n  initial : string\n\n  # Family name, such as Smith or Jones.\n  surname : string\n\n  # Name suffix, such as Jr., III, etc.\n  suffix : string?\n\n  # An identifier assigned by a system for uniquely identifying the individual\n  personId : string?\n\n  # The unit for which the indvidual works.\n  businessUnitReference : FpML5.confirmation.BusinessUnitReference?\n\n  # Information on how to contact the individual using various means.\n  contactInfo : FpML5.confirmation.ContactInformation?\n\n  # The birth date of the person, e.g. 1970-01-01\n  dateOfBirth : date?\n\n  # The ISO 3166 standard code for the country where the individual works.\n  country : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Party",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "honorific" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An honorific title, such as Mr., Ms., Dr. etc.",
+      "Name" : "honorific",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9125
+      }
+    },
+    "firstName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Given name, such as John or Mary.",
+      "Name" : "firstName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9128
+      }
+    },
+    "middleName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "middleName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9131
+      }
+    },
+    "initial" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "initial",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9133
+      }
+    },
+    "surname" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Family name, such as Smith or Jones.",
+      "Name" : "surname",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9135
+      }
+    },
+    "suffix" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Name suffix, such as Jr., III, etc.",
+      "Name" : "suffix",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9138
+      }
+    },
+    "personId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An identifier assigned by a system for uniquely identifying the individual",
+      "Name" : "personId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9141
+      }
+    },
+    "businessUnitReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The unit for which the indvidual works.",
+      "Name" : "businessUnitReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessUnitReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9144
+      }
+    },
+    "contactInfo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information on how to contact the individual using various means.",
+      "Name" : "contactInfo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ContactInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9147
+      }
+    },
+    "dateOfBirth" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The birth date of the person, e.g. 1970-01-01",
+      "Name" : "dateOfBirth",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9150
+      }
+    },
+    "country" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISO 3166 standard code for the country where the individual works.",
+      "Name" : "country",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9153
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9156
+      }
+    }
+  },
+  "LocalFieldNames" : [ "honorific", "firstName", "middleName", "initial", "surname", "suffix", "personId", "businessUnitReference", "contactInfo", "dateOfBirth", "country", "id" ],
+  "IsSynthetic" : false
+}

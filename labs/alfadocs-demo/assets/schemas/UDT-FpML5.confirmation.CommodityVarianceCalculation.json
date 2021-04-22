@@ -1,0 +1,86 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityVarianceCalculation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.CommodityVarianceCalculation {\n  # Describes which dates are valid dates on which to observe a price or index level.\n  pricingDates : FpML5.confirmation.CommodityPricingDates?\n\n  # Defines when a price or index level will be observed that will figure in the return calculation.\n  valuationDates : FpML5.confirmation.CommodityValuationDates?\n\n  # This specifies the numerator of an annualization factor. Frequently this number is equal to the number of observations of prices in a year e.g. 252.\n  annualizationFactor : decimal\n\n  # Specifies whether denominator of the annualization factor is N (\"false\") or N - 1 (\"true\").\n  nAdjustment : boolean\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityVarianceLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "pricingDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes which dates are valid dates on which to observe a price or index level.",
+      "Name" : "pricingDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityPricingDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4441
+      }
+    },
+    "valuationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines when a price or index level will be observed that will figure in the return calculation.",
+      "Name" : "valuationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityValuationDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4444
+      }
+    },
+    "annualizationFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This specifies the numerator of an annualization factor. Frequently this number is equal to the number of observations of prices in a year e.g. 252.",
+      "Name" : "annualizationFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4447
+      }
+    },
+    "nAdjustment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether denominator of the annualization factor is N (\"false\") or N - 1 (\"true\").",
+      "Name" : "nAdjustment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4450
+      }
+    }
+  },
+  "LocalFieldNames" : [ "pricingDates", "valuationDates", "annualizationFactor", "nAdjustment" ],
+  "IsSynthetic" : false
+}

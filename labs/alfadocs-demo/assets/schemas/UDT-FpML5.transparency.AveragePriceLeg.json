@@ -1,0 +1,99 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The average price leg of an average price commodity bullion or non-precious metal forward transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.AveragePriceLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The average price leg of an average price commodity bullion or non-precious metal forward transaction.\n #/\nrecord FpML5.transparency.AveragePriceLeg {\n  # Identifies the underlying asset when it is a listed commodity.\n  commodity : FpML5.transparency.Commodity\n\n  # Defines the Start of the Pricing period. PricingStartDate is optional when discrete pricingDates are supplied and is not recommended to be included. Should they coexist, pricingStartDate is expected to be the same as the earliest pricing date or earlier for a Term deal as the discrete dates will take precedence.\n  pricingStartDate : FpML5.transparency.AdjustableDate?\n\n  # Captures details relevant to the calculation of the floating price.\n  calculation : FpML5.transparency.FloatingLegCalculation?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommodityForward",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "commodity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a listed commodity.",
+      "Name" : "commodity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.Commodity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.Commodity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Commodity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6073
+      }
+    },
+    "pricingStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the Start of the Pricing period. PricingStartDate is optional when discrete pricingDates are supplied and is not recommended to be included. Should they coexist, pricingStartDate is expected to be the same as the earliest pricing date or earlier for a Term deal as the discrete dates will take precedence.",
+      "Name" : "pricingStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6076
+      }
+    },
+    "calculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Captures details relevant to the calculation of the floating price.",
+      "Name" : "calculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.FloatingLegCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6079
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6082
+      }
+    }
+  },
+  "LocalFieldNames" : [ "commodity", "pricingStartDate", "calculation", "id" ],
+  "IsSynthetic" : false
+}

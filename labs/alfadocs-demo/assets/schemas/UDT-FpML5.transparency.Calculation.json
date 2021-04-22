@@ -1,0 +1,133 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type definining the parameters used in the calculation of fixed or floating calculation period amounts.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Calculation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type definining the parameters used in the calculation of fixed or floating calculation period amounts.\n #/\nrecord FpML5.transparency.Calculation {\n  # The notional amount or notional amount schedule.\n  notionalSchedule : FpML5.transparency.Notional\n\n  # A notional amount schedule where each notional that applied to a calculation period is calculated with reference to a notional amount or notional amount schedule in a different currency by means of a spot currency exchange rate which is normally observed at the beginning of each period.\n  fxLinkedNotionalSchedule : FpML5.transparency.FxLinkedNotionalSchedule\n\n  # The fixed rate or fixed rate schedule expressed as explicit fixed rates and dates. In the case of a schedule, the step dates may be subject to adjustment in accordance with any adjustments specified in calculationPeriodDatesAdjustments.\n  fixedRateSchedule : FpML5.transparency.Schedule\n\n  # The base element for the floating rate calculation definitions.\n  rateCalculation : FpML5.transparency.Rate\n\n  # The day count fraction.\n  dayCountFraction : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CalculationPeriodAmount",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "notionalSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The notional amount or notional amount schedule.",
+      "Name" : "notionalSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.Notional",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.Notional",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Notional",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11425
+      }
+    },
+    "fxLinkedNotionalSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A notional amount schedule where each notional that applied to a calculation period is calculated with reference to a notional amount or notional amount schedule in a different currency by means of a spot currency exchange rate which is normally observed at the beginning of each period.",
+      "Name" : "fxLinkedNotionalSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.FxLinkedNotionalSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.FxLinkedNotionalSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.FxLinkedNotionalSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11428
+      }
+    },
+    "fixedRateSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The fixed rate or fixed rate schedule expressed as explicit fixed rates and dates. In the case of a schedule, the step dates may be subject to adjustment in accordance with any adjustments specified in calculationPeriodDatesAdjustments.",
+      "Name" : "fixedRateSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.Schedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.Schedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Schedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11431
+      }
+    },
+    "rateCalculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The base element for the floating rate calculation definitions.",
+      "Name" : "rateCalculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.Rate",
+        "UdtType" : "traitType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.Rate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Rate",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11434
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count fraction.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11437
+      }
+    }
+  },
+  "LocalFieldNames" : [ "notionalSchedule", "fxLinkedNotionalSchedule", "fixedRateSchedule", "rateCalculation", "dayCountFraction" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,102 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that contains full details of a predefined fixed payout which may occur (or not) in a Barrier Option or Digital Option when a trigger event occurs (or not).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxOptionPayout",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that contains full details of a predefined fixed payout which may occur (or not) in a Barrier Option or Digital Option when a trigger event occurs (or not).\n #/\nrecord FpML5.recordkeeping.FxOptionPayout {\n  # The currency in which an amount is denominated.\n  currency : string\n\n  # The non negative monetary quantity in currency units.\n  amount : decimal\n\n  # The trigger event and payout may be asynchonous. A payout may become due on the trigger event, or the payout may (by agreeement at initiation) be deferred (for example) to the maturity date.\n  payoutStyle : string?\n\n  # The information required to settle a currency payment that results from a trade.\n  settlementInformation : FpML5.recordkeeping.SettlementInformation?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxDigitalOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which an amount is denominated.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 9746
+      }
+    },
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The non negative monetary quantity in currency units.",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 9749
+      }
+    },
+    "payoutStyle" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trigger event and payout may be asynchonous. A payout may become due on the trigger event, or the payout may (by agreeement at initiation) be deferred (for example) to the maturity date.",
+      "Name" : "payoutStyle",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 9752
+      }
+    },
+    "settlementInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The information required to settle a currency payment that results from a trade.",
+      "Name" : "settlementInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.SettlementInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 9755
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 9758
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency", "amount", "payoutStyle", "settlementInformation", "id" ],
+  "IsSynthetic" : false
+}

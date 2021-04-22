@@ -1,0 +1,222 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrualLeverage",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.FxAccrualLeverage {\n  # Condition in which leverage applies.\n  condition : string?\n\n  # Level expressed as a level.\n  level : FpML5.reporting.FxLevel?\n\n  # The Quoted Currency Pair that is used accross the product.\n  quoteBasis : string?\n\n  # Reference to a strike defined within the FxAccrualForward and FxAccrualOption products.\n  strikeReference : FpML5.reporting.FxAccrualStrikeReference\n\n  # Reference to an average rate defined within the FxAccrualForward and FxAccrualOption products.\n  averageStrikeReference : FpML5.reporting.FxAccrualAverageStrikeReference\n\n  # Reference to a trigger defined within the FxAccrualDigitalOption product.\n  triggerReference : FpML5.reporting.FxAccrualTriggerReference\n\n  # Leverage rate with optional steps. Format is 2 for 200%.\n  ratio : FpML5.reporting.Schedule\n\n  # Notional amount Schedule. The notional value of the product per settlement period. This number divided by the total number of fixings in the fixing schedule is the amount that is accrued at each fixing if the accrual factor is one.\n  notionalAmount : FpML5.reporting.NonNegativeAmountSchedule?\n\n  # The opposite currency amount. The counterCurrencyAmount element is only optional if averageStrike component is present, in all other cases this element must be populated.\n  counterCurrencyAmount : FpML5.reporting.FxCounterCurrencyAmount?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrualLinearPayoffRegion",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "condition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Condition in which leverage applies.",
+      "Name" : "condition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20597
+      }
+    },
+    "level" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Level expressed as a level.",
+      "Name" : "level",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxLevel",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20600
+      }
+    },
+    "quoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quoted Currency Pair that is used accross the product.",
+      "Name" : "quoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20603
+      }
+    },
+    "strikeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a strike defined within the FxAccrualForward and FxAccrualOption products.",
+      "Name" : "strikeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxAccrualStrikeReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxAccrualStrikeReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxAccrualStrikeReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20606
+      }
+    },
+    "averageStrikeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an average rate defined within the FxAccrualForward and FxAccrualOption products.",
+      "Name" : "averageStrikeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxAccrualAverageStrikeReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxAccrualAverageStrikeReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxAccrualAverageStrikeReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20609
+      }
+    },
+    "triggerReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a trigger defined within the FxAccrualDigitalOption product.",
+      "Name" : "triggerReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxAccrualTriggerReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxAccrualTriggerReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxAccrualTriggerReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20612
+      }
+    },
+    "ratio" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Leverage rate with optional steps. Format is 2 for 200%.",
+      "Name" : "ratio",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Schedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Schedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Schedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20615
+      }
+    },
+    "notionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Notional amount Schedule. The notional value of the product per settlement period. This number divided by the total number of fixings in the fixing schedule is the amount that is accrued at each fixing if the accrual factor is one.",
+      "Name" : "notionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeAmountSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20618
+      }
+    },
+    "counterCurrencyAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The opposite currency amount. The counterCurrencyAmount element is only optional if averageStrike component is present, in all other cases this element must be populated.",
+      "Name" : "counterCurrencyAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxCounterCurrencyAmount",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20621
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20624
+      }
+    }
+  },
+  "LocalFieldNames" : [ "condition", "level", "quoteBasis", "strikeReference", "averageStrikeReference", "triggerReference", "ratio", "notionalAmount", "counterCurrencyAmount", "id" ],
+  "IsSynthetic" : false
+}

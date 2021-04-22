@@ -1,0 +1,116 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A fixing region in which the payoff is a constant value (a binary|digital payoff, or zero).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetConstantPayoffRegion",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A fixing region in which the payoff is a constant value (a binary|digital payoff, or zero).\n #/\nrecord FpML5.recordkeeping.FxTargetConstantPayoffRegion {\n  # Defines the upper bound of a payoff region.\n  upperBound : FpML5.recordkeeping.FxTargetRegionUpperBound?\n\n  # Defines the lower bound of a payoff region.\n  lowerBound : FpML5.recordkeeping.FxTargetRegionLowerBound\n\n  # A binary|digital payoff, expressed either as a cash payment, or a (non-zero) fixing adjustment.\n  payoff : FpML5.recordkeeping.FxTargetConstantPayoff?\n\n  physicalSettlement : FpML5.recordkeeping.FxTargetPhysicalSettlement?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetKnockoutForward",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "upperBound" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the upper bound of a payoff region.",
+      "Name" : "upperBound",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetRegionUpperBound",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 11870
+      }
+    },
+    "lowerBound" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the lower bound of a payoff region.",
+      "Name" : "lowerBound",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetRegionLowerBound",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FxTargetRegionLowerBound",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetRegionLowerBound",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 11873
+      }
+    },
+    "payoff" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A binary|digital payoff, expressed either as a cash payment, or a (non-zero) fixing adjustment.",
+      "Name" : "payoff",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetConstantPayoff",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 11876
+      }
+    },
+    "physicalSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "physicalSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetPhysicalSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 11879
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 11881
+      }
+    }
+  },
+  "LocalFieldNames" : [ "upperBound", "lowerBound", "payoff", "physicalSettlement", "id" ],
+  "IsSynthetic" : false
+}

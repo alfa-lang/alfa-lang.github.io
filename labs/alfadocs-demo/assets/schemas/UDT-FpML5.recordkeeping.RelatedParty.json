@@ -1,0 +1,115 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.RelatedParty",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.RelatedParty {\n  # Reference to a party.\n  partyReference : FpML5.recordkeeping.PartyReference\n\n  # Reference to an account.\n  accountReference : FpML5.recordkeeping.AccountReference?\n\n  # The category of the relationship. The related party performs the role specified in this field for the base party. For example, if the role is \"Guarantor\", the related party acts as a guarantor for the base party.\n  role : string\n\n  # Additional definition refining the type of relationship. For example, if the \"role\" is Guarantor, this element may be used to specify whether all positions are guaranteed, or only a subset of them.\n  type : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Allocation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.NonpublicExecutionReportRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeInformationSimple",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.TradeValuationItem",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.WithdrawalPartyTradeInformation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1987
+      }
+    },
+    "accountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an account.",
+      "Name" : "accountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1990
+      }
+    },
+    "role" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The category of the relationship. The related party performs the role specified in this field for the base party. For example, if the role is \"Guarantor\", the related party acts as a guarantor for the base party.",
+      "Name" : "role",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1993
+      }
+    },
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Additional definition refining the type of relationship. For example, if the \"role\" is Guarantor, this element may be used to specify whether all positions are guaranteed, or only a subset of them.",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1996
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyReference", "accountReference", "role", "type" ],
+  "IsSynthetic" : false
+}

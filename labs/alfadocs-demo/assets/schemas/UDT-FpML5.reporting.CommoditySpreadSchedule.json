@@ -1,0 +1,117 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The Spread per Calculation Period. There must be a Spread specified for each Calculation Period, regardless of whether the Spread changes or remains the same between periods.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommoditySpreadSchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The Spread per Calculation Period. There must be a Spread specified for each Calculation Period, regardless of whether the Spread changes or remains the same between periods.\n #/\nrecord FpML5.reporting.CommoditySpreadSchedule {\n  # The spread per Calculation Period. There must be a spread step specified for each Calculation Period, regardless of whether the spread changes or remains the same between periods.\n  spreadStep : FpML5.reporting.CommoditySpread?\n\n  # A pointer style reference to the Calculation Periods defined on another leg.\n  calculationPeriodsReference : FpML5.reporting.CalculationPeriodsReference\n\n  # A pointer style reference to the Calculation Periods Schedule defined on another leg.\n  calculationPeriodsScheduleReference : FpML5.reporting.CalculationPeriodsScheduleReference\n\n  # A pointer style reference to single-day-duration Calculation Periods defined on another leg.\n  calculationPeriodsDatesReference : FpML5.reporting.CalculationPeriodsDatesReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FloatingLegCalculation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FloatingStrikePrice",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "spreadStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The spread per Calculation Period. There must be a spread step specified for each Calculation Period, regardless of whether the spread changes or remains the same between periods.",
+      "Name" : "spreadStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommoditySpread",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24414
+      }
+    },
+    "calculationPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CalculationPeriodsReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24417
+      }
+    },
+    "calculationPeriodsScheduleReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods Schedule defined on another leg.",
+      "Name" : "calculationPeriodsScheduleReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsScheduleReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CalculationPeriodsScheduleReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsScheduleReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24420
+      }
+    },
+    "calculationPeriodsDatesReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to single-day-duration Calculation Periods defined on another leg.",
+      "Name" : "calculationPeriodsDatesReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsDatesReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CalculationPeriodsDatesReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsDatesReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24423
+      }
+    }
+  },
+  "LocalFieldNames" : [ "spreadStep", "calculationPeriodsReference", "calculationPeriodsScheduleReference", "calculationPeriodsDatesReference" ],
+  "IsSynthetic" : false
+}

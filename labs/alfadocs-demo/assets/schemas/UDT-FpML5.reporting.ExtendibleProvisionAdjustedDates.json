@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the adjusted dates associated with a provision to extend a swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExtendibleProvisionAdjustedDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the adjusted dates associated with a provision to extend a swap.\n #/\nrecord FpML5.reporting.ExtendibleProvisionAdjustedDates {\n  # The adjusted dates associated with a single extendible exercise date.\n  extensionEvent : FpML5.reporting.ExtensionEvent?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExtendibleProvision",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "extensionEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted dates associated with a single extendible exercise date.",
+      "Name" : "extensionEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExtensionEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29223
+      }
+    }
+  },
+  "LocalFieldNames" : [ "extensionEvent" ],
+  "IsSynthetic" : false
+}

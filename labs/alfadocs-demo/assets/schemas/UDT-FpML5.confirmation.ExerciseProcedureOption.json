@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing how notice of exercise should be given. This can be either manual or automatic.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExerciseProcedureOption",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing how notice of exercise should be given. This can be either manual or automatic.\n #/\nrecord FpML5.confirmation.ExerciseProcedureOption {\n  # Specifies that the notice of exercise must be given by the buyer to the seller or seller's agent.\n  manualExercise : FpML5.confirmation.Empty\n\n  # If automatic is specified then the notional amount of the underlying swap, not previously exercised under the swaption will be automatically exercised at the expriration time on the expiration date if at such time the buyer is in-the-money, provided that the difference between the settlement rate and the fixed rate under the relevant underlying swap is not less than the specified threshold rate. The term in-the-money is assumed to have the meaning defining in the 2000 ISDA Definitions, Section 17.4 In-the-money.\n  automaticExercise : FpML5.confirmation.Empty\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionExpiry",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "manualExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies that the notice of exercise must be given by the buyer to the seller or seller's agent.",
+      "Name" : "manualExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Empty",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Empty",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Empty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29029
+      }
+    },
+    "automaticExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If automatic is specified then the notional amount of the underlying swap, not previously exercised under the swaption will be automatically exercised at the expriration time on the expiration date if at such time the buyer is in-the-money, provided that the difference between the settlement rate and the fixed rate under the relevant underlying swap is not less than the specified threshold rate. The term in-the-money is assumed to have the meaning defining in the 2000 ISDA Definitions, Section 17.4 In-the-money.",
+      "Name" : "automaticExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Empty",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Empty",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Empty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29032
+      }
+    }
+  },
+  "LocalFieldNames" : [ "manualExercise", "automaticExercise" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,51 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The credit rating debt type(s) associated with the credit rating notation and scale. When several debt types are specified, 'any' or 'all' may be applicable.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.CreditRatingDebt",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The credit rating debt type(s) associated with the credit rating notation and scale. When several debt types are specified, 'any' or 'all' may be applicable.\n #/\nrecord FpML5.legal.CreditRatingDebt {\n  # The set condition specifies whether all or any of the specified debt types are applicable.\n  debtType : string\n\n  # An enumerated element, to qualify whether All or Any debt type applies.\n  condition : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.CreditNotation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "debtType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The set condition specifies whether all or any of the specified debt types are applicable.",
+      "Name" : "debtType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2287
+      }
+    },
+    "condition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An enumerated element, to qualify whether All or Any debt type applies.",
+      "Name" : "condition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2290
+      }
+    }
+  },
+  "LocalFieldNames" : [ "debtType", "condition" ],
+  "IsSynthetic" : false
+}

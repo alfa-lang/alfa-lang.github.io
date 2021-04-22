@@ -1,0 +1,105 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InitialPortfolioDefinition",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.InitialPortfolioDefinition {\n  portfolioName : string?\n\n  asOfDate : date?\n\n  definingParty : FpML5.reporting.PartyReference?\n\n  matchingParty : FpML5.reporting.PartyReference?\n\n  # Indicates whether it's a definition of a new portfolio (true) or an update to an existing one (false).\n  newPortfolioDefinition : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionsAsserted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "portfolioName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "portfolioName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21562
+      }
+    },
+    "asOfDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "asOfDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21564
+      }
+    },
+    "definingParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "definingParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21566
+      }
+    },
+    "matchingParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "matchingParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21568
+      }
+    },
+    "newPortfolioDefinition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether it's a definition of a new portfolio (true) or an update to an existing one (false).",
+      "Name" : "newPortfolioDefinition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21570
+      }
+    }
+  },
+  "LocalFieldNames" : [ "portfolioName", "asOfDate", "definingParty", "matchingParty", "newPortfolioDefinition" ],
+  "IsSynthetic" : false
+}

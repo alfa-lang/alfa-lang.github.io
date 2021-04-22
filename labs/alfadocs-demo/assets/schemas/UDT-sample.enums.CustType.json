@@ -1,0 +1,68 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.enums.CustType",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "enum enums.CustType {\n    Standard   ## Free tier accounts\n    Gold       ## Accounts with monthly fee\n    Platinum   ## High net worth clients\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.Customer",
+    "UdtType" : "entityType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.CustomerSvc",
+    "UdtType" : "serviceType"
+  } ],
+  "AllFields" : {
+    "Standard" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Free tier accounts",
+      "Name" : "Standard",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 20
+      }
+    },
+    "Gold" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Accounts with monthly fee",
+      "Name" : "Gold",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 21
+      }
+    },
+    "Platinum" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "High net worth clients",
+      "Name" : "Platinum",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 22
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Standard", "Gold", "Platinum" ],
+  "IsSynthetic" : false
+}

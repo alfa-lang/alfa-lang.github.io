@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ElectricityDeliveryType",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.ElectricityDeliveryType {\n  # Indicates under what condtitions the Parties' delivery obligations apply.\n  firm : FpML5.reporting.ElectricityDeliveryFirm\n\n  # If present and set to true, indicates that delivery or receipt of the electricity may be interrupted for any reason or for no reason, without liability on the part of either Party. This element should never have a value of false.\n  nonFirm : boolean\n\n  # Indicates that the electricity is intended to be supplied from the owned or controlled generation or pre-existing purchased power assets of the system specified.\n  systemFirm : FpML5.reporting.ElectricityDeliverySystemFirm\n\n  # Indicates that the electricity is intended to be supplied from a generation asset which can optionally be specified.\n  unitFirm : FpML5.reporting.ElectricityDeliveryUnitFirm\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ElectricityDelivery",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "firm" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates under what condtitions the Parties' delivery obligations apply.",
+      "Name" : "firm",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ElectricityDeliveryFirm",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ElectricityDeliveryFirm",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ElectricityDeliveryFirm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10115
+      }
+    },
+    "nonFirm" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and set to true, indicates that delivery or receipt of the electricity may be interrupted for any reason or for no reason, without liability on the part of either Party. This element should never have a value of false.",
+      "Name" : "nonFirm",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10118
+      }
+    },
+    "systemFirm" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that the electricity is intended to be supplied from the owned or controlled generation or pre-existing purchased power assets of the system specified.",
+      "Name" : "systemFirm",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ElectricityDeliverySystemFirm",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ElectricityDeliverySystemFirm",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ElectricityDeliverySystemFirm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10121
+      }
+    },
+    "unitFirm" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that the electricity is intended to be supplied from a generation asset which can optionally be specified.",
+      "Name" : "unitFirm",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ElectricityDeliveryUnitFirm",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ElectricityDeliveryUnitFirm",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ElectricityDeliveryUnitFirm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10124
+      }
+    }
+  },
+  "LocalFieldNames" : [ "firm", "nonFirm", "systemFirm", "unitFirm" ],
+  "IsSynthetic" : false
+}

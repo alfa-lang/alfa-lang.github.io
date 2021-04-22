@@ -1,0 +1,110 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Period over which an average value is taken.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AveragingPeriod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Period over which an average value is taken.\n #/\nrecord FpML5.reporting.AveragingPeriod {\n  # A schedule for generating averaging observation dates.\n  schedule : FpML5.reporting.AveragingSchedule?\n\n  # An unweighted list of averaging observation date and times.\n  averagingDateTimes : FpML5.reporting.DateTimeList\n\n  # A weighted list of averaging observation date and times.\n  averagingObservations : FpML5.reporting.AveragingObservationList\n\n  # The market disruption event as defined by ISDA 2002 Definitions.\n  marketDisruption : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Asian",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReturnLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "schedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A schedule for generating averaging observation dates.",
+      "Name" : "schedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AveragingSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6052
+      }
+    },
+    "averagingDateTimes" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An unweighted list of averaging observation date and times.",
+      "Name" : "averagingDateTimes",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.DateTimeList",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.DateTimeList",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.DateTimeList",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6055
+      }
+    },
+    "averagingObservations" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A weighted list of averaging observation date and times.",
+      "Name" : "averagingObservations",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.AveragingObservationList",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.AveragingObservationList",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AveragingObservationList",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6058
+      }
+    },
+    "marketDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The market disruption event as defined by ISDA 2002 Definitions.",
+      "Name" : "marketDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6061
+      }
+    }
+  },
+  "LocalFieldNames" : [ "schedule", "averagingDateTimes", "averagingObservations", "marketDisruption" ],
+  "IsSynthetic" : false
+}

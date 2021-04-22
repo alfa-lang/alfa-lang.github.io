@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a rate index.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ForecastRateIndex",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a rate index.\n #/\nrecord FpML5.recordkeeping.ForecastRateIndex {\n  # The ISDA Floating Rate Option, i.e. the floating rate index.\n  floatingRateIndex : string?\n\n  # The ISDA Designated Maturity, i.e. the tenor of the floating rate.\n  indexTenor : FpML5.recordkeeping.Period?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.YieldCurve",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "floatingRateIndex" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISDA Floating Rate Option, i.e. the floating rate index.",
+      "Name" : "floatingRateIndex",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13570
+      }
+    },
+    "indexTenor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISDA Designated Maturity, i.e. the tenor of the floating rate.",
+      "Name" : "indexTenor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13573
+      }
+    }
+  },
+  "LocalFieldNames" : [ "floatingRateIndex", "indexTenor" ],
+  "IsSynthetic" : false
+}

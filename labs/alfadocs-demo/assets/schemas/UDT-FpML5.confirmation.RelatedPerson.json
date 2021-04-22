@@ -1,0 +1,60 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RelatedPerson",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.RelatedPerson {\n  # The individual person that is related to this.\n  personReference : FpML5.confirmation.PersonReference\n\n  # The category of the relationship. The related individual performs the role specified in this field for the base party. For example, if the role is \"Trader\", the related person acts acts or acted as the base party's trader.\n  role : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PartyTradeInformation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "personReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The individual person that is related to this.",
+      "Name" : "personReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PersonReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PersonReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PersonReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30854
+      }
+    },
+    "role" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The category of the relationship. The related individual performs the role specified in this field for the base party. For example, if the role is \"Trader\", the related person acts acts or acted as the base party's trader.",
+      "Name" : "role",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30857
+      }
+    }
+  },
+  "LocalFieldNames" : [ "personReference", "role" ],
+  "IsSynthetic" : false
+}

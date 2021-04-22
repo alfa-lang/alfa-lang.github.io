@@ -1,0 +1,86 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that specifies the source for and timing of a fixing of an exchange rate. This is used in the agreement of non-deliverable forward trades as well as various types of FX OTC options that require observations against a particular rate.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxFixing",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that specifies the source for and timing of a fixing of an exchange rate. This is used in the agreement of non-deliverable forward trades as well as various types of FX OTC options that require observations against a particular rate.\n #/\nrecord FpML5.pretrade.FxFixing {\n  # Defines the two currencies for an FX trade and the quotation relationship between the two currencies.\n  quotedCurrencyPair : FpML5.pretrade.QuotedCurrencyPair\n\n  # Describes the specific date when a non-deliverable forward or cash-settled option will \"fix\" against a particular rate, which will be used to compute the ultimate cash settlement. This element should be omitted where a single, discrete fixing date cannot be identified e.g. on an american option, where fixing may occur at any date on a continuous range.\n  fixingDate : date?\n\n  # Specifies the methodology (reference source and, optionally, fixing time) to be used for determining a currency conversion rate.\n  fxSpotRateSource : FpML5.pretrade.FxSpotRateSource?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxCashSettlement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxCashSettlementSimple",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the two currencies for an FX trade and the quotation relationship between the two currencies.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.QuotedCurrencyPair",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.QuotedCurrencyPair",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5077
+      }
+    },
+    "fixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the specific date when a non-deliverable forward or cash-settled option will \"fix\" against a particular rate, which will be used to compute the ultimate cash settlement. This element should be omitted where a single, discrete fixing date cannot be identified e.g. on an american option, where fixing may occur at any date on a continuous range.",
+      "Name" : "fixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5080
+      }
+    },
+    "fxSpotRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the methodology (reference source and, optionally, fixing time) to be used for determining a currency conversion rate.",
+      "Name" : "fxSpotRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxSpotRateSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5083
+      }
+    }
+  },
+  "LocalFieldNames" : [ "quotedCurrencyPair", "fixingDate", "fxSpotRateSource" ],
+  "IsSynthetic" : false
+}

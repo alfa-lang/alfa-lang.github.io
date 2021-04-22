@@ -1,0 +1,130 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The dates on which prices are observed for the underlyer.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommodityValuationDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The dates on which prices are observed for the underlyer.\n #/\nrecord FpML5.transparency.CommodityValuationDates {\n  # The type of day on which pricing occurs.\n  dayType : FpML5.transparency.CommodityDayTypeEnum?\n\n  # The method by which the pricing days are distributed across the pricing period.\n  dayDistribution : string\n\n  # The number of days over which pricing should take place.\n  dayCount : int( 1, * )?\n\n  # The convention for adjusting a date if it would otherwise fall on a day that is not a business day.\n  businessDayConvention : string?\n\n  # Used in conjunction with an exchange-based pricing source. Identifies a date source calendar from which the pricing dates and thus roll to the next contract will be based off (e.g. pricing is based on the NYMEX WTI First Nearby Futures Contract, if “Future” is chosen, the pricing will roll to the next futures contract on expiration, if “ListedOption” is chosen, the pricing will roll to the next futures contract on the Option expiration date which is three business days before the expiration of the NYMEX WTI futures contract.) Omitting this element will result in the default behavior expected with the pricing source described within the commodity element.\n  calendarSource : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommodityReturnCalculation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommodityVarianceCalculation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "dayType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of day on which pricing occurs.",
+      "Name" : "dayType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CommodityDayTypeEnum",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10700
+      }
+    },
+    "dayDistribution" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which the pricing days are distributed across the pricing period.",
+      "Name" : "dayDistribution",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10703
+      }
+    },
+    "dayCount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of days over which pricing should take place.",
+      "Name" : "dayCount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10706
+      }
+    },
+    "businessDayConvention" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The convention for adjusting a date if it would otherwise fall on a day that is not a business day.",
+      "Name" : "businessDayConvention",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10709
+      }
+    },
+    "calendarSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used in conjunction with an exchange-based pricing source. Identifies a date source calendar from which the pricing dates and thus roll to the next contract will be based off (e.g. pricing is based on the NYMEX WTI First Nearby Futures Contract, if “Future” is chosen, the pricing will roll to the next futures contract on expiration, if “ListedOption” is chosen, the pricing will roll to the next futures contract on the Option expiration date which is three business days before the expiration of the NYMEX WTI futures contract.) Omitting this element will result in the default behavior expected with the pricing source described within the commodity element.",
+      "Name" : "calendarSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10712
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10715
+      }
+    }
+  },
+  "LocalFieldNames" : [ "dayType", "dayDistribution", "dayCount", "businessDayConvention", "calendarSource", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,177 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the correlation amount of a correlation swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Correlation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the correlation amount of a correlation swap.\n #/\nrecord FpML5.transparency.Correlation {\n  # Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.\n  initialLevel : decimal\n\n  # Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.\n  initialLevelSource : string\n\n  # DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.\n  closingLevel : boolean\n\n  # DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.\n  expiringLevel : boolean\n\n  # Expected number of trading days.\n  expectedN : int( 1, * )?\n\n  # Notional amount, which is a cash multiplier.\n  notionalAmount : FpML5.transparency.NonNegativeMoney\n\n  # Correlation Strike Price.\n  correlationStrikePrice : decimal\n\n  # Bounded Correlation.\n  boundedCorrelation : FpML5.transparency.BoundedCorrelation?\n\n  # Number of data series, normal market practice is that correlation data sets are drawn from geographic market areas, such as America, Europe and Asia Pacific, each of these geographic areas will have its own data series to avoid contagion.\n  numberOfDataSeries : int( 1, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CorrelationAmount",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "initialLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.",
+      "Name" : "initialLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1922
+      }
+    },
+    "initialLevelSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.",
+      "Name" : "initialLevelSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1925
+      }
+    },
+    "closingLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.",
+      "Name" : "closingLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1928
+      }
+    },
+    "expiringLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.",
+      "Name" : "expiringLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1931
+      }
+    },
+    "expectedN" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Expected number of trading days.",
+      "Name" : "expectedN",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1934
+      }
+    },
+    "notionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Notional amount, which is a cash multiplier.",
+      "Name" : "notionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1937
+      }
+    },
+    "correlationStrikePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Correlation Strike Price.",
+      "Name" : "correlationStrikePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1940
+      }
+    },
+    "boundedCorrelation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Bounded Correlation.",
+      "Name" : "boundedCorrelation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.BoundedCorrelation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1943
+      }
+    },
+    "numberOfDataSeries" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Number of data series, normal market practice is that correlation data sets are drawn from geographic market areas, such as America, Europe and Asia Pacific, each of these geographic areas will have its own data series to avoid contagion.",
+      "Name" : "numberOfDataSeries",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1946
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialLevel", "initialLevelSource", "closingLevel", "expiringLevel", "expectedN", "notionalAmount", "correlationStrikePrice", "boundedCorrelation", "numberOfDataSeries" ],
+  "IsSynthetic" : false
+}

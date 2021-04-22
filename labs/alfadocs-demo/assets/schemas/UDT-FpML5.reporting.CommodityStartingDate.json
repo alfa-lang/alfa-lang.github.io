@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type specifying the date from which the early termination clause can be exercised.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityStartingDate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type specifying the date from which the early termination clause can be exercised.\n #/\nrecord FpML5.reporting.CommodityStartingDate {\n  # Reference to a party defined elsewhere in this document which may be allowed to terminate the trade.\n  dateRelativeTo : FpML5.reporting.PartyReference\n\n  # Date from which early termination clause can be exercised.\n  adjustableDate : FpML5.reporting.AdjustableDate\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityPerformanceSwapEarlyTermination",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "dateRelativeTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party defined elsewhere in this document which may be allowed to terminate the trade.",
+      "Name" : "dateRelativeTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23169
+      }
+    },
+    "adjustableDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date from which early termination clause can be exercised.",
+      "Name" : "adjustableDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.AdjustableDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.AdjustableDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23172
+      }
+    }
+  },
+  "LocalFieldNames" : [ "dateRelativeTo", "adjustableDate" ],
+  "IsSynthetic" : false
+}

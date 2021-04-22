@@ -1,0 +1,123 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the characteristics of the coal being traded in a physically settled gas transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CoalProduct",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the characteristics of the coal being traded in a physically settled gas transaction.\n #/\nrecord FpML5.confirmation.CoalProduct {\n  # The type of coal product to be delivered by reference to a pre-defined specification. For contracts under SCoTA terms this is the quality specification code (e.g. \"DES ARA\")\n  type : string\n\n  # The type of coal product to be delivered specified in full.\n  coalProductSpecifications : FpML5.confirmation.CoalProductSpecifications\n\n  # The SCoTA cargo origin, mining region, mine(s), mining complex(es), loadout(s) or river dock(s) or other point(s) of origin that Seller and Buyer agree are acceptable origins for the Coal Product. For International Coal transactions, this is the Origin of the Coal Product.\n  source : string\n\n  # Indicates whether type and source refer to globalCOAL SCoTA specifications.\n  sCoTASpecifications : boolean?\n\n  # The Quality Adjustment formula to be used where the Actual Shipment BTU/Lb value differs from the Standard BTU/Lb value.\n  btuQualityAdjustment : string\n\n  # The Quality Adjustment formula to be used where the Actual Shipment SO2/MMBTU value differs from the Standard SO2/MMBTU value.\n  so2QualityAdjustment : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CoalPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of coal product to be delivered by reference to a pre-defined specification. For contracts under SCoTA terms this is the quality specification code (e.g. \"DES ARA\")",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22323
+      }
+    },
+    "coalProductSpecifications" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of coal product to be delivered specified in full.",
+      "Name" : "coalProductSpecifications",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CoalProductSpecifications",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CoalProductSpecifications",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CoalProductSpecifications",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22326
+      }
+    },
+    "source" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The SCoTA cargo origin, mining region, mine(s), mining complex(es), loadout(s) or river dock(s) or other point(s) of origin that Seller and Buyer agree are acceptable origins for the Coal Product. For International Coal transactions, this is the Origin of the Coal Product.",
+      "Name" : "source",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22329
+      }
+    },
+    "sCoTASpecifications" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether type and source refer to globalCOAL SCoTA specifications.",
+      "Name" : "sCoTASpecifications",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22332
+      }
+    },
+    "btuQualityAdjustment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quality Adjustment formula to be used where the Actual Shipment BTU/Lb value differs from the Standard BTU/Lb value.",
+      "Name" : "btuQualityAdjustment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22335
+      }
+    },
+    "so2QualityAdjustment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quality Adjustment formula to be used where the Actual Shipment SO2/MMBTU value differs from the Standard SO2/MMBTU value.",
+      "Name" : "so2QualityAdjustment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22338
+      }
+    }
+  },
+  "LocalFieldNames" : [ "type", "coalProductSpecifications", "source", "sCoTASpecifications", "btuQualityAdjustment", "so2QualityAdjustment" ],
+  "IsSynthetic" : false
+}

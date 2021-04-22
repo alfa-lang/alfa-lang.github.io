@@ -1,0 +1,87 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The day count used as the denominator for interest accrual calculation as specififed in the ISDA Standard CSA. The day count applies to all currencies, unless specified.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.DayCount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The day count used as the denominator for interest accrual calculation as specififed in the ISDA Standard CSA. The day count applies to all currencies, unless specified.\n #/\nrecord FpML5.legal.DayCount {\n  # The default day count, to be applied across all currencies unless specified.\n  defaultDayCount : string\n\n  # The day count denominator that is currency-specific.\n  currencySpecificDayCount : tuple< dayCountValue : string, currency : string >?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013EnglishLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013NewYorkLaw",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "defaultDayCount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The default day count, to be applied across all currencies unless specified.",
+      "Name" : "defaultDayCount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3006
+      }
+    },
+    "currencySpecificDayCount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count denominator that is currency-specific.",
+      "Name" : "currencySpecificDayCount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.TupleDataType",
+          "SynthFullyQualifiedName" : "FpML5.legal.DayCount_currencySpecificDayCount_",
+          "Fields" : {
+            "dayCountValue" : {
+              "@type" : "alfa.rt.model.Field",
+              "Name" : "dayCountValue",
+              "DataType" : {
+                "@type" : "alfa.rt.model.ScalarDataType",
+                "ScalarType" : "stringType"
+              },
+              "SrcLocation" : {
+                "@type" : "alfa.rt.model.Location",
+                "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+                "line" : 3010
+              }
+            },
+            "currency" : {
+              "@type" : "alfa.rt.model.Field",
+              "Name" : "currency",
+              "DataType" : {
+                "@type" : "alfa.rt.model.ScalarDataType",
+                "ScalarType" : "stringType"
+              },
+              "SrcLocation" : {
+                "@type" : "alfa.rt.model.Location",
+                "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+                "line" : 3010
+              }
+            }
+          },
+          "SyntheticFieldNames" : false
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3009
+      }
+    }
+  },
+  "LocalFieldNames" : [ "defaultDayCount", "currencySpecificDayCount" ],
+  "IsSynthetic" : false
+}

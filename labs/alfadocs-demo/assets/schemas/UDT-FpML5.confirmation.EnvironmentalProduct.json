@@ -1,0 +1,106 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the characteristics of the environmental allowance or credit being traded. Settlement of environmental transactions is classified as physical because settlement is accomplished through the exchange of one or more certificates (despite the fact that this exchange is almost always executed through electronic book entry transfer between the parties allowance accounts).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EnvironmentalProduct",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the characteristics of the environmental allowance or credit being traded. Settlement of environmental transactions is classified as physical because settlement is accomplished through the exchange of one or more certificates (despite the fact that this exchange is almost always executed through electronic book entry transfer between the parties allowance accounts).\n #/\nrecord FpML5.confirmation.EnvironmentalProduct {\n  # Specifies the type of environmental allowance or credit. Examples include allowances or credit issued by the European Union (E.U.) or by the State of California in the Unites States.\n  productType : string\n\n  # Applies to E.U. Emissions Allowance Transactions. Describes Specified Compliance Period for which the Allowances are issued.\n  compliancePeriod : FpML5.confirmation.EnvironmentalProductComplaincePeriod?\n\n  # Applies to U.S. Emissions Allowance Transactions. The year(s) of the applicable Emissions Product(s) as specified in an Emissions Transaction.\n  vintage : int?\n\n  # Applies to U.S. Emissions Allowance Transactions. Used to specify the Applicable Emissions Law when this is not defined in Emissions Product Definitions Exhibit.\n  applicableLaw : string?\n\n  # Applies to U.S. Emissions Allowance Transactions. Used to specify the Tracking System when this is not defined in Emissions Product Definitions Exhibit.\n  trackingSystem : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EnvironmentalPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the type of environmental allowance or credit. Examples include allowances or credit issued by the European Union (E.U.) or by the State of California in the Unites States.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12337
+      }
+    },
+    "compliancePeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Applies to E.U. Emissions Allowance Transactions. Describes Specified Compliance Period for which the Allowances are issued.",
+      "Name" : "compliancePeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.EnvironmentalProductComplaincePeriod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12340
+      }
+    },
+    "vintage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Applies to U.S. Emissions Allowance Transactions. The year(s) of the applicable Emissions Product(s) as specified in an Emissions Transaction.",
+      "Name" : "vintage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12343
+      }
+    },
+    "applicableLaw" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Applies to U.S. Emissions Allowance Transactions. Used to specify the Applicable Emissions Law when this is not defined in Emissions Product Definitions Exhibit.",
+      "Name" : "applicableLaw",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12346
+      }
+    },
+    "trackingSystem" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Applies to U.S. Emissions Allowance Transactions. Used to specify the Tracking System when this is not defined in Emissions Product Definitions Exhibit.",
+      "Name" : "trackingSystem",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12349
+      }
+    }
+  },
+  "LocalFieldNames" : [ "productType", "compliancePeriod", "vintage", "applicableLaw", "trackingSystem" ],
+  "IsSynthetic" : false
+}

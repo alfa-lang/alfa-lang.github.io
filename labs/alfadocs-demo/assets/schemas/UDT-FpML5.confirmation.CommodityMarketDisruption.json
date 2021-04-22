@@ -1,0 +1,214 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "ISDA 1993 or 2005 commodity market disruption elements.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityMarketDisruption",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   ISDA 1993 or 2005 commodity market disruption elements.\n #/\nrecord FpML5.confirmation.CommodityMarketDisruption {\n  # If Market disruption Events are stated to be Applicable then the default Market Disruption Events of Section 7.4(d)(i) of the ISDA Commodity Definitions shall apply unless specific Market Disruption Events are stated hereunder, in which case these shall override the ISDA defaults. If Market Disruption Events are stated to be Not Applicable, Market Disruption Events are not applicable to the trade at all. It is also possible to reference the Market Disruption Events set out in the relevant Master Agreement governing the trade.\n  marketDisruptionEvents : string\n\n  # To be used when marketDisruptionEvents is set to \"Applicable\" and additional market disruption events(s) apply to the default market disruption events of Section 7.4(d)(i) of the ISDA Commodity Definitions.\n  additionalMarketDisruptionEvent : string?\n\n  # Market disruption event(s) that apply. Note that these should only be specified if the default market disruption events of Section 7.4(d)(i) of the ISDA Commodity Definitions are to be overridden.\n  marketDisruptionEvent : string\n\n  # To be used where disruption fallbacks are set out in the relevant Master Agreement governing the trade.\n  disruptionFallbacks : string\n\n  disruptionFallback : FpML5.confirmation.SequencedDisruptionFallback\n\n  # A fallback commodity reference price for use when relying on Disruption Fallbacks in Section 7.5(d)(i) of the ISDA Commodity Definitions or have selected \"Fallback Reference Price\" as a disruptionFallback.\n  fallbackReferencePrice : FpML5.confirmation.Underlyer?\n\n  # 2005 Commodity Definitions only. If omitted , the number of days specified in Section 7.6(a) of the Definitions will apply.\n  maximumNumberOfDaysOfDisruption : int( 0, * )?\n\n  # 2005 Commodity Definitions only. To be used where a price materiality percentage applies to the \"Price Source Disruption\" event and this event has been specified by setting marketDisruption to true or including it in additionalMarketDisruptionEvent\n  priceMaterialityPercentage : decimal?\n\n  # 1993 Commodity Definitions only. Specifies the Mimum Futures Contracts level that dictates whether or not a \"De Minimis Trading\" event has occurred. Only relevant if 'De Minimis Trading' has been specified in marketDisruptionEvent or additionalMarketDisruptionEvent.\n  minimumFuturesContracts : int( 1, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityBasketOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityDigitalOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityForward",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityPerformanceSwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityPerformanceSwapBase",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommoditySwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommoditySwaption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommoditySwaptionUnderlying",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "marketDisruptionEvents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If Market disruption Events are stated to be Applicable then the default Market Disruption Events of Section 7.4(d)(i) of the ISDA Commodity Definitions shall apply unless specific Market Disruption Events are stated hereunder, in which case these shall override the ISDA defaults. If Market Disruption Events are stated to be Not Applicable, Market Disruption Events are not applicable to the trade at all. It is also possible to reference the Market Disruption Events set out in the relevant Master Agreement governing the trade.",
+      "Name" : "marketDisruptionEvents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4989
+      }
+    },
+    "additionalMarketDisruptionEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "To be used when marketDisruptionEvents is set to \"Applicable\" and additional market disruption events(s) apply to the default market disruption events of Section 7.4(d)(i) of the ISDA Commodity Definitions.",
+      "Name" : "additionalMarketDisruptionEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4992
+      }
+    },
+    "marketDisruptionEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Market disruption event(s) that apply. Note that these should only be specified if the default market disruption events of Section 7.4(d)(i) of the ISDA Commodity Definitions are to be overridden.",
+      "Name" : "marketDisruptionEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4995
+      }
+    },
+    "disruptionFallbacks" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "To be used where disruption fallbacks are set out in the relevant Master Agreement governing the trade.",
+      "Name" : "disruptionFallbacks",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4998
+      }
+    },
+    "disruptionFallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "disruptionFallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.SequencedDisruptionFallback",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.SequencedDisruptionFallback",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.SequencedDisruptionFallback",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5001
+      }
+    },
+    "fallbackReferencePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A fallback commodity reference price for use when relying on Disruption Fallbacks in Section 7.5(d)(i) of the ISDA Commodity Definitions or have selected \"Fallback Reference Price\" as a disruptionFallback.",
+      "Name" : "fallbackReferencePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Underlyer",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5003
+      }
+    },
+    "maximumNumberOfDaysOfDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "2005 Commodity Definitions only. If omitted , the number of days specified in Section 7.6(a) of the Definitions will apply.",
+      "Name" : "maximumNumberOfDaysOfDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5006
+      }
+    },
+    "priceMaterialityPercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "2005 Commodity Definitions only. To be used where a price materiality percentage applies to the \"Price Source Disruption\" event and this event has been specified by setting marketDisruption to true or including it in additionalMarketDisruptionEvent",
+      "Name" : "priceMaterialityPercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5009
+      }
+    },
+    "minimumFuturesContracts" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "1993 Commodity Definitions only. Specifies the Mimum Futures Contracts level that dictates whether or not a \"De Minimis Trading\" event has occurred. Only relevant if 'De Minimis Trading' has been specified in marketDisruptionEvent or additionalMarketDisruptionEvent.",
+      "Name" : "minimumFuturesContracts",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5012
+      }
+    }
+  },
+  "LocalFieldNames" : [ "marketDisruptionEvents", "additionalMarketDisruptionEvent", "marketDisruptionEvent", "disruptionFallbacks", "disruptionFallback", "fallbackReferencePrice", "maximumNumberOfDaysOfDisruption", "priceMaterialityPercentage", "minimumFuturesContracts" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,56 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery obligation options specific to a unit firm transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ElectricityDeliveryUnitFirm",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery obligation options specific to a unit firm transaction.\n #/\nrecord FpML5.recordkeeping.ElectricityDeliveryUnitFirm {\n  # Indicates that the trade is for a Unit Firm product. Should always be set to \"true\".\n  applicable : boolean?\n\n  generationAsset : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ElectricityDeliveryType",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "applicable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that the trade is for a Unit Firm product. Should always be set to \"true\".",
+      "Name" : "applicable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6564
+      }
+    },
+    "generationAsset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "generationAsset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6567
+      }
+    }
+  },
+  "LocalFieldNames" : [ "applicable", "generationAsset" ],
+  "IsSynthetic" : false
+}

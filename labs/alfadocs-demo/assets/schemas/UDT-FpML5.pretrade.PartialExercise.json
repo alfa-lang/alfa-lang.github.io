@@ -1,0 +1,90 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining partial exercise. As defined in the 2000 ISDA Definitions, Section 12.3 Partial Exercise, the buyer of the option may exercise all or less than all the notional amount of the underlying swap but may not be less than the minimum notional amount (if specified) and must be an integral multiple of the integral multiple amount if specified.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.PartialExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining partial exercise. As defined in the 2000 ISDA Definitions, Section 12.3 Partial Exercise, the buyer of the option may exercise all or less than all the notional amount of the underlying swap but may not be less than the minimum notional amount (if specified) and must be an integral multiple of the integral multiple amount if specified.\n #/\nrecord FpML5.pretrade.PartialExercise {\n  # A pointer style reference to the associated notional schedule defined elsewhere in the document. This element has been made optional as part of its integration in the OptionBaseExtended, because not required for the options on securities.\n  notionalReference : FpML5.pretrade.NotionalReference?\n\n  # A notional amount which restricts the amount of notional that can be exercised when partial exercise or multiple exercise is applicable. The integral multiple amount defines a lower limit of notional that can be exercised and also defines a unit multiple of notional that can be exercised, i.e. only integer multiples of this amount can be exercised.\n  integralMultipleAmount : decimal?\n\n  # The minimum notional amount that can be exercised on a given exercise date. See multipleExercise.\n  minimumNotionalAmount : decimal\n\n  # The minimum number of options that can be exercised on a given exercise date.\n  minimumNumberOfOptions : int( 0, * )\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.EuropeanExercise",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "notionalReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the associated notional schedule defined elsewhere in the document. This element has been made optional as part of its integration in the OptionBaseExtended, because not required for the options on securities.",
+      "Name" : "notionalReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.NotionalReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2329
+      }
+    },
+    "integralMultipleAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A notional amount which restricts the amount of notional that can be exercised when partial exercise or multiple exercise is applicable. The integral multiple amount defines a lower limit of notional that can be exercised and also defines a unit multiple of notional that can be exercised, i.e. only integer multiples of this amount can be exercised.",
+      "Name" : "integralMultipleAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2332
+      }
+    },
+    "minimumNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The minimum notional amount that can be exercised on a given exercise date. See multipleExercise.",
+      "Name" : "minimumNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2335
+      }
+    },
+    "minimumNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The minimum number of options that can be exercised on a given exercise date.",
+      "Name" : "minimumNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "min" : {
+          "@type" : "alfa.rt.model.RangeValue",
+          "intValue" : 0
+        },
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2338
+      }
+    }
+  },
+  "LocalFieldNames" : [ "notionalReference", "integralMultipleAmount", "minimumNotionalAmount", "minimumNumberOfOptions" ],
+  "IsSynthetic" : false
+}

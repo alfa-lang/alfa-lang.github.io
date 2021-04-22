@@ -1,0 +1,155 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the details for one of the transactions in an FX swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxSwapLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the details for one of the transactions in an FX swap.\n #/\nrecord FpML5.pretrade.FxSwapLeg {\n  # A reference to a party trade ID. This is provided in case the message creator wishes to record that the swap leg is assocatiated with a particular trade identifier; typically this is used for identifying a USI assocatied wih the leg.\n  tradeIdentifierReference : FpML5.pretrade.PartyTradeIdentifierReference?\n\n  # This is the first of the two currency flows that define a single leg of a standard foreign exchange transaction.\n  exchangedCurrency1 : FpML5.pretrade.Payment\n\n  # This is the second of the two currency flows that define a single leg of a standard foreign exchange transaction.\n  exchangedCurrency2 : FpML5.pretrade.Payment\n\n  # The date on which both currencies traded will settle.\n  valueDate : date\n\n  # The rate of exchange between the two currencies.\n  exchangeRate : FpML5.pretrade.ExchangeRate?\n\n  # Used to describe a particular type of FX forward transaction that is settled in a single currency (for example, a non-deliverable forward).\n  nonDeliverableSettlement : FpML5.pretrade.FxCashSettlement?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxSwap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "tradeIdentifierReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to a party trade ID. This is provided in case the message creator wishes to record that the swap leg is assocatiated with a particular trade identifier; typically this is used for identifying a USI assocatied wih the leg.",
+      "Name" : "tradeIdentifierReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PartyTradeIdentifierReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9650
+      }
+    },
+    "exchangedCurrency1" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the first of the two currency flows that define a single leg of a standard foreign exchange transaction.",
+      "Name" : "exchangedCurrency1",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.Payment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.Payment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Payment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9653
+      }
+    },
+    "exchangedCurrency2" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the second of the two currency flows that define a single leg of a standard foreign exchange transaction.",
+      "Name" : "exchangedCurrency2",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.Payment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.Payment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Payment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9656
+      }
+    },
+    "valueDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which both currencies traded will settle.",
+      "Name" : "valueDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9659
+      }
+    },
+    "exchangeRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate of exchange between the two currencies.",
+      "Name" : "exchangeRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.ExchangeRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9662
+      }
+    },
+    "nonDeliverableSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to describe a particular type of FX forward transaction that is settled in a single currency (for example, a non-deliverable forward).",
+      "Name" : "nonDeliverableSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxCashSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9665
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9668
+      }
+    }
+  },
+  "LocalFieldNames" : [ "tradeIdentifierReference", "exchangedCurrency1", "exchangedCurrency2", "valueDate", "exchangeRate", "nonDeliverableSettlement", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,67 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The adjusted dates for a specific cancellation date, including the adjusted exercise date and adjusted termination date.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CancellationEvent",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The adjusted dates for a specific cancellation date, including the adjusted exercise date and adjusted termination date.\n #/\nrecord FpML5.confirmation.CancellationEvent {\n  # The date on which option exercise takes place. This date should already be adjusted for any applicable business day convention.\n  adjustedExerciseDate : date\n\n  # The early termination date that is applicable if an early termination provision is exercised. This date should already be adjusted for any applicable business day convention.\n  adjustedEarlyTerminationDate : date\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CancelableProvisionAdjustedDates",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "adjustedExerciseDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which option exercise takes place. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedExerciseDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23343
+      }
+    },
+    "adjustedEarlyTerminationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The early termination date that is applicable if an early termination provision is exercised. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedEarlyTerminationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23346
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23349
+      }
+    }
+  },
+  "LocalFieldNames" : [ "adjustedExerciseDate", "adjustedEarlyTerminationDate", "id" ],
+  "IsSynthetic" : false
+}

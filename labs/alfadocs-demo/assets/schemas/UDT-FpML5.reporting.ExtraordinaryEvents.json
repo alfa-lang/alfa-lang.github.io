@@ -1,0 +1,288 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Where the underlying is shares, defines market events affecting the issuer of those shares that may require the terms of the transaction to be adjusted.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExtraordinaryEvents",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Where the underlying is shares, defines market events affecting the issuer of those shares that may require the terms of the transaction to be adjusted.\n #/\nrecord FpML5.reporting.ExtraordinaryEvents {\n  # Occurs when the underlying ceases to exist following a merger between the Issuer and another company.\n  mergerEvents : FpML5.reporting.EquityCorporateEvents?\n\n  # DEPRECATED. If present and true, then tender offer is applicable.\n  tenderOffer : boolean?\n\n  # ISDA 2002 Equity Tender Offer Events.\n  tenderOfferEvents : FpML5.reporting.EquityCorporateEvents?\n\n  # If present and true, then composition of combined consideration is applicable.\n  compositionOfCombinedConsideration : boolean?\n\n  # ISDA 2002 Equity Index Adjustment Events.\n  indexAdjustmentEvents : FpML5.reporting.IndexAdjustmentEvents?\n\n  # ISDA 2002 Equity Additional Disruption Events.\n  additionalDisruptionEvents : FpML5.reporting.AdditionalDisruptionEvents\n\n  # If true, failure to deliver is applicable.\n  failureToDeliver : boolean\n\n  # ISDA 2002 Equity Derivative Representations.\n  representations : FpML5.reporting.Representations?\n\n  # The terms \"Nationalisation\" and \"Insolvency\" have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions.\n  nationalisationOrInsolvency : string?\n\n  # The term \"Delisting\" has the meaning defined in the ISDA 2002 Equity Derivatives Definitions.\n  delisting : string?\n\n  # A short form unique identifier for a related exchange. If the element is not present then the exchange shall be the primary exchange on which listed futures and options on the underlying are listed. The term \"Exchange\" is assumed to have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions.\n  relatedExchangeId : string?\n\n  # A short form unique identifier for an exchange on which the reference option contract is listed. This is to address the case where the reference exchange for the future is different than the one for the option. The options Exchange is referenced on share options when Merger Elections are selected as Options Exchange Adjustment.\n  optionsExchangeId : string?\n\n  # A short form unique identifier for a specified exchange. If the element is not present then the exchange shall be default terms as defined in the MCA; unless otherwise specified in the Transaction Supplement.\n  specifiedExchangeId : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CorrelationSwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquityDerivativeLongFormBase",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquityForward",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquityOptionTransactionSupplement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquitySwapTransactionSupplement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NettedSwapBase",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReturnSwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.VarianceSwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.VolatilitySwap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "mergerEvents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Occurs when the underlying ceases to exist following a merger between the Issuer and another company.",
+      "Name" : "mergerEvents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.EquityCorporateEvents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19262
+      }
+    },
+    "tenderOffer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If present and true, then tender offer is applicable.",
+      "Name" : "tenderOffer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19265
+      }
+    },
+    "tenderOfferEvents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "ISDA 2002 Equity Tender Offer Events.",
+      "Name" : "tenderOfferEvents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.EquityCorporateEvents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19268
+      }
+    },
+    "compositionOfCombinedConsideration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and true, then composition of combined consideration is applicable.",
+      "Name" : "compositionOfCombinedConsideration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19271
+      }
+    },
+    "indexAdjustmentEvents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "ISDA 2002 Equity Index Adjustment Events.",
+      "Name" : "indexAdjustmentEvents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.IndexAdjustmentEvents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19274
+      }
+    },
+    "additionalDisruptionEvents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "ISDA 2002 Equity Additional Disruption Events.",
+      "Name" : "additionalDisruptionEvents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.AdditionalDisruptionEvents",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.AdditionalDisruptionEvents",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdditionalDisruptionEvents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19277
+      }
+    },
+    "failureToDeliver" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, failure to deliver is applicable.",
+      "Name" : "failureToDeliver",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19280
+      }
+    },
+    "representations" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "ISDA 2002 Equity Derivative Representations.",
+      "Name" : "representations",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Representations",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19283
+      }
+    },
+    "nationalisationOrInsolvency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The terms \"Nationalisation\" and \"Insolvency\" have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions.",
+      "Name" : "nationalisationOrInsolvency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19286
+      }
+    },
+    "delisting" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The term \"Delisting\" has the meaning defined in the ISDA 2002 Equity Derivatives Definitions.",
+      "Name" : "delisting",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19289
+      }
+    },
+    "relatedExchangeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A short form unique identifier for a related exchange. If the element is not present then the exchange shall be the primary exchange on which listed futures and options on the underlying are listed. The term \"Exchange\" is assumed to have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions.",
+      "Name" : "relatedExchangeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19292
+      }
+    },
+    "optionsExchangeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A short form unique identifier for an exchange on which the reference option contract is listed. This is to address the case where the reference exchange for the future is different than the one for the option. The options Exchange is referenced on share options when Merger Elections are selected as Options Exchange Adjustment.",
+      "Name" : "optionsExchangeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19295
+      }
+    },
+    "specifiedExchangeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A short form unique identifier for a specified exchange. If the element is not present then the exchange shall be default terms as defined in the MCA; unless otherwise specified in the Transaction Supplement.",
+      "Name" : "specifiedExchangeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19298
+      }
+    }
+  },
+  "LocalFieldNames" : [ "mergerEvents", "tenderOffer", "tenderOfferEvents", "compositionOfCombinedConsideration", "indexAdjustmentEvents", "additionalDisruptionEvents", "failureToDeliver", "representations", "nationalisationOrInsolvency", "delisting", "relatedExchangeId", "optionsExchangeId", "specifiedExchangeId" ],
+  "IsSynthetic" : false
+}

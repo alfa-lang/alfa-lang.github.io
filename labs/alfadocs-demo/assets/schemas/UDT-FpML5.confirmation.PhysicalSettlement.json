@@ -1,0 +1,97 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure that describes how an option settles into a physical trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PhysicalSettlement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure that describes how an option settles into a physical trade.\n #/\nrecord FpML5.confirmation.PhysicalSettlement {\n  # The ID of the trade that resulted from the physical settlement.\n  resultingTradeIdentifier : FpML5.confirmation.PartyTradeIdentifier\n\n  # The trade that resulted from the physical settlement.\n  resultingTrade : FpML5.confirmation.Trade\n\n  # An abstract element used as a place holder for the substituting product elements.\n  product : FpML5.confirmation.Product?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.NoTouchRateObservation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TouchRateObservation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "resultingTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ID of the trade that resulted from the physical settlement.",
+      "Name" : "resultingTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyTradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyTradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29638
+      }
+    },
+    "resultingTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trade that resulted from the physical settlement.",
+      "Name" : "resultingTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29641
+      }
+    },
+    "product" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An abstract element used as a place holder for the substituting product elements.",
+      "Name" : "product",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Product",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29644
+      }
+    }
+  },
+  "LocalFieldNames" : [ "resultingTradeIdentifier", "resultingTrade", "product" ],
+  "IsSynthetic" : false
+}

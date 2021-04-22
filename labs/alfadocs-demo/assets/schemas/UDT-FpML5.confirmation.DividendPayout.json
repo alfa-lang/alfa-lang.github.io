@@ -1,0 +1,107 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the dividend payout ratio associated with an equity underlyer. In certain cases the actual ratio is not known on trade inception, and only general conditions are then specified.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DividendPayout",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the dividend payout ratio associated with an equity underlyer. In certain cases the actual ratio is not known on trade inception, and only general conditions are then specified.\n #/\nrecord FpML5.confirmation.DividendPayout {\n  # Specifies the total actual dividend payout ratio associated with the equity underlyer.\n  dividendPayoutRatio : decimal\n\n  # Specifies the cash actual dividend payout ratio associated with the equity underlyer.\n  dividendPayoutRatioCash : decimal?\n\n  # Specifies the non cash actual dividend payout ratio associated with the equity underlyer.\n  dividendPayoutRatioNonCash : decimal?\n\n  # Specifies the dividend payout conditions that will be applied in the case where the actual ratio is not known, typically because of regulatory or legal uncertainties.\n  dividendPayoutConditions : string\n\n  # The next upcoming dividend payment or payments.\n  dividendPayment : FpML5.confirmation.PendingPayment?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.BasketConstituent",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SingleUnderlyer",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "dividendPayoutRatio" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the total actual dividend payout ratio associated with the equity underlyer.",
+      "Name" : "dividendPayoutRatio",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3760
+      }
+    },
+    "dividendPayoutRatioCash" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the cash actual dividend payout ratio associated with the equity underlyer.",
+      "Name" : "dividendPayoutRatioCash",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3763
+      }
+    },
+    "dividendPayoutRatioNonCash" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the non cash actual dividend payout ratio associated with the equity underlyer.",
+      "Name" : "dividendPayoutRatioNonCash",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3766
+      }
+    },
+    "dividendPayoutConditions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the dividend payout conditions that will be applied in the case where the actual ratio is not known, typically because of regulatory or legal uncertainties.",
+      "Name" : "dividendPayoutConditions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3769
+      }
+    },
+    "dividendPayment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The next upcoming dividend payment or payments.",
+      "Name" : "dividendPayment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PendingPayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3772
+      }
+    }
+  },
+  "LocalFieldNames" : [ "dividendPayoutRatio", "dividendPayoutRatioCash", "dividendPayoutRatioNonCash", "dividendPayoutConditions", "dividendPayment" ],
+  "IsSynthetic" : false
+}

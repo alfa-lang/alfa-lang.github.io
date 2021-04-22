@@ -1,0 +1,94 @@
+# ALFA Language Extensions
+
+## Introduction
+
+The modelling capabilities in ALFA are able to capture all data and API modelling needs. However there maybe times that
+certain abstractions are needed, and those may not naturally fit the concepts supported in ALFA.
+
+ALFA allows an `extension` type to be declared. This can be regarded as a meta-programming construct for ALFA. Once
+extensions are defined, instances of those extensions can be declared within ALFA models. This effectively allows you
+to extend the ALFA language with other abstractions while using existing definitions from your model.
+
+Naturally, the ALFA compiler will perform extensive type checking on the extension and its usages.
+
+It should however be emphasised that by using ALFA traits, enums, records etc., majority of domains and problems can be
+modelled. Careful consideration should be given before embarking on the use of extensions to assert that existing concepts
+cannot be used in its place.
+
+## The `extension` type
+
+An `extension` allows you to declare a new UDT definition type in ALFA. That declaration can be used to define instances
+of the newly declared UDT. This can be explained with an example.
+
+```csharp
+// Define 'task' as a top level ALFA construct
+extension task string {
+    Inputs : list< dollarentityName >
+    Output : dollarentityName
+    Timeout : duration
+}
+
+namespace Products
+
+entity Inventory key( ... ) { }
+entity Sales key( ... ) { }
+entity SupplierOrder key( ... ) { }
+
+// This task defines the Daily Restock process flow accepting the
+// current inventory and sales, and produces an order request to suppliers.
+task DailyRestockProcessing (
+    Input : [ Inventory, Sales ]
+    Output : SupplierOrder
+    Timeout : "P1H" // 1 hour using ALFA duration (ISO 8601) type
+)
+```
+
+The example introduces a new extension named `task`. This can be imagined as some workflow processing definition
+requirement to capture inputs entities and an output.
+
+Once an `extension` is declared, it can be used as an ALFA top level construct - __as if it was a built-in concept__.
+In the example, a new `task` has been defined as `DailyRestockProcessing` with properties required by the
+task extension. This object represents an instance of the task extension declared previously.
+
+An extension is not scoped to a namespace. Whereas an instance of an extension is declared within a namespace.
+In the example, the task DailyRestockProcessing will have a fully qualified name of `Products.DailyRestockProcessing`.
+
+
+__Further Examples__
+
+
+In the declaration `extension task string { ... }` from the previous example, `string` is the type of the text 'DailyRestockProcessing'. It is not however restricted to `string` which is just the type of an identifier.
+
+The code below shows an example of a fictitious extension used to model dependencies between entities in order to process them in
+dependency order.
+
+```csharp
+extension dependencies dollarentityName {
+    dependents : list< dollarentityName >
+}
+
+namespace Data
+
+entity A { }
+entity B { }
+entity C { }
+
+// Define A as depending on B & C
+dependencies A (
+   dependents : [ B, C ]
+)
+```
+
+Given the `extension` declaration uses `dependencies $entityName`, the ALFA compiler will assert that in the declaration
+`dependencies A (...)`, `A` is a valid entity name.
+
+
+##### Using `extension` instances
+
+ALFA Pro makes extension instance declarations available via its abstract syntax tree (AST). Given the expected use of
+an `extension` is unknown to ALFA, you need to add a code generator to produce code based on the AST.
+
+At this stage ALFA enforces the model's type correctness, however it is not possible to enforce other rules required
+as part of the extension. This will be supported in future allowing pluggable rules against extension instances.
+
+Please contact info@schemarise.com for details on how extensions can be used and upcoming features around extensions.

@@ -1,0 +1,291 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Some kind of numerical measure about an asset, eg. its NPV, together with characteristics of that measure, together with optional sensitivities.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Quotation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Some kind of numerical measure about an asset, eg. its NPV, together with characteristics of that measure, together with optional sensitivities.\n #/\nrecord FpML5.confirmation.Quotation {\n  # The value of the the quotation.\n  value : decimal?\n\n  # The type of the value that is measured. This could be an NPV, a cash flow, a clean price, etc.\n  measureType : string?\n\n  # The optional units that the measure is expressed in. If not supplied, this is assumed to be a price/value in currency units.\n  quoteUnits : string?\n\n  # The side (bid/mid/ask) of the measure.\n  side : string?\n\n  # The optional currency that the measure is expressed in. If not supplied, this is defaulted from the reportingCurrency in the valuationScenarioDefinition.\n  currency : string?\n\n  # The optional currency that the measure is expressed in. If not supplied, this is defaulted from the reportingCurrency in the valuationScenarioDefinition.\n  currencyType : string?\n\n  # When during a day the quote is for. Typically, if this element is supplied, the QuoteLocation needs also to be supplied.\n  timing : string?\n\n  # A city or other business center.\n  businessCenter : string\n\n  # The exchange (e.g. stock or futures exchange) from which the quote is obtained.\n  exchangeId : string\n\n  # The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.\n  informationSource : FpML5.confirmation.InformationSource?\n\n  # .\n  pricingModel : string?\n\n  # When the quote was observed or when a calculated value was generated.\n  `time` : datetime?\n\n  # When the quote was computed.\n  valuationDate : date?\n\n  # When does the quote cease to be valid.\n  expiryTime : datetime?\n\n  # For cash flows, the type of the cash flows. Examples include: Coupon payment, Premium Fee, Settlement Fee, Brokerage Fee, etc.\n  cashflowType : string?\n\n  # Zero or more sets of sensitivities of this measure to various input parameters.\n  sensitivitySet : FpML5.confirmation.SensitivitySet?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AssetValuation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "value" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value of the the quotation.",
+      "Name" : "value",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27669
+      }
+    },
+    "measureType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of the value that is measured. This could be an NPV, a cash flow, a clean price, etc.",
+      "Name" : "measureType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27672
+      }
+    },
+    "quoteUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The optional units that the measure is expressed in. If not supplied, this is assumed to be a price/value in currency units.",
+      "Name" : "quoteUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27675
+      }
+    },
+    "side" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The side (bid/mid/ask) of the measure.",
+      "Name" : "side",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27678
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The optional currency that the measure is expressed in. If not supplied, this is defaulted from the reportingCurrency in the valuationScenarioDefinition.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27681
+      }
+    },
+    "currencyType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The optional currency that the measure is expressed in. If not supplied, this is defaulted from the reportingCurrency in the valuationScenarioDefinition.",
+      "Name" : "currencyType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27684
+      }
+    },
+    "timing" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When during a day the quote is for. Typically, if this element is supplied, the QuoteLocation needs also to be supplied.",
+      "Name" : "timing",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27687
+      }
+    },
+    "businessCenter" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A city or other business center.",
+      "Name" : "businessCenter",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27690
+      }
+    },
+    "exchangeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The exchange (e.g. stock or futures exchange) from which the quote is obtained.",
+      "Name" : "exchangeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27693
+      }
+    },
+    "informationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.",
+      "Name" : "informationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27696
+      }
+    },
+    "pricingModel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : ".",
+      "Name" : "pricingModel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27699
+      }
+    },
+    "time" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When the quote was observed or when a calculated value was generated.",
+      "Name" : "time",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27702
+      }
+    },
+    "valuationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When the quote was computed.",
+      "Name" : "valuationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27705
+      }
+    },
+    "expiryTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When does the quote cease to be valid.",
+      "Name" : "expiryTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27708
+      }
+    },
+    "cashflowType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For cash flows, the type of the cash flows. Examples include: Coupon payment, Premium Fee, Settlement Fee, Brokerage Fee, etc.",
+      "Name" : "cashflowType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27711
+      }
+    },
+    "sensitivitySet" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Zero or more sets of sensitivities of this measure to various input parameters.",
+      "Name" : "sensitivitySet",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.SensitivitySet",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27714
+      }
+    }
+  },
+  "LocalFieldNames" : [ "value", "measureType", "quoteUnits", "side", "currency", "currencyType", "timing", "businessCenter", "exchangeId", "informationSource", "pricingModel", "time", "valuationDate", "expiryTime", "cashflowType", "sensitivitySet" ],
+  "IsSynthetic" : false
+}

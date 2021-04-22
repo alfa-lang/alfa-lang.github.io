@@ -1,0 +1,100 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Physically settled leg of a physically settled Metal transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.MetalPhysicalLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Physically settled leg of a physically settled Metal transaction.\n #/\nrecord FpML5.transparency.MetalPhysicalLeg {\n  # The specification of the Metal Product to be delivered.\n  metal : FpML5.transparency.Metal\n\n  # The physical delivery arrangements and requirements for a physically settled non-precious metal transaction.\n  deliveryConditions : FpML5.transparency.MetalDelivery?\n\n  # The Total Quantity of the commodity to be delivered.\n  totalPhysicalQuantity : FpML5.transparency.UnitQuantity\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "metal" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specification of the Metal Product to be delivered.",
+      "Name" : "metal",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.Metal",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.Metal",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Metal",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13033
+      }
+    },
+    "deliveryConditions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The physical delivery arrangements and requirements for a physically settled non-precious metal transaction.",
+      "Name" : "deliveryConditions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.MetalDelivery",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13036
+      }
+    },
+    "totalPhysicalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Total Quantity of the commodity to be delivered.",
+      "Name" : "totalPhysicalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.UnitQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.UnitQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.UnitQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13039
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13042
+      }
+    }
+  },
+  "LocalFieldNames" : [ "metal", "deliveryConditions", "totalPhysicalQuantity", "id" ],
+  "IsSynthetic" : false
+}

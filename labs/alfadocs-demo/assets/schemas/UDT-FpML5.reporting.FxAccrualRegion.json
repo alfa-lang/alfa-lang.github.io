@@ -1,0 +1,171 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defines a region of spot rate where the notional for the settlement period accrues by the accrued amount per fixing each time the spot rate fixes within the region.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrualRegion",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defines a region of spot rate where the notional for the settlement period accrues by the accrued amount per fixing each time the spot rate fixes within the region.\n #/\nrecord FpML5.reporting.FxAccrualRegion {\n  # Identifies the FX rate used as the basis for the condition (the accrual region).\n  observableReference : FpML5.reporting.FxRateObservableReference?\n\n  # Defines the upper bound of a payoff region.\n  upperBound : FpML5.reporting.FxAccrualRegionUpperBound?\n\n  # Defines the lower bound of a payoff region.\n  lowerBound : FpML5.reporting.FxAccrualRegionLowerBound\n\n  # Defines the end date of the observation period for the barrier. If omitted, the last barrier observation point is understood to be the last fixing date in the fixing schedule.\n  startDate : date\n\n  # Defines the end date of the observation period for the barrier. If ommitted, the last barrier observation point is understood to be the last fixing date in the fixing schedule.\n  endDate : date\n\n  # A multiplier applied to the notional amount per fixing of each currency to specify the amount accrued each time the spot rate fixes within the accrual region. If the accrualFactor is omitted, the factor is one.\n  accrualFactor : FpML5.reporting.Schedule\n\n  # Notional amount Schedule. The notional value of the product per settlement period. This number divided by the total number of fixings in the fixing schedule is the amount that is accrued at each fixing if the accrual factor is one.\n  notionalAmount : FpML5.reporting.NonNegativeAmountSchedule?\n\n  # The opposite currency amount. The 'counterCurrencyAmount' element is supplied if the accrual process operates on specific amounts of both notional and counter currency within this accrual region.\n  counterCurrencyAmount : FpML5.reporting.FxCounterCurrencyAmount?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrual",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "observableReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the FX rate used as the basis for the condition (the accrual region).",
+      "Name" : "observableReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxRateObservableReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18295
+      }
+    },
+    "upperBound" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the upper bound of a payoff region.",
+      "Name" : "upperBound",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxAccrualRegionUpperBound",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18298
+      }
+    },
+    "lowerBound" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the lower bound of a payoff region.",
+      "Name" : "lowerBound",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxAccrualRegionLowerBound",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxAccrualRegionLowerBound",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxAccrualRegionLowerBound",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18301
+      }
+    },
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the end date of the observation period for the barrier. If omitted, the last barrier observation point is understood to be the last fixing date in the fixing schedule.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18304
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the end date of the observation period for the barrier. If ommitted, the last barrier observation point is understood to be the last fixing date in the fixing schedule.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18307
+      }
+    },
+    "accrualFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A multiplier applied to the notional amount per fixing of each currency to specify the amount accrued each time the spot rate fixes within the accrual region. If the accrualFactor is omitted, the factor is one.",
+      "Name" : "accrualFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Schedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Schedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Schedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18310
+      }
+    },
+    "notionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Notional amount Schedule. The notional value of the product per settlement period. This number divided by the total number of fixings in the fixing schedule is the amount that is accrued at each fixing if the accrual factor is one.",
+      "Name" : "notionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeAmountSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18313
+      }
+    },
+    "counterCurrencyAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The opposite currency amount. The 'counterCurrencyAmount' element is supplied if the accrual process operates on specific amounts of both notional and counter currency within this accrual region.",
+      "Name" : "counterCurrencyAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxCounterCurrencyAmount",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18316
+      }
+    }
+  },
+  "LocalFieldNames" : [ "observableReference", "upperBound", "lowerBound", "startDate", "endDate", "accrualFactor", "notionalAmount", "counterCurrencyAmount" ],
+  "IsSynthetic" : false
+}

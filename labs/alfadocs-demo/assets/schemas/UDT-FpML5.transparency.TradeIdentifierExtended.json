@@ -1,0 +1,130 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a trade identifier with a reference to the party that this trade is associated with.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.TradeIdentifierExtended",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a trade identifier with a reference to the party that this trade is associated with.\n #/\nrecord FpML5.transparency.TradeIdentifierExtended {\n  issuer : string\n\n  tradeId : string\n\n  # Reference to a party.\n  partyReference : FpML5.transparency.PartyReference\n\n  # A trade identifier accompanied by a version number. In regulatory reporting views, this should be avoided except for internal mnessaging.\n  versionedTradeId : FpML5.transparency.VersionedTradeId\n\n  associatedPartyReference : FpML5.transparency.PartyReference?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.PartyTradeIdentifier",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "issuer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "issuer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8503
+      }
+    },
+    "tradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8505
+      }
+    },
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8507
+      }
+    },
+    "versionedTradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A trade identifier accompanied by a version number. In regulatory reporting views, this should be avoided except for internal mnessaging.",
+      "Name" : "versionedTradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.VersionedTradeId",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.VersionedTradeId",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.VersionedTradeId",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8510
+      }
+    },
+    "associatedPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "associatedPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8513
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8515
+      }
+    }
+  },
+  "LocalFieldNames" : [ "issuer", "tradeId", "partyReference", "versionedTradeId", "associatedPartyReference", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the source of a commodity rate, price or index or of a market rate or of a conversion factor (e.g. a fx conversion factor).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityInformationSource",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the source of a commodity rate, price or index or of a market rate or of a conversion factor (e.g. a fx conversion factor).\n #/\nrecord FpML5.confirmation.CommodityInformationSource {\n  # The publication in which the rate, price, index or factor is to be found. (e.g Gas Daily, Platts Bloomberg.)\n  rateSource : string\n\n  # A specific page or screen (in the case of electronically published information) on which the rate source is to be found.\n  rateSourcePage : string?\n\n  # The heading for the rate source on a given rate source page or screen.\n  rateSourcePageHeading : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Commodity",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "rateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The publication in which the rate, price, index or factor is to be found. (e.g Gas Daily, Platts Bloomberg.)",
+      "Name" : "rateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 2800
+      }
+    },
+    "rateSourcePage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A specific page or screen (in the case of electronically published information) on which the rate source is to be found.",
+      "Name" : "rateSourcePage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 2803
+      }
+    },
+    "rateSourcePageHeading" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The heading for the rate source on a given rate source page or screen.",
+      "Name" : "rateSourcePageHeading",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 2806
+      }
+    }
+  },
+  "LocalFieldNames" : [ "rateSource", "rateSourcePage", "rateSourcePageHeading" ],
+  "IsSynthetic" : false
+}

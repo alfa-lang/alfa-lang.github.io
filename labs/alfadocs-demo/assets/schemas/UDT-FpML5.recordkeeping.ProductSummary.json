@@ -1,0 +1,87 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Summary information about the product that was traded. This is intended primarily for trade reporting by TRs.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ProductSummary",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Summary information about the product that was traded. This is intended primarily for trade reporting by TRs.\n #/\nrecord FpML5.recordkeeping.ProductSummary {\n  finalSettlementDate : date?\n\n  settlementType : string?\n\n  seniority : string?\n\n  indexFactor : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.TradeHeader",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "finalSettlementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "finalSettlementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21849
+      }
+    },
+    "settlementType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "settlementType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21851
+      }
+    },
+    "seniority" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "seniority",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21853
+      }
+    },
+    "indexFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "indexFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21855
+      }
+    }
+  },
+  "LocalFieldNames" : [ "finalSettlementDate", "settlementType", "seniority", "indexFactor" ],
+  "IsSynthetic" : false
+}

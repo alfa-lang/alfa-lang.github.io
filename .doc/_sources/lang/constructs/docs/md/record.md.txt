@@ -1,0 +1,30 @@
+# record
+
+A `record` defines a data structure that will be used to contain a number a data items - fields. A `record` can `includes` one or many :ref:`traitType` definitions, thereby inherting attributes (i.e. fields) of the traits.
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation.
+
+```csharp
+record Event {
+    Id : uuid
+    When : time
+    Data : binary
+}
+```
+
+A `record` with multiple includes.
+
+```csharp
+record Student includes Person, Examinable {
+    Class : string
+}
+
+trait Person { 
+    Name : string
+    DOB : date
+}
+
+trait Examinable { 
+    ExamResults : map< string, int >
+}
+```

@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A complex type to specify the strike of a credit swaption or a credit default swap option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CreditOptionStrike",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A complex type to specify the strike of a credit swaption or a credit default swap option.\n #/\nrecord FpML5.reporting.CreditOptionStrike {\n  # The strike of a credit default swap option or credit swaption when expressed as a spread per annum.\n  spread : decimal\n\n  # The strike of a credit default swap option or credit swaption when expressed as in reference to the price of the underlying obligation(s) or index.\n  price : decimal\n\n  # The strike of a credit default swap option or credit swaption when expressed in reference to the spread of the underlying swap (typical practice in the case of single name swaps).\n  strikeReference : FpML5.reporting.FixedRateReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CreditDefaultSwapOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "spread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The strike of a credit default swap option or credit swaption when expressed as a spread per annum.",
+      "Name" : "spread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16420
+      }
+    },
+    "price" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The strike of a credit default swap option or credit swaption when expressed as in reference to the price of the underlying obligation(s) or index.",
+      "Name" : "price",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16423
+      }
+    },
+    "strikeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The strike of a credit default swap option or credit swaption when expressed in reference to the spread of the underlying swap (typical practice in the case of single name swaps).",
+      "Name" : "strikeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FixedRateReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FixedRateReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FixedRateReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16426
+      }
+    }
+  },
+  "LocalFieldNames" : [ "spread", "price", "strikeReference" ],
+  "IsSynthetic" : false
+}

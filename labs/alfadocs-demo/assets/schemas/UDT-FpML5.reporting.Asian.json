@@ -1,0 +1,96 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "As per ISDA 2002 Definitions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Asian",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   As per ISDA 2002 Definitions.\n #/\nrecord FpML5.reporting.Asian {\n  averagingInOut : string?\n\n  # The factor of strike.\n  strikeFactor : decimal?\n\n  # The averaging in period.\n  averagingPeriodIn : FpML5.reporting.AveragingPeriod?\n\n  # The averaging out period.\n  averagingPeriodOut : FpML5.reporting.AveragingPeriod?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionFeature",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionFeatures",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "averagingInOut" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "averagingInOut",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17419
+      }
+    },
+    "strikeFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The factor of strike.",
+      "Name" : "strikeFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17421
+      }
+    },
+    "averagingPeriodIn" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The averaging in period.",
+      "Name" : "averagingPeriodIn",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AveragingPeriod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17424
+      }
+    },
+    "averagingPeriodOut" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The averaging out period.",
+      "Name" : "averagingPeriodOut",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AveragingPeriod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17427
+      }
+    }
+  },
+  "LocalFieldNames" : [ "averagingInOut", "strikeFactor", "averagingPeriodIn", "averagingPeriodOut" ],
+  "IsSynthetic" : false
+}

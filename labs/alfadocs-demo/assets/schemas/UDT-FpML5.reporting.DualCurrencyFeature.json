@@ -1,0 +1,127 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes the parameters for a dual currency option transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DualCurrencyFeature",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes the parameters for a dual currency option transaction.\n #/\nrecord FpML5.reporting.DualCurrencyFeature {\n  # The Alternate currency i.e. the currency in which the deposit will be redeemed in the event that the spot rate fixes below the strike rate at the specified fixing date and time.\n  currency : string?\n\n  # The date on which the fx spot rate is compared against the strike rate, in order to determine the delivery currency. This is the expiry date of a put option on the Deposit/Alternate currency couple. Also known as \"valuation date\" or \"reference date\".\n  fixingDate : date?\n\n  # The time at which the fx spot rate observation is made i.e. the option cut off time on the expiry date. Also known as \"valuation time\".\n  fixingTime : FpML5.reporting.BusinessCenterTime?\n\n  # The rate at which the deposit will be converted to the Alternate currency, in the event that the spot rate is strictly lower than the strike rate at the specified fixing date and time.\n  strike : FpML5.reporting.DualCurrencyStrikePrice?\n\n  # The spot rate at the time the trade was agreed.\n  spotRate : decimal?\n\n  # Specifies whether the interest component of the redemption amount is subject to conversion to the Alternate currency, in the event that the spot rate is strictly lower than the strike rate at the specified fixing date and time.\n  interestAtRisk : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TermDepositFeatures",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Alternate currency i.e. the currency in which the deposit will be redeemed in the event that the spot rate fixes below the strike rate at the specified fixing date and time.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25087
+      }
+    },
+    "fixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the fx spot rate is compared against the strike rate, in order to determine the delivery currency. This is the expiry date of a put option on the Deposit/Alternate currency couple. Also known as \"valuation date\" or \"reference date\".",
+      "Name" : "fixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25090
+      }
+    },
+    "fixingTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time at which the fx spot rate observation is made i.e. the option cut off time on the expiry date. Also known as \"valuation time\".",
+      "Name" : "fixingTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25093
+      }
+    },
+    "strike" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate at which the deposit will be converted to the Alternate currency, in the event that the spot rate is strictly lower than the strike rate at the specified fixing date and time.",
+      "Name" : "strike",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.DualCurrencyStrikePrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25096
+      }
+    },
+    "spotRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The spot rate at the time the trade was agreed.",
+      "Name" : "spotRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25099
+      }
+    },
+    "interestAtRisk" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the interest component of the redemption amount is subject to conversion to the Alternate currency, in the event that the spot rate is strictly lower than the strike rate at the specified fixing date and time.",
+      "Name" : "interestAtRisk",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25102
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency", "fixingDate", "fixingTime", "strike", "spotRate", "interestAtRisk" ],
+  "IsSynthetic" : false
+}

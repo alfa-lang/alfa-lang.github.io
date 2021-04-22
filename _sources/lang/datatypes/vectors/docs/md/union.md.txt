@@ -1,0 +1,29 @@
+union< :T1, :T2, ..>
+====================
+
+Represents a fixed set of type entries where only 1 of types
+`T1, T2, Tn` will be set.
+
+A union datatype can be considered an in-line :ref:`unionType` declaration.
+
+Example:
+
+-   `Data : union< :string, :int, :date >` Union containing given types.
+    The field `Data` will contain a value of one of the types.
+
+Using the named syntax below is recommended to clarify the field usage.
+
+__Optional Parameters__
+
+- `union< Name1:T1, Name2:T2, ... >`
+>
+>Labels can be optionally specified for the the types making the union a [tagged union](<https://en.m.wikipedia.org/wiki/Tagged_union>).
+>
+>Example:
+>
+>-   `PrimaryContact: union< Phone:string, Email:string, Address:string > `Union containing tagged entries.
+
+- `union< FieldName1, FieldName2, ... >`
+
+> Fields declared in `fields {}` block can be referenced simply by specifying their name.
+

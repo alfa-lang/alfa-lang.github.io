@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the method for obtaining a settlement rate.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SettlementRateSource",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the method for obtaining a settlement rate.\n #/\nrecord FpML5.confirmation.SettlementRateSource {\n  # The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.\n  informationSource : FpML5.confirmation.InformationSource\n\n  # A container for a set of reference institutions. These reference institutions may be called upon to provide rate quotations as part of the method to determine the applicable cash settlement amount. If institutions are not specified, it is assumed that reference institutions will be agreed between the parties on the exercise date, or in the case of swap transaction to which mandatory early termination is applicable, the cash settlement valuation date.\n  cashSettlementReferenceBanks : FpML5.confirmation.CashSettlementReferenceBanks\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.YieldCurveMethod",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "informationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.",
+      "Name" : "informationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.InformationSource",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.InformationSource",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5229
+      }
+    },
+    "cashSettlementReferenceBanks" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A container for a set of reference institutions. These reference institutions may be called upon to provide rate quotations as part of the method to determine the applicable cash settlement amount. If institutions are not specified, it is assumed that reference institutions will be agreed between the parties on the exercise date, or in the case of swap transaction to which mandatory early termination is applicable, the cash settlement valuation date.",
+      "Name" : "cashSettlementReferenceBanks",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CashSettlementReferenceBanks",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CashSettlementReferenceBanks",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CashSettlementReferenceBanks",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 5232
+      }
+    }
+  },
+  "LocalFieldNames" : [ "informationSource", "cashSettlementReferenceBanks" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,24 @@
+add
+===
+
+Add a value to a target object. Depending on the target object,
+the meaning of 'add' will be different and the parameters expected will differ.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`dateType`, :ref:`datetimeType`, :ref:`durationType`, :ref:`timeType`, :ref:`listVectorType` or :ref:`setVectorType`|Object to be 'added' into |
+|2|Value being added|Depends on the type of the 1st argument to `add`|
+
+__Returns:__
+`void` - no result.
+
+__Usages:__
+
+>- `add( v:list<T>, value : T ) : void`
+>- `add( v:set<T>, value : T ) : void`
+>- `add( v:date, delta : int, span : enum<Day,Month,Year> ) : void`
+>- `add( v:datetime, delta : int, span : enum<Day,Month,Year,Hour,Minute,Second,Millisecond> ) : void`
+>- `add( v:time, delta : int, span : enum<Hour,Minute,Second,Millisecond> ) : void`
+>- `add( v:duration, delta : int, span : enum<Years,Days,Hours,Minutes,Seconds,Milliseconds> ) : void`

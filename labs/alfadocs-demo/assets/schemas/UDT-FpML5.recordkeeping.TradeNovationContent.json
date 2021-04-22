@@ -1,0 +1,664 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure describing a novation.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.TradeNovationContent",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure describing a novation.\n #/\nrecord FpML5.recordkeeping.TradeNovationContent {\n  eventIdentifier : FpML5.recordkeeping.BusinessEventIdentifier?\n\n  # Indicates a reference to the new trade between the transferee and the remaining party.\n  newTradeIdentifier : FpML5.recordkeeping.PartyTradeIdentifier\n\n  # Indicates the new trade between the transferee and the remaining party.\n  newTrade : FpML5.recordkeeping.Trade\n\n  # Indicates a reference to the original trade between the transferor and the remaining party.\n  oldTradeIdentifier : FpML5.recordkeeping.PartyTradeIdentifier\n\n  # Indicates the original trade between the transferor and the remaining party.\n  oldTrade : FpML5.recordkeeping.Trade\n\n  # Indicates a reference to the implied trade (the \"fee trade\") that the associated novation fee based on. This is equivalent to the new trade that is created by the novation (between the transferee and the remaining party), but is between the transferor and the transferee.\n  feeTradeIdentifier : FpML5.recordkeeping.PartyTradeIdentifier\n\n  # Indicates the original trade between the transferor and the remaining party.\n  feeTrade : FpML5.recordkeeping.Trade\n\n  # A pointer style reference to a party identifier defined elsewhere in the document. In a three-way novation the party referenced is the Transferor (outgoing party) in the novation. The Transferor means a party which transfers by novation to a Transferee all of its rights, liabilities, duties and obligations with respect to a Remaining Party. In a four-way novation the party referenced is Transferor 1 which transfers by novation to Transferee 1 all of its rights, liabilities, duties and obligations with respect to Transferor 2. ISDA 2004 Novation Term: Transferor (three-way novation) or Transferor 1 (four-way novation).\n  transferor : FpML5.recordkeeping.PartyReference?\n\n  transferorAccount : FpML5.recordkeeping.AccountReference?\n\n  # A pointer style reference to a party identifier defined elsewhere in the document. In a three-way novation the party referenced is the Transferee (incoming party) in the novation. Transferee means a party which accepts by way of novation all rights, liabilities, duties and obligations of a Transferor with respect to a Remaining Party. In a four-way novation the party referenced is Transferee 1 which accepts by way of novation the rights, liabilities, duties and obligations of Transferor 1. ISDA 2004 Novation Term: Transferee (three-way novation) or Transferee 1 (four-way novation).\n  transferee : FpML5.recordkeeping.PartyReference?\n\n  # A pointer style reference to a party identifier defined elsewhere in the document. In a five-way novation the party referenced is the Transferee's legal entity that is involved in the settlement of the fee leg of the novation transaction (this might be a different legal entity than the one that assumes the novation trade). NB: this element has been added pending confirmation of the business need/context in which it would be used, and might not appear in a subsequent draft of this schema.\n  otherTransferee : FpML5.recordkeeping.PartyReference?\n\n  transfereeAccount : FpML5.recordkeeping.AccountReference?\n\n  otherTransfereeAccount : FpML5.recordkeeping.AccountReference?\n\n  # A pointer style reference to a party identifier defined elsewhere in the document. In a three-way novation the party referenced is the Remaining Party in the novation. Remaining Party means a party which consents to a Transferor's transfer by novation and the acceptance thereof by the Transferee of all of the Transferor's rights, liabilities, duties and obligations with respect to such Remaining Party under and with respect of the Novated Amount of a transaction. In a four-way novation the party referenced is Transferor 2 per the ISDA definition and acts in the role of a Transferor. Transferor 2 transfers by novation to Transferee 2 all of its rights, liabilities, duties and obligations with respect to Transferor 1. ISDA 2004 Novation Term: Remaining Party (three-way novation) or Transferor 2 (four-way novation).\n  remainingParty : FpML5.recordkeeping.PartyReference?\n\n  remainingPartyAccount : FpML5.recordkeeping.AccountReference?\n\n  # A pointer style reference to a party identifier defined elsewhere in the document. This element is not applicable in a three-way novation and should be omitted. In a four-way novation the party referenced is Transferee 2. Transferee 2 means a party which accepts by way of novation the rights, liabilities, duties and obligations of Transferor 2. ISDA 2004 Novation Term: Transferee 2 (four-way novation).\n  otherRemainingParty : FpML5.recordkeeping.PartyReference?\n\n  otherRemainingPartyAccount : FpML5.recordkeeping.AccountReference?\n\n  # Specifies the date that one party's legal obligations with regard to a trade are transferred to another party. It corresponds to the Novation Date section of the 2004 ISDA Novation Definitions, section 1.16.\n  novationDate : date?\n\n  # The date and time at which the change was agreed.\n  executionDateTime : datetime?\n\n  # Specifies the date the parties agree to assign or novate a Contract. If this element is not specified, the novationContractDate will be deemed to be the novationDate. It corresponds to the Novation Trade Date section of the 2004 ISDA Novation Definitions, section 1.17.\n  novationTradeDate : date?\n\n  # The amount which represents the portion of the Old Contract being novated.\n  novatedAmount : FpML5.recordkeeping.Money\n\n  # The amount which represents the portion of the Old Contract not being novated.\n  remainingAmount : FpML5.recordkeeping.Money?\n\n  # The number of options which represent the portion of the Old Contract being novated.\n  novatedNumberOfOptions : decimal\n\n  # The number of options which represent the portion of the Old Contract not being novated.\n  remainingNumberOfOptions : decimal?\n\n  # The number of options which represent the portion of the Old Contract being novated.\n  novatedNumberOfUnits : decimal\n\n  # The number of options which represent the portion of the Old Contract not being novated.\n  remainingNumberOfUnits : decimal?\n\n  novationAmount : FpML5.recordkeeping.TradeLegSizeChange\n\n  # This element corresponds to the applicability of the Full First Calculation Period as defined in the 2004 ISDA Novation Definitions, section 1.20.\n  fullFirstCalculationPeriod : boolean?\n\n  # Element that is used to be able to make sense of the “new transaction” without requiring reference back to the “old transaction”. In the case of interest rate products there are potentially 2 “first period start dates” to reference – one with respect to each party to the new transaction. For Credit Default Swaps there is just the one with respect to the party that is the fixed rate payer.\n  firstPeriodStartDate : date?\n\n  # This element corresponds to the non-Reliance section in the 2004 ISDA Novation Definitions, section 2.1 (c) (i). The element appears in the instance document when non-Reliance is applicable.\n  nonReliance : FpML5.recordkeeping.Empty?\n\n  # This element should be specified if one or more of either a Credit Event Notice, Notice of Publicly Available Information, Notice of Physical Settlement or Notice of Intended Physical Settlement, as applicable, has been delivered by or to the Transferor or the Remaining Party. The type of notice or notices that have been delivered should be indicated by setting the relevant boolean element value(s) to true. The absence of the element means that no Credit Event Notice, Notice of Publicly Available Information, Notice of Physical Settlement or Notice of Intended Physical Settlement, as applicable, has been delivered by or to the Transferor or the Remaining Party.\n  creditDerivativesNotices : FpML5.recordkeeping.CreditDerivativesNotices?\n\n  # The definitions (such as those published by ISDA) that will define the terms of the novation transaction.\n  contractualDefinitions : string?\n\n  # A contractual supplement (such as those published by ISDA) that will apply to the trade.\n  contractualTermsSupplement : FpML5.recordkeeping.ContractualTermsSupplement?\n\n  # Describes a payment made in settlement of the novation.\n  payment : FpML5.recordkeeping.Payment?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.NonpublicExecutionReport",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.NonpublicExecutionReportRetracted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eventIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "eventIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BusinessEventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5404
+      }
+    },
+    "newTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates a reference to the new trade between the transferee and the remaining party.",
+      "Name" : "newTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5406
+      }
+    },
+    "newTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the new trade between the transferee and the remaining party.",
+      "Name" : "newTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5409
+      }
+    },
+    "oldTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates a reference to the original trade between the transferor and the remaining party.",
+      "Name" : "oldTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5412
+      }
+    },
+    "oldTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the original trade between the transferor and the remaining party.",
+      "Name" : "oldTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5415
+      }
+    },
+    "feeTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates a reference to the implied trade (the \"fee trade\") that the associated novation fee based on. This is equivalent to the new trade that is created by the novation (between the transferee and the remaining party), but is between the transferor and the transferee.",
+      "Name" : "feeTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5418
+      }
+    },
+    "feeTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the original trade between the transferor and the remaining party.",
+      "Name" : "feeTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5421
+      }
+    },
+    "transferor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a party identifier defined elsewhere in the document. In a three-way novation the party referenced is the Transferor (outgoing party) in the novation. The Transferor means a party which transfers by novation to a Transferee all of its rights, liabilities, duties and obligations with respect to a Remaining Party. In a four-way novation the party referenced is Transferor 1 which transfers by novation to Transferee 1 all of its rights, liabilities, duties and obligations with respect to Transferor 2. ISDA 2004 Novation Term: Transferor (three-way novation) or Transferor 1 (four-way novation).",
+      "Name" : "transferor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5424
+      }
+    },
+    "transferorAccount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "transferorAccount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5427
+      }
+    },
+    "transferee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a party identifier defined elsewhere in the document. In a three-way novation the party referenced is the Transferee (incoming party) in the novation. Transferee means a party which accepts by way of novation all rights, liabilities, duties and obligations of a Transferor with respect to a Remaining Party. In a four-way novation the party referenced is Transferee 1 which accepts by way of novation the rights, liabilities, duties and obligations of Transferor 1. ISDA 2004 Novation Term: Transferee (three-way novation) or Transferee 1 (four-way novation).",
+      "Name" : "transferee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5429
+      }
+    },
+    "otherTransferee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a party identifier defined elsewhere in the document. In a five-way novation the party referenced is the Transferee's legal entity that is involved in the settlement of the fee leg of the novation transaction (this might be a different legal entity than the one that assumes the novation trade). NB: this element has been added pending confirmation of the business need/context in which it would be used, and might not appear in a subsequent draft of this schema.",
+      "Name" : "otherTransferee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5432
+      }
+    },
+    "transfereeAccount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "transfereeAccount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5435
+      }
+    },
+    "otherTransfereeAccount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "otherTransfereeAccount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5437
+      }
+    },
+    "remainingParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a party identifier defined elsewhere in the document. In a three-way novation the party referenced is the Remaining Party in the novation. Remaining Party means a party which consents to a Transferor's transfer by novation and the acceptance thereof by the Transferee of all of the Transferor's rights, liabilities, duties and obligations with respect to such Remaining Party under and with respect of the Novated Amount of a transaction. In a four-way novation the party referenced is Transferor 2 per the ISDA definition and acts in the role of a Transferor. Transferor 2 transfers by novation to Transferee 2 all of its rights, liabilities, duties and obligations with respect to Transferor 1. ISDA 2004 Novation Term: Remaining Party (three-way novation) or Transferor 2 (four-way novation).",
+      "Name" : "remainingParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5439
+      }
+    },
+    "remainingPartyAccount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "remainingPartyAccount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5442
+      }
+    },
+    "otherRemainingParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a party identifier defined elsewhere in the document. This element is not applicable in a three-way novation and should be omitted. In a four-way novation the party referenced is Transferee 2. Transferee 2 means a party which accepts by way of novation the rights, liabilities, duties and obligations of Transferor 2. ISDA 2004 Novation Term: Transferee 2 (four-way novation).",
+      "Name" : "otherRemainingParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5444
+      }
+    },
+    "otherRemainingPartyAccount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "otherRemainingPartyAccount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5447
+      }
+    },
+    "novationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date that one party's legal obligations with regard to a trade are transferred to another party. It corresponds to the Novation Date section of the 2004 ISDA Novation Definitions, section 1.16.",
+      "Name" : "novationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5449
+      }
+    },
+    "executionDateTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date and time at which the change was agreed.",
+      "Name" : "executionDateTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5452
+      }
+    },
+    "novationTradeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date the parties agree to assign or novate a Contract. If this element is not specified, the novationContractDate will be deemed to be the novationDate. It corresponds to the Novation Trade Date section of the 2004 ISDA Novation Definitions, section 1.17.",
+      "Name" : "novationTradeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5455
+      }
+    },
+    "novatedAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount which represents the portion of the Old Contract being novated.",
+      "Name" : "novatedAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Money",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Money",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5458
+      }
+    },
+    "remainingAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount which represents the portion of the Old Contract not being novated.",
+      "Name" : "remainingAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5461
+      }
+    },
+    "novatedNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of options which represent the portion of the Old Contract being novated.",
+      "Name" : "novatedNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5464
+      }
+    },
+    "remainingNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of options which represent the portion of the Old Contract not being novated.",
+      "Name" : "remainingNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5467
+      }
+    },
+    "novatedNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of options which represent the portion of the Old Contract being novated.",
+      "Name" : "novatedNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5470
+      }
+    },
+    "remainingNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of options which represent the portion of the Old Contract not being novated.",
+      "Name" : "remainingNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5473
+      }
+    },
+    "novationAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "novationAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.TradeLegSizeChange",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.TradeLegSizeChange",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TradeLegSizeChange",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5476
+      }
+    },
+    "fullFirstCalculationPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element corresponds to the applicability of the Full First Calculation Period as defined in the 2004 ISDA Novation Definitions, section 1.20.",
+      "Name" : "fullFirstCalculationPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5478
+      }
+    },
+    "firstPeriodStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Element that is used to be able to make sense of the “new transaction” without requiring reference back to the “old transaction”. In the case of interest rate products there are potentially 2 “first period start dates” to reference – one with respect to each party to the new transaction. For Credit Default Swaps there is just the one with respect to the party that is the fixed rate payer.",
+      "Name" : "firstPeriodStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5481
+      }
+    },
+    "nonReliance" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element corresponds to the non-Reliance section in the 2004 ISDA Novation Definitions, section 2.1 (c) (i). The element appears in the instance document when non-Reliance is applicable.",
+      "Name" : "nonReliance",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Empty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5484
+      }
+    },
+    "creditDerivativesNotices" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element should be specified if one or more of either a Credit Event Notice, Notice of Publicly Available Information, Notice of Physical Settlement or Notice of Intended Physical Settlement, as applicable, has been delivered by or to the Transferor or the Remaining Party. The type of notice or notices that have been delivered should be indicated by setting the relevant boolean element value(s) to true. The absence of the element means that no Credit Event Notice, Notice of Publicly Available Information, Notice of Physical Settlement or Notice of Intended Physical Settlement, as applicable, has been delivered by or to the Transferor or the Remaining Party.",
+      "Name" : "creditDerivativesNotices",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CreditDerivativesNotices",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5487
+      }
+    },
+    "contractualDefinitions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The definitions (such as those published by ISDA) that will define the terms of the novation transaction.",
+      "Name" : "contractualDefinitions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5490
+      }
+    },
+    "contractualTermsSupplement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A contractual supplement (such as those published by ISDA) that will apply to the trade.",
+      "Name" : "contractualTermsSupplement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ContractualTermsSupplement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5493
+      }
+    },
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes a payment made in settlement of the novation.",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Payment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5496
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eventIdentifier", "newTradeIdentifier", "newTrade", "oldTradeIdentifier", "oldTrade", "feeTradeIdentifier", "feeTrade", "transferor", "transferorAccount", "transferee", "otherTransferee", "transfereeAccount", "otherTransfereeAccount", "remainingParty", "remainingPartyAccount", "otherRemainingParty", "otherRemainingPartyAccount", "novationDate", "executionDateTime", "novationTradeDate", "novatedAmount", "remainingAmount", "novatedNumberOfOptions", "remainingNumberOfOptions", "novatedNumberOfUnits", "remainingNumberOfUnits", "novationAmount", "fullFirstCalculationPeriod", "firstPeriodStartDate", "nonReliance", "creditDerivativesNotices", "contractualDefinitions", "contractualTermsSupplement", "payment" ],
+  "IsSynthetic" : false
+}

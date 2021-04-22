@@ -1,0 +1,65 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A unique reference to a syndicated bank loan deal (credit agreement).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DealIdentifier",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A unique reference to a syndicated bank loan deal (credit agreement).\n #/\nrecord FpML5.confirmation.DealIdentifier {\n  # Identification of the underlying asset, using public and/or private identifiers.\n  instrumentId : string\n\n  # Long name of the underlying asset.\n  description : string?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "instrumentId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the underlying asset, using public and/or private identifiers.",
+      "Name" : "instrumentId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13806
+      }
+    },
+    "description" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Long name of the underlying asset.",
+      "Name" : "description",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13809
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13812
+      }
+    }
+  },
+  "LocalFieldNames" : [ "instrumentId", "description", "id" ],
+  "IsSynthetic" : false
+}

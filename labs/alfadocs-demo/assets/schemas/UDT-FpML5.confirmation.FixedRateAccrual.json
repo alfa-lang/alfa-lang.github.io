@@ -1,0 +1,219 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A full definition of the fixed rate accrual characteristics of a loan contract. This structure defines both the underlying base rate as well as any additional margins and costs associated with the loan contract.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FixedRateAccrual",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A full definition of the fixed rate accrual characteristics of a loan contract. This structure defines both the underlying base rate as well as any additional margins and costs associated with the loan contract.\n #/\nrecord FpML5.confirmation.FixedRateAccrual {\n  # A unique id associated with the loan accrual type.\n  accrualOptionId : string\n\n  # The day count basis for the accrual.\n  dayCountFraction : string\n\n  paymentFrequency : FpML5.confirmation.Period?\n\n  rate : decimal\n\n  pikSpread : decimal\n\n  # Date on which this period begins.\n  startDate : date\n\n  # Date on which this period ends.\n  endDate : date\n\n  # The actual number of days represented within the 'period'. This takes into account counting the appropriate convention.\n  numberOfDays : decimal\n\n  # The penalty spread currently applied to the interest rate period.\n  penaltySpread : decimal?\n\n  # The default spread currently applied to the interest rate period.\n  defaultSpread : decimal?\n\n  # The mandatory cost rate currently applied to the interest rate period.\n  mandatoryCostRate : decimal?\n\n  # The actual percentage rate charged to the borrower. (Base Rate + Spread + Default Rate + Penalty Rate + Mandatory Cost Rate) = All In Rate. This rate NEVER includes PIK.\n  allInRate : decimal\n\n  # Projected interest payment details.\n  paymentProjection : FpML5.confirmation.PaymentProjection?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LoanContract",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "accrualOptionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique id associated with the loan accrual type.",
+      "Name" : "accrualOptionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15435
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count basis for the accrual.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15438
+      }
+    },
+    "paymentFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "paymentFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15441
+      }
+    },
+    "rate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "rate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15443
+      }
+    },
+    "pikSpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "pikSpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15445
+      }
+    },
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period begins.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15447
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period ends.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15450
+      }
+    },
+    "numberOfDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual number of days represented within the 'period'. This takes into account counting the appropriate convention.",
+      "Name" : "numberOfDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15453
+      }
+    },
+    "penaltySpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The penalty spread currently applied to the interest rate period.",
+      "Name" : "penaltySpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15456
+      }
+    },
+    "defaultSpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The default spread currently applied to the interest rate period.",
+      "Name" : "defaultSpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15459
+      }
+    },
+    "mandatoryCostRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The mandatory cost rate currently applied to the interest rate period.",
+      "Name" : "mandatoryCostRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15462
+      }
+    },
+    "allInRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual percentage rate charged to the borrower. (Base Rate + Spread + Default Rate + Penalty Rate + Mandatory Cost Rate) = All In Rate. This rate NEVER includes PIK.",
+      "Name" : "allInRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15465
+      }
+    },
+    "paymentProjection" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Projected interest payment details.",
+      "Name" : "paymentProjection",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PaymentProjection",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15468
+      }
+    }
+  },
+  "LocalFieldNames" : [ "accrualOptionId", "dayCountFraction", "paymentFrequency", "rate", "pikSpread", "startDate", "endDate", "numberOfDays", "penaltySpread", "defaultSpread", "mandatoryCostRate", "allInRate", "paymentProjection" ],
+  "IsSynthetic" : false
+}

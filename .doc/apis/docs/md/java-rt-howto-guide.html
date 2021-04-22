@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How-To Guide for ALFA Java &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>How-To Guide for ALFA Java</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-guide-for-alfa-java">
+<h1>How-To Guide for ALFA Java<a class="headerlink" href="#how-to-guide-for-alfa-java" title="Permalink to this headline">¶</a></h1>
+<p>We are keen to add more examples.
+Please contact <a class="reference external" href="mailto:info&#37;&#52;&#48;schemarise&#46;com">info<span>&#64;</span>schemarise<span>&#46;</span>com</a> or goto <a class="reference external" href="http://www.schemarise.com">www.schemarise.com</a> for any questions not covered below.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#q1-setup-alfa-compiler-in-a-maven-project">Q1: Setup ALFA compiler in a Maven project</a></li>
+<li><a class="reference internal" href="#q2-build-and-populate-an-alfa-java-object">Q2: Build and populate an ALFA Java object</a></li>
+<li><a class="reference internal" href="#q3-convert-an-alfa-object-to-json-and-back">Q3: Convert an ALFA object to JSON and back</a></li>
+<li><a class="reference internal" href="#q4-set-json-encode-decode-flags-to-control-json-processing">Q4: Set JSON encode/decode flags to control JSON processing</a></li>
+<li><a class="reference internal" href="#q5-decode-json-to-a-smaller-object-trait-used-by-serialised-object">Q5: Decode JSON to a smaller object - trait used by serialised object</a></li>
+<li><a class="reference internal" href="#q6-handling-data-constraint-errors">Q6: Handling data constraint errors</a></li>
+<li><a class="reference internal" href="#q7-estimate-alfa-java-object-size">Q7: Estimate ALFA Java object size</a></li>
+<li><a class="reference internal" href="#q8-generating-a-random-object">Q8: Generating a random object</a></li>
+<li><a class="reference internal" href="#q9-see-immutability-in-practice-with-alfa-java-objects">Q9: See immutability in practice with ALFA Java objects</a></li>
+<li><a class="reference internal" href="#q10-see-data-constraints-applied-on-json-stream">Q10: See data constraints applied on JSON stream</a></li>
+<li><a class="reference internal" href="#q11-build-try-t-result-or-failure-or-either-l-r-value">Q11: Build try&lt; T &gt; result or failure or either&lt; L, R &gt; value</a></li>
+<li><a class="reference internal" href="#q12-using-compressed-t-values">Q12: Using compressed&lt; T &gt; values</a></li>
+<li><a class="reference internal" href="#q13-using-encrypted-t-values">Q13: Using encrypted&lt;T&gt; values</a></li>
+<li><a class="reference internal" href="#q14-view-alfa-to-java-type-mappings">Q14: View ALFA to Java type mappings</a></li>
+<li><a class="reference internal" href="#q15-define-and-code-a-native-typedef">Q15: Define and code a native typedef</a></li>
+</ul>
+<div class="section" id="q1-setup-alfa-compiler-in-a-maven-project">
+<h2>Q1: Setup ALFA compiler in a Maven project<a class="headerlink" href="#q1-setup-alfa-compiler-in-a-maven-project" title="Permalink to this headline">¶</a></h2>
+<p>Refer to the <a class="reference internal" href="../../../tools/mvnplugin.html#mvnplugin"><span class="std std-ref">ALFA Maven Plugin</span></a> which contains a complete working example of a <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> file
+showing how to generate Java for an ALFA model file.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q2-build-and-populate-an-alfa-java-object">
+<h2>Q2: Build and populate an ALFA Java object<a class="headerlink" href="#q2-build-and-populate-an-alfa-java-object" title="Permalink to this headline">¶</a></h2>
+<p>ALFA generated Java code supports the builder pattern for constructing objects. Given an ALFA definitions like:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">demo</span>
+
+<span class="k">record</span> <span class="n">Person</span> <span class="p">{</span>
+   <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+   <span class="n">Age</span> <span class="p">:</span> <span class="kt">int</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="m">120</span><span class="p">)</span>
+   <span class="n">Friends</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following snippet of code shows ways of creating an object.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">demo.Person</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="c1">// Create builder, set values and build in one line</span>
+<span class="n">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&quot;Paul&quot;</span><span class="o">).</span><span class="na">setAge</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="na">addFriends</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+
+<span class="c1">// Create builder and separately set values and build</span>
+<span class="n">Person</span><span class="o">.</span><span class="na">PersonBuilder</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">();</span>
+<span class="n">b</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&quot;Paul&quot;</span><span class="o">);</span>
+<span class="n">b</span><span class="o">.</span><span class="na">setAge</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
+<span class="n">b</span><span class="o">.</span><span class="na">addFriends</span><span class="o">(</span><span class="s">&quot;Ringo&quot;</span><span class="o">);</span>
+<span class="n">b</span><span class="o">.</span><span class="na">addFriends</span><span class="o">(</span><span class="s">&quot;George&quot;</span><span class="o">);</span>
+<span class="n">Person</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">list&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">set&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">map&lt;</span> <span class="pre">K,</span> <span class="pre">V&gt;</span></code> fields are used, methods to add individual items
+or an entire collection are generated.</p>
+<p>The object returned from <code class="docutils literal notranslate"><span class="pre">build()</span></code> is immutable, and further modifications on the
+original builder instance has no impact on the object returned from the
+<code class="docutils literal notranslate"><span class="pre">build()</span></code> method.</p>
+<p>It is possible to have a partially constructed builder instance and iteratively
+vary some values and call <code class="docutils literal notranslate"><span class="pre">build()</span></code> to get a series of immutable objects.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q3-convert-an-alfa-object-to-json-and-back">
+<h2>Q3: Convert an ALFA object to JSON and back<a class="headerlink" href="#q3-convert-an-alfa-object-to-json-and-back" title="Permalink to this headline">¶</a></h2>
+<p>This achieved using methods in the <a class="reference external" href="https://alfa-lang.io/apis/java/apidocs/alfa/rt/Codec.html">Codec</a> class.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">alfa.rt.Codec</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&quot;Paul&quot;</span><span class="o">).</span><span class="na">setAge</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">toJsonString</span><span class="o">(</span> <span class="n">p1</span> <span class="o">);</span>
+<span class="n">Person</span> <span class="n">decoded</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">fromJsonString</span><span class="o">(</span> <span class="n">json</span> <span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">json</span> <span class="o">);</span>
+</pre></div>
+</div>
+<p>Output : <code class="docutils literal notranslate"><span class="pre">{&quot;$type&quot;:&quot;demo.Person&quot;,&quot;Name&quot;:&quot;Paul&quot;,&quot;Age&quot;:20,&quot;Friends&quot;:[&quot;John&quot;]}</span></code>
+Other methods to work with input and output streams are available.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q4-set-json-encode-decode-flags-to-control-json-processing">
+<h2>Q4: Set JSON encode/decode flags to control JSON processing<a class="headerlink" href="#q4-set-json-encode-decode-flags-to-control-json-processing" title="Permalink to this headline">¶</a></h2>
+<p>Using the <a class="reference external" href="https://alfa-lang.io/apis/java/apidocs/alfa/rt/codec/json/JsonWriterCodecConfig.html">JsonWriterCodecConfig</a>
+class, behaviour of the JSON encoding can be changed. In the example below, the <code class="docutils literal notranslate"><span class="pre">skipRootType</span></code> is set, therefore
+the output does not contain the <code class="docutils literal notranslate"><span class="pre">$type</span></code> field.</p>
+<p><strong>Note:</strong> Setting <code class="docutils literal notranslate"><span class="pre">skipRootType</span></code> for small objects (with only scalars for example), can significant cut down the size of
+the JSON. For example <code class="docutils literal notranslate"><span class="pre">{&quot;$type&quot;:&quot;Inventory.Items.Price&quot;,&quot;Ccy&quot;:&quot;EUR&quot;,&quot;Price&quot;:1.08}</span></code> will be <code class="docutils literal notranslate"><span class="pre">{&quot;Ccy&quot;:&quot;EUR&quot;,&quot;Price&quot;:1.08}</span></code>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">JsonWriterCodecConfig</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">JsonWriterCodecConfig</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setSkipRootTypeInfo</span><span class="o">(</span><span class="kc">true</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">j2</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">toJsonString</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span><span class="n">p1</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Output : <code class="docutils literal notranslate"><span class="pre">{&quot;Name&quot;:&quot;Paul&quot;,&quot;Age&quot;:20,&quot;Friends&quot;:[&quot;John&quot;]}</span></code></p>
+<p>Likewise when reading JSON, there are configuration settings that control the reader, for example being
+able to read a JSON without a <code class="docutils literal notranslate"><span class="pre">$type</span></code> field.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">JsonReaderCodecConfig</span> <span class="n">rcfg</span> <span class="o">=</span> <span class="n">JsonReaderCodecConfig</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span>
+        <span class="n">setSkipUnknownFields</span><span class="o">(</span><span class="kc">true</span><span class="o">).</span>                     <span class="c1">// Ignore unknown fields in the JSON</span>
+        <span class="n">setAssignableToClass</span><span class="o">(</span><span class="n">Person</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>     <span class="c1">// Read the JSON as the specified class</span>
+
+<span class="n">String</span> <span class="n">jsn</span> <span class="o">=</span> <span class="s">&quot;{\&quot;Name\&quot;:\&quot;Paul\&quot;,\&quot;Age\&quot;:20,\&quot;Rating\&quot;:3,\&quot;Friends\&quot;:[\&quot;John\&quot;]}\n&quot;</span><span class="o">;</span>
+
+<span class="c1">// The JSON above will be read as a Person class, and ignore the &#39;Rating&#39; field, as per the reader configuration.</span>
+<span class="n">Person</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">fromJsonString</span><span class="o">(</span><span class="n">rcfg</span><span class="o">,</span> <span class="n">jsn</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="q5-decode-json-to-a-smaller-object-trait-used-by-serialised-object">
+<h2>Q5: Decode JSON to a smaller object - trait used by serialised object<a class="headerlink" href="#q5-decode-json-to-a-smaller-object-trait-used-by-serialised-object" title="Permalink to this headline">¶</a></h2>
+<p>Consider the definition below, and a usecase where given a large object containing a Person object with 100 Friends entries,
+and we only want the value of <code class="docutils literal notranslate"><span class="pre">Name</span></code>. Given the <code class="docutils literal notranslate"><span class="pre">Person</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Named</span></code>, ideally we want an object representing
+just the fields from the trait <code class="docutils literal notranslate"><span class="pre">Named</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">demo</span>
+
+<span class="k">trait</span> <span class="n">Named</span> <span class="p">{</span>
+   <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Person</span> <span class="k">includes</span> <span class="n">Named</span> <span class="p">{</span>
+   <span class="n">Age</span> <span class="p">:</span> <span class="kt">int</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="m">120</span><span class="p">)</span>
+   <span class="n">Friends</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is possible by implementing the following:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">JsonReaderCodecConfig</span> <span class="n">rcfg</span> <span class="o">=</span> <span class="n">JsonReaderCodecConfig</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span>
+                                <span class="n">setSkipUnknownFields</span><span class="o">(</span><span class="kc">true</span><span class="o">).</span>
+                                <span class="n">setAssignableToClass</span><span class="o">(</span><span class="n">Named</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">String</span> <span class="n">jsn</span> <span class="o">=</span> <span class="s">&quot;{\&quot;Name\&quot;:\&quot;Paul\&quot;,\&quot;Age\&quot;:20,\&quot;Rating\&quot;:3,\&quot;Friends\&quot;:[\&quot;John\&quot;]}\n&quot;</span><span class="o">;</span>
+<span class="n">Named</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">fromJsonString</span><span class="o">(</span><span class="n">rcfg</span><span class="o">,</span> <span class="n">jsn</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>The decoded object only will contain the <code class="docutils literal notranslate"><span class="pre">Name</span></code> field and all other values in the payload will be ignored.
+This is possible as ALFA traits when generated contain a default implementation containing just the fields in the trait.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q6-handling-data-constraint-errors">
+<h2>Q6: Handling data constraint errors<a class="headerlink" href="#q6-handling-data-constraint-errors" title="Permalink to this headline">¶</a></h2>
+<p>When constraints are set on datatypes, those are enforced when <code class="docutils literal notranslate"><span class="pre">build()</span></code> is called. Consider the following example.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&quot;Paul&quot;</span><span class="o">).</span><span class="na">setAge</span><span class="o">(</span><span class="mi">15</span><span class="o">).</span><span class="na">addFriends</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Note <code class="docutils literal notranslate"><span class="pre">Age</span></code> is assigned to 15, when in the ALFA model (from Q2) its declared as range from 16 onwards. The following exception is thrown
+when the above code is executed. It clearly indicates the location of the error and cause.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa.rt.AlfaValidationException: Validation failed on {
+    &quot;type&quot;:&quot;alfa.rt.path.Path&quot;,
+    &quot;Field&quot;:&quot;Age&quot;,
+    &quot;Element&quot;:{&quot;$type&quot;:&quot;alfa.rt.path.PathElement&quot;,&quot;ScalarValue&quot;:15,}
+}. Minimum size 16, result size 15
+</pre></div>
+</div>
+<p>If constraints are used, the <code class="docutils literal notranslate"><span class="pre">build()</span></code> method can throw <code class="docutils literal notranslate"><span class="pre">alfa.rt.AlfaValidationException</span></code>, which extends <code class="docutils literal notranslate"><span class="pre">java.lang.RuntimeException</span></code>.</p>
+<p><strong>Note:</strong> The assertion of constraints can be disabled when calling the <code class="docutils literal notranslate"><span class="pre">build</span></code> method
+by passing in a <a class="reference external" href="https://alfa-lang.io/apis/java/apidocs/alfa/rt/BuilderConfig.html">BuilderConfig</a>
+with a <a class="reference external" href="https://alfa-lang.io/apis/java/apidocs/alfa/rt/RuntimeContext.html">RuntimeContext</a> where the
+<code class="docutils literal notranslate"><span class="pre">shouldValidateOnBuild()</span></code> method returns false.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q7-estimate-alfa-java-object-size">
+<h2>Q7: Estimate ALFA Java object size<a class="headerlink" href="#q7-estimate-alfa-java-object-size" title="Permalink to this headline">¶</a></h2>
+<p>ALFA Java runtime has a facility to estimate space consumed by an object.
+This can be particularly useful when making generic data processing decisions. The estimation is performed
+by traversing the object using lambda expressions in the TypeDescriptors, also keeping track of
+unique strings.</p>
+<p>The example below shows how this may be used. For sizing multiple objects, a String pool can be
+passed to get a more accurate figure. It should be emphasized that this is an estimate so will not
+be accurate to the byte level give JVM level decisions. However for purposes of getting a
+consistent size estimate and comparing to other ALFA objects, this method will be highly effective.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">alfa.rt.utils.AlfaUtils</span><span class="p">;</span>
+
+<span class="n">Person</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">newBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s2">&quot;Paul&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setAge</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">addFriends</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">();</span>
+<span class="nb">long</span> <span class="n">size</span> <span class="o">=</span> <span class="n">AlfaUtils</span><span class="o">.</span><span class="n">estimateSize</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="q8-generating-a-random-object">
+<h2>Q8: Generating a random object<a class="headerlink" href="#q8-generating-a-random-object" title="Permalink to this headline">¶</a></h2>
+<p>ALFA runtime is able to generate a random object given a type name. This is particular useful
+for mock testing using the model objects.</p>
+<p>Given the <code class="docutils literal notranslate"><span class="pre">Person</span></code> model from Q2, running the code below generates an object instance. The randomiser
+respects datatype constraints with the exception of <code class="docutils literal notranslate"><span class="pre">pattern</span></code> types. In the example below, the Age
+value returned will always be within 16 and 120.</p>
+<p>By default a collection will be returned with 5 entries, and strings will be randomized to
+5 characters. Additional features will be added to the randomizer, therefore if there is interest
+in particular features, please reach out to <a class="reference external" href="mailto:info&#37;&#52;&#48;schemarise&#46;com">info<span>&#64;</span>schemarise<span>&#46;</span>com</a> or goto <a class="reference external" href="http://www.schemarise.com">www.schemarise.com</a>.</p>
+<dl class="docutils">
+<dt>See <a class="reference external" href="https://alfa-lang.io/apis/java/html/classalfa_1_1rt_1_1utils_1_1_alfa_randomizer.html">AlfaRandomiser</a></dt>
+<dd>documentation.</dd>
+</dl>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">AlfaRandomizer</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AlfaRandomizer</span><span class="o">();</span>
+<span class="n">AlfaObject</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">random</span><span class="o">(</span><span class="s">&quot;demo.Person&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>{
+    &quot;$type&quot;:&quot;demo.Person&quot;,
+    &quot;Name&quot;:&quot;bdvoi&quot;,
+    &quot;Age&quot;:43,
+    &quot;Friends&quot;:[&quot;gmtvx&quot;, &quot;fthnu&quot;, &quot;btoru&quot;, &quot;cincj&quot;, &quot;tzwjf&quot;]
+}
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="../../../exporters/java.html#java"><span class="std std-ref">Java</span></a> has an example of a matrix data type and value generated from the ALFA Randomizer.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q9-see-immutability-in-practice-with-alfa-java-objects">
+<h2>Q9: See immutability in practice with ALFA Java objects<a class="headerlink" href="#q9-see-immutability-in-practice-with-alfa-java-objects" title="Permalink to this headline">¶</a></h2>
+<p>The following code can be written for the model from Q2 above.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Person</span><span class="o">.</span><span class="na">PersonBuilder</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setName</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">).</span><span class="na">setAge</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
+<span class="n">List</span><span class="o">&lt;</span> <span class="n">String</span> <span class="o">&gt;</span> <span class="n">friends</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">friends</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Paul&quot;</span><span class="o">);</span>
+<span class="n">friends</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Ringo&quot;</span><span class="o">);</span>
+<span class="n">friends</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;George&quot;</span><span class="o">);</span>
+<span class="n">Person</span> <span class="n">john</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">addAllFriends</span><span class="o">(</span><span class="n">friends</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;John.friends:&quot;</span> <span class="o">+</span> <span class="n">john</span><span class="o">.</span><span class="na">getFriends</span><span class="o">().</span><span class="na">size</span><span class="o">());</span>
+
+<span class="n">friends</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Brian&quot;</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;John.friends:&quot;</span> <span class="o">+</span> <span class="n">john</span><span class="o">.</span><span class="na">getFriends</span><span class="o">().</span><span class="na">size</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Friends size:&quot;</span> <span class="o">+</span> <span class="n">friends</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>John.friends:3
+John.friends:3
+Friends size:4
+</pre></div>
+</div>
+<p>Having called <code class="docutils literal notranslate"><span class="pre">build()</span></code>, the contents of the Friends field remain unchanged even if the original List is modified.
+Given ALFA performs a deep clone of collections, even when the collection had nested collections, those too will be immutable.</p>
+<p><strong>Note:</strong> The deep cloning of collections can be disabled when calling the <code class="docutils literal notranslate"><span class="pre">build</span></code> method
+by passing in a <a class="reference external" href="https://alfa-lang.io/apis/java/apidocs/alfa/rt/BuilderConfig.html">BuilderConfig</a>
+with a <a class="reference external" href="https://alfa-lang.io/apis/java/apidocs/alfa/rt/RuntimeContext.html">RuntimeContext</a> where the
+<code class="docutils literal notranslate"><span class="pre">shouldCloneCollectionsOnBuild()</span></code> method returns false.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q10-see-data-constraints-applied-on-json-stream">
+<h2>Q10: See data constraints applied on JSON stream<a class="headerlink" href="#q10-see-data-constraints-applied-on-json-stream" title="Permalink to this headline">¶</a></h2>
+<p>ALFA uses stream-based JSON decoding for optimum performance. As well as decoding, it asserts
+some constraints such as sizes of collections. This is particular useful when the model and application
+expects a limit on data a dataset is received which is significantly larger that it potentially causes
+the application to exceed memory available.</p>
+<p>Size constraint assertion can be demonstrated with the following example.</p>
+<p>Consider the <code class="docutils literal notranslate"><span class="pre">Person</span></code> definition in Q2 is updated with <code class="docutils literal notranslate"><span class="pre">Friends</span> <span class="pre">:</span> <span class="pre">list&lt;</span> <span class="pre">string</span> <span class="pre">&gt;(0,5)</span></code> to set an upper
+limit on number of friends. With that in place the following code can be executed. Note the
+Friends array contain 6 strings.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="s">&quot;{\&quot;$type\&quot;:\&quot;demo.Person\&quot;,\&quot;Name\&quot;:\&quot;Paul\&quot;,\&quot;Age\&quot;:20,\&quot;Friends\&quot;:[\&quot;A\&quot;,\&quot;B\&quot;,\&quot;C\&quot;,\&quot;D\&quot;,\&quot;E\&quot;,\&quot;F\&quot;]}\n&quot;</span><span class="o">;</span>
+<span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">fromJsonString</span><span class="o">(</span><span class="n">json</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>The above code throws an <code class="docutils literal notranslate"><span class="pre">AlfaMaxSizeExceedException</span></code> exception.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa.rt.AlfaMaxSizeExceedException: Cannot insert to list. Maximum limit 5 reached on field &#39;Friends&#39;.
+</pre></div>
+</div>
+<p>Natually this validation is applied on deeply nested models too, and not just the top level.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q11-build-try-t-result-or-failure-or-either-l-r-value">
+<h2>Q11: Build try&lt; T &gt; result or failure or either&lt; L, R &gt; value<a class="headerlink" href="#q11-build-try-t-result-or-failure-or-either-l-r-value" title="Permalink to this headline">¶</a></h2>
+<p>The try and either ALFA types are extremely useful to model results or unexpected results.
+To make constructing these types easier, the
+<a class="reference external" href="https://alfa-lang.io/apis/java/html/classalfa_1_1rt_1_1utils_1_1_alfa_utils.html">AlfaUtils</a>
+class contains number of utility methods.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Try</span><span class="o">&lt;</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">AlfaUtils</span><span class="o">.</span><span class="na">createTryObject</span><span class="o">(</span> <span class="mi">10</span> <span class="o">);</span>
+<span class="n">Try</span><span class="o">&lt;</span> <span class="n">Double</span><span class="o">&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">AlfaUtils</span><span class="o">.</span><span class="na">createTryFailure</span><span class="o">(</span> <span class="s">&quot;Failed to calculate price&quot;</span> <span class="o">);</span>
+
+<span class="n">Either</span><span class="o">&lt;</span> <span class="n">String</span><span class="o">,</span> <span class="n">Double</span><span class="o">&gt;</span> <span class="n">e1</span> <span class="o">=</span> <span class="n">AlfaUtils</span><span class="o">.</span><span class="na">createEitherLeftObject</span><span class="o">(</span> <span class="s">&quot;John&quot;</span><span class="o">);</span>
+<span class="n">Either</span><span class="o">&lt;</span> <span class="n">String</span><span class="o">,</span> <span class="n">Double</span><span class="o">&gt;</span> <span class="n">e2</span> <span class="o">=</span> <span class="n">AlfaUtils</span><span class="o">.</span><span class="na">createEitherRightObject</span><span class="o">(</span> <span class="mf">100000.00</span> <span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="q12-using-compressed-t-values">
+<h2>Q12: Using compressed&lt; T &gt; values<a class="headerlink" href="#q12-using-compressed-t-values" title="Permalink to this headline">¶</a></h2>
+<p>Keeping occasionally used large objects in memory can waste resources. However completely eliminating them
+from the model also creates delay when they are needed. Some data types such as strings can consume lot of data
+when stored in large quantities containing descriptions etc. To handle such usescases <code class="docutils literal notranslate"><span class="pre">compressed&lt;T&gt;</span></code> can be used.</p>
+<p>ALFA <code class="docutils literal notranslate"><span class="pre">compressed&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span></code> can be used for such cases, where T can be any ALFA type.</p>
+<p>Consider the data type below.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Events</span> <span class="p">{</span>
+    <span class="n">Log</span> <span class="p">:</span> <span class="k">compressed</span><span class="p">&lt;</span> <span class="k">list</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This type can be used in ALFA to create a compressed set of values.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;2019.12.12 18:00 INFO Starting&quot;</span><span class="o">);</span>
+<span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;2019.12.12 18:10 INFO Running&quot;</span><span class="o">);</span>
+<span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;2019.12.12 18:12 INFO Processing 1&quot;</span><span class="o">);</span>
+<span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;2019.12.12 18:15 INFO Processing 2&quot;</span><span class="o">);</span>
+<span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;2019.12.12 18:17 INFO Processing ...&quot;</span><span class="o">);</span>
+<span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;2019.12.12 18:20 INFO Saving&quot;</span><span class="o">);</span>
+<span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;2019.12.12 18:30 INFO Completed&quot;</span><span class="o">);</span>
+
+<span class="c1">// Create events object containg a list of event strings.</span>
+<span class="c1">// As soon as setLog() is called the list of strings are compressed and stored as a byte[ ] internally.</span>
+<span class="n">Events</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Events</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setLog</span><span class="o">(</span><span class="n">l</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">toJsonString</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+<span class="n">Events</span> <span class="n">decoded</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">fromJsonString</span><span class="o">(</span><span class="n">json</span><span class="o">);</span>
+
+<span class="n">Compressed</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">decoded</span><span class="o">.</span><span class="na">getLog</span><span class="o">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">val</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">getValue</span><span class="o">(</span> <span class="n">BuilderConfig</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span> <span class="o">);</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">val</span><span class="o">.</span><span class="na">get</span><span class="o">(</span> <span class="n">val</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">));</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="q13-using-encrypted-t-values">
+<h2>Q13: Using encrypted<span class="raw-html-m2r"><T></span> values<a class="headerlink" href="#q13-using-encrypted-t-values" title="Permalink to this headline">¶</a></h2>
+<p>Using an ALFA <code class="docutils literal notranslate"><span class="pre">encrypted&lt;T&gt;</span></code> is converted into a Java <code class="docutils literal notranslate"><span class="pre">alfa.rt.Encrypted&lt;T&gt;</span></code> instance. The <code class="docutils literal notranslate"><span class="pre">Encrypted</span></code>
+type internally uses the <code class="docutils literal notranslate"><span class="pre">RuntimeContext</span></code> class to create a <code class="docutils literal notranslate"><span class="pre">byte[</span> <span class="pre">]</span></code> from encrypting a serialised object of
+the value.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Encrypted&lt;T&gt;</span></code> object does <strong>not</strong> hold a reference to the object of type <code class="docutils literal notranslate"><span class="pre">T</span></code>. The object is encrypted in the
+constructor of <code class="docutils literal notranslate"><span class="pre">Encrypted</span></code> and only stored as a <code class="docutils literal notranslate"><span class="pre">byte[</span> <span class="pre">]</span></code>.</p>
+<p>Users can extend and supply an alternative <code class="docutils literal notranslate"><span class="pre">alfa.rt.RuntimeContext</span></code> object. By default the RuntimeContext uses a
+private-public keypair to encrypt and decrypt data. This is to demonstrate the capability, however for a real
+application, the  <code class="docutils literal notranslate"><span class="pre">RuntimeContext</span></code> will need to securely source the keypair.</p>
+<p>As an example, consdier the following ALFA definition.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">CreditCard</span> <span class="p">{</span>
+    <span class="n">Pin</span> <span class="p">:</span> <span class="k">encrypted</span><span class="p">&lt;</span> <span class="kt">string</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">)</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With that definition in place, it is possible to write code that securely hold a PIN where reading is only
+permitted when a correct public/private keypair is used.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a Card and set a PIN. The reference stored is immediately encrypted by the implemenation of RuntimeContext.encrypt()</span>
+<span class="n">CreditCard</span><span class="o">.</span><span class="na">CreditCardBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="n">CreditCard</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">setPin</span><span class="o">(</span><span class="s">&quot;2341&quot;</span><span class="o">);</span>
+<span class="n">CreditCard</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="n">Codec</span><span class="o">.</span><span class="na">toJsonString</span><span class="o">(</span><span class="n">cc</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">json</span><span class="o">);</span>
+
+<span class="c1">// When we need to access the PIN, we get a handle to an Encrypted&lt;&gt; object.</span>
+<span class="n">Encrypted</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">encPin</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="na">getPin</span><span class="o">();</span>
+
+<span class="c1">// The value can only be deciphered by supplying a BuilderConfig, which will use the RuntimeContext.decrypt() method</span>
+<span class="n">String</span> <span class="n">pin</span> <span class="o">=</span> <span class="n">encPin</span><span class="o">.</span><span class="na">getValue</span><span class="o">(</span><span class="n">BuilderConfig</span><span class="o">.</span><span class="na">getInstance</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">pin</span> <span class="o">);</span>
+</pre></div>
+</div>
+<p>As output, the following is printed.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>{
+  &quot;$type&quot;:&quot;demo.CreditCard&quot;,
+  &quot;Pin&quot;:&quot;NBN6YElEGY9VEhlFMn4Dr698SLYKM0LKf+/8vbptZ0aN+J0RQfHOx70avMk87G9sD0VgereLL8zQDR7r/mScdsb84dD36yMjNLsoXwj35PF5q56ob7yr8plbdUSMiC5X2NLXKUizbO3cgaPCi2xCDE0e/N4GQpvamNnwIuljCFA=&quot;
+}
+2341
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="q14-view-alfa-to-java-type-mappings">
+<h2>Q14: View ALFA to Java type mappings<a class="headerlink" href="#q14-view-alfa-to-java-type-mappings" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to section titled ‘Type Mappings’ in <a class="reference internal" href="../../../exporters/java.html#java"><span class="std std-ref">Java</span></a>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="q15-define-and-code-a-native-typedef">
+<h2>Q15: Define and code a native typedef<a class="headerlink" href="#q15-define-and-code-a-native-typedef" title="Permalink to this headline">¶</a></h2>
+<p>Creating a native type class is straight-forward. The first step is to declare a native type
+as shown below, where <code class="docutils literal notranslate"><span class="pre">storage</span></code> is a new type, which is implemented by the native type <code class="docutils literal notranslate"><span class="pre">acme.types.Storage</span></code>.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>typedefs {
+    storage = native acme.types.Storage
+}
+</pre></div>
+</div>
+<p>The Storage ‘native’ ALFA type class needs to implement <code class="docutils literal notranslate"><span class="pre">alfa.rt.NativeAlfaObject</span></code>.
+In addition it needs a <code class="docutils literal notranslate"><span class="pre">TypeDescriptor</span></code> and <code class="docutils literal notranslate"><span class="pre">Builder</span></code> inner classes which support encoding
+and decoding the native type to a string and vice versa.</p>
+<p>This class needs to be compiled and available in the classpath of the ALFA runtime and
+generated Java code. The generated Java code will reference this type when the type ( <code class="docutils literal notranslate"><span class="pre">storage</span></code> below)
+is declared a field type.</p>
+<p>Given this is the Java ‘How-To’, the example native type below is Java. Other languages can
+have similar implementations.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">package</span> <span class="n">acme</span><span class="o">.</span><span class="n">types</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">alfa.rt.</span><span class="o">*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">alfa.rt.model.UdtDataType</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">alfa.rt.model.UdtMetaType</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">alfa.rt.utils.DefaultTypeDescriptor</span><span class="p">;</span>
+
+<span class="o">/***</span>
+ <span class="o">*</span> <span class="n">Storage</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">example</span> <span class="n">ALFA</span> <span class="s1">&#39;native&#39;</span> <span class="n">typedef</span> <span class="nb">type</span><span class="o">.</span>
+ <span class="o">*/</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Storage</span> <span class="n">implements</span> <span class="n">NativeAlfaObject</span> <span class="p">{</span>
+    <span class="n">private</span> <span class="n">final</span> <span class="n">String</span> <span class="n">_size</span><span class="p">;</span>
+
+    <span class="o">/**</span>
+     <span class="o">*</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">immutable</span> <span class="n">Storage</span> <span class="n">instance</span>
+     <span class="o">*</span> <span class="nd">@param</span> <span class="n">size</span> <span class="n">Size</span> <span class="n">of</span> <span class="n">storage</span>
+     <span class="o">*/</span>
+    <span class="n">public</span> <span class="n">Storage</span><span class="p">(</span><span class="n">String</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">hashCode</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">_size</span><span class="o">.</span><span class="n">hashCode</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="n">public</span> <span class="n">boolean</span> <span class="n">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">obj</span> <span class="n">instanceof</span> <span class="n">Storage</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Storage</span> <span class="n">rhs</span> <span class="o">=</span> <span class="p">(</span><span class="n">Storage</span><span class="p">)</span> <span class="n">obj</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">rhs</span><span class="o">.</span><span class="n">_size</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">_size</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">_size</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="n">public</span> <span class="n">TypeDescriptor</span> <span class="n">descriptor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">StorageDescriptor</span><span class="o">.</span><span class="n">INSTANCE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">/***</span>
+     <span class="o">*</span> <span class="n">Convert</span> <span class="nb">object</span> <span class="n">to</span> <span class="n">a</span> <span class="k">string</span> <span class="n">representation</span><span class="p">,</span> <span class="n">which</span> <span class="n">also</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="k">string</span>
+     <span class="o">*</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">passed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">constructor</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">instance</span><span class="o">.</span>
+     <span class="o">*</span> <span class="nd">@return</span>
+     <span class="o">*/</span>
+    <span class="nd">@Override</span>
+    <span class="n">public</span> <span class="n">String</span> <span class="n">encodeToString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">_size</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">/**</span>
+     <span class="o">*</span> <span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">required</span> <span class="ow">and</span> <span class="n">used</span> <span class="n">by</span> <span class="n">ALFA</span> <span class="n">Codec</span> <span class="n">classes</span><span class="o">.</span>
+     <span class="o">*</span> <span class="n">A</span> <span class="n">Storage</span> <span class="n">builder</span> <span class="ow">is</span> <span class="n">able</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">immutable</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">Storage</span><span class="o">.</span>
+     <span class="o">*/</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="k">class</span> <span class="nc">StorageBuilder</span> <span class="n">implements</span> <span class="n">Builder</span> <span class="p">{</span>
+        <span class="n">private</span> <span class="n">String</span> <span class="n">value</span><span class="p">;</span>
+
+        <span class="nd">@Override</span>
+        <span class="n">public</span> <span class="o">&lt;</span><span class="n">T</span> <span class="n">extends</span> <span class="n">AlfaObject</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">build</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">value</span> <span class="o">==</span> <span class="n">null</span> <span class="p">)</span>
+                <span class="n">throw</span> <span class="n">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s2">&quot;Value not assigned to storage builder&quot;</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="n">new</span> <span class="n">Storage</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="n">public</span> <span class="n">void</span> <span class="n">modify</span><span class="p">(</span><span class="n">String</span> <span class="n">fieldName</span><span class="p">,</span> <span class="n">Object</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="p">(</span> <span class="n">String</span> <span class="p">)</span> <span class="n">val</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="o">/**</span>
+     <span class="o">*</span> <span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">required</span> <span class="ow">and</span> <span class="n">used</span> <span class="n">by</span> <span class="n">ALFA</span> <span class="n">Codec</span> <span class="n">classes</span><span class="o">.</span>
+     <span class="o">*</span> <span class="n">Descriptor</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Storage</span> <span class="n">class</span><span class="o">.</span>
+     <span class="o">*/</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="k">class</span> <span class="nc">StorageDescriptor</span> <span class="n">extends</span> <span class="n">DefaultTypeDescriptor</span> <span class="p">{</span>
+        <span class="n">public</span> <span class="n">static</span> <span class="n">TypeDescriptor</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StorageDescriptor</span><span class="p">();</span>
+        <span class="n">private</span> <span class="n">static</span> <span class="n">UdtDataType</span> <span class="n">udtDataType</span> <span class="o">=</span> <span class="n">UdtDataType</span><span class="o">.</span><span class="n">newBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">setUdtType</span><span class="p">(</span><span class="n">UdtMetaType</span><span class="o">.</span><span class="n">nativeUdtType</span><span class="p">)</span><span class="o">.</span><span class="n">setFullyQualifiedName</span><span class="p">(</span><span class="n">Storage</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">getName</span><span class="p">())</span><span class="o">.</span><span class="n">build</span><span class="p">();</span>
+
+        <span class="nd">@Override</span>
+        <span class="n">public</span> <span class="n">UdtDataType</span> <span class="n">getUdtDataType</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">udtDataType</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="n">public</span> <span class="n">Builder</span> <span class="n">newBuilder</span><span class="p">(</span><span class="n">BuilderConfig</span> <span class="n">cc</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">new</span> <span class="n">StorageBuilder</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

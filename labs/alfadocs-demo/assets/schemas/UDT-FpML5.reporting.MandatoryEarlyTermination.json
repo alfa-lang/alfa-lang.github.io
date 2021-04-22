@@ -1,0 +1,111 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to define an early termination provision for which exercise is mandatory.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MandatoryEarlyTermination",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to define an early termination provision for which exercise is mandatory.\n #/\nrecord FpML5.reporting.MandatoryEarlyTermination {\n  # The early termination date associated with a mandatory early termination of a swap.\n  mandatoryEarlyTerminationDate : FpML5.reporting.AdjustableDate?\n\n  # The ISDA Calculation Agent responsible for performing duties associated with an optional early termination.\n  calculationAgent : FpML5.reporting.CalculationAgent?\n\n  # If specified, this means that cash settlement is applicable to the transaction and defines the parameters associated with the cash settlement prodcedure. If not specified, then physical settlement is applicable.\n  cashSettlement : FpML5.reporting.CashSettlement?\n\n  # The adjusted dates associated with a mandatory early termination provision. These dates have been adjusted for any applicable business day convention.\n  mandatoryEarlyTerminationAdjustedDates : FpML5.reporting.MandatoryEarlyTerminationAdjustedDates?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EarlyTerminationProvision",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "mandatoryEarlyTerminationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The early termination date associated with a mandatory early termination of a swap.",
+      "Name" : "mandatoryEarlyTerminationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15520
+      }
+    },
+    "calculationAgent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISDA Calculation Agent responsible for performing duties associated with an optional early termination.",
+      "Name" : "calculationAgent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationAgent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15523
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If specified, this means that cash settlement is applicable to the transaction and defines the parameters associated with the cash settlement prodcedure. If not specified, then physical settlement is applicable.",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CashSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15526
+      }
+    },
+    "mandatoryEarlyTerminationAdjustedDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted dates associated with a mandatory early termination provision. These dates have been adjusted for any applicable business day convention.",
+      "Name" : "mandatoryEarlyTerminationAdjustedDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.MandatoryEarlyTerminationAdjustedDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15529
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15532
+      }
+    }
+  },
+  "LocalFieldNames" : [ "mandatoryEarlyTerminationDate", "calculationAgent", "cashSettlement", "mandatoryEarlyTerminationAdjustedDates", "id" ],
+  "IsSynthetic" : false
+}

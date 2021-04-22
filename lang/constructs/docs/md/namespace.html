@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>namespace &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>namespace</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="namespace">
+<h1>namespace<a class="headerlink" href="#namespace" title="Permalink to this headline">¶</a></h1>
+<p>Similar to <code class="docutils literal notranslate"><span class="pre">namespace</span></code> or <code class="docutils literal notranslate"><span class="pre">package</span></code> keywords in programming languages, ALFA namespace allows modulularity in data model names.</p>
+<p>Declarations below the <code class="docutils literal notranslate"><span class="pre">namespace</span></code> keyword are considered as part of that namespace. For example, the <code class="docutils literal notranslate"><span class="pre">Invoice</span></code> user-defined-type will have a fully-qualified name of <code class="docutils literal notranslate"><span class="pre">Acme.Accounts.Invoice</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">Acme.Accounts</span>
+
+<span class="k">record</span> <span class="n">Invoice</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Furthermore, a user-defined-type can also include a namespace prefix.
+For example the <code class="docutils literal notranslate"><span class="pre">OutgoingPayment</span></code> below will have a fully-qualified name of <code class="docutils literal notranslate"><span class="pre">Acme.Accounts.Payments.OutgoingPayment</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">Acme.Accounts</span>
+
+<span class="k">record</span> <span class="n">Payments</span><span class="p">.</span><span class="n">OutgoingPayment</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">.alfa</span></code> file can contain multiple namespaces. Given the declaration below, there will be 2 user-defined-types named <code class="docutils literal notranslate"><span class="pre">Acme.Accounts.Invoice</span></code> and <code class="docutils literal notranslate"><span class="pre">Acme.HR.Employee</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">Acme.Accounts</span>
+
+<span class="k">record</span> <span class="n">Invoice</span> <span class="p">{</span> <span class="p">}</span>
+
+
+<span class="k">namespace</span> <span class="nn">Acme.HR</span>
+
+<span class="k">record</span> <span class="n">Employee</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Given user-defined-types can be prefixed with a namespace, the top level namespace declaration is optional. The declaration below is equivalent to the one above.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Acme</span><span class="p">.</span><span class="n">Accounts</span><span class="p">.</span><span class="n">Invoice</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Acme</span><span class="p">.</span><span class="n">HR</span><span class="p">.</span><span class="n">Employee</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

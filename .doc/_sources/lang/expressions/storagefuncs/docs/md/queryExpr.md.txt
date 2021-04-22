@@ -1,0 +1,31 @@
+query
+=====
+
+Query entity data stored in storage ( e.g. RDBMS, cache etc ).
+
+This function is meant for relatively simple data queries. For complex multi-stage queries
+a `service` with its custom implementation will be more suitable.
+
+Given `entity` types are stored based on a key, a `query` function will interrogate a store containing
+entity type objects and apply a filter.
+
+The `query` function is almost identical to the `filter` function, apart from the 1st argument being an
+`entity` type instead of a vector type. The 2nd argument applies a lambda expression returning a boolean
+that is used as the filter criteria.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`entityType` |The `entity` type being queried|
+|2|A lambda that accepts an entity and returns a boolean|The input entity type is that of the 1st argument|
+
+
+__Returns:__
+
+A :ref:`setVectorType` of the `entity` type specified as the 1st argument.
+
+
+__Usages:__
+
+>- `query( T, e => boolean-expression ) : set<T>`

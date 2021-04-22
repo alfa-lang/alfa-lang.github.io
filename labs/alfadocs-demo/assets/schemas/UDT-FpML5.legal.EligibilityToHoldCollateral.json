@@ -1,0 +1,72 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The conditions under which a party and its custodians are entitled to hold collateral.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.EligibilityToHoldCollateral",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The conditions under which a party and its custodians are entitled to hold collateral.\n #/\nrecord FpML5.legal.EligibilityToHoldCollateral {\n  # The baseline condition required by a party from the other party to hold its posted collateral.\n  holdingPostedCollateral : string\n\n  # Specifies conditions related to the cusdody agent.\n  custodianTerms : FpML5.legal.CustodianTerms?\n\n  # Specifies the country(ies) where collateral can be held.\n  eligibleCountry : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.HoldingAndUsingPostedCollateral",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "holdingPostedCollateral" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The baseline condition required by a party from the other party to hold its posted collateral.",
+      "Name" : "holdingPostedCollateral",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4486
+      }
+    },
+    "custodianTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies conditions related to the cusdody agent.",
+      "Name" : "custodianTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.CustodianTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4489
+      }
+    },
+    "eligibleCountry" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the country(ies) where collateral can be held.",
+      "Name" : "eligibleCountry",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4492
+      }
+    }
+  },
+  "LocalFieldNames" : [ "holdingPostedCollateral", "custodianTerms", "eligibleCountry" ],
+  "IsSynthetic" : false
+}

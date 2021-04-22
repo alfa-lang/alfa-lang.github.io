@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the date from which each of the party may be allowed to terminate the trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReturnSwapEarlyTermination",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the date from which each of the party may be allowed to terminate the trade.\n #/\nrecord FpML5.reporting.ReturnSwapEarlyTermination {\n  # Reference to a party defined elsewhere in this document which may be allowed to terminate the trade.\n  partyReference : FpML5.reporting.PartyReference?\n\n  # Specifies the date from which the early termination clause can be exercised.\n  startingDate : FpML5.reporting.StartingDate?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReturnSwap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party defined elsewhere in this document which may be allowed to terminate the trade.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 31135
+      }
+    },
+    "startingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date from which the early termination clause can be exercised.",
+      "Name" : "startingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.StartingDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 31138
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyReference", "startingDate" ],
+  "IsSynthetic" : false
+}

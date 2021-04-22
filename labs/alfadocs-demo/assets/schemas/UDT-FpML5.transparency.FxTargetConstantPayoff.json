@@ -1,0 +1,72 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxTargetConstantPayoff",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.transparency.FxTargetConstantPayoff {\n  # A reference to the party responsible for making the payments defined by this structure.\n  payerPartyReference : FpML5.transparency.PartyReference?\n\n  # Cash payment.\n  payment : FpML5.transparency.PositiveMoney?\n\n  # Payoff (gain) expressed as a fixing adjustment. This style is used in the \"bonus collar\" TARF.\n  fixingAdjustment : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxTargetConstantPayoffRegion",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "payerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for making the payments defined by this structure.",
+      "Name" : "payerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13195
+      }
+    },
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Cash payment.",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PositiveMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13198
+      }
+    },
+    "fixingAdjustment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Payoff (gain) expressed as a fixing adjustment. This style is used in the \"bonus collar\" TARF.",
+      "Name" : "fixingAdjustment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13201
+      }
+    }
+  },
+  "LocalFieldNames" : [ "payerPartyReference", "payment", "fixingAdjustment" ],
+  "IsSynthetic" : false
+}

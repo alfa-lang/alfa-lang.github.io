@@ -1,0 +1,137 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery conditions for an oil product.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OilDelivery",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery conditions for an oil product.\n #/\nrecord FpML5.recordkeeping.OilDelivery {\n  # Specified the delivery conditions where the oil product is to be delivered by pipeline.\n  pipeline : FpML5.recordkeeping.OilPipelineDelivery\n\n  # Specified the delivery conditions where the oil product is to be delivered by title transfer.\n  transfer : FpML5.recordkeeping.OilTransferDelivery\n\n  # Specifies which party is the Importer of Record for the purposes of paying customs duties and applicable taxes or costs related to the import of the oil product.\n  importerOfRecord : FpML5.recordkeeping.PartyReference?\n\n  # Specifies the allowable quantity tolerance as an absolute quantity.\n  absoluteTolerance : FpML5.recordkeeping.AbsoluteTolerance\n\n  # Specifies the allowable quantity tolerance as a percentage of the quantity.\n  percentageTolerance : FpML5.recordkeeping.PercentageTolerance\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OilPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "pipeline" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specified the delivery conditions where the oil product is to be delivered by pipeline.",
+      "Name" : "pipeline",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.OilPipelineDelivery",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.OilPipelineDelivery",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.OilPipelineDelivery",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1704
+      }
+    },
+    "transfer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specified the delivery conditions where the oil product is to be delivered by title transfer.",
+      "Name" : "transfer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.OilTransferDelivery",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.OilTransferDelivery",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.OilTransferDelivery",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1707
+      }
+    },
+    "importerOfRecord" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies which party is the Importer of Record for the purposes of paying customs duties and applicable taxes or costs related to the import of the oil product.",
+      "Name" : "importerOfRecord",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1710
+      }
+    },
+    "absoluteTolerance" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the allowable quantity tolerance as an absolute quantity.",
+      "Name" : "absoluteTolerance",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.AbsoluteTolerance",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.AbsoluteTolerance",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AbsoluteTolerance",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1713
+      }
+    },
+    "percentageTolerance" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the allowable quantity tolerance as a percentage of the quantity.",
+      "Name" : "percentageTolerance",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PercentageTolerance",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PercentageTolerance",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PercentageTolerance",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 1716
+      }
+    }
+  },
+  "LocalFieldNames" : [ "pipeline", "transfer", "importerOfRecord", "absoluteTolerance", "percentageTolerance" ],
+  "IsSynthetic" : false
+}

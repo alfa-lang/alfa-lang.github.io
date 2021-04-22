@@ -1,0 +1,324 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A definition of an unfunded borrowing (guarantee) instrument known as a Letter of Credit.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LetterOfCredit",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A definition of an unfunded borrowing (guarantee) instrument known as a Letter of Credit.\n #/\nrecord FpML5.confirmation.LetterOfCredit {\n  # A unique identifier for a letter of credit.\n  identifier : FpML5.confirmation.FacilityContractIdentifier\n\n  # The letter of credit type for which a fee rate is being provided.\n  type : string\n\n  # Effective date of the letter of credit.\n  effectiveDate : date\n\n  # Main borrower.\n  borrowerPartyReference : FpML5.confirmation.PartyReference\n\n  # Party references to any guarantors associated with the facility borrower.\n  issuingBankPartyReference : FpML5.confirmation.PartyReference\n\n  # A party reference of the beneficiary.\n  beneficiaryPartyReference : FpML5.confirmation.PartyReference?\n\n  # The letter of credit notional amount. The amount is represented at the global and (optionally) at the lender-specific level.\n  amount : FpML5.confirmation.MoneyWithParticipantShare\n\n  # Expiry date of the letter of credit.\n  expiryDate : date\n\n  # Final expiry date of the letter of credit, once the evergreen option has been exercised.\n  finalExpiryDate : date?\n\n  # The letter of credit fee rate details.\n  lcAccrual : FpML5.confirmation.LcAccrual\n\n  # Defines the purpose of a letter of credit.\n  purpose : string?\n\n  # An option allowing the borrower to extend the letter of credit tenor.\n  evergreenOption : FpML5.confirmation.EvergreenOption?\n\n  # Defines the purpose of a letter of credit.\n  lcAutoAdjust : string?\n\n  # The letter of credit notional amount. The amount is represented at the global and (optionally) atthe lender-specific level.\n  minLcIssuanceFeeAmount : FpML5.confirmation.MoneyWithParticipantShare?\n\n  # Defines exchange rate between the letter of credit and facility.\n  facilityFxRate : FpML5.confirmation.FxTerms?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AccrualOptionChangeNotification",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AccrualOptionChangeNotificationRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LcNotification",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LcNotificationRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OutstandingContractsStatement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "identifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique identifier for a letter of credit.",
+      "Name" : "identifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FacilityContractIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FacilityContractIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FacilityContractIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12509
+      }
+    },
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The letter of credit type for which a fee rate is being provided.",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12512
+      }
+    },
+    "effectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Effective date of the letter of credit.",
+      "Name" : "effectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12515
+      }
+    },
+    "borrowerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Main borrower.",
+      "Name" : "borrowerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12518
+      }
+    },
+    "issuingBankPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Party references to any guarantors associated with the facility borrower.",
+      "Name" : "issuingBankPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12521
+      }
+    },
+    "beneficiaryPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party reference of the beneficiary.",
+      "Name" : "beneficiaryPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12524
+      }
+    },
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The letter of credit notional amount. The amount is represented at the global and (optionally) at the lender-specific level.",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12527
+      }
+    },
+    "expiryDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Expiry date of the letter of credit.",
+      "Name" : "expiryDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12530
+      }
+    },
+    "finalExpiryDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Final expiry date of the letter of credit, once the evergreen option has been exercised.",
+      "Name" : "finalExpiryDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12533
+      }
+    },
+    "lcAccrual" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The letter of credit fee rate details.",
+      "Name" : "lcAccrual",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.LcAccrual",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.LcAccrual",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.LcAccrual",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12536
+      }
+    },
+    "purpose" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the purpose of a letter of credit.",
+      "Name" : "purpose",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12539
+      }
+    },
+    "evergreenOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An option allowing the borrower to extend the letter of credit tenor.",
+      "Name" : "evergreenOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.EvergreenOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12542
+      }
+    },
+    "lcAutoAdjust" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the purpose of a letter of credit.",
+      "Name" : "lcAutoAdjust",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12545
+      }
+    },
+    "minLcIssuanceFeeAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The letter of credit notional amount. The amount is represented at the global and (optionally) atthe lender-specific level.",
+      "Name" : "minLcIssuanceFeeAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12548
+      }
+    },
+    "facilityFxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines exchange rate between the letter of credit and facility.",
+      "Name" : "facilityFxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12551
+      }
+    }
+  },
+  "LocalFieldNames" : [ "identifier", "type", "effectiveDate", "borrowerPartyReference", "issuingBankPartyReference", "beneficiaryPartyReference", "amount", "expiryDate", "finalExpiryDate", "lcAccrual", "purpose", "evergreenOption", "lcAutoAdjust", "minLcIssuanceFeeAmount", "facilityFxRate" ],
+  "IsSynthetic" : false
+}

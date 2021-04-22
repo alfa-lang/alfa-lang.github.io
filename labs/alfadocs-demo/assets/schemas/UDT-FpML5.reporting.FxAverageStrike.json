@@ -1,0 +1,180 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAverageStrike",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.FxAverageStrike {\n  # FX rate to be observed. The Quoted Currency Pair that is used across the product.\n  quotedCurrencyPair : FpML5.reporting.QuotedCurrencyPair?\n\n  # Information source for fixing the exchange rate. It is the same for all fixing periods.\n  informationSource : FpML5.reporting.FxInformationSource\n\n  # Contains the currency exchange rates information used to cross between the traded currencies for non-base currency FX contracts.\n  crossRate : FpML5.reporting.FxCrossRateObservable?\n\n  # Describes a parametric schedule of fixing dates.\n  fixingSchedule : FpML5.reporting.FxWeightedFixingSchedule\n\n  averagingMethod : string?\n\n  # Specifies the rounding precision in terms of a number of decimal places. Note how a percentage rate rounding of 5 decimal places is expressed as a rounding precision of 7 in the FpML document since the percentage is expressed as a decimal, e.g. 9.876543% (or 0.09876543) being rounded to the nearest 5 decimal places is 9.87654% (or 0.0987654).\n  precision : int( 0, * )?\n\n  # A layer an Adjustment on the top of the average of the fixings across the schedule.\n  strikeAdjustment : decimal?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrualLinearPayoffRegion",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrualOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "FX rate to be observed. The Quoted Currency Pair that is used across the product.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9930
+      }
+    },
+    "informationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information source for fixing the exchange rate. It is the same for all fixing periods.",
+      "Name" : "informationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxInformationSource",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxInformationSource",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxInformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9933
+      }
+    },
+    "crossRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Contains the currency exchange rates information used to cross between the traded currencies for non-base currency FX contracts.",
+      "Name" : "crossRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxCrossRateObservable",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9936
+      }
+    },
+    "fixingSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes a parametric schedule of fixing dates.",
+      "Name" : "fixingSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxWeightedFixingSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxWeightedFixingSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxWeightedFixingSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9939
+      }
+    },
+    "averagingMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "averagingMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9942
+      }
+    },
+    "precision" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the rounding precision in terms of a number of decimal places. Note how a percentage rate rounding of 5 decimal places is expressed as a rounding precision of 7 in the FpML document since the percentage is expressed as a decimal, e.g. 9.876543% (or 0.09876543) being rounded to the nearest 5 decimal places is 9.87654% (or 0.0987654).",
+      "Name" : "precision",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9944
+      }
+    },
+    "strikeAdjustment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A layer an Adjustment on the top of the average of the fixings across the schedule.",
+      "Name" : "strikeAdjustment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9947
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9950
+      }
+    }
+  },
+  "LocalFieldNames" : [ "quotedCurrencyPair", "informationSource", "crossRate", "fixingSchedule", "averagingMethod", "precision", "strikeAdjustment", "id" ],
+  "IsSynthetic" : false
+}

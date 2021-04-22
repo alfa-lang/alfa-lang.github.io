@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type used in event status enquiry messages which relates an event identifier to its current status value.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EventStatusItem",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type used in event status enquiry messages which relates an event identifier to its current status value.\n #/\nrecord FpML5.reporting.EventStatusItem {\n  # An instance of a unique event identifier.\n  eventIdentifier : FpML5.reporting.EventIdentifier?\n\n  # An event status value.\n  status : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EventStatusResponse",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eventIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An instance of a unique event identifier.",
+      "Name" : "eventIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.EventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14002
+      }
+    },
+    "status" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An event status value.",
+      "Name" : "status",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14005
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eventIdentifier", "status" ],
+  "IsSynthetic" : false
+}

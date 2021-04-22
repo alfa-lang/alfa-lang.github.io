@@ -1,0 +1,123 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the parameters used when the reference currency of the swapStream is non-deliverable.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NonDeliverableSettlement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the parameters used when the reference currency of the swapStream is non-deliverable.\n #/\nrecord FpML5.reporting.NonDeliverableSettlement {\n  # The currency in which the swap stream is denominated.\n  referenceCurrency : string?\n\n  # The date, when expressed as a relative date, on which the currency rate will be determined for the purpose of specifying the amount in deliverable currency.\n  fxFixingDate : FpML5.reporting.FxFixingDate\n\n  # The date, when expressed as a schedule of date(s), on which the currency rate will be determined for the purpose of specifying the amount in deliverable currency.\n  fxFixingSchedule : FpML5.reporting.AdjustableDates\n\n  # The rate source for the conversion to the settlement currency. This source is specified through a scheme that reflects the terms of the Annex A to the 1998 FX and Currency Option Definitions.\n  settlementRateOption : string?\n\n  # A type defining the parameters to get a new quote when a settlement rate option is disrupted.\n  priceSourceDisruption : FpML5.reporting.PriceSourceDisruption?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SettlementProvision",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "referenceCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which the swap stream is denominated.",
+      "Name" : "referenceCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13470
+      }
+    },
+    "fxFixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date, when expressed as a relative date, on which the currency rate will be determined for the purpose of specifying the amount in deliverable currency.",
+      "Name" : "fxFixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.FxFixingDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.FxFixingDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxFixingDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13473
+      }
+    },
+    "fxFixingSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date, when expressed as a schedule of date(s), on which the currency rate will be determined for the purpose of specifying the amount in deliverable currency.",
+      "Name" : "fxFixingSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.AdjustableDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.AdjustableDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13476
+      }
+    },
+    "settlementRateOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate source for the conversion to the settlement currency. This source is specified through a scheme that reflects the terms of the Annex A to the 1998 FX and Currency Option Definitions.",
+      "Name" : "settlementRateOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13479
+      }
+    },
+    "priceSourceDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A type defining the parameters to get a new quote when a settlement rate option is disrupted.",
+      "Name" : "priceSourceDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PriceSourceDisruption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 13482
+      }
+    }
+  },
+  "LocalFieldNames" : [ "referenceCurrency", "fxFixingDate", "fxFixingSchedule", "settlementRateOption", "priceSourceDisruption" ],
+  "IsSynthetic" : false
+}

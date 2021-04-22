@@ -1,0 +1,256 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityBasketUnderlyingByNotional",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.CommodityBasketUnderlyingByNotional {\n  # Indicates the role of the option buyer with regard to this underlyer.\n  direction : string?\n\n  # Specifies the underlying component. At the time of the initial schema design, only underlyers of type Commodity are supported; the choice group in the future could offer the possibility of adding other types later.\n  commodity : FpML5.reporting.Commodity?\n\n  # The dates on which the option will price.\n  pricingDates : FpML5.reporting.CommodityPricingDates?\n\n  # The Method of Averaging if there is more than one Pricing Date.\n  averagingMethod : string?\n\n  # FX observations to be used to convert the observed Commodity Reference Price to the Settlement Currency.\n  fx : FpML5.reporting.CommodityFx?\n\n  # If the Notional Quantity is specified in a unit that does not match the unit in which the Commodity Reference Price is quoted, the scaling or conversion factor used to convert the Commodity Reference Price unit into the Notional Quantity unit should be stated here. If there is no conversion, this element is not intended to be used.\n  conversionFactor : decimal?\n\n  # Allows the documentation of a shaped notional trade where the notional changes over the life of the transaction.\n  notionalQuantitySchedule : FpML5.reporting.CommodityNotionalQuantitySchedule\n\n  # The Notional Quantity.\n  notionalQuantity : FpML5.reporting.CommodityNotionalQuantity\n\n  # For an electricity transaction, the Notional Quantity for a one or more groups of Settlement Periods to which the Notional Quantity is based. If the schedule differs for different groups of Settlement Periods, this element should be repeated.\n  settlementPeriodsNotionalQuantity : FpML5.reporting.CommoditySettlementPeriodsNotionalQuantity\n\n  # The Total Notional Quantity.\n  totalNotionalQuantity : decimal?\n\n  # A pointer style reference to a quantity defined on another leg.\n  quantityReference : FpML5.reporting.QuantityReference\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityBasketByNotional",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "direction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the role of the option buyer with regard to this underlyer.",
+      "Name" : "direction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27747
+      }
+    },
+    "commodity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the underlying component. At the time of the initial schema design, only underlyers of type Commodity are supported; the choice group in the future could offer the possibility of adding other types later.",
+      "Name" : "commodity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Commodity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27750
+      }
+    },
+    "pricingDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The dates on which the option will price.",
+      "Name" : "pricingDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityPricingDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27753
+      }
+    },
+    "averagingMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Method of Averaging if there is more than one Pricing Date.",
+      "Name" : "averagingMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27756
+      }
+    },
+    "fx" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "FX observations to be used to convert the observed Commodity Reference Price to the Settlement Currency.",
+      "Name" : "fx",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityFx",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27759
+      }
+    },
+    "conversionFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If the Notional Quantity is specified in a unit that does not match the unit in which the Commodity Reference Price is quoted, the scaling or conversion factor used to convert the Commodity Reference Price unit into the Notional Quantity unit should be stated here. If there is no conversion, this element is not intended to be used.",
+      "Name" : "conversionFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27762
+      }
+    },
+    "notionalQuantitySchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows the documentation of a shaped notional trade where the notional changes over the life of the transaction.",
+      "Name" : "notionalQuantitySchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CommodityNotionalQuantitySchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CommodityNotionalQuantitySchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityNotionalQuantitySchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27765
+      }
+    },
+    "notionalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Notional Quantity.",
+      "Name" : "notionalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CommodityNotionalQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CommodityNotionalQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27768
+      }
+    },
+    "settlementPeriodsNotionalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For an electricity transaction, the Notional Quantity for a one or more groups of Settlement Periods to which the Notional Quantity is based. If the schedule differs for different groups of Settlement Periods, this element should be repeated.",
+      "Name" : "settlementPeriodsNotionalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CommoditySettlementPeriodsNotionalQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CommoditySettlementPeriodsNotionalQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommoditySettlementPeriodsNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27771
+      }
+    },
+    "totalNotionalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Total Notional Quantity.",
+      "Name" : "totalNotionalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27774
+      }
+    },
+    "quantityReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a quantity defined on another leg.",
+      "Name" : "quantityReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.QuantityReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.QuantityReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.QuantityReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27777
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27780
+      }
+    }
+  },
+  "LocalFieldNames" : [ "direction", "commodity", "pricingDates", "averagingMethod", "fx", "conversionFactor", "notionalQuantitySchedule", "notionalQuantity", "settlementPeriodsNotionalQuantity", "totalNotionalQuantity", "quantityReference", "id" ],
+  "IsSynthetic" : false
+}

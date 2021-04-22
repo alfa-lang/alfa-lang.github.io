@@ -1,0 +1,165 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure describing the removal of a trade from a service, such as a reporting service.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Withdrawal",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure describing the removal of a trade from a service, such as a reporting service.\n #/\nrecord FpML5.reporting.Withdrawal {\n  # Identifiers of the trade that is being withdrawn.\n  partyTradeIdentifier : FpML5.reporting.PartyTradeIdentifier?\n\n  # Holds party-specific information about the trade that is being withdrawn from.\n  partyTradeInformation : FpML5.reporting.WithdrawalPartyTradeInformation?\n\n  # The full trade representation that is being withdrawn.\n  trade : FpML5.reporting.Trade\n\n  effectiveDate : date?\n\n  requestedAction : string?\n\n  reason : string?\n\n  # DEPRECATED. The supervisor/regulator to which this withdrawal applies\n  reportingRegime : FpML5.reporting.ReportingRegimeIdentifier?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EventActivityReport",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NonpublicExecutionReport",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NonpublicExecutionReportRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionHistory",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionUpdateReason",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifiers of the trade that is being withdrawn.",
+      "Name" : "partyTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17651
+      }
+    },
+    "partyTradeInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Holds party-specific information about the trade that is being withdrawn from.",
+      "Name" : "partyTradeInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.WithdrawalPartyTradeInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17654
+      }
+    },
+    "trade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The full trade representation that is being withdrawn.",
+      "Name" : "trade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17657
+      }
+    },
+    "effectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "effectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17660
+      }
+    },
+    "requestedAction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "requestedAction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17662
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17664
+      }
+    },
+    "reportingRegime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. The supervisor/regulator to which this withdrawal applies",
+      "Name" : "reportingRegime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ReportingRegimeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17666
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyTradeIdentifier", "partyTradeInformation", "trade", "effectiveDate", "requestedAction", "reason", "reportingRegime" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that represents information about a unit within an organization.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.BusinessUnit",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that represents information about a unit within an organization.\n #/\nrecord FpML5.confirmation.BusinessUnit {\n  # A name used to describe the organization unit\n  name : string?\n\n  # An identifier used to uniquely identify organization unit\n  businessUnitId : string?\n\n  # Information on how to contact the unit using various means.\n  contactInfo : FpML5.confirmation.ContactInformation?\n\n  # The ISO 3166 standard code for the country where the individual works.\n  country : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Party",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "name" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A name used to describe the organization unit",
+      "Name" : "name",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27725
+      }
+    },
+    "businessUnitId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An identifier used to uniquely identify organization unit",
+      "Name" : "businessUnitId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27728
+      }
+    },
+    "contactInfo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information on how to contact the unit using various means.",
+      "Name" : "contactInfo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ContactInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27731
+      }
+    },
+    "country" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISO 3166 standard code for the country where the individual works.",
+      "Name" : "country",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27734
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27737
+      }
+    }
+  },
+  "LocalFieldNames" : [ "name", "businessUnitId", "contactInfo", "country", "id" ],
+  "IsSynthetic" : false
+}

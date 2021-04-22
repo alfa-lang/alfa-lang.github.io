@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The collateral eligibility as a function of the types of asset, the maturity and rating terms.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.EligibleCollateral",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The collateral eligibility as a function of the types of asset, the maturity and rating terms.\n #/\nrecord FpML5.legal.EligibleCollateral {\n  # Corresponds to the ISDA 2003 Collateral Assets definitions as part of the initial implementation. Future implementation will aim to integrate the Basle standardized haircut schedule and the corresponding nationally approved lists of collateral assets.\n  eligibleAsset : string\n\n  # The (optional) lower maturity band of the eligible collateral assets.\n  lowerMaturity : FpML5.legal.Period?\n\n  # The (optional) higher maturity band of the eligible collateral assets.\n  higherMaturity : FpML5.legal.Period?\n\n  # The (optional) minimal rating terms that the custodian agent should comply with.\n  minimumRating : FpML5.legal.CreditNotations?\n\n  # Specifies the haircut associated to the collateral asset, expressed as a percentage. A value of 90% means that 90% of the value of the applicable asset is considered as collateral. Absence of this element implies that the valuation percentage is 100%.\n  valuationPercentage : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.IndependentAmountEligibleCollateral",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eligibleAsset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Corresponds to the ISDA 2003 Collateral Assets definitions as part of the initial implementation. Future implementation will aim to integrate the Basle standardized haircut schedule and the corresponding nationally approved lists of collateral assets.",
+      "Name" : "eligibleAsset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1412
+      }
+    },
+    "lowerMaturity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The (optional) lower maturity band of the eligible collateral assets.",
+      "Name" : "lowerMaturity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1415
+      }
+    },
+    "higherMaturity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The (optional) higher maturity band of the eligible collateral assets.",
+      "Name" : "higherMaturity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1418
+      }
+    },
+    "minimumRating" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The (optional) minimal rating terms that the custodian agent should comply with.",
+      "Name" : "minimumRating",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.CreditNotations",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1421
+      }
+    },
+    "valuationPercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the haircut associated to the collateral asset, expressed as a percentage. A value of 90% means that 90% of the value of the applicable asset is considered as collateral. Absence of this element implies that the valuation percentage is 100%.",
+      "Name" : "valuationPercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1424
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eligibleAsset", "lowerMaturity", "higherMaturity", "minimumRating", "valuationPercentage" ],
+  "IsSynthetic" : false
+}

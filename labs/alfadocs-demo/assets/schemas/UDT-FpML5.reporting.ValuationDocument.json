@@ -1,0 +1,229 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a content model that includes valuation (pricing and risk) data without expressing any processing intention.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ValuationDocument",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a content model that includes valuation (pricing and risk) data without expressing any processing intention.\n #/\nrecord FpML5.reporting.ValuationDocument {\n  # A list of validation sets the sender asserts the document is valid with respect to.\n  validation : string?\n\n  # Indicates which party (and accounts) a trade is being processed for.\n  onBehalfOf : FpML5.reporting.OnBehalfOf?\n\n  originatingEvent : string?\n\n  # The root element in an FpML trade document.\n  trade : FpML5.reporting.Trade?\n\n  # An arbitary grouping of trade references (and possibly other portfolios).\n  portfolio : FpML5.reporting.Portfolio?\n\n  # Parties can perform multiple roles in a trade lifecycle. For example, the principal parties obligated to make payments from time to time during the term of the trade, but may include other parties involved in, or incidental to, the trade, such as parties acting in the role of novation transferor/transferee, broker, calculation agent, etc. In FpML roles are defined in multiple places within a document.\n  party : FpML5.reporting.Party?\n\n  # Optional account information used to precisely define the origination and destination of financial instruments.\n  account : FpML5.reporting.Account?\n\n  # This is a global element used for creating global types. It holds Market information, e.g. curves, surfaces, quotes, etc.\n  market : FpML5.reporting.Market?\n\n  valuationSet : FpML5.reporting.ValuationSet?\n\n  fpmlVersion : string\n\n  expectedBuild : int( 1, * )?\n\n  actualBuild : int( 1, * )?\n\n}"
+  },
+  "AllFields" : {
+    "validation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A list of validation sets the sender asserts the document is valid with respect to.",
+      "Name" : "validation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4763
+      }
+    },
+    "onBehalfOf" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates which party (and accounts) a trade is being processed for.",
+      "Name" : "onBehalfOf",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.OnBehalfOf",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4766
+      }
+    },
+    "originatingEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "originatingEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4769
+      }
+    },
+    "trade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The root element in an FpML trade document.",
+      "Name" : "trade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4771
+      }
+    },
+    "portfolio" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An arbitary grouping of trade references (and possibly other portfolios).",
+      "Name" : "portfolio",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Portfolio",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4774
+      }
+    },
+    "party" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Parties can perform multiple roles in a trade lifecycle. For example, the principal parties obligated to make payments from time to time during the term of the trade, but may include other parties involved in, or incidental to, the trade, such as parties acting in the role of novation transferor/transferee, broker, calculation agent, etc. In FpML roles are defined in multiple places within a document.",
+      "Name" : "party",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Party",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4777
+      }
+    },
+    "account" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Optional account information used to precisely define the origination and destination of financial instruments.",
+      "Name" : "account",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Account",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4780
+      }
+    },
+    "market" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is a global element used for creating global types. It holds Market information, e.g. curves, surfaces, quotes, etc.",
+      "Name" : "market",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Market",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4783
+      }
+    },
+    "valuationSet" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "valuationSet",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ValuationSet",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4786
+      }
+    },
+    "fpmlVersion" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "fpmlVersion",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4788
+      }
+    },
+    "expectedBuild" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "expectedBuild",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4790
+      }
+    },
+    "actualBuild" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "actualBuild",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4792
+      }
+    }
+  },
+  "LocalFieldNames" : [ "validation", "onBehalfOf", "originatingEvent", "trade", "portfolio", "party", "account", "market", "valuationSet", "fpmlVersion", "expectedBuild", "actualBuild" ],
+  "IsSynthetic" : false
+}

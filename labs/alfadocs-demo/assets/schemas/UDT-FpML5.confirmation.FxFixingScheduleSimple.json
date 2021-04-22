@@ -1,0 +1,132 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes the FX fixing schedule, a single continuous observation period which follows the applicable business day schedule for the quoted rate source.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxFixingScheduleSimple",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes the FX fixing schedule, a single continuous observation period which follows the applicable business day schedule for the quoted rate source.\n #/\nrecord FpML5.confirmation.FxFixingScheduleSimple {\n  # The start of the period over which observations are made to determine whether a trigger has occurred.\n  startDate : date\n\n  # The end of the period over which observations are made to determine whether a trigger event has occurred.\n  endDate : date\n\n  # Specifies whether the schedule follows the business or calendar days.\n  dayType : string?\n\n  # A pointer style reference to a set of financial business centers defined elsewhere in the document. This set of business centers is used to determine whether a particular day is a business day or not.\n  businessCentersReference : FpML5.confirmation.BusinessCentersReference\n\n  businessCenters : FpML5.confirmation.BusinessCenters\n\n  # An explicit list of dates in the schedule. For documentation purpose only.\n  fixingDate : date?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxPerformanceSwap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The start of the period over which observations are made to determine whether a trigger has occurred.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27369
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The end of the period over which observations are made to determine whether a trigger event has occurred.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27372
+      }
+    },
+    "dayType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the schedule follows the business or calendar days.",
+      "Name" : "dayType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27375
+      }
+    },
+    "businessCentersReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a set of financial business centers defined elsewhere in the document. This set of business centers is used to determine whether a particular day is a business day or not.",
+      "Name" : "businessCentersReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BusinessCentersReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BusinessCentersReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessCentersReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27378
+      }
+    },
+    "businessCenters" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "businessCenters",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BusinessCenters",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BusinessCenters",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessCenters",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27381
+      }
+    },
+    "fixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An explicit list of dates in the schedule. For documentation purpose only.",
+      "Name" : "fixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27383
+      }
+    }
+  },
+  "LocalFieldNames" : [ "startDate", "endDate", "dayType", "businessCentersReference", "businessCenters", "fixingDate" ],
+  "IsSynthetic" : false
+}

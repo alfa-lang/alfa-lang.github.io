@@ -1,0 +1,57 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The specification of the electricity to be delivered.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ElectricityProduct",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The specification of the electricity to be delivered.\n #/\nrecord FpML5.reporting.ElectricityProduct {\n  # The type of electricity product to be delivered.\n  type : string?\n\n  # The voltage, expressed as a number of volts, of the electricity to be delivered.\n  voltage : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ElectricityPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of electricity product to be delivered.",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5407
+      }
+    },
+    "voltage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The voltage, expressed as a number of volts, of the electricity to be delivered.",
+      "Name" : "voltage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5410
+      }
+    }
+  },
+  "LocalFieldNames" : [ "type", "voltage" ],
+  "IsSynthetic" : false
+}

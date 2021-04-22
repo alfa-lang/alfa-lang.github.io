@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery conditions for an oil product.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.OilDelivery",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery conditions for an oil product.\n #/\nrecord FpML5.transparency.OilDelivery {\n  # Specified the delivery conditions where the oil product is to be delivered by pipeline.\n  pipeline : FpML5.transparency.OilPipelineDelivery\n\n  # Specified the delivery conditions where the oil product is to be delivered by title transfer.\n  transfer : FpML5.transparency.OilTransferDelivery\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.OilPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "pipeline" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specified the delivery conditions where the oil product is to be delivered by pipeline.",
+      "Name" : "pipeline",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.OilPipelineDelivery",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.OilPipelineDelivery",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.OilPipelineDelivery",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4572
+      }
+    },
+    "transfer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specified the delivery conditions where the oil product is to be delivered by title transfer.",
+      "Name" : "transfer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.OilTransferDelivery",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.OilTransferDelivery",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.OilTransferDelivery",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4575
+      }
+    }
+  },
+  "LocalFieldNames" : [ "pipeline", "transfer" ],
+  "IsSynthetic" : false
+}

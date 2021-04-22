@@ -1,0 +1,45 @@
+# table< T >
+
+A tabular representation of the type `T`. The tabular result will contain columns of scalar types similar to a relational table.
+
+
+Given an example such as:
+```csharp
+entity Person key( Id : long ) {
+    Name : string
+    Age : int
+    Phone : list< string >
+}
+```
+
+A example value of type `table< Person >` can be considered to be represented as:
+
+
+Id :long  | Name :string | Age :int| Phone\_Id__ :int  | Phone :string
+--- | ---- | --- | ---             | -----
+001 | Bob  | 23  | 0               | 02930918290
+001 | Bob  | 23  | 1               | 02949084509
+002 | Joe  | 25  | 0               | 07940938092
+
+The flatten rules are:
+
+1. A scalar becomes a column.
+2. Some flattening will result in auxiliary columns being added.
+Auxiliary column will be prefixed with string in form of '\_usage\__' where `usage` will be replaced with an appropriate name given the context, such as `index`.
+Naming conflicts are possible, for this reason, ALFA compiler reports a warning if fields are declared with 2 consecutive underscores, which
+may result in conflict with internally generated names.
+3. A `map< K, V>` becomes a minimum of 2 columns, more based on how K or V flatten.
+4. The key and value fields of a map will name such that `Key` and `Value` are appended to the field name.
+5. The default Map column names can be overridden by specifying them in the declaration - `map< KeyName : K, ValueName : V>`
+6. A `set< T >` becomes a minimum of 2 columns, containing an \_identity__ column and flattening for T
+7. A `list< T >` becomes a minimum of 2 columns, containing an \_index__ column and flattening for T
+8. When `T` is a trait, the set of columns are derived from the trait, however there can be more columns based on implementations of the trait.
+Therefore the columns will be a union of all trait implementations.
+9. An optional `T?` value will be represented by a minimum of 2 columns. An \_isSet__ prefixed field and flattening for T.
+
+TODO Add exhaustive list of all ALFA flattening for table<T>
+
+__Optional Parameters__
+
+- `table< T >( ... )`
+Optional parameters can be specified to table to manipulate the `table` type. Currently the usage and types for the parameters are undefined.

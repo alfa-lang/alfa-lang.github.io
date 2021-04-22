@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining the multiple exercise provisions of an American style commodity option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityMultipleExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining the multiple exercise provisions of an American style commodity option.\n #/\nrecord FpML5.recordkeeping.CommodityMultipleExercise {\n  # The integral multiple quantity defines a lower limit of the Notional Quantity that can be exercised and also defines a unit multiple of the Notional Quantity that can be exercised, i.e. only integer multiples of this Notional Quantity can be exercised.\n  integralMultipleQuantity : FpML5.recordkeeping.CommodityNotionalQuantity?\n\n  # The minimum Notional Quantity that can be exercised on a given Exercise Date. See multipleExercise.\n  minimumNotionalQuantity : FpML5.recordkeeping.CommodityNotionalQuantity?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityAmericanExercise",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "integralMultipleQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The integral multiple quantity defines a lower limit of the Notional Quantity that can be exercised and also defines a unit multiple of the Notional Quantity that can be exercised, i.e. only integer multiples of this Notional Quantity can be exercised.",
+      "Name" : "integralMultipleQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26262
+      }
+    },
+    "minimumNotionalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The minimum Notional Quantity that can be exercised on a given Exercise Date. See multipleExercise.",
+      "Name" : "minimumNotionalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26265
+      }
+    }
+  },
+  "LocalFieldNames" : [ "integralMultipleQuantity", "minimumNotionalQuantity" ],
+  "IsSynthetic" : false
+}

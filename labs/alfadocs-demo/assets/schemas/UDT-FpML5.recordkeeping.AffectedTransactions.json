@@ -1,0 +1,70 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.AffectedTransactions",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.AffectedTransactions {\n  # An element that allows the full details of the trade to be used as a mechanism for identifying the trade for which the post-trade event pertains\n  trade : FpML5.recordkeeping.Trade\n\n  # A container since an individual trade can be referenced by two or more different partyTradeIdentifier elements - each allocated by a different party.\n  tradeReference : FpML5.recordkeeping.PartyTradeIdentifiers\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CreditEventNoticeDocument",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "trade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An element that allows the full details of the trade to be used as a mechanism for identifying the trade for which the post-trade event pertains",
+      "Name" : "trade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23142
+      }
+    },
+    "tradeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A container since an individual trade can be referenced by two or more different partyTradeIdentifier elements - each allocated by a different party.",
+      "Name" : "tradeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifiers",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PartyTradeIdentifiers",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyTradeIdentifiers",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23145
+      }
+    }
+  },
+  "LocalFieldNames" : [ "trade", "tradeReference" ],
+  "IsSynthetic" : false
+}

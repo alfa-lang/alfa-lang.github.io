@@ -1,0 +1,217 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.WeatherIndexData",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.WeatherIndexData {\n  # Reference level is the number of degree-days (in the case of HDD and CDD) or inches/millimeters (in the case of CPD) on which the differential is calculated. In the case of HDD it is the number of degree-days below this reference level. In the case of CDD it is the number of degree days above this reference level. In the case of CPD it is number of inches/millimeters above this reference level.\n  referenceLevel : FpML5.recordkeeping.ReferenceLevel?\n\n  # The provider of either temperature data or precipitation data specified by the parties in the related Confirmation.\n  dataProvider : string?\n\n  # If specified by the parties to apply in the related Confirmation, Final Edited Data means that the parties will have recourse to Primary Disruption Fallbacks even if relevant data is available from the Data Provider, so long as such data is not published in its final edited form. Otherwise the parties will have recourse to Primary Disruption Fallbacks only if relevant data is unavailable from the Data Provider on a relevant day.\n  finalEditedData : boolean?\n\n  # The source or sources of weather index data specified by the parties in the related Confirmation. Examples include: AU-CBM (the Commonwealth Bureau of Meteorology in Australia) and CM-SMI (the Swiss Meteorological Institute).\n  weatherStation : FpML5.recordkeeping.WeatherStation?\n\n  # If weather index data is not available for the weather station specified by the parties in the related Confirmation, the first alternative Weather Index Station.\n  weatherStationFallback : FpML5.recordkeeping.WeatherStation?\n\n  # If weather index data is neither available for the weather station specified by the parties in the related Confirmation nor the first alternative Weather Index Station, the second alternative Weather Index Station.\n  weatherStationSecondFallback : FpML5.recordkeeping.WeatherStation?\n\n  # A provider of either temperature data or precipitation data specified by the parties in the related Confirmation. If the parties fail to specify an Alternative Data Provider, the \"Fallback Data\" Disruption Fallback will not apply.\n  alternativeDataProvider : boolean?\n\n  # If the parties specify \"Not Applicable\", the \"Synoptic Data\" Disruption Fallback will not apply. Synoptic Data means that maximum and/or minimum temperature or daily precipitation at the location for the Missing Data Day will be the maxium and/or minimum temperature or daily precipitation for that day at the Location (Weather Index Station) which has not been subject to ultimate quality control, integrity or verification process.\n  synopticDataFallback : boolean?\n\n  # The Weather Index Station from which data with which to apply the \"Adjustement to Fallback Station Data\" terms. See Section 11.20 of the 2005 ISDA Commodity Definitions.\n  adjustmentToFallbackWeatherStation : boolean?\n\n  # A list of actions available to the parties should a Primary Disruption Event occur. A Primary Disruption Event means if maximum or minimum temperature or precipitation data for a Missing Data Day is required to determine a Payment Amount then the maximum and/or minimum temperature or the daily precipitation for that day will be determined in accordance with the first applicable Primary Disruption Fallback.\n  primaryDisruptionFallbacks : string?\n\n  # A list of actions available to the parties should a Secondary Disruption Event occur. A Primary Disruption Event means if maximum or minimum temperature or precipitation data for a Missing Data Day is required to determine a Payment Amount then the maximum and/or minimum temperature or the daily precipitation for that day will be determined in accordance with the first applicable Secondary Disruption Fallback.\n  secondaryDisruptionFallbacks : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.WeatherLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "referenceLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference level is the number of degree-days (in the case of HDD and CDD) or inches/millimeters (in the case of CPD) on which the differential is calculated. In the case of HDD it is the number of degree-days below this reference level. In the case of CDD it is the number of degree days above this reference level. In the case of CPD it is number of inches/millimeters above this reference level.",
+      "Name" : "referenceLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ReferenceLevel",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8286
+      }
+    },
+    "dataProvider" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The provider of either temperature data or precipitation data specified by the parties in the related Confirmation.",
+      "Name" : "dataProvider",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8289
+      }
+    },
+    "finalEditedData" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If specified by the parties to apply in the related Confirmation, Final Edited Data means that the parties will have recourse to Primary Disruption Fallbacks even if relevant data is available from the Data Provider, so long as such data is not published in its final edited form. Otherwise the parties will have recourse to Primary Disruption Fallbacks only if relevant data is unavailable from the Data Provider on a relevant day.",
+      "Name" : "finalEditedData",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8292
+      }
+    },
+    "weatherStation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The source or sources of weather index data specified by the parties in the related Confirmation. Examples include: AU-CBM (the Commonwealth Bureau of Meteorology in Australia) and CM-SMI (the Swiss Meteorological Institute).",
+      "Name" : "weatherStation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.WeatherStation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8295
+      }
+    },
+    "weatherStationFallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If weather index data is not available for the weather station specified by the parties in the related Confirmation, the first alternative Weather Index Station.",
+      "Name" : "weatherStationFallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.WeatherStation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8298
+      }
+    },
+    "weatherStationSecondFallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If weather index data is neither available for the weather station specified by the parties in the related Confirmation nor the first alternative Weather Index Station, the second alternative Weather Index Station.",
+      "Name" : "weatherStationSecondFallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.WeatherStation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8301
+      }
+    },
+    "alternativeDataProvider" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A provider of either temperature data or precipitation data specified by the parties in the related Confirmation. If the parties fail to specify an Alternative Data Provider, the \"Fallback Data\" Disruption Fallback will not apply.",
+      "Name" : "alternativeDataProvider",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8304
+      }
+    },
+    "synopticDataFallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If the parties specify \"Not Applicable\", the \"Synoptic Data\" Disruption Fallback will not apply. Synoptic Data means that maximum and/or minimum temperature or daily precipitation at the location for the Missing Data Day will be the maxium and/or minimum temperature or daily precipitation for that day at the Location (Weather Index Station) which has not been subject to ultimate quality control, integrity or verification process.",
+      "Name" : "synopticDataFallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8307
+      }
+    },
+    "adjustmentToFallbackWeatherStation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Weather Index Station from which data with which to apply the \"Adjustement to Fallback Station Data\" terms. See Section 11.20 of the 2005 ISDA Commodity Definitions.",
+      "Name" : "adjustmentToFallbackWeatherStation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8310
+      }
+    },
+    "primaryDisruptionFallbacks" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A list of actions available to the parties should a Primary Disruption Event occur. A Primary Disruption Event means if maximum or minimum temperature or precipitation data for a Missing Data Day is required to determine a Payment Amount then the maximum and/or minimum temperature or the daily precipitation for that day will be determined in accordance with the first applicable Primary Disruption Fallback.",
+      "Name" : "primaryDisruptionFallbacks",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8313
+      }
+    },
+    "secondaryDisruptionFallbacks" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A list of actions available to the parties should a Secondary Disruption Event occur. A Primary Disruption Event means if maximum or minimum temperature or precipitation data for a Missing Data Day is required to determine a Payment Amount then the maximum and/or minimum temperature or the daily precipitation for that day will be determined in accordance with the first applicable Secondary Disruption Fallback.",
+      "Name" : "secondaryDisruptionFallbacks",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8316
+      }
+    }
+  },
+  "LocalFieldNames" : [ "referenceLevel", "dataProvider", "finalEditedData", "weatherStation", "weatherStationFallback", "weatherStationSecondFallback", "alternativeDataProvider", "synopticDataFallback", "adjustmentToFallbackWeatherStation", "primaryDisruptionFallbacks", "secondaryDisruptionFallbacks" ],
+  "IsSynthetic" : false
+}

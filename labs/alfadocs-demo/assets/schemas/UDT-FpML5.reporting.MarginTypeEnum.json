@@ -1,0 +1,46 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "This indicator defines which type of assets (cash or securities) is specified to apply as margin to the repo transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MarginTypeEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n This indicator defines which type of assets (cash or securities) is specified to apply as margin to the repo transaction.\n #/\nenum FpML5.reporting.MarginTypeEnum {\n    # When the margin type is Cash, the margin factor is applied to the cash value of the transaction.\n    Cash \n    # When the margin type is Instrument, the margin factor is applied to the instrument value for the transaction. In the “instrument” case, the haircut would be applied to the securities.\n    Instrument \n\n}"
+  },
+  "AllFields" : {
+    "Cash" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When the margin type is Cash, the margin factor is applied to the cash value of the transaction.",
+      "Name" : "Cash",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28019
+      }
+    },
+    "Instrument" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When the margin type is Instrument, the margin factor is applied to the instrument value for the transaction. In the “instrument” case, the haircut would be applied to the securities.",
+      "Name" : "Instrument",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28021
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Cash", "Instrument" ],
+  "IsSynthetic" : false
+}

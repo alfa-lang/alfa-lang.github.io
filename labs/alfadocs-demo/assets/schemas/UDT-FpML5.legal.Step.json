@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a step date and step value pair. This step definitions are used to define varying rate or amount schedules, e.g. a notional amortization or a step-up coupon schedule.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.Step",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a step date and step value pair. This step definitions are used to define varying rate or amount schedules, e.g. a notional amortization or a step-up coupon schedule.\n #/\nrecord FpML5.legal.Step {\n  # The date on which the associated stepValue becomes effective. This day may be subject to adjustment in accordance with a business day convention.\n  stepDate : date\n\n  # The rate or amount which becomes effective on the associated stepDate. A rate of 5% would be represented as 0.05.\n  stepValue : decimal\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.AmountSchedule",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.Schedule",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.SpreadSchedule",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "stepDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the associated stepValue becomes effective. This day may be subject to adjustment in accordance with a business day convention.",
+      "Name" : "stepDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 729
+      }
+    },
+    "stepValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate or amount which becomes effective on the associated stepDate. A rate of 5% would be represented as 0.05.",
+      "Name" : "stepValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 732
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 735
+      }
+    }
+  },
+  "LocalFieldNames" : [ "stepDate", "stepValue", "id" ],
+  "IsSynthetic" : false
+}

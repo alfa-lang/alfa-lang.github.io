@@ -1,0 +1,125 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CashDeliveryReturn",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.CashDeliveryReturn {\n  # Refers to the asset which specifies the currency of the cash being delivered or returned.\n  assetReference : FpML5.reporting.AssetReference?\n\n  # The amount of cash to be moved.\n  nominalAmount : decimal?\n\n  # The date on which the proposed collateral will be settled .\n  valueDate : date?\n\n  # The value of the proposed collateral movement prior to the application of any haircut amount.\n  marketValue : decimal?\n\n  # The amount to which the collaterals market value will be discounted to take into account the ability to realize the value of that collateral.\n  haircut : decimal?\n\n  # This is the value of the proposed collateral after the application of the haircut.\n  collateralValue : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "assetReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Refers to the asset which specifies the currency of the cash being delivered or returned.",
+      "Name" : "assetReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1928
+      }
+    },
+    "nominalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of cash to be moved.",
+      "Name" : "nominalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1931
+      }
+    },
+    "valueDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the proposed collateral will be settled .",
+      "Name" : "valueDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1934
+      }
+    },
+    "marketValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value of the proposed collateral movement prior to the application of any haircut amount.",
+      "Name" : "marketValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1937
+      }
+    },
+    "haircut" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount to which the collaterals market value will be discounted to take into account the ability to realize the value of that collateral.",
+      "Name" : "haircut",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1940
+      }
+    },
+    "collateralValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the value of the proposed collateral after the application of the haircut.",
+      "Name" : "collateralValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1943
+      }
+    }
+  },
+  "LocalFieldNames" : [ "assetReference", "nominalAmount", "valueDate", "marketValue", "haircut", "collateralValue" ],
+  "IsSynthetic" : false
+}

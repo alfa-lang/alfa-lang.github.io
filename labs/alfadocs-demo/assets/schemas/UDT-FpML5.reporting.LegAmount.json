@@ -1,0 +1,145 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the amount that will paid or received on each of the payment dates. This type is used to define both the Equity Amount and the Interest Amount.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.LegAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the amount that will paid or received on each of the payment dates. This type is used to define both the Equity Amount and the Interest Amount.\n #/\nrecord FpML5.reporting.LegAmount {\n  # The currency in which an amount is denominated.\n  currency : string\n\n  # Specifies the method according to which an amount or a date is determined.\n  determinationMethod : string\n\n  # Reference to a currency defined elsewhere in the document\n  currencyReference : FpML5.reporting.IdentifiedCurrencyReference\n\n  # Specifies the reference Amount when this term either corresponds to the standard ISDA Definition (either the 2002 Equity Definition for the Equity Amount, or the 2000 Definition for the Interest Amount), or points to a term defined elsewhere in the swap document.\n  referenceAmount : string\n\n  # Specifies a formula, with its description and components.\n  formula : FpML5.reporting.Formula\n\n  # Description of the leg amount when represented through an encoded image.\n  encodedDescription : binary\n\n  # Specifies the date on which a calculation or an observation will be performed for the purpose of defining the Equity Amount, and in accordance to the definition terms of this latter.\n  calculationDates : FpML5.reporting.AdjustableRelativeOrPeriodicDates?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InterestLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which an amount is denominated.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27882
+      }
+    },
+    "determinationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the method according to which an amount or a date is determined.",
+      "Name" : "determinationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27885
+      }
+    },
+    "currencyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a currency defined elsewhere in the document",
+      "Name" : "currencyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.IdentifiedCurrencyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.IdentifiedCurrencyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.IdentifiedCurrencyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27888
+      }
+    },
+    "referenceAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the reference Amount when this term either corresponds to the standard ISDA Definition (either the 2002 Equity Definition for the Equity Amount, or the 2000 Definition for the Interest Amount), or points to a term defined elsewhere in the swap document.",
+      "Name" : "referenceAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27891
+      }
+    },
+    "formula" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies a formula, with its description and components.",
+      "Name" : "formula",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Formula",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Formula",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Formula",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27894
+      }
+    },
+    "encodedDescription" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Description of the leg amount when represented through an encoded image.",
+      "Name" : "encodedDescription",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "binaryType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27897
+      }
+    },
+    "calculationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date on which a calculation or an observation will be performed for the purpose of defining the Equity Amount, and in accordance to the definition terms of this latter.",
+      "Name" : "calculationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableRelativeOrPeriodicDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27900
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency", "determinationMethod", "currencyReference", "referenceAmount", "formula", "encodedDescription", "calculationDates" ],
+  "IsSynthetic" : false
+}

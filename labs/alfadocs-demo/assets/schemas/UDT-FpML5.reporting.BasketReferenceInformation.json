@@ -1,0 +1,141 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "CDS Basket Reference Information",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.BasketReferenceInformation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   CDS Basket Reference Information\n #/\nrecord FpML5.reporting.BasketReferenceInformation {\n  # The name of the basket expressed as a free format string. FpML does not define usage rules for this element.\n  basketName : string?\n\n  # A CDS basket identifier\n  basketId : string?\n\n  # This element contains all the reference pool items to define the reference entity and reference obligation(s) in the basket\n  referencePool : FpML5.reporting.ReferencePool?\n\n  # N th reference obligation to default triggers payout.\n  nthToDefault : int( 1, * )?\n\n  # M th reference obligation to default to allow representation of N th to M th defaults.\n  mthToDefault : int( 1, * )?\n\n  # This element contains CDS tranche terms.\n  tranche : FpML5.reporting.Tranche\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.GeneralTerms",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "basketName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the basket expressed as a free format string. FpML does not define usage rules for this element.",
+      "Name" : "basketName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8016
+      }
+    },
+    "basketId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A CDS basket identifier",
+      "Name" : "basketId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8019
+      }
+    },
+    "referencePool" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element contains all the reference pool items to define the reference entity and reference obligation(s) in the basket",
+      "Name" : "referencePool",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ReferencePool",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8022
+      }
+    },
+    "nthToDefault" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "N th reference obligation to default triggers payout.",
+      "Name" : "nthToDefault",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8025
+      }
+    },
+    "mthToDefault" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "M th reference obligation to default to allow representation of N th to M th defaults.",
+      "Name" : "mthToDefault",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8028
+      }
+    },
+    "tranche" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element contains CDS tranche terms.",
+      "Name" : "tranche",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Tranche",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Tranche",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Tranche",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8031
+      }
+    }
+  },
+  "LocalFieldNames" : [ "basketName", "basketId", "referencePool", "nthToDefault", "mthToDefault", "tranche" ],
+  "IsSynthetic" : false
+}

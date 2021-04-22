@@ -1,0 +1,211 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining ISDA 2002 Equity Derivative Additional Disruption Events.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AdditionalDisruptionEvents",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining ISDA 2002 Equity Derivative Additional Disruption Events.\n #/\nrecord FpML5.reporting.AdditionalDisruptionEvents {\n  # If true, then change in law is applicable.\n  changeInLaw : boolean?\n\n  # Where the underlying is shares and the transaction is physically settled, then, if true, a failure to deliver the shares on the settlement date will not be an event of default for the purposes of the master agreement.\n  failureToDeliver : boolean?\n\n  # If true, then insolvency filing is applicable.\n  insolvencyFiling : boolean?\n\n  # If true, then hedging disruption is applicable.\n  hedgingDisruption : boolean?\n\n  # If true, then loss of stock borrow is applicable.\n  lossOfStockBorrow : boolean?\n\n  # Specifies the maximum stock loan rate for Loss of Stock Borrow.\n  maximumStockLoanRate : decimal?\n\n  # If true, then increased cost of stock borrow is applicable.\n  increasedCostOfStockBorrow : boolean?\n\n  # Specifies the initial stock loan rate for Increased Cost of Stock Borrow.\n  initialStockLoanRate : decimal?\n\n  # If true, then increased cost of hedging is applicable.\n  increasedCostOfHedging : boolean?\n\n  # A reference to the party which determines additional disruption events.\n  determiningPartyReference : FpML5.reporting.PartyReference?\n\n  # If true, then foreign ownership event is applicable.\n  foreignOwnershipEvent : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExtraordinaryEvents",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "changeInLaw" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, then change in law is applicable.",
+      "Name" : "changeInLaw",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22464
+      }
+    },
+    "failureToDeliver" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Where the underlying is shares and the transaction is physically settled, then, if true, a failure to deliver the shares on the settlement date will not be an event of default for the purposes of the master agreement.",
+      "Name" : "failureToDeliver",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22467
+      }
+    },
+    "insolvencyFiling" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, then insolvency filing is applicable.",
+      "Name" : "insolvencyFiling",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22470
+      }
+    },
+    "hedgingDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, then hedging disruption is applicable.",
+      "Name" : "hedgingDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22473
+      }
+    },
+    "lossOfStockBorrow" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, then loss of stock borrow is applicable.",
+      "Name" : "lossOfStockBorrow",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22476
+      }
+    },
+    "maximumStockLoanRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the maximum stock loan rate for Loss of Stock Borrow.",
+      "Name" : "maximumStockLoanRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22479
+      }
+    },
+    "increasedCostOfStockBorrow" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, then increased cost of stock borrow is applicable.",
+      "Name" : "increasedCostOfStockBorrow",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22482
+      }
+    },
+    "initialStockLoanRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the initial stock loan rate for Increased Cost of Stock Borrow.",
+      "Name" : "initialStockLoanRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22485
+      }
+    },
+    "increasedCostOfHedging" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, then increased cost of hedging is applicable.",
+      "Name" : "increasedCostOfHedging",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22488
+      }
+    },
+    "determiningPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party which determines additional disruption events.",
+      "Name" : "determiningPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22491
+      }
+    },
+    "foreignOwnershipEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If true, then foreign ownership event is applicable.",
+      "Name" : "foreignOwnershipEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22494
+      }
+    }
+  },
+  "LocalFieldNames" : [ "changeInLaw", "failureToDeliver", "insolvencyFiling", "hedgingDisruption", "lossOfStockBorrow", "maximumStockLoanRate", "increasedCostOfStockBorrow", "initialStockLoanRate", "increasedCostOfHedging", "determiningPartyReference", "foreignOwnershipEvent" ],
+  "IsSynthetic" : false
+}

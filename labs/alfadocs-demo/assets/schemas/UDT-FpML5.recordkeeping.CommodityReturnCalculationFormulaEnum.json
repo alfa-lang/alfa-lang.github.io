@@ -1,0 +1,46 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "Defines the value of the commodity return calculation formula as simple or compound. The simple return formula is: [ [P sub t - P sub (t-1)] / [P sub (t-1)] ] - 1 where: P sub t is the price or index level at time period t and P sub t-1 is the price or index level in time period t-1. The compound return formula is the geometric average return for the period: PI from d=1 to d=n [ [ [ [P sub t - P sub (t-1)] / [P sub (t-1)] ] + 1] sup (1 / n) ] - 1 where: PI is the product operator, p sub t is the price or index level at time period t, p sub t -1 is the price or index level at time period t-1",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityReturnCalculationFormulaEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n Defines the value of the commodity return calculation formula as simple or compound. The simple return formula is: [ [P sub t - P sub (t-1)] / [P sub (t-1)] ] - 1 where: P sub t is the price or index level at time period t and P sub t-1 is the price or index level in time period t-1. The compound return formula is the geometric average return for the period: PI from d=1 to d=n [ [ [ [P sub t - P sub (t-1)] / [P sub (t-1)] ] + 1] sup (1 / n) ] - 1 where: PI is the product operator, p sub t is the price or index level at time period t, p sub t -1 is the price or index level at time period t-1\n #/\nenum FpML5.recordkeeping.CommodityReturnCalculationFormulaEnum {\n    # The value is when the cash settlement amount is the simple formula: Notional Amount * ((Index Level sub d / Index Level sub d-1) - 1). That is, when the cash settlement amount is the Notional Amount for the calculation period multiplied by the ratio of the index level on the reset date/valuation date divided by the index level on the immediately preceding reset date/valuation date minus one.\n    SimpleFormula \n    # The value is when the cash settlement amount is the compound formula:\n    CompoundFormula \n\n}"
+  },
+  "AllFields" : {
+    "SimpleFormula" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value is when the cash settlement amount is the simple formula: Notional Amount * ((Index Level sub d / Index Level sub d-1) - 1). That is, when the cash settlement amount is the Notional Amount for the calculation period multiplied by the ratio of the index level on the reset date/valuation date divided by the index level on the immediately preceding reset date/valuation date minus one.",
+      "Name" : "SimpleFormula",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 18382
+      }
+    },
+    "CompoundFormula" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value is when the cash settlement amount is the compound formula:",
+      "Name" : "CompoundFormula",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 18384
+      }
+    }
+  },
+  "LocalFieldNames" : [ "SimpleFormula", "CompoundFormula" ],
+  "IsSynthetic" : false
+}

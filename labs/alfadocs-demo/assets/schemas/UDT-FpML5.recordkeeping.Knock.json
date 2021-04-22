@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Knock In means option to exercise comes into existence. Knock Out means option to exercise goes out of existence.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Knock",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Knock In means option to exercise comes into existence. Knock Out means option to exercise goes out of existence.\n #/\nrecord FpML5.recordkeeping.Knock {\n  # The knock in.\n  knockIn : FpML5.recordkeeping.TriggerEvent?\n\n  # The knock out.\n  knockOut : FpML5.recordkeeping.TriggerEvent?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OptionFeature",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OptionFeatures",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "knockIn" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The knock in.",
+      "Name" : "knockIn",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TriggerEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8509
+      }
+    },
+    "knockOut" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The knock out.",
+      "Name" : "knockOut",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TriggerEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8512
+      }
+    }
+  },
+  "LocalFieldNames" : [ "knockIn", "knockOut" ],
+  "IsSynthetic" : false
+}

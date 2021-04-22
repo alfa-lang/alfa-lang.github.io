@@ -1,0 +1,61 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure to specify the tranmission contingency and the party that bears the obligation.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityTransmissionContingency",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure to specify the tranmission contingency and the party that bears the obligation.\n #/\nrecord FpML5.confirmation.ElectricityTransmissionContingency {\n  # The conditions under which the party specified in contingentParty will be excused from damages if transmission is interrupted or curtailed.\n  contingency : string\n\n  # The party to which the contingency applies.\n  contingentParty : FpML5.confirmation.PartyReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityDelivery",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "contingency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The conditions under which the party specified in contingentParty will be excused from damages if transmission is interrupted or curtailed.",
+      "Name" : "contingency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29419
+      }
+    },
+    "contingentParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party to which the contingency applies.",
+      "Name" : "contingentParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29422
+      }
+    }
+  },
+  "LocalFieldNames" : [ "contingency", "contingentParty" ],
+  "IsSynthetic" : false
+}

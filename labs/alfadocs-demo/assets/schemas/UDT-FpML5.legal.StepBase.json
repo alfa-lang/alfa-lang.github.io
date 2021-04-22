@@ -1,0 +1,48 @@
+{
+  "@type" : "alfa.rt.model.Trait",
+  "Doc" : "A type defining a step date and step value pair. This step definitions are used to define varying rate or amount schedules, e.g. a notional amortization or a step-up coupon schedule.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StepBase",
+    "UdtType" : "traitType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a step date and step value pair. This step definitions are used to define varying rate or amount schedules, e.g. a notional amortization or a step-up coupon schedule.\n #/\ntrait FpML5.legal.StepBase {\n  # The date on which the associated stepValue becomes effective. This day may be subject to adjustment in accordance with a business day convention.\n  stepDate : date\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "stepDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the associated stepValue becomes effective. This day may be subject to adjustment in accordance with a business day convention.",
+      "Name" : "stepDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1198
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1201
+      }
+    }
+  },
+  "LocalFieldNames" : [ "stepDate", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,119 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A full definition of the accrual characteristics of a letter of credit. This structure defines both the underlying letter of credit issuance fee rate as well as any FX rates applied.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LcAccrual",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A full definition of the accrual characteristics of a letter of credit. This structure defines both the underlying letter of credit issuance fee rate as well as any FX rates applied.\n #/\nrecord FpML5.confirmation.LcAccrual {\n  # A unique id associated with the loan accrual type.\n  accrualOptionId : string\n\n  # The day count basis for the accrual.\n  dayCountFraction : string\n\n  paymentFrequency : FpML5.confirmation.Period?\n\n  rate : decimal\n\n  # The currency in which the letter of credit accrual is denominated. This field should ONLY be populated when the accrual currency is different to the base letter of credit currency.\n  currency : string\n\n  # Defines exchange rate between the letter of credit accrual and letter of credit currencies.\n  lcFxRate : FpML5.confirmation.FxTerms\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LetterOfCredit",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "accrualOptionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique id associated with the loan accrual type.",
+      "Name" : "accrualOptionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29981
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count basis for the accrual.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29984
+      }
+    },
+    "paymentFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "paymentFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29987
+      }
+    },
+    "rate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "rate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29989
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which the letter of credit accrual is denominated. This field should ONLY be populated when the accrual currency is different to the base letter of credit currency.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29991
+      }
+    },
+    "lcFxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines exchange rate between the letter of credit accrual and letter of credit currencies.",
+      "Name" : "lcFxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxTerms",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxTerms",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29994
+      }
+    }
+  },
+  "LocalFieldNames" : [ "accrualOptionId", "dayCountFraction", "paymentFrequency", "rate", "currency", "lcFxRate" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,69 @@
+# typedefs
+
+A `typedefs` declaration can be used to create new types based on existing data types including
+existing typedefs. It can also be used to define 'native' types as outlined in the section below.
+
+`typedefs` is a top level declaration and its entries are available for use in any UDT. Generic types
+can be defined combining existing types, such as the dictionary declaration below.
+
+
+```csharp
+typedefs {
+    uint = int(0,*)
+    dictionary< T > = map< string, T >
+} 
+
+record Team {
+    Name : string
+    Points : uint
+    PlayerAndRank : dictionary< int > 
+}
+```
+
+The declaration order of typedefs has no effect. A typedef can be referenced before it is declared.
+```csharp
+typedefs {
+  money = ccy
+  ccy = string
+}
+```
+
+
+Use of `typedefs` is optional. However, its use can encourage creation of more consistent and clear data models.
+
+### Native typedefs
+
+ALFA already supports an extensive set of datatypes, but it can be further extended with 'native' data types.
+These are for cases where real-world use cases demand other conditions or considerations that cannot simply be modelled
+with a fixed set of data types.
+
+Consider example models where:
+- Length or Weight - expressed in different units, but a single 'length' or 'weight' type is required.
+- Storage - expressed in different units KB, MB or GB.
+- Tenor - in Finance where 4 weeks, 1 month, 12 months, 1 year etc is expressed.
+
+These types often contain multiple representations for the same canonical value. E.g. Tenor values of 52W, 12M or 1Y
+are considered equal, therefore a native type would need to implement such equality logic. It may optionally implement a
+standard 'canonical' serialisation output format regardless of the value originally expressed.
+
+A native type is declared as follows:
+```
+typedefs {
+  storage = native acme.types.Storage
+}
+```
+- `storage` is the new type definition being introduced.
+- `acme.types.Storage` is the native runtime implementation.
+
+With that in place, the new type can be used as a data type.
+```
+record Laptop {
+    StorageCapacity : storage
+}
+```
+
+At compile time, the ALFA compiler does not validate the existence of the native class ( `acme.types.Storage` in the example above ).
+
+An ALFA native type can be implemented as a runtime class in a target language that implements the required logic.
+
+

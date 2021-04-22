@@ -1,0 +1,94 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The method, prioritzed by the order it is listed in this element, to get a replacement rate for the disrupted settlement rate option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FallbackReferencePrice",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The method, prioritzed by the order it is listed in this element, to get a replacement rate for the disrupted settlement rate option.\n #/\nrecord FpML5.pretrade.FallbackReferencePrice {\n  # Specifies how long to wait to get a quote from a settlement rate option upon a price source disruption\n  valuationPostponement : FpML5.pretrade.ValuationPostponement?\n\n  # This settlement rate option will be used in its place.\n  fallbackSettlementRateOption : string?\n\n  # Request rate quotes from the market.\n  fallbackSurveyValuationPostponenment : FpML5.pretrade.Empty?\n\n  # The calculation agent will decide the rate.\n  calculationAgentDetermination : FpML5.pretrade.CalculationAgent?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.PriceSourceDisruption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "valuationPostponement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies how long to wait to get a quote from a settlement rate option upon a price source disruption",
+      "Name" : "valuationPostponement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.ValuationPostponement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6519
+      }
+    },
+    "fallbackSettlementRateOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This settlement rate option will be used in its place.",
+      "Name" : "fallbackSettlementRateOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6522
+      }
+    },
+    "fallbackSurveyValuationPostponenment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Request rate quotes from the market.",
+      "Name" : "fallbackSurveyValuationPostponenment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Empty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6525
+      }
+    },
+    "calculationAgentDetermination" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation agent will decide the rate.",
+      "Name" : "calculationAgentDetermination",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.CalculationAgent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6528
+      }
+    }
+  },
+  "LocalFieldNames" : [ "valuationPostponement", "fallbackSettlementRateOption", "fallbackSurveyValuationPostponenment", "calculationAgentDetermination" ],
+  "IsSynthetic" : false
+}

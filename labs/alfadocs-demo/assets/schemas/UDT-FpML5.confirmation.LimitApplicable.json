@@ -1,0 +1,136 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LimitApplicable",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   \n #/\nrecord FpML5.confirmation.LimitApplicable {\n  # Standard code to indicate which type of credit line is being referred to - i.e. IM, DV01, PV01, CS01, Notional, Clip Size, Notional, maximumOrderQuantity\n  limitType : string\n\n  clipSize : int\n\n  amountUtilized : int\n\n  # Credit limit utilization breakdown by executed trades and pending orders.\n  utilization : FpML5.confirmation.CreditLimitUtilization\n\n  amountRemaining : int?\n\n  currency : string?\n\n  velocity : FpML5.confirmation.Velocity?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CreditLimit",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "limitType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Standard code to indicate which type of credit line is being referred to - i.e. IM, DV01, PV01, CS01, Notional, Clip Size, Notional, maximumOrderQuantity",
+      "Name" : "limitType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12431
+      }
+    },
+    "clipSize" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "clipSize",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12434
+      }
+    },
+    "amountUtilized" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "amountUtilized",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12436
+      }
+    },
+    "utilization" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Credit limit utilization breakdown by executed trades and pending orders.",
+      "Name" : "utilization",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CreditLimitUtilization",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CreditLimitUtilization",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CreditLimitUtilization",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12438
+      }
+    },
+    "amountRemaining" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "amountRemaining",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12441
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12443
+      }
+    },
+    "velocity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "velocity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Velocity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12445
+      }
+    }
+  },
+  "LocalFieldNames" : [ "limitType", "clipSize", "amountUtilized", "utilization", "amountRemaining", "currency", "velocity" ],
+  "IsSynthetic" : false
+}

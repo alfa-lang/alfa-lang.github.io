@@ -1,0 +1,97 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure describing the price paid for the instrument.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.InstrumentTradePricing",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure describing the price paid for the instrument.\n #/\nrecord FpML5.confirmation.InstrumentTradePricing {\n  quote : FpML5.confirmation.BasicQuotation\n\n  # The date interest started accruing for the accrued interest calculation on an interest bearing security.\n  couponStartDate : date?\n\n  # The date when a distribution of dividends or interest is deducted from a securities asset, or set aside for payment to the original bondholders. From the ex-date, any dividends that are owing on the security are paid to the original owner. As a consequence of this, on the ex-date, the securities price typically drops by the amount of the distribution (plus or minus any market activity).\n  exDividendDate : date?\n\n  # Whether the accrued interest in included when the trade settles. (\"true\" means accrued interest is not included when the trade settles.)\n  tradedFlatOfAccrued : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.InstrumentTradeDetails",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "quote" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "quote",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BasicQuotation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BasicQuotation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BasicQuotation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18579
+      }
+    },
+    "couponStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date interest started accruing for the accrued interest calculation on an interest bearing security.",
+      "Name" : "couponStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18581
+      }
+    },
+    "exDividendDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date when a distribution of dividends or interest is deducted from a securities asset, or set aside for payment to the original bondholders. From the ex-date, any dividends that are owing on the security are paid to the original owner. As a consequence of this, on the ex-date, the securities price typically drops by the amount of the distribution (plus or minus any market activity).",
+      "Name" : "exDividendDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18584
+      }
+    },
+    "tradedFlatOfAccrued" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether the accrued interest in included when the trade settles. (\"true\" means accrued interest is not included when the trade settles.)",
+      "Name" : "tradedFlatOfAccrued",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18587
+      }
+    }
+  },
+  "LocalFieldNames" : [ "quote", "couponStartDate", "exDividendDate", "tradedFlatOfAccrued" ],
+  "IsSynthetic" : false
+}

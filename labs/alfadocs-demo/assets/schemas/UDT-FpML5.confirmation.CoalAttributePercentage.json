@@ -1,0 +1,51 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The different options for specifying the attributes of a coal quality measure as a percentage of the measured value.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CoalAttributePercentage",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The different options for specifying the attributes of a coal quality measure as a percentage of the measured value.\n #/\nrecord FpML5.confirmation.CoalAttributePercentage {\n  # The actual content of the quality characteristics of the Coal Product Shipment expected by the Buyer.\n  standardContent : decimal\n\n  # The actual limits of the quality characteristics of the Coal Product above or below which the Buyer may reject a Shipment.\n  rejectionLimit : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CoalStandardQuality",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "standardContent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual content of the quality characteristics of the Coal Product Shipment expected by the Buyer.",
+      "Name" : "standardContent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23581
+      }
+    },
+    "rejectionLimit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual limits of the quality characteristics of the Coal Product above or below which the Buyer may reject a Shipment.",
+      "Name" : "rejectionLimit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23584
+      }
+    }
+  },
+  "LocalFieldNames" : [ "standardContent", "rejectionLimit" ],
+  "IsSynthetic" : false
+}

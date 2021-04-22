@@ -1,0 +1,164 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxTargetRegionLowerBound",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.FxTargetRegionLowerBound {\n  # AtOrAbove, Above.\n  condition : string\n\n  # Level expressed as a level with optional steps different from strike, pivot, or barrier.\n  level : FpML5.confirmation.FxLevel\n\n  # Reference to a strike defined within the FX product.\n  strikeReference : FpML5.confirmation.FxStrikeReference\n\n  # Reference to the pivot defined within the FX product.\n  pivotReference : FpML5.confirmation.FxPivotReference\n\n  # Reference to a perExpiryBarrier component to indicate theat the bound of the region is defined by the barrier component.\n  barrierReference : FpML5.confirmation.FxComplexBarrierBaseReference\n\n  # Reference to a level defined within the FX product.\n  levelReference : FpML5.confirmation.FxLevelReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxTargetAccumulationRegion",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxTargetConstantPayoffRegion",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxTargetLinearPayoffRegion",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "condition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "AtOrAbove, Above.",
+      "Name" : "condition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33420
+      }
+    },
+    "level" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Level expressed as a level with optional steps different from strike, pivot, or barrier.",
+      "Name" : "level",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxLevel",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxLevel",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxLevel",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33423
+      }
+    },
+    "strikeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a strike defined within the FX product.",
+      "Name" : "strikeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxStrikeReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxStrikeReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxStrikeReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33426
+      }
+    },
+    "pivotReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the pivot defined within the FX product.",
+      "Name" : "pivotReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxPivotReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxPivotReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxPivotReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33429
+      }
+    },
+    "barrierReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a perExpiryBarrier component to indicate theat the bound of the region is defined by the barrier component.",
+      "Name" : "barrierReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxComplexBarrierBaseReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxComplexBarrierBaseReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxComplexBarrierBaseReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33432
+      }
+    },
+    "levelReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a level defined within the FX product.",
+      "Name" : "levelReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxLevelReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxLevelReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxLevelReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33435
+      }
+    }
+  },
+  "LocalFieldNames" : [ "condition", "level", "strikeReference", "pivotReference", "barrierReference", "levelReference" ],
+  "IsSynthetic" : false
+}

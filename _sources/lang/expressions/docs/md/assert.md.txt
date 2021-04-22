@@ -1,0 +1,172 @@
+# assert
+
+`assert` is one or many optional nested definitions within UDTs defining fields that allow object level
+validations to be expressed.
+
+Assert is supported in `Alfa Professional` and higher versions.
+
+- The validation is to be applied on 'complete' objects, i.e., not partially constructed. Language
+implementations may apply `assert` as a object post-construction phase to validate that the
+object adheres to a set of validation rules.
+
+- :ref:`entityType`, :ref:`keyType`, :ref:`recordType`, :ref:`traitType` and :ref:`unionType`
+support nested `assert` definitions for object validation.
+
+- An `assert` block can define local variable using the `let` keyword and use :ref:`expressons` syntax.
+Fields within objects cannot be modified with an `assert`. For example :ref:`putExpr` cannot be called on a
+`map` data-typed field, although locally declared variables can be modified.
+
+- An `assert` has an associated name. Multiple uniquely named asserts can be associated with a UDT.
+Asserts defined in traits take part in UDTs that includes the trait.
+
+>>```
+>>// Outer type definition
+>>...
+>>    assert <Unique assertion identifier> {
+>>        < Expressions >
+>>        < return an optional string >
+>>    }
+>>...
+>>```
+
+- An `assert` can be regarded as a function that returns `string?`, i.e. an optional string.
+If validation passes, `None` is returned - a optional result without a value. If there is a failure the return
+value is set to a string containing the validation error.
+
+- Alfa assert and expression syntax has been designed from ground-up using concepts such as higher-order
+functions. The expressions can be generated into Java, C#, Python, Scala, TypeScript etc., therefore
+validation can be executed in __optimised native code__.
+
+- An Alfa :ref:`serviceType`, can also be used as part of `assert` expressions. Therefore using a :ref:`serviceType`,
+it is possible to call out to external code as part of object validation.
+
+- Strings to be returned from `assert` can reference field values using `$field` syntax in order to report meaningful errors.
+For example `"Student $name aged $age cannot be in $schoolType school"`.
+
+### Simple `assert` Example
+
+In the example below, object level validation is required to validate contents of 2 fields.
+The `CorrectSchool` `assert` block contains expressions to that will determine if the `schoolType`
+is assigned correctly.
+
+
+```csharp
+enum SchoolType {
+    Primary Junior Senior
+}
+
+record Student {
+    name : string
+    dob : date
+    schoolType : SchoolType
+
+    assert SchoolingAge {
+        let age : int = year( datediff( today(), dob ) )
+
+        return if ( age > 18 )
+                   opt( "Student ${name} aged ${age} is an adult" )
+               else
+                    None
+    }
+
+    assert CorrectSchool {
+        let age : int = year( datediff( today(), dob ) )
+
+        let errored = ( age < 7 && schoolType != SchoolType.Primary ) ||
+                      ( age >= 7 && and age < 12 && schoolType != SchoolType.Junior ) ||
+                      ( age >= 12 && schoolType != SchoolType.Senior ) ||
+
+        return if ( errored )
+                   opt( "Student aged ${age} cannot be in ${schoolType} school" )
+               else
+                   None
+    }
+}
+```
+
+
+Using :ref:`fragmentExpr` definitions, existing types can be extended with `assert` statements.
+The above example can be decoupled into 2 declarations as shown below.
+
+Only fields are defined for the `Student` type.
+
+```csharp
+record Student {
+    name : string
+    dob : date
+    schoolType : SchoolType
+}
+```
+
+
+`Student` defined as a `fragment` with all `assert` definitions.
+
+```csharp
+fragment record Student {
+    assert SchoolingAge {
+        let age : int = year( datediff( today(), dob ) )
+
+        return if ( age > 18 )
+                   opt( "Student ${name} aged ${age} is an adult" )
+               else
+                    None
+    }
+
+    assert CorrectSchool {
+        let age : int = year( datediff( today(), dob ) )
+
+        let errored = ( age < 7 && schoolType != SchoolType.Primary ) ||
+                      ( age >= 7 && and age < 12 && schoolType != SchoolType.Junior ) ||
+                      ( age >= 12 && schoolType != SchoolType.Senior ) ||
+
+        return if ( errored )
+                   opt( "Student aged ${age} cannot be in ${schoolType} school" )
+               else
+                   None
+    }
+}
+```
+
+
+### Generated code for `assert`
+
+The `assert` expressions are fully generated into underlying code, where supported in Alfa.
+This is not applicable for some targets such as Avro or Protocol Buffers as those do not support such a feature.
+
+Given the small example below:
+
+```csharp
+record Passenger {
+  Name : string
+  LuggageWeights : list< int >
+
+  assert LuggageWeightLimit {
+     let total = fold( LuggageWeights, 0, ( acc, w ) => acc + w )
+     return if ( total > 100 )
+                opt("Passenger ${Name} has excess luggage")
+            else
+                None
+  }
+}
+```
+
+The :ref:`java` generates the following function corresponding to the `assert` definition. The function generated is called to validate the object:
+
+```java
+    private java.util.Optional<String> __assertLuggageWeightLimit() {
+      int _total =
+          _luggageWeights
+              .stream()
+              .reduce(
+                  0,
+                  (_acc, _w) -> {
+                    return _acc + _w;
+                  },
+                  (c1, c2) -> {
+                    throw new UnsupportedOperationException();
+                  });
+      return _total > 100
+          ? java.util.Optional.of("Passenger " + _name + " has excess luggage")
+          : java.util.Optional.empty();
+    }
+```

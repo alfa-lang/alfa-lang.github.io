@@ -1,0 +1,148 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that models a complete instruction for settling a currency payment, including the settlement method to be used, the correspondent bank, any intermediary banks and the ultimate beneficary.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.SettlementInstruction",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that models a complete instruction for settling a currency payment, including the settlement method to be used, the correspondent bank, any intermediary banks and the ultimate beneficary.\n #/\nrecord FpML5.recordkeeping.SettlementInstruction {\n  # The mechanism by which settlement is to be made. The scheme of domain values will include standard mechanisms such as CLS, Fedwire, Chips ABA, Chips UID, SWIFT, CHAPS and DDA.\n  settlementMethod : string?\n\n  # The information required to identify the correspondent bank that will make delivery of the funds on the paying bank's behalf in the country where the payment is to be made\n  correspondentInformation : FpML5.recordkeeping.CorrespondentInformation?\n\n  # Information to identify an intermediary through which payment will be made by the correspondent bank to the ultimate beneficiary of the funds.\n  intermediaryInformation : FpML5.recordkeeping.IntermediaryInformation?\n\n  # The bank that acts for the ultimate beneficiary of the funds in receiving payments.\n  beneficiaryBank : FpML5.recordkeeping.Beneficiary?\n\n  # The ultimate beneficiary of the funds. The beneficiary can be identified either by an account at the beneficiaryBank (qv) or by explicit routingInformation. This element provides for the latter.\n  beneficiary : FpML5.recordkeeping.Beneficiary?\n\n  # Reference to the depository of the settlement.\n  depositoryPartyReference : FpML5.recordkeeping.PartyReference?\n\n  # The set of individual payments that are to be made when a currency payment settling a trade needs to be split between a number of ultimate beneficiaries. Each split payment may need to have its own routing information.\n  splitSettlement : FpML5.recordkeeping.SplitSettlement?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.SettlementInformation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The mechanism by which settlement is to be made. The scheme of domain values will include standard mechanisms such as CLS, Fedwire, Chips ABA, Chips UID, SWIFT, CHAPS and DDA.",
+      "Name" : "settlementMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 16791
+      }
+    },
+    "correspondentInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The information required to identify the correspondent bank that will make delivery of the funds on the paying bank's behalf in the country where the payment is to be made",
+      "Name" : "correspondentInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CorrespondentInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 16794
+      }
+    },
+    "intermediaryInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information to identify an intermediary through which payment will be made by the correspondent bank to the ultimate beneficiary of the funds.",
+      "Name" : "intermediaryInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.IntermediaryInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 16797
+      }
+    },
+    "beneficiaryBank" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The bank that acts for the ultimate beneficiary of the funds in receiving payments.",
+      "Name" : "beneficiaryBank",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Beneficiary",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 16800
+      }
+    },
+    "beneficiary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ultimate beneficiary of the funds. The beneficiary can be identified either by an account at the beneficiaryBank (qv) or by explicit routingInformation. This element provides for the latter.",
+      "Name" : "beneficiary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Beneficiary",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 16803
+      }
+    },
+    "depositoryPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the depository of the settlement.",
+      "Name" : "depositoryPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 16806
+      }
+    },
+    "splitSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The set of individual payments that are to be made when a currency payment settling a trade needs to be split between a number of ultimate beneficiaries. Each split payment may need to have its own routing information.",
+      "Name" : "splitSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.SplitSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 16809
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementMethod", "correspondentInformation", "intermediaryInformation", "beneficiaryBank", "beneficiary", "depositoryPartyReference", "splitSettlement" ],
+  "IsSynthetic" : false
+}

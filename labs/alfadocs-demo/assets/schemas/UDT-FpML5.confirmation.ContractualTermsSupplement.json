@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A contractual supplement (such as those published by ISDA) and its publication date that will apply to the trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ContractualTermsSupplement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A contractual supplement (such as those published by ISDA) and its publication date that will apply to the trade.\n #/\nrecord FpML5.confirmation.ContractualTermsSupplement {\n  # Identifies the form of applicable contractual supplement.\n  type : string\n\n  # Specifies the publication date of the applicable version of the contractual supplement.\n  publicationDate : date?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Documentation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TradeNovationContent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the form of applicable contractual supplement.",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11768
+      }
+    },
+    "publicationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the publication date of the applicable version of the contractual supplement.",
+      "Name" : "publicationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11771
+      }
+    }
+  },
+  "LocalFieldNames" : [ "type", "publicationDate" ],
+  "IsSynthetic" : false
+}

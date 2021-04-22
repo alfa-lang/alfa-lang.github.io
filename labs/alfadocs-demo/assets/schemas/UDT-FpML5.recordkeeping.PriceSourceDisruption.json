@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the parameters used to get a price quote to replace the settlement rate option that is disrupted.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.PriceSourceDisruption",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the parameters used to get a price quote to replace the settlement rate option that is disrupted.\n #/\nrecord FpML5.recordkeeping.PriceSourceDisruption {\n  # The method, prioritzed by the order it is listed in this element, to get a replacement rate for the disrupted settlement rate option.\n  fallbackReferencePrice : FpML5.recordkeeping.FallbackReferencePrice?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.NonDeliverableSettlement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fallbackReferencePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method, prioritzed by the order it is listed in this element, to get a replacement rate for the disrupted settlement rate option.",
+      "Name" : "fallbackReferencePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FallbackReferencePrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2637
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fallbackReferencePrice" ],
+  "IsSynthetic" : false
+}

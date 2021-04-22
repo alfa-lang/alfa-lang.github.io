@@ -1,0 +1,186 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Descibes the averaging period properties for an asian option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxAsianFeature",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Descibes the averaging period properties for an asian option.\n #/\nrecord FpML5.pretrade.FxAsianFeature {\n  # The primary source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.\n  primaryRateSource : FpML5.pretrade.InformationSource\n\n  # An alternative, or secondary, source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.\n  secondaryRateSource : FpML5.pretrade.InformationSource?\n\n  # The time at which the spot currency exchange rate will be observed. It is specified as a time in a business day calendar location, e.g. 11:00am London time.\n  fixingTime : FpML5.pretrade.BusinessCenterTime?\n\n  # Parametric schedule of rate observations.\n  observationSchedule : FpML5.pretrade.FxAverageRateObservationSchedule\n\n  # One or more specific rate observation dates.\n  rateObservation : FpML5.pretrade.FxAverageRateObservation\n\n  # The method by which observed rate values are quoted, in terms of the option put/call currencies. In the absence of this element, rate observations are assumed to be quoted as per the option strikeQuoteBasis.\n  rateObservationQuoteBasis : string?\n\n  # The description of the mathematical computation for how the payout is computed.\n  payoutFormula : string?\n\n  # Specifies the rounding precision in terms of a number of decimal places. Note how a percentage rate rounding of 5 decimal places is expressed as a rounding precision of 7 in the FpML document since the percentage is expressed as a decimal, e.g. 9.876543% (or 0.09876543) being rounded to the nearest 5 decimal places is 9.87654% (or 0.0987654).\n  precision : int( 0, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxOptionFeatures",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "primaryRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The primary source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.",
+      "Name" : "primaryRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.InformationSource",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.InformationSource",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2885
+      }
+    },
+    "secondaryRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An alternative, or secondary, source for where the rate observation will occur. Will typically be either a page or a reference bank published rate.",
+      "Name" : "secondaryRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2888
+      }
+    },
+    "fixingTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time at which the spot currency exchange rate will be observed. It is specified as a time in a business day calendar location, e.g. 11:00am London time.",
+      "Name" : "fixingTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2891
+      }
+    },
+    "observationSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Parametric schedule of rate observations.",
+      "Name" : "observationSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.FxAverageRateObservationSchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.FxAverageRateObservationSchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxAverageRateObservationSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2894
+      }
+    },
+    "rateObservation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "One or more specific rate observation dates.",
+      "Name" : "rateObservation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.FxAverageRateObservation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.FxAverageRateObservation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxAverageRateObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2897
+      }
+    },
+    "rateObservationQuoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which observed rate values are quoted, in terms of the option put/call currencies. In the absence of this element, rate observations are assumed to be quoted as per the option strikeQuoteBasis.",
+      "Name" : "rateObservationQuoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2900
+      }
+    },
+    "payoutFormula" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The description of the mathematical computation for how the payout is computed.",
+      "Name" : "payoutFormula",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2903
+      }
+    },
+    "precision" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the rounding precision in terms of a number of decimal places. Note how a percentage rate rounding of 5 decimal places is expressed as a rounding precision of 7 in the FpML document since the percentage is expressed as a decimal, e.g. 9.876543% (or 0.09876543) being rounded to the nearest 5 decimal places is 9.87654% (or 0.0987654).",
+      "Name" : "precision",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2906
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryRateSource", "secondaryRateSource", "fixingTime", "observationSchedule", "rateObservation", "rateObservationQuoteBasis", "payoutFormula", "precision" ],
+  "IsSynthetic" : false
+}

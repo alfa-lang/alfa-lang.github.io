@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Expressions &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Builtin Functions" href="builtin-funcs.html" />
+    <link rel="prev" title="try&lt; T &gt;" href="../datatypes/templated/try.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide.html">Language Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../typesystem.html">Type System</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Expressions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#expression-constructs">Expression Constructs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-calls">Function Calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-variables">Local variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lambda-expressions">Lambda Expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="builtin-funcs.html">Builtin Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otherfeatures.html">Other Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../guide.html">Language Guide</a> &raquo;</li>
+        
+      <li>Expressions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="expressions">
+<span id="id1"></span><h1>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h1>
+<p>ALFA support expressions within <a class="reference internal" href="assert.html#assertexpr"><span class="std std-ref">assert</span></a> and <a class="reference internal" href="library.html#librarytype"><span class="std std-ref">library</span></a> definitions. Expression capabilities compliment
+the modelling features to interact with data.</p>
+<p>Expressions can be combined to build rules for ALFA object data validation. Expressions include various <a class="reference internal" href="builtin-funcs.html#builtins"><span class="std std-ref">Builtin Functions</span></a>
+and object creation constructs listed below. Similar to the <a class="reference internal" href="../typesystem.html#typesystem"><span class="std std-ref">Type System</span></a>, the expressions can be generated
+into target languages (where supported by the generated target) to be executed on the data natively.</p>
+<div class="section" id="expression-constructs">
+<h2>Expression Constructs<a class="headerlink" href="#expression-constructs" title="Permalink to this headline">¶</a></h2>
+<p>ALFA expression syntax is minimalistic, data-oriented and functional. The builtin functions serve to operate on
+data defined by the <a class="reference internal" href="../typesystem.html#typesystem"><span class="std std-ref">Type System</span></a>.</p>
+<p>Expressions are enclosed within 3 types of statements:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Local variable declaration</li>
+<li>Function call</li>
+<li><cite>return</cite> statement</li>
+</ol>
+</div></blockquote>
+<p>No loop constructs - <cite>for</cite>, <cite>while</cite> etc are supported.</p>
+<p>Conditional statements - <cite>if</cite>, <cite>else</cite> is supported as expressions:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="k">let</span> <span class="n">a</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span> <span class="n">b</span> <span class="p">)</span> <span class="m">0</span> <span class="k">else</span> <span class="m">20</span>
+<span class="k">return</span> <span class="nf">if</span> <span class="p">(</span> <span class="n">a</span> <span class="p">==</span> <span class="m">0</span> <span class="p">)</span> <span class="s">&quot;no result&quot;</span> <span class="k">else</span> <span class="s">&quot;has result&quot;</span>
+</pre></div>
+</div>
+<p>For cases where ALFA Expressions cannot sufficiently express a requirement using the built-in syntax, an
+ALFA <a class="reference internal" href="../constructs/service.html#servicetype"><span class="std std-ref">service</span></a> can be declared and implemented natively, which can be used from <a class="reference internal" href="assert.html#assertexpr"><span class="std std-ref">assert</span></a> or <a class="reference internal" href="library.html#librarytype"><span class="std std-ref">library</span></a>.</p>
+</div>
+<div class="section" id="function-calls">
+<h2>Function Calls<a class="headerlink" href="#function-calls" title="Permalink to this headline">¶</a></h2>
+<p>To help writing <a class="reference internal" href="assert.html#assertexpr"><span class="std std-ref">assert</span></a> and other expressions, ALFA supports 50+ <a class="reference internal" href="builtin-funcs.html#builtins"><span class="std std-ref">Builtin Functions</span></a>. These range from
+higher-order functions to data-type conversion functions.</p>
+<p>ALFA code-generators are fully aware of built-in functions and will generate highly-optimised native code corresponding
+to the function usage.</p>
+<p>Functions/features not available can be implemented as function calls on a <a class="reference internal" href="../constructs/service.html#servicetype"><span class="std std-ref">service</span></a>, that can have custom native
+implementations. Based on demand and usecases, the list of functions will expand in future.</p>
+<p>Refer to <a class="reference internal" href="builtin-funcs.html#builtins"><span class="std std-ref">Builtin Functions</span></a> for the full list of current functions.</p>
+</div>
+<div class="section" id="local-variables">
+<h2>Local variables<a class="headerlink" href="#local-variables" title="Permalink to this headline">¶</a></h2>
+<p>ALFA expressions can reference fields within a UDT or locally declared variables. Variables are declared using the
+<cite>let</cite> keyword.</p>
+<p>Variables cannot be reassigned, therefore immutable. Note that collection types such as <a class="reference internal" href="../datatypes/vectors/map.html#mapvectortype"><span class="std std-ref">map&lt; K, V &gt;</span></a>
+can have values added using mutator method such as <a class="reference internal" href="collections/put.html#putexpr"><span class="std std-ref">put</span></a>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">let</span> <span class="n">count</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="n">nums</span> <span class="p">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">,</span><span class="m">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>ALFA’s expression type inference system will infer the type of <cite>nums</cite> above to be a <cite>list&lt;short&gt;</cite>. If necessary,
+the type can be explicitly specified.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">let</span> <span class="n">nums</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">,</span><span class="m">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lambda-expressions">
+<h2>Lambda Expressions<a class="headerlink" href="#lambda-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Lambda expressions are supported to be used with with higher-order functions. The example below shows lambdas in use.</p>
+<p>Single argument lambdas can be specified as a single identifier, multiple arguments need to be surrounded by
+parenthesis as shown in the example below.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">passengers</span> <span class="p">:</span> <span class="k">set</span><span class="p">&lt;</span> <span class="n">Person</span> <span class="p">&gt;</span>
+<span class="p">...</span>
+<span class="k">let</span> <span class="n">adults</span> <span class="p">=</span> <span class="n">filter</span><span class="p">(</span> <span class="n">passengers</span><span class="p">,</span> <span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;=</span> <span class="m">18</span> <span class="p">)</span>
+<span class="k">let</span> <span class="n">totalLuggageWeight</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="n">reduce</span><span class="p">(</span> <span class="n">passengers</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="p">(</span> <span class="n">total</span><span class="p">,</span> <span class="n">p</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="n">total</span> <span class="p">+</span> <span class="n">p</span><span class="p">.</span><span class="n">luggageWeight</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>If the body of the lambda is a single expression ( E.g. <cite>p.Age &gt; 18</cite> above), it can be simply specified as-is.
+If multiple statements are required to get the result of the lambda body, it needs to be wrapped in braces and a final
+<cite>return</cite> statement.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">passengers</span> <span class="p">:</span> <span class="k">set</span><span class="p">&lt;</span> <span class="n">Person</span> <span class="p">&gt;</span>
+<span class="p">...</span>
+<span class="k">let</span> <span class="n">adultGoldMember</span> <span class="p">=</span> <span class="n">filter</span><span class="p">(</span> <span class="n">passengers</span><span class="p">,</span> <span class="n">p</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                                            <span class="k">let</span> <span class="n">adult</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;=</span> <span class="m">18</span>
+                                            <span class="k">let</span> <span class="n">gold</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">Membership</span> <span class="p">==</span> <span class="s">&quot;Gold&quot;</span>
+                                            <span class="k">return</span> <span class="n">adult</span> <span class="p">&amp;&amp;</span> <span class="n">gold</span>
+                                          <span class="p">}</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>For more usages, see <a class="reference internal" href="collections/reduce.html#reduceexpr"><span class="std std-ref">reduce</span></a>, <a class="reference internal" href="collections/filter.html#filterexpr"><span class="std std-ref">filter</span></a> and <a class="reference internal" href="collections/map.html#mapexpr"><span class="std std-ref">map</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

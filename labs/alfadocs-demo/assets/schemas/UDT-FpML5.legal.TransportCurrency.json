@@ -1,0 +1,65 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to specify the transport currency for each of the parties to the agreement. This Transport Currency concept is specific to the 2013 version of the Standard CSA.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.TransportCurrency",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to specify the transport currency for each of the parties to the agreement. This Transport Currency concept is specific to the 2013 version of the Standard CSA.\n #/\nrecord FpML5.legal.TransportCurrency {\n  # The party to which the terms apply.\n  partyReference : FpML5.legal.PartyReference\n\n  # Only a restricted list of currencies are eligible as transport currencies.\n  electedTransportCurrency : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013EnglishLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013NewYorkLaw",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party to which the terms apply.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3068
+      }
+    },
+    "electedTransportCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Only a restricted list of currencies are eligible as transport currencies.",
+      "Name" : "electedTransportCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3071
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyReference", "electedTransportCurrency" ],
+  "IsSynthetic" : false
+}

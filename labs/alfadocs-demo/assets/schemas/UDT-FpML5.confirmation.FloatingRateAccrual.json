@@ -1,0 +1,284 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A full definition of the accrual characteristics of a loan contract. This structure defines both the underlying base rate as well as any additional margins and costs associated with the loan contract.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FloatingRateAccrual",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A full definition of the accrual characteristics of a loan contract. This structure defines both the underlying base rate as well as any additional margins and costs associated with the loan contract.\n #/\nrecord FpML5.confirmation.FloatingRateAccrual {\n  # A unique id associated with the loan accrual type.\n  accrualOptionId : string\n\n  # The day count basis for the accrual.\n  dayCountFraction : string\n\n  paymentFrequency : FpML5.confirmation.Period?\n\n  floatingRateIndex : string\n\n  # The ISDA Designated Maturity, i.e. the tenor of the floating rate.\n  indexTenor : FpML5.confirmation.Period?\n\n  spread : decimal\n\n  pikSpread : decimal?\n\n  # Date on which this period begins.\n  startDate : date\n\n  # Date on which this period ends.\n  endDate : date\n\n  # The actual number of days represented within the 'period'. This takes into account counting the appropriate convention.\n  numberOfDays : decimal\n\n  # The date on which the underlying interest rate is fixed. It is an actual (adjusted) date. Note: This should default to the effective date of the loan contract in the case of a PRIME base rate.\n  rateFixingDate : date\n\n  # The actual underlying base rate associated with the period, defined as a percentage.\n  baseRate : decimal?\n\n  # The penalty spread currently applied to the interest rate period.\n  penaltySpread : decimal?\n\n  # The default spread currently applied to the interest rate period.\n  defaultSpread : decimal?\n\n  # The mandatory cost rate currently applied to the interest rate period.\n  mandatoryCostRate : decimal?\n\n  # The actual percentage rate charged to the borrower. (Base Rate + Spread + Default Rate + Penalty Rate + Mandatory Cost Rate) = All In Rate. This rate NEVER includes PIK.\n  allInRate : decimal\n\n  # Projected interest payment details.\n  paymentProjection : FpML5.confirmation.PaymentProjection?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LoanContract",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "accrualOptionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique id associated with the loan accrual type.",
+      "Name" : "accrualOptionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30423
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count basis for the accrual.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30426
+      }
+    },
+    "paymentFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "paymentFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30429
+      }
+    },
+    "floatingRateIndex" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "floatingRateIndex",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30431
+      }
+    },
+    "indexTenor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISDA Designated Maturity, i.e. the tenor of the floating rate.",
+      "Name" : "indexTenor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30433
+      }
+    },
+    "spread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "spread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30436
+      }
+    },
+    "pikSpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "pikSpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30438
+      }
+    },
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period begins.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30440
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period ends.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30443
+      }
+    },
+    "numberOfDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual number of days represented within the 'period'. This takes into account counting the appropriate convention.",
+      "Name" : "numberOfDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30446
+      }
+    },
+    "rateFixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the underlying interest rate is fixed. It is an actual (adjusted) date. Note: This should default to the effective date of the loan contract in the case of a PRIME base rate.",
+      "Name" : "rateFixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30449
+      }
+    },
+    "baseRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual underlying base rate associated with the period, defined as a percentage.",
+      "Name" : "baseRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30452
+      }
+    },
+    "penaltySpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The penalty spread currently applied to the interest rate period.",
+      "Name" : "penaltySpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30455
+      }
+    },
+    "defaultSpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The default spread currently applied to the interest rate period.",
+      "Name" : "defaultSpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30458
+      }
+    },
+    "mandatoryCostRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The mandatory cost rate currently applied to the interest rate period.",
+      "Name" : "mandatoryCostRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30461
+      }
+    },
+    "allInRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual percentage rate charged to the borrower. (Base Rate + Spread + Default Rate + Penalty Rate + Mandatory Cost Rate) = All In Rate. This rate NEVER includes PIK.",
+      "Name" : "allInRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30464
+      }
+    },
+    "paymentProjection" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Projected interest payment details.",
+      "Name" : "paymentProjection",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PaymentProjection",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30467
+      }
+    }
+  },
+  "LocalFieldNames" : [ "accrualOptionId", "dayCountFraction", "paymentFrequency", "floatingRateIndex", "indexTenor", "spread", "pikSpread", "startDate", "endDate", "numberOfDays", "rateFixingDate", "baseRate", "penaltySpread", "defaultSpread", "mandatoryCostRate", "allInRate", "paymentProjection" ],
+  "IsSynthetic" : false
+}

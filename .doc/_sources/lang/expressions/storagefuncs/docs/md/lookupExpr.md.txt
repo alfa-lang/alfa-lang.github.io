@@ -1,0 +1,28 @@
+lookup
+======
+
+Finds an entity data stored in storage ( e.g. RDBMS, cache etc ) based on a key search.
+
+This function is meant for relatively simple data search. For complex multi-stage queries
+a `service` with its custom implementation will be more suitable.
+
+Given `entity` types are stored based on a key, a `lookup` function and fetch the entity
+with a matching key.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`entityType` |The `entity` type being queried|
+|2|:ref:`keyType`|The key to search for an entity|
+
+
+__Returns:__
+
+An optional :ref:`entityType` type specified as the 1st argument.
+If no match found, `none` value returned.
+
+
+__Usages:__
+
+>- `lookup( <entity>,  <key instance> ) : <entity instance> ?`

@@ -1,0 +1,70 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defined the conditions under which the digital option can triggers and, if triggered, what payment results.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityDigital",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defined the conditions under which the digital option can triggers and, if triggered, what payment results.\n #/\nrecord FpML5.confirmation.CommodityDigital {\n  trigger : FpML5.confirmation.CommodityTrigger\n\n  # The cash payment that is made when the digital barrier is breached.\n  featurePaymentAmount : FpML5.confirmation.PositiveMoney\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityDigitalOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "trigger" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "trigger",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityTrigger",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityTrigger",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityTrigger",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25692
+      }
+    },
+    "featurePaymentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The cash payment that is made when the digital barrier is breached.",
+      "Name" : "featurePaymentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PositiveMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PositiveMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PositiveMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25694
+      }
+    }
+  },
+  "LocalFieldNames" : [ "trigger", "featurePaymentAmount" ],
+  "IsSynthetic" : false
+}

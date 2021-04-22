@@ -1,0 +1,42 @@
+# fragment
+
+An ALFA UDT can be declared multiple times with a `fragment` modifier.
+At compile time all fragment declarations get merged into the main UDT declaration.
+
+Fragment declarations can add additional attributes and annotations to the main declaration
+and is a useful way to manage separation of concerns around writing data
+models.
+
+
+For example consider a record declared as shown below.
+```csharp
+record NewOrderSingle {
+    ...
+}
+```
+
+
+In order to inject additional custom attributes, a fragment
+can be declared as :
+
+
+```csharp
+fragment record NewOrderSingle includes AuditInfo { 
+}
+
+trait AuditInfo {
+    CreationTime : datetime
+    CreationSystem : string
+    ...
+}
+```
+
+At compile time, the ALFA compiler will combine these 2 declarations into a single
+NewOrderSingle. Any conflicts will be reported to the user
+( e.g. A field cannot be redefined )
+
+Fragments __should be used with care__, ideally as part a well-organised build
+system as it is effectively injecting attributes.
+Code generated for the non-fragment declaration may be incompatible
+with the one with the fragment declaration.
+

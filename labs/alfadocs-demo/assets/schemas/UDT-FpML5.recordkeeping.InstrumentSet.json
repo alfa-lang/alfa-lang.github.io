@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A collection of instruments usable for quotation purposes. In future releases, quotable derivative assets may be added after the underlying asset.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.InstrumentSet",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A collection of instruments usable for quotation purposes. In future releases, quotable derivative assets may be added after the underlying asset.\n #/\nrecord FpML5.recordkeeping.InstrumentSet {\n  # Define the underlying asset, either a listed security or other instrument.\n  underlyingAsset : FpML5.recordkeeping.Asset\n\n  # Defines the underlying asset when it is a curve instrument.\n  curveInstrument : FpML5.recordkeeping.Asset\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxRateSet",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.QuotedAssetSet",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "underlyingAsset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Define the underlying asset, either a listed security or other instrument.",
+      "Name" : "underlyingAsset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Asset",
+        "UdtType" : "traitType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Asset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Asset",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14382
+      }
+    },
+    "curveInstrument" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the underlying asset when it is a curve instrument.",
+      "Name" : "curveInstrument",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Asset",
+        "UdtType" : "traitType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Asset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Asset",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14385
+      }
+    }
+  },
+  "LocalFieldNames" : [ "underlyingAsset", "curveInstrument" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,304 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A loan servicing retraction used to cancel a previous facility-level business event.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityNotificationRetracted",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A loan servicing retraction used to cancel a previous facility-level business event.\n #/\nrecord FpML5.confirmation.FacilityNotificationRetracted {\n  header : FpML5.confirmation.RequestMessageHeader\n\n  # A list of validation sets the sender asserts the document is valid with respect to.\n  validation : string?\n\n  # An optional identifier used to correlate between related processes\n  parentCorrelationId : string?\n\n  # A qualified identifier used to correlate between messages\n  correlationId : string\n\n  # A numeric value that can be used to order messages with the same correlation identifier from the same sender.\n  sequenceNumber : int( 1, * )\n\n  # Indicates which party (or parties) (and accounts) a trade or event is being processed for. Normally there will only be a maximum of 2 parties, but in the case of a novation there could be a transferor, transferee, remaining party, and other remaining party. Also, in the context of a trade package there could be several parties for which limit check is requested, necessitating multiple onBehalfOf elements. Except for these cases, there should be no more than two onBehalfOf references in a message.\n  onBehalfOf : FpML5.confirmation.OnBehalfOf\n\n  # A collection of referenced business events being cancelled/retracted.\n  eventIdentifier : FpML5.confirmation.BusinessEventIdentifier\n\n  # A legal entity or a subdivision of a legal entity.\n  party : FpML5.confirmation.Party\n\n  # Head of the substitution group for all facility events.\n  facilityEventGroup : FpML5.confirmation.FacilityEvent\n\n  # A deal summary structure.\n  facilityIdentifier : FpML5.confirmation.FacilityIdentifier\n\n  # A facility summary structure.\n  facilitySummary : FpML5.confirmation.FacilitySummary\n\n  fpmlVersion : string\n\n  expectedBuild : int( 1, * )?\n\n  actualBuild : int( 1, * )?\n\n}"
+  },
+  "AllFields" : {
+    "header" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "header",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.RequestMessageHeader",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.RequestMessageHeader",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RequestMessageHeader",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7953
+      }
+    },
+    "validation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A list of validation sets the sender asserts the document is valid with respect to.",
+      "Name" : "validation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7955
+      }
+    },
+    "parentCorrelationId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An optional identifier used to correlate between related processes",
+      "Name" : "parentCorrelationId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7958
+      }
+    },
+    "correlationId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A qualified identifier used to correlate between messages",
+      "Name" : "correlationId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7961
+      }
+    },
+    "sequenceNumber" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A numeric value that can be used to order messages with the same correlation identifier from the same sender.",
+      "Name" : "sequenceNumber",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "min" : {
+          "@type" : "alfa.rt.model.RangeValue",
+          "intValue" : 1
+        },
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7964
+      }
+    },
+    "onBehalfOf" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates which party (or parties) (and accounts) a trade or event is being processed for. Normally there will only be a maximum of 2 parties, but in the case of a novation there could be a transferor, transferee, remaining party, and other remaining party. Also, in the context of a trade package there could be several parties for which limit check is requested, necessitating multiple onBehalfOf elements. Except for these cases, there should be no more than two onBehalfOf references in a message.",
+      "Name" : "onBehalfOf",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.OnBehalfOf",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.OnBehalfOf",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.OnBehalfOf",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7967
+      }
+    },
+    "eventIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A collection of referenced business events being cancelled/retracted.",
+      "Name" : "eventIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BusinessEventIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BusinessEventIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessEventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7970
+      }
+    },
+    "party" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A legal entity or a subdivision of a legal entity.",
+      "Name" : "party",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Party",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Party",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Party",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7973
+      }
+    },
+    "facilityEventGroup" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Head of the substitution group for all facility events.",
+      "Name" : "facilityEventGroup",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FacilityEvent",
+        "UdtType" : "traitType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FacilityEvent",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FacilityEvent",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7976
+      }
+    },
+    "facilityIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A deal summary structure.",
+      "Name" : "facilityIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FacilityIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FacilityIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FacilityIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7979
+      }
+    },
+    "facilitySummary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A facility summary structure.",
+      "Name" : "facilitySummary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FacilitySummary",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FacilitySummary",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FacilitySummary",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7982
+      }
+    },
+    "fpmlVersion" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "fpmlVersion",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7985
+      }
+    },
+    "expectedBuild" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "expectedBuild",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7987
+      }
+    },
+    "actualBuild" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "actualBuild",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7989
+      }
+    }
+  },
+  "LocalFieldNames" : [ "header", "validation", "parentCorrelationId", "correlationId", "sequenceNumber", "onBehalfOf", "eventIdentifier", "party", "facilityEventGroup", "facilityIdentifier", "facilitySummary", "fpmlVersion", "expectedBuild", "actualBuild" ],
+  "IsSynthetic" : false
+}

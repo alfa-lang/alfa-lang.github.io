@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type specifying the date from which the early termination clause can be exercised.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.StartingDate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type specifying the date from which the early termination clause can be exercised.\n #/\nrecord FpML5.confirmation.StartingDate {\n  # Reference to a date defined elswhere in the document.\n  dateRelativeTo : FpML5.confirmation.DateReference\n\n  # Date from which early termination clause can be exercised.\n  adjustableDate : FpML5.confirmation.AdjustableDate\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ReturnSwapEarlyTermination",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "dateRelativeTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a date defined elswhere in the document.",
+      "Name" : "dateRelativeTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.DateReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.DateReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.DateReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 32629
+      }
+    },
+    "adjustableDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date from which early termination clause can be exercised.",
+      "Name" : "adjustableDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 32632
+      }
+    }
+  },
+  "LocalFieldNames" : [ "dateRelativeTo", "adjustableDate" ],
+  "IsSynthetic" : false
+}

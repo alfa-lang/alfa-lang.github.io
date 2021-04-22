@@ -1,0 +1,215 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes an american or discrete touch or no-touch trigger applied to an FX binary or digital option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxTouch",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes an american or discrete touch or no-touch trigger applied to an FX binary or digital option.\n #/\nrecord FpML5.reporting.FxTouch {\n  # This specifies whether the applied trigger is a touch or no touch type.\n  touchCondition : string?\n\n  # This specifies whether the trigger direction is \"AtOrAbove\" or \"AtOrBelow; that is, that a barrier event occurs if the spot rate is at or above the trigger rate, or at or below the trigger rate during the period of observation of an american trigger, or at the times of observation of a discrete trigger. DEPRECATE: Values \"Above\" and \"Below\" are deprecated.\n  direction : string?\n\n  # Defines the two currencies for an FX trade and the quotation relationship between the two currencies.\n  quotedCurrencyPair : FpML5.reporting.QuotedCurrencyPair?\n\n  # The market rate is observed relative to the trigger rate, and if it is found to be on the predefined side of (above or below) the trigger rate, a barrier event is deemed to have occurred.\n  triggerRate : decimal?\n\n  # An optional element used for FX forwards and certain types of FX OTC options. For deals consumated in the FX Forwards Market, this represents the current market rate for a particular currency pair. For barrier and digital/binary options, it can be useful to include the spot rate at the time the option was executed to make it easier to know whether the market rate needs to move \"up\" or \"down\" to trigger a barrier event.\n  spotRate : decimal?\n\n  # The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.\n  informationSource : FpML5.reporting.InformationSource?\n\n  # The date on which the observation period for an american trigger starts. If the start date is not present, then the date and time of the start of the period is deemed to be the date and time the transaction was entered into.\n  observationStartDate : date?\n\n  # The time on the start date at which the observation period for an american trigger starts. If the time is not present and the start date is equivalent to the transaction date, the time is deemed to be the time the transaction was entered into. If the time is not present and the start date is other than the transaction date, then the time is deemed to be the same as the expiration time.\n  observationStartTime : FpML5.reporting.BusinessCenterTime?\n\n  # The date on which the observation period for an american trigger ends. If the end date is not present, then the date and time of the end of the period is deemed to be the date and time of expiration.\n  observationEndDate : date?\n\n  # The time on the end date at which the observation period for an american trigger ends. If the time is not present, then the time is deemed to be the same as the expiration time.\n  observationEndTime : FpML5.reporting.BusinessCenterTime?\n\n  # The dates and times at which rate observations are made to determine whether a barrier event has occurred for a discrete trigger. If the time is not present then the time is deemed to be the same as the expiration time.\n  observationPoint : FpML5.reporting.FxBusinessCenterDateTime?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxDigitalOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "touchCondition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This specifies whether the applied trigger is a touch or no touch type.",
+      "Name" : "touchCondition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12528
+      }
+    },
+    "direction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This specifies whether the trigger direction is \"AtOrAbove\" or \"AtOrBelow; that is, that a barrier event occurs if the spot rate is at or above the trigger rate, or at or below the trigger rate during the period of observation of an american trigger, or at the times of observation of a discrete trigger. DEPRECATE: Values \"Above\" and \"Below\" are deprecated.",
+      "Name" : "direction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12531
+      }
+    },
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the two currencies for an FX trade and the quotation relationship between the two currencies.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12534
+      }
+    },
+    "triggerRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The market rate is observed relative to the trigger rate, and if it is found to be on the predefined side of (above or below) the trigger rate, a barrier event is deemed to have occurred.",
+      "Name" : "triggerRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12537
+      }
+    },
+    "spotRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An optional element used for FX forwards and certain types of FX OTC options. For deals consumated in the FX Forwards Market, this represents the current market rate for a particular currency pair. For barrier and digital/binary options, it can be useful to include the spot rate at the time the option was executed to make it easier to know whether the market rate needs to move \"up\" or \"down\" to trigger a barrier event.",
+      "Name" : "spotRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12540
+      }
+    },
+    "informationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.",
+      "Name" : "informationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12543
+      }
+    },
+    "observationStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the observation period for an american trigger starts. If the start date is not present, then the date and time of the start of the period is deemed to be the date and time the transaction was entered into.",
+      "Name" : "observationStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12546
+      }
+    },
+    "observationStartTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time on the start date at which the observation period for an american trigger starts. If the time is not present and the start date is equivalent to the transaction date, the time is deemed to be the time the transaction was entered into. If the time is not present and the start date is other than the transaction date, then the time is deemed to be the same as the expiration time.",
+      "Name" : "observationStartTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12549
+      }
+    },
+    "observationEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the observation period for an american trigger ends. If the end date is not present, then the date and time of the end of the period is deemed to be the date and time of expiration.",
+      "Name" : "observationEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12552
+      }
+    },
+    "observationEndTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time on the end date at which the observation period for an american trigger ends. If the time is not present, then the time is deemed to be the same as the expiration time.",
+      "Name" : "observationEndTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12555
+      }
+    },
+    "observationPoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The dates and times at which rate observations are made to determine whether a barrier event has occurred for a discrete trigger. If the time is not present then the time is deemed to be the same as the expiration time.",
+      "Name" : "observationPoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxBusinessCenterDateTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12558
+      }
+    }
+  },
+  "LocalFieldNames" : [ "touchCondition", "direction", "quotedCurrencyPair", "triggerRate", "spotRate", "informationSource", "observationStartDate", "observationStartTime", "observationEndDate", "observationEndTime", "observationPoint" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,93 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the Fixed Price.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FixedPrice",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the Fixed Price.\n #/\nrecord FpML5.transparency.FixedPrice {\n  # The Fixed Price.\n  price : decimal\n\n  # The currency used to specify the digital barrier in terms of a price per unit of commodity.\n  priceCurrency : string\n\n  # The unit of measure used to specify the digital barrier in terms of a price per unit of commodity.\n  priceUnit : string\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommodityTrigger",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FixedPriceLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.GenericProduct",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.NonPeriodicFixedPriceLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "price" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Fixed Price.",
+      "Name" : "price",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13554
+      }
+    },
+    "priceCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency used to specify the digital barrier in terms of a price per unit of commodity.",
+      "Name" : "priceCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13557
+      }
+    },
+    "priceUnit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The unit of measure used to specify the digital barrier in terms of a price per unit of commodity.",
+      "Name" : "priceUnit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13560
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 13563
+      }
+    }
+  },
+  "LocalFieldNames" : [ "price", "priceCurrency", "priceUnit", "id" ],
+  "IsSynthetic" : false
+}

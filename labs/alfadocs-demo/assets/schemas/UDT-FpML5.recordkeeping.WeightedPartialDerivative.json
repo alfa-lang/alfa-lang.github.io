@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A partial derivative multiplied by a weighting factor.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.WeightedPartialDerivative",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A partial derivative multiplied by a weighting factor.\n #/\nrecord FpML5.recordkeeping.WeightedPartialDerivative {\n  # A reference to a partial derivative defined in the ComputedDerivative.model, i.e. defined as part of this sensitivity definition.\n  partialDerivativeReference : FpML5.recordkeeping.PricingParameterDerivativeReference?\n\n  # The weight factor to be applied to the partial derivative, e.g. 1 or -1, or some other scaling value.\n  weight : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.DenominatorTerm",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partialDerivativeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to a partial derivative defined in the ComputedDerivative.model, i.e. defined as part of this sensitivity definition.",
+      "Name" : "partialDerivativeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PricingParameterDerivativeReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25270
+      }
+    },
+    "weight" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The weight factor to be applied to the partial derivative, e.g. 1 or -1, or some other scaling value.",
+      "Name" : "weight",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25273
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partialDerivativeReference", "weight" ],
+  "IsSynthetic" : false
+}

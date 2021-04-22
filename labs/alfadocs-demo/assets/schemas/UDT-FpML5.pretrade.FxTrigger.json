@@ -1,0 +1,110 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes a european trigger applied to an FX digtal option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxTrigger",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes a european trigger applied to an FX digtal option.\n #/\nrecord FpML5.pretrade.FxTrigger {\n  # The condition that applies to a european trigger applied to an FX digital option. It determines where the rate at expiry date and time at must be relative to the triggerRate for the option to be exercisable. The allowed values are \"AtOrAbove\" and \"AtOrBelow\". DEPRECATE: Values \"Above\" and \"Below\" are deprecated.\n  triggerCondition : string\n\n  # Defines the two currencies for an FX trade and the quotation relationship between the two currencies.\n  quotedCurrencyPair : FpML5.pretrade.QuotedCurrencyPair\n\n  # The market rate is observed relative to the trigger rate, and if it is found to be on the predefined side of (above or below) the trigger rate, a barrier event is deemed to have occurred.\n  triggerRate : decimal\n\n  # An optional element used for FX forwards and certain types of FX OTC options. For deals consumated in the FX Forwards Market, this represents the current market rate for a particular currency pair. For barrier and digital/binary options, it can be useful to include the spot rate at the time the option was executed to make it easier to know whether the market rate needs to move \"up\" or \"down\" to trigger a barrier event.\n  spotRate : decimal?\n\n  # The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.\n  informationSource : FpML5.pretrade.InformationSource?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxDigitalOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "triggerCondition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The condition that applies to a european trigger applied to an FX digital option. It determines where the rate at expiry date and time at must be relative to the triggerRate for the option to be exercisable. The allowed values are \"AtOrAbove\" and \"AtOrBelow\". DEPRECATE: Values \"Above\" and \"Below\" are deprecated.",
+      "Name" : "triggerCondition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2032
+      }
+    },
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the two currencies for an FX trade and the quotation relationship between the two currencies.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.QuotedCurrencyPair",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.QuotedCurrencyPair",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2035
+      }
+    },
+    "triggerRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The market rate is observed relative to the trigger rate, and if it is found to be on the predefined side of (above or below) the trigger rate, a barrier event is deemed to have occurred.",
+      "Name" : "triggerRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2038
+      }
+    },
+    "spotRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An optional element used for FX forwards and certain types of FX OTC options. For deals consumated in the FX Forwards Market, this represents the current market rate for a particular currency pair. For barrier and digital/binary options, it can be useful to include the spot rate at the time the option was executed to make it easier to know whether the market rate needs to move \"up\" or \"down\" to trigger a barrier event.",
+      "Name" : "spotRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2041
+      }
+    },
+    "informationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The information source where a published or displayed market rate will be obtained, e.g. Telerate Page 3750.",
+      "Name" : "informationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2044
+      }
+    }
+  },
+  "LocalFieldNames" : [ "triggerCondition", "quotedCurrencyPair", "triggerRate", "spotRate", "informationSource" ],
+  "IsSynthetic" : false
+}

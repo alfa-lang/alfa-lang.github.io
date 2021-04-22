@@ -1,0 +1,98 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AggregatedIndependentAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.AggregatedIndependentAmount {\n  # This is the total Independent Amount defined in the confirmations of individual trades. This would relate to the same Independent Amount defined in other FpML messages aggregated for a specific agreement.\n  trade : FpML5.reporting.IndependentAmountType\n\n  # A portfolio level Independent Amount that reflects portfolio change over a short time period using statistical techniques such as volatility and risk factor correlations. These amounts reflect the summation of independent Amounts due to Party A or Party B.\n  valueAtRisk : FpML5.reporting.IndependentAmountType\n\n  # A portfolio level Independent Amounts related to a Parties Net Open Position (NOP). Net Open Position means the total of the Net Long FX and the Net Options in respect of each currency where: Net Long FX for any currency shall be the net amount (if any) of that currency which the Party \"A\" is long as against Party \"B\" in respect of all FX transactions.\n  netOpenPosition : FpML5.reporting.IndependentAmountType\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MarginCallStatus",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RequestMargin",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "trade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the total Independent Amount defined in the confirmations of individual trades. This would relate to the same Independent Amount defined in other FpML messages aggregated for a specific agreement.",
+      "Name" : "trade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.IndependentAmountType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.IndependentAmountType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.IndependentAmountType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8142
+      }
+    },
+    "valueAtRisk" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A portfolio level Independent Amount that reflects portfolio change over a short time period using statistical techniques such as volatility and risk factor correlations. These amounts reflect the summation of independent Amounts due to Party A or Party B.",
+      "Name" : "valueAtRisk",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.IndependentAmountType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.IndependentAmountType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.IndependentAmountType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8145
+      }
+    },
+    "netOpenPosition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A portfolio level Independent Amounts related to a Parties Net Open Position (NOP). Net Open Position means the total of the Net Long FX and the Net Options in respect of each currency where: Net Long FX for any currency shall be the net amount (if any) of that currency which the Party \"A\" is long as against Party \"B\" in respect of all FX transactions.",
+      "Name" : "netOpenPosition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.IndependentAmountType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.IndependentAmountType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.IndependentAmountType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8148
+      }
+    }
+  },
+  "LocalFieldNames" : [ "trade", "valueAtRisk", "netOpenPosition" ],
+  "IsSynthetic" : false
+}

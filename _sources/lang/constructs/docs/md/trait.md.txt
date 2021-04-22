@@ -1,0 +1,82 @@
+# trait
+
+A `trait` is a named collection of related attibutes ( fields ).
+Traits are not intended to hold data, but simply model a group of fields.
+Container UDTs such as `entity`, `key`, `record`, and `union` can use traits by using the `includes` keyword.
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation. Asserts defined as part of a trait
+will be part of asserts in definitions that include the trait.
+
+```csharp
+trait Shape {
+    Colour : string
+}
+
+record Rectangle includes Shape {
+    Width : int
+    Height : int
+}
+
+record Circle includes Shape {
+    Radius : int
+}
+```
+
+
+By `includes` of Shape, Rectangle and Circle will contain the Colour attribute.
+
+
+Traits can be used extensively to model UDTs with common attributes, or as simply a marker.
+
+```csharp
+trait Datasource {
+}
+
+record File includes Datasource {
+    Name : string
+}
+
+record Database includes Datasource {
+    ConnString : string
+}
+```
+
+A trait can include one or many traits.
+```csharp
+trait HealthFacts {
+    CalorieCount : int
+}
+
+trait FoodItem {
+    ExpiryDate : date
+}
+
+trait FrozenFood {
+    StorageTemperature : int
+}
+
+record FrozenPizza includes HealthFacts, FoodItem, FrozenFood {
+    Toppings : list< string >
+}
+```
+
+When combining traits in this way fields get aggregated, so `FrozenPizza` will contain 4 fields.
+
+**Diamond-shaped Dependencies**
+
+Consider the following change on the declaration above.
+
+```csharp
+trait FrozenFood includes HealthFacts {
+    StorageTemperature : int
+}
+```
+
+By doing so, `FrozenPizza` has 2 possible paths to the `CalorieCount` field - via `FrozenFood` and
+direct.
+
+ALFA emits a warning message when diamond-shaped dependency cases are encountered, however it will
+continue with a single `CalorieCount` field and it is not considered an error. In order to stop the
+warning, the field can be explicitly declared in the base of the diamond types - `FrozenPizza` in the example.
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation.

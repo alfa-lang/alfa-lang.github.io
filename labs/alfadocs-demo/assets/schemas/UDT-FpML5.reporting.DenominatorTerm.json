@@ -1,0 +1,62 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The type defining a denominator term of the formula. Its value is (sum of weighted partials) ^ power.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DenominatorTerm",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The type defining a denominator term of the formula. Its value is (sum of weighted partials) ^ power.\n #/\nrecord FpML5.reporting.DenominatorTerm {\n  # A partial derivative multiplied by a weighting factor.\n  weightedPartial : FpML5.reporting.WeightedPartialDerivative?\n\n  # The power to which this term is raised.\n  power : int( 1, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DerivativeFormula",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "weightedPartial" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A partial derivative multiplied by a weighting factor.",
+      "Name" : "weightedPartial",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.WeightedPartialDerivative",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1013
+      }
+    },
+    "power" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The power to which this term is raised.",
+      "Name" : "power",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1016
+      }
+    }
+  },
+  "LocalFieldNames" : [ "weightedPartial", "power" ],
+  "IsSynthetic" : false
+}

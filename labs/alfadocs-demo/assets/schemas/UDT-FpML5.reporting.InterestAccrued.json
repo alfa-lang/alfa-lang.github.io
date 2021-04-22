@@ -1,0 +1,159 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InterestAccrued",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.InterestAccrued {\n  # The party delivering the accrued interest.\n  deliveringPartyReference : FpML5.reporting.PartyReference?\n\n  # The party delivering the accrued interest.\n  receivingPartyReference : FpML5.reporting.PartyReference?\n\n  interest : FpML5.reporting.Money?\n\n  # Specifies the amount of tax withheld.\n  withholdingTax : FpML5.reporting.Money?\n\n  # Specifies the terms of the tax withholding.\n  withholdingTaxTerms : FpML5.reporting.WithholdingTaxTerms?\n\n  # Specifies the terms of the interest calculations.\n  interestCalculationTerms : FpML5.reporting.InterestCalculationTerms?\n\n  # Details optional calculations for each day of the interest period.\n  interestCalculationDetails : FpML5.reporting.InterestCalculationDetails?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.BothDirectionsInterestRequirement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.BothDirectionsInterestStatementRequirement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SingleDirectionInterestRequirement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SingleDirectionInterestStatementRequirement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "deliveringPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party delivering the accrued interest.",
+      "Name" : "deliveringPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7926
+      }
+    },
+    "receivingPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party delivering the accrued interest.",
+      "Name" : "receivingPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7929
+      }
+    },
+    "interest" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "interest",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7932
+      }
+    },
+    "withholdingTax" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the amount of tax withheld.",
+      "Name" : "withholdingTax",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7934
+      }
+    },
+    "withholdingTaxTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the terms of the tax withholding.",
+      "Name" : "withholdingTaxTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.WithholdingTaxTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7937
+      }
+    },
+    "interestCalculationTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the terms of the interest calculations.",
+      "Name" : "interestCalculationTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InterestCalculationTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7940
+      }
+    },
+    "interestCalculationDetails" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Details optional calculations for each day of the interest period.",
+      "Name" : "interestCalculationDetails",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InterestCalculationDetails",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7943
+      }
+    }
+  },
+  "LocalFieldNames" : [ "deliveringPartyReference", "receivingPartyReference", "interest", "withholdingTax", "withholdingTaxTerms", "interestCalculationTerms", "interestCalculationDetails" ],
+  "IsSynthetic" : false
+}

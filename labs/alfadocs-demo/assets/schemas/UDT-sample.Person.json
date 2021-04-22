@@ -1,0 +1,66 @@
+{
+  "@type" : "alfa.rt.model.Trait",
+  "Doc" : "Generic Person definition to be extended into",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.Person",
+    "UdtType" : "traitType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "# Generic Person definition to be extended into\ntrait Person {\n    FirstName : string\n    LastName : string\n    DateOfBirth : date\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.Customer",
+    "UdtType" : "entityType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.CustomerSvc",
+    "UdtType" : "serviceType"
+  } ],
+  "AllFields" : {
+    "FirstName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "FirstName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 5
+      }
+    },
+    "LastName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "LastName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 6
+      }
+    },
+    "DateOfBirth" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "DateOfBirth",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 7
+      }
+    }
+  },
+  "LocalFieldNames" : [ "FirstName", "LastName", "DateOfBirth" ],
+  "IsSynthetic" : false
+}

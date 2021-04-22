@@ -1,0 +1,378 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the conditions governing the payment of dividends to the receiver of the equity return. With the exception of the dividend payout ratio, which is defined for each of the underlying components.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.DividendConditions",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the conditions governing the payment of dividends to the receiver of the equity return. With the exception of the dividend payout ratio, which is defined for each of the underlying components.\n #/\nrecord FpML5.recordkeeping.DividendConditions {\n  # Boolean element that defines whether the dividend will be reinvested or not.\n  dividendReinvestment : boolean?\n\n  # Defines the date on which the receiver on the equity return is entitled to the dividend.\n  dividendEntitlement : string?\n\n  dividendAmount : string?\n\n  # Specifies when the dividend will be paid to the receiver of the equity return. Has the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. Is not applicable in the case of a dividend reinvestment election.\n  dividendPaymentDate : FpML5.recordkeeping.DividendPaymentDate?\n\n  # Dividend period has the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. This element specifies the date on which the dividend period will commence.\n  dividendPeriodEffectiveDate : FpML5.recordkeeping.DateReference?\n\n  # Dividend period has the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. This element specifies the date on which the dividend period will end. It includes a boolean attribute for defining whether this end date is included or excluded from the dividend period.\n  dividendPeriodEndDate : FpML5.recordkeeping.DateReference?\n\n  # Defines the First Period or the Second Period, as defined in the 2002 ISDA Equity Derivatives Definitions.\n  dividendPeriod : string\n\n  # Reference to the party which determines if dividends are extraordinary in relation to normal levels.\n  extraOrdinaryDividends : FpML5.recordkeeping.PartyReference?\n\n  # Determination of Gross Cash Dividend per Share.\n  excessDividendAmount : string?\n\n  # The currency in which an amount is denominated.\n  currency : string\n\n  # Specifies the method according to which an amount or a date is determined.\n  determinationMethod : string\n\n  # Reference to a currency defined elsewhere in the document\n  currencyReference : FpML5.recordkeeping.IdentifiedCurrencyReference\n\n  # Specifies the date on which the FX rate will be considered in the case of a Composite FX swap.\n  dividendFxTriggerDate : FpML5.recordkeeping.DividendPaymentDate?\n\n  # FpML entity\n  interestAccrualsMethod : FpML5.recordkeeping.InterestAccrualsCompoundingMethod?\n\n  # Defines the Number Of Index Units applicable to a Dividend.\n  numberOfIndexUnits : decimal?\n\n  # Declared Cash Dividend Percentage.\n  declaredCashDividendPercentage : decimal?\n\n  # Declared Cash Equivalent Dividend Percentage.\n  declaredCashEquivalentDividendPercentage : decimal?\n\n  # Defines treatment of Non-Cash Dividends.\n  nonCashDividendTreatment : string?\n\n  # Defines how the composition of Dividends is to be determined.\n  dividendComposition : string?\n\n  # Specifies the method according to which special dividends are determined.\n  specialDividends : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.EquityDerivativeLongFormBase",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.EquityForward",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.EquityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Return",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "dividendReinvestment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Boolean element that defines whether the dividend will be reinvested or not.",
+      "Name" : "dividendReinvestment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6138
+      }
+    },
+    "dividendEntitlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the date on which the receiver on the equity return is entitled to the dividend.",
+      "Name" : "dividendEntitlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6141
+      }
+    },
+    "dividendAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "dividendAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6144
+      }
+    },
+    "dividendPaymentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies when the dividend will be paid to the receiver of the equity return. Has the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. Is not applicable in the case of a dividend reinvestment election.",
+      "Name" : "dividendPaymentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.DividendPaymentDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6146
+      }
+    },
+    "dividendPeriodEffectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Dividend period has the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. This element specifies the date on which the dividend period will commence.",
+      "Name" : "dividendPeriodEffectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.DateReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6149
+      }
+    },
+    "dividendPeriodEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Dividend period has the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. This element specifies the date on which the dividend period will end. It includes a boolean attribute for defining whether this end date is included or excluded from the dividend period.",
+      "Name" : "dividendPeriodEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.DateReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6152
+      }
+    },
+    "dividendPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the First Period or the Second Period, as defined in the 2002 ISDA Equity Derivatives Definitions.",
+      "Name" : "dividendPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6155
+      }
+    },
+    "extraOrdinaryDividends" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the party which determines if dividends are extraordinary in relation to normal levels.",
+      "Name" : "extraOrdinaryDividends",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6158
+      }
+    },
+    "excessDividendAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Determination of Gross Cash Dividend per Share.",
+      "Name" : "excessDividendAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6161
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which an amount is denominated.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6164
+      }
+    },
+    "determinationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the method according to which an amount or a date is determined.",
+      "Name" : "determinationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6167
+      }
+    },
+    "currencyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a currency defined elsewhere in the document",
+      "Name" : "currencyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.IdentifiedCurrencyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.IdentifiedCurrencyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.IdentifiedCurrencyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6170
+      }
+    },
+    "dividendFxTriggerDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date on which the FX rate will be considered in the case of a Composite FX swap.",
+      "Name" : "dividendFxTriggerDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.DividendPaymentDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6173
+      }
+    },
+    "interestAccrualsMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "FpML entity",
+      "Name" : "interestAccrualsMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.InterestAccrualsCompoundingMethod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6176
+      }
+    },
+    "numberOfIndexUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the Number Of Index Units applicable to a Dividend.",
+      "Name" : "numberOfIndexUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6179
+      }
+    },
+    "declaredCashDividendPercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Declared Cash Dividend Percentage.",
+      "Name" : "declaredCashDividendPercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6182
+      }
+    },
+    "declaredCashEquivalentDividendPercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Declared Cash Equivalent Dividend Percentage.",
+      "Name" : "declaredCashEquivalentDividendPercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6185
+      }
+    },
+    "nonCashDividendTreatment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines treatment of Non-Cash Dividends.",
+      "Name" : "nonCashDividendTreatment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6188
+      }
+    },
+    "dividendComposition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines how the composition of Dividends is to be determined.",
+      "Name" : "dividendComposition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6191
+      }
+    },
+    "specialDividends" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the method according to which special dividends are determined.",
+      "Name" : "specialDividends",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6194
+      }
+    }
+  },
+  "LocalFieldNames" : [ "dividendReinvestment", "dividendEntitlement", "dividendAmount", "dividendPaymentDate", "dividendPeriodEffectiveDate", "dividendPeriodEndDate", "dividendPeriod", "extraOrdinaryDividends", "excessDividendAmount", "currency", "determinationMethod", "currencyReference", "dividendFxTriggerDate", "interestAccrualsMethod", "numberOfIndexUnits", "declaredCashDividendPercentage", "declaredCashEquivalentDividendPercentage", "nonCashDividendTreatment", "dividendComposition", "specialDividends" ],
+  "IsSynthetic" : false
+}

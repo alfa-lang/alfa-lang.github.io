@@ -1,0 +1,92 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery conditions for electricity.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ElectricityDelivery",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery conditions for electricity.\n #/\nrecord FpML5.transparency.ElectricityDelivery {\n  # The point at which delivery of the electricity will occur.\n  deliveryPoint : string\n\n  # Indicates the under what conditions the Parties' delivery obligations apply.\n  deliveryType : FpML5.transparency.ElectricityDeliveryType\n\n  # Identification of the border(s) or border point(s) of a transportation contract.\n  interconnectionPoint : string?\n\n  # The zone covering potential delivery points for the electricity.\n  deliveryZone : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ElectricityPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "deliveryPoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The point at which delivery of the electricity will occur.",
+      "Name" : "deliveryPoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5960
+      }
+    },
+    "deliveryType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the under what conditions the Parties' delivery obligations apply.",
+      "Name" : "deliveryType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.ElectricityDeliveryType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.ElectricityDeliveryType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ElectricityDeliveryType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5963
+      }
+    },
+    "interconnectionPoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the border(s) or border point(s) of a transportation contract.",
+      "Name" : "interconnectionPoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5966
+      }
+    },
+    "deliveryZone" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The zone covering potential delivery points for the electricity.",
+      "Name" : "deliveryZone",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5969
+      }
+    }
+  },
+  "LocalFieldNames" : [ "deliveryPoint", "deliveryType", "interconnectionPoint", "deliveryZone" ],
+  "IsSynthetic" : false
+}

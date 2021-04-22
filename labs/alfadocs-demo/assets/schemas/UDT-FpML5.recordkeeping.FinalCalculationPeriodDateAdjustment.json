@@ -1,0 +1,82 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to define business date convention adjustment to final payment period per leg.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FinalCalculationPeriodDateAdjustment",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to define business date convention adjustment to final payment period per leg.\n #/\nrecord FpML5.recordkeeping.FinalCalculationPeriodDateAdjustment {\n  # Reference to the unadjusted cancellation effective dates.\n  relevantUnderlyingDateReference : FpML5.recordkeeping.RelevantUnderlyingDateReference?\n\n  # Reference to the leg, where date adjustments may apply.\n  swapStreamReference : FpML5.recordkeeping.InterestRateStreamReference\n\n  # Override business date convention. This takes precedence over leg level information.\n  businessDayConvention : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CancelableProvision",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "relevantUnderlyingDateReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the unadjusted cancellation effective dates.",
+      "Name" : "relevantUnderlyingDateReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.RelevantUnderlyingDateReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12291
+      }
+    },
+    "swapStreamReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the leg, where date adjustments may apply.",
+      "Name" : "swapStreamReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.InterestRateStreamReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.InterestRateStreamReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.InterestRateStreamReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12294
+      }
+    },
+    "businessDayConvention" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Override business date convention. This takes precedence over leg level information.",
+      "Name" : "businessDayConvention",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12297
+      }
+    }
+  },
+  "LocalFieldNames" : [ "relevantUnderlyingDateReference", "swapStreamReference", "businessDayConvention" ],
+  "IsSynthetic" : false
+}

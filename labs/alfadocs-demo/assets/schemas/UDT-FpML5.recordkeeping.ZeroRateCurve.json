@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A curve used to model a set of zero-coupon interest rates.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ZeroRateCurve",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A curve used to model a set of zero-coupon interest rates.\n #/\nrecord FpML5.recordkeeping.ZeroRateCurve {\n  # The frequency at which the rates are compounded (e.g. continuously compounded).\n  compoundingFrequency : string?\n\n  # The curve of zero-coupon values.\n  rateCurve : FpML5.recordkeeping.TermCurve?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.YieldCurveValuation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "compoundingFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The frequency at which the rates are compounded (e.g. continuously compounded).",
+      "Name" : "compoundingFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22457
+      }
+    },
+    "rateCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The curve of zero-coupon values.",
+      "Name" : "rateCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TermCurve",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22460
+      }
+    }
+  },
+  "LocalFieldNames" : [ "compoundingFrequency", "rateCurve" ],
+  "IsSynthetic" : false
+}

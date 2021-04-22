@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OpenAPI Exporter &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Table Runtime" href="labstbl.html" />
+    <link rel="prev" title="Cassandra SQL Exporter" href="labscassandra.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="labs.html">ALFA Labs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="langextension.html">ALFA Language Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="langtesting.html">Data Model Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsalfadocs.html">AlfaDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsxsd.html">XSD Importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labspython.html">Python Exporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labscassandra.html">Cassandra SQL Exporter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OpenAPI Exporter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-steps">Usage Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openapi-model-expressed-in-alfa">OpenAPI Model expressed in ALFA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="labstbl.html">Table Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsbinaryruntimes.html">Binary Runtimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsalfawebide.html">ALFA Web-based Toolset</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="labs.html">ALFA Labs</a> &raquo;</li>
+        
+      <li>OpenAPI Exporter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="openapi-exporter">
+<span id="labsopenapi"></span><h1>OpenAPI Exporter<a class="headerlink" href="#openapi-exporter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/OAI/OpenAPI-Specification">OpenAPI</a> is used as a programming language-agnostic interface
+description for REST APIs. Given ALFA’s <code class="docutils literal notranslate"><span class="pre">service</span></code> defines an interface, the ALFA OpenAPI Exporter was developed
+as a PoC to validate feature coverage from ALFA to OpenAPI.</p>
+<p>Initial conclusions are that ALFA is more than capable of supporting all of OpenAPI definitions. There are
+however concerns how some complex modelling features in ALFA will be expressed in OpenAPI.</p>
+<p>Please note this exporter is <strong>highly experimental</strong> at this stage and will require addtional work to
+ensure better compatility and feature coverage of OpenAPI.</p>
+</div>
+<div class="section" id="usage-steps">
+<h2>Usage Steps<a class="headerlink" href="#usage-steps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Similar to generating Java and CSharp, Python is generated using the following commandline.</li>
+</ul>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c -e openapi -o generated/openapi src
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="openapi-model-expressed-in-alfa">
+<h2>OpenAPI Model expressed in ALFA<a class="headerlink" href="#openapi-model-expressed-in-alfa" title="Permalink to this headline">¶</a></h2>
+<p>The generated OpenAPI model is in fact, expressed in ALFA. The Exporter converts the ALFA model
+to a structure <code class="docutils literal notranslate"><span class="pre">alfa.openapi.model.Spec</span></code>, and generates YAML - the result is a OpenAPI definition.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span>namespace alfa.openapi.model
+
+record Spec {
+    openapi : string
+    info : Info
+    servers : list&lt; Server &gt;?
+    components : Components?
+    paths : map&lt; string, PathItem &gt;
+    security : list&lt; SecurityRequirement &gt;?
+    tags : list&lt; Tag &gt;?
+    externalDocs : ExternalDocumentation?
+}
+
+record Info {
+    title : string
+    description : string?
+    termsOfService : string?
+    contact : Contact?
+    license : License?
+    version : string
+}
+
+record Tag {
+    name : string
+    description : string?
+    externalDocs : ExternalDocumentation?
+}
+
+record SecurityRequirement {
+    scheme : SecurityScheme
+    scopes : list&lt; string &gt;
+}
+
+enum SecurityScheme {
+    apiKey http oauth2 openIdConnect
+}
+
+record Components {
+    schemas : map&lt; string, SchemaDef &gt;
+}
+
+record ExternalDocumentation {
+    description : string?
+    url : uri
+}
+
+record PathItem {
+    ref : string?
+    summary : string?
+    description : string?
+    get : Operation?
+    put : Operation?
+    post : Operation?
+    delete : Operation?
+    options : Operation?
+    head : Operation?
+    patch : Operation?
+    trace : Operation?
+    servers : list&lt; Server &gt;?
+    parameters : list&lt; union&lt; parameter:Parameter, reference:Reference &gt; &gt;?
+}
+
+enum ParameterType {
+    path query headers cookies
+}
+
+record Parameter {
+    name : string
+    in : ParameterType
+    description : string?
+    required : boolean
+    deprecated : boolean?
+    allowEmptyValue : boolean?
+    schema : SchemaObject
+}
+
+trait SchemaObject {
+}
+
+record SchemaDef includes SchemaObject {
+    type : string
+    description : string?
+
+    // Primitive array type
+    items : SchemaObject?
+
+    enum : list&lt; string &gt;?
+
+    minimum : int?
+    maximum : int?
+
+    properties : map&lt; string, SchemaObject &gt;?
+
+    additionalProperties : map&lt; string, string &gt;?
+}
+
+record Reference includes SchemaObject {
+    `$ref` : string
+}
+
+record Operation {
+    tags : list&lt; string &gt;?
+    summary : string?
+    description : string?
+    externalDocs : ExternalDocumentation?
+    operationId : string?
+    parameters : list&lt; Parameter &gt;?
+    requestBody : union&lt; requestBody: RequestBody, reference:Reference &gt;?
+    responses : map&lt; Code: string, Response &gt;
+    callbacks : map&lt; string, union&lt; callback: Callback, reference:Reference &gt; &gt;?
+    deprecated : boolean?
+    security : map&lt; SecurityRequirement : string, list&lt; string &gt; &gt;?
+    servers : list&lt; Server &gt;?
+}
+
+record Callback {
+    paths : map&lt; string, string &gt;
+}
+
+record Response {
+    description : string
+    headers : map&lt; string, union&lt; header:Header, reference:Reference &gt; &gt;?
+    content : map&lt; string, MediaType &gt;?
+    links : map&lt; string, union&lt; link:Link, reference:Reference &gt; &gt;?
+}
+
+record MediaType {
+    schema : SchemaObject
+}
+
+record Header {
+    description : string?
+    // REVIEW
+}
+
+record RequestBody {
+    description : string?
+    content : map&lt; string, MediaType &gt;
+    required : boolean?
+}
+
+record Link {
+    operationRef : string?
+    operationId : string
+    parameters : map&lt; string, string?&gt; // REVIEW
+    requestBody : string? // REVIEW
+    description : string?
+    server : Server
+}
+
+record Server {
+    url : uri
+    description : string?
+    variables : map&lt; string, ServerVariableObject &gt;?
+}
+
+record ServerVariableObject {
+    enum : list&lt; string &gt;?
+    default : string
+    description : string?
+}
+
+record License {
+    name : string
+    url : uri?
+}
+
+record Contact {
+   name : string
+   email : string
+   url : uri
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Given the following data model below, the OpenAPI Exporter will generate an OpenAPI YAML definition.</p>
+<p>The OpenAPI Exporter makes use of ALFA annotation support for the author to include meta information
+only required by the OpenAPI generator.</p>
+<p>Note that the service definition can also be used for all other intended usages of a service, and
+not limited to OpenAPI usage.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span>@alfa.openapi.Info(
+    title=&quot;Swagger Petstore&quot;,
+    description=&quot;This is a sample Petstore server&quot;,
+    version=&quot;1.0.0&quot; )
+namespace Petstore
+
+enum PetCategory {
+   Cat Dog Reptile
+}
+record Pet {
+    name : string
+    category : PetCategory
+}
+enum PetStatus {
+    Available Pending Sold
+}
+@alfa.openapi.Path(name=&quot;/pet&quot;)
+service PetService
+{
+    # Add a new pet to the store
+    @alfa.openapi.Post(tags=[&quot;pet&quot;])
+    addPet( p : Pet ) : void
+
+    # Update an existing pet
+    @alfa.openapi.Put(tags=[&quot;pet&quot;])
+    updatePet( p : Pet ) : void
+
+    # Finds pets by status
+    @alfa.openapi.Get(path=&quot;findByStatus&quot;, tags=[&quot;pet&quot;])
+    findByStatus( statuses : list&lt; PetStatus &gt; ) : list&lt; Pet &gt;
+
+    # Finds pets by tags
+    @alfa.openapi.Get(path=&quot;findByStatus&quot;, tags=[&quot;pet&quot;])
+    findByTags( statuses : list&lt; string &gt; ) : list&lt; Pet &gt;
+
+    # Find pet by id
+    @alfa.openapi.Get(path=&quot;/{petId}&quot;, tags=[&quot;pet&quot;])
+    getPetById( petId : long ) : Pet
+}
+</pre></div>
+</div>
+<p>Generated OpenAPI YAML definition:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">openapi</span><span class="p p-Indicator">:</span> <span class="s">&quot;3.0.0&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">info</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="s">&quot;Swagger</span><span class="nv"> </span><span class="s">Petstore&quot;</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="s">&quot;1.0.0&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">/petfindByStatus</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">get</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;pet&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="s">&quot;Finds</span><span class="nv"> </span><span class="s">pets</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">tags&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">operationId</span><span class="p p-Indicator">:</span> <span class="s">&quot;findByTags&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">parameters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;statuses&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span> <span class="s">&quot;query&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">required</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;array&quot;</span>
+          <span class="l l-Scalar l-Scalar-Plain">items</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;string&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">responses</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">200</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="s">&quot;Result</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">findByTags&quot;</span>
+          <span class="l l-Scalar l-Scalar-Plain">content</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">application/json</span><span class="p p-Indicator">:</span>
+              <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
+                <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;array&quot;</span>
+                <span class="l l-Scalar l-Scalar-Plain">items</span><span class="p p-Indicator">:</span>
+                  <span class="l l-Scalar l-Scalar-Plain">$ref</span><span class="p p-Indicator">:</span> <span class="s">&quot;Petstore.Pet&quot;</span>
+  <span class="l l-Scalar l-Scalar-Plain">/pet/{petId}</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">get</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;pet&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="s">&quot;Find</span><span class="nv"> </span><span class="s">pet</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">id&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">operationId</span><span class="p p-Indicator">:</span> <span class="s">&quot;getPetById&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">parameters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;petId&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span> <span class="s">&quot;path&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">required</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;integer&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">responses</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">200</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="s">&quot;Result</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">getPetById&quot;</span>
+          <span class="l l-Scalar l-Scalar-Plain">content</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">application/json</span><span class="p p-Indicator">:</span>
+              <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
+                <span class="l l-Scalar l-Scalar-Plain">$ref</span><span class="p p-Indicator">:</span> <span class="s">&quot;Petstore.Pet&quot;</span>
+  <span class="l l-Scalar l-Scalar-Plain">/pet</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">put</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;pet&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="s">&quot;Update</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">existing</span><span class="nv"> </span><span class="s">pet&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">operationId</span><span class="p p-Indicator">:</span> <span class="s">&quot;updatePet&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">parameters</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="s">&quot;p&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">in</span><span class="p p-Indicator">:</span> <span class="s">&quot;query&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">required</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">schema</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">$ref</span><span class="p p-Indicator">:</span> <span class="s">&quot;Petstore.Pet&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">responses</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">204</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="s">&quot;Result</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">updatePet&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">components</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">schemas</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">Petstore.PetCategory</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;string&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">enum</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;Cat&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;Dog&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;Reptile&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">Petstore.Pet</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;object&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">properties</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;string&quot;</span>
+        <span class="l l-Scalar l-Scalar-Plain">category</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">$ref</span><span class="p p-Indicator">:</span> <span class="s">&quot;Petstore.PetCategory&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">Petstore.PetStatus</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="s">&quot;string&quot;</span>
+      <span class="l l-Scalar l-Scalar-Plain">enum</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;Available&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;Pending&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;Sold&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

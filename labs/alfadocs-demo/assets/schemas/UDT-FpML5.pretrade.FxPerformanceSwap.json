@@ -1,0 +1,382 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes an FX volatility and variance swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FxPerformanceSwap",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes an FX volatility and variance swap.\n #/\nrecord FpML5.pretrade.FxPerformanceSwap {\n  # A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  primaryAssetClass : string?\n\n  # A classification of the type of product. FpML defines a simple product categorization using a coding scheme.\n  productType : string?\n\n  # A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.\n  productId : string?\n\n  # A Currency Pair with regards to this transaction and the quoting convention.\n  quotedCurrencyPair : FpML5.pretrade.QuotedCurrencyPair\n\n  # Vega Notional means the currency and amount specified as such in the related Confirmation.\n  vegaNotional : FpML5.pretrade.NonNegativeMoney?\n\n  # Notional Amount means, in the case of Transaction Type Variance Swap, the currency and amount specified as such in the related Confirmation or an amount calculated in accordance with the following: Notional Amount = Vega Notional Amount / (0.02 x Fixed FX Rate). This element must be produced in case of Variance Swap transaction.\n  notional : FpML5.pretrade.NonNegativeMoney?\n\n  # Fixed FX Rate component describes the Fixed FX Rate and Fixed FX Rate Payer as such in the Confirmation for the Non-Deliverable Swap FX Transaction.\n  fixedLeg : FpML5.pretrade.FxPerformanceFixedLeg\n\n  # Floating FX Rate component describes the Floating FX Rate Payer of the rate determined in accordance with the Floating FX Rate Option specified in the Definitions.\n  floatingLeg : FpML5.pretrade.FxPerformanceFloatingLeg\n\n  # Fixing Information source parameters to determine the rate observed for each good business day within the Fixing Schedule.\n  fixingInformationSource : FpML5.pretrade.FxSpotRateSource?\n\n  # Parametric schedule of rate observation dates.\n  fixingSchedule : FpML5.pretrade.FxFixingScheduleSimple\n\n  # Final Observation Date when Settlement Amount and Settlement Amount Payer determination date.\n  valuationDate : date\n\n  # Valuation date offset relative to the Final Observation Date and can be: [Final Observation Date][The first Business Day following the Final Observation Date].\n  valuationDateOffset : FpML5.pretrade.FxValuationDateOffset\n\n  # The date on which the Settlement Amount will be settled.\n  settlementDate : FpML5.pretrade.AdjustableOrAdjustedDate?\n\n  # This specifies the numerator of an annualization factor. Frequently this number is equal to the number of rate observations in a year e.g. Daily Observations: 252.\n  annualizationFactor : decimal?\n\n  # Specifies whether \"Mean Adjustment\" is applicable or not in the calculation of the Realized Volatility.\n  meanAdjustment : boolean?\n\n  # Number of Returns is the number of Observation Dates in the Observation Period, excluding the Initial Observation Date (where the Observation Rate on the Initial Observation Date shall equal S0).\n  numberOfReturns : int( 0, * )?\n\n  # Additional Payment means, in respect of an FX Transaction, where such fee is required, and a Transaction Fee Payment Date, the amount, if any, that is specified or otherwise determined as provided in the related Confirmation and, subject to any applicable condition precedent, is payable by one party to the other as further specified or otherwise determined as provided in the related Confirmation on the Transaction Fee Payment Date or on each Transaction Fee Payment Date if more than one is specified, for value on such date.\n  additionalPayment : FpML5.pretrade.Payment?\n\n  # Specifies the Settlement currency and fixing details for cash settlement. The FX Volatility and FX Variance Swaps are inherently cash settled, but into the notional currency. The optional cashSettlement block is provided for the case where the Settlement Currency differs from that of the Notional.\n  cashSettlement : FpML5.pretrade.FxCashSettlementSimple?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "primaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "primaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10180
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the type of product. FpML defines a simple product categorization using a coding scheme.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10183
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10186
+      }
+    },
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A Currency Pair with regards to this transaction and the quoting convention.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.QuotedCurrencyPair",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.QuotedCurrencyPair",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10189
+      }
+    },
+    "vegaNotional" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Vega Notional means the currency and amount specified as such in the related Confirmation.",
+      "Name" : "vegaNotional",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10192
+      }
+    },
+    "notional" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Notional Amount means, in the case of Transaction Type Variance Swap, the currency and amount specified as such in the related Confirmation or an amount calculated in accordance with the following: Notional Amount = Vega Notional Amount / (0.02 x Fixed FX Rate). This element must be produced in case of Variance Swap transaction.",
+      "Name" : "notional",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10195
+      }
+    },
+    "fixedLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fixed FX Rate component describes the Fixed FX Rate and Fixed FX Rate Payer as such in the Confirmation for the Non-Deliverable Swap FX Transaction.",
+      "Name" : "fixedLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.FxPerformanceFixedLeg",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.FxPerformanceFixedLeg",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxPerformanceFixedLeg",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10198
+      }
+    },
+    "floatingLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Floating FX Rate component describes the Floating FX Rate Payer of the rate determined in accordance with the Floating FX Rate Option specified in the Definitions.",
+      "Name" : "floatingLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.FxPerformanceFloatingLeg",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.FxPerformanceFloatingLeg",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxPerformanceFloatingLeg",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10201
+      }
+    },
+    "fixingInformationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fixing Information source parameters to determine the rate observed for each good business day within the Fixing Schedule.",
+      "Name" : "fixingInformationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxSpotRateSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10204
+      }
+    },
+    "fixingSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Parametric schedule of rate observation dates.",
+      "Name" : "fixingSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.FxFixingScheduleSimple",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.FxFixingScheduleSimple",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxFixingScheduleSimple",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10207
+      }
+    },
+    "valuationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Final Observation Date when Settlement Amount and Settlement Amount Payer determination date.",
+      "Name" : "valuationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10210
+      }
+    },
+    "valuationDateOffset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Valuation date offset relative to the Final Observation Date and can be: [Final Observation Date][The first Business Day following the Final Observation Date].",
+      "Name" : "valuationDateOffset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.FxValuationDateOffset",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.FxValuationDateOffset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxValuationDateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10213
+      }
+    },
+    "settlementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the Settlement Amount will be settled.",
+      "Name" : "settlementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.AdjustableOrAdjustedDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10216
+      }
+    },
+    "annualizationFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This specifies the numerator of an annualization factor. Frequently this number is equal to the number of rate observations in a year e.g. Daily Observations: 252.",
+      "Name" : "annualizationFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10219
+      }
+    },
+    "meanAdjustment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether \"Mean Adjustment\" is applicable or not in the calculation of the Realized Volatility.",
+      "Name" : "meanAdjustment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10222
+      }
+    },
+    "numberOfReturns" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Number of Returns is the number of Observation Dates in the Observation Period, excluding the Initial Observation Date (where the Observation Rate on the Initial Observation Date shall equal S0).",
+      "Name" : "numberOfReturns",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10225
+      }
+    },
+    "additionalPayment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Additional Payment means, in respect of an FX Transaction, where such fee is required, and a Transaction Fee Payment Date, the amount, if any, that is specified or otherwise determined as provided in the related Confirmation and, subject to any applicable condition precedent, is payable by one party to the other as further specified or otherwise determined as provided in the related Confirmation on the Transaction Fee Payment Date or on each Transaction Fee Payment Date if more than one is specified, for value on such date.",
+      "Name" : "additionalPayment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Payment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10228
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Settlement currency and fixing details for cash settlement. The FX Volatility and FX Variance Swaps are inherently cash settled, but into the notional currency. The optional cashSettlement block is provided for the case where the Settlement Currency differs from that of the Notional.",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxCashSettlementSimple",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10231
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10234
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryAssetClass", "productType", "productId", "quotedCurrencyPair", "vegaNotional", "notional", "fixedLeg", "floatingLeg", "fixingInformationSource", "fixingSchedule", "valuationDate", "valuationDateOffset", "settlementDate", "annualizationFactor", "meanAdjustment", "numberOfReturns", "additionalPayment", "cashSettlement", "id" ],
+  "IsSynthetic" : false
+}

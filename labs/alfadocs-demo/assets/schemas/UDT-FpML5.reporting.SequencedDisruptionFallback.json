@@ -1,0 +1,61 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A Disruption Fallback with the sequence in which it should be applied relative to other Disruption Fallbacks.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SequencedDisruptionFallback",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A Disruption Fallback with the sequence in which it should be applied relative to other Disruption Fallbacks.\n #/\nrecord FpML5.reporting.SequencedDisruptionFallback {\n  # Disruption fallback that applies to the trade.\n  fallback : string?\n\n  # Sequence in which the reference to the disruption fallback should be applied.\n  sequence : int( 1, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityMarketDisruption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Disruption fallback that applies to the trade.",
+      "Name" : "fallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1096
+      }
+    },
+    "sequence" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Sequence in which the reference to the disruption fallback should be applied.",
+      "Name" : "sequence",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1099
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fallback", "sequence" ],
+  "IsSynthetic" : false
+}

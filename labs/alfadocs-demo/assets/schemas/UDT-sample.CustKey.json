@@ -1,0 +1,39 @@
+{
+  "@type" : "alfa.rt.model.Key",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.CustKey",
+    "UdtType" : "keyType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "key CustKey {\n    Id : uuid\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.Customer",
+    "UdtType" : "entityType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.CustomerSvc",
+    "UdtType" : "serviceType"
+  } ],
+  "AllFields" : {
+    "Id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "Id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "uuidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 11
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Id" ],
+  "IsSynthetic" : false
+}

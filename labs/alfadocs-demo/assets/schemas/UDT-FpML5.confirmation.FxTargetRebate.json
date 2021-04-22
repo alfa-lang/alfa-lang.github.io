@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A rebate can be expressed as a payment amount or as amount of outstanding gain.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxTargetRebate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A rebate can be expressed as a payment amount or as amount of outstanding gain.\n #/\nrecord FpML5.confirmation.FxTargetRebate {\n  # Rebate amount expressed as a payment between the two parties.\n  payment : FpML5.confirmation.SimplePayment\n\n  # Rebate expressed as amount of outstanding gain.\n  outstandingGain : FpML5.confirmation.FxOutstandingGain\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxTargetBarrier",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rebate amount expressed as a payment between the two parties.",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.SimplePayment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.SimplePayment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.SimplePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25013
+      }
+    },
+    "outstandingGain" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rebate expressed as amount of outstanding gain.",
+      "Name" : "outstandingGain",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxOutstandingGain",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxOutstandingGain",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxOutstandingGain",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25016
+      }
+    }
+  },
+  "LocalFieldNames" : [ "payment", "outstandingGain" ],
+  "IsSynthetic" : false
+}

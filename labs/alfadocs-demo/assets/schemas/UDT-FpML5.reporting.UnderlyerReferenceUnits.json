@@ -1,0 +1,57 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.UnderlyerReferenceUnits",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.UnderlyerReferenceUnits {\n  # Reference to the underlyer defined within the calculationElements structure.\n  underlyerReference : FpML5.reporting.TradeUnderlyerReference?\n\n  # Amount of units.\n  quantity : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CashflowCalculationElements",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "underlyerReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the underlyer defined within the calculationElements structure.",
+      "Name" : "underlyerReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeUnderlyerReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20773
+      }
+    },
+    "quantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Amount of units.",
+      "Name" : "quantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20776
+      }
+    }
+  },
+  "LocalFieldNames" : [ "underlyerReference", "quantity" ],
+  "IsSynthetic" : false
+}

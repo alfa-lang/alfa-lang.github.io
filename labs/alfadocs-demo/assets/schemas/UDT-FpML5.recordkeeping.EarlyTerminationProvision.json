@@ -1,0 +1,115 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining an early termination provision for a swap. This early termination is at fair value, i.e. on termination the fair value of the product must be settled between the parties.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.EarlyTerminationProvision",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining an early termination provision for a swap. This early termination is at fair value, i.e. on termination the fair value of the product must be settled between the parties.\n #/\nrecord FpML5.recordkeeping.EarlyTerminationProvision {\n  # Period after trade date of the mandatory early termination date.\n  mandatoryEarlyTerminationDateTenor : FpML5.recordkeeping.Period?\n\n  # A mandatory early termination provision to terminate the swap at fair value.\n  mandatoryEarlyTermination : FpML5.recordkeeping.MandatoryEarlyTermination?\n\n  # Definition of the first early termination date and the frequency of the termination dates subsequent to that. American exercise is defined by having a frequency of one day.\n  optionalEarlyTerminationParameters : FpML5.recordkeeping.ExercisePeriod?\n\n  # An option for either or both parties to terminate the swap at fair value.\n  optionalEarlyTermination : FpML5.recordkeeping.OptionalEarlyTermination?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CapFloor",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Swap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "mandatoryEarlyTerminationDateTenor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Period after trade date of the mandatory early termination date.",
+      "Name" : "mandatoryEarlyTerminationDateTenor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5066
+      }
+    },
+    "mandatoryEarlyTermination" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A mandatory early termination provision to terminate the swap at fair value.",
+      "Name" : "mandatoryEarlyTermination",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.MandatoryEarlyTermination",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5069
+      }
+    },
+    "optionalEarlyTerminationParameters" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Definition of the first early termination date and the frequency of the termination dates subsequent to that. American exercise is defined by having a frequency of one day.",
+      "Name" : "optionalEarlyTerminationParameters",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ExercisePeriod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5072
+      }
+    },
+    "optionalEarlyTermination" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An option for either or both parties to terminate the swap at fair value.",
+      "Name" : "optionalEarlyTermination",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.OptionalEarlyTermination",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5075
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5078
+      }
+    }
+  },
+  "LocalFieldNames" : [ "mandatoryEarlyTerminationDateTenor", "mandatoryEarlyTermination", "optionalEarlyTerminationParameters", "optionalEarlyTermination", "id" ],
+  "IsSynthetic" : false
+}

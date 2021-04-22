@@ -1,0 +1,112 @@
+{
+  "@type" : "alfa.rt.model.Entity",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.Customer",
+    "UdtType" : "entityType"
+  },
+  "Includes" : [ {
+    "@type" : "alfa.rt.model.UdtDataType",
+    "FullyQualifiedName" : "sample.Person",
+    "UdtType" : "traitType"
+  } ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "entity Customer key CustKey includes Person {\n    Accounts : set< string >\n    CustomerType : enums.CustType\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.CustomerSvc",
+    "UdtType" : "serviceType"
+  } ],
+  "AllFields" : {
+    "FirstName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "FirstName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 5
+      }
+    },
+    "LastName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "LastName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 6
+      }
+    },
+    "DateOfBirth" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "DateOfBirth",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 7
+      }
+    },
+    "Accounts" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "Accounts",
+      "DataType" : {
+        "@type" : "alfa.rt.model.SetDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 15
+      }
+    },
+    "CustomerType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "CustomerType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "sample.enums.CustType",
+        "UdtType" : "enumType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "enums.CustType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "sample.enums.CustType",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 16
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Accounts", "CustomerType" ],
+  "IsSynthetic" : false,
+  "Key" : {
+    "@type" : "alfa.rt.model.EntityKey",
+    "KeyRef" : {
+      "@type" : "alfa.rt.model.UdtDataType",
+      "FullyQualifiedName" : "sample.CustKey",
+      "UdtType" : "keyType"
+    }
+  }
+}

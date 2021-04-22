@@ -1,0 +1,662 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "The convention for determining the sequence of calculation period end dates. It is used in conjunction with a specified frequency and the regular period start date of a calculation period, e.g. semi-annual IMM roll dates.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RollConventionEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n The convention for determining the sequence of calculation period end dates. It is used in conjunction with a specified frequency and the regular period start date of a calculation period, e.g. semi-annual IMM roll dates.\n #/\nenum FpML5.reporting.RollConventionEnum {\n    # Rolls on month end dates irrespective of the length of the month and the previous roll day.\n    EOM \n    # Roll days are determined according to the FRN Convention or Eurodollar Convention as described in ISDA 2000 definitions.\n    FRN \n    # IMM Settlement Dates. The third Wednesday of the (delivery) month.\n    IMM \n    # The last trading day/expiration day of the Canadian Derivatives Exchange (Bourse de Montreal Inc) Three-month Canadian Bankers' Acceptance Futures (Ticker Symbol BAX). The second London banking day prior to the third Wednesday of the contract month. If the determined day is a Bourse or bank holiday in Montreal or Toronto, the last trading day shall be the previous bank business day. Per Canadian Derivatives Exchange BAX contract specification.\n    IMMCAD \n    # The last trading day of the Sydney Futures Exchange 90 Day Bank Accepted Bills Futures contract (see http://www.sfe.com.au/content/sfe/trading/con_specs.pdf). One Sydney business day preceding the second Friday of the relevant settlement month.\n    IMMAUD \n    # The last trading day of the Sydney Futures Exchange NZ 90 Day Bank Bill Futures contract (see http://www.sfe.com.au/content/sfe/trading/con_specs.pdf). The first Wednesday after the ninth day of the relevant settlement month.\n    IMMNZD \n    # Sydney Futures Exchange 90-Day Bank Accepted Bill Futures Settlement Dates. The second Friday of the (delivery) month.\n    SFE \n    # The roll convention is not required. For example, in the case of a daily calculation frequency.\n    NONE \n    # 13-week and 26-week U.S. Treasury Bill Auction Dates. Each Monday except for U.S. (New York) holidays when it will occur on a Tuesday.\n    TBILL \n    # Rolls on the 1st day of the month.\n    `1` \n    # Rolls on the 2nd day of the month.\n    `2` \n    # Rolls on the 3rd day of the month.\n    `3` \n    # Rolls on the 4th day of the month.\n    `4` \n    # Rolls on the 4th day of the month.\n    `5` \n    # Rolls on the 6th day of the month.\n    `6` \n    # Rolls on the 7th day of the month.\n    `7` \n    # Rolls on the 8th day of the month.\n    `8` \n    # Rolls on the 9th day of the month.\n    `9` \n    # Rolls on the 10th day of the month.\n    `10` \n    # Rolls on the 11th day of the month.\n    `11` \n    # Rolls on the 12th day of the month.\n    `12` \n    # Rolls on the 13th day of the month.\n    `13` \n    # Rolls on the 14th day of the month.\n    `14` \n    # Rolls on the 15th day of the month.\n    `15` \n    # Rolls on the 16th day of the month.\n    `16` \n    # Rolls on the 17th day of the month.\n    `17` \n    # Rolls on the 18th day of the month.\n    `18` \n    # Rolls on the 19th day of the month.\n    `19` \n    # Rolls on the 20th day of the month.\n    `20` \n    # Rolls on the 21st day of the month.\n    `21` \n    # Rolls on the 22nd day of the month.\n    `22` \n    # Rolls on the 23rd day of the month.\n    `23` \n    # Rolls on the 24th day of the month.\n    `24` \n    # Rolls on the 25th day of the month.\n    `25` \n    # Rolls on the 26th day of the month.\n    `26` \n    # Rolls on the 27th day of the month.\n    `27` \n    # Rolls on the 28th day of the month.\n    `28` \n    # Rolls on the 29th day of the month.\n    `29` \n    # Rolls on the 30th day of the month.\n    `30` \n    # Rolling weekly on a Monday.\n    MON \n    # Rolling weekly on a Tuesday.\n    TUE \n    # Rolling weekly on a Wednesday.\n    WED \n    # Rolling weekly on a Thursday.\n    THU \n    # Rolling weekly on a Friday.\n    FRI \n    # Rolling weekly on a Saturday.\n    SAT \n    # Rolling weekly on a Sunday.\n    SUN \n\n}"
+  },
+  "AllFields" : {
+    "EOM" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on month end dates irrespective of the length of the month and the previous roll day.",
+      "Name" : "EOM",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3207
+      }
+    },
+    "FRN" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Roll days are determined according to the FRN Convention or Eurodollar Convention as described in ISDA 2000 definitions.",
+      "Name" : "FRN",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3209
+      }
+    },
+    "IMM" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "IMM Settlement Dates. The third Wednesday of the (delivery) month.",
+      "Name" : "IMM",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3211
+      }
+    },
+    "IMMCAD" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last trading day/expiration day of the Canadian Derivatives Exchange (Bourse de Montreal Inc) Three-month Canadian Bankers' Acceptance Futures (Ticker Symbol BAX). The second London banking day prior to the third Wednesday of the contract month. If the determined day is a Bourse or bank holiday in Montreal or Toronto, the last trading day shall be the previous bank business day. Per Canadian Derivatives Exchange BAX contract specification.",
+      "Name" : "IMMCAD",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3213
+      }
+    },
+    "IMMAUD" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last trading day of the Sydney Futures Exchange 90 Day Bank Accepted Bills Futures contract (see http://www.sfe.com.au/content/sfe/trading/con_specs.pdf). One Sydney business day preceding the second Friday of the relevant settlement month.",
+      "Name" : "IMMAUD",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3215
+      }
+    },
+    "IMMNZD" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last trading day of the Sydney Futures Exchange NZ 90 Day Bank Bill Futures contract (see http://www.sfe.com.au/content/sfe/trading/con_specs.pdf). The first Wednesday after the ninth day of the relevant settlement month.",
+      "Name" : "IMMNZD",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3217
+      }
+    },
+    "SFE" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Sydney Futures Exchange 90-Day Bank Accepted Bill Futures Settlement Dates. The second Friday of the (delivery) month.",
+      "Name" : "SFE",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3219
+      }
+    },
+    "NONE" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The roll convention is not required. For example, in the case of a daily calculation frequency.",
+      "Name" : "NONE",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3221
+      }
+    },
+    "TBILL" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "13-week and 26-week U.S. Treasury Bill Auction Dates. Each Monday except for U.S. (New York) holidays when it will occur on a Tuesday.",
+      "Name" : "TBILL",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3223
+      }
+    },
+    "1" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 1st day of the month.",
+      "Name" : "1",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3225
+      }
+    },
+    "2" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 2nd day of the month.",
+      "Name" : "2",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3227
+      }
+    },
+    "3" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 3rd day of the month.",
+      "Name" : "3",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3229
+      }
+    },
+    "4" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 4th day of the month.",
+      "Name" : "4",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3231
+      }
+    },
+    "5" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 4th day of the month.",
+      "Name" : "5",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3233
+      }
+    },
+    "6" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 6th day of the month.",
+      "Name" : "6",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3235
+      }
+    },
+    "7" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 7th day of the month.",
+      "Name" : "7",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3237
+      }
+    },
+    "8" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 8th day of the month.",
+      "Name" : "8",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3239
+      }
+    },
+    "9" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 9th day of the month.",
+      "Name" : "9",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3241
+      }
+    },
+    "10" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 10th day of the month.",
+      "Name" : "10",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3243
+      }
+    },
+    "11" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 11th day of the month.",
+      "Name" : "11",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3245
+      }
+    },
+    "12" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 12th day of the month.",
+      "Name" : "12",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3247
+      }
+    },
+    "13" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 13th day of the month.",
+      "Name" : "13",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3249
+      }
+    },
+    "14" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 14th day of the month.",
+      "Name" : "14",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3251
+      }
+    },
+    "15" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 15th day of the month.",
+      "Name" : "15",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3253
+      }
+    },
+    "16" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 16th day of the month.",
+      "Name" : "16",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3255
+      }
+    },
+    "17" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 17th day of the month.",
+      "Name" : "17",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3257
+      }
+    },
+    "18" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 18th day of the month.",
+      "Name" : "18",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3259
+      }
+    },
+    "19" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 19th day of the month.",
+      "Name" : "19",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3261
+      }
+    },
+    "20" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 20th day of the month.",
+      "Name" : "20",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3263
+      }
+    },
+    "21" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 21st day of the month.",
+      "Name" : "21",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3265
+      }
+    },
+    "22" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 22nd day of the month.",
+      "Name" : "22",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3267
+      }
+    },
+    "23" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 23rd day of the month.",
+      "Name" : "23",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3269
+      }
+    },
+    "24" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 24th day of the month.",
+      "Name" : "24",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3271
+      }
+    },
+    "25" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 25th day of the month.",
+      "Name" : "25",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3273
+      }
+    },
+    "26" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 26th day of the month.",
+      "Name" : "26",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3275
+      }
+    },
+    "27" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 27th day of the month.",
+      "Name" : "27",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3277
+      }
+    },
+    "28" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 28th day of the month.",
+      "Name" : "28",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3279
+      }
+    },
+    "29" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 29th day of the month.",
+      "Name" : "29",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3281
+      }
+    },
+    "30" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolls on the 30th day of the month.",
+      "Name" : "30",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3283
+      }
+    },
+    "MON" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolling weekly on a Monday.",
+      "Name" : "MON",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3285
+      }
+    },
+    "TUE" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolling weekly on a Tuesday.",
+      "Name" : "TUE",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3287
+      }
+    },
+    "WED" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolling weekly on a Wednesday.",
+      "Name" : "WED",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3289
+      }
+    },
+    "THU" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolling weekly on a Thursday.",
+      "Name" : "THU",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3291
+      }
+    },
+    "FRI" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolling weekly on a Friday.",
+      "Name" : "FRI",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3293
+      }
+    },
+    "SAT" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolling weekly on a Saturday.",
+      "Name" : "SAT",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3295
+      }
+    },
+    "SUN" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Rolling weekly on a Sunday.",
+      "Name" : "SUN",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3297
+      }
+    }
+  },
+  "LocalFieldNames" : [ "EOM", "FRN", "IMM", "IMMCAD", "IMMAUD", "IMMNZD", "SFE", "NONE", "TBILL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN" ],
+  "IsSynthetic" : false
+}

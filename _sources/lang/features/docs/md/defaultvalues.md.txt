@@ -1,0 +1,37 @@
+# Fields assigned to Literals or Expressions
+
+ALFA fields can be assigned a default value or an expression.
+The value can be any ALFA type - scalars, maps, sets, UDTs etc.
+The ALFA parser will read and validate the value to ensure it complies with the declared typed.
+
+A default value can be over-written with a different value at object construction time. Expression fields cannot be assigned
+a value - they are read-only. Expressions are evaluated as the last step before the object is constructed.
+
+Fields can be assigned to service functions, allowing custom implementation to return a value that will be assigned to
+the field. This is particularly useful in the case of values that are complex or can only be accessed natively
+ (See the `VersionHost` field in the `Auditable` UDT below).
+
+See the example below on fields being assigned to various values.
+
+```csharp
+trait Auditable {
+  VersionTimestamp : datetime = timestamp()
+  VersionHost : string = AuditHelper::getHost()
+}
+
+service AuditHelper() {
+  getHost() : string
+}
+
+enum RequestType {
+  New Cancel
+}
+
+record Request includes Auditable {
+  Type : RequestType = RequestType.New
+  Metadata : map< string, string > = { "source" : "unknown", "type" : "unknown" }
+  TimeToLiveSecs : int = 600
+  Payload : string
+  MessageSize : long = len( Payload ) + 64
+}
+```

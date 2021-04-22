@@ -1,0 +1,14 @@
+# encrypted< T >
+
+Contents of type `T` are expected to be encrypted, where `T` can be any Alfa type, with some exceptions. The encryption method is implementation specific.
+
+The `encrypted` type can be nested within other Alfa types. 
+```csharp
+   creditCards : map< CardAlias : string, encrypted< CreditCardInfo > >
+```
+
+__Optional Parameters__
+
+Parameters can be specified in the form `encrypted< T >( k1 = v1, k2 = v2, ... )`. 
+Currently the usage and types for the parameters are undefined.
+

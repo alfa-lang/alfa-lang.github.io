@@ -1,0 +1,330 @@
+ALFA Maven Plugin
+-----------------
+
+ALFA Tools includes an Apache Maven plugin that supports compiling
+ALFA projects and executing ALFA model exporters.
+
+
+### Plugin installation
+
+There are 3 possible ways of installing the ALFA Maven Plugin.
+
+#### 1. Reference alfa-lang.io repository
+
+>The ALFA Maven plugin is published at `https://alfa-lang.io/repository` and it can be referenced by specifying a
+>`repositories` block in the `pom.xml`.
+>
+>Add the following repository configuration to your pom.xml file for Maven to locate the ALFA Plugin and runtime.
+>
+>```xml
+>    <!-- For the ALFA Maven Plugin /-->
+>    <pluginRepositories>
+>      <pluginRepository>
+>          <id>alfa-repo</id>
+>          <url>https://alfa-lang.io/repository</url>
+>      </pluginRepository>
+>    </pluginRepositories>
+>
+>    <!-- For the ALFA Java Runtime libraries /-->
+>    <repositories>
+>        <repository>
+>            <id>alfa-repo</id>
+>            <url>https://alfa-lang.io/repository</url>
+>        </repository>
+>    </repositories>
+>```
+
+#### 2. Install to local repository
+
+>In corporate environments, developer machines and build servers may not have access to external repositories.
+>You may can manually install the plugin to your local repository.
+>
+>The ALFA Maven plugin is included in the [AlfaCLI-0.8.1-RC1.zip](https://alfa-lang.io/downloads/AlfaCLI-0.8.1-RC1.zip) file in the `mvn-repository`
+>directory. Once the [AlfaCLI-0.8.1-RC1.zip](https://alfa-lang.io/downloads/AlfaCLI-0.8.1-RC1.zip) is downloaded to a share location, the contents of the
+>`mvn-repository` can be installed to your local repository.
+>
+>The commands below will install both the ALFA Maven Plugin and the ALFA Java runtime (required to compile generated Java code).
+>
+>```sh
+>unzip AlfaCLI-0.8.1-RC1.zip
+>
+>cd mvn-repository
+>
+>mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file \
+>     -Dfile=io/alfa/utils/alfa-maven-plugin/0.8.1-RC1/alfa-maven-plugin-0.8.1-RC1.jar \
+>     -DpomFile=io/alfa/utils/alfa-maven-plugin/0.8.1-RC1/alfa-maven-plugin-0.8.1-RC1.pom
+>
+>mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file \
+>     -Dfile=io/alfa/rt/alfa-rt-java-core/0.8.1-RC1/alfa-rt-java-core-0.8.1-RC1.jar \
+>     -DpomFile=io/alfa/rt/alfa-rt-java-core/0.8.1-RC1/alfa-rt-java-core-0.8.1-RC1.pom
+>```
+
+#### 3. Install to shared repository
+
+>Centrally managed repositories such as Artifactory are common in corporate environments.
+>The ALFA Plugin and Runtime can be installed into a central repository to avoid steps 1 or 2 above.
+>If using Artifactory, it is possible to deploy using the steps outlined
+>[here](https://www.jfrog.com/confluence/display/JFROG/Artifactory+REST+API#ArtifactoryRESTAPI-DeployArtifact).
+>The steps outlined below are one possible way to upload to Artifactory. It is
+><span style="color:red">strongly recommended</span> to consult the Artifactory documentation before executing these steps.
+>
+>Expand contents of [AlfaCLI-0.8.1-RC1.zip](https://alfa-lang.io/downloads/AlfaCLI-0.8.1-RC1.zip) and `cd mvn-repository`. Create the
+>2 following scripts with the contents shown. **You may need to adjust the script to suite your environment
+(e.g. http or https, password or token).**
+>
+>**File:** `art-upload.sh`
+>
+>*Note:* Update values for `username:password` and `artifactory-server:port`.
+>The username requires 'DEPLOY' permission in Artifactory.
+>>```
+>>AUTH=username:password
+>>CONN=artifactory-server:port
+>>
+>>ALFA_ARTIFACT_PATH=$1
+>>ALFA_ARTIFACT=$2
+>>ARTIFACT_TYPE=$3
+>>
+>>curl -v -X PUT --user $AUTH \
+>>    --header "X-Checksum-MD5:`cat ${ALFA_ARTIFACT_PATH}/${ALFA_ARTIFACT}.${ARTIFACT_TYPE}.md5`" \
+>>    --header "X-Checksum-Sha1:`cat ${ALFA_ARTIFACT_PATH}/${ALFA_ARTIFACT}.${ARTIFACT_TYPE}.sha1`"\
+>>    --upload-file ${ALFA_ARTIFACT_PATH}/${ALFA_ARTIFACT}.${ARTIFACT_TYPE} \
+>>  http://$CONN/artifactory/libs-release-local/${ALFA_ARTIFACT_PATH}/${ALFA_ARTIFACT}.${ARTIFACT_TYPE}
+>>```
+>
+>**File:** `alfa-art-upload.sh`
+>>```
+>>./art-upload.sh io/alfa/rt/alfa-rt-java-core/0.8.1-RC1 alfa-rt-java-core-0.8.1-RC1 jar
+>>./art-upload.sh io/alfa/rt/alfa-rt-java-core/0.8.1-RC1 alfa-rt-java-core-0.8.1-RC1 pom
+>>
+>>./art-upload.sh io/alfa/utils/alfa-maven-plugin/0.8.1-RC1 alfa-maven-plugin-0.8.1-RC1 jar
+>>./art-upload.sh io/alfa/utils/alfa-maven-plugin/0.8.1-RC1 alfa-maven-plugin-0.8.1-RC1 pom
+>>```
+>
+>Once the `alfa-art-upload.sh` script is executed, the ALFA Plugin and Runtime jars should be visible in the Artifactory browser.
+>
+>![ALFA Artifactory](/_static/images/alfa-artifactory.png)
+
+
+### Plugin Usage
+
+An example usage of the plugin is shown below:
+
+
+```
+ <plugin>
+    <groupId>io.alfa.utils</groupId>
+    <artifactId>alfa-maven-plugin</artifactId>
+    <version>0.8.1-RC1</version>
+    <executions>
+       <execution>
+          <id>alfa-exec</id>
+          <goals>
+             <goal>compile</goal>
+             <goal>package</goal>
+          </goals>
+          <configuration>
+              <exportSettings>
+                  <exportSetting>
+                      <exportType>java</exportType>
+                  </exportSetting>
+              </exportSettings>
+          </configuration>
+       </execution>
+    </executions>
+ </plugin>
+```
+
+
+The plugin support 2 Maven goals, compile and package.
+1. compile - compiles and executes exporters defined under configuration.
+2. package - packages the alfa files into a zip artifact, that can be
+uploaded to a repository and be used as dependency to other ALFA projects.
+
+The plugin locates ALFA source files in 3 possible ways.
+1. Top level Maven source directory
+>```
+><sourceDirectory>${basedir}/src/main/alfa</sourceDirectory>
+>```
+
+2. Use `build-helper-maven-plugin` and add `source` directory
+>```
+><source>${basedir}/src/main/alfa</source>
+>```
+3. Specify `srcPath` parameter to the ALFA plugin as shown in the complete example below.
+>```
+><srcPath>${basedir}/src/main/alfa</srcPath>
+>```
+
+### Plugin Parameters
+
+All parameters are optional.
+
+|Name   |Description
+|-------|-----------
+|srcPath|Custom path to ALFA source files.
+|srcDependency|Specified as < group >:< artifact >:< version >; Use the dependency as source for code generation. Plugin should depend on the required artifact.
+|exportSetting[]| Array of ExportSetting objects
+|exportSetting.exportType| Exporter to run - e.g. java
+|exportSetting.outputDir| Custom output dir. By default `target/generated-sources/${exportType}`
+|exportSetting.config|Map of key value pairs for configuring exporter.
+
+### Plugin Compile-time Dependencies
+
+ALFA files being compiled by the Plugin can reference other Maven-based artifacts at compile time.
+This allows teams to share their definitions via formal release processes.
+Downstream teams can express dependencies on ALFA artifacts to reference definitions from other ALFA artifacts.
+
+Other ALFA generated projects can be used a dependencies by specifying a dependency when using the ALFA plugin.
+Note the `classifier` and `type` fields need to be specified as a `alfa` and `zip` respectively.
+```xml
+<dependencies>
+    <dependency>
+        <groupId>other.project.group</groupId>
+        <artifactId>other-project-name</artifactId>
+        <version>1.0</version>
+        <classifier>alfa</classifier>
+        <type>zip</type>
+    </dependency>
+</dependencies>
+```
+
+Dependencies can used as source for code generation. See `srcDependency` plugin parameter.
+
+### Complete Example
+
+To quickly setup a test Maven project with ALFA files, you can follow the 3 steps below.
+
+* Create a new directory `alfademo`. In `alfademo`, create new file `pom.xml` file and paste the contents below.
+
+>```xml
+><project xmlns="http://maven.apache.org/POM/4.0.0"
+>         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+>
+>   <modelVersion>4.0.0</modelVersion>
+>   <groupId>com.example</groupId>
+>   <artifactId>alfa-demo-project</artifactId>
+>   <version>1.0-SNAPSHOT</version>
+>
+>   <properties>
+>       <maven.compiler.source>1.8</maven.compiler.source>
+>       <maven.compiler.target>1.8</maven.compiler.target>
+>       <encoding>UTF-8</encoding>
+>   </properties>
+>
+>   <!-- The generated Java code depends on the the alfa-rt-java-core library /-->
+>   <dependencies>
+>       <dependency>
+>           <groupId>io.alfa.rt</groupId>
+>           <artifactId>alfa-rt-java-core</artifactId>
+>           <version>0.8.1-RC1</version>
+>       </dependency>
+>   </dependencies>
+>
+>   <build>
+>      <plugins>
+>         <plugin>
+>            <groupId>io.alfa.utils</groupId>
+>            <artifactId>alfa-maven-plugin</artifactId>
+>            <version>0.8.1-RC1</version>
+>            <executions>
+>               <execution>
+>                  <id>alfa-exec</id>
+>                  <goals>
+>                     <goal>compile</goal>
+>                     <goal>package</goal>
+>                  </goals>
+>                  <configuration>
+>                      <!-- source path /-->
+>                      <srcPath>${basedir}/src/main/alfa</srcPath>
+>                      <!-- generate java /-->
+>                      <exportSettings>
+>                          <exportSetting>
+>                              <exportType>java</exportType>
+>                          </exportSetting>
+>                      </exportSettings>
+>                  </configuration>
+>               </execution>
+>            </executions>
+>         </plugin>
+>
+>         <plugin>
+>             <groupId>org.codehaus.mojo</groupId>
+>             <artifactId>build-helper-maven-plugin</artifactId>
+>             <version>1.7</version>
+>             <executions>
+>                 <execution>
+>                     <id>add-java-gen-source</id>
+>                     <phase>generate-sources</phase>
+>                     <goals>
+>                         <goal>add-source</goal>
+>                     </goals>
+>                     <configuration>
+>                         <sources>
+>                             <source>${project.build.directory}/generated-sources/java</source>
+>                         </sources>
+>                     </configuration>
+>                 </execution>
+>             </executions>
+>         </plugin>
+>
+>      </plugins>
+>   </build>
+>
+>   <!-- Uncomment below to download ALFA artifacts from alfa-lang.io/repository /-->
+>   <!--
+>   <repositories>
+>      <repository>
+>         <id>alfa-repo</id>
+>         <url>https://alfa-lang.io/repository</url>
+>      </repository>
+>   </repositories>
+>
+>   <pluginRepositories>
+>      <pluginRepository>
+>         <id>alfa-repo</id>
+>         <url>https://alfa-lang.io/repository</url>
+>      </pluginRepository>
+>   </pluginRepositories>
+>
+>   /-->
+>
+></project>
+>```
+
+* In `alfademo`, create a file in a subdirectory as `src/main/alfa/demo.alfa`, and paste the contents below.
+
+>```csharp
+>namespace sample
+>
+>trait Person {
+>    FirstName : string
+>    LastName : string
+>    DateOfBirth : date
+>    email : string
+>}
+>
+>enum ServiceLevelType {
+>    Standard Gold Platinum
+>}
+>
+>entity Customer key ( Id : uuid ) includes Person {
+>    Accounts : set< string >
+>    DeclaredIncomes : list< double >
+>    ServiceLevel : ServiceLevelType
+>}
+>
+>service CustomerSvc() {
+>    getCustomerByEmailAddress( email : string) : Customer?
+>}
+>```
+
+* Run `mvn install` in the `alfademo` directory. When run the 1st time, it will download the ALFA plugin and runtime arifacts.
+
+>If successful, you should have jar created - `target/alfa-demo-project-1.0-SNAPSHOT.jar`.
+>The generated Java code can be seen in `target/generated-sources/java/`.
+>
+>**Congratulations! You have generated and built your 1st ALFA type library!**
+>
+
+

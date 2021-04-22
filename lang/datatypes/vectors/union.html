@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>union&lt; :T1, :T2, ..&gt; &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="compressed" href="../../prodatatypes/templated/compress.html" />
+    <link rel="prev" title="tuple&lt; :T1, :T2, .. &gt;" href="tuple.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../guide.html">Language Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../typesystem.html">Type System</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../typesystem.html#top-level-constructs">Top level constructs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../typesystem.html#user-defined-types">User-defined types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../typesystem.html#scalar-types">Scalar types</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../typesystem.html#vector-and-composite-types">Vector and composite types</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="enum.html">enum&lt; C1, C2, … &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="map.html">map&lt; K, V &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="list.html">list&lt; T &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set.html">set&lt; T &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tuple.html">tuple&lt; :T1, :T2, .. &gt;</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">union&lt; :T1, :T2, ..&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../typesystem.html#auxiliary-types">Auxiliary types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../expressions/expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../expressions/builtin-funcs.html">Builtin Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otherfeatures.html">Other Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../guide.html">Language Guide</a> &raquo;</li>
+        
+          <li><a href="../../typesystem.html">Type System</a> &raquo;</li>
+        
+      <li>union&lt; :T1, :T2, ..&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="union-t1-t2">
+<span id="unionvectortype"></span><h1>union&lt; :T1, :T2, ..&gt;<a class="headerlink" href="#union-t1-t2" title="Permalink to this headline">¶</a></h1>
+<p>Represents a fixed set of type entries where only 1 of types
+<code class="docutils literal notranslate"><span class="pre">T1,</span> <span class="pre">T2,</span> <span class="pre">Tn</span></code> will be set.</p>
+<p>A union datatype can be considered an in-line <a class="reference internal" href="../../constructs/union.html#uniontype"><span class="std std-ref">union</span></a> declaration.</p>
+<p>Example:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">:</span> <span class="pre">union&lt;</span> <span class="pre">:string,</span> <span class="pre">:int,</span> <span class="pre">:date</span> <span class="pre">&gt;</span></code> Union containing given types.
+The field <code class="docutils literal notranslate"><span class="pre">Data</span></code> will contain a value of one of the types.</li>
+</ul>
+<p>Using the named syntax below is recommended to clarify the field usage.</p>
+<p><strong>Optional Parameters</strong></p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">union&lt;</span> <span class="pre">Name1:T1,</span> <span class="pre">Name2:T2,</span> <span class="pre">...</span> <span class="pre">&gt;</span></code>
+&gt;</p>
+<blockquote>
+<div><p>Labels can be optionally specified for the the types making the union a <a class="reference external" href="https://en.m.wikipedia.org/wiki/Tagged_union">tagged union</a>.</p>
+<p>Example:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">PrimaryContact:</span> <span class="pre">union&lt;</span> <span class="pre">Phone:string,</span> <span class="pre">Email:string,</span> <span class="pre">Address:string</span> <span class="pre">&gt;</span></code>Union containing tagged entries.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">union&lt;</span> <span class="pre">FieldName1,</span> <span class="pre">FieldName2,</span> <span class="pre">...</span> <span class="pre">&gt;</span></code></p>
+</li>
+</ul>
+<blockquote>
+<div>Fields declared in <code class="docutils literal notranslate"><span class="pre">fields</span> <span class="pre">{}</span></code> block can be referenced simply by specifying their name.</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

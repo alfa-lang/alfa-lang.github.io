@@ -1,0 +1,124 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the adjusted dates associated with a particular exercise event.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExerciseEvent",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the adjusted dates associated with a particular exercise event.\n #/\nrecord FpML5.reporting.ExerciseEvent {\n  # The date on which option exercise takes place. This date should already be adjusted for any applicable business day convention.\n  adjustedExerciseDate : date?\n\n  # The effective date of the underlying swap associated with a given exercise date. This date should already be adjusted for any applicable business day convention.\n  adjustedRelevantSwapEffectiveDate : date?\n\n  # The date by which the cash settlement amount must be agreed. This date should already be adjusted for any applicable business day convention.\n  adjustedCashSettlementValuationDate : date?\n\n  # The date on which the cash settlement amount is paid. This date should already be adjusted for any applicable business dat convention.\n  adjustedCashSettlementPaymentDate : date?\n\n  # The date on which the exercise fee amount is paid. This date should already be adjusted for any applicable business day convention.\n  adjustedExerciseFeePaymentDate : date?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SwaptionAdjustedDates",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "adjustedExerciseDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which option exercise takes place. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedExerciseDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6250
+      }
+    },
+    "adjustedRelevantSwapEffectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The effective date of the underlying swap associated with a given exercise date. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedRelevantSwapEffectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6253
+      }
+    },
+    "adjustedCashSettlementValuationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date by which the cash settlement amount must be agreed. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedCashSettlementValuationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6256
+      }
+    },
+    "adjustedCashSettlementPaymentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the cash settlement amount is paid. This date should already be adjusted for any applicable business dat convention.",
+      "Name" : "adjustedCashSettlementPaymentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6259
+      }
+    },
+    "adjustedExerciseFeePaymentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the exercise fee amount is paid. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedExerciseFeePaymentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6262
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6265
+      }
+    }
+  },
+  "LocalFieldNames" : [ "adjustedExerciseDate", "adjustedRelevantSwapEffectiveDate", "adjustedCashSettlementValuationDate", "adjustedCashSettlementPaymentDate", "adjustedExerciseFeePaymentDate", "id" ],
+  "IsSynthetic" : false
+}

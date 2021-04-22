@@ -1,0 +1,82 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SettlementPeriodFixingDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.SettlementPeriodFixingDates {\n  # Observation date in a fixing period.\n  fixingDate : date\n\n  # Start date of the period.\n  startDate : date\n\n  # End date of the period.\n  endDate : date\n\n  # Number of fixings between the fixing start and end date.\n  numberOfFixings : int\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxAccrualSettlementPeriod",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxAccrualSettlementPeriodPayoff",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Observation date in a fixing period.",
+      "Name" : "fixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33836
+      }
+    },
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Start date of the period.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33839
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "End date of the period.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33842
+      }
+    },
+    "numberOfFixings" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Number of fixings between the fixing start and end date.",
+      "Name" : "numberOfFixings",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33845
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fixingDate", "startDate", "endDate", "numberOfFixings" ],
+  "IsSynthetic" : false
+}

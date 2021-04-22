@@ -1,0 +1,153 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualRegionLowerBound",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.FxAccrualRegionLowerBound {\n  # The Lower Bound Direction. It only contains the AtOrAbove and Above values.\n  condition : string\n\n  # Level expressed as a level.\n  level : FpML5.recordkeeping.FxLevel\n\n  # The Quoted Currency Pair that is used accross the product.\n  quoteBasis : string?\n\n  # Reference to a strike defined within the FxAccrualForward and FxAccrualOption products.\n  strikeReference : FpML5.recordkeeping.FxAccrualStrikeReference\n\n  # Reference to an average rate defined within the FxAccrualForward and FxAccrualOption products.\n  averageStrikeReference : FpML5.recordkeeping.FxAccrualAverageStrikeReference\n\n  # Reference to a trigger defined within the FxAccrualDigitalOption product.\n  triggerReference : FpML5.recordkeeping.FxAccrualTriggerReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualLinearPayoffRegion",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualRegion",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "condition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Lower Bound Direction. It only contains the AtOrAbove and Above values.",
+      "Name" : "condition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25065
+      }
+    },
+    "level" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Level expressed as a level.",
+      "Name" : "level",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FxLevel",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FxLevel",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxLevel",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25068
+      }
+    },
+    "quoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quoted Currency Pair that is used accross the product.",
+      "Name" : "quoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25071
+      }
+    },
+    "strikeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a strike defined within the FxAccrualForward and FxAccrualOption products.",
+      "Name" : "strikeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualStrikeReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FxAccrualStrikeReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualStrikeReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25074
+      }
+    },
+    "averageStrikeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an average rate defined within the FxAccrualForward and FxAccrualOption products.",
+      "Name" : "averageStrikeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualAverageStrikeReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FxAccrualAverageStrikeReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualAverageStrikeReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25077
+      }
+    },
+    "triggerReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a trigger defined within the FxAccrualDigitalOption product.",
+      "Name" : "triggerReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualTriggerReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FxAccrualTriggerReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualTriggerReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25080
+      }
+    }
+  },
+  "LocalFieldNames" : [ "condition", "level", "quoteBasis", "strikeReference", "averageStrikeReference", "triggerReference" ],
+  "IsSynthetic" : false
+}

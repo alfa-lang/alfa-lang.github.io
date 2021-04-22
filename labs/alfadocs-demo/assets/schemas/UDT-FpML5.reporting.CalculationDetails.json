@@ -1,0 +1,80 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A cashflow component with optional calculation details that explain how the cashflow amount was computed.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CalculationDetails",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A cashflow component with optional calculation details that explain how the cashflow amount was computed.\n #/\nrecord FpML5.reporting.CalculationDetails {\n  # Payment details of this cash flow component, including currency, amount and payer/payee.\n  grossCashflow : FpML5.reporting.GrossCashflow?\n\n  # The underlyer rate or price observation(s) used to compute the amount of this cashflow component.\n  observationElements : FpML5.reporting.CashflowObservation?\n\n  calculationElements : FpML5.reporting.CashflowCalculationElements?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PaymentMatching",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionPayment",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "grossCashflow" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Payment details of this cash flow component, including currency, amount and payer/payee.",
+      "Name" : "grossCashflow",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.GrossCashflow",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12991
+      }
+    },
+    "observationElements" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The underlyer rate or price observation(s) used to compute the amount of this cashflow component.",
+      "Name" : "observationElements",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CashflowObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12994
+      }
+    },
+    "calculationElements" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "calculationElements",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CashflowCalculationElements",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12997
+      }
+    }
+  },
+  "LocalFieldNames" : [ "grossCashflow", "observationElements", "calculationElements" ],
+  "IsSynthetic" : false
+}

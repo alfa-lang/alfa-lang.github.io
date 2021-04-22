@@ -1,0 +1,709 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Protocol Buffers &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Protocol Buffers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="protocol-buffers">
+<h1>Protocol Buffers<a class="headerlink" href="#protocol-buffers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This document defines the translation tool and methodology for ALFA schemas to
+<a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3">Protocol Buffers 3</a>.</p>
+<p>Some ALFA to PB3 type translations will inevitably not have a direct corresponding
+type. PB3 has several limitations when nesting types, mandatory fields, oneof, map key types etc.
+This leads to a difficult choice when generating PB3
+from ALFA . Given ALFA ‘s rich data model, should:</p>
+<ol class="arabic simple">
+<li>All abstractions be modelled faithfully in
+PB3 at the risk of bloating PB3 model with various metadata fields.</li>
+<li>Fallback to the PB3 features and not support translations for some ALFA features in PB3.</li>
+</ol>
+<p>Option 2 was chosen with the expectation that those wishing to use PB3
+will likely be existing PB3 users who are aware of its capabilities and
+limitations. The ALFA <a class="reference internal" href="../../java.html#java"><span class="std std-ref">Java</span></a> in future will support a binary serialisation,
+which will close the gap between the current ALFA JSON serialisation
+and PB3 binary performance. Once that is available, there may be less
+reasons to use this ALFA to PB3 generator.</p>
+<p>It is worth noting that if the PB3 JSON serialisation is to be used, the JSON streaming
+in <a class="reference internal" href="../../java.html#java"><span class="std std-ref">Java</span></a> has been seen to be 20% - 30% faster than PB3 JSON for round-trip conversions.</p>
+<p>The PB3 Exporter continues to be refined in terms of its translation capabilities. Feedback is most welcome on how to
+improve the translation into PB3, to make the best use of PB3 features.</p>
+<p>Usage:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c -e protobuf -o generated/avro src
+</pre></div>
+</div>
+<p>For the ALFA maven plugin, use <code class="docutils literal notranslate"><span class="pre">&lt;exportType&gt;protobuf&lt;/exportType&gt;</span></code> in the plugin configuration.</p>
+</div>
+<div class="section" id="primitive-types">
+<h2>Primitive types<a class="headerlink" href="#primitive-types" title="Permalink to this headline">¶</a></h2>
+<p>ALFA primitives are mapped to Protocol Buffers as shown in the following table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ALFA</th>
+<th class="head">Protocol Buffers</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>binary</td>
+<td>bytes</td>
+</tr>
+<tr class="row-odd"><td>boolean</td>
+<td>bool</td>
+</tr>
+<tr class="row-even"><td>byte</td>
+<td>bytes</td>
+</tr>
+<tr class="row-odd"><td>char</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>date</td>
+<td>int64</td>
+</tr>
+<tr class="row-odd"><td>datetime</td>
+<td>google.protobuf.Timestamp</td>
+</tr>
+<tr class="row-even"><td>decimal</td>
+<td>double</td>
+</tr>
+<tr class="row-odd"><td>decimal(s,p)</td>
+<td>decimal(s,p)</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>google.protobuf.Duration</td>
+</tr>
+<tr class="row-odd"><td>double</td>
+<td>double</td>
+</tr>
+<tr class="row-even"><td>float</td>
+<td>float</td>
+</tr>
+<tr class="row-odd"><td>int</td>
+<td>int32</td>
+</tr>
+<tr class="row-even"><td>long</td>
+<td>int64</td>
+</tr>
+<tr class="row-odd"><td>pattern</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>short</td>
+<td>int32</td>
+</tr>
+<tr class="row-odd"><td>string</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>time</td>
+<td>time_ms</td>
+</tr>
+<tr class="row-odd"><td>uint</td>
+<td>uint32</td>
+</tr>
+<tr class="row-even"><td>ulong</td>
+<td>uint64</td>
+</tr>
+<tr class="row-odd"><td>ushort</td>
+<td>uint32</td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td>uuid</td>
+<td>string</td>
+</tr>
+<tr class="row-even"><td>void</td>
+<td>void</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vectors-types">
+<h2>Vectors types<a class="headerlink" href="#vectors-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="map">
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/map.html#mapvectortype"><span class="std std-ref">map&lt; K, V &gt;</span></a> where scalar keys are used, are represented as a
+PB3 <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#maps">map&lt; K, V &gt;</a>.
+For complex key types, repeated of a record tuple is used.
+Given an ALFA definition ( assume Person is an existing record ):</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Team</span> <span class="p">{</span>
+    <span class="n">salaries</span> <span class="p">:</span> <span class="k">map</span><span class="p">&lt;</span><span class="n">Person</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record __TeamSalariesEntry {
+    Person key = 1;
+    double value = 2;
+}
+
+record Team {
+    repeated __TeamSalariesEntry salaries = 1;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="set">
+<h3>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/set.html#setvectortype"><span class="std std-ref">set&lt; T &gt;</span></a> is represented as a PB3 <code class="docutils literal notranslate"><span class="pre">repeated</span></code> value.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Team</span> <span class="p">{</span>
+    <span class="n">members</span> <span class="p">:</span> <span class="k">set</span><span class="p">&lt;</span> <span class="n">Person</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>record Team {
+    repeated Person members = 1;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <span class="xref std std-ref">seqVectorType</span> translates directly to PB3 <code class="docutils literal notranslate"><span class="pre">repeated</span></code>.</p>
+</div>
+<div class="section" id="enum">
+<h3>Enum<a class="headerlink" href="#enum" title="Permalink to this headline">¶</a></h3>
+<p>ALFA supports <code class="docutils literal notranslate"><span class="pre">enum&lt;</span> <span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">C</span> <span class="pre">&gt;</span></code> directly as a field type instead of having to declare it as a
+standalone <a class="reference internal" href="../../../lang/datatypes/vectors/enum.html#enumvectortype"><span class="std std-ref">enum&lt; C1, C2, … &gt;</span></a> type.
+Such field type declarations translates to a PB3 <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#enum">enum</a>
+and a reference to that declaration. So given:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Velocity</span> <span class="p">{</span>
+    <span class="n">direction</span> <span class="p">:</span> <span class="k">enum</span><span class="p">&lt;</span> <span class="n">N</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">W</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>message Velocity {
+  pb3.Velocity_direction_ direction = 1;
+}
+
+enum Velocity_direction_ {
+  N = 0;
+  S = 1;
+  E = 2;
+  W = 3;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple">
+<h3>Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/tuple.html#tuplevectortype"><span class="std std-ref">tuple&lt; :T1, :T2, .. &gt;</span></a> type translates to a PB3 message and and a reference to that declaration. So given:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Drawing</span> <span class="p">{</span>
+    <span class="n">resolution</span> <span class="p">:</span> <span class="k">tuple</span><span class="p">&lt;</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span> <span class="p">&gt;</span>
+    <span class="n">origin</span> <span class="p">:</span> <span class="k">tuple</span><span class="p">&lt;</span> <span class="n">X</span> <span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">Y</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will be ( notice the generated field naming ):</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>message Drawing {
+  Drawing_resolution_ resolution = 1;
+  Drawing_origin_ origin = 2;
+}
+
+message Drawing_origin_ {
+  int32 X = 1;
+  int32 Y = 2;
+}
+
+message Drawing_resolution_ {
+  int32 TupField__1 = 1;
+  int32 TupField__2 = 2;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="union">
+<h3>Union<a class="headerlink" href="#union" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/datatypes/vectors/union.html#unionvectortype"><span class="std std-ref">union&lt; :T1, :T2, ..&gt;</span></a> field type translates naturally to a PB3 <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#oneof">union</a> field type. So given:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Result</span> <span class="p">{</span>
+    <span class="n">value</span> <span class="p">:</span> <span class="k">union</span><span class="p">&lt;</span> <span class="p">:</span><span class="kt">double</span><span class="p">,</span> <span class="p">:</span><span class="kt">int</span><span class="p">,</span> <span class="p">:</span><span class="kt">string</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will simply be:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>message Result {
+  Result_value_ value = 1;
+}
+
+message Result_value_ {
+  oneof Value {
+    double Case__1 = 1;
+    int32 Case__2 = 2;
+    string Case__3 = 3;
+  }
+}
+</pre></div>
+</div>
+<p>ALFA union field type can optionally have tagged names, therefore can have different tagged names with the same type.
+Consider:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Payment</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="p">:</span> <span class="k">union</span><span class="p">&lt;</span> <span class="n">Paypal</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">BankAccount</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">,</span> <span class="n">Cash</span> <span class="p">:</span> <span class="k">void</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Will be translated to PB3 as:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>message Union__Payment_method {
+  oneof Value {
+    string Paypal = 1;
+    string BankAccount = 2;
+    bool Cash = 3;
+  }
+}
+
+message Payment {
+  com.acme.Union__Payment_method method = 1;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="user-defined-types">
+<h2>User-defined types<a class="headerlink" href="#user-defined-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="record">
+<h3>record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/record.html#recordtype"><span class="std std-ref">record</span></a> will be a PB3 <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#simple">message</a>.</p>
+</div>
+<div class="section" id="key">
+<h3>key<a class="headerlink" href="#key" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/key.html#keytype"><span class="std std-ref">key</span></a> will be a PB3 <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#simple">message</a>.</p>
+</div>
+<div class="section" id="id4">
+<h3>enum<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/enum.html#enumtype"><span class="std std-ref">enum</span></a> will be a PB3 <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#enum">enum</a>.</p>
+</div>
+<div class="section" id="trait">
+<h3>trait<a class="headerlink" href="#trait" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/trait.html#traittype"><span class="std std-ref">trait</span></a> is translated to a PB3 <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#oneof">oneof</a> as the ALFA
+transitive closure of implementations of the
+trait. Given an ALFA definition:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">trait</span> <span class="n">Shape</span> <span class="p">{</span> <span class="n">area</span> <span class="p">:</span> <span class="kt">double</span> <span class="p">}</span>
+
+<span class="k">trait</span> <span class="n">Rectangle</span> <span class="k">includes</span> <span class="n">Shape</span> <span class="p">{</span> <span class="n">height</span> <span class="p">:</span> <span class="kt">int</span> <span class="n">width</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Square</span> <span class="k">includes</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Circle</span> <span class="k">includes</span> <span class="n">Shape</span> <span class="p">{</span> <span class="n">radius</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Triangle</span> <span class="k">includes</span> <span class="n">Shape</span> <span class="p">{</span>
+    <span class="n">side1</span> <span class="p">:</span> <span class="kt">int</span>
+    <span class="n">side2</span> <span class="p">:</span> <span class="kt">int</span>
+    <span class="n">side3</span> <span class="p">:</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Drawing</span> <span class="p">{</span> <span class="n">item</span> <span class="p">:</span> <span class="n">Shape</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will be the following:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>message Circle {
+  double area = 1;
+  int32 radius = 2;
+}
+
+message Rectangle {
+  oneof Impl {
+    pb3.Square impl0 = 1;
+  }
+}
+
+message Square {
+  double area = 1;
+  int32 height = 2;
+  int32 width = 3;
+}
+
+message Triangle {
+  double area = 1;
+  int32 side1 = 2;
+  int32 side2 = 3;
+  int32 side3 = 4;
+}
+
+message Shape {
+  oneof Impl {
+    pb3.Rectangle impl0 = 1;
+    pb3.Square impl1 = 2;
+    pb3.Circle impl2 = 3;
+    pb3.Triangle impl3 = 4;
+  }
+}
+
+message Drawing {
+  pb3.Shape item = 1;
+}
+</pre></div>
+</div>
+<p>Notice the ALFA traits are PB3 records with unions of its transitive closure from ALFA .</p>
+</div>
+<div class="section" id="entity">
+<h3>entity<a class="headerlink" href="#entity" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/entity.html#entitytype"><span class="std std-ref">entity</span></a> will be translated to a PB3 record with a field named <code class="docutils literal notranslate"><span class="pre">__key</span></code> appearing as the 1st field.
+This field represents the key of the entity, if one is defined ( ALFA permits keyless entities to represent
+singletons ).</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Item</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="k">entity</span> <span class="n">Order</span> <span class="nf">key</span><span class="p">(</span> <span class="n">id</span> <span class="p">:</span> <span class="k">uuid</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">items</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="n">Item</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will be the following:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>message Item {
+  string Name = 1;
+}
+
+message Order {
+  OrderKey __key = 1;
+  repeated Item  items = 2;
+}
+
+message OrderKey {
+  string id = 1;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>union<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/union.html#uniontype"><span class="std std-ref">union</span></a> gets translated to a PB3 message with <a class="reference external" href="https://developers.google.com/protocol-buffers/docs/proto3#oneof">oneof</a> with a single union field containing ALFA union fields. This is identical
+to ALFA in-lined union field type translation.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">union</span> <span class="n">Payment</span> <span class="p">{</span>
+    <span class="n">Paypal</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">Cash</span> <span class="p">:</span> <span class="k">void</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>PB3 translation will be the following:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>message Payment {
+  oneof Value {
+    string Paypal = 1;
+    string BankAccount = 2;
+    bool Cash = 3;
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="service">
+<h3>service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h3>
+<p>An ALFA <a class="reference internal" href="../../../lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a> will be translated to a new PB3 Protocol definition file containing
+the set of methods. All definitions required by the service will be available in a seperate file containing the record declarations.</p>
+<p>Given the ALFA definition:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">com.acme</span>
+
+<span class="k">record</span> <span class="n">Order</span> <span class="p">{}</span>
+
+<span class="k">service</span> <span class="n">OrderProcessing</span> <span class="p">{</span>
+    <span class="n">createEmptyOrder</span><span class="p">()</span> <span class="p">:</span> <span class="n">Order</span>
+    <span class="n">saveOrder</span><span class="p">(</span> <span class="n">order</span> <span class="p">:</span> <span class="n">Order</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The 2 following PB3 definitions will be generated:</p>
+<p>File <code class="docutils literal notranslate"><span class="pre">com/acme/OrderProcessing.proto</span></code>. A PB3 definition per ALFA service.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">syntax</span> <span class="o">=</span> <span class="s2">&quot;proto3&quot;</span><span class="p">;</span>
+
+<span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">acme</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="s2">&quot;com/acme/Order.proto&quot;</span><span class="p">;</span>
+
+<span class="n">message</span> <span class="n">OrderProcessingCreateEmptyOrderRequest</span> <span class="p">{</span>
+<span class="p">}</span>
+
+
+<span class="n">message</span> <span class="n">OrderProcessingCreateEmptyOrderResponse</span> <span class="p">{</span>
+  <span class="n">com</span><span class="o">.</span><span class="n">acme</span><span class="o">.</span><span class="n">Order</span> <span class="n">createEmptyOrderResult</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">message</span> <span class="n">OrderProcessingSaveOrderRequest</span> <span class="p">{</span>
+  <span class="n">com</span><span class="o">.</span><span class="n">acme</span><span class="o">.</span><span class="n">Order</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">message</span> <span class="n">OrderProcessingSaveOrderResponse</span> <span class="p">{</span>
+<span class="p">}</span>
+
+
+<span class="k">service</span> <span class="n">OrderProcessing</span> <span class="p">{</span>
+    <span class="n">rpc</span> <span class="n">createEmptyOrder</span> <span class="p">(</span> <span class="n">OrderProcessingCreateEmptyOrderRequest</span> <span class="p">)</span> <span class="n">returns</span> <span class="p">(</span> <span class="n">OrderProcessingCreateEmptyOrderResponse</span> <span class="p">);</span>
+    <span class="n">rpc</span> <span class="n">saveOrder</span> <span class="p">(</span> <span class="n">OrderProcessingSaveOrderRequest</span> <span class="p">)</span> <span class="n">returns</span> <span class="p">(</span> <span class="n">OrderProcessingSaveOrderResponse</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>File <code class="docutils literal notranslate"><span class="pre">com/acme/Order.proto</span></code>.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>syntax = &quot;proto3&quot;;
+
+package com.acme;
+
+
+message Order {
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="other-alfa-features">
+<h2>Other ALFA features<a class="headerlink" href="#other-alfa-features" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="optional-fields">
+<h3>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this headline">¶</a></h3>
+<p>By definition all PB3 fields are optional, therefore even ALFA fields
+which are mandatory will be defined in PB3 as optional as per the
+design choice outlined in the Overview section above.</p>
+</div>
+<div class="section" id="key-t">
+<h3>key&lt; T &gt;<a class="headerlink" href="#key-t" title="Permalink to this headline">¶</a></h3>
+<p>ALFA <code class="docutils literal notranslate"><span class="pre">key&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is an entity will be translated to the key declaration of <code class="docutils literal notranslate"><span class="pre">TKey</span></code>, where the ALFA key would have been
+generated as a PB3 message.</p>
+</div>
+</div>
+<div class="section" id="exporter-example">
+<h2>Exporter Example<a class="headerlink" href="#exporter-example" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following <code class="docutils literal notranslate"><span class="pre">demo.alfa</span></code> definition.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">com.acme</span>
+
+<span class="k">key</span> <span class="n">BankAccountKey</span> <span class="p">{</span>
+    <span class="n">IBAN</span> <span class="p">:</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="k">entity</span> <span class="n">BankAccount</span> <span class="k">key</span> <span class="n">BankAccountKey</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">Transactions</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="n">Transaction</span> <span class="p">&gt;</span>
+    <span class="n">RegisteredDate</span> <span class="p">:</span> <span class="k">date</span>
+    <span class="n">Type</span> <span class="p">:</span> <span class="k">enum</span><span class="p">&lt;</span> <span class="n">Silver</span><span class="p">,</span> <span class="n">Gold</span><span class="p">,</span> <span class="n">Platinum</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Transaction</span> <span class="p">{</span>
+   <span class="n">Amount</span> <span class="p">:</span> <span class="kt">double</span>
+   <span class="n">Description</span> <span class="p">:</span> <span class="kt">string</span>
+   <span class="n">Date</span> <span class="p">:</span> <span class="k">date</span>
+   <span class="n">CorrespondingIBAN</span>  <span class="p">:</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="k">service</span> <span class="nf">BankService</span><span class="p">(</span> <span class="n">AuthToken</span> <span class="p">:</span> <span class="k">uuid</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="n">getAccount</span><span class="p">(</span> <span class="n">IBAN</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">)</span> <span class="p">:</span> <span class="k">try</span><span class="p">&lt;</span> <span class="n">BankAccount</span> <span class="p">&gt;</span>
+   <span class="n">getTransactions</span><span class="p">(</span> <span class="n">k</span> <span class="p">:</span> <span class="n">BankAccountKey</span> <span class="p">)</span> <span class="p">:</span> <span class="k">stream</span><span class="p">&lt;</span> <span class="n">Transaction</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This can be generated to Protocol Buffers3 using the ALFA CLI - <code class="docutils literal notranslate"><span class="pre">alfa</span> <span class="pre">-c</span> <span class="pre">-e</span> <span class="pre">protobuf</span> <span class="pre">-o</span> <span class="pre">gen/pb3</span> <span class="pre">demo.alfa</span></code>.</p>
+<p>As a quick overview, the generated Protocol Buffers 3 code is shown in the screenshot below.
+This can be compiled using the <code class="docutils literal notranslate"><span class="pre">protoc</span></code> Protocol Buffers compiler and toolset.</p>
+<a class="reference external image-reference" href="/_static/images/alfa-pb3.png"><img alt="ALFA Generated PB3 Code" src="../../../_images/alfa-pb3.png" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

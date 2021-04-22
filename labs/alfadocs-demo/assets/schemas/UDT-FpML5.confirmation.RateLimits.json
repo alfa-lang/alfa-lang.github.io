@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The limits associated with rates that can be applied to a loan instrument.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RateLimits",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The limits associated with rates that can be applied to a loan instrument.\n #/\nrecord FpML5.confirmation.RateLimits {\n  # The rate floor being applied.\n  floorRate : FpML5.confirmation.PeriodRate?\n\n  # The rate cap being applied.\n  capRate : FpML5.confirmation.PeriodRate?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FixedRateOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FloatingRateOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "floorRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate floor being applied.",
+      "Name" : "floorRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PeriodRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25472
+      }
+    },
+    "capRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate cap being applied.",
+      "Name" : "capRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PeriodRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 25475
+      }
+    }
+  },
+  "LocalFieldNames" : [ "floorRate", "capRate" ],
+  "IsSynthetic" : false
+}

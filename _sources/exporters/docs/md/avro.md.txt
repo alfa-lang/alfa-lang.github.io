@@ -1,0 +1,437 @@
+# Avro Exporter
+
+## Overview
+This document defines the translation methodology for ALFA to [Avro 1.9.1 IDL](https://avro.apache.org/docs/1.9.1/idl.html).
+Some translations will inevitably have not direct corresponding type. However, Avro annotations are used to indicate
+additional attributes where required to provide information in the Avro IDL schema to be used where necessary.
+
+The Avro exporter continues to be refined in terms of its translation capabilities. Feedback is most welcome on how to
+improve the translation into Avro, to make the best use of Avro features.
+
+Usage:
+```
+alfa -c -e avro -o generated/avro src
+```
+For use with the :ref:`mvnplugin`, set `<exportType>avro</exportType>` in the plugin configuration.
+
+## Primitive types
+ALFA primitives are mapped to Avro as defined in the following table.
+
+|ALFA           | Avro          |
+|--------------| --------------|
+|binary        | bytes
+|boolean       | boolean
+|byte          | bytes
+|char          | string
+|date          | date
+|datetime      | timestamp_ms
+|decimal       | decimal
+|decimal(s,p)  | decimal(s,p)
+|duration      | duration
+|double        | double
+|float         | float
+|int           | int
+|long          | long
+|pattern       | string
+|short         | int
+|string        | string
+|time          | time_ms
+|url           | string
+|uuid          | string
+|void          | void
+
+
+## Vectors types
+
+### Map
+
+ALFA :ref:`mapVectorType` where scalar keys are used, are represented as a Avro [map< V >](https://avro.apache.org/docs/1.9.1/idl.html#maps). For complex key types, use array of a record tuple.
+Given an ALFA definition ( assume Person is an existing record ):
+
+```csharp
+record Team {
+    salaries : map<Person, double>
+}
+```
+
+Avro translation will be:
+
+```
+@alfa-synthetic( "map-tuple" )
+record __TeamSalariesEntry {
+    Person key;
+    double value;
+}
+
+record Team {
+    array< __TeamSalariesEntry > salaries;
+}
+```
+
+The ``@alfa-synthetic( "map-tuple" )`` Avro annotation serves as a marker on the record indicate the ``array< __TeamSalariesEntry >``
+type, should be treated as a map if the target programming model support non-scalar map keys.
+
+### Set
+ALFA :ref:`setVectorType` is represented as an Avro [array< T >](https://avro.apache.org/docs/1.9.1/idl.html#arrays) with an annotation to indicate it should be treated as a ``set<T>`` if
+the target programming model supports ``set<T>``.
+
+```csharp
+record Team {
+    members : set< Person >
+}
+```
+
+Avro translation will be:
+
+```
+record Team {
+    @alfa-isSet( "true" )
+    array< Person > members;
+}
+```
+
+### Seq
+ALFA :ref:`seqVectorType` translates directly to Avro [array< T >](https://avro.apache.org/docs/1.9.1/idl.html#arrays).
+
+### Enum
+ALFA supports ``enum< A, B, C >`` directly as a field type instead of having to declare it as a standalone :ref:`enumVectorType` type.
+Such field type declarations translates to an Avro [enum](https://avro.apache.org/docs/1.9.1/idl.html#format_enums) and a reference to that declaration. So given:
+
+```csharp
+record Velocity {
+    direction : enum< N, S, E, W >
+}
+```
+
+Avro translation will be:
+
+```
+record Velocity {
+    direction : __VelocityDirection;
+}
+
+@alfa-synthetic( "true" )
+enum __VelocityDirection {
+    N, S, E, W
+}
+```
+
+### Tuple
+An ALFA :ref:`tupleVectorType` type translates to an Avro record and and a reference to that declaration. So given:
+
+```csharp
+record Drawing {
+    resolution : tuple< int, int >
+    origin : tuple< X : int, Y : int >
+}
+```
+
+Avro translation will be ( notice the generated field naming ):
+
+```
+record Drawing {
+    resolution : __DrawingResolution
+    origin : __DrawingOrigin
+}
+
+@alfa-synthetic( "true" )
+record __DrawingResolution {
+    int _1;
+    int _2;
+}
+
+@alfa-synthetic( "true" )
+record __DrawingOrigin {
+    int X;
+    int Y;
+    int Z;
+}
+```
+
+### Union
+An ALFA :ref:`unionVectorType` field type translates naturally to an Avro [union](https://avro.apache.org/docs/1.9.1/idl.html#unions) field type. So given:
+
+```csharp
+record Result {
+    value : union< double, int, string >
+}
+```
+
+Avro translation will simply be:
+
+```
+record Result {
+    union{ double, int, string } value;
+}
+```
+
+ALFA union field type can optionally have tagged names, therefore can have different tagged names with the same type.
+Consider:
+
+```csharp
+record Payment {
+    method : union< Paypal : string, BankAccount : string , Cash : void >
+}
+```
+
+The above contains 2 fields of type string, which will not translate as-is to an Avro union. Also a ``Cash`` field of type
+``void`` which is not supported in Avro. When duplicate type or ``void`` is encountered in an ALFA union, those are
+wrapped as records in Avro as shown below.
+
+```
+record Payment {
+    union{ string, __PaymentMethodBankAccount, __PaymentMethodCash } method;
+}
+
+record __PaymentMethodBankAccount {
+    string BankAccount;
+}
+
+record __PaymentMethodCash {
+}
+```
+
+## User-defined types
+### record
+An ALFA :ref:`recordType` will be an Avro `record <https://avro.apache.org/docs/1.9.1/idl.html#format_records>`_.
+
+### key
+An ALFA :ref:`keyType` will be an Avro `record <https://avro.apache.org/docs/1.9.1/idl.html#format_records>`_.
+
+### enum
+An ALFA :ref:`enumType` will be an Avro `enum <https://avro.apache.org/docs/1.9.1/idl.html#format_enums>`_.
+
+### trait
+An ALFA :ref:`traitType` is translated to an Avro [union](https://avro.apache.org/docs/1.9.1/idl.html#unions) as the ALFA transitive closure of implementations of the
+trait. Given an ALFA definition:
+
+```csharp
+trait Shape { area : double }
+
+trait Rectangle includes Shape { height : int width : int }
+
+record Square includes Rectangle { }
+
+record Circle includes Shape { radius : int }
+
+record Triangle includes Shape { side : int }
+
+record Drawing { item : Shape }
+```
+
+Avro translation will be the following:
+
+```
+record Square { double area; int height; int width; }
+
+record Circle { double area; int radius; }
+
+record Triangle { double area; int side; }
+
+record Shape {
+    union { Square, Circle, Triangle } shape;
+}
+
+record Rectangle {
+    union { Square } rectangle;
+}
+
+record Drawing { Shape item; }
+```
+
+Notice the ALFA traits are Avro records with unions of its transitive closure from ALFA .
+
+### entity
+An ALFA :ref:`entityType` will be translated to a Avro record with a field named ``__key`` appearing as the 1st field.
+This field represents the key of the entity, if one is defined ( ALFA permits keyless entity to represent
+singletons ).
+
+```csharp
+entity Order key( id : uuid ) {
+    items : list< Item >
+}
+```
+
+Avro translation will be the following:
+
+```
+record OrderKey {
+    id : string
+}
+
+record Order {
+    OrderKey __key;
+    array< Item > items;
+}
+```
+
+### union
+An ALFA :ref:`unionType` gets translated to a Avro [record](https://avro.apache.org/docs/1.9.1/idl.html#format_records) with a single union field containing ALFA union fields. This is identical
+to ALFA in-lined union field type translation.
+
+```csharp
+union Payment {
+    Paypal : string
+    BankAccount : string
+    Cash : void
+}
+```
+
+Avro translation will be the following:
+
+```
+record Payment {
+    union{ string, __PaymentMethodBankAccount, __PaymentMethodCash } method;
+}
+
+record __PaymentMethodBankAccount {
+    string BankAccount;
+}
+
+record __PaymentMethodCash {
+}
+```
+
+### service
+An ALFA :ref:`serviceType` will be translated to a new Avro Protocol definition file containing
+the set of methods. All definitions required by the interface will be available in a seperate
+file containing only Avro records.
+
+Given the ALFA definition:
+
+```csharp
+namespace com.acme
+
+record Order {}
+
+service OrderProcessing {
+    createEmptyOrder() : Order
+    saveOrder( order : Order ) : void
+}
+```
+The 2 following Avro definitions will be generated:
+
+
+File `com.acme.OrderProcessing.avdl`. An Avro Protocol definition per ALFA service.
+
+```none
+@namespace ("com.acme")
+protocol OrderProcessing
+{
+    import idl "com.acme.avdl";
+
+    com.acme.Order createEmptyOrder();
+    void saveOrder( com.acme.Order order );
+}
+```
+
+File `com.acme.avdl`.  An Avro Protocol definition by ALFA namespace.
+
+```
+@namespace ("com.acme")
+protocol com_acme
+{
+    record Order { }
+}
+```
+
+## Other ALFA features
+
+### Optional fields
+Fields marked as optional in ALFA using ``T?`` will be converted to Avro as ``union{T, null}``.
+
+### key<T>
+ALFA ``key<T>`` where ``T`` is an entity will be translated to the key declaration of ``TKey``, where the ALFA key would have been
+generated as a Avro record.
+
+## Building an ALFA to Avro Project
+
+This step can be performed in Maven using the following build configuration.
+The configuration below will invoke the ALFA compiler to generate Avro, invoke Avro schema to Java generator, and finally compile
+the generated Java.
+
+```
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>io.alfa.utils</groupId>
+                <artifactId>alfa-pro-maven-plugin</artifactId>
+                <version>0.8.1-RC1</version>
+                <executions>
+                    <execution>
+                        <id>alfa-build</id>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <srcPath>${basedir}/src/alfa/</srcPath>
+                            <exportSettings>
+                                <exportSetting>
+                                    <exportType>avro</exportType>
+                                </exportSetting>
+                            </exportSettings>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                            <goal>protocol</goal>
+                            <goal>idl-protocol</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>
+                                ${project.build.directory}/generated-sources/avro
+                            </sourceDirectory>
+                            <outputDirectory>
+                                ${project.build.directory}/generated-sources/java
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+```
+
+
+
+

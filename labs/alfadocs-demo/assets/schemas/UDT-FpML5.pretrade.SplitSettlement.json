@@ -1,0 +1,89 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that supports the division of a gross settlement amount into a number of split settlements, each requiring its own settlement instruction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.SplitSettlement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that supports the division of a gross settlement amount into a number of split settlements, each requiring its own settlement instruction.\n #/\nrecord FpML5.pretrade.SplitSettlement {\n  # One of the monetary amounts in a split settlement payment.\n  splitSettlementAmount : FpML5.pretrade.Money\n\n  # The bank that acts for the ultimate beneficiary of the funds in receiving payments.\n  beneficiaryBank : FpML5.pretrade.Routing?\n\n  # The ultimate beneficiary of the funds. The beneficiary can be identified either by an account at the beneficiaryBank (qv) or by explicit routingInformation. This element provides for the latter.\n  beneficiary : FpML5.pretrade.Routing\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.SettlementInstruction",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "splitSettlementAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "One of the monetary amounts in a split settlement payment.",
+      "Name" : "splitSettlementAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.Money",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.Money",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6350
+      }
+    },
+    "beneficiaryBank" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The bank that acts for the ultimate beneficiary of the funds in receiving payments.",
+      "Name" : "beneficiaryBank",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Routing",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6353
+      }
+    },
+    "beneficiary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ultimate beneficiary of the funds. The beneficiary can be identified either by an account at the beneficiaryBank (qv) or by explicit routingInformation. This element provides for the latter.",
+      "Name" : "beneficiary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.Routing",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.Routing",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Routing",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6356
+      }
+    }
+  },
+  "LocalFieldNames" : [ "splitSettlementAmount", "beneficiaryBank", "beneficiary" ],
+  "IsSynthetic" : false
+}

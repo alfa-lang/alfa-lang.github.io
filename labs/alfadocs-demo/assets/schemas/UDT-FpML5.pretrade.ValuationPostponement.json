@@ -1,0 +1,44 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies how long to wait to get a quote from a settlement rate option upon a price source disruption.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ValuationPostponement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies how long to wait to get a quote from a settlement rate option upon a price source disruption.\n #/\nrecord FpML5.pretrade.ValuationPostponement {\n  # The maximum number of days to wait for a quote from the disrupted settlement rate option before proceding to the next method.\n  maximumDaysOfPostponement : int( 1, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FallbackReferencePrice",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "maximumDaysOfPostponement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum number of days to wait for a quote from the disrupted settlement rate option before proceding to the next method.",
+      "Name" : "maximumDaysOfPostponement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 11273
+      }
+    }
+  },
+  "LocalFieldNames" : [ "maximumDaysOfPostponement" ],
+  "IsSynthetic" : false
+}

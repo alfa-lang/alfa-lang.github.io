@@ -1,0 +1,56 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxKnockoutCount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.FxKnockoutCount {\n  # Number of fixings that are in the money. No accumulation process.\n  conditionalFixings : int?\n\n  # Whether there is settlement at knockout.\n  settlementAtKnockout : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxTarget",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "conditionalFixings" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Number of fixings that are in the money. No accumulation process.",
+      "Name" : "conditionalFixings",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10820
+      }
+    },
+    "settlementAtKnockout" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether there is settlement at knockout.",
+      "Name" : "settlementAtKnockout",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10823
+      }
+    }
+  },
+  "LocalFieldNames" : [ "conditionalFixings", "settlementAtKnockout" ],
+  "IsSynthetic" : false
+}

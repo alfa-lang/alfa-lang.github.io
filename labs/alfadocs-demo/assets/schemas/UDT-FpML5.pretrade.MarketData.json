@@ -1,0 +1,40 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type capturing market data information.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.MarketData",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type capturing market data information.\n #/\nrecord FpML5.pretrade.MarketData {\n  fxRate : FpML5.pretrade.FxRate?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.MarginQuote",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "fxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FxRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9467
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fxRate" ],
+  "IsSynthetic" : false
+}

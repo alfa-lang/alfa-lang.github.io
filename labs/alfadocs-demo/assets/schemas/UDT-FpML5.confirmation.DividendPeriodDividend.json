@@ -1,0 +1,147 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A time bounded dividend period, with an expected dividend for each period.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DividendPeriodDividend",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A time bounded dividend period, with an expected dividend for each period.\n #/\nrecord FpML5.confirmation.DividendPeriodDividend {\n  # Unadjusted inclusive dividend period start date.\n  unadjustedStartDate : date\n\n  # Unadjusted inclusive dividend period end date.\n  unadjustedEndDate : date\n\n  # Date adjustments for all unadjusted dates in this dividend period.\n  dateAdjustments : FpML5.confirmation.BusinessDayAdjustments\n\n  # Reference to the underlyer which is paying dividends. This should be used in all cases, and must be used where there are multiple underlying assets, to avoid any ambiguity about which asset the dividend period relates to.\n  underlyerReference : FpML5.confirmation.AssetReference?\n\n  # Expected dividend in this period.\n  dividend : FpML5.confirmation.NonNegativeMoney\n\n  # Multiplier is a percentage value which is used to produce Deviation by multiplying the difference between Expected Dividend and Actual Dividend Deviation = Multiplier * (Expected Dividend — Actual Dividend).\n  multiplier : decimal\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DividendAdjustment",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "unadjustedStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Unadjusted inclusive dividend period start date.",
+      "Name" : "unadjustedStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3211
+      }
+    },
+    "unadjustedEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Unadjusted inclusive dividend period end date.",
+      "Name" : "unadjustedEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3214
+      }
+    },
+    "dateAdjustments" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date adjustments for all unadjusted dates in this dividend period.",
+      "Name" : "dateAdjustments",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BusinessDayAdjustments",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BusinessDayAdjustments",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessDayAdjustments",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3217
+      }
+    },
+    "underlyerReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the underlyer which is paying dividends. This should be used in all cases, and must be used where there are multiple underlying assets, to avoid any ambiguity about which asset the dividend period relates to.",
+      "Name" : "underlyerReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3220
+      }
+    },
+    "dividend" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Expected dividend in this period.",
+      "Name" : "dividend",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3223
+      }
+    },
+    "multiplier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Multiplier is a percentage value which is used to produce Deviation by multiplying the difference between Expected Dividend and Actual Dividend Deviation = Multiplier * (Expected Dividend — Actual Dividend).",
+      "Name" : "multiplier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3226
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 3229
+      }
+    }
+  },
+  "LocalFieldNames" : [ "unadjustedStartDate", "unadjustedEndDate", "dateAdjustments", "underlyerReference", "dividend", "multiplier", "id" ],
+  "IsSynthetic" : false
+}

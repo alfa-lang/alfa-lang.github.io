@@ -1,0 +1,16 @@
+# key
+
+A `key` is very much similar to a :ref:`recordType`, but with restrictions on what field datatypes are supported.
+
+A `key` is typically used for addressing an `entity`, therefore top level or nested vector types are not allowed as `key` field types. `key` definitions can  `includes` :ref:`traitType` declarations.
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation.
+
+```csharp
+key CurrencyPair includes Addressable  {
+    First : string
+    Second : string
+} 
+```
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation.

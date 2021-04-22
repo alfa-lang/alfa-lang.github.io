@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An entity for defining a generic agreement executed between two parties for any purpose.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.GenericAgreement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An entity for defining a generic agreement executed between two parties for any purpose.\n #/\nrecord FpML5.reporting.GenericAgreement {\n  # The type of agreement executed between the parties.\n  type : string?\n\n  # The version of the agreement.\n  version : string?\n\n  # The date on which the agreement was signed.\n  `date` : date?\n\n  # A date on which the agreement was amended.\n  amendmentDate : date?\n\n  # Identification of the law governing the agreement.\n  governingLaw : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PartyRelationshipDocumentation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of agreement executed between the parties.",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25754
+      }
+    },
+    "version" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The version of the agreement.",
+      "Name" : "version",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25757
+      }
+    },
+    "date" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the agreement was signed.",
+      "Name" : "date",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25760
+      }
+    },
+    "amendmentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A date on which the agreement was amended.",
+      "Name" : "amendmentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25763
+      }
+    },
+    "governingLaw" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the law governing the agreement.",
+      "Name" : "governingLaw",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25766
+      }
+    }
+  },
+  "LocalFieldNames" : [ "type", "version", "date", "amendmentDate", "governingLaw" ],
+  "IsSynthetic" : false
+}

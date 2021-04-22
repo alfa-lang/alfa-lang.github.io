@@ -1,0 +1,64 @@
+# ALFA Meta datatypes
+
+Meta programming is the concept of using existing programs as data.
+ALFA allows a similar concept by allow existing models as data to
+define further models.
+
+Datatypes have been introduced to reference existing declarations
+in ALFA. The datatype names should be a hint to their usage.
+
+By convention, all ALFA meta type names will begin with the `$` character.
+
+### UDT Name type
+A value of these types contain a `string` referring to the name of an entity,
+record, trait etc. `$udtName` is a special case where it can be any UDT
+type name. ALFA runtime components will validate that the string refers
+to existing UDT names of the given type.
+
+- `$entityName`
+- `$traitName`
+- `$keyName`
+- `$unionName`
+- `$recordName`
+- `$udtName`
+
+```csharp
+record Request {
+   FeedType : dollarrecordName
+}
+```
+
+### UDT type
+
+A value of these types contain an instance of the type referred by the name.
+The ALFA runtime will generate code to assert values assigned to these
+types conform to the expected types.
+
+- `$entity`
+- `$trait`
+- `$key`
+- `$union`
+- `$record`
+- `$udt`
+
+In the ALFA example below, if only `entity` types should be accepted to the save method,
+using `$entity` as the data type enforces only an entity can be supplied. Likewise for the
+get method, it only accepts a `key` type and returns an `entity`.
+
+
+```csharp
+service DBStore {
+   save( obj : dollarentity ) : void
+   get( k : dollarkey ) : dollarentity
+}
+```
+
+If we take the Java generator as an example, the above will be enforced by generating the
+following declaration for the save method. Other languages will follow similar patterns.
+
+```csharp
+ public interface DBStore {
+    public void save( alfa.rt.Entity obj );
+    public alfa.rt.Entity get( alfa.rt.Key k );
+ }
+```

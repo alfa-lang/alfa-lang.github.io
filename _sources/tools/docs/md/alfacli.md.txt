@@ -1,0 +1,64 @@
+ALFA CLI
+--------
+
+ALFA CLI is a command line tool that helps working with ALFA ( `.alfa` ) and
+ALFA project ( `.alfaproj.json` or `.alfaproj.yaml` ) files.
+
+
+See :ref:`getstarted` for instructions on installing the ALFA CLI.
+
+The `alfa` command can be use for different scenarios.
+1. Compile
+2. Code generation
+3. Create install package
+
+Commands can be abbreviated to the 1st letter, for example -c instead of -compile.
+
+The `path` parameter can be used to specify:
+1. A path to a `.alfa`, `.alfaproj.yaml` or `.alfaproj.json` file.
+2. A path to source directory root containing '.alfa' files at top level or within sub-directories.
+3. A path to a `.alfamod.zip` file.
+
+#### Compile
+Compile the files in the specified path.
+
+Optionally specify a modules path containing a path to use for resolving project references to modules.
+
+```
+alfa
+    [ -m:odule modulesPath ]
+    -c:ompile
+    -p:ath <path>
+```
+
+#### Code Generation
+Generate code for the content loaded from the path.
+
+Optionally specify `types` to restrict the output to this list of types and their derived/dependant/reachable definitions.
+
+Output will be written to directory specified by `-outputDir`.
+
+```
+alfa
+    [ -m:odule modulesPath ]
+    -g:enerate [ java | docs ]
+    [ -t:ypes <types> ]
+    -p:ath <path>
+    -o:utputDir <dir>
+```
+
+#### Install
+Compiles files, and create module containing the compiled files and save the module to the modulesPath.
+
+Optionally specify `types` to restrict the output to the specified 
+list of types and their derived/dependant/reachable definitions.
+```
+alfa
+    < -m:odule modulesPath >
+    -i:nstall
+    -p:ath <path>
+    -t:ypes <types>
+```
+
+
+TODO Add examples with alfa-proj.json and how to use modules.

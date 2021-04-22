@@ -1,0 +1,57 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a contiguous series of calendar dates. The date range is defined as all the dates between and including the first and the last date. The first date must fall before the last date.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.DateRange",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a contiguous series of calendar dates. The date range is defined as all the dates between and including the first and the last date. The first date must fall before the last date.\n #/\nrecord FpML5.pretrade.DateRange {\n  # The first date of a date range.\n  unadjustedFirstDate : date?\n\n  # The last date of a date range.\n  unadjustedLastDate : date?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.RelativeDates",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "unadjustedFirstDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The first date of a date range.",
+      "Name" : "unadjustedFirstDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 4507
+      }
+    },
+    "unadjustedLastDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last date of a date range.",
+      "Name" : "unadjustedLastDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 4510
+      }
+    }
+  },
+  "LocalFieldNames" : [ "unadjustedFirstDate", "unadjustedLastDate" ],
+  "IsSynthetic" : false
+}

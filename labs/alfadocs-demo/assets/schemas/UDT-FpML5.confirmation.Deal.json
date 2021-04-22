@@ -1,0 +1,308 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A syndicated bank loan deal (credit agreement) definition.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Deal",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A syndicated bank loan deal (credit agreement) definition.\n #/\nrecord FpML5.confirmation.Deal {\n  # Identification of the underlying asset, using public and/or private identifiers.\n  instrumentId : string\n\n  # Long name of the underlying asset.\n  description : string?\n\n  # A party reference to the (main) issuer of the deal.\n  issuerPartyReference : FpML5.confirmation.PartyReference\n\n  # Party references to the guarantors associated with the (main) issuer of the deal.\n  guarantorPartyReference : FpML5.confirmation.PartyReference?\n\n  # A party reference to the agent bank associated with the deal.\n  agentPartyReference : FpML5.confirmation.PartyReference\n\n  # A party reference to the lead syndication bank of the deal.\n  syndicationLeadPartyReference : FpML5.confirmation.PartyReference\n\n  # Party references to the syndication co-lead banks of the deal.\n  syndicationCoLeadPartyReference : FpML5.confirmation.PartyReference?\n\n  # The credit agreement date is also known as the 'closing date' (the date on which the agreement was signed). Funding of the facilities occurs either on or after (in the case of a Delayed Draw) the Credit Agreement date.\n  creditAgreementDate : date\n\n  # Deal denomination currency.\n  currency : string\n\n  # Original deal amount.\n  issuedAmount : FpML5.confirmation.NonNegativeMoney\n\n  # Current deal amount.\n  currentDealAmount : FpML5.confirmation.MoneyWithParticipantShare?\n\n  # The assignment fee amount and rules. This applies to the re-assignment of any facility within the deal structure.\n  assignmentFee : FpML5.confirmation.AssignmentFee?\n\n  # Groups of facilities which must be traded on a pro-rata basis. The ratio of facility trade amounts must be equal to the ratio of their corresponding global amounts.\n  proRataFacilities : FpML5.confirmation.ProRataFacilities?\n\n  # Head of the substitution group for all facility types.\n  facilityGroup : FpML5.confirmation.Facility\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DealStatement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "instrumentId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the underlying asset, using public and/or private identifiers.",
+      "Name" : "instrumentId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17745
+      }
+    },
+    "description" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Long name of the underlying asset.",
+      "Name" : "description",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17748
+      }
+    },
+    "issuerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party reference to the (main) issuer of the deal.",
+      "Name" : "issuerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17751
+      }
+    },
+    "guarantorPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Party references to the guarantors associated with the (main) issuer of the deal.",
+      "Name" : "guarantorPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17754
+      }
+    },
+    "agentPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party reference to the agent bank associated with the deal.",
+      "Name" : "agentPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17757
+      }
+    },
+    "syndicationLeadPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party reference to the lead syndication bank of the deal.",
+      "Name" : "syndicationLeadPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17760
+      }
+    },
+    "syndicationCoLeadPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Party references to the syndication co-lead banks of the deal.",
+      "Name" : "syndicationCoLeadPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17763
+      }
+    },
+    "creditAgreementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The credit agreement date is also known as the 'closing date' (the date on which the agreement was signed). Funding of the facilities occurs either on or after (in the case of a Delayed Draw) the Credit Agreement date.",
+      "Name" : "creditAgreementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17766
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Deal denomination currency.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17769
+      }
+    },
+    "issuedAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Original deal amount.",
+      "Name" : "issuedAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17772
+      }
+    },
+    "currentDealAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Current deal amount.",
+      "Name" : "currentDealAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17775
+      }
+    },
+    "assignmentFee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The assignment fee amount and rules. This applies to the re-assignment of any facility within the deal structure.",
+      "Name" : "assignmentFee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AssignmentFee",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17778
+      }
+    },
+    "proRataFacilities" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Groups of facilities which must be traded on a pro-rata basis. The ratio of facility trade amounts must be equal to the ratio of their corresponding global amounts.",
+      "Name" : "proRataFacilities",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ProRataFacilities",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17781
+      }
+    },
+    "facilityGroup" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Head of the substitution group for all facility types.",
+      "Name" : "facilityGroup",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Facility",
+        "UdtType" : "traitType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Facility",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Facility",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17784
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17787
+      }
+    }
+  },
+  "LocalFieldNames" : [ "instrumentId", "description", "issuerPartyReference", "guarantorPartyReference", "agentPartyReference", "syndicationLeadPartyReference", "syndicationCoLeadPartyReference", "creditAgreementDate", "currency", "issuedAmount", "currentDealAmount", "assignmentFee", "proRataFacilities", "facilityGroup", "id" ],
+  "IsSynthetic" : false
+}

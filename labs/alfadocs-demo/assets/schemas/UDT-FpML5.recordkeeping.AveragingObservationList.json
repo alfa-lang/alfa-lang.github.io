@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An un ordered list of weighted averaging observations.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.AveragingObservationList",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An un ordered list of weighted averaging observations.\n #/\nrecord FpML5.recordkeeping.AveragingObservationList {\n  # A single weighted averaging observation.\n  averagingObservation : FpML5.recordkeeping.WeightedAveragingObservation?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.AveragingPeriod",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "averagingObservation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A single weighted averaging observation.",
+      "Name" : "averagingObservation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.WeightedAveragingObservation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26105
+      }
+    }
+  },
+  "LocalFieldNames" : [ "averagingObservation" ],
+  "IsSynthetic" : false
+}

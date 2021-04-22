@@ -1,0 +1,57 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that describes the option premium as quoted.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PremiumQuote",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that describes the option premium as quoted.\n #/\nrecord FpML5.reporting.PremiumQuote {\n  # The value of the premium quote. In general this will be either a percentage or an explicit amount.\n  value : decimal?\n\n  # The method by which the option premium was quoted.\n  quoteBasis : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxOptionPremium",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "value" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value of the premium quote. In general this will be either a percentage or an explicit amount.",
+      "Name" : "value",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28089
+      }
+    },
+    "quoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which the option premium was quoted.",
+      "Name" : "quoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28092
+      }
+    }
+  },
+  "LocalFieldNames" : [ "value", "quoteBasis" ],
+  "IsSynthetic" : false
+}

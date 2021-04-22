@@ -1,0 +1,127 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An observation of a rate or a price of an underlyer used in the computation of a cash flow amount.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CashflowObservation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An observation of a rate or a price of an underlyer used in the computation of a cash flow amount.\n #/\nrecord FpML5.reporting.CashflowObservation {\n  # The underlyer whose rate or price is observed. Reference to an underlyer defined within the calculationElements structure.\n  underlyerReference : FpML5.reporting.TradeUnderlyerReference?\n\n  # Define the underlying asset, either a listed security or other instrument.\n  underlyingAsset : FpML5.reporting.Asset?\n\n  # The date when the rate is observed. Corresponds to adjustedFixingDate on the Interest Rate Derivatives subschema.\n  observationDate : date?\n\n  # The observed rate or price, together with descriptive information such as units.\n  observedValue : FpML5.reporting.BasicQuotation?\n\n  # The factor used to weight the observation in computing a weighted average. This is typically based on the number of days weighting to be associated with the rate observation, i.e. the number of days such rate is in effect. This is applicable in the case of a weighted average method of calculation where more than one observate date is established for a single calculation period. If omitted all observations are weighted equally. For Equity Derivatives Products it defines the basket percentage.\n  weight : decimal?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CalculationDetails",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "underlyerReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The underlyer whose rate or price is observed. Reference to an underlyer defined within the calculationElements structure.",
+      "Name" : "underlyerReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeUnderlyerReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16290
+      }
+    },
+    "underlyingAsset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Define the underlying asset, either a listed security or other instrument.",
+      "Name" : "underlyingAsset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Asset",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16293
+      }
+    },
+    "observationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date when the rate is observed. Corresponds to adjustedFixingDate on the Interest Rate Derivatives subschema.",
+      "Name" : "observationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16296
+      }
+    },
+    "observedValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The observed rate or price, together with descriptive information such as units.",
+      "Name" : "observedValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BasicQuotation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16299
+      }
+    },
+    "weight" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The factor used to weight the observation in computing a weighted average. This is typically based on the number of days weighting to be associated with the rate observation, i.e. the number of days such rate is in effect. This is applicable in the case of a weighted average method of calculation where more than one observate date is established for a single calculation period. If omitted all observations are weighted equally. For Equity Derivatives Products it defines the basket percentage.",
+      "Name" : "weight",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16302
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16305
+      }
+    }
+  },
+  "LocalFieldNames" : [ "underlyerReference", "underlyingAsset", "observationDate", "observedValue", "weight", "id" ],
+  "IsSynthetic" : false
+}

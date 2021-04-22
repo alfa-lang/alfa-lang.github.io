@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The specification of how a barrier option will trigger (that is, knock-in or knock-out) or expire based on the position of the spot rate relative to trigger level.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityBarrier",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The specification of how a barrier option will trigger (that is, knock-in or knock-out) or expire based on the position of the spot rate relative to trigger level.\n #/\nrecord FpML5.reporting.CommodityBarrier {\n  # The knock feature of a commodity barrier option.\n  knock : string?\n\n  # In the case of barrier options where the option automatically expires and the barrier is breached in such a way to to result in a \"knock-out\" vent, this amount is paid to the the option holder so as to refund or rebate a portion of any premium paid.\n  featurePaymentAmount : FpML5.reporting.PositiveMoney?\n\n  trigger : FpML5.reporting.CommodityTrigger?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "knock" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The knock feature of a commodity barrier option.",
+      "Name" : "knock",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17693
+      }
+    },
+    "featurePaymentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "In the case of barrier options where the option automatically expires and the barrier is breached in such a way to to result in a \"knock-out\" vent, this amount is paid to the the option holder so as to refund or rebate a portion of any premium paid.",
+      "Name" : "featurePaymentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositiveMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17696
+      }
+    },
+    "trigger" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "trigger",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityTrigger",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17699
+      }
+    }
+  },
+  "LocalFieldNames" : [ "knock", "featurePaymentAmount", "trigger" ],
+  "IsSynthetic" : false
+}

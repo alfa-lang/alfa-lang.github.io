@@ -1,0 +1,47 @@
+# entity
+
+An `entity` is similar to a :ref:`recordType`, but in addition has an associated key. Entities are typically used to model objects that are persisted and queryable.
+
+An `entity` key can be defined in-place or refer to a declared :ref:`keyType` definition. When in-line keys are used, ALFA creates a 'Key' type by suffixing the name of the entity.
+
+Multiple :ref:`assertExpr` blocks can be specified to perform validation.
+
+```csharp
+entity Flight key( Id : uuid ) {
+    Code : string
+    Departure : time
+}
+```
+
+A reference to an entity can be declared as a datatype `key<T>` where `T` is the name of the entity. `key<T>` can be thought of as a reference/pointer/foreign key to an `entity` T.
+
+```csharp
+entity Booking key( Code : string ) {
+    Flight : key < Flight > // This contains a reference to a Flight object
+}
+```
+
+`entity` declarations can use `includes` to extend its attributes.
+
+```csharp
+entity Employee key EmployeeKey includes Taxpayer {
+    Dept : string
+}
+
+key EmployeeKey {
+    SSID : string
+    Name : string
+}
+
+trait Taxpayer {
+    TaxRef : string
+}
+```
+
+A special case of an `entity` is when it has no key - a keyless declaration, in terms of persistence, it can be considered a singleton. 
+
+```csharp
+entity Countries {
+    CapitalCities : map< string, string >
+}
+```

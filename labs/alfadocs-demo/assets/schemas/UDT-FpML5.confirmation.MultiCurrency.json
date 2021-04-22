@@ -1,0 +1,53 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defines all the currencies in which funds can be drawn against a facility.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.MultiCurrency",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defines all the currencies in which funds can be drawn against a facility.\n #/\nrecord FpML5.confirmation.MultiCurrency {\n  # List of currencies in which the borrower(s) may draw funds.\n  drawCurrency : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DelayedDraw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Facility",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LetterOfCreditFacility",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Revolver",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TermLoan",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "drawCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "List of currencies in which the borrower(s) may draw funds.",
+      "Name" : "drawCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30979
+      }
+    }
+  },
+  "LocalFieldNames" : [ "drawCurrency" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,132 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Floating Price Leg of a Commodity Swap. Each 'floatingLeg' defines a series of financial payments for a commodity the value of which is derived from a floating price such as an exchange or an index publication.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FloatingPriceLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Floating Price Leg of a Commodity Swap. Each 'floatingLeg' defines a series of financial payments for a commodity the value of which is derived from a floating price such as an exchange or an index publication.\n #/\nrecord FpML5.transparency.FloatingPriceLeg {\n  # The Calculation Periods for this leg of the swap. This type is only intended to be used if the Calculation Periods differ on each leg. If Calculation Periods mirror another leg, then the calculationPeriodsReference element should be used to point to the Calculation Periods on the other leg - or the calculationPeriodsScheduleReference can be used to point to the Calculation Periods Schedule for that leg.\n  calculationPeriodsSchedule : FpML5.transparency.CommodityCalculationPeriodsSchedule?\n\n  # Specifies the underlying instrument. Only underlyers of type Commodity are supported.\n  commodity : FpML5.transparency.Commodity\n\n  # The Notional Quantity.\n  notionalQuantity : FpML5.transparency.CommodityNotionalQuantity\n\n  # The Total Notional Quantity.\n  totalNotionalQuantity : decimal\n\n  # Defines details relevant to the calculation of the floating price.\n  calculation : FpML5.transparency.FloatingLegCalculation?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "calculationPeriodsSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Calculation Periods for this leg of the swap. This type is only intended to be used if the Calculation Periods differ on each leg. If Calculation Periods mirror another leg, then the calculationPeriodsReference element should be used to point to the Calculation Periods on the other leg - or the calculationPeriodsScheduleReference can be used to point to the Calculation Periods Schedule for that leg.",
+      "Name" : "calculationPeriodsSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CommodityCalculationPeriodsSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5980
+      }
+    },
+    "commodity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the underlying instrument. Only underlyers of type Commodity are supported.",
+      "Name" : "commodity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.Commodity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.Commodity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Commodity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5983
+      }
+    },
+    "notionalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Notional Quantity.",
+      "Name" : "notionalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.CommodityNotionalQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.CommodityNotionalQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CommodityNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5986
+      }
+    },
+    "totalNotionalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Total Notional Quantity.",
+      "Name" : "totalNotionalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5989
+      }
+    },
+    "calculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines details relevant to the calculation of the floating price.",
+      "Name" : "calculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.FloatingLegCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5992
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5995
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationPeriodsSchedule", "commodity", "notionalQuantity", "totalNotionalQuantity", "calculation", "id" ],
+  "IsSynthetic" : false
+}

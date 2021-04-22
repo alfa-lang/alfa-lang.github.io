@@ -1,0 +1,92 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defines the Target level of gain.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxKnockoutLevel",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defines the Target level of gain.\n #/\nrecord FpML5.recordkeeping.FxKnockoutLevel {\n  # Target level expressed as a cash amount.\n  amount : FpML5.recordkeeping.NonNegativeMoney\n\n  # Target level expressed as intrinsic value (cumulative benefit over the prevailing spot rate at each observation point).\n  intrinsicValue : decimal\n\n  # Target style when it settles, whether it is Inclusive, Exclusive, or Exact. Exclusive: the gain for the knockout period is adjusted to zero i.e. the target yields zero value in the final period. Exact: the gain for the knockout period is adjusted to yield a final accumulated value equal to the target level. Inclusive: the gain for the knockout period is equal to the whole benefit of the final fixing over spot i.e. the final accumulated value may exceed the target level.\n  targetStyle : string\n\n  # Specifies the calculation method by which the final accumulated value is adjusted equal to the target value, in the case where the target style is \"Exact\". This element must be produced (only) where the target style is \"Exact\", and should be omitted otherwise.\n  settlementAdjustmentStyle : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxTarget",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Target level expressed as a cash amount.",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17496
+      }
+    },
+    "intrinsicValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Target level expressed as intrinsic value (cumulative benefit over the prevailing spot rate at each observation point).",
+      "Name" : "intrinsicValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17499
+      }
+    },
+    "targetStyle" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Target style when it settles, whether it is Inclusive, Exclusive, or Exact. Exclusive: the gain for the knockout period is adjusted to zero i.e. the target yields zero value in the final period. Exact: the gain for the knockout period is adjusted to yield a final accumulated value equal to the target level. Inclusive: the gain for the knockout period is equal to the whole benefit of the final fixing over spot i.e. the final accumulated value may exceed the target level.",
+      "Name" : "targetStyle",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17502
+      }
+    },
+    "settlementAdjustmentStyle" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the calculation method by which the final accumulated value is adjusted equal to the target value, in the case where the target style is \"Exact\". This element must be produced (only) where the target style is \"Exact\", and should be omitted otherwise.",
+      "Name" : "settlementAdjustmentStyle",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17505
+      }
+    }
+  },
+  "LocalFieldNames" : [ "amount", "intrinsicValue", "targetStyle", "settlementAdjustmentStyle" ],
+  "IsSynthetic" : false
+}

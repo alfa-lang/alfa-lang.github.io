@@ -1,0 +1,287 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Provides information about how the information in this message is applicable to a regulatory reporting process.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ReportingRegime",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Provides information about how the information in this message is applicable to a regulatory reporting process.\n #/\nrecord FpML5.pretrade.ReportingRegime {\n  # Identifies the reporting regime under which this data is reported. For example, Dodd-Frank, MiFID, HongKongOTCDRepository, ODRF\n  name : string\n\n  # Identifies the specific regulator or other supervisory body for which this data is produced. For example, CFTC, SEC, UKFSA, ODRF, SFC, ESMA.\n  supervisorRegistration : FpML5.pretrade.SupervisorRegistration\n\n  # Identifies the role of this party in reporting this trade for this regulator; roles could include ReportingParty and Voluntary reporting.\n  reportingRole : string?\n\n  # The reason this message is being sent, for example Snapshot, PET, Confirmation, RealTimePublic.\n  reportingPurpose : string?\n\n  # Whether the particular trade type in question is required by this regulator to be cleared.\n  mandatorilyClearable : string?\n\n  # Whether the particular product must be executed on a SEF or DCM. See to Dodd-Frank section 723(a)(8).\n  mandatoryFacilityExecution : boolean?\n\n  # Specifies whether the party invoked exception to not execute the trade on facility such as SEF and DCM even though the particular product is mandated to execute on a SEF.\n  mandatoryFacilityExecutionException : boolean?\n\n  # Provides supporting evidence when a party invoked exception to not execute the trade on facility such as SEF and DCM even though the particular product is mandated to execute on a SEF.\n  mandatoryFacilityExecutionExceptionDeclaration : FpML5.pretrade.FacilityExecutionExceptionDeclaration?\n\n  # Indicates whether the counterparty exceeds the volume threshold above which trades are required to be cleared.\n  exceedsClearingThreshold : boolean?\n\n  # Indicates the category or classification or business role of the organization referenced by the partyTradeInformation with respect to this reporting regime, for example Financial, NonFinancial etc.\n  entityClassification : string\n\n  # Indicates the category or classification or business role of a trade party with respect to this reporting regime, for example Financial, NonFinancial, Dealer, Non-Dealer, LocalParty, etc.\n  partyEntityClassification : FpML5.pretrade.PartyEntityClassification\n\n  # Indicates how the parties to the trade (the counterparties) are related to each other with respect to this reporting regime, e.g. Affiliated, Intragroup, etc..\n  tradePartyRelationshipType : string?\n\n  # Reports a regulator-specific code for the action associated with this submission. Used, for example, to report the ESMA action type.\n  actionType : string?\n\n  # Reports that this trade was executed prior to the enactment of the relevant reporting regulation.\n  preEnactmentTrade : boolean?\n\n  # How the notional amount should be reported for the reporting regime. For example, for ESMA MiFIR it would be Nominal or MonetaryAmount.\n  notionalType : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.PartyTradeInformation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "name" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the reporting regime under which this data is reported. For example, Dodd-Frank, MiFID, HongKongOTCDRepository, ODRF",
+      "Name" : "name",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2664
+      }
+    },
+    "supervisorRegistration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the specific regulator or other supervisory body for which this data is produced. For example, CFTC, SEC, UKFSA, ODRF, SFC, ESMA.",
+      "Name" : "supervisorRegistration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.SupervisorRegistration",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.SupervisorRegistration",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.SupervisorRegistration",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2667
+      }
+    },
+    "reportingRole" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the role of this party in reporting this trade for this regulator; roles could include ReportingParty and Voluntary reporting.",
+      "Name" : "reportingRole",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2670
+      }
+    },
+    "reportingPurpose" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The reason this message is being sent, for example Snapshot, PET, Confirmation, RealTimePublic.",
+      "Name" : "reportingPurpose",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2673
+      }
+    },
+    "mandatorilyClearable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether the particular trade type in question is required by this regulator to be cleared.",
+      "Name" : "mandatorilyClearable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2676
+      }
+    },
+    "mandatoryFacilityExecution" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether the particular product must be executed on a SEF or DCM. See to Dodd-Frank section 723(a)(8).",
+      "Name" : "mandatoryFacilityExecution",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2679
+      }
+    },
+    "mandatoryFacilityExecutionException" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the party invoked exception to not execute the trade on facility such as SEF and DCM even though the particular product is mandated to execute on a SEF.",
+      "Name" : "mandatoryFacilityExecutionException",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2682
+      }
+    },
+    "mandatoryFacilityExecutionExceptionDeclaration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides supporting evidence when a party invoked exception to not execute the trade on facility such as SEF and DCM even though the particular product is mandated to execute on a SEF.",
+      "Name" : "mandatoryFacilityExecutionExceptionDeclaration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.FacilityExecutionExceptionDeclaration",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2685
+      }
+    },
+    "exceedsClearingThreshold" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether the counterparty exceeds the volume threshold above which trades are required to be cleared.",
+      "Name" : "exceedsClearingThreshold",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2688
+      }
+    },
+    "entityClassification" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the category or classification or business role of the organization referenced by the partyTradeInformation with respect to this reporting regime, for example Financial, NonFinancial etc.",
+      "Name" : "entityClassification",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2691
+      }
+    },
+    "partyEntityClassification" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the category or classification or business role of a trade party with respect to this reporting regime, for example Financial, NonFinancial, Dealer, Non-Dealer, LocalParty, etc.",
+      "Name" : "partyEntityClassification",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.pretrade.PartyEntityClassification",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.pretrade.PartyEntityClassification",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PartyEntityClassification",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2694
+      }
+    },
+    "tradePartyRelationshipType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates how the parties to the trade (the counterparties) are related to each other with respect to this reporting regime, e.g. Affiliated, Intragroup, etc..",
+      "Name" : "tradePartyRelationshipType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2697
+      }
+    },
+    "actionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reports a regulator-specific code for the action associated with this submission. Used, for example, to report the ESMA action type.",
+      "Name" : "actionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2700
+      }
+    },
+    "preEnactmentTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reports that this trade was executed prior to the enactment of the relevant reporting regulation.",
+      "Name" : "preEnactmentTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2703
+      }
+    },
+    "notionalType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "How the notional amount should be reported for the reporting regime. For example, for ESMA MiFIR it would be Nominal or MonetaryAmount.",
+      "Name" : "notionalType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 2706
+      }
+    }
+  },
+  "LocalFieldNames" : [ "name", "supervisorRegistration", "reportingRole", "reportingPurpose", "mandatorilyClearable", "mandatoryFacilityExecution", "mandatoryFacilityExecutionException", "mandatoryFacilityExecutionExceptionDeclaration", "exceedsClearingThreshold", "entityClassification", "partyEntityClassification", "tradePartyRelationshipType", "actionType", "preEnactmentTrade", "notionalType" ],
+  "IsSynthetic" : false
+}

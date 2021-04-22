@@ -1,0 +1,99 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure representing a pending dividend or coupon payment.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.PendingPayment",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure representing a pending dividend or coupon payment.\n #/\nrecord FpML5.legal.PendingPayment {\n  # The date that the dividend or coupon is due.\n  paymentDate : date\n\n  # The amount of the dividend or coupon payment. Value of dividends or coupon between ex and pay date. Stock: if we are between ex-date and pay-date and the dividend is payable under the swap, then this should be the ex-div amount * # of securities. Bond: regardless of where we are vis-a-vis resets: (coupon % * face of bonds on swap * (bond day count fraction using days last coupon pay date of the bond through today).\n  amount : FpML5.legal.Money\n\n  # Accrued interest on the dividend or coupon payment. When the TRS is structured to pay a dividend or coupon on reset after payable date, you may earn interest on these amounts. This field indicates the interest accrued on dividend/coupon from pay date to statement date. This will only apply to a handful of agreements where dividendss are held to the next reset AND you receive/pay interest on unpaid amounts.\n  accruedInterest : FpML5.legal.Money?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.BasketConstituent",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.DividendPayout",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "paymentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date that the dividend or coupon is due.",
+      "Name" : "paymentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3262
+      }
+    },
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of the dividend or coupon payment. Value of dividends or coupon between ex and pay date. Stock: if we are between ex-date and pay-date and the dividend is payable under the swap, then this should be the ex-div amount * # of securities. Bond: regardless of where we are vis-a-vis resets: (coupon % * face of bonds on swap * (bond day count fraction using days last coupon pay date of the bond through today).",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.Money",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.Money",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3265
+      }
+    },
+    "accruedInterest" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Accrued interest on the dividend or coupon payment. When the TRS is structured to pay a dividend or coupon on reset after payable date, you may earn interest on these amounts. This field indicates the interest accrued on dividend/coupon from pay date to statement date. This will only apply to a handful of agreements where dividendss are held to the next reset AND you receive/pay interest on unpaid amounts.",
+      "Name" : "accruedInterest",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3268
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3271
+      }
+    }
+  },
+  "LocalFieldNames" : [ "paymentDate", "amount", "accruedInterest", "id" ],
+  "IsSynthetic" : false
+}

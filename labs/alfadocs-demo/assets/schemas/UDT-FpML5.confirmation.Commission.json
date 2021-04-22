@@ -1,0 +1,107 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the commission that will be charged for each of the hedge transactions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Commission",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the commission that will be charged for each of the hedge transactions.\n #/\nrecord FpML5.confirmation.Commission {\n  # The type of units used to express a commission.\n  commissionDenomination : string\n\n  # The commission amount, expressed in the way indicated by the commissionType element.\n  commissionAmount : decimal\n\n  # The currency in which an amount is denominated.\n  currency : string?\n\n  # The total commission per trade.\n  commissionPerTrade : decimal?\n\n  # FX Rates that have been used to convert commissions to a single currency.\n  fxRate : FpML5.confirmation.FxRate?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Price",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ReturnLegValuationPrice",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "commissionDenomination" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of units used to express a commission.",
+      "Name" : "commissionDenomination",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33925
+      }
+    },
+    "commissionAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The commission amount, expressed in the way indicated by the commissionType element.",
+      "Name" : "commissionAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33928
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which an amount is denominated.",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33931
+      }
+    },
+    "commissionPerTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The total commission per trade.",
+      "Name" : "commissionPerTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33934
+      }
+    },
+    "fxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "FX Rates that have been used to convert commissions to a single currency.",
+      "Name" : "fxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33937
+      }
+    }
+  },
+  "LocalFieldNames" : [ "commissionDenomination", "commissionAmount", "currency", "commissionPerTrade", "fxRate" ],
+  "IsSynthetic" : false
+}

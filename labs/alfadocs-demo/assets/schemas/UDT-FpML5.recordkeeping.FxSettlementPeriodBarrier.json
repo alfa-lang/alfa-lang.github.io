@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxSettlementPeriodBarrier",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.FxSettlementPeriodBarrier {\n  # Reference to the barrier structure within the parametric representation of the product.\n  barrierReference : FpML5.recordkeeping.FxComplexBarrierBaseReference?\n\n  # Barrier trigger rate.\n  triggerRate : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAccrualSettlementPeriod",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetSettlementPeriod",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "barrierReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the barrier structure within the parametric representation of the product.",
+      "Name" : "barrierReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxComplexBarrierBaseReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17482
+      }
+    },
+    "triggerRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Barrier trigger rate.",
+      "Name" : "triggerRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17485
+      }
+    }
+  },
+  "LocalFieldNames" : [ "barrierReference", "triggerRate" ],
+  "IsSynthetic" : false
+}

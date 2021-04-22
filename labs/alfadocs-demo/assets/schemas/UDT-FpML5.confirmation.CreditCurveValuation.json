@@ -1,0 +1,241 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A set of credit curve values, which can include pricing inputs (which are typically credit spreads), default probabilities, and recovery rates.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CreditCurveValuation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A set of credit curve values, which can include pricing inputs (which are typically credit spreads), default probabilities, and recovery rates.\n #/\nrecord FpML5.confirmation.CreditCurveValuation {\n  # A reference to the asset or pricing structure that this values.\n  objectReference : FpML5.confirmation.AnyAssetReference?\n\n  # A reference to the valuation scenario used to calculate this valuation. If the Valuation occurs within a ValuationSet, this value is optional and is defaulted from the ValuationSet. If this value occurs in both places, the lower level value (i.e. the one here) overrides that in the higher (i.e. ValuationSet).\n  valuationScenarioReference : FpML5.confirmation.ValuationScenarioReference?\n\n  # The base date for which the structure applies, i.e. the curve date. Normally this will align with the valuation date.\n  baseDate : date\n\n  # The spot settlement date for which the structure applies, normally 0-2 days after the base date. The difference between the baseDate and the spotDate is termed the settlement lag, and is sometimes called \"days to spot\".\n  spotDate : date?\n\n  # The date from which the input data used to construct the pricing input was obtained. Often the same as the baseDate, but sometimes the pricing input may be \"rolled forward\", in which input data from one date is used to generate a curve for a later date.\n  inputDataDate : date?\n\n  # The last date for which data is supplied in this pricing input.\n  endDate : date?\n\n  # The date and time when the pricing input was generated.\n  buildDateTime : datetime?\n\n  inputs : FpML5.confirmation.QuotedAssetSet?\n\n  # A curve of default probabilities.\n  defaultProbabilityCurve : FpML5.confirmation.DefaultProbabilityCurve?\n\n  # A single recovery rate, to be used for all terms.\n  recoveryRate : decimal\n\n  # A curve of recovery rates, allowing different terms to have different recovery rates.\n  recoveryRateCurve : FpML5.confirmation.TermCurve\n\n  id : string?\n\n  definitionRef : string?\n\n}"
+  },
+  "AllFields" : {
+    "objectReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the asset or pricing structure that this values.",
+      "Name" : "objectReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AnyAssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33730
+      }
+    },
+    "valuationScenarioReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the valuation scenario used to calculate this valuation. If the Valuation occurs within a ValuationSet, this value is optional and is defaulted from the ValuationSet. If this value occurs in both places, the lower level value (i.e. the one here) overrides that in the higher (i.e. ValuationSet).",
+      "Name" : "valuationScenarioReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ValuationScenarioReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33733
+      }
+    },
+    "baseDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The base date for which the structure applies, i.e. the curve date. Normally this will align with the valuation date.",
+      "Name" : "baseDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33736
+      }
+    },
+    "spotDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The spot settlement date for which the structure applies, normally 0-2 days after the base date. The difference between the baseDate and the spotDate is termed the settlement lag, and is sometimes called \"days to spot\".",
+      "Name" : "spotDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33739
+      }
+    },
+    "inputDataDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date from which the input data used to construct the pricing input was obtained. Often the same as the baseDate, but sometimes the pricing input may be \"rolled forward\", in which input data from one date is used to generate a curve for a later date.",
+      "Name" : "inputDataDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33742
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last date for which data is supplied in this pricing input.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33745
+      }
+    },
+    "buildDateTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date and time when the pricing input was generated.",
+      "Name" : "buildDateTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33748
+      }
+    },
+    "inputs" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "inputs",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.QuotedAssetSet",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33751
+      }
+    },
+    "defaultProbabilityCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A curve of default probabilities.",
+      "Name" : "defaultProbabilityCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.DefaultProbabilityCurve",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33753
+      }
+    },
+    "recoveryRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A single recovery rate, to be used for all terms.",
+      "Name" : "recoveryRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33756
+      }
+    },
+    "recoveryRateCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A curve of recovery rates, allowing different terms to have different recovery rates.",
+      "Name" : "recoveryRateCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.TermCurve",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.TermCurve",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TermCurve",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33759
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33762
+      }
+    },
+    "definitionRef" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "definitionRef",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 33764
+      }
+    }
+  },
+  "LocalFieldNames" : [ "objectReference", "valuationScenarioReference", "baseDate", "spotDate", "inputDataDate", "endDate", "buildDateTime", "inputs", "defaultProbabilityCurve", "recoveryRate", "recoveryRateCurve", "id", "definitionRef" ],
+  "IsSynthetic" : false
+}

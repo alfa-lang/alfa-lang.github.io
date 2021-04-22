@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; Alfa</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/alfa-logo-blue-sm.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exporters/exporters.html">Exporters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs/labs.html">Alfa Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>FAQ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<span id="id1"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p>An inevitable question that arises is, how is Alfa different to other modelling tools or what is the need for it. These and other typical questions are answered below.</p>
+<p>Note however this FAQ is work-in-progress. For more detailed answers or further questions, please contact <a class="reference external" href="mailto:info&#37;&#52;&#48;alfa-lang&#46;io">info<span>&#64;</span>alfa-lang<span>&#46;</span>io</a>.</p>
+<ul class="simple">
+<li><strong>Why need a separate model when it can be expressed in code?</strong></li>
+</ul>
+<blockquote>
+<div><p>This will be a compelling argument for a relatively simple application with small number of model objects. If however the application is expected to grow, there are benefits to using Alfa.</p>
+<p>It is rare that organisations use a single programming language. Typically organisations can have a mix of JVM or .NET based languages, Python, Web. Expressing models in code require each language codebase to duplicate the definition. This often is a huge maintainence overhead. Note Alfa generated language bindings define an
+interoperable JSON format (with a binary version in future). Without Alfa, adding an additional language support requires a significant investment to write the data model in the new language.</p>
+<p>The benefit of Alfa is that the model is expressed once, and generated into target frameworks or languages along with model documentation. Data types, serialisation and usage is consistent as defined by the Alfa code generator. This can also be a significant time saving and give opportunity to migrate or use different technologies quickly by
+generating your Alfa models to different languages. Even within the same language, when new
+features are introduced that can be of benefit, it will be possible to trail your application
+with the new features ( consider Value Type support for Java ). All
+model code is generated using a consistent design pattern, unlike
+multiple developers hand-writing such models which will inevitabily
+result in variation in style and features.</p>
+<p>The benefit of using Alfa <a class="reference internal" href="lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a> also needs to be emphasized. Alfa is not only about your data model, its also how your components interact - as services. It can be a simple CSharp API today, in future the same <a class="reference internal" href="lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a> could be a Serverless function.</p>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Our application is schema-less and based on JSON/XML data exchange, why would we use Alfa?</strong></li>
+</ul>
+<blockquote>
+<div><p>As with the previous question, having no schema may well be appropriate for relatively small applications.
+However when the original developers move on, data model changes, addtional data models get added, making
+changes become increasingly difficult.</p>
+<p>‘Schemaless’ was a trend that was popularised by Big Data stores and other usecases, however more recently, some of those are moving to Schema-based support.
+Relying on each application consuming data to have embedded logic on the layout of the data leads of brittle applications that can potentially encounter failures
+at runtime. Even dynamically or un-typed languages are introducing better support for writing code with type annotations ( e.g. Python3, TypeScript ).
+Indeed these seems a general shift towards encforcing the data model/types by using compilers and tools. Alfa enables this by being the golden source for the model definitions.</p>
+</div></blockquote>
+<ul class="simple">
+<li><strong>How does Alfa compare to Protocol Buffers, Avro, Thrift etc.?</strong></li>
+</ul>
+<blockquote>
+<div><p>Many teams have resorted to using one of these excellent frameworks to model their data and built support tools around them. This is primarily because
+the possibilty of defining a model and generating code to multiple languages with serialisation support is far simpler than writing that code by hand.</p>
+<p>These are data serialisation frameworks, and development teams use these as modelling tools due to lack of alternatives. The ‘modelling’ capabilities in serialisation frameworks are limited to low level constructs, often needing work-arounds and that can lead to convoluted definitions ( e.g. Try defining a <code class="docutils literal notranslate"><span class="pre">map&lt;</span> <span class="pre">User,</span> <span class="pre">list&lt;</span> <span class="pre">Account</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></code> ) or having to make compromises due to the lack of features in these serialisation frameworks.</p>
+<p>Alfa on the other hand is a complete data modelling language. Its generated code will closely resemble what developers will naturally prefer to code against using the most appropriate native definitions. ( e.g. the example mentioned previously, Alfa will generate <code class="docutils literal notranslate"><span class="pre">java.util.Map&lt;</span> <span class="pre">User,</span> <span class="pre">java.util.List&lt;</span> <span class="pre">Account</span> <span class="pre">&gt;&gt;</span></code> ).
+Unlike with serialisation frameworks, Alfa data modellers are not required to morph their model to fit limitations of the serialisation framework.</p>
+</div></blockquote>
+<ul class="simple">
+<li><strong>How does Alfa compare to XML/JSON Schema?</strong></li>
+</ul>
+<blockquote>
+<div><p>XML Schema has been widely used in the industry to express detailed models ( e.g. Financial data models by industry bodies ). XML Schemas tend to be extremely verbose and often require 3rd party commercial tools to help maintain them. Often modellers hardly see the XML Schema definitions and treat it as a model exchange format not for human consumption, solely relying on tooling. Although XML Schema has been around for several years, the uptake of it as tool for modelling, as part of a continuous delivery pipeline has been low due to its complexity which seems to be a barrier to entry for many organisations/developers.</p>
+<p>JSON Schema has had some success in simple use cases for describing models. However the feature-set of JSON Schema is limited, which can lead to difficulties trying to describe even models of moderate complexity.</p>
+<p>Alfa contains a superset of features of both XML and JSON Schema, and builds further capabilities such as being able to naturally express API models (see <a class="reference internal" href="lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a>). Compared to XML or JSON Schema, Alfa is unambiguous, easier to read, understand and maintain and has a significantly shorter learning curve.</p>
+</div></blockquote>
+<ul class="simple">
+<li><strong>We have built an in-house domain specific language (DSL) using a grammar/JSON/YAML definition. Why would we use Alfa?</strong></li>
+</ul>
+<blockquote>
+<div><p>In-house tools can be of different levels of functionality, complexity and investment, therefore is it unreasonable to make general
+comparisons without knowing what is being compared. Please contact <a class="reference external" href="mailto:info&#37;&#52;&#48;alfa-lang&#46;io">info<span>&#64;</span>alfa-lang<span>&#46;</span>io</a>  to discuss further.</p>
+<p>It is worth mentioning that unlike API Gateway solutions, Alfa is not about only managing external access to your platform/services, Alfa targets
+all modelling including internal data and services.</p>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Alfa sounds interesting, but we use Python / C# / F# / Kotlin / Apache Avro / Apache Spark / &lt; insert your language / framework &gt;. How can I use Alfa?</strong></li>
+</ul>
+<blockquote>
+<div>Alfa currently supports generating Java and Protocol Buffers. Other languages and frameworks have been trialled, but not released.
+For language bindings, interoperable JSON serialisation would be included in any language bindings in order to be compatible with JSON from other Alfa generated languages. Please contact <a class="reference external" href="mailto:info&#37;&#52;&#48;alfa-lang&#46;io">info<span>&#64;</span>alfa-lang<span>&#46;</span>io</a> to discuss further.</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2019, Schematiks Ltd | 
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

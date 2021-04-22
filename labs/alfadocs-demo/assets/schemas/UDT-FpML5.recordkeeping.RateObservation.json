@@ -1,0 +1,180 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining parameters associated with an individual observation or fixing. This type forms part of the cashflow representation of a stream.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.RateObservation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining parameters associated with an individual observation or fixing. This type forms part of the cashflow representation of a stream.\n #/\nrecord FpML5.recordkeeping.RateObservation {\n  # The reset date.\n  resetDate : date?\n\n  # The adjusted fixing date, i.e. the actual date the rate is observed. The date should already be adjusted for any applicable business day convention.\n  adjustedFixingDate : date?\n\n  # The actual observed rate before any required rate treatment is applied, e.g. before converting a rate quoted on a discount basis to an equivalent yield. An observed rate of 5% would be represented as 0.05.\n  observedRate : decimal?\n\n  # The observed rate after any required rate treatment is applied. A treated rate of 5% would be represented as 0.05.\n  treatedRate : decimal?\n\n  # The number of days weighting to be associated with the rate observation, i.e. the number of days such rate is in effect. This is applicable in the case of a weighted average method of calculation where more than one reset date is established for a single calculation period.\n  observationWeight : int( 1, * )?\n\n  # A pointer style reference to a floating rate component defined as part of a stub calculation period amount component. It is only required when it is necessary to distinguish two rate observations for the same fixing date which could occur when linear interpolation of two different rates occurs for a stub calculation period.\n  rateReference : FpML5.recordkeeping.RateReference?\n\n  # The value representing the forecast rate used to calculate the forecast future value of the accrual period.A value of 1% should be represented as 0.01\n  forecastRate : decimal?\n\n  # The value representing the forecast rate after applying rate treatment rules. A value of 1% should be represented as 0.01\n  treatedForecastRate : decimal?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FloatingRateDefinition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "resetDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The reset date.",
+      "Name" : "resetDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8412
+      }
+    },
+    "adjustedFixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted fixing date, i.e. the actual date the rate is observed. The date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedFixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8415
+      }
+    },
+    "observedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual observed rate before any required rate treatment is applied, e.g. before converting a rate quoted on a discount basis to an equivalent yield. An observed rate of 5% would be represented as 0.05.",
+      "Name" : "observedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8418
+      }
+    },
+    "treatedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The observed rate after any required rate treatment is applied. A treated rate of 5% would be represented as 0.05.",
+      "Name" : "treatedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8421
+      }
+    },
+    "observationWeight" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of days weighting to be associated with the rate observation, i.e. the number of days such rate is in effect. This is applicable in the case of a weighted average method of calculation where more than one reset date is established for a single calculation period.",
+      "Name" : "observationWeight",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8424
+      }
+    },
+    "rateReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to a floating rate component defined as part of a stub calculation period amount component. It is only required when it is necessary to distinguish two rate observations for the same fixing date which could occur when linear interpolation of two different rates occurs for a stub calculation period.",
+      "Name" : "rateReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.RateReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8427
+      }
+    },
+    "forecastRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value representing the forecast rate used to calculate the forecast future value of the accrual period.A value of 1% should be represented as 0.01",
+      "Name" : "forecastRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8430
+      }
+    },
+    "treatedForecastRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value representing the forecast rate after applying rate treatment rules. A value of 1% should be represented as 0.01",
+      "Name" : "treatedForecastRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8433
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 8436
+      }
+    }
+  },
+  "LocalFieldNames" : [ "resetDate", "adjustedFixingDate", "observedRate", "treatedRate", "observationWeight", "rateReference", "forecastRate", "treatedForecastRate", "id" ],
+  "IsSynthetic" : false
+}

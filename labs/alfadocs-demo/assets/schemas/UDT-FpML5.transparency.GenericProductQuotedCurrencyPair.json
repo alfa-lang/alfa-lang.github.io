@@ -1,0 +1,65 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that describes the composition of a rate that has been quoted or is to be quoted. This includes the two currencies and the quotation relationship between the two currencies and is used as a building block throughout the FX specification.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.GenericProductQuotedCurrencyPair",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that describes the composition of a rate that has been quoted or is to be quoted. This includes the two currencies and the quotation relationship between the two currencies and is used as a building block throughout the FX specification.\n #/\nrecord FpML5.transparency.GenericProductQuotedCurrencyPair {\n  # The first currency specified when a pair of currencies is to be evaluated.\n  currency1 : string\n\n  # The second currency specified when a pair of currencies is to be evaluated.\n  currency2 : string\n\n  # The method by which the exchange rate is quoted.\n  quoteBasis : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.GenericProductExchangeRate",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency1" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The first currency specified when a pair of currencies is to be evaluated.",
+      "Name" : "currency1",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4513
+      }
+    },
+    "currency2" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The second currency specified when a pair of currencies is to be evaluated.",
+      "Name" : "currency2",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4516
+      }
+    },
+    "quoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which the exchange rate is quoted.",
+      "Name" : "quoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4519
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency1", "currency2", "quoteBasis" ],
+  "IsSynthetic" : false
+}

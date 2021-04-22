@@ -1,0 +1,221 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A generic credit curve definition.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CreditCurve",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A generic credit curve definition.\n #/\nrecord FpML5.reporting.CreditCurve {\n  # The name of the structure, e.g \"USDLIBOR-3M EOD Curve\".\n  name : string?\n\n  # The currency that the structure is expressed in (this is relevant mostly for the Interes Rates asset class).\n  currency : string?\n\n  # The entity for which this is defined.\n  referenceEntity : FpML5.reporting.LegalEntity\n\n  # An XML reference a credit entity defined elsewhere in the document.\n  creditEntityReference : FpML5.reporting.LegalEntityReference\n\n  # The material credit event.\n  creditEvents : FpML5.reporting.CreditEvents?\n\n  # The level of seniority of the deliverable obligation.\n  seniority : string?\n\n  # Whether the deliverable obligation is secured or unsecured.\n  secured : boolean?\n\n  # The currency of denomination of the deliverable obligation.\n  obligationCurrency : string?\n\n  # The underlying obligations of the reference entity on which you are buying or selling protection\n  obligations : FpML5.reporting.Obligations?\n\n  # What sort of obligation may be delivered in the event of the credit event. ISDA 2003 Term: Obligation Category/Deliverable Obligation Category\n  deliverableObligations : FpML5.reporting.DeliverableObligations?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "name" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the structure, e.g \"USDLIBOR-3M EOD Curve\".",
+      "Name" : "name",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1509
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency that the structure is expressed in (this is relevant mostly for the Interes Rates asset class).",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1512
+      }
+    },
+    "referenceEntity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The entity for which this is defined.",
+      "Name" : "referenceEntity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.LegalEntity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.LegalEntity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.LegalEntity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1515
+      }
+    },
+    "creditEntityReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An XML reference a credit entity defined elsewhere in the document.",
+      "Name" : "creditEntityReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.LegalEntityReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.LegalEntityReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.LegalEntityReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1518
+      }
+    },
+    "creditEvents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The material credit event.",
+      "Name" : "creditEvents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CreditEvents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1521
+      }
+    },
+    "seniority" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The level of seniority of the deliverable obligation.",
+      "Name" : "seniority",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1524
+      }
+    },
+    "secured" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether the deliverable obligation is secured or unsecured.",
+      "Name" : "secured",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1527
+      }
+    },
+    "obligationCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency of denomination of the deliverable obligation.",
+      "Name" : "obligationCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1530
+      }
+    },
+    "obligations" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The underlying obligations of the reference entity on which you are buying or selling protection",
+      "Name" : "obligations",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Obligations",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1533
+      }
+    },
+    "deliverableObligations" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "What sort of obligation may be delivered in the event of the credit event. ISDA 2003 Term: Obligation Category/Deliverable Obligation Category",
+      "Name" : "deliverableObligations",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.DeliverableObligations",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1536
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1539
+      }
+    }
+  },
+  "LocalFieldNames" : [ "name", "currency", "referenceEntity", "creditEntityReference", "creditEvents", "seniority", "secured", "obligationCurrency", "obligations", "deliverableObligations", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,15 @@
+enum< C1, C2, ... >
+===================
+Allows an enumeration to be declared in-line as part of the 
+field datatype.
+
+This is typically when there is a single use of the enum. 
+Otherwise it should be declared an :ref:`enumType` UDT.
+
+```csharp
+record Customer {
+    Salutation : enum< Mr, Mrs, Miss, Mstr >
+    FirstName : string
+    LastName : string
+}
+```

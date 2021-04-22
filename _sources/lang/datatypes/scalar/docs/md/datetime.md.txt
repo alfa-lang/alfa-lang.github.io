@@ -1,0 +1,15 @@
+datetime
+========
+
+An ISO 8601 [datetimetime](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations).
+
+__Optional Parameters__
+
+- Value range constraint - `datetime( min, max )`
+
+>>An optional range can be specified to a `datetime` in order to specify a restriction on permitted values. The values for `min` and `max` can be a ISO 8601 datetime string value or `*` to indicate wildcard maximum or minimum permitted value.
+>>
+>>Examples
+>>- `datetime("2000-01-01T08:00:00+01:00" ","2005-01-01T18:00:00+01:00")` A datetime between 2 datetime values.
+>>- `datetime(*,"2000-01-01T08:00:00+01:00")` A datetime between lowest datetime supported by target language and "2000-01-01T08:00:00+01:00".
+>>- `datetime(""2000-01-01T08:00:00+01:00"",*)` A datetime between "2000-01-01T08:00:00+01:00" and highest datetime supported by target language.

@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The tri-party terms.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.TriParty",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The tri-party terms.\n #/\nrecord FpML5.recordkeeping.TriParty {\n  # The reference to the tri-party agent.\n  triPartyAgent : FpML5.recordkeeping.PartyReference?\n\n  # The collateral profile specified at the tri-party agent.\n  collateralProfile : string?\n\n  # The collateral type, which is a restriction of the collateral deemed acceptable for the purpose of the transaction.\n  collateralType : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Repo",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "triPartyAgent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The reference to the tri-party agent.",
+      "Name" : "triPartyAgent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15807
+      }
+    },
+    "collateralProfile" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The collateral profile specified at the tri-party agent.",
+      "Name" : "collateralProfile",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15810
+      }
+    },
+    "collateralType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The collateral type, which is a restriction of the collateral deemed acceptable for the purpose of the transaction.",
+      "Name" : "collateralType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15813
+      }
+    }
+  },
+  "LocalFieldNames" : [ "triPartyAgent", "collateralProfile", "collateralType" ],
+  "IsSynthetic" : false
+}

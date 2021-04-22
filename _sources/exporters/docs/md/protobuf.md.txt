@@ -1,0 +1,474 @@
+## Protocol Buffers 3 Generator 
+
+### Overview
+
+This document defines the translation tool and methodology for ALFA schemas to
+[Protocol Buffers 3](https://developers.google.com/protocol-buffers/docs/proto3).
+
+
+Some ALFA to PB3 type translations will inevitably not have a direct corresponding
+type. PB3 has several limitations when nesting types, mandatory fields, oneof, map key types etc. 
+This leads to a difficult choice when generating PB3 
+from ALFA. Given ALFA's rich data model, should:
+1. All abstractions be modelled faithfully in
+PB3 at the risk of bloating PB3 model with various metadata fields. 
+2. Fallback to the PB3 features and not support translations for some ALFA features in PB3.
+
+Option 2 was chosen with the expectation that those wishing to use PB3
+will likely be existing PB3 users who are aware of its capabilities and 
+limitations. The ALFA :ref:`java` in future will support a binary serialisation,
+which will close the gap between the current ALFA JSON serialisation
+and PB3 binary performance. Once that is available, there may be less
+reasons to use this ALFA to PB3 generator.
+
+It is worth noting that if the PB3 JSON serialisation is to be used, the JSON streaming
+in :ref:`java` has been seen to be 20% - 30% faster than PB3 JSON for round-trip conversions.
+
+
+The PB3 Exporter continues to be refined in terms of its translation capabilities. Feedback is most welcome on how to
+improve the translation into PB3, to make the best use of PB3 features.
+
+
+Usage:
+```
+alfa -c -e protobuf -o generated/avro src
+```
+For the ALFA maven plugin, use `<exportType>protobuf</exportType>` in the plugin configuration.
+
+
+
+### Primitive types
+ALFA primitives are mapped to Protocol Buffers as shown in the following table.
+
+| ALFA  |   Protocol Buffers |
+|-------| -------------------|
+|binary        | bytes
+|boolean       | bool
+|byte          | bytes
+|char          | string
+|date          | int64
+|datetime      | google.protobuf.Timestamp
+|decimal       | double
+|decimal(s,p)  | decimal(s,p)
+|duration      | google.protobuf.Duration
+|double        | double
+|float         | float
+|int           | int32
+|long          | int64
+|pattern       | string
+|short         | int32
+|string        | string
+|time          | time_ms
+|uint          | uint32
+|ulong         | uint64
+|ushort        | uint32
+|url           | string
+|uuid          | string
+|void          | void
+
+
+### Vectors types
+
+#### Map
+ALFA :ref:`mapVectorType` where scalar keys are used, are represented as a
+PB3 [map< K, V >](https://developers.google.com/protocol-buffers/docs/proto3#maps).
+For complex key types, repeated of a record tuple is used.
+Given an ALFA definition ( assume Person is an existing record ):
+
+```csharp
+record Team {
+    salaries : map<Person, double>
+}
+```
+
+PB3 translation will be:
+
+```
+record __TeamSalariesEntry {
+    Person key = 1;
+    double value = 2;
+}
+
+record Team {
+    repeated __TeamSalariesEntry salaries = 1;
+}
+```
+
+#### Set
+ALFA :ref:`setVectorType` is represented as a PB3 `repeated` value.
+
+```csharp
+record Team {
+    members : set< Person >
+}
+```
+
+PB3 translation will be:
+
+```
+record Team {
+    repeated Person members = 1;
+}
+```
+
+#### List
+ALFA :ref:`seqVectorType` translates directly to PB3 `repeated`.
+
+#### Enum
+ALFA supports ``enum< A, B, C >`` directly as a field type instead of having to declare it as a
+standalone :ref:`enumVectorType` type.
+Such field type declarations translates to a PB3 [enum](https://developers.google.com/protocol-buffers/docs/proto3#enum)
+and a reference to that declaration. So given:
+
+```csharp
+record Velocity {
+    direction : enum< N, S, E, W >
+}
+```
+
+PB3 translation will be:
+```
+message Velocity {
+  pb3.Velocity_direction_ direction = 1;
+}
+
+enum Velocity_direction_ {
+  N = 0;
+  S = 1;
+  E = 2;
+  W = 3;
+}
+```
+
+#### Tuple
+
+An ALFA :ref:`tupleVectorType` type translates to a PB3 message and and a reference to that declaration. So given:
+```csharp
+record Drawing {
+    resolution : tuple< int, int >
+    origin : tuple< X : int, Y : int >
+}
+```
+
+PB3 translation will be ( notice the generated field naming ):
+
+```
+message Drawing {
+  Drawing_resolution_ resolution = 1;
+  Drawing_origin_ origin = 2;
+}
+
+message Drawing_origin_ {
+  int32 X = 1;
+  int32 Y = 2;
+}
+
+message Drawing_resolution_ {
+  int32 TupField__1 = 1;
+  int32 TupField__2 = 2;
+}
+```
+
+#### Union
+An ALFA :ref:`unionVectorType` field type translates naturally to a PB3 [union](https://developers.google.com/protocol-buffers/docs/proto3#oneof) field type. So given:
+
+```csharp
+record Result {
+    value : union< :double, :int, :string >
+}
+```
+
+PB3 translation will simply be:
+```
+message Result {
+  Result_value_ value = 1;
+}
+
+message Result_value_ {
+  oneof Value {
+    double Case__1 = 1;
+    int32 Case__2 = 2;
+    string Case__3 = 3;
+  }
+}
+```
+
+ALFA union field type can optionally have tagged names, therefore can have different tagged names with the same type.
+Consider:
+
+```csharp
+record Payment {
+    method : union< Paypal : string, BankAccount : string , Cash : void >
+}
+```
+
+Will be translated to PB3 as:
+
+```
+message Union__Payment_method {
+  oneof Value {
+    string Paypal = 1;
+    string BankAccount = 2;
+    bool Cash = 3;
+  }
+}
+
+message Payment {
+  com.acme.Union__Payment_method method = 1;
+}
+
+```
+
+### User-defined types
+
+#### record
+
+An ALFA :ref:`recordType` will be a PB3 [message](https://developers.google.com/protocol-buffers/docs/proto3#simple).
+
+#### key
+An ALFA :ref:`keyType` will be a PB3 [message](https://developers.google.com/protocol-buffers/docs/proto3#simple).
+
+#### enum
+An ALFA :ref:`enumType` will be a PB3 [enum](https://developers.google.com/protocol-buffers/docs/proto3#enum).
+
+#### trait
+An ALFA :ref:`traitType` is translated to a PB3 [oneof](https://developers.google.com/protocol-buffers/docs/proto3#oneof) as the ALFA
+transitive closure of implementations of the
+trait. Given an ALFA definition:
+
+```csharp
+    trait Shape { area : double }
+
+    trait Rectangle includes Shape { height : int width : int }
+
+    record Square includes Rectangle { }
+
+    record Circle includes Shape { radius : int }
+
+    record Triangle includes Shape { 
+        side1 : int 
+        side2 : int 
+        side3 : int 
+    }
+
+    record Drawing { item : Shape }
+```
+
+PB3 translation will be the following:
+
+```
+message Circle {
+  double area = 1;
+  int32 radius = 2;
+}
+
+message Rectangle {
+  oneof Impl {
+    pb3.Square impl0 = 1;
+  }
+}
+
+message Square {
+  double area = 1;
+  int32 height = 2;
+  int32 width = 3;
+}
+
+message Triangle {
+  double area = 1;
+  int32 side1 = 2;
+  int32 side2 = 3;
+  int32 side3 = 4;
+}
+
+message Shape {
+  oneof Impl {
+    pb3.Rectangle impl0 = 1;
+    pb3.Square impl1 = 2;
+    pb3.Circle impl2 = 3;
+    pb3.Triangle impl3 = 4;
+  }
+}
+
+message Drawing {
+  pb3.Shape item = 1;
+}
+```
+
+Notice the ALFA traits are PB3 records with unions of its transitive closure from ALFA.
+
+#### entity
+An ALFA :ref:`entityType` will be translated to a PB3 record with a field named ``__key`` appearing as the 1st field.
+This field represents the key of the entity, if one is defined ( ALFA permits keyless entities to represent
+singletons ).
+
+```csharp
+record Item {
+    Name : string
+}
+
+entity Order key( id : uuid ) {
+    items : list< Item >
+}
+```
+
+PB3 translation will be the following:
+
+```
+message Item {
+  string Name = 1;
+}
+
+message Order {
+  OrderKey __key = 1;
+  repeated Item  items = 2;
+}
+
+message OrderKey {
+  string id = 1;
+}
+```
+
+#### union
+An ALFA :ref:`unionType` gets translated to a PB3 message with [oneof](https://developers.google.com/protocol-buffers/docs/proto3#oneof) with a single union field containing ALFA union fields. This is identical
+to ALFA in-lined union field type translation.
+
+```csharp
+union Payment {
+    Paypal : string
+    BankAccount : string
+    Cash : void
+}
+```
+
+PB3 translation will be the following:
+
+```
+message Payment {
+  oneof Value {
+    string Paypal = 1;
+    string BankAccount = 2;
+    bool Cash = 3;
+  }
+}
+```
+
+#### service
+An ALFA :ref:`serviceType` will be translated to a new PB3 Protocol definition file containing
+the set of methods. All definitions required by the service will be available in a seperate file containing the record declarations.
+
+Given the ALFA definition:
+```csharp
+    namespace com.acme
+
+    record Order {}
+
+    service OrderProcessing {
+        createEmptyOrder() : Order
+        saveOrder( order : Order ) : void
+    }
+```
+
+The 2 following PB3 definitions will be generated:
+
+
+File `com/acme/OrderProcessing.proto`. A PB3 definition per ALFA service.
+
+```
+syntax = "proto3";
+
+package com.acme;
+
+import "com/acme/Order.proto";
+
+message OrderProcessingCreateEmptyOrderRequest {
+}
+
+
+message OrderProcessingCreateEmptyOrderResponse {
+  com.acme.Order createEmptyOrderResult = 1;
+}
+
+
+message OrderProcessingSaveOrderRequest {
+  com.acme.Order order = 1;
+}
+
+
+message OrderProcessingSaveOrderResponse {
+}
+
+
+service OrderProcessing {
+    rpc createEmptyOrder ( OrderProcessingCreateEmptyOrderRequest ) returns ( OrderProcessingCreateEmptyOrderResponse );
+    rpc saveOrder ( OrderProcessingSaveOrderRequest ) returns ( OrderProcessingSaveOrderResponse );
+}
+```
+
+File `com/acme/Order.proto`. 
+
+```
+syntax = "proto3";
+
+package com.acme;
+
+
+message Order {
+}
+
+
+```
+
+### Other ALFA features
+-------------------
+
+#### Optional fields
+
+By definition all PB3 fields are optional, therefore even ALFA fields
+which are mandatory will be defined in PB3 as optional as per the 
+design choice outlined in the Overview section above.
+
+#### key< T >
+
+ALFA `key< T >` where `T` is an entity will be translated to the key declaration of `TKey`, where the ALFA key would have been
+generated as a PB3 message.
+
+
+
+### Exporter Example
+
+Consider the following `demo.alfa` definition.
+
+```csharp
+namespace com.acme
+
+key BankAccountKey {
+    IBAN : string
+}
+
+entity BankAccount key BankAccountKey {
+    Name : string
+    Transactions : list< Transaction >
+    RegisteredDate : date
+    Type : enum< Silver, Gold, Platinum >
+}
+
+record Transaction {
+   Amount : double
+   Description : string
+   Date : date
+   CorrespondingIBAN  : string
+}
+
+service BankService( AuthToken : uuid ) {
+   getAccount( IBAN : string ) : try< BankAccount >
+   getTransactions( k : BankAccountKey ) : stream< Transaction >
+}
+```
+
+This can be generated to Protocol Buffers3 using the ALFA CLI - `alfa -c -e protobuf -o gen/pb3 demo.alfa`.
+
+As a quick overview, the generated Protocol Buffers 3 code is shown in the screenshot below.
+This can be compiled using the `protoc` Protocol Buffers compiler and toolset.
+
+![ALFA Generated PB3 Code](/_static/images/alfa-pb3.png)

@@ -1,0 +1,101 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Details on the referenced payment. e.g. Its cashflow components, settlement details.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PaymentDetails",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Details on the referenced payment. e.g. Its cashflow components, settlement details.\n #/\nrecord FpML5.confirmation.PaymentDetails {\n  # The reference to the identified payment strucutre.\n  paymentReference : FpML5.confirmation.PaymentReference\n\n  # Payment details of this cash flow component, including currency, amount and payer/payee.\n  grossCashflow : FpML5.confirmation.GrossCashflow\n\n  # The information required to settle a currency payment.\n  settlementInformation : FpML5.confirmation.SettlementInformation?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExecutionAdvice",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ExecutionAdviceRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TradeChangeAdvice",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TradeChangeAdviceRetracted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "paymentReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The reference to the identified payment strucutre.",
+      "Name" : "paymentReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PaymentReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PaymentReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PaymentReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 2938
+      }
+    },
+    "grossCashflow" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Payment details of this cash flow component, including currency, amount and payer/payee.",
+      "Name" : "grossCashflow",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.GrossCashflow",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.GrossCashflow",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.GrossCashflow",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 2941
+      }
+    },
+    "settlementInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The information required to settle a currency payment.",
+      "Name" : "settlementInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.SettlementInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 2944
+      }
+    }
+  },
+  "LocalFieldNames" : [ "paymentReference", "grossCashflow", "settlementInformation" ],
+  "IsSynthetic" : false
+}

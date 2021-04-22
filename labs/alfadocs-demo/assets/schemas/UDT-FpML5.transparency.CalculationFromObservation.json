@@ -1,0 +1,95 @@
+{
+  "@type" : "alfa.rt.model.Trait",
+  "Doc" : "Abstract base class for all calculation from observed values.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CalculationFromObservation",
+    "UdtType" : "traitType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Abstract base class for all calculation from observed values.\n #/\ntrait FpML5.transparency.CalculationFromObservation {\n  # Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.\n  initialLevel : decimal\n\n  # Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.\n  initialLevelSource : string\n\n  # DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.\n  closingLevel : boolean\n\n  # DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.\n  expiringLevel : boolean\n\n  # Expected number of trading days.\n  expectedN : int( 1, * )?\n\n}"
+  },
+  "AllFields" : {
+    "initialLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.",
+      "Name" : "initialLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1044
+      }
+    },
+    "initialLevelSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.",
+      "Name" : "initialLevelSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1047
+      }
+    },
+    "closingLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.",
+      "Name" : "closingLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1050
+      }
+    },
+    "expiringLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.",
+      "Name" : "expiringLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1053
+      }
+    },
+    "expectedN" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Expected number of trading days.",
+      "Name" : "expectedN",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1056
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialLevel", "initialLevelSource", "closingLevel", "expiringLevel", "expectedN" ],
+  "IsSynthetic" : false
+}

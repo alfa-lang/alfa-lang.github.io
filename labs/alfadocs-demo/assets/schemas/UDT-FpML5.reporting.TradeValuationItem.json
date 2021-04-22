@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type used in trade valuation enquiry messages which relates a trade identifier to its current value.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeValuationItem",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type used in trade valuation enquiry messages which relates a trade identifier to its current value.\n #/\nrecord FpML5.reporting.TradeValuationItem {\n  # One or more trade identifiers needed to uniquely identify a trade.\n  partyTradeIdentifier : FpML5.reporting.PartyTradeIdentifier?\n\n  # This may be used to identify one or more parties that perform a role within the transaction. If this is within a partyTradeInformation block, the related party performs the role with respect to the party identifie by the \"partyReference\" in the partyTradeInformation block.\n  relatedParty : FpML5.reporting.RelatedParty?\n\n  # Fully-described trades whose values are reported.\n  trade : FpML5.reporting.Trade\n\n  valuationSet : FpML5.reporting.ValuationSet?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PortfolioValuationItem",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RequestValuationReport",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ValuationReport",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "One or more trade identifiers needed to uniquely identify a trade.",
+      "Name" : "partyTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8209
+      }
+    },
+    "relatedParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This may be used to identify one or more parties that perform a role within the transaction. If this is within a partyTradeInformation block, the related party performs the role with respect to the party identifie by the \"partyReference\" in the partyTradeInformation block.",
+      "Name" : "relatedParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.RelatedParty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8212
+      }
+    },
+    "trade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fully-described trades whose values are reported.",
+      "Name" : "trade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8215
+      }
+    },
+    "valuationSet" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "valuationSet",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ValuationSet",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8218
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyTradeIdentifier", "relatedParty", "trade", "valuationSet" ],
+  "IsSynthetic" : false
+}

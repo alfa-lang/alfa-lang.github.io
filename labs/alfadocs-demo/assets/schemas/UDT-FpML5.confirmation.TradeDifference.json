@@ -1,0 +1,181 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type used to record the details of a difference between two business objects/",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TradeDifference",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type used to record the details of a difference between two business objects/\n #/\nrecord FpML5.confirmation.TradeDifference {\n  # The type of difference that exists.\n  differenceType : string\n\n  # An indication of the severity of the difference.\n  differenceSeverity : string\n\n  # The name of the element affected.\n  element : string\n\n  # XPath to the element in the base object.\n  basePath : string?\n\n  # The value of the element in the base object.\n  baseValue : string?\n\n  # XPath to the element in the other object.\n  otherPath : string?\n\n  # Value of the element in the other trade.\n  otherValue : string?\n\n  # Element(s) that are missing in the other trade.\n  missingElement : string?\n\n  # Element(s) that are extraneous in the other object.\n  extraElement : string?\n\n  # A human readable description of the problem.\n  message : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EventProposedMatch",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "differenceType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of difference that exists.",
+      "Name" : "differenceType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13295
+      }
+    },
+    "differenceSeverity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An indication of the severity of the difference.",
+      "Name" : "differenceSeverity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13298
+      }
+    },
+    "element" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the element affected.",
+      "Name" : "element",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13301
+      }
+    },
+    "basePath" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "XPath to the element in the base object.",
+      "Name" : "basePath",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13304
+      }
+    },
+    "baseValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value of the element in the base object.",
+      "Name" : "baseValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13307
+      }
+    },
+    "otherPath" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "XPath to the element in the other object.",
+      "Name" : "otherPath",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13310
+      }
+    },
+    "otherValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Value of the element in the other trade.",
+      "Name" : "otherValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13313
+      }
+    },
+    "missingElement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Element(s) that are missing in the other trade.",
+      "Name" : "missingElement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13316
+      }
+    },
+    "extraElement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Element(s) that are extraneous in the other object.",
+      "Name" : "extraElement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13319
+      }
+    },
+    "message" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A human readable description of the problem.",
+      "Name" : "message",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13322
+      }
+    }
+  },
+  "LocalFieldNames" : [ "differenceType", "differenceSeverity", "element", "basePath", "baseValue", "otherPath", "otherValue", "missingElement", "extraElement", "message" ],
+  "IsSynthetic" : false
+}

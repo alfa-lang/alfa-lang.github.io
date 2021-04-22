@@ -1,0 +1,234 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionExerciseAmounts",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.OptionExerciseAmounts {\n  notionalReference : FpML5.reporting.NotionalReference?\n\n  # Specifies the fixed amount by which the option should be exercised expressed as notional amount.\n  exerciseInNotionalAmount : FpML5.reporting.Money?\n\n  # Specifies the Notional amount after the Change\n  outstandingNotionalAmount : FpML5.reporting.Money?\n\n  notionalScheduleReference : FpML5.reporting.NotionalReference?\n\n  # Specifies the amount by which the option should be exercised expressed as notional schedule.\n  exerciseInNotionalSchedule : FpML5.reporting.NonNegativeAmountSchedule?\n\n  # Specifies the Notional schedule after the Change\n  outstandingNotionalSchedule : FpML5.reporting.NonNegativeAmountSchedule?\n\n  numberOfOptionsReference : FpML5.reporting.NumberOfOptionsReference?\n\n  # Specifies the fixed amount by which the option should be exercised expressed as number of options.\n  exerciseInNumberOfOptions : decimal?\n\n  # Specifies the Number of Options after the Change.\n  outstandingNumberOfOptions : decimal?\n\n  numberOfUnitsReference : FpML5.reporting.NumberOfUnitsReference?\n\n  # Specifies the fixed amount by which the option should be exercised express as number of units.\n  exerciseInNumberOfUnits : decimal?\n\n  # Specifies the Number of Units\n  outstandingNumberOfUnits : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ActionOnExpiration",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionExercise",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "notionalReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "notionalReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NotionalReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16973
+      }
+    },
+    "exerciseInNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixed amount by which the option should be exercised expressed as notional amount.",
+      "Name" : "exerciseInNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16975
+      }
+    },
+    "outstandingNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Notional amount after the Change",
+      "Name" : "outstandingNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16978
+      }
+    },
+    "notionalScheduleReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "notionalScheduleReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NotionalReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16981
+      }
+    },
+    "exerciseInNotionalSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the amount by which the option should be exercised expressed as notional schedule.",
+      "Name" : "exerciseInNotionalSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeAmountSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16983
+      }
+    },
+    "outstandingNotionalSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Notional schedule after the Change",
+      "Name" : "outstandingNotionalSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeAmountSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16986
+      }
+    },
+    "numberOfOptionsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "numberOfOptionsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NumberOfOptionsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16989
+      }
+    },
+    "exerciseInNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixed amount by which the option should be exercised expressed as number of options.",
+      "Name" : "exerciseInNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16991
+      }
+    },
+    "outstandingNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Number of Options after the Change.",
+      "Name" : "outstandingNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16994
+      }
+    },
+    "numberOfUnitsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "numberOfUnitsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NumberOfUnitsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16997
+      }
+    },
+    "exerciseInNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixed amount by which the option should be exercised express as number of units.",
+      "Name" : "exerciseInNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 16999
+      }
+    },
+    "outstandingNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Number of Units",
+      "Name" : "outstandingNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17002
+      }
+    }
+  },
+  "LocalFieldNames" : [ "notionalReference", "exerciseInNotionalAmount", "outstandingNotionalAmount", "notionalScheduleReference", "exerciseInNotionalSchedule", "outstandingNotionalSchedule", "numberOfOptionsReference", "exerciseInNumberOfOptions", "outstandingNumberOfOptions", "numberOfUnitsReference", "exerciseInNumberOfUnits", "outstandingNumberOfUnits" ],
+  "IsSynthetic" : false
+}

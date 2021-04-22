@@ -1,0 +1,232 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that allows a position to be defined. It includes identification information (ID and version), trade information, etc.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DefinePosition",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that allows a position to be defined. It includes identification information (ID and version), trade information, etc.\n #/\nrecord FpML5.reporting.DefinePosition {\n  # A version-independent identifier for the position, possibly based on trade identifier.\n  positionId : string?\n\n  # A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.\n  version : int( 1, * )?\n\n  status : string?\n\n  creationDate : date?\n\n  originatingEvent : string?\n\n  history : FpML5.reporting.PositionHistory?\n\n  # Information about the roles of the parties with respect to reporting the positions.\n  reportingRoles : FpML5.reporting.ReportingRoles?\n\n  # The components that create this position.\n  constituent : FpML5.reporting.PositionConstituent?\n\n  # Position level schedule date, such as final payment dates, in a simple and flexible format.\n  scheduledDate : FpML5.reporting.ScheduledDate?\n\n  # Valuation reported for the position, such as NPV or accrued interest. The asset/object references in the valuations should refer to the deal or components of the deal in the position, e.g. legs, streams, or underlyers.\n  valuation : FpML5.reporting.AssetValuation?\n\n  # An optional reference to a position supplied by the matching party that is known to match this one.\n  forceMatch : FpML5.reporting.PositionReference?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionsAsserted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "positionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version-independent identifier for the position, possibly based on trade identifier.",
+      "Name" : "positionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25015
+      }
+    },
+    "version" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.",
+      "Name" : "version",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25018
+      }
+    },
+    "status" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "status",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25021
+      }
+    },
+    "creationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25023
+      }
+    },
+    "originatingEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "originatingEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25025
+      }
+    },
+    "history" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "history",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositionHistory",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25027
+      }
+    },
+    "reportingRoles" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information about the roles of the parties with respect to reporting the positions.",
+      "Name" : "reportingRoles",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ReportingRoles",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25029
+      }
+    },
+    "constituent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The components that create this position.",
+      "Name" : "constituent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositionConstituent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25032
+      }
+    },
+    "scheduledDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Position level schedule date, such as final payment dates, in a simple and flexible format.",
+      "Name" : "scheduledDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ScheduledDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25035
+      }
+    },
+    "valuation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Valuation reported for the position, such as NPV or accrued interest. The asset/object references in the valuations should refer to the deal or components of the deal in the position, e.g. legs, streams, or underlyers.",
+      "Name" : "valuation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AssetValuation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25038
+      }
+    },
+    "forceMatch" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An optional reference to a position supplied by the matching party that is known to match this one.",
+      "Name" : "forceMatch",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositionReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25041
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25044
+      }
+    }
+  },
+  "LocalFieldNames" : [ "positionId", "version", "status", "creationDate", "originatingEvent", "history", "reportingRoles", "constituent", "scheduledDate", "valuation", "forceMatch", "id" ],
+  "IsSynthetic" : false
+}

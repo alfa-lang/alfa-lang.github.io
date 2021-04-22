@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type representing an arbitary grouping of trade references.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Portfolio",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type representing an arbitary grouping of trade references.\n #/\nrecord FpML5.transparency.Portfolio {\n  # The name of the portfolio together with the party that gave the name.\n  partyPortfolioName : FpML5.transparency.PartyPortfolioName?\n\n  tradeId : string?\n\n  partyTradeIdentifier : FpML5.transparency.PartyTradeIdentifier?\n\n  # An arbitary grouping of trade references (and possibly other portfolios).\n  portfolio : FpML5.transparency.Portfolio?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Portfolio",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyPortfolioName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the portfolio together with the party that gave the name.",
+      "Name" : "partyPortfolioName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PartyPortfolioName",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5139
+      }
+    },
+    "tradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5142
+      }
+    },
+    "partyTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "partyTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5144
+      }
+    },
+    "portfolio" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An arbitary grouping of trade references (and possibly other portfolios).",
+      "Name" : "portfolio",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Portfolio",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5146
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5149
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyPortfolioName", "tradeId", "partyTradeIdentifier", "portfolio", "id" ],
+  "IsSynthetic" : false
+}

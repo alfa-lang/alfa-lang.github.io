@@ -1,0 +1,66 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The time dimensions of a term-structure. The user must supply either a tenor or a date or both.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TimeDimension",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The time dimensions of a term-structure. The user must supply either a tenor or a date or both.\n #/\nrecord FpML5.reporting.TimeDimension {\n  # The absolute date corresponding to this term point, for example January 3, 2005.\n  `date` : date?\n\n  # The amount of time from the base date of the pricing input to the specified term point, e.g. 6M or 5Y.\n  tenor : FpML5.reporting.Period?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PricingDataPointCoordinate",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SensitivityDefinition",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TermPoint",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "date" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The absolute date corresponding to this term point, for example January 3, 2005.",
+      "Name" : "date",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5724
+      }
+    },
+    "tenor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of time from the base date of the pricing input to the specified term point, e.g. 6M or 5Y.",
+      "Name" : "tenor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 5727
+      }
+    }
+  },
+  "LocalFieldNames" : [ "date", "tenor" ],
+  "IsSynthetic" : false
+}

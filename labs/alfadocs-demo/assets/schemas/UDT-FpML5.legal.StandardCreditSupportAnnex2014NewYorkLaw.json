@@ -1,0 +1,238 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The New York Law 2014 SCSA implementation, which extends StandardCreditSupportAnnexBase.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2014NewYorkLaw",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The New York Law 2014 SCSA implementation, which extends StandardCreditSupportAnnexBase.\n #/\nrecord FpML5.legal.StandardCreditSupportAnnex2014NewYorkLaw {\n  # The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.\n  documentType : FpML5.legal.LegalDocumentType\n\n  # Specifies the way the independent amount is determined.\n  independentAmounts : FpML5.legal.IndependentAmounts\n\n  # The base currency to be used as a common denominator for Initial Amount calculation.\n  baseCurrency : string\n\n  # Reference to the legacy CSA that the parties may reference.\n  existingCreditSupportAnnex : FpML5.legal.ExistingCreditSupportAnnex?\n\n  # Settlement under the SCSA is required to be either on a T+1 or, exceptionally, on a T+2 basis (when counterparties are in disparate timezones). T+0 settlement is not allowed under the SCSA.\n  settlementDay : string\n\n  # The contact information to which demands and notices should be addressed. There could be several of such contacts for each party to the agreement.\n  demandsAndNotices : FpML5.legal.PartyContactInformation\n\n  # Assets that qualify as eligible collateral for the purpose of initial margin.\n  independentAmountEligibleCreditSupport : FpML5.legal.IndependentAmountEligibleCollateral\n\n  # Specifies whether the respective parties to the agreement have the right to rehypothecate the collateral held.\n  useOfPostedCreditSupport : FpML5.legal.UseOfPostedCreditSupport\n\n  # The list of business centers which holiday schedules are considered for the purpose of determining valuation dates.\n  valuationDateCity : FpML5.legal.BusinessCenters\n\n  # The reference business center for the purpose of specifying the Notification Time.\n  notificationTimeCity : string\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "documentType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.",
+      "Name" : "documentType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.LegalDocumentType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1318
+      }
+    },
+    "independentAmounts" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the way the independent amount is determined.",
+      "Name" : "independentAmounts",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.IndependentAmounts",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.IndependentAmounts",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.IndependentAmounts",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1321
+      }
+    },
+    "baseCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The base currency to be used as a common denominator for Initial Amount calculation.",
+      "Name" : "baseCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1324
+      }
+    },
+    "existingCreditSupportAnnex" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the legacy CSA that the parties may reference.",
+      "Name" : "existingCreditSupportAnnex",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.ExistingCreditSupportAnnex",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1327
+      }
+    },
+    "settlementDay" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Settlement under the SCSA is required to be either on a T+1 or, exceptionally, on a T+2 basis (when counterparties are in disparate timezones). T+0 settlement is not allowed under the SCSA.",
+      "Name" : "settlementDay",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1330
+      }
+    },
+    "demandsAndNotices" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The contact information to which demands and notices should be addressed. There could be several of such contacts for each party to the agreement.",
+      "Name" : "demandsAndNotices",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.PartyContactInformation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.PartyContactInformation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyContactInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1333
+      }
+    },
+    "independentAmountEligibleCreditSupport" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Assets that qualify as eligible collateral for the purpose of initial margin.",
+      "Name" : "independentAmountEligibleCreditSupport",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.IndependentAmountEligibleCollateral",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.IndependentAmountEligibleCollateral",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.IndependentAmountEligibleCollateral",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1336
+      }
+    },
+    "useOfPostedCreditSupport" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the respective parties to the agreement have the right to rehypothecate the collateral held.",
+      "Name" : "useOfPostedCreditSupport",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.UseOfPostedCreditSupport",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.UseOfPostedCreditSupport",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.UseOfPostedCreditSupport",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1339
+      }
+    },
+    "valuationDateCity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The list of business centers which holiday schedules are considered for the purpose of determining valuation dates.",
+      "Name" : "valuationDateCity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.BusinessCenters",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.BusinessCenters",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.BusinessCenters",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1342
+      }
+    },
+    "notificationTimeCity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The reference business center for the purpose of specifying the Notification Time.",
+      "Name" : "notificationTimeCity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1345
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1348
+      }
+    }
+  },
+  "LocalFieldNames" : [ "documentType", "independentAmounts", "baseCurrency", "existingCreditSupportAnnex", "settlementDay", "demandsAndNotices", "independentAmountEligibleCreditSupport", "useOfPostedCreditSupport", "valuationDateCity", "notificationTimeCity", "id" ],
+  "IsSynthetic" : false
+}

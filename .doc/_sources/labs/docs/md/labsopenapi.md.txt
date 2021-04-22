@@ -1,0 +1,344 @@
+# OpenAPI Exporter
+
+### Introduction
+
+[OpenAPI](https://github.com/OAI/OpenAPI-Specification) is used as a programming language-agnostic interface
+description for REST APIs. Given ALFA's `service` defines an interface, the ALFA OpenAPI Exporter was developed
+as a PoC to validate feature coverage from ALFA to OpenAPI.
+
+Initial conclusions are that ALFA is more than capable of supporting all of OpenAPI definitions. There are
+however concerns how some complex modelling features in ALFA will be expressed in OpenAPI.
+
+Please note this exporter is **highly experimental** at this stage and will require addtional work to
+ensure better compatility and feature coverage of OpenAPI.
+
+
+### Usage Steps
+
+- Similar to generating Java and CSharp, Python is generated using the following commandline.
+
+>```
+>alfa -c -e openapi -o generated/openapi src
+>```
+
+
+### OpenAPI Model expressed in ALFA
+
+The generated OpenAPI model is in fact, expressed in ALFA. The Exporter converts the ALFA model
+to a structure `alfa.openapi.model.Spec`, and generates YAML - the result is a OpenAPI definition.
+
+```csharp
+namespace alfa.openapi.model
+
+record Spec {
+    openapi : string
+    info : Info
+    servers : list< Server >?
+    components : Components?
+    paths : map< string, PathItem >
+    security : list< SecurityRequirement >?
+    tags : list< Tag >?
+    externalDocs : ExternalDocumentation?
+}
+
+record Info {
+    title : string
+    description : string?
+    termsOfService : string?
+    contact : Contact?
+    license : License?
+    version : string
+}
+
+record Tag {
+    name : string
+    description : string?
+    externalDocs : ExternalDocumentation?
+}
+
+record SecurityRequirement {
+    scheme : SecurityScheme
+    scopes : list< string >
+}
+
+enum SecurityScheme {
+    apiKey http oauth2 openIdConnect
+}
+
+record Components {
+    schemas : map< string, SchemaDef >
+}
+
+record ExternalDocumentation {
+    description : string?
+    url : uri
+}
+
+record PathItem {
+    ref : string?
+    summary : string?
+    description : string?
+    get : Operation?
+    put : Operation?
+    post : Operation?
+    delete : Operation?
+    options : Operation?
+    head : Operation?
+    patch : Operation?
+    trace : Operation?
+    servers : list< Server >?
+    parameters : list< union< parameter:Parameter, reference:Reference > >?
+}
+
+enum ParameterType {
+    path query headers cookies
+}
+
+record Parameter {
+    name : string
+    in : ParameterType
+    description : string?
+    required : boolean
+    deprecated : boolean?
+    allowEmptyValue : boolean?
+    schema : SchemaObject
+}
+
+trait SchemaObject {
+}
+
+record SchemaDef includes SchemaObject {
+    type : string
+    description : string?
+
+    // Primitive array type
+    items : SchemaObject?
+
+    enum : list< string >?
+
+    minimum : int?
+    maximum : int?
+
+    properties : map< string, SchemaObject >?
+
+    additionalProperties : map< string, string >?
+}
+
+record Reference includes SchemaObject {
+    `dollarref` : string
+}
+
+record Operation {
+    tags : list< string >?
+    summary : string?
+    description : string?
+    externalDocs : ExternalDocumentation?
+    operationId : string?
+    parameters : list< Parameter >?
+    requestBody : union< requestBody: RequestBody, reference:Reference >?
+    responses : map< Code: string, Response >
+    callbacks : map< string, union< callback: Callback, reference:Reference > >?
+    deprecated : boolean?
+    security : map< SecurityRequirement : string, list< string > >?
+    servers : list< Server >?
+}
+
+record Callback {
+    paths : map< string, string >
+}
+
+record Response {
+    description : string
+    headers : map< string, union< header:Header, reference:Reference > >?
+    content : map< string, MediaType >?
+    links : map< string, union< link:Link, reference:Reference > >?
+}
+
+record MediaType {
+    schema : SchemaObject
+}
+
+record Header {
+    description : string?
+    // REVIEW
+}
+
+record RequestBody {
+    description : string?
+    content : map< string, MediaType >
+    required : boolean?
+}
+
+record Link {
+    operationRef : string?
+    operationId : string
+    parameters : map< string, string?> // REVIEW
+    requestBody : string? // REVIEW
+    description : string?
+    server : Server
+}
+
+record Server {
+    url : uri
+    description : string?
+    variables : map< string, ServerVariableObject >?
+}
+
+record ServerVariableObject {
+    enum : list< string >?
+    default : string
+    description : string?
+}
+
+record License {
+    name : string
+    url : uri?
+}
+
+record Contact {
+   name : string
+   email : string
+   url : uri
+}
+```
+
+
+### Example
+Given the following data model below, the OpenAPI Exporter will generate an OpenAPI YAML definition.
+
+The OpenAPI Exporter makes use of ALFA annotation support for the author to include meta information
+only required by the OpenAPI generator.
+
+Note that the service definition can also be used for all other intended usages of a service, and
+not limited to OpenAPI usage.
+
+```csharp
+@alfa.openapi.Info(
+    title="Swagger Petstore",
+    description="This is a sample Petstore server",
+    version="1.0.0" )
+namespace Petstore
+
+enum PetCategory {
+   Cat Dog Reptile
+}
+record Pet {
+    name : string
+    category : PetCategory
+}
+enum PetStatus {
+    Available Pending Sold
+}
+@alfa.openapi.Path(name="/pet")
+service PetService
+{
+    # Add a new pet to the store
+    @alfa.openapi.Post(tags=["pet"])
+    addPet( p : Pet ) : void
+
+    # Update an existing pet
+    @alfa.openapi.Put(tags=["pet"])
+    updatePet( p : Pet ) : void
+
+    # Finds pets by status
+    @alfa.openapi.Get(path="findByStatus", tags=["pet"])
+    findByStatus( statuses : list< PetStatus > ) : list< Pet >
+
+    # Finds pets by tags
+    @alfa.openapi.Get(path="findByStatus", tags=["pet"])
+    findByTags( statuses : list< string > ) : list< Pet >
+
+    # Find pet by id
+    @alfa.openapi.Get(path="/{petId}", tags=["pet"])
+    getPetById( petId : long ) : Pet
+}
+```
+
+
+Generated OpenAPI YAML definition:
+
+```yaml
+openapi: "3.0.0"
+info:
+  title: "Swagger Petstore"
+  version: "1.0.0"
+paths:
+  /petfindByStatus:
+    get:
+      tags:
+      - "pet"
+      summary: "Finds pets by tags"
+      operationId: "findByTags"
+      parameters:
+      - name: "statuses"
+        in: "query"
+        required: true
+        schema:
+          type: "array"
+          items:
+            type: "string"
+      responses:
+        200:
+          description: "Result of findByTags"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "Petstore.Pet"
+  /pet/{petId}:
+    get:
+      tags:
+      - "pet"
+      summary: "Find pet by id"
+      operationId: "getPetById"
+      parameters:
+      - name: "petId"
+        in: "path"
+        required: true
+        schema:
+          type: "integer"
+      responses:
+        200:
+          description: "Result of getPetById"
+          content:
+            application/json:
+              schema:
+                $ref: "Petstore.Pet"
+  /pet:
+    put:
+      tags:
+      - "pet"
+      summary: "Update an existing pet"
+      operationId: "updatePet"
+      parameters:
+      - name: "p"
+        in: "query"
+        required: true
+        schema:
+          $ref: "Petstore.Pet"
+      responses:
+        204:
+          description: "Result of updatePet"
+components:
+  schemas:
+    Petstore.PetCategory:
+      type: "string"
+      enum:
+      - "Cat"
+      - "Dog"
+      - "Reptile"
+    Petstore.Pet:
+      type: "object"
+      properties:
+        name:
+          type: "string"
+        category:
+          $ref: "Petstore.PetCategory"
+    Petstore.PetStatus:
+      type: "string"
+      enum:
+      - "Available"
+      - "Pending"
+      - "Sold"
+```

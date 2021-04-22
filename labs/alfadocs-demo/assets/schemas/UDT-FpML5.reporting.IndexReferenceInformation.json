@@ -1,0 +1,203 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a Credit Default Swap Index.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.IndexReferenceInformation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a Credit Default Swap Index.\n #/\nrecord FpML5.reporting.IndexReferenceInformation {\n  # The name of the index expressed as a free format string. FpML does not define usage rules for this element.\n  indexName : string?\n\n  # A CDS index identifier (e.g. RED pair code).\n  indexId : string?\n\n  # A CDS index series identifier, e.g. 1, 2, 3 etc.\n  indexSeries : int( 1, * )?\n\n  # A CDS index series version identifier, e.g. 1, 2, 3 etc.\n  indexAnnexVersion : int( 1, * )?\n\n  # A CDS index series annex date.\n  indexAnnexDate : date?\n\n  # A CDS index series annex source.\n  indexAnnexSource : string?\n\n  # Excluded reference entity.\n  excludedReferenceEntity : FpML5.reporting.LegalEntity?\n\n  # This element contains CDS tranche terms.\n  tranche : FpML5.reporting.Tranche?\n\n  # Used to specify the Relevant Settled Entity Matrix when there are settled entities at the time of the trade.\n  settledEntityMatrix : FpML5.reporting.SettledEntityMatrix?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.GeneralTerms",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "indexName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the index expressed as a free format string. FpML does not define usage rules for this element.",
+      "Name" : "indexName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7371
+      }
+    },
+    "indexId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A CDS index identifier (e.g. RED pair code).",
+      "Name" : "indexId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7374
+      }
+    },
+    "indexSeries" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A CDS index series identifier, e.g. 1, 2, 3 etc.",
+      "Name" : "indexSeries",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7377
+      }
+    },
+    "indexAnnexVersion" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A CDS index series version identifier, e.g. 1, 2, 3 etc.",
+      "Name" : "indexAnnexVersion",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7380
+      }
+    },
+    "indexAnnexDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A CDS index series annex date.",
+      "Name" : "indexAnnexDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7383
+      }
+    },
+    "indexAnnexSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A CDS index series annex source.",
+      "Name" : "indexAnnexSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7386
+      }
+    },
+    "excludedReferenceEntity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Excluded reference entity.",
+      "Name" : "excludedReferenceEntity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.LegalEntity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7389
+      }
+    },
+    "tranche" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This element contains CDS tranche terms.",
+      "Name" : "tranche",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Tranche",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7392
+      }
+    },
+    "settledEntityMatrix" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to specify the Relevant Settled Entity Matrix when there are settled entities at the time of the trade.",
+      "Name" : "settledEntityMatrix",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SettledEntityMatrix",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7395
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 7398
+      }
+    }
+  },
+  "LocalFieldNames" : [ "indexName", "indexId", "indexSeries", "indexAnnexVersion", "indexAnnexDate", "indexAnnexSource", "excludedReferenceEntity", "tranche", "settledEntityMatrix", "id" ],
+  "IsSynthetic" : false
+}

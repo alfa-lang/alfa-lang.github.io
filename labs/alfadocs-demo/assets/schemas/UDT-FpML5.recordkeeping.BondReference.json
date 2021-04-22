@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type including a reference to a bond to support the representation of an asset swap or Condition Precedent Bond.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.BondReference",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type including a reference to a bond to support the representation of an asset swap or Condition Precedent Bond.\n #/\nrecord FpML5.recordkeeping.BondReference {\n  # Identifies the underlying asset when it is a series or a class of bonds.\n  bond : FpML5.recordkeeping.Bond?\n\n  # To indicate whether the Condition Precedent Bond is applicable. The swap contract is only valid if the bond is issued and if there is any dispute over the terms of fixed stream then the bond terms would be used.\n  conditionPrecedentBond : boolean?\n\n  # To indicate whether the Discrepancy Clause is applicable.\n  discrepancyClause : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.SwapAdditionalTerms",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "bond" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a series or a class of bonds.",
+      "Name" : "bond",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Bond",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24894
+      }
+    },
+    "conditionPrecedentBond" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "To indicate whether the Condition Precedent Bond is applicable. The swap contract is only valid if the bond is issued and if there is any dispute over the terms of fixed stream then the bond terms would be used.",
+      "Name" : "conditionPrecedentBond",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24897
+      }
+    },
+    "discrepancyClause" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "To indicate whether the Discrepancy Clause is applicable.",
+      "Name" : "discrepancyClause",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24900
+      }
+    }
+  },
+  "LocalFieldNames" : [ "bond", "conditionPrecedentBond", "discrepancyClause" ],
+  "IsSynthetic" : false
+}

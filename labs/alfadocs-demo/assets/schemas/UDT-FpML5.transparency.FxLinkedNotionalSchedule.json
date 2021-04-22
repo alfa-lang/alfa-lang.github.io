@@ -1,0 +1,54 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to describe a notional schedule where each notional that applies to a calculation period is calculated with reference to a notional amount or notional amount schedule in a different currency by means of a spot currency exchange rate which is normally observed at the beginning of each period.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxLinkedNotionalSchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to describe a notional schedule where each notional that applies to a calculation period is calculated with reference to a notional amount or notional amount schedule in a different currency by means of a spot currency exchange rate which is normally observed at the beginning of each period.\n #/\nrecord FpML5.transparency.FxLinkedNotionalSchedule {\n  # The initial currency amount for the varying notional. This may be omitted for a forward starting swap if the FX-linked notional value is not known at deal inception.\n  initialValue : decimal?\n\n  # The currency of the varying notional amount, i.e. the notional amount being determined periodically based on observation of a spot currency exchange rate.\n  varyingNotionalCurrency : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Calculation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "initialValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The initial currency amount for the varying notional. This may be omitted for a forward starting swap if the FX-linked notional value is not known at deal inception.",
+      "Name" : "initialValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 9
+      }
+    },
+    "varyingNotionalCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency of the varying notional amount, i.e. the notional amount being determined periodically based on observation of a spot currency exchange rate.",
+      "Name" : "varyingNotionalCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 12
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialValue", "varyingNotionalCurrency" ],
+  "IsSynthetic" : false
+}

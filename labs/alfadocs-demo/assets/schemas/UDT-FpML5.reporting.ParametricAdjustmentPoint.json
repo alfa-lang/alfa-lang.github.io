@@ -1,0 +1,57 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A value of the adjustment point, consisting of the x value and the corresponding y value.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ParametricAdjustmentPoint",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A value of the adjustment point, consisting of the x value and the corresponding y value.\n #/\nrecord FpML5.reporting.ParametricAdjustmentPoint {\n  # The value of the independent variable (e.g. strike offset).\n  parameterValue : decimal?\n\n  # The value of the dependent variable, the actual adjustment amount.\n  adjustmentValue : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ParametricAdjustment",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "parameterValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value of the independent variable (e.g. strike offset).",
+      "Name" : "parameterValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4039
+      }
+    },
+    "adjustmentValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value of the dependent variable, the actual adjustment amount.",
+      "Name" : "adjustmentValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4042
+      }
+    }
+  },
+  "LocalFieldNames" : [ "parameterValue", "adjustmentValue" ],
+  "IsSynthetic" : false
+}

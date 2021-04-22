@@ -1,0 +1,157 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining exercise procedures associated with an American style exercise of a commodity option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityAmericanExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining exercise procedures associated with an American style exercise of a commodity option.\n #/\nrecord FpML5.reporting.CommodityAmericanExercise {\n  # Describes the American exercise periods.\n  exercisePeriod : FpML5.reporting.CommodityExercisePeriods?\n\n  # The exercise frequency for the strip.\n  exerciseFrequency : FpML5.reporting.Frequency?\n\n  # For a Bermuda or American style option, the latest time on an exercise business day (excluding the expiration date) within the exercise period that notice can be given by the buyer to the seller or seller's agent. Notice of exercise given after this time will be deemed to have been given on the next exercise business day.\n  latestExerciseTime : FpML5.reporting.BusinessCenterTime\n\n  # Latest exercise time determination method.\n  latestExerciseTimeDetermination : string\n\n  # The specific time of day on which the option expires.\n  expirationTime : FpML5.reporting.BusinessCenterTime?\n\n  # The presence of this element indicates that the option may be partially exercised. It is not applicable to European or Asian options.\n  multipleExercise : FpML5.reporting.CommodityMultipleExercise?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityDigitalExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CommodityExerciseBasket",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "exercisePeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the American exercise periods.",
+      "Name" : "exercisePeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityExercisePeriods",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19807
+      }
+    },
+    "exerciseFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The exercise frequency for the strip.",
+      "Name" : "exerciseFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Frequency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19810
+      }
+    },
+    "latestExerciseTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For a Bermuda or American style option, the latest time on an exercise business day (excluding the expiration date) within the exercise period that notice can be given by the buyer to the seller or seller's agent. Notice of exercise given after this time will be deemed to have been given on the next exercise business day.",
+      "Name" : "latestExerciseTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.BusinessCenterTime",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19813
+      }
+    },
+    "latestExerciseTimeDetermination" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Latest exercise time determination method.",
+      "Name" : "latestExerciseTimeDetermination",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19816
+      }
+    },
+    "expirationTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specific time of day on which the option expires.",
+      "Name" : "expirationTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19819
+      }
+    },
+    "multipleExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The presence of this element indicates that the option may be partially exercised. It is not applicable to European or Asian options.",
+      "Name" : "multipleExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CommodityMultipleExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19822
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19825
+      }
+    }
+  },
+  "LocalFieldNames" : [ "exercisePeriod", "exerciseFrequency", "latestExerciseTime", "latestExerciseTimeDetermination", "expirationTime", "multipleExercise", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,95 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxFlexibleForwardRate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.FxFlexibleForwardRate {\n  # The first currency specified when a pair of currencies is to be evaluated.\n  currency1 : string\n\n  # The second currency specified when a pair of currencies is to be evaluated.\n  currency2 : string\n\n  # The method by which the exchange rate is quoted.\n  quoteBasis : string\n\n  # Constant rate value, applicable for the duration of the execution period.\n  rate : decimal\n\n  # The spot exchange rate for the specified currency pair as per the specified quote basis, as at the trade date.\n  spotRate : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxFlexibleForward",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "currency1" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The first currency specified when a pair of currencies is to be evaluated.",
+      "Name" : "currency1",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11212
+      }
+    },
+    "currency2" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The second currency specified when a pair of currencies is to be evaluated.",
+      "Name" : "currency2",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11215
+      }
+    },
+    "quoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which the exchange rate is quoted.",
+      "Name" : "quoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11218
+      }
+    },
+    "rate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Constant rate value, applicable for the duration of the execution period.",
+      "Name" : "rate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11221
+      }
+    },
+    "spotRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The spot exchange rate for the specified currency pair as per the specified quote basis, as at the trade date.",
+      "Name" : "spotRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11224
+      }
+    }
+  },
+  "LocalFieldNames" : [ "currency1", "currency2", "quoteBasis", "rate", "spotRate" ],
+  "IsSynthetic" : false
+}

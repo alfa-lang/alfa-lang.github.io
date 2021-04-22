@@ -1,0 +1,46 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining the strike price for an option as a numeric value without currency.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OptionNumericStrike",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining the strike price for an option as a numeric value without currency.\n #/\nrecord FpML5.recordkeeping.OptionNumericStrike {\n  # The price or level at which the option has been struck.\n  strikePrice : decimal\n\n  # The price or level expressed as a percentage of the forward starting spot price.\n  strikePercentage : decimal\n\n}"
+  },
+  "AllFields" : {
+    "strikePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The price or level at which the option has been struck.",
+      "Name" : "strikePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17730
+      }
+    },
+    "strikePercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The price or level expressed as a percentage of the forward starting spot price.",
+      "Name" : "strikePercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 17733
+      }
+    }
+  },
+  "LocalFieldNames" : [ "strikePrice", "strikePercentage" ],
+  "IsSynthetic" : false
+}

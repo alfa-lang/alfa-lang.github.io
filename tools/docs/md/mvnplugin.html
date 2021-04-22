@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ALFA Maven Plugin &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>ALFA Maven Plugin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="alfa-maven-plugin">
+<h1>ALFA Maven Plugin<a class="headerlink" href="#alfa-maven-plugin" title="Permalink to this headline">¶</a></h1>
+<p>ALFA Tools includes an Apache Maven plugin that supports compiling
+ALFA projects and executing ALFA model exporters.</p>
+<div class="section" id="plugin-installation">
+<h2>Plugin installation<a class="headerlink" href="#plugin-installation" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 possible ways of installing the ALFA Maven Plugin.</p>
+<div class="section" id="reference-alfa-lang-io-repository">
+<h3>1. Reference alfa-lang.io repository<a class="headerlink" href="#reference-alfa-lang-io-repository" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The ALFA Maven plugin is published at <code class="docutils literal notranslate"><span class="pre">https://alfa-lang.io/repository</span></code> and it can be referenced by specifying a
+<code class="docutils literal notranslate"><span class="pre">repositories</span></code> block in the <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>.</p>
+<p>Add the following repository configuration to your pom.xml file for Maven to locate the ALFA Plugin and runtime.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- For the ALFA Maven Plugin /--&gt;</span>
+<span class="nt">&lt;pluginRepositories&gt;</span>
+  <span class="nt">&lt;pluginRepository&gt;</span>
+      <span class="nt">&lt;id&gt;</span>alfa-repo<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;url&gt;</span>https://alfa-lang.io/repository<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/pluginRepository&gt;</span>
+<span class="nt">&lt;/pluginRepositories&gt;</span>
+
+<span class="c">&lt;!-- For the ALFA Java Runtime libraries /--&gt;</span>
+<span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+        <span class="nt">&lt;id&gt;</span>alfa-repo<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;url&gt;</span>https://alfa-lang.io/repository<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="install-to-local-repository">
+<h3>2. Install to local repository<a class="headerlink" href="#install-to-local-repository" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>In corporate environments, developer machines and build servers may not have access to external repositories.
+You may can manually install the plugin to your local repository.</p>
+<p>The ALFA Maven plugin is included in the <a class="reference external" href="https://alfa-lang.io/downloads/AlfaCLI-0.8.1-RC1.zip">AlfaCLI-0.8.1-RC1.zip</a> file in the <code class="docutils literal notranslate"><span class="pre">mvn-repository</span></code>
+directory. Once the <a class="reference external" href="https://alfa-lang.io/downloads/AlfaCLI-0.8.1-RC1.zip">AlfaCLI-0.8.1-RC1.zip</a> is downloaded to a share location, the contents of the
+<code class="docutils literal notranslate"><span class="pre">mvn-repository</span></code> can be installed to your local repository.</p>
+<p>The commands below will install both the ALFA Maven Plugin and the ALFA Java runtime (required to compile generated Java code).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>unzip AlfaCLI-0.8.1-RC1.zip
+
+<span class="nb">cd</span> mvn-repository
+
+mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file <span class="se">\</span>
+    -Dfile<span class="o">=</span>io/alfa/utils/alfa-maven-plugin/0.8.1-RC1/alfa-maven-plugin-0.8.1-RC1.jar <span class="se">\</span>
+    -DpomFile<span class="o">=</span>io/alfa/utils/alfa-maven-plugin/0.8.1-RC1/alfa-maven-plugin-0.8.1-RC1.pom
+
+mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file <span class="se">\</span>
+    -Dfile<span class="o">=</span>io/alfa/rt/alfa-rt-java-core/0.8.1-RC1/alfa-rt-java-core-0.8.1-RC1.jar <span class="se">\</span>
+    -DpomFile<span class="o">=</span>io/alfa/rt/alfa-rt-java-core/0.8.1-RC1/alfa-rt-java-core-0.8.1-RC1.pom
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="install-to-shared-repository">
+<h3>3. Install to shared repository<a class="headerlink" href="#install-to-shared-repository" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Centrally managed repositories such as Artifactory are common in corporate environments.
+The ALFA Plugin and Runtime can be installed into a central repository to avoid steps 1 or 2 above.
+If using Artifactory, it is possible to deploy using the steps outlined
+<a class="reference external" href="https://www.jfrog.com/confluence/display/JFROG/Artifactory+REST+API#ArtifactoryRESTAPI-DeployArtifact">here</a>.
+The steps outlined below are one possible way to upload to Artifactory. It is
+<span class="raw-html-m2r"><span style="color:red">strongly recommended</span></span> to consult the Artifactory documentation before executing these steps.</p>
+<p>Expand contents of <a class="reference external" href="https://alfa-lang.io/downloads/AlfaCLI-0.8.1-RC1.zip">AlfaCLI-0.8.1-RC1.zip</a> and <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">mvn-repository</span></code>. Create the
+2 following scripts with the contents shown. <strong>You may need to adjust the script to suite your environment
+(e.g. http or https, password or token).</strong></p>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">art-upload.sh</span></code></p>
+<p><em>Note:</em> Update values for <code class="docutils literal notranslate"><span class="pre">username:password</span></code> and <code class="docutils literal notranslate"><span class="pre">artifactory-server:port</span></code>.
+The username requires ‘DEPLOY’ permission in Artifactory.</p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>AUTH=username:password
+CONN=artifactory-server:port
+
+ALFA_ARTIFACT_PATH=$1
+ALFA_ARTIFACT=$2
+ARTIFACT_TYPE=$3
+
+curl -v -X PUT --user <span class="nv">$AUTH</span> \
+   --header &quot;X-Checksum-MD5:`cat <span class="cp">${</span><span class="n">ALFA_ARTIFACT_PATH</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">ALFA_ARTIFACT</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">ARTIFACT_TYPE</span><span class="cp">}</span>.md5`&quot; \
+   --header &quot;X-Checksum-Sha1:`cat <span class="cp">${</span><span class="n">ALFA_ARTIFACT_PATH</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">ALFA_ARTIFACT</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">ARTIFACT_TYPE</span><span class="cp">}</span>.sha1`&quot;\
+   --upload-file <span class="cp">${</span><span class="n">ALFA_ARTIFACT_PATH</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">ALFA_ARTIFACT</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">ARTIFACT_TYPE</span><span class="cp">}</span> \
+ http://<span class="nv">$CONN</span>/artifactory/libs-release-local/<span class="cp">${</span><span class="n">ALFA_ARTIFACT_PATH</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">ALFA_ARTIFACT</span><span class="cp">}</span>.<span class="cp">${</span><span class="n">ARTIFACT_TYPE</span><span class="cp">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">alfa-art-upload.sh</span></code></p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./art-upload.sh io/alfa/rt/alfa-rt-java-core/0.8.1-RC1 alfa-rt-java-core-0.8.1-RC1 jar
+./art-upload.sh io/alfa/rt/alfa-rt-java-core/0.8.1-RC1 alfa-rt-java-core-0.8.1-RC1 pom
+
+./art-upload.sh io/alfa/utils/alfa-maven-plugin/0.8.1-RC1 alfa-maven-plugin-0.8.1-RC1 jar
+./art-upload.sh io/alfa/utils/alfa-maven-plugin/0.8.1-RC1 alfa-maven-plugin-0.8.1-RC1 pom
+</pre></div>
+</div>
+</div></blockquote>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">alfa-art-upload.sh</span></code> script is executed, the ALFA Plugin and Runtime jars should be visible in the Artifactory browser.</p>
+<a class="reference external image-reference" href="/_static/images/alfa-artifactory.png"><img alt="ALFA Artifactory" src="../../../_images/alfa-artifactory.png" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="plugin-usage">
+<h2>Plugin Usage<a class="headerlink" href="#plugin-usage" title="Permalink to this headline">¶</a></h2>
+<p>An example usage of the plugin is shown below:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;plugin&gt;</span>
+   <span class="nt">&lt;groupId&gt;</span>io.alfa.utils<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>alfa-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>0.8.1-RC1<span class="nt">&lt;/version&gt;</span>
+   <span class="nt">&lt;executions&gt;</span>
+      <span class="nt">&lt;execution&gt;</span>
+         <span class="nt">&lt;id&gt;</span>alfa-exec<span class="nt">&lt;/id&gt;</span>
+         <span class="nt">&lt;goals&gt;</span>
+            <span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+            <span class="nt">&lt;goal&gt;</span>package<span class="nt">&lt;/goal&gt;</span>
+         <span class="nt">&lt;/goals&gt;</span>
+         <span class="nt">&lt;configuration&gt;</span>
+             <span class="nt">&lt;exportSettings&gt;</span>
+                 <span class="nt">&lt;exportSetting&gt;</span>
+                     <span class="nt">&lt;exportType&gt;</span>java<span class="nt">&lt;/exportType&gt;</span>
+                 <span class="nt">&lt;/exportSetting&gt;</span>
+             <span class="nt">&lt;/exportSettings&gt;</span>
+         <span class="nt">&lt;/configuration&gt;</span>
+      <span class="nt">&lt;/execution&gt;</span>
+   <span class="nt">&lt;/executions&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
+<p>The plugin support 2 Maven goals, compile and package.</p>
+<ol class="arabic simple">
+<li>compile - compiles and executes exporters defined under configuration.</li>
+<li>package - packages the alfa files into a zip artifact, that can be
+uploaded to a repository and be used as dependency to other ALFA projects.</li>
+</ol>
+<p>The plugin locates ALFA source files in 3 possible ways.</p>
+<ol class="arabic">
+<li><p class="first">Top level Maven source directory</p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sourceDirectory&gt;</span><span class="cp">${</span><span class="n">basedir</span><span class="cp">}</span>/src/main/alfa<span class="nt">&lt;/sourceDirectory&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">build-helper-maven-plugin</span></code> and add <code class="docutils literal notranslate"><span class="pre">source</span></code> directory</p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;source&gt;</span><span class="cp">${</span><span class="n">basedir</span><span class="cp">}</span>/src/main/alfa<span class="nt">&lt;/source&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Specify <code class="docutils literal notranslate"><span class="pre">srcPath</span></code> parameter to the ALFA plugin as shown in the complete example below.
+..</p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;srcPath&gt;</span><span class="cp">${</span><span class="n">basedir</span><span class="cp">}</span>/src/main/alfa<span class="nt">&lt;/srcPath&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="plugin-parameters">
+<h2>Plugin Parameters<a class="headerlink" href="#plugin-parameters" title="Permalink to this headline">¶</a></h2>
+<p>All parameters are optional.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>srcPath</td>
+<td>Custom path to ALFA source files.</td>
+</tr>
+<tr class="row-odd"><td>srcDependency</td>
+<td>Specified as &lt; group &gt;:&lt; artifact &gt;:&lt; version &gt;; Use the dependency as source for code generation. Plugin should depend on the required artifact.</td>
+</tr>
+<tr class="row-even"><td>exportSetting[]</td>
+<td>Array of ExportSetting objects</td>
+</tr>
+<tr class="row-odd"><td>exportSetting.exportType</td>
+<td>Exporter to run - e.g. java</td>
+</tr>
+<tr class="row-even"><td>exportSetting.outputDir</td>
+<td>Custom output dir. By default <code class="docutils literal notranslate"><span class="pre">target/generated-sources/${exportType}</span></code></td>
+</tr>
+<tr class="row-odd"><td>exportSetting.config</td>
+<td>Map of key value pairs for configuring exporter.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="plugin-compile-time-dependencies">
+<h2>Plugin Compile-time Dependencies<a class="headerlink" href="#plugin-compile-time-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>ALFA files being compiled by the Plugin can reference other Maven-based artifacts at compile time.
+This allows teams to share their definitions via formal release processes.
+Downstream teams can express dependencies on ALFA artifacts to reference definitions from other ALFA artifacts.</p>
+<p>Other ALFA generated projects can be used a dependencies by specifying a dependency when using the ALFA plugin.
+Note the <code class="docutils literal notranslate"><span class="pre">classifier</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> fields need to be specified as a <code class="docutils literal notranslate"><span class="pre">alfa</span></code> and <code class="docutils literal notranslate"><span class="pre">zip</span></code> respectively.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>other.project.group<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>other-project-name<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;classifier&gt;</span>alfa<span class="nt">&lt;/classifier&gt;</span>
+        <span class="nt">&lt;type&gt;</span>zip<span class="nt">&lt;/type&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</pre></div>
+</div>
+<p>Dependencies can used as source for code generation. See <code class="docutils literal notranslate"><span class="pre">srcDependency</span></code> plugin parameter.</p>
+</div>
+<div class="section" id="complete-example">
+<h2>Complete Example<a class="headerlink" href="#complete-example" title="Permalink to this headline">¶</a></h2>
+<p>To quickly setup a test Maven project with ALFA files, you can follow the 3 steps below.</p>
+<ul class="simple">
+<li>Create a new directory <code class="docutils literal notranslate"><span class="pre">alfademo</span></code>. In <code class="docutils literal notranslate"><span class="pre">alfademo</span></code>, create new file <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> file and paste the contents below.</li>
+</ul>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+        <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>alfa-demo-project<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+  <span class="nt">&lt;properties&gt;</span>
+      <span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
+      <span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
+      <span class="nt">&lt;encoding&gt;</span>UTF-8<span class="nt">&lt;/encoding&gt;</span>
+  <span class="nt">&lt;/properties&gt;</span>
+
+  <span class="c">&lt;!-- The generated Java code depends on the the alfa-rt-java-core library /--&gt;</span>
+  <span class="nt">&lt;dependencies&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+          <span class="nt">&lt;groupId&gt;</span>io.alfa.rt<span class="nt">&lt;/groupId&gt;</span>
+          <span class="nt">&lt;artifactId&gt;</span>alfa-rt-java-core<span class="nt">&lt;/artifactId&gt;</span>
+          <span class="nt">&lt;version&gt;</span>0.8.1-RC1<span class="nt">&lt;/version&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+  <span class="nt">&lt;/dependencies&gt;</span>
+
+  <span class="nt">&lt;build&gt;</span>
+     <span class="nt">&lt;plugins&gt;</span>
+        <span class="nt">&lt;plugin&gt;</span>
+           <span class="nt">&lt;groupId&gt;</span>io.alfa.utils<span class="nt">&lt;/groupId&gt;</span>
+           <span class="nt">&lt;artifactId&gt;</span>alfa-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+           <span class="nt">&lt;version&gt;</span>0.8.1-RC1<span class="nt">&lt;/version&gt;</span>
+           <span class="nt">&lt;executions&gt;</span>
+              <span class="nt">&lt;execution&gt;</span>
+                 <span class="nt">&lt;id&gt;</span>alfa-exec<span class="nt">&lt;/id&gt;</span>
+                 <span class="nt">&lt;goals&gt;</span>
+                    <span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+                    <span class="nt">&lt;goal&gt;</span>package<span class="nt">&lt;/goal&gt;</span>
+                 <span class="nt">&lt;/goals&gt;</span>
+                 <span class="nt">&lt;configuration&gt;</span>
+                     <span class="c">&lt;!-- source path /--&gt;</span>
+                     <span class="nt">&lt;srcPath&gt;</span>${basedir}/src/main/alfa<span class="nt">&lt;/srcPath&gt;</span>
+                     <span class="c">&lt;!-- generate java /--&gt;</span>
+                     <span class="nt">&lt;exportSettings&gt;</span>
+                         <span class="nt">&lt;exportSetting&gt;</span>
+                             <span class="nt">&lt;exportType&gt;</span>java<span class="nt">&lt;/exportType&gt;</span>
+                         <span class="nt">&lt;/exportSetting&gt;</span>
+                     <span class="nt">&lt;/exportSettings&gt;</span>
+                 <span class="nt">&lt;/configuration&gt;</span>
+              <span class="nt">&lt;/execution&gt;</span>
+           <span class="nt">&lt;/executions&gt;</span>
+        <span class="nt">&lt;/plugin&gt;</span>
+
+        <span class="nt">&lt;plugin&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>build-helper-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.7<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;executions&gt;</span>
+                <span class="nt">&lt;execution&gt;</span>
+                    <span class="nt">&lt;id&gt;</span>add-java-gen-source<span class="nt">&lt;/id&gt;</span>
+                    <span class="nt">&lt;phase&gt;</span>generate-sources<span class="nt">&lt;/phase&gt;</span>
+                    <span class="nt">&lt;goals&gt;</span>
+                        <span class="nt">&lt;goal&gt;</span>add-source<span class="nt">&lt;/goal&gt;</span>
+                    <span class="nt">&lt;/goals&gt;</span>
+                    <span class="nt">&lt;configuration&gt;</span>
+                        <span class="nt">&lt;sources&gt;</span>
+                            <span class="nt">&lt;source&gt;</span>${project.build.directory}/generated-sources/java<span class="nt">&lt;/source&gt;</span>
+                        <span class="nt">&lt;/sources&gt;</span>
+                    <span class="nt">&lt;/configuration&gt;</span>
+                <span class="nt">&lt;/execution&gt;</span>
+            <span class="nt">&lt;/executions&gt;</span>
+        <span class="nt">&lt;/plugin&gt;</span>
+
+     <span class="nt">&lt;/plugins&gt;</span>
+  <span class="nt">&lt;/build&gt;</span>
+
+  <span class="c">&lt;!-- Uncomment below to download ALFA artifacts from alfa-lang.io/repository /--&gt;</span>
+  <span class="c">&lt;!--</span>
+<span class="c">  &lt;repositories&gt;</span>
+<span class="c">     &lt;repository&gt;</span>
+<span class="c">        &lt;id&gt;alfa-repo&lt;/id&gt;</span>
+<span class="c">        &lt;url&gt;https://alfa-lang.io/repository&lt;/url&gt;</span>
+<span class="c">     &lt;/repository&gt;</span>
+<span class="c">  &lt;/repositories&gt;</span>
+
+<span class="c">  &lt;pluginRepositories&gt;</span>
+<span class="c">     &lt;pluginRepository&gt;</span>
+<span class="c">        &lt;id&gt;alfa-repo&lt;/id&gt;</span>
+<span class="c">        &lt;url&gt;https://alfa-lang.io/repository&lt;/url&gt;</span>
+<span class="c">     &lt;/pluginRepository&gt;</span>
+<span class="c">  &lt;/pluginRepositories&gt;</span>
+
+<span class="c">  /--&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">alfademo</span></code>, create a file in a subdirectory as <code class="docutils literal notranslate"><span class="pre">src/main/alfa/demo.alfa</span></code>, and paste the contents below.</li>
+</ul>
+<blockquote>
+<div><div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">sample</span>
+
+<span class="k">trait</span> <span class="n">Person</span> <span class="p">{</span>
+   <span class="n">FirstName</span> <span class="p">:</span> <span class="kt">string</span>
+   <span class="n">LastName</span> <span class="p">:</span> <span class="kt">string</span>
+   <span class="n">DateOfBirth</span> <span class="p">:</span> <span class="k">date</span>
+   <span class="n">email</span> <span class="p">:</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="k">enum</span> <span class="n">ServiceLevelType</span> <span class="p">{</span>
+   <span class="n">Standard</span> <span class="n">Gold</span> <span class="n">Platinum</span>
+<span class="p">}</span>
+
+<span class="k">entity</span> <span class="n">Customer</span> <span class="nf">key</span> <span class="p">(</span> <span class="n">Id</span> <span class="p">:</span> <span class="k">uuid</span> <span class="p">)</span> <span class="k">includes</span> <span class="n">Person</span> <span class="p">{</span>
+   <span class="n">Accounts</span> <span class="p">:</span> <span class="k">set</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span>
+   <span class="n">DeclaredIncomes</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="kt">double</span> <span class="p">&gt;</span>
+   <span class="n">ServiceLevel</span> <span class="p">:</span> <span class="n">ServiceLevelType</span>
+<span class="p">}</span>
+
+<span class="k">service</span> <span class="nf">CustomerSvc</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">getCustomerByEmailAddress</span><span class="p">(</span> <span class="n">email</span> <span class="p">:</span> <span class="kt">string</span><span class="p">)</span> <span class="p">:</span> <span class="n">Customer</span><span class="p">?</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Run <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">install</span></code> in the <code class="docutils literal notranslate"><span class="pre">alfademo</span></code> directory. When run the 1st time, it will download the ALFA plugin and runtime arifacts.</li>
+</ul>
+<blockquote>
+<div><p>If successful, you should have jar created - <code class="docutils literal notranslate"><span class="pre">target/alfa-demo-project-1.0-SNAPSHOT.jar</span></code>.
+The generated Java code can be seen in <code class="docutils literal notranslate"><span class="pre">target/generated-sources/java/</span></code>.</p>
+<p><strong>Congratulations! You have generated and built your 1st ALFA type library!</strong></p>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

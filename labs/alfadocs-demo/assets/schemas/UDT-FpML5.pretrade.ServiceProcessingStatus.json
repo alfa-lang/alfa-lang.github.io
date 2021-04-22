@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the content model for report on the status of the processing by a service. In the future we may wish to provide some kind of scope or other qualification for the event, e.g. the currencies, products, or books to which it applies.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ServiceProcessingStatus",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the content model for report on the status of the processing by a service. In the future we may wish to provide some kind of scope or other qualification for the event, e.g. the currencies, products, or books to which it applies.\n #/\nrecord FpML5.pretrade.ServiceProcessingStatus {\n  # The processing cycle or phase that this message describes. For example, EndOfDay or Intraday.\n  cycle : string?\n\n  # The stage within a processing cycle or phase that this message describes. For example, Netting or Valuation.\n  step : string?\n\n  # The event that occurred within the cycle or step, for example \"Started\" or \"Completed\"..\n  event : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ServiceNotification",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "cycle" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The processing cycle or phase that this message describes. For example, EndOfDay or Intraday.",
+      "Name" : "cycle",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9235
+      }
+    },
+    "step" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The stage within a processing cycle or phase that this message describes. For example, Netting or Valuation.",
+      "Name" : "step",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9238
+      }
+    },
+    "event" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The event that occurred within the cycle or step, for example \"Started\" or \"Completed\"..",
+      "Name" : "event",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 9241
+      }
+    }
+  },
+  "LocalFieldNames" : [ "cycle", "step", "event" ],
+  "IsSynthetic" : false
+}
