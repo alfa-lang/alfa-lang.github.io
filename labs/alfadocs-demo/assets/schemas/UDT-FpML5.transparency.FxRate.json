@@ -1,0 +1,65 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the rate of a currency conversion: pair of currency, quotation mode and exchange rate.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxRate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the rate of a currency conversion: pair of currency, quotation mode and exchange rate.\n #/\nrecord FpML5.transparency.FxRate {\n  # Defines the two currencies for an FX trade and the quotation relationship between the two currencies.\n  quotedCurrencyPair : FpML5.transparency.QuotedCurrencyPair\n\n  # The rate of exchange between the two currencies of the leg of a deal. Must be specified with a quote basis.\n  rate : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Commission",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxConversion",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the two currencies for an FX trade and the quotation relationship between the two currencies.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.QuotedCurrencyPair",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.QuotedCurrencyPair",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1493
+      }
+    },
+    "rate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate of exchange between the two currencies of the leg of a deal. Must be specified with a quote basis.",
+      "Name" : "rate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1496
+      }
+    }
+  },
+  "LocalFieldNames" : [ "quotedCurrencyPair", "rate" ],
+  "IsSynthetic" : false
+}

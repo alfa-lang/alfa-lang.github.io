@@ -1,0 +1,78 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the situation when an entire position change cannot be processed. It includes the position identification information and the reason that the position change could not be processed.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.UnprocessedPosition",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the situation when an entire position change cannot be processed. It includes the position identification information and the reason that the position change could not be processed.\n #/\nrecord FpML5.reporting.UnprocessedPosition {\n  # A version-independent identifier for the position, possibly based on trade identifier.\n  positionId : string?\n\n  # A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.\n  version : int( 1, * )?\n\n  reason : FpML5.reporting.Reason?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionsAcknowledged",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "positionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version-independent identifier for the position, possibly based on trade identifier.",
+      "Name" : "positionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26039
+      }
+    },
+    "version" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.",
+      "Name" : "version",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26042
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Reason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26045
+      }
+    }
+  },
+  "LocalFieldNames" : [ "positionId", "version", "reason" ],
+  "IsSynthetic" : false
+}

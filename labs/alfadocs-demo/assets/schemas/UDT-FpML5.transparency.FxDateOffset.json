@@ -1,0 +1,80 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The representation of the schedule as an offset relative to another schedule. For example, the settlement schedule may be relative to the expiry schedule by an FxForward offset.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxDateOffset",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The representation of the schedule as an offset relative to another schedule. For example, the settlement schedule may be relative to the expiry schedule by an FxForward offset.\n #/\nrecord FpML5.transparency.FxDateOffset {\n  # The FX Offset Convention can be FxSpot or FxForward.\n  convention : string?\n\n  # The settlement offset to the expiry schedule or the expiry offset to the settlement schedule. It is only specified when the settlement convention is FxForward.\n  offset : FpML5.transparency.Period?\n\n  # Indicates whether the settlement schedule is relative to the expiry schedule or the expiry schedule is relative to the settlement schedule.\n  relativeTo : FpML5.transparency.FxScheduleReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxExpirySchedule",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FxSchedule",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "convention" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The FX Offset Convention can be FxSpot or FxForward.",
+      "Name" : "convention",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8601
+      }
+    },
+    "offset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The settlement offset to the expiry schedule or the expiry offset to the settlement schedule. It is only specified when the settlement convention is FxForward.",
+      "Name" : "offset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8604
+      }
+    },
+    "relativeTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether the settlement schedule is relative to the expiry schedule or the expiry schedule is relative to the settlement schedule.",
+      "Name" : "relativeTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.FxScheduleReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8607
+      }
+    }
+  },
+  "LocalFieldNames" : [ "convention", "offset", "relativeTo" ],
+  "IsSynthetic" : false
+}

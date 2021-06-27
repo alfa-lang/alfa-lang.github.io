@@ -1,0 +1,86 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A representation of volatilities of an asset. This is a generic structure whose values can be supplied in a specific volatility matrix.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.VolatilityRepresentation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A representation of volatilities of an asset. This is a generic structure whose values can be supplied in a specific volatility matrix.\n #/\nrecord FpML5.recordkeeping.VolatilityRepresentation {\n  # The name of the structure, e.g \"USDLIBOR-3M EOD Curve\".\n  name : string?\n\n  # The currency that the structure is expressed in (this is relevant mostly for the Interes Rates asset class).\n  currency : string?\n\n  # A reference to the asset whose volatility is modeled.\n  asset : FpML5.recordkeeping.AnyAssetReference?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "name" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the structure, e.g \"USDLIBOR-3M EOD Curve\".",
+      "Name" : "name",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21923
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency that the structure is expressed in (this is relevant mostly for the Interes Rates asset class).",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21926
+      }
+    },
+    "asset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the asset whose volatility is modeled.",
+      "Name" : "asset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AnyAssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21929
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21932
+      }
+    }
+  },
+  "LocalFieldNames" : [ "name", "currency", "asset", "id" ],
+  "IsSynthetic" : false
+}

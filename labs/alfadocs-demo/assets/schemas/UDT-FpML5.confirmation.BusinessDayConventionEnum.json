@@ -1,0 +1,130 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "The convention for adjusting any relevant date if it would otherwise fall on a day that is not a valid business day. Note that FRN is included here as a type of business day convention although it does not strictly fall within ISDA's definition of a Business Day Convention and does not conform to the simple definition given above.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.BusinessDayConventionEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n The convention for adjusting any relevant date if it would otherwise fall on a day that is not a valid business day. Note that FRN is included here as a type of business day convention although it does not strictly fall within ISDA's definition of a Business Day Convention and does not conform to the simple definition given above.\n #/\nenum FpML5.confirmation.BusinessDayConventionEnum {\n    # The non-business date will be adjusted to the first following day that is a business day\n    FOLLOWING \n    # Per 2000 ISDA Definitions, Section 4.11. FRN Convention; Eurodollar Convention.\n    FRN \n    # The non-business date will be adjusted to the first following day that is a business day unless that day falls in the next calendar month, in which case that date will be the first preceding day that is a business day.\n    MODFOLLOWING \n    # The non-business day will be adjusted to the first preceding day that is a business day.\n    PRECEDING \n    # The non-business date will be adjusted to the first preceding day that is a business day unless that day falls in the previous calendar month, in which case that date will be the first following day that us a business day.\n    MODPRECEDING \n    # The non-business date will be adjusted to the nearest day that is a business day - i.e. if the non-business day falls on any day other than a Sunday or a Monday, it will be the first preceding day that is a business day, and will be the first following business day if it falls on a Sunday or a Monday.\n    NEAREST \n    # The date will not be adjusted if it falls on a day that is not a business day.\n    NONE \n    # The date adjustments conventions are defined elsewhere, so it is not required to specify them here.\n    NotApplicable \n\n}"
+  },
+  "AllFields" : {
+    "FOLLOWING" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The non-business date will be adjusted to the first following day that is a business day",
+      "Name" : "FOLLOWING",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16658
+      }
+    },
+    "FRN" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Per 2000 ISDA Definitions, Section 4.11. FRN Convention; Eurodollar Convention.",
+      "Name" : "FRN",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16660
+      }
+    },
+    "MODFOLLOWING" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The non-business date will be adjusted to the first following day that is a business day unless that day falls in the next calendar month, in which case that date will be the first preceding day that is a business day.",
+      "Name" : "MODFOLLOWING",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16662
+      }
+    },
+    "PRECEDING" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The non-business day will be adjusted to the first preceding day that is a business day.",
+      "Name" : "PRECEDING",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16664
+      }
+    },
+    "MODPRECEDING" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The non-business date will be adjusted to the first preceding day that is a business day unless that day falls in the previous calendar month, in which case that date will be the first following day that us a business day.",
+      "Name" : "MODPRECEDING",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16666
+      }
+    },
+    "NEAREST" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The non-business date will be adjusted to the nearest day that is a business day - i.e. if the non-business day falls on any day other than a Sunday or a Monday, it will be the first preceding day that is a business day, and will be the first following business day if it falls on a Sunday or a Monday.",
+      "Name" : "NEAREST",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16668
+      }
+    },
+    "NONE" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date will not be adjusted if it falls on a day that is not a business day.",
+      "Name" : "NONE",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16670
+      }
+    },
+    "NotApplicable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date adjustments conventions are defined elsewhere, so it is not required to specify them here.",
+      "Name" : "NotApplicable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 16672
+      }
+    }
+  },
+  "LocalFieldNames" : [ "FOLLOWING", "FRN", "MODFOLLOWING", "PRECEDING", "MODPRECEDING", "NEAREST", "NONE", "NotApplicable" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,87 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InterestStatementRequirement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.InterestStatementRequirement {\n  interestPeriod : FpML5.reporting.InterestPeriod?\n\n  # variation margin details for the interest statement\n  variationMargin : FpML5.reporting.InterestStatementDirection\n\n  # segregated independent amount details for the interest statement\n  segregatedIndependentAmount : FpML5.reporting.InterestStatementDirection\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InterestStatement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "interestPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "interestPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InterestPeriod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12307
+      }
+    },
+    "variationMargin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "variation margin details for the interest statement",
+      "Name" : "variationMargin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.InterestStatementDirection",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.InterestStatementDirection",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InterestStatementDirection",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12309
+      }
+    },
+    "segregatedIndependentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "segregated independent amount details for the interest statement",
+      "Name" : "segregatedIndependentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.InterestStatementDirection",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.InterestStatementDirection",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InterestStatementDirection",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 12312
+      }
+    }
+  },
+  "LocalFieldNames" : [ "interestPeriod", "variationMargin", "segregatedIndependentAmount" ],
+  "IsSynthetic" : false
+}

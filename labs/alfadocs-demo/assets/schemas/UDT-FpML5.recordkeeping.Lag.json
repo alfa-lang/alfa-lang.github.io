@@ -1,0 +1,79 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An observation period that is offset from a Calculation Period.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Lag",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An observation period that is offset from a Calculation Period.\n #/\nrecord FpML5.recordkeeping.Lag {\n  # The period during which observations will be made. If a firstObservationDateOffset is specified, the observation period will start the specified interval prior to each Calculation Period - i.e. if the firstObservationDateOffset is 4 months and the lagDuration is 3 months, observations will be taken in months 4,3 and 2 (but not 1) prior to each Calculation Period. If no firstObservationDate is specified, the observation period will end immediately preceding each Calculation Period.\n  lagDuration : FpML5.recordkeeping.Period?\n\n  # The interval between the start of each lagDuration and the start of each respective calculation period.\n  firstObservationDateOffset : FpML5.recordkeeping.Period?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPricingDates",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityValuationDates",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "lagDuration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The period during which observations will be made. If a firstObservationDateOffset is specified, the observation period will start the specified interval prior to each Calculation Period - i.e. if the firstObservationDateOffset is 4 months and the lagDuration is 3 months, observations will be taken in months 4,3 and 2 (but not 1) prior to each Calculation Period. If no firstObservationDate is specified, the observation period will end immediately preceding each Calculation Period.",
+      "Name" : "lagDuration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23029
+      }
+    },
+    "firstObservationDateOffset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The interval between the start of each lagDuration and the start of each respective calculation period.",
+      "Name" : "firstObservationDateOffset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23032
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23035
+      }
+    }
+  },
+  "LocalFieldNames" : [ "lagDuration", "firstObservationDateOffset", "id" ],
+  "IsSynthetic" : false
+}

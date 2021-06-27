@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining a time with respect to a geographic location, for example 11:00 Phoenix, USA. This type should be used where a wider range of locations than those available as business centres is required.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PrevailingTime",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining a time with respect to a geographic location, for example 11:00 Phoenix, USA. This type should be used where a wider range of locations than those available as business centres is required.\n #/\nrecord FpML5.confirmation.PrevailingTime {\n  # A time specified in hh:mm:ss format where the second component must be '00', e.g. 11am would be represented as 11:00:00.\n  hourMinuteTime : time\n\n  # The geographic location to which the hourMinuteTime applies. The time takes into account any current day light saving changes or other adjustments i.e. it is the prevaling time at the location.\n  location : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityPhysicalAmericanExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityPhysicalEuropeanExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.GasDeliveryPeriods",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OffsetPrevailingTime",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "hourMinuteTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A time specified in hh:mm:ss format where the second component must be '00', e.g. 11am would be represented as 11:00:00.",
+      "Name" : "hourMinuteTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "timeType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13907
+      }
+    },
+    "location" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The geographic location to which the hourMinuteTime applies. The time takes into account any current day light saving changes or other adjustments i.e. it is the prevaling time at the location.",
+      "Name" : "location",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13910
+      }
+    }
+  },
+  "LocalFieldNames" : [ "hourMinuteTime", "location" ],
+  "IsSynthetic" : false
+}

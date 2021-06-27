@@ -1,0 +1,93 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies the compounding method and the compounding rate.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Compounding",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies the compounding method and the compounding rate.\n #/\nrecord FpML5.transparency.Compounding {\n  # If more that one calculation period contributes to a single payment amount this element specifies whether compounding is applicable, and if so, what compounding method is to be used. This element must only be included when more that one calculation period contributes to a single payment amount.\n  compoundingMethod : string?\n\n  # Defines a compounding rate. The compounding interest can either point back to the interest calculation node on the Interest Leg, or be defined specifically.\n  compoundingRate : FpML5.transparency.CompoundingRate?\n\n  # Defines the spread to be used for compounding. This field should be used in scenarios where the interest payment is based on a compounding formula that uses a compounding spread in addition to the regular spread.\n  compoundingSpread : decimal?\n\n  # Defines the compounding dates.\n  compoundingDates : FpML5.transparency.AdjustableRelativeOrPeriodicDates2?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.InterestCalculation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "compoundingMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If more that one calculation period contributes to a single payment amount this element specifies whether compounding is applicable, and if so, what compounding method is to be used. This element must only be included when more that one calculation period contributes to a single payment amount.",
+      "Name" : "compoundingMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11625
+      }
+    },
+    "compoundingRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines a compounding rate. The compounding interest can either point back to the interest calculation node on the Interest Leg, or be defined specifically.",
+      "Name" : "compoundingRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CompoundingRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11628
+      }
+    },
+    "compoundingSpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the spread to be used for compounding. This field should be used in scenarios where the interest payment is based on a compounding formula that uses a compounding spread in addition to the regular spread.",
+      "Name" : "compoundingSpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11631
+      }
+    },
+    "compoundingDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the compounding dates.",
+      "Name" : "compoundingDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableRelativeOrPeriodicDates2",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 11634
+      }
+    }
+  },
+  "LocalFieldNames" : [ "compoundingMethod", "compoundingRate", "compoundingSpread", "compoundingDates" ],
+  "IsSynthetic" : false
+}

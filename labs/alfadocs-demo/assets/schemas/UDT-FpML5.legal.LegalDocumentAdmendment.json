@@ -1,0 +1,55 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A legal document admendment, which can be specified by either referencing a legal document that is described elsewhere in the XML file, or by specifying the identity of that amended document.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.LegalDocumentAdmendment",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A legal document admendment, which can be specified by either referencing a legal document that is described elsewhere in the XML file, or by specifying the identity of that amended document.\n #/\nrecord FpML5.legal.LegalDocumentAdmendment {\n  # The date on which the legal document has been agreed between the parties.\n  agreementDate : date\n\n  # The legal document identifier. Several identifiers can be specified.\n  partyDocumentIdentifier : FpML5.legal.PartyDocumentIdentifier?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.DocumentIdentity",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "agreementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the legal document has been agreed between the parties.",
+      "Name" : "agreementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2865
+      }
+    },
+    "partyDocumentIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The legal document identifier. Several identifiers can be specified.",
+      "Name" : "partyDocumentIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyDocumentIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2868
+      }
+    }
+  },
+  "LocalFieldNames" : [ "agreementDate", "partyDocumentIdentifier" ],
+  "IsSynthetic" : false
+}

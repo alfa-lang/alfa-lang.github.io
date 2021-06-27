@@ -1,0 +1,92 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Provides supporting evidence when a party invoked exception to not execute the trade on facility such as SEF and DCM even though the particular product is mandated to execute on a SEF.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.FacilityExecutionExceptionDeclaration",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Provides supporting evidence when a party invoked exception to not execute the trade on facility such as SEF and DCM even though the particular product is mandated to execute on a SEF.\n #/\nrecord FpML5.pretrade.FacilityExecutionExceptionDeclaration {\n  # Reason for not executing the trade on SEF or other facility.\n  reason : string?\n\n  # Allows the organization to specify which categories or characteristics apply to it for end-user exception determination. Examples include \"FinancialEntity\", \"CaptiveFinanceUnit\", \"BoardOfDirectorsApproval\".\n  organizationCharacteristic : string?\n\n  # Allows the relevant transaction level categories or characteristics to be recorded for end-user exception determination. Examples include \"BoardOfDirectorsApproval\", \"HedgesCommercialRisk\".\n  transactionCharacteristic : string?\n\n  # Allows the organization to specify which if any relevant regulators it is registered with, and if so their identification number. For example, it could specify that it is SEC registered and provide its Central Index Key.\n  supervisorRegistration : FpML5.pretrade.SupervisorRegistration?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ReportingRegime",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reason for not executing the trade on SEF or other facility.",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6121
+      }
+    },
+    "organizationCharacteristic" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows the organization to specify which categories or characteristics apply to it for end-user exception determination. Examples include \"FinancialEntity\", \"CaptiveFinanceUnit\", \"BoardOfDirectorsApproval\".",
+      "Name" : "organizationCharacteristic",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6124
+      }
+    },
+    "transactionCharacteristic" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows the relevant transaction level categories or characteristics to be recorded for end-user exception determination. Examples include \"BoardOfDirectorsApproval\", \"HedgesCommercialRisk\".",
+      "Name" : "transactionCharacteristic",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6127
+      }
+    },
+    "supervisorRegistration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows the organization to specify which if any relevant regulators it is registered with, and if so their identification number. For example, it could specify that it is SEC registered and provide its Central Index Key.",
+      "Name" : "supervisorRegistration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.SupervisorRegistration",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6130
+      }
+    }
+  },
+  "LocalFieldNames" : [ "reason", "organizationCharacteristic", "transactionCharacteristic", "supervisorRegistration" ],
+  "IsSynthetic" : false
+}

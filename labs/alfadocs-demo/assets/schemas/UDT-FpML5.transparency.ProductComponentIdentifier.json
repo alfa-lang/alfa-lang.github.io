@@ -1,0 +1,67 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Deprecated: A type defining a USI for the a subproduct component of a strategy.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ProductComponentIdentifier",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Deprecated: A type defining a USI for the a subproduct component of a strategy.\n #/\nrecord FpML5.transparency.ProductComponentIdentifier {\n  # Indicates which product within a strategy this ID is associated with.\n  premiumProductReference : FpML5.transparency.ProductReference?\n\n  issuer : string\n\n  tradeId : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.PartyTradeIdentifier",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "premiumProductReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates which product within a strategy this ID is associated with.",
+      "Name" : "premiumProductReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ProductReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8573
+      }
+    },
+    "issuer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "issuer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8576
+      }
+    },
+    "tradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 8578
+      }
+    }
+  },
+  "LocalFieldNames" : [ "premiumProductReference", "issuer", "tradeId" ],
+  "IsSynthetic" : false
+}

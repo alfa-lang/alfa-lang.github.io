@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DisputedCollateral",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.DisputedCollateral {\n  # This is confirmation of the amount being disputed this would be the difference between the undisputed amount and the call amount from the requestMargin message.\n  disputedAmount : FpML5.reporting.Money?\n\n  # This is the date from which the Dispute is deemed by the sending party to have occurred on. It can be used for dispute aging purposes.\n  disputeDate : date?\n\n  # The disputeResolutionMethod can consist of either a resolutionCode and description, a resolution code only or a description only. The purpose of this element is to be able to provide details of how the dispute differences will be resolved.\n  disputeResolutionMethod : FpML5.reporting.DisputeResolutionMethod?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DisputeNotification",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "disputedAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is confirmation of the amount being disputed this would be the difference between the undisputed amount and the call amount from the requestMargin message.",
+      "Name" : "disputedAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18982
+      }
+    },
+    "disputeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the date from which the Dispute is deemed by the sending party to have occurred on. It can be used for dispute aging purposes.",
+      "Name" : "disputeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18985
+      }
+    },
+    "disputeResolutionMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The disputeResolutionMethod can consist of either a resolutionCode and description, a resolution code only or a description only. The purpose of this element is to be able to provide details of how the dispute differences will be resolved.",
+      "Name" : "disputeResolutionMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.DisputeResolutionMethod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 18988
+      }
+    }
+  },
+  "LocalFieldNames" : [ "disputedAmount", "disputeDate", "disputeResolutionMethod" ],
+  "IsSynthetic" : false
+}

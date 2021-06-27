@@ -1,0 +1,32 @@
+# Binary Runtimes
+
+ALFA Exporters generate code that works alongside an ALFA runtime
+library that will support encoding to and decoding from JSON. This
+will satisfy majority of object serialisation requirements for users.
+
+The generated code for Java (and similar pattern for CSharp) use highly
+efficient lambda expressions to encode and decode hierarchical data.
+In testing, ALFA Java JSON based round-trips were observed to 20-30%
+faster than Protocol Buffers JSON for round-trip conversions.
+
+The lambda based encode decode of data is generic, there in addition
+to JSON, other streaming serialisation formats can easily be added,
+e.g BSON, Avro, Amazon ION.
+
+Serialisation to binary is under consideration. There are several
+factors, as a single binary serialsation implementation will not satisfy
+everyone. Users have different reasons for binary serialisation;
+
+1. Smaller serialised payload, compared to JSON.
+2. Faster to encode and decode.
+3. Less GC by reducing intermediate objects, or eliminate altogether.
+4. ALFA 'builder' classes should create the final payload byte[], in effect
+   there is no serialsation step required.
+5. Extract an ALFA Trait definition, thereby exclude reading entire payload.
+6. Lazy reading of a serialised payload.
+7. Use back-references to reduce payload size.
+8. Existing investment and knowledge in a binary serialisation technology.
+
+Some of these requirements conflict with each other. For the time being
+binary support for ALFA runtime will be remain to be discussed in detail
+with users.

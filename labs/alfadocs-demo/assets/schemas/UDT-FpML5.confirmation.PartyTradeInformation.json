@@ -1,0 +1,692 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining party-specific additional information that may be recorded against a trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PartyTradeInformation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining party-specific additional information that may be recorded against a trade.\n #/\nrecord FpML5.confirmation.PartyTradeInformation {\n  # Reference to a party.\n  partyReference : FpML5.confirmation.PartyReference\n\n  # Reference to an account.\n  accountReference : FpML5.confirmation.AccountReference?\n\n  # This may be used to identify one or more parties that perform a role within the transaction. If this is within a partyTradeInformation block, the related party performs the role with respect to the party identifie by the \"partyReference\" in the partyTradeInformation block.\n  relatedParty : FpML5.confirmation.RelatedParty?\n\n  # Identifies the role of this party in reporting this trade (e.g. originator, counterparty).\n  reportingRole : string?\n\n  # Identifies the unit/division/desk etc. that executed or supports this trade\n  unit : string?\n\n  # Provides information about a unit/division/desk etc. that executed or supports this trade\n  relatedBusinessUnit : FpML5.confirmation.RelatedBusinessUnit?\n\n  # Provides information about a person that executed or supports this trade\n  relatedPerson : FpML5.confirmation.RelatedPerson?\n\n  # Provides information about an algorithm that executed or otherwise participated in this trade this trade\n  algorithm : FpML5.confirmation.Algorithm?\n\n  # Specifies whether the trade used to hedge a risk for accounting purposes for the specified party. (TODO: do we need to distinguish between asset and liability hedges?)\n  isAccountingHedge : boolean?\n\n  # Used to categorize trades into user-defined categories, such as house trades vs. customer trades.\n  category : string?\n\n  # Identifies the person or persons who assumed the role of trader for this trade. New implementations are encouraged to use the relatedPerson structure instead.\n  trader : string?\n\n  # Trade execution date time, for example as provided by a central execution facility. Normally this refers to the original execution time of the trade, not the execution time of any post-trade events that may have affeted it. However, in the case of a post trade event that reports the new version of the trade (for example, the novation trade in an novation event, or the amended trade in an amendment event), the execution date time may contain the time that the newly created or modified trade was created or modified.\n  executionDateTime : datetime?\n\n  # Allows timing information about a trade to be recorded.\n  timestamps : FpML5.confirmation.TradeProcessingTimestamps?\n\n  # Specifies whether the trade is anticipated to be allocated.\n  intentToAllocate : boolean?\n\n  # Specifies whether the trade is anticipated to be allocated, has been allocated, or will not be allocated.\n  allocationStatus : string?\n\n  # Specifies whether the trade is anticipated to be cleared via a derivative clearing organization\n  intentToClear : boolean?\n\n  # Describes the status with respect to clearing (e.g. AwaitingAcceptance, Pending, Accepted, Rejected, etc.)\n  clearingStatus : string?\n\n  # Specifies whether this party posts collateral. For Recordkeeping, the collateralization type refers to collateral that is posted by this firm, and One-Way is not meaningful. In other words, if the collateralization type is Full, this trade is fully collateralized by this party. For Transparency view, the options include Full, Partial, Uncollateralized, and One-Way.\n  collateralizationType : string?\n\n  # Provides a name, code, or other identifier for the collateral portfolio to which this belongs.\n  collateralPortfolio : string?\n\n  # Allows the organization to specify which if any relevant regulators or other supervisory bodies this is relevant for, and what reporting rules apply.\n  reportingRegime : FpML5.confirmation.ReportingRegime?\n\n  # Specifies whether the trade is not obligated to be cleared via a derivative clearing organization, i.e. wehter there is an exemption from clearing. For historical reasons this is called \"end-user exception\", but this may be used to indication any exception from normal clearing mandates caused by the type of the partiees or their relationship, such as inter-affiliate trades. If a relatedParty block with a role of ClearingExceptionParty is present, that related party indicates which party is claiming the end user exception.\n  endUserException : boolean?\n\n  # Specifies a reason that the trade is exempted from a clearing requirement. This exemption may be an end-user exception, or another type such as in inter-affiliate trade.\n  endUserExceptionReason : string?\n\n  # Claims an end user exception and provides supporting evidence. If a relatedParty block with a role of ClearingExceptionParty is present, that related party indicates which party is claiming the end user exception.\n  endUserExceptionDeclaration : FpML5.confirmation.EndUserExceptionDeclaration?\n\n  # Indicates that the trade has price-affecting characteristics in addition to the standard real-time reportable terms. The flag indicates that the price for this trade is not to be construed as being indicative of the market for standardised trades with otherwise identical reportable terms.\n  nonStandardTerms : boolean?\n\n  # Indicates that the price does not reflect the current market. For example, in a credit trade where the two counterparties are not of equal credit standing, there is no initial margin and one party pays collateral to the other in the form of an add-on to the price (say a price that would otherwise be 100 at the market is struck at 105 to include the collateral, resulting in a very off-market looking price.)\n  offMarketPrice : boolean?\n\n  # Describes why the price of this trade does not reflect the current market price. For example, the trade may have been traded off-market as part of a termination or compression operation.\n  pricingContext : string?\n\n  # Specifies whether the sender of this trade considers it to be a large notional trade or block trade for reporting purposes, and thus eligible for delayed public reporting. Normally this will only be applicable for off-facility trades.\n  largeSizeTrade : boolean?\n\n  # Used to describe how the trade was executed, e.g. via voice or electronically.\n  executionType : string?\n\n  # Used to describe the type of venue where trade was executed, e.g via an execution facility or privately.\n  executionVenueType : string?\n\n  # Used to describe how the trade was or will be verified, e.g via a confirmation facility, via private electronic service, or via written documentation. This affect the timing of real-time reporting requirements. This field is provisional pending detailed confirmation of the data requirements, and may not be included in subsequent working drafts.\n  verificationMethod : string?\n\n  # Used to describe how the trade was confirmed, e.g via a confirmation facility, via private electronic service, or via written documentation. This affects the process flow for confirmation messages. This field is provisional pending detailed confirmation of the data requirements, and may not be included in subsequent working drafts.\n  confirmationMethod : string?\n\n  # Specifies whether this trade is a result of compression activity.\n  compressedTrade : boolean?\n\n  # Whether the transaction falls within the scope of activity but is exempted from reporting under [Securities Financing Transactions Regulation]\n  isSecuritiesFinancing : boolean?\n\n  # Classification of the OTC transaction. Note: Coding scheme definition to encapsulate: Articles 20(3)(a) and 21(5)(a) of Regulation (EU) 600/2014. e.g. default=\"http://www.fpml.org/coding-scheme/external/esma/mifir/otc-classification\"\n  otcClassification : string?\n\n  # Classification of the pre-trade waiver, if any, that the transaction was executed under. Note: Coding scheme to encapsulate: Articles 4 and 9 of Regulation (EU) 600/2014. e.g. default=\"http://www.fpml.org/coding-scheme/mifir/trading-waiver\"\n  tradingWaiver : string?\n\n  # Classification of the transaction as a short sale or not and, if short, of the type of transaction. Note: Coding scheme to encapsulate: Article 11 of Regulation (EU) 600/2014. e.g. default=\"http://www.fpml.org/coding-scheme/mifir/short-sale\"\n  shortSale : string?\n\n  # Whether the transaction reduces risk in an objectively measurable way. Only applicable for commodity derivative transactions.\n  isCommodityHedge : boolean?\n\n  # Used to report whether the trade is in dispute\n  isDisputed : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CreditLimitInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TradeHeader",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TradeReferenceInformation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a party.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6699
+      }
+    },
+    "accountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an account.",
+      "Name" : "accountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6702
+      }
+    },
+    "relatedParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This may be used to identify one or more parties that perform a role within the transaction. If this is within a partyTradeInformation block, the related party performs the role with respect to the party identifie by the \"partyReference\" in the partyTradeInformation block.",
+      "Name" : "relatedParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RelatedParty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6705
+      }
+    },
+    "reportingRole" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the role of this party in reporting this trade (e.g. originator, counterparty).",
+      "Name" : "reportingRole",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6708
+      }
+    },
+    "unit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the unit/division/desk etc. that executed or supports this trade",
+      "Name" : "unit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6711
+      }
+    },
+    "relatedBusinessUnit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides information about a unit/division/desk etc. that executed or supports this trade",
+      "Name" : "relatedBusinessUnit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RelatedBusinessUnit",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6714
+      }
+    },
+    "relatedPerson" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides information about a person that executed or supports this trade",
+      "Name" : "relatedPerson",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RelatedPerson",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6717
+      }
+    },
+    "algorithm" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides information about an algorithm that executed or otherwise participated in this trade this trade",
+      "Name" : "algorithm",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Algorithm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6720
+      }
+    },
+    "isAccountingHedge" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the trade used to hedge a risk for accounting purposes for the specified party. (TODO: do we need to distinguish between asset and liability hedges?)",
+      "Name" : "isAccountingHedge",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6723
+      }
+    },
+    "category" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to categorize trades into user-defined categories, such as house trades vs. customer trades.",
+      "Name" : "category",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6726
+      }
+    },
+    "trader" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the person or persons who assumed the role of trader for this trade. New implementations are encouraged to use the relatedPerson structure instead.",
+      "Name" : "trader",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6729
+      }
+    },
+    "executionDateTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Trade execution date time, for example as provided by a central execution facility. Normally this refers to the original execution time of the trade, not the execution time of any post-trade events that may have affeted it. However, in the case of a post trade event that reports the new version of the trade (for example, the novation trade in an novation event, or the amended trade in an amendment event), the execution date time may contain the time that the newly created or modified trade was created or modified.",
+      "Name" : "executionDateTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6732
+      }
+    },
+    "timestamps" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows timing information about a trade to be recorded.",
+      "Name" : "timestamps",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TradeProcessingTimestamps",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6735
+      }
+    },
+    "intentToAllocate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the trade is anticipated to be allocated.",
+      "Name" : "intentToAllocate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6738
+      }
+    },
+    "allocationStatus" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the trade is anticipated to be allocated, has been allocated, or will not be allocated.",
+      "Name" : "allocationStatus",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6741
+      }
+    },
+    "intentToClear" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the trade is anticipated to be cleared via a derivative clearing organization",
+      "Name" : "intentToClear",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6744
+      }
+    },
+    "clearingStatus" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the status with respect to clearing (e.g. AwaitingAcceptance, Pending, Accepted, Rejected, etc.)",
+      "Name" : "clearingStatus",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6747
+      }
+    },
+    "collateralizationType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether this party posts collateral. For Recordkeeping, the collateralization type refers to collateral that is posted by this firm, and One-Way is not meaningful. In other words, if the collateralization type is Full, this trade is fully collateralized by this party. For Transparency view, the options include Full, Partial, Uncollateralized, and One-Way.",
+      "Name" : "collateralizationType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6750
+      }
+    },
+    "collateralPortfolio" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides a name, code, or other identifier for the collateral portfolio to which this belongs.",
+      "Name" : "collateralPortfolio",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6753
+      }
+    },
+    "reportingRegime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows the organization to specify which if any relevant regulators or other supervisory bodies this is relevant for, and what reporting rules apply.",
+      "Name" : "reportingRegime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ReportingRegime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6756
+      }
+    },
+    "endUserException" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the trade is not obligated to be cleared via a derivative clearing organization, i.e. wehter there is an exemption from clearing. For historical reasons this is called \"end-user exception\", but this may be used to indication any exception from normal clearing mandates caused by the type of the partiees or their relationship, such as inter-affiliate trades. If a relatedParty block with a role of ClearingExceptionParty is present, that related party indicates which party is claiming the end user exception.",
+      "Name" : "endUserException",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6759
+      }
+    },
+    "endUserExceptionReason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies a reason that the trade is exempted from a clearing requirement. This exemption may be an end-user exception, or another type such as in inter-affiliate trade.",
+      "Name" : "endUserExceptionReason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6762
+      }
+    },
+    "endUserExceptionDeclaration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Claims an end user exception and provides supporting evidence. If a relatedParty block with a role of ClearingExceptionParty is present, that related party indicates which party is claiming the end user exception.",
+      "Name" : "endUserExceptionDeclaration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.EndUserExceptionDeclaration",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6765
+      }
+    },
+    "nonStandardTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that the trade has price-affecting characteristics in addition to the standard real-time reportable terms. The flag indicates that the price for this trade is not to be construed as being indicative of the market for standardised trades with otherwise identical reportable terms.",
+      "Name" : "nonStandardTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6768
+      }
+    },
+    "offMarketPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that the price does not reflect the current market. For example, in a credit trade where the two counterparties are not of equal credit standing, there is no initial margin and one party pays collateral to the other in the form of an add-on to the price (say a price that would otherwise be 100 at the market is struck at 105 to include the collateral, resulting in a very off-market looking price.)",
+      "Name" : "offMarketPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6771
+      }
+    },
+    "pricingContext" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes why the price of this trade does not reflect the current market price. For example, the trade may have been traded off-market as part of a termination or compression operation.",
+      "Name" : "pricingContext",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6774
+      }
+    },
+    "largeSizeTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the sender of this trade considers it to be a large notional trade or block trade for reporting purposes, and thus eligible for delayed public reporting. Normally this will only be applicable for off-facility trades.",
+      "Name" : "largeSizeTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6777
+      }
+    },
+    "executionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to describe how the trade was executed, e.g. via voice or electronically.",
+      "Name" : "executionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6780
+      }
+    },
+    "executionVenueType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to describe the type of venue where trade was executed, e.g via an execution facility or privately.",
+      "Name" : "executionVenueType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6783
+      }
+    },
+    "verificationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to describe how the trade was or will be verified, e.g via a confirmation facility, via private electronic service, or via written documentation. This affect the timing of real-time reporting requirements. This field is provisional pending detailed confirmation of the data requirements, and may not be included in subsequent working drafts.",
+      "Name" : "verificationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6786
+      }
+    },
+    "confirmationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to describe how the trade was confirmed, e.g via a confirmation facility, via private electronic service, or via written documentation. This affects the process flow for confirmation messages. This field is provisional pending detailed confirmation of the data requirements, and may not be included in subsequent working drafts.",
+      "Name" : "confirmationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6789
+      }
+    },
+    "compressedTrade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether this trade is a result of compression activity.",
+      "Name" : "compressedTrade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6792
+      }
+    },
+    "isSecuritiesFinancing" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether the transaction falls within the scope of activity but is exempted from reporting under [Securities Financing Transactions Regulation]",
+      "Name" : "isSecuritiesFinancing",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6795
+      }
+    },
+    "otcClassification" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Classification of the OTC transaction. Note: Coding scheme definition to encapsulate: Articles 20(3)(a) and 21(5)(a) of Regulation (EU) 600/2014. e.g. default=\"http://www.fpml.org/coding-scheme/external/esma/mifir/otc-classification\"",
+      "Name" : "otcClassification",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6798
+      }
+    },
+    "tradingWaiver" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Classification of the pre-trade waiver, if any, that the transaction was executed under. Note: Coding scheme to encapsulate: Articles 4 and 9 of Regulation (EU) 600/2014. e.g. default=\"http://www.fpml.org/coding-scheme/mifir/trading-waiver\"",
+      "Name" : "tradingWaiver",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6801
+      }
+    },
+    "shortSale" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Classification of the transaction as a short sale or not and, if short, of the type of transaction. Note: Coding scheme to encapsulate: Article 11 of Regulation (EU) 600/2014. e.g. default=\"http://www.fpml.org/coding-scheme/mifir/short-sale\"",
+      "Name" : "shortSale",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6804
+      }
+    },
+    "isCommodityHedge" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether the transaction reduces risk in an objectively measurable way. Only applicable for commodity derivative transactions.",
+      "Name" : "isCommodityHedge",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6807
+      }
+    },
+    "isDisputed" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to report whether the trade is in dispute",
+      "Name" : "isDisputed",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6810
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyReference", "accountReference", "relatedParty", "reportingRole", "unit", "relatedBusinessUnit", "relatedPerson", "algorithm", "isAccountingHedge", "category", "trader", "executionDateTime", "timestamps", "intentToAllocate", "allocationStatus", "intentToClear", "clearingStatus", "collateralizationType", "collateralPortfolio", "reportingRegime", "endUserException", "endUserExceptionReason", "endUserExceptionDeclaration", "nonStandardTerms", "offMarketPrice", "pricingContext", "largeSizeTrade", "executionType", "executionVenueType", "verificationMethod", "confirmationMethod", "compressedTrade", "isSecuritiesFinancing", "otcClassification", "tradingWaiver", "shortSale", "isCommodityHedge", "isDisputed" ],
+  "IsSynthetic" : false
+}

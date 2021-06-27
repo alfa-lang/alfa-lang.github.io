@@ -1,0 +1,62 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Allows the specification of a time that may be on a day prior or subsequent to the day in question. This type is intended for use with a day of the week (i.e. where no actual date is specified) as part of, for example, a period that runs from 23:00-07:00 on a series of days and where holidays on the actual days would affect the entire time period.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OffsetPrevailingTime",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Allows the specification of a time that may be on a day prior or subsequent to the day in question. This type is intended for use with a day of the week (i.e. where no actual date is specified) as part of, for example, a period that runs from 23:00-07:00 on a series of days and where holidays on the actual days would affect the entire time period.\n #/\nrecord FpML5.reporting.OffsetPrevailingTime {\n  `time` : FpML5.reporting.PrevailingTime?\n\n  # Indicates whether time applies to the actual day specified (in which case this element should be omitted) the day prior to that day (in which case periodMultiplier should be -1 and period should be Day) or the day subsequent to that day (in which case periodMultiplier should be 1 and period should be Day).\n  offset : FpML5.reporting.Offset?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.GenericCommodityDeliveryPeriod",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SettlementPeriods",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "time" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "time",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PrevailingTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 30148
+      }
+    },
+    "offset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether time applies to the actual day specified (in which case this element should be omitted) the day prior to that day (in which case periodMultiplier should be -1 and period should be Day) or the day subsequent to that day (in which case periodMultiplier should be 1 and period should be Day).",
+      "Name" : "offset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Offset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 30150
+      }
+    }
+  },
+  "LocalFieldNames" : [ "time", "offset" ],
+  "IsSynthetic" : false
+}

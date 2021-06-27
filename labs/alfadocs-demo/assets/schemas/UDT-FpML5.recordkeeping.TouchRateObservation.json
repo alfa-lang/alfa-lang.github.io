@@ -1,0 +1,303 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.TouchRateObservation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.TouchRateObservation {\n  # The date on which the rate observation occurred, in order to trigger the barrier event.observationDate\n  observationDate : date?\n\n  # The time at which the observation occurred.\n  observationTime : FpML5.recordkeeping.BusinessCenterTime?\n\n  informationSource : FpML5.recordkeeping.InformationSource?\n\n  # The rate value (level) which was attained/breached, in order to trigger the barrier event.\n  triggerRate : decimal?\n\n  # Defines the currency pair and quote basis for an FX rate.\n  quotedCurrencyPair : FpML5.recordkeeping.QuotedCurrencyPair?\n\n  # The observed rate value which triggered the barrier event.\n  observedRate : decimal?\n\n  # The price value (level) which was attained/breached, in order to trigger the barrier event.\n  triggerPrice : FpML5.recordkeeping.PositiveMoney?\n\n  # The observed price value which triggered the barrier event.\n  observedPrice : FpML5.recordkeeping.PositiveMoney?\n\n  # The side of the trigger rate/price (level) on which a rate observation occurred, in order to trigger the barrier event.\n  triggerCondition : string?\n\n  exerciseSide : FpML5.recordkeeping.ExerciseSideEnum?\n\n  settlementType : string\n\n  cashSettlement : FpML5.recordkeeping.SimplePayment\n\n  physicalSettlement : FpML5.recordkeeping.PhysicalSettlement\n\n  payment : FpML5.recordkeeping.NonNegativePayment?\n\n  clearingInstructions : FpML5.recordkeeping.ClearingInstructions?\n\n  # If the touch or no touch event hasn't generated an exercise, then we specify whether the option is exercisable or not.\n  isExercisable : boolean\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OptionEvent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "observationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the rate observation occurred, in order to trigger the barrier event.observationDate",
+      "Name" : "observationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6813
+      }
+    },
+    "observationTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time at which the observation occurred.",
+      "Name" : "observationTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6816
+      }
+    },
+    "informationSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "informationSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.InformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6819
+      }
+    },
+    "triggerRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate value (level) which was attained/breached, in order to trigger the barrier event.",
+      "Name" : "triggerRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6821
+      }
+    },
+    "quotedCurrencyPair" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the currency pair and quote basis for an FX rate.",
+      "Name" : "quotedCurrencyPair",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.QuotedCurrencyPair",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6824
+      }
+    },
+    "observedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The observed rate value which triggered the barrier event.",
+      "Name" : "observedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6827
+      }
+    },
+    "triggerPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The price value (level) which was attained/breached, in order to trigger the barrier event.",
+      "Name" : "triggerPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PositiveMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6830
+      }
+    },
+    "observedPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The observed price value which triggered the barrier event.",
+      "Name" : "observedPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PositiveMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6833
+      }
+    },
+    "triggerCondition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The side of the trigger rate/price (level) on which a rate observation occurred, in order to trigger the barrier event.",
+      "Name" : "triggerCondition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6836
+      }
+    },
+    "exerciseSide" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exerciseSide",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ExerciseSideEnum",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6839
+      }
+    },
+    "settlementType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "settlementType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6841
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.SimplePayment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.SimplePayment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.SimplePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6843
+      }
+    },
+    "physicalSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "physicalSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.PhysicalSettlement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.PhysicalSettlement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PhysicalSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6845
+      }
+    },
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6847
+      }
+    },
+    "clearingInstructions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "clearingInstructions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ClearingInstructions",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6849
+      }
+    },
+    "isExercisable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If the touch or no touch event hasn't generated an exercise, then we specify whether the option is exercisable or not.",
+      "Name" : "isExercisable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6851
+      }
+    }
+  },
+  "LocalFieldNames" : [ "observationDate", "observationTime", "informationSource", "triggerRate", "quotedCurrencyPair", "observedRate", "triggerPrice", "observedPrice", "triggerCondition", "exerciseSide", "settlementType", "cashSettlement", "physicalSettlement", "payment", "clearingInstructions", "isExercisable" ],
+  "IsSynthetic" : false
+}

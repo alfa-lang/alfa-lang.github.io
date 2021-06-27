@@ -1,0 +1,111 @@
+.. _expressions:
+
+===========
+Expressions
+===========
+
+ALFA support expressions within :ref:`assertExpr` and :ref:`libraryType` definitions. Expression capabilities compliment
+the modelling features to interact with data.
+
+Expressions can be combined to build rules for ALFA object data validation. Expressions include various :ref:`builtins`
+and object creation constructs listed below. Similar to the :ref:`typeSystem`, the expressions can be generated
+into target languages (where supported by the generated target) to be executed on the data natively.
+
+Expression Constructs
+=====================
+
+ALFA expression syntax is minimalistic, data-oriented and functional. The builtin functions serve to operate on
+data defined by the :ref:`typeSystem`.
+
+Expressions are enclosed within 3 types of statements:
+
+  1. Local variable declaration
+  2. Function call
+  3. `return` statement
+
+No loop constructs - `for`, `while` etc are supported.
+
+Conditional statements - `if`, `else` is supported as expressions:
+
+.. code-block:: csharp
+
+    ...
+    let a = if ( b ) 0 else 20
+    return if ( a == 0 ) "no result" else "has result"
+
+For cases where ALFA Expressions cannot sufficiently express a requirement using the built-in syntax, an
+ALFA :ref:`serviceType` can be declared and implemented natively, which can be used from :ref:`assertExpr` or :ref:`libraryType`.
+
+
+Function Calls
+==============
+
+To help writing :ref:`assertExpr` and other expressions, ALFA supports 50+ :ref:`builtins`. These range from
+higher-order functions to data-type conversion functions.
+
+ALFA code-generators are fully aware of built-in functions and will generate highly-optimised native code corresponding
+to the function usage.
+
+Functions/features not available can be implemented as function calls on a :ref:`serviceType`, that can have custom native
+implementations. Based on demand and usecases, the list of functions will expand in future.
+
+Refer to :ref:`builtins` for the full list of current functions.
+
+
+Local variables
+===============
+
+ALFA expressions can reference fields within a UDT or locally declared variables. Variables are declared using the
+`let` keyword.
+
+Variables cannot be reassigned, therefore immutable. Note that collection types such as :ref:`mapVectorType`
+can have values added using mutator method such as :ref:`putExpr`.
+
+.. code-block:: csharp
+
+    let count = 1
+    let nums = [1, 2 ,3]
+
+ALFA's expression type inference system will infer the type of `nums` above to be a `list<short>`. If necessary,
+the type can be explicitly specified.
+
+.. code-block:: csharp
+
+    let nums : list<int> = [1, 2 ,3]
+
+Lambda Expressions
+==================
+
+Lambda expressions are supported to be used with with higher-order functions. The example below shows lambdas in use.
+
+Single argument lambdas can be specified as a single identifier, multiple arguments need to be surrounded by
+parenthesis as shown in the example below.
+
+
+.. code-block:: csharp
+
+    passengers : set< Person >
+    ...
+    let adults = filter( passengers, p => p.Age >= 18 )
+    let totalLuggageWeight : int = reduce( passengers, 0, ( total, p ) => total + p.luggageWeight )
+
+
+If the body of the lambda is a single expression ( E.g. `p.Age > 18` above), it can be simply specified as-is.
+If multiple statements are required to get the result of the lambda body, it needs to be wrapped in braces and a final
+`return` statement.
+
+
+.. code-block:: csharp
+
+    passengers : set< Person >
+    ...
+    let adultGoldMember = filter( passengers, p => {
+                                                let adult = p.Age >= 18
+                                                let gold = p.Membership == "Gold"
+                                                return adult && gold
+                                              } )
+
+
+For more usages, see :ref:`reduceExpr`, :ref:`filterExpr` and :ref:`mapExpr`.
+
+

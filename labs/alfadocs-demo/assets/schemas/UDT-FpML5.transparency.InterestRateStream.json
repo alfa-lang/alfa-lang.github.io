@@ -1,0 +1,169 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the components specifiying an interest rate stream, including both a parametric and cashflow representation for the stream of payments.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.InterestRateStream",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the components specifiying an interest rate stream, including both a parametric and cashflow representation for the stream of payments.\n #/\nrecord FpML5.transparency.InterestRateStream {\n  # The calculation periods dates schedule.\n  calculationPeriodDates : FpML5.transparency.CalculationPeriodDates\n\n  # The payment dates schedule.\n  paymentDates : FpML5.transparency.PaymentDates\n\n  # The reset dates schedule. The reset dates schedule only applies for a floating rate stream.\n  resetDates : FpML5.transparency.ResetDates?\n\n  # The calculation period amount parameters.\n  calculationPeriodAmount : FpML5.transparency.CalculationPeriodAmount\n\n  # The true/false flags indicating whether initial, intermediate or final exchanges of principal should occur.\n  principalExchanges : FpML5.transparency.PrincipalExchanges?\n\n  # A provision that allows the specification of settlement terms, occuring when the settlement currency is different to the notional currency of the trade.\n  settlementProvision : FpML5.transparency.SettlementProvision?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CapFloor",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Swap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationPeriodDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation periods dates schedule.",
+      "Name" : "calculationPeriodDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.CalculationPeriodDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.CalculationPeriodDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CalculationPeriodDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3189
+      }
+    },
+    "paymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The payment dates schedule.",
+      "Name" : "paymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.PaymentDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.PaymentDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PaymentDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3192
+      }
+    },
+    "resetDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The reset dates schedule. The reset dates schedule only applies for a floating rate stream.",
+      "Name" : "resetDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ResetDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3195
+      }
+    },
+    "calculationPeriodAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period amount parameters.",
+      "Name" : "calculationPeriodAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.CalculationPeriodAmount",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.CalculationPeriodAmount",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CalculationPeriodAmount",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3198
+      }
+    },
+    "principalExchanges" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The true/false flags indicating whether initial, intermediate or final exchanges of principal should occur.",
+      "Name" : "principalExchanges",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PrincipalExchanges",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3201
+      }
+    },
+    "settlementProvision" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A provision that allows the specification of settlement terms, occuring when the settlement currency is different to the notional currency of the trade.",
+      "Name" : "settlementProvision",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.SettlementProvision",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3204
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 3207
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationPeriodDates", "paymentDates", "resetDates", "calculationPeriodAmount", "principalExchanges", "settlementProvision", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,20 @@
+# string
+
+String data type, where the encoding will be determined by the runtime.
+
+__Optional Parameters__
+
+- Length constraint - `string( min, max )`, where min and max are numeric.
+- Regex constraint - `string("<pattern>")
+  
+  Regular expression pattern for a string value. The pattern should conform to [ECMA-262/5.1](https://www.ecma-international.org/ecma-262/5.1/#sec-15.10.1). 
+  The string value assigned will need conform to the pattern.
+
+
+>>An optional length can be specified to a string, which can be used for enforcing string length.
+>>
+>>Examples
+>>- `string(8,8)` A string of exactly 8 characters.
+>>- `string(1,*)` A non-empty string.
+>>- `string(0,100)` A string no longer than 100 characters.
+>>- `string( "\\b\\d{16}\\b" )`  Expects the value to be a string which is 16 long comprised of digits only. E.g. credit card number.

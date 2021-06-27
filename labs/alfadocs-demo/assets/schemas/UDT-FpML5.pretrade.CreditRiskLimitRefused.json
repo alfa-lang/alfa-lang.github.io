@@ -1,0 +1,105 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.CreditRiskLimitRefused",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.pretrade.CreditRiskLimitRefused {\n  limitRefused : boolean?\n\n  reason : FpML5.pretrade.CreditLimitCheckReason?\n\n  limitExpiryTimeStamp : datetime?\n\n  creditLimitReference : FpML5.pretrade.CreditLimitReference?\n\n  originalRequestDetails : FpML5.pretrade.OriginalRequestDetails?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.LimitCheckRefused",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "limitRefused" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "limitRefused",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 7635
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.CreditLimitCheckReason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 7637
+      }
+    },
+    "limitExpiryTimeStamp" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "limitExpiryTimeStamp",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 7639
+      }
+    },
+    "creditLimitReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creditLimitReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.CreditLimitReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 7641
+      }
+    },
+    "originalRequestDetails" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "originalRequestDetails",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.OriginalRequestDetails",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 7643
+      }
+    }
+  },
+  "LocalFieldNames" : [ "limitRefused", "reason", "limitExpiryTimeStamp", "creditLimitReference", "originalRequestDetails" ],
+  "IsSynthetic" : false
+}

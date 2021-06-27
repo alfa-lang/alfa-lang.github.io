@@ -1,0 +1,54 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure including a net and/or a gross amount and possibly fees and commissions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.NetAndGross",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure including a net and/or a gross amount and possibly fees and commissions.\n #/\nrecord FpML5.legal.NetAndGross {\n  # Value including fees and commissions.\n  net : decimal?\n\n  # Value excluding fees and commissions.\n  gross : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.InstrumentTradePrincipal",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "net" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Value including fees and commissions.",
+      "Name" : "net",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 310
+      }
+    },
+    "gross" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Value excluding fees and commissions.",
+      "Name" : "gross",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 313
+      }
+    }
+  },
+  "LocalFieldNames" : [ "net", "gross" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,254 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the parameters used in the calculation of a fixed or floating rate calculation period amount. This type forms part of cashflows representation of a swap stream.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the parameters used in the calculation of a fixed or floating rate calculation period amount. This type forms part of cashflows representation of a swap stream.\n #/\nrecord FpML5.recordkeeping.CalculationPeriod {\n  unadjustedStartDate : date?\n\n  unadjustedEndDate : date?\n\n  # The calculation period start date, adjusted according to any relevant business day convention.\n  adjustedStartDate : date?\n\n  # The calculation period end date, adjusted according to any relevant business day convention.\n  adjustedEndDate : date?\n\n  # The number of days from the adjusted effective / start date to the adjusted termination / end date calculated in accordance with the applicable day count fraction.\n  calculationPeriodNumberOfDays : int( 1, * )?\n\n  # The amount that a cashflow will accrue interest on.\n  notionalAmount : decimal\n\n  # The amount that a cashflow will accrue interest on. This is the calculated amount of the fx linked - ie the other currency notional amount multiplied by the appropriate fx spot rate.\n  fxLinkedNotionalAmount : FpML5.recordkeeping.FxLinkedNotionalAmount\n\n  # The floating rate reset information for the calculation period.\n  floatingRateDefinition : FpML5.recordkeeping.FloatingRateDefinition\n\n  # The calculation period fixed rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05.\n  fixedRate : decimal\n\n  # The year fraction value of the calculation period, result of applying the ISDA rules for day count fraction defined in the ISDA Annex.\n  dayCountYearFraction : decimal?\n\n  # The amount representing the forecast of the accrued value of the calculation period. An intermediate value used to generate the forecastPaymentAmount in the PaymentCalculationPeriod.\n  forecastAmount : FpML5.recordkeeping.Money?\n\n  # A value representing the forecast rate used to calculate the forecast future value of the accrual period. This is a calculated rate determined based on averaging the rates in the rateObservation elements, and incorporates all of the rate treatment and averaging rules. A value of 1% should be represented as 0.01\n  forecastRate : decimal?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.PaymentCalculationPeriod",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "unadjustedStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "unadjustedStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6665
+      }
+    },
+    "unadjustedEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "unadjustedEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6667
+      }
+    },
+    "adjustedStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period start date, adjusted according to any relevant business day convention.",
+      "Name" : "adjustedStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6669
+      }
+    },
+    "adjustedEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period end date, adjusted according to any relevant business day convention.",
+      "Name" : "adjustedEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6672
+      }
+    },
+    "calculationPeriodNumberOfDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of days from the adjusted effective / start date to the adjusted termination / end date calculated in accordance with the applicable day count fraction.",
+      "Name" : "calculationPeriodNumberOfDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6675
+      }
+    },
+    "notionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount that a cashflow will accrue interest on.",
+      "Name" : "notionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6678
+      }
+    },
+    "fxLinkedNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount that a cashflow will accrue interest on. This is the calculated amount of the fx linked - ie the other currency notional amount multiplied by the appropriate fx spot rate.",
+      "Name" : "fxLinkedNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FxLinkedNotionalAmount",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FxLinkedNotionalAmount",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxLinkedNotionalAmount",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6681
+      }
+    },
+    "floatingRateDefinition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The floating rate reset information for the calculation period.",
+      "Name" : "floatingRateDefinition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FloatingRateDefinition",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FloatingRateDefinition",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FloatingRateDefinition",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6684
+      }
+    },
+    "fixedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period fixed rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05.",
+      "Name" : "fixedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6687
+      }
+    },
+    "dayCountYearFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The year fraction value of the calculation period, result of applying the ISDA rules for day count fraction defined in the ISDA Annex.",
+      "Name" : "dayCountYearFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6690
+      }
+    },
+    "forecastAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount representing the forecast of the accrued value of the calculation period. An intermediate value used to generate the forecastPaymentAmount in the PaymentCalculationPeriod.",
+      "Name" : "forecastAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6693
+      }
+    },
+    "forecastRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A value representing the forecast rate used to calculate the forecast future value of the accrual period. This is a calculated rate determined based on averaging the rates in the rateObservation elements, and incorporates all of the rate treatment and averaging rules. A value of 1% should be represented as 0.01",
+      "Name" : "forecastRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6696
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 6699
+      }
+    }
+  },
+  "LocalFieldNames" : [ "unadjustedStartDate", "unadjustedEndDate", "adjustedStartDate", "adjustedEndDate", "calculationPeriodNumberOfDays", "notionalAmount", "fxLinkedNotionalAmount", "floatingRateDefinition", "fixedRate", "dayCountYearFraction", "forecastAmount", "forecastRate", "id" ],
+  "IsSynthetic" : false
+}

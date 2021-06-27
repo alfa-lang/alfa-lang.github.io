@@ -1,0 +1,56 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EnvironmentalProductComplaincePeriod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.EnvironmentalProductComplaincePeriod {\n  # The first year of the Compliance Period.\n  startYear : int?\n\n  # The last year of the Commpliance Period.\n  endYear : int?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EnvironmentalProduct",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "startYear" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The first year of the Compliance Period.",
+      "Name" : "startYear",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10038
+      }
+    },
+    "endYear" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last year of the Commpliance Period.",
+      "Name" : "endYear",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10041
+      }
+    }
+  },
+  "LocalFieldNames" : [ "startYear", "endYear" ],
+  "IsSynthetic" : false
+}

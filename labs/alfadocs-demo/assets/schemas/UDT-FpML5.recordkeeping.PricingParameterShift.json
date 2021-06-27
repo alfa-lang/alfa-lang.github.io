@@ -1,0 +1,90 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A definition of a shift with respect to a specific pricing parameter.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.PricingParameterShift",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A definition of a shift with respect to a specific pricing parameter.\n #/\nrecord FpML5.recordkeeping.PricingParameterShift {\n  parameterReference : FpML5.recordkeeping.AssetOrTermPointOrPricingStructureReference?\n\n  # The size of the denominator, e.g. 0.0001 = 1 bp.\n  shift : decimal?\n\n  # The units of the denominator, e.g. currency. If not present, use the units of the PricingInputReference.\n  shiftUnits : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ValuationScenario",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "parameterReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "parameterReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AssetOrTermPointOrPricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 19098
+      }
+    },
+    "shift" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The size of the denominator, e.g. 0.0001 = 1 bp.",
+      "Name" : "shift",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 19100
+      }
+    },
+    "shiftUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The units of the denominator, e.g. currency. If not present, use the units of the PricingInputReference.",
+      "Name" : "shiftUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 19103
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 19106
+      }
+    }
+  },
+  "LocalFieldNames" : [ "parameterReference", "shift", "shiftUnits", "id" ],
+  "IsSynthetic" : false
+}

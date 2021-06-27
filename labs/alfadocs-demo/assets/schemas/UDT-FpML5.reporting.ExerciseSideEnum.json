@@ -1,0 +1,87 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "The specification of which of the pay-side or the receive-side should be exercised when a straddle is exercised.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExerciseSideEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n The specification of which of the pay-side or the receive-side should be exercised when a straddle is exercised.\n #/\nenum FpML5.reporting.ExerciseSideEnum {\n    # A put option gives the holder the right to sell the underlying asset by a certain date for a certain price.\n    Put \n    # A call option gives the holder the right to buy the underlying asset by a certain date for a certain price.\n    Call \n    # A \"payer\" option: If you buy a \"payer\" option you have the right but not the obligation to enter into the underlying swap transaction as the \"fixed\" rate/price payer and receive float.\n    Payer \n    # A receiver option: If you buy a \"receiver\" option you have the right but not the obligation to enter into the underlying swap transaction as the \"fixed\" rate/price receiver and pay float.\n    Receiver \n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NoTouchRateObservation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionExercise",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TouchRateObservation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "Put" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A put option gives the holder the right to sell the underlying asset by a certain date for a certain price.",
+      "Name" : "Put",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6763
+      }
+    },
+    "Call" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A call option gives the holder the right to buy the underlying asset by a certain date for a certain price.",
+      "Name" : "Call",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6765
+      }
+    },
+    "Payer" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A \"payer\" option: If you buy a \"payer\" option you have the right but not the obligation to enter into the underlying swap transaction as the \"fixed\" rate/price payer and receive float.",
+      "Name" : "Payer",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6767
+      }
+    },
+    "Receiver" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A receiver option: If you buy a \"receiver\" option you have the right but not the obligation to enter into the underlying swap transaction as the \"fixed\" rate/price receiver and pay float.",
+      "Name" : "Receiver",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6769
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Put", "Call", "Payer", "Receiver" ],
+  "IsSynthetic" : false
+}

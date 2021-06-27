@@ -1,0 +1,36 @@
+# import
+
+An `import` declaration can be used to reference a definition without
+specifying the fully qualified name.
+
+When using long namespace names, it can be inconvenient having to specify
+the long name each time the type is used. In the following example,
+use of `import com.acme.hr.Person` means the type `Person` can be used with
+specifying the fully qualified named.
+
+```csharp
+import com.acme.hr.Person
+
+namespace com.acme.inventory
+
+record Supplier {
+    SupplierLiaison : Person
+    ...
+}
+
+record Coordinator {
+    Manager : Person
+    ...
+}
+```
+
+
+To import all types in the target namespace, it is possible to specify
+an asterisk `*`.
+
+
+```csharp
+import com.acme.hr.*
+
+...
+```

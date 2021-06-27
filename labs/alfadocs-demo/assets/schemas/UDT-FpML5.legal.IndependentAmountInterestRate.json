@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to specify the interest terms applicable to a margin terms agreement. Initially developed for the Standard CSA, but applicable in concept to other agreements.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.IndependentAmountInterestRate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to specify the interest terms applicable to a margin terms agreement. Initially developed for the Standard CSA, but applicable in concept to other agreements.\n #/\nrecord FpML5.legal.IndependentAmountInterestRate {\n  initialMarginInterestRateTerms : string\n\n  specifiedRate : FpML5.legal.SpecifiedRate\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013EnglishLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013NewYorkLaw",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "initialMarginInterestRateTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "initialMarginInterestRateTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3898
+      }
+    },
+    "specifiedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "specifiedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.SpecifiedRate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.SpecifiedRate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.SpecifiedRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3900
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialMarginInterestRateTerms", "specifiedRate" ],
+  "IsSynthetic" : false
+}

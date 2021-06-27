@@ -1,0 +1,216 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes the resource that contains the media representation of a business event (i.e used for stating the Publicly Available Information). For example, can describe a file or a URL that represents the event. This type is an extended version of a type defined by RIXML (www.rixml.org).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Resource",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes the resource that contains the media representation of a business event (i.e used for stating the Publicly Available Information). For example, can describe a file or a URL that represents the event. This type is an extended version of a type defined by RIXML (www.rixml.org).\n #/\nrecord FpML5.pretrade.Resource {\n  # The unique identifier of the resource within the event.\n  resourceId : string?\n\n  # A description of the type of the resource, e.g. a confirmation.\n  resourceType : string?\n\n  # Indicates the language of the resource, described using the ISO 639-2/T Code.\n  language : string?\n\n  # Indicates the size of the resource in bytes. It could be used by the end user to estimate the download time and storage needs.\n  sizeInBytes : decimal?\n\n  # Indicates the length of the resource. For example, if the resource were a PDF file, the length would be in pages.\n  length : FpML5.pretrade.ResourceLength?\n\n  # Indicates the type of media used to store the content. mimeType is used to determine the software product(s) that can read the content. MIME Types are described in RFC 2046.\n  mimeType : string?\n\n  # The name of the resource.\n  name : string?\n\n  # Any additional comments that are deemed necessary. For example, which software version is required to open the document? Or, how does this resource relate to the others for this event?\n  comments : string?\n\n  # Provides extra information as string. In case the extra information is in XML format, a CDATA section must be placed around the source message to prevent its interpretation as XML content.\n  `string` : string\n\n  # Provides extra information as binary contents coded in hexadecimal.\n  hexadecimalBinary : binary\n\n  # Provides extra information as binary contents coded in base64.\n  base64Binary : binary\n\n  # Indicates where the resource can be found, as a URL that references the information on a web server accessible to the message recipient.\n  url : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Documentation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "resourceId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The unique identifier of the resource within the event.",
+      "Name" : "resourceId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6727
+      }
+    },
+    "resourceType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A description of the type of the resource, e.g. a confirmation.",
+      "Name" : "resourceType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6730
+      }
+    },
+    "language" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the language of the resource, described using the ISO 639-2/T Code.",
+      "Name" : "language",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6733
+      }
+    },
+    "sizeInBytes" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the size of the resource in bytes. It could be used by the end user to estimate the download time and storage needs.",
+      "Name" : "sizeInBytes",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6736
+      }
+    },
+    "length" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the length of the resource. For example, if the resource were a PDF file, the length would be in pages.",
+      "Name" : "length",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.ResourceLength",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6739
+      }
+    },
+    "mimeType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the type of media used to store the content. mimeType is used to determine the software product(s) that can read the content. MIME Types are described in RFC 2046.",
+      "Name" : "mimeType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6742
+      }
+    },
+    "name" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the resource.",
+      "Name" : "name",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6745
+      }
+    },
+    "comments" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Any additional comments that are deemed necessary. For example, which software version is required to open the document? Or, how does this resource relate to the others for this event?",
+      "Name" : "comments",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6748
+      }
+    },
+    "string" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides extra information as string. In case the extra information is in XML format, a CDATA section must be placed around the source message to prevent its interpretation as XML content.",
+      "Name" : "string",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6751
+      }
+    },
+    "hexadecimalBinary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides extra information as binary contents coded in hexadecimal.",
+      "Name" : "hexadecimalBinary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "binaryType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6754
+      }
+    },
+    "base64Binary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Provides extra information as binary contents coded in base64.",
+      "Name" : "base64Binary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "binaryType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6757
+      }
+    },
+    "url" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates where the resource can be found, as a URL that references the information on a web server accessible to the message recipient.",
+      "Name" : "url",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 6760
+      }
+    }
+  },
+  "LocalFieldNames" : [ "resourceId", "resourceType", "language", "sizeInBytes", "length", "mimeType", "name", "comments", "string", "hexadecimalBinary", "base64Binary", "url" ],
+  "IsSynthetic" : false
+}

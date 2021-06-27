@@ -1,0 +1,114 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PeriodicDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.PeriodicDates {\n  calculationStartDate : FpML5.confirmation.AdjustableOrRelativeDate\n\n  calculationEndDate : FpML5.confirmation.AdjustableOrRelativeDate?\n\n  # The frequency at which calculation period end dates occur with the regular part of the calculation period schedule and their roll date convention.\n  calculationPeriodFrequency : FpML5.confirmation.CalculationPeriodFrequency\n\n  # The business day convention to apply to each calculation period end date if it would otherwise fall on a day that is not a business day in the specified financial business centers.\n  calculationPeriodDatesAdjustments : FpML5.confirmation.BusinessDayAdjustments\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AdjustableRelativeOrPeriodicDates",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AdjustableRelativeOrPeriodicDates2",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "calculationStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22416
+      }
+    },
+    "calculationEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "calculationEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22418
+      }
+    },
+    "calculationPeriodFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The frequency at which calculation period end dates occur with the regular part of the calculation period schedule and their roll date convention.",
+      "Name" : "calculationPeriodFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodFrequency",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CalculationPeriodFrequency",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CalculationPeriodFrequency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22420
+      }
+    },
+    "calculationPeriodDatesAdjustments" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The business day convention to apply to each calculation period end date if it would otherwise fall on a day that is not a business day in the specified financial business centers.",
+      "Name" : "calculationPeriodDatesAdjustments",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BusinessDayAdjustments",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BusinessDayAdjustments",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessDayAdjustments",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22423
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationStartDate", "calculationEndDate", "calculationPeriodFrequency", "calculationPeriodDatesAdjustments" ],
+  "IsSynthetic" : false
+}

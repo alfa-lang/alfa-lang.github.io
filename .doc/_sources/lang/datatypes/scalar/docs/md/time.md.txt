@@ -1,0 +1,14 @@
+time
+====
+ISO 8601 [time](https://en.wikipedia.org/wiki/ISO_8601#Times).
+
+__Optional Parameters__
+
+- Value range constraint - `time( min, max )`
+
+>>An optional range can be specified to a `time` in order to specify a restriction on permitted values. The values for `min` and `max` can be a ISO 8601 time string value or `*` to indicate wildcard maximum or minimum permitted value.
+>>
+>>Examples
+>>- `time("09:00","18:00")` A time between 9:00 and 18:00.
+>>- `time(*,"21:00")` A time between midnight and 9pm.
+>>- `time("07:00",*)` A time between 7:00 and 23:59:59:999999

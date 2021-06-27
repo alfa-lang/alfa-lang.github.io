@@ -1,0 +1,191 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the strike price.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Price",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the strike price.\n #/\nrecord FpML5.confirmation.Price {\n  # This optional component specifies the commission to be charged for executing the hedge transactions.\n  commission : FpML5.confirmation.Commission?\n\n  # Specifies the method according to which an amount or a date is determined.\n  determinationMethod : string\n\n  # Specifies the price of the underlyer, before commissions.\n  grossPrice : FpML5.confirmation.ActualPrice?\n\n  # Specifies the price of the underlyer, net of commissions.\n  netPrice : FpML5.confirmation.ActualPrice\n\n  # Specifies the accrued interest that are part of the dirty price in the case of a fixed income security or a convertible bond. Expressed in percentage of the notional.\n  accruedInterestPrice : decimal?\n\n  # Specifies the currency conversion rate that applies to an amount. This rate can either be defined elsewhere in the document (case of a quanto swap), or explicitly described through this component.\n  fxConversion : FpML5.confirmation.FxConversion?\n\n  # The href attribute value will be a pointer style reference to the element or component elsewhere in the document where the anchor amount is defined.\n  amountRelativeTo : FpML5.confirmation.AmountReference\n\n  # The net price excluding accrued interest. The \"Dirty Price\" for bonds is put in the \"netPrice\" element, which includes accrued interest. Thus netPrice - cleanNetPrice = accruedInterest. The currency and price expression for this field are the same as those for the (dirty) netPrice.\n  cleanNetPrice : decimal?\n\n  # Allows information about how the price was quoted to be provided.\n  quotationCharacteristics : FpML5.confirmation.QuotationCharacteristics?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.BasketConstituent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "commission" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This optional component specifies the commission to be charged for executing the hedge transactions.",
+      "Name" : "commission",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Commission",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21808
+      }
+    },
+    "determinationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the method according to which an amount or a date is determined.",
+      "Name" : "determinationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21811
+      }
+    },
+    "grossPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the price of the underlyer, before commissions.",
+      "Name" : "grossPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ActualPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21814
+      }
+    },
+    "netPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the price of the underlyer, net of commissions.",
+      "Name" : "netPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ActualPrice",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ActualPrice",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ActualPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21817
+      }
+    },
+    "accruedInterestPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the accrued interest that are part of the dirty price in the case of a fixed income security or a convertible bond. Expressed in percentage of the notional.",
+      "Name" : "accruedInterestPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21820
+      }
+    },
+    "fxConversion" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the currency conversion rate that applies to an amount. This rate can either be defined elsewhere in the document (case of a quanto swap), or explicitly described through this component.",
+      "Name" : "fxConversion",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxConversion",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21823
+      }
+    },
+    "amountRelativeTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The href attribute value will be a pointer style reference to the element or component elsewhere in the document where the anchor amount is defined.",
+      "Name" : "amountRelativeTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AmountReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AmountReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AmountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21826
+      }
+    },
+    "cleanNetPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The net price excluding accrued interest. The \"Dirty Price\" for bonds is put in the \"netPrice\" element, which includes accrued interest. Thus netPrice - cleanNetPrice = accruedInterest. The currency and price expression for this field are the same as those for the (dirty) netPrice.",
+      "Name" : "cleanNetPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21829
+      }
+    },
+    "quotationCharacteristics" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows information about how the price was quoted to be provided.",
+      "Name" : "quotationCharacteristics",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.QuotationCharacteristics",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21832
+      }
+    }
+  },
+  "LocalFieldNames" : [ "commission", "determinationMethod", "grossPrice", "netPrice", "accruedInterestPrice", "fxConversion", "amountRelativeTo", "cleanNetPrice", "quotationCharacteristics" ],
+  "IsSynthetic" : false
+}

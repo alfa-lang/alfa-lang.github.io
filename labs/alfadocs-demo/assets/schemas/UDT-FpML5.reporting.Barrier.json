@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "As per ISDA 2002 Definitions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Barrier",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   As per ISDA 2002 Definitions.\n #/\nrecord FpML5.reporting.Barrier {\n  # A trigger level approached from beneath.\n  barrierCap : FpML5.reporting.TriggerEvent?\n\n  # A trigger level approached from above.\n  barrierFloor : FpML5.reporting.TriggerEvent?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionFeature",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionFeatures",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "barrierCap" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A trigger level approached from beneath.",
+      "Name" : "barrierCap",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TriggerEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1431
+      }
+    },
+    "barrierFloor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A trigger level approached from above.",
+      "Name" : "barrierFloor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TriggerEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1434
+      }
+    }
+  },
+  "LocalFieldNames" : [ "barrierCap", "barrierFloor" ],
+  "IsSynthetic" : false
+}

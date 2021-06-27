@@ -1,0 +1,206 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.CreditRiskLimit",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.pretrade.CreditRiskLimit {\n  fullApproval : boolean\n\n  # Specifies the fixed amount requested expressed as notional amount.\n  requestedNotionalAmount : FpML5.pretrade.Money?\n\n  # (partial approval) Specifies the fixed amount approved expressed as notional amount.\n  approvedNotionalAmount : FpML5.pretrade.Money?\n\n  # (partial approval) Specifies the fixed amount approved expressed as number of options.\n  requestedNumberOfOptions : decimal?\n\n  # (partial approval) Specifies the fixed amount approved expressed as number of options.\n  approvedNumberOfOptions : decimal?\n\n  # (partial approval) Specifies the fixed amount approved expressed as number of units.\n  requestedNumberOfUnits : decimal?\n\n  # (partial approval) Specifies the fixed amount approved expressed as number of units.\n  approvedNumberOfUnits : decimal?\n\n  reason : FpML5.pretrade.CreditLimitCheckReason?\n\n  limitExpiryTimeStamp : datetime?\n\n  creditLimitReference : FpML5.pretrade.CreditLimitReference?\n\n  originalRequestDetails : FpML5.pretrade.OriginalRequestDetails?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.LimitCheckApproved",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fullApproval" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "fullApproval",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1251
+      }
+    },
+    "requestedNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixed amount requested expressed as notional amount.",
+      "Name" : "requestedNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1253
+      }
+    },
+    "approvedNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "(partial approval) Specifies the fixed amount approved expressed as notional amount.",
+      "Name" : "approvedNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1256
+      }
+    },
+    "requestedNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "(partial approval) Specifies the fixed amount approved expressed as number of options.",
+      "Name" : "requestedNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1259
+      }
+    },
+    "approvedNumberOfOptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "(partial approval) Specifies the fixed amount approved expressed as number of options.",
+      "Name" : "approvedNumberOfOptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1262
+      }
+    },
+    "requestedNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "(partial approval) Specifies the fixed amount approved expressed as number of units.",
+      "Name" : "requestedNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1265
+      }
+    },
+    "approvedNumberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "(partial approval) Specifies the fixed amount approved expressed as number of units.",
+      "Name" : "approvedNumberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1268
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.CreditLimitCheckReason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1271
+      }
+    },
+    "limitExpiryTimeStamp" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "limitExpiryTimeStamp",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1273
+      }
+    },
+    "creditLimitReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creditLimitReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.CreditLimitReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1275
+      }
+    },
+    "originalRequestDetails" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "originalRequestDetails",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.OriginalRequestDetails",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1277
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fullApproval", "requestedNotionalAmount", "approvedNotionalAmount", "requestedNumberOfOptions", "approvedNumberOfOptions", "requestedNumberOfUnits", "approvedNumberOfUnits", "reason", "limitExpiryTimeStamp", "creditLimitReference", "originalRequestDetails" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,133 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.VolatilityAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.VolatilityAmount {\n  # Specifies the date on which a calculation or an observation will be performed for the purpose of calculating the amount.\n  calculationDates : FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates?\n\n  # The start of the period over which observations are made which are used in the calculation Used when the observation start date differs from the trade date such as for forward starting swaps. Observation Start Date in accordance with the ISDA 2002 Equity Derivatives Definitions. Observation Period Start Date in accordance with the ISDA 2011 Equity Derivatives Definitions.\n  observationStartDate : FpML5.recordkeeping.AdjustableOrRelativeDate?\n\n  # If present and true, then options exchange dividends are applicable.\n  optionsExchangeDividends : boolean?\n\n  # If present and true, then additional dividends are applicable.\n  additionalDividends : boolean?\n\n  # Represents the European Master Confirmation value of 'All Dividends' which, when applicable, signifies that, for a given Ex-Date, the daily observed Share Price for that day is adjusted (reduced) by the cash dividend and/or the cash value of any non cash dividend per Share (including Extraordinary Dividends) declared by the Issuer. All Dividends in accordance with the ISDA 2002 Equity Derivatives Definitions.\n  allDividends : boolean?\n\n  # Specifies Volatility.\n  volatility : FpML5.recordkeeping.Volatility\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.VolatilityLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date on which a calculation or an observation will be performed for the purpose of calculating the amount.",
+      "Name" : "calculationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 7306
+      }
+    },
+    "observationStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The start of the period over which observations are made which are used in the calculation Used when the observation start date differs from the trade date such as for forward starting swaps. Observation Start Date in accordance with the ISDA 2002 Equity Derivatives Definitions. Observation Period Start Date in accordance with the ISDA 2011 Equity Derivatives Definitions.",
+      "Name" : "observationStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 7309
+      }
+    },
+    "optionsExchangeDividends" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and true, then options exchange dividends are applicable.",
+      "Name" : "optionsExchangeDividends",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 7312
+      }
+    },
+    "additionalDividends" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and true, then additional dividends are applicable.",
+      "Name" : "additionalDividends",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 7315
+      }
+    },
+    "allDividends" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Represents the European Master Confirmation value of 'All Dividends' which, when applicable, signifies that, for a given Ex-Date, the daily observed Share Price for that day is adjusted (reduced) by the cash dividend and/or the cash value of any non cash dividend per Share (including Extraordinary Dividends) declared by the Issuer. All Dividends in accordance with the ISDA 2002 Equity Derivatives Definitions.",
+      "Name" : "allDividends",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 7318
+      }
+    },
+    "volatility" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies Volatility.",
+      "Name" : "volatility",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Volatility",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Volatility",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Volatility",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 7321
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationDates", "observationStartDate", "optionsExchangeDividends", "additionalDividends", "allDividends", "volatility" ],
+  "IsSynthetic" : false
+}

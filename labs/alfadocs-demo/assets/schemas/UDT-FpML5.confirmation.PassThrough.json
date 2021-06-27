@@ -1,0 +1,51 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Type which contains pass through payments.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PassThrough",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Type which contains pass through payments.\n #/\nrecord FpML5.confirmation.PassThrough {\n  # One to many pass through payment items.\n  passThroughItem : FpML5.confirmation.PassThroughItem\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionFeature",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionFeatures",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "passThroughItem" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "One to many pass through payment items.",
+      "Name" : "passThroughItem",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PassThroughItem",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PassThroughItem",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PassThroughItem",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27658
+      }
+    }
+  },
+  "LocalFieldNames" : [ "passThroughItem" ],
+  "IsSynthetic" : false
+}

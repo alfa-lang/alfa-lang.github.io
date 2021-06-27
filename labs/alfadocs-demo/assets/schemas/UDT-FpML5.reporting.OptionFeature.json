@@ -1,0 +1,139 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining option features.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionFeature",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining option features.\n #/\nrecord FpML5.reporting.OptionFeature {\n  # A quanto or composite FX feature.\n  fxFeature : FpML5.reporting.FxFeature?\n\n  # A simple strategy feature.\n  strategyFeature : FpML5.reporting.StrategyFeature?\n\n  # An option where and average price is taken on valuation.\n  asian : FpML5.reporting.Asian?\n\n  # An option with a barrier feature.\n  barrier : FpML5.reporting.Barrier?\n\n  # A knock feature.\n  knock : FpML5.reporting.Knock?\n\n  # Pass through payments from the underlyer, such as dividends.\n  passThrough : FpML5.reporting.PassThrough?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.BondOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CreditDefaultSwapOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OptionBaseExtended",
+    "UdtType" : "traitType"
+  } ],
+  "AllFields" : {
+    "fxFeature" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A quanto or composite FX feature.",
+      "Name" : "fxFeature",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxFeature",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15921
+      }
+    },
+    "strategyFeature" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A simple strategy feature.",
+      "Name" : "strategyFeature",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.StrategyFeature",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15924
+      }
+    },
+    "asian" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An option where and average price is taken on valuation.",
+      "Name" : "asian",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Asian",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15927
+      }
+    },
+    "barrier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An option with a barrier feature.",
+      "Name" : "barrier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Barrier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15930
+      }
+    },
+    "knock" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A knock feature.",
+      "Name" : "knock",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Knock",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15933
+      }
+    },
+    "passThrough" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Pass through payments from the underlyer, such as dividends.",
+      "Name" : "passThrough",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PassThrough",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 15936
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fxFeature", "strategyFeature", "asian", "barrier", "knock", "passThrough" ],
+  "IsSynthetic" : false
+}

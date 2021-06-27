@@ -1,0 +1,253 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Represents the accruing fixed rate option associated within a facility.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FixedRateOption",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Represents the accruing fixed rate option associated within a facility.\n #/\nrecord FpML5.confirmation.FixedRateOption {\n  # A unique id associated with the loan accrual type.\n  accrualOptionId : string\n\n  # The day count basis for the accrual.\n  dayCountFraction : string\n\n  paymentFrequency : FpML5.confirmation.Period?\n\n  rate : decimal\n\n  pikSpread : decimal\n\n  # Date on which this period begins.\n  startDate : date\n\n  # Date on which this period ends.\n  endDate : date\n\n  currency : string\n\n  allInRateLimits : FpML5.confirmation.RateLimits?\n\n  # A party reference to the borrower(s) permitted to exercise the cash accrual option.\n  borrowerPartyReference : FpML5.confirmation.PartyReference?\n\n  # The number of business days that a lender must be notified prior to a drawdown event occurring.\n  drawdownNoticeDays : int( 0, * )?\n\n  # The number of business days that a lender must be notified prior to an FX rate set event occurring.\n  fxRateSetNoticeDays : int( 0, * )?\n\n  # The number of business days that a lender must be notified prior to a rate set event occurring.\n  rateSetNoticeDays : int( 0, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DelayedDraw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Facility",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FixedRateOptionChange",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LetterOfCreditFacility",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Revolver",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TermLoan",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "accrualOptionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique id associated with the loan accrual type.",
+      "Name" : "accrualOptionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21696
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count basis for the accrual.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21699
+      }
+    },
+    "paymentFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "paymentFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21702
+      }
+    },
+    "rate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "rate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21704
+      }
+    },
+    "pikSpread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "pikSpread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21706
+      }
+    },
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period begins.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21708
+      }
+    },
+    "endDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which this period ends.",
+      "Name" : "endDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21711
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21714
+      }
+    },
+    "allInRateLimits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "allInRateLimits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RateLimits",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21716
+      }
+    },
+    "borrowerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party reference to the borrower(s) permitted to exercise the cash accrual option.",
+      "Name" : "borrowerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21718
+      }
+    },
+    "drawdownNoticeDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of business days that a lender must be notified prior to a drawdown event occurring.",
+      "Name" : "drawdownNoticeDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21721
+      }
+    },
+    "fxRateSetNoticeDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of business days that a lender must be notified prior to an FX rate set event occurring.",
+      "Name" : "fxRateSetNoticeDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21724
+      }
+    },
+    "rateSetNoticeDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of business days that a lender must be notified prior to a rate set event occurring.",
+      "Name" : "rateSetNoticeDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21727
+      }
+    }
+  },
+  "LocalFieldNames" : [ "accrualOptionId", "dayCountFraction", "paymentFrequency", "rate", "pikSpread", "startDate", "endDate", "currency", "allInRateLimits", "borrowerPartyReference", "drawdownNoticeDays", "fxRateSetNoticeDays", "rateSetNoticeDays" ],
+  "IsSynthetic" : false
+}

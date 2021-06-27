@@ -1,0 +1,85 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defines the expiry date of the accrual. The date is adjusted, date adjustments may be provided, and also the expiry time.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxExpiryDate",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defines the expiry date of the accrual. The date is adjusted, date adjustments may be provided, and also the expiry time.\n #/\nrecord FpML5.confirmation.FxExpiryDate {\n  # Date adjustments applied to the adjusted dates including the business day convention and the business centers. The date adjustments are as specified in the definitions.\n  dateAdjustments : FpML5.confirmation.BusinessDayAdjustments?\n\n  # List of schedule dates. These dates have been subject to adjustments based on the dateAdjustments structure.\n  adjustedDate : date\n\n  # Time of expiration of each expiry date.\n  expiryTime : FpML5.confirmation.BusinessCenterTime?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxAccrualDigitalOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxAccrualForward",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxAccrualOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxRangeAccrual",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "dateAdjustments" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date adjustments applied to the adjusted dates including the business day convention and the business centers. The date adjustments are as specified in the definitions.",
+      "Name" : "dateAdjustments",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessDayAdjustments",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7507
+      }
+    },
+    "adjustedDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "List of schedule dates. These dates have been subject to adjustments based on the dateAdjustments structure.",
+      "Name" : "adjustedDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7510
+      }
+    },
+    "expiryTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Time of expiration of each expiry date.",
+      "Name" : "expiryTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7513
+      }
+    }
+  },
+  "LocalFieldNames" : [ "dateAdjustments", "adjustedDate", "expiryTime" ],
+  "IsSynthetic" : false
+}

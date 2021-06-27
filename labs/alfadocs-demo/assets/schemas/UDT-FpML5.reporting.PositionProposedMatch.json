@@ -1,0 +1,184 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionProposedMatch",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.PositionProposedMatch {\n  # A version-independent identifier for the position, possibly based on trade identifier.\n  positionId : string?\n\n  # A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.\n  version : int( 1, * )?\n\n  # Information about the roles of the parties with respect to reporting the positions.\n  reportingRoles : FpML5.reporting.ReportingRoles?\n\n  # The components that create this position.\n  constituent : FpML5.reporting.PositionConstituent?\n\n  # Position level schedule date, such as final payment dates, in a simple and flexible format.\n  scheduledDate : FpML5.reporting.ScheduledDate?\n\n  # Valuation reported for the position, such as NPV or accrued interest. The asset/object references in the valuations should refer to the deal or components of the deal in the position, e.g. legs, streams, or underlyers.\n  valuation : FpML5.reporting.AssetValuation?\n\n  # A unique identifier assigned by the matching service to each set of matched positions.\n  matchId : string?\n\n  # A type used to record the details of a difference between two sides of a business event.\n  difference : FpML5.reporting.TradeDifference?\n\n  # Numeric score to represent the quality of the match.\n  matchScore : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionMatchResult",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "positionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version-independent identifier for the position, possibly based on trade identifier.",
+      "Name" : "positionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29645
+      }
+    },
+    "version" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.",
+      "Name" : "version",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29648
+      }
+    },
+    "reportingRoles" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information about the roles of the parties with respect to reporting the positions.",
+      "Name" : "reportingRoles",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ReportingRoles",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29651
+      }
+    },
+    "constituent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The components that create this position.",
+      "Name" : "constituent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositionConstituent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29654
+      }
+    },
+    "scheduledDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Position level schedule date, such as final payment dates, in a simple and flexible format.",
+      "Name" : "scheduledDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ScheduledDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29657
+      }
+    },
+    "valuation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Valuation reported for the position, such as NPV or accrued interest. The asset/object references in the valuations should refer to the deal or components of the deal in the position, e.g. legs, streams, or underlyers.",
+      "Name" : "valuation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AssetValuation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29660
+      }
+    },
+    "matchId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique identifier assigned by the matching service to each set of matched positions.",
+      "Name" : "matchId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29663
+      }
+    },
+    "difference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A type used to record the details of a difference between two sides of a business event.",
+      "Name" : "difference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeDifference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29666
+      }
+    },
+    "matchScore" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Numeric score to represent the quality of the match.",
+      "Name" : "matchScore",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29669
+      }
+    }
+  },
+  "LocalFieldNames" : [ "positionId", "version", "reportingRoles", "constituent", "scheduledDate", "valuation", "matchId", "difference", "matchScore" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,26 @@
+set< T >
+========
+
+Represents an unordered set of unique objects `T`, where `T` can be any datatype.
+Uniqueness will be based on how `T` defines equality.
+
+Example:
+-   `Data : set< int >` Set of integers
+-   `Data : set< OrderItem >` Set of OrderItem objects
+
+__Optional Parameters__
+
+- Size constraint - `set< T >( min, max )`
+
+> A range can be optionally specified that can be used as the minimum and maximum number of entries permitted.
+>
+
+- `set< T , [ P1, P2, Pn ] >`
+
+> This feature is pending further development. An optional set of paths `P1` - `Pn` to nested fields of `T` can be specified that will be used to identify what constitutes uniqueness. This is useful when `T` is large object and instead of having to consider all fields when uniqueness, it can be based on a few fields.
+>
+>
+>Example:
+
+>-   `Data : set< OrderItem, [ OrderId ] >` Set of OrderItem objects using OrderId field within OrderItem to ensure uniqueness.
+>-   `Data : set< BankAccount, [ AccountNo, SortCode ] >` Set of BankAccount objects using 2 fields within BankAccount to ensure uniqueness.

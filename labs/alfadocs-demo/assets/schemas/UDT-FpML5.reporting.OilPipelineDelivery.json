@@ -1,0 +1,125 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery conditions specific to an oil product delivered by pipeline.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OilPipelineDelivery",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery conditions specific to an oil product delivered by pipeline.\n #/\nrecord FpML5.reporting.OilPipelineDelivery {\n  # The name of pipeline by which the oil product will be delivered.\n  pipelineName : string?\n\n  # The location at which the transfer of the title to the commodity takes place.\n  withdrawalPoint : string?\n\n  # The point at which the oil product will enter the pipeline.\n  entryPoint : string?\n\n  # Whether or not the delivery can go to barge. For trades documented under the ISDA Master Agreement and Oil Annex, this should always be set to 'false'.\n  deliverableByBarge : boolean?\n\n  # Specifies how the risk associated with the delivery is assigned. For trades documented under the ISDA Master Agreement and Oil Annex, this presence of this element indicates that the provisions of clause (b)(i) of the ISDA Oil Annex are being varied.\n  risk : string?\n\n  # The cycle(s) during which the oil product will be transported in the pipeline.\n  cycle : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.OilDelivery",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "pipelineName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of pipeline by which the oil product will be delivered.",
+      "Name" : "pipelineName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24599
+      }
+    },
+    "withdrawalPoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The location at which the transfer of the title to the commodity takes place.",
+      "Name" : "withdrawalPoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24602
+      }
+    },
+    "entryPoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The point at which the oil product will enter the pipeline.",
+      "Name" : "entryPoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24605
+      }
+    },
+    "deliverableByBarge" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Whether or not the delivery can go to barge. For trades documented under the ISDA Master Agreement and Oil Annex, this should always be set to 'false'.",
+      "Name" : "deliverableByBarge",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24608
+      }
+    },
+    "risk" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies how the risk associated with the delivery is assigned. For trades documented under the ISDA Master Agreement and Oil Annex, this presence of this element indicates that the provisions of clause (b)(i) of the ISDA Oil Annex are being varied.",
+      "Name" : "risk",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24611
+      }
+    },
+    "cycle" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The cycle(s) during which the oil product will be transported in the pipeline.",
+      "Name" : "cycle",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24614
+      }
+    }
+  },
+  "LocalFieldNames" : [ "pipelineName", "withdrawalPoint", "entryPoint", "deliverableByBarge", "risk", "cycle" ],
+  "IsSynthetic" : false
+}

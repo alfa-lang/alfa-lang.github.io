@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>decision table and bucketing &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="flatMap" href="flatMap.html" />
+    <link rel="prev" title="compare" href="compare.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../guide.html">Language Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../typesystem.html">Type System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressions.html">Expressions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../builtin-funcs.html">Builtin Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#collections">Collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#construction">Construction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#conversion">Conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#math">Math</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../builtin-funcs.html#generic">Generic</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="add.html">add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contains.html">contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="compare.html">compare</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">decision table and bucketing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="flatMap.html">flatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get.html">get</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indexOf.html">indexOf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="isNone.html">isNone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="isError.html">isError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="keyOf.html">keyOf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html">join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="left.html">left</a></li>
+<li class="toctree-l4"><a class="reference internal" href="len.html">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="right.html">right</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#persisted-data">Persisted Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#string">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#temporal">Temporal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../otherfeatures.html">Other Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../guide.html">Language Guide</a> &raquo;</li>
+        
+          <li><a href="../builtin-funcs.html">Builtin Functions</a> &raquo;</li>
+        
+      <li>decision table and bucketing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="decision-table-and-bucketing">
+<span id="decisiontableexpr"></span><h1>decision table and bucketing<a class="headerlink" href="#decision-table-and-bucketing" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Decision_table">Decision tables</a> are a well known technique to specify what output to produce given
+combination of input values.</p>
+<p>Bucketing is a technique where data is allocated into specified number of ‘buckets’
+based on values from the inputs. The decision table can be used to express buckets as input
+expressions.</p>
+<p>The decision table belows shows how based on the input ( Temperature, Humidity, WindSpeed),
+the output ( Sport ) will be determined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Temperature</th>
+<th class="head">Humidity</th>
+<th class="head">WindSpeed</th>
+<th class="head">SportActivity</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[ 20 .. 35 ]</td>
+<td>&lt; 85</td>
+<td>&lt; 20</td>
+<td>Tennis</td>
+</tr>
+<tr class="row-odd"><td>[ 20 .. 35 ]</td>
+<td>&lt; 85</td>
+<td>&lt; 10</td>
+<td>Cycling</td>
+</tr>
+<tr class="row-even"><td>&gt; 20</td>
+<td><code class="docutils literal notranslate"><span class="pre">*</span></code></td>
+<td>&gt; 20</td>
+<td>KiteFlying</td>
+</tr>
+<tr class="row-odd"><td>&gt; 35</td>
+<td><code class="docutils literal notranslate"><span class="pre">*</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">*</span></code></td>
+<td>Chess</td>
+</tr>
+</tbody>
+</table>
+<p>Note:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">n</span> <span class="pre">..</span> <span class="pre">m</span> <span class="pre">]</span></code> denotes a range of possible values.</li>
+<li><code class="docutils literal notranslate"><span class="pre">*</span></code> denotes a wildcard.</li>
+</ul>
+<p>ALFA supports decision table expressions to express similar decision making capabilities.
+The above table can be expressed as below.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">library</span> <span class="n">Activities</span> <span class="p">{</span>
+    <span class="n">decideSport</span><span class="p">(</span> <span class="n">temperature</span> <span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">humidity</span> <span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">wind</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">)</span> <span class="p">:</span> <span class="k">try</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">sport</span> <span class="p">=</span>
+            <span class="p">(</span> <span class="n">temperature</span><span class="p">,</span>   <span class="n">humidity</span><span class="p">,</span>   <span class="n">wind</span>  <span class="p">)</span> <span class="n">match</span> <span class="p">{</span>
+            <span class="p">(</span> <span class="p">[</span><span class="m">20</span> <span class="p">..</span> <span class="m">35</span><span class="p">]</span> <span class="p">,</span>   <span class="p">&lt;</span> <span class="m">85</span>    <span class="p">,</span>   <span class="p">&lt;</span> <span class="m">20</span>  <span class="p">)</span> <span class="p">=&gt;</span> <span class="s">&quot;Tennis&quot;</span>
+            <span class="p">(</span> <span class="p">[</span><span class="m">20</span> <span class="p">..</span> <span class="m">35</span><span class="p">]</span> <span class="p">,</span>   <span class="p">&lt;</span> <span class="m">85</span>    <span class="p">,</span>   <span class="p">&lt;</span> <span class="m">10</span>  <span class="p">)</span> <span class="p">=&gt;</span> <span class="s">&quot;Cycling&quot;</span>
+            <span class="p">(</span> <span class="p">&gt;</span> <span class="m">20</span>       <span class="p">,</span>   <span class="p">*</span>       <span class="p">,</span>   <span class="p">&gt;=</span> <span class="m">20</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="s">&quot;KiteFlying&quot;</span>
+            <span class="p">(</span> <span class="m">35</span>         <span class="p">,</span>   <span class="p">*</span>       <span class="p">,</span>   <span class="p">*</span>     <span class="p">)</span> <span class="p">=&gt;</span> <span class="s">&quot;Chess&quot;</span>
+            <span class="p">}</span>
+        <span class="k">return</span> <span class="n">sport</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>ALFA decision table syntax greatly simplifies what would normally would be expressed
+in several lines of <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> conditions.</p>
+<p>Escape analysis will be performed in future to ensure at least a single decision
+row will be matched.</p>
+<p><strong>Syntax:</strong></p>
+<p>Note:</p>
+<ul class="simple">
+<li>Syntax within <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> is mandatory.</li>
+<li>Syntax within <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code> is optional.</li>
+</ul>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="p">&lt;</span> <span class="n">comma</span> <span class="n">seperated</span> <span class="n">n</span> <span class="n">number</span> <span class="n">of</span> <span class="n">comma</span> <span class="n">seperated</span> <span class="n">input</span> <span class="n">expressions</span> <span class="p">&gt;</span>  <span class="p">)</span> <span class="n">match</span> <span class="p">[</span> <span class="n">unique</span> <span class="p">|</span> <span class="n">anyof</span> <span class="p">|</span> <span class="n">first</span> <span class="p">|</span> <span class="n">all</span> <span class="p">&gt;</span> <span class="p">]</span>
+<span class="p">{</span>
+ <span class="p">(&lt;</span> <span class="n">n</span> <span class="n">comma</span> <span class="n">separated</span> <span class="n">decision</span><span class="p">-</span><span class="n">input</span> <span class="n">rules</span> <span class="p">&gt;)</span>  <span class="p">=&gt;</span> <span class="n">expression</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The decision-input rule can be:</p>
+<ul class="simple">
+<li>A literal value to match/equal the input</li>
+<li>Not equal to a literal <code class="docutils literal notranslate"><span class="pre">!=</span> <span class="pre">&lt;value&gt;</span></code></li>
+<li>A relative expression - <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> followed by an expression</li>
+<li>A range value <code class="docutils literal notranslate"><span class="pre">['inclusive</span> <span class="pre">value'</span> <span class="pre">..</span> <span class="pre">'inclusive</span> <span class="pre">numeric</span> <span class="pre">value']</span></code></li>
+<li>Excluding a range - <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span> <span class="pre">['inclusive</span> <span class="pre">value'</span> <span class="pre">..</span> <span class="pre">'inclusive</span> <span class="pre">numeric</span> <span class="pre">value']</span></code></li>
+</ul>
+<p>The match type of <code class="docutils literal notranslate"><span class="pre">unique</span></code> | <code class="docutils literal notranslate"><span class="pre">anyof</span></code> | <code class="docutils literal notranslate"><span class="pre">first</span></code> | <code class="docutils literal notranslate"><span class="pre">all</span></code> is optional, and the default is <code class="docutils literal notranslate"><span class="pre">first</span></code>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Match type</th>
+<th class="head">Comments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>unique</td>
+<td>Only a single rule can be satisfied</td>
+</tr>
+<tr class="row-odd"><td>anyof</td>
+<td>Multiple rules can be satisfied. However, all satisfied rules must generate the same output</td>
+</tr>
+<tr class="row-even"><td>first</td>
+<td>Multiple rules can be satisfied</td>
+</tr>
+<tr class="row-odd"><td>all</td>
+<td>Multiple rules can be satisfied. Outputs returned as a list.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<p>The value returned from a decision expression is a <code class="docutils literal notranslate"><span class="pre">try&lt;T&gt;</span></code> of the output expression.</p>
+<p>For match type <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">try&lt;</span> <span class="pre">list&lt;</span> <span class="pre">T</span> <span class="pre">&gt;</span> <span class="pre">&gt;</span></code> is returned.</p>
+<p><code class="docutils literal notranslate"><span class="pre">try</span></code> is returned as the matching may fail due to invalid match.
+<code class="docutils literal notranslate"><span class="pre">isError</span></code> can be used to check if the result is valid, and <code class="docutils literal notranslate"><span class="pre">get</span></code> can be used to read the wrapped value.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

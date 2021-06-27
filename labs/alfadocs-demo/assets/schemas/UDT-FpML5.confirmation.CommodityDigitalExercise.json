@@ -1,0 +1,167 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The parameters for defining how the commodity digital option can be exercised. I differs from the CommodityExercise type in that it lacks a specification of Settlement Currency. The Settlement Currency is specified in the 'featurePayment' element.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityDigitalExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The parameters for defining how the commodity digital option can be exercised. I differs from the CommodityExercise type in that it lacks a specification of Settlement Currency. The Settlement Currency is specified in the 'featurePayment' element.\n #/\nrecord FpML5.confirmation.CommodityDigitalExercise {\n  # The parameters for defining the expiration date for an American option.\n  americanExercise : FpML5.confirmation.CommodityAmericanExercise\n\n  # The parameters for defining the expiration date and time for a European or Asian style option. For an Asian style option the expiration date is equivalent to the termination date.\n  europeanExercise : FpML5.confirmation.CommodityEuropeanExercise\n\n  # Specifies whether or not Automatic Exercise applies to a Commodity Option Transaction.\n  automaticExercise : boolean?\n\n  # Specifies whether or not Written Confirmation applies to a Commodity Option Transaction.\n  writtenConfirmation : boolean?\n\n  # The Payment Dates of the trade relative to the Calculation Periods.\n  relativePaymentDates : FpML5.confirmation.CommodityRelativePaymentDates\n\n  # Dates on which payments will be made.\n  paymentDates : FpML5.confirmation.AdjustableDatesOrRelativeDateOffset\n\n  # If present and true indicates that the Payment Date(s) are specified in the relevant master agreement.\n  masterAgreementPaymentDates : boolean\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityDigitalOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "americanExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters for defining the expiration date for an American option.",
+      "Name" : "americanExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityAmericanExercise",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityAmericanExercise",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityAmericanExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18598
+      }
+    },
+    "europeanExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters for defining the expiration date and time for a European or Asian style option. For an Asian style option the expiration date is equivalent to the termination date.",
+      "Name" : "europeanExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityEuropeanExercise",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityEuropeanExercise",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityEuropeanExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18601
+      }
+    },
+    "automaticExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether or not Automatic Exercise applies to a Commodity Option Transaction.",
+      "Name" : "automaticExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18604
+      }
+    },
+    "writtenConfirmation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether or not Written Confirmation applies to a Commodity Option Transaction.",
+      "Name" : "writtenConfirmation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18607
+      }
+    },
+    "relativePaymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Payment Dates of the trade relative to the Calculation Periods.",
+      "Name" : "relativePaymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.CommodityRelativePaymentDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.CommodityRelativePaymentDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommodityRelativePaymentDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18610
+      }
+    },
+    "paymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Dates on which payments will be made.",
+      "Name" : "paymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableDatesOrRelativeDateOffset",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableDatesOrRelativeDateOffset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableDatesOrRelativeDateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18613
+      }
+    },
+    "masterAgreementPaymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and true indicates that the Payment Date(s) are specified in the relevant master agreement.",
+      "Name" : "masterAgreementPaymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 18616
+      }
+    }
+  },
+  "LocalFieldNames" : [ "americanExercise", "europeanExercise", "automaticExercise", "writtenConfirmation", "relativePaymentDates", "paymentDates", "masterAgreementPaymentDates" ],
+  "IsSynthetic" : false
+}

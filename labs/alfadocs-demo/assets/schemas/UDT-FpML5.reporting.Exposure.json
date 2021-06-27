@@ -1,0 +1,76 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Consists of two elements, the first MarkToMarkExposureParty supports the definition of which party is the exposed party and which is the obligated party. Within FpML it is important to state both parties roll in the exposure details to avoid ambiguity. The parties referenced should be one of those defined in the Parties element. Therefore if Party A is the exposed party there Party Reference ID would be quoted and Party B would be the obligated party. The second element is the exposureAmount this is the amount to which the exposed party is exposed. This uses the Money type that can take but an amount and a currency.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Exposure",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Consists of two elements, the first MarkToMarkExposureParty supports the definition of which party is the exposed party and which is the obligated party. Within FpML it is important to state both parties roll in the exposure details to avoid ambiguity. The parties referenced should be one of those defined in the Parties element. Therefore if Party A is the exposed party there Party Reference ID would be quoted and Party B would be the obligated party. The second element is the exposureAmount this is the amount to which the exposed party is exposed. This uses the Money type that can take but an amount and a currency.\n #/\nrecord FpML5.reporting.Exposure {\n  # The party that is exposed.\n  exposedPartyReference : FpML5.reporting.PartyReference?\n\n  # The party that is obligated..\n  obligatedPartyReference : FpML5.reporting.PartyReference?\n\n  exposureAmount : FpML5.reporting.Money?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MarkToMarket",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "exposedPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party that is exposed.",
+      "Name" : "exposedPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24008
+      }
+    },
+    "obligatedPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party that is obligated..",
+      "Name" : "obligatedPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24011
+      }
+    },
+    "exposureAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "exposureAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24014
+      }
+    }
+  },
+  "LocalFieldNames" : [ "exposedPartyReference", "obligatedPartyReference", "exposureAmount" ],
+  "IsSynthetic" : false
+}

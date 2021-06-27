@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defined the conditions under which the digital option can triggers and, if triggered, what payment results.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityDigital",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defined the conditions under which the digital option can triggers and, if triggered, what payment results.\n #/\nrecord FpML5.recordkeeping.CommodityDigital {\n  trigger : FpML5.recordkeeping.CommodityTrigger?\n\n  # The cash payment that is made when the digital barrier is breached.\n  featurePaymentAmount : FpML5.recordkeeping.PositiveMoney?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityDigitalOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "trigger" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "trigger",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityTrigger",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 764
+      }
+    },
+    "featurePaymentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The cash payment that is made when the digital barrier is breached.",
+      "Name" : "featurePaymentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PositiveMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 766
+      }
+    }
+  },
+  "LocalFieldNames" : [ "trigger", "featurePaymentAmount" ],
+  "IsSynthetic" : false
+}

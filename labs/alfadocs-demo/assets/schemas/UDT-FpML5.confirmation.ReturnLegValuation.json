@@ -1,0 +1,148 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the initial and final valuation of the underlyer.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ReturnLegValuation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the initial and final valuation of the underlyer.\n #/\nrecord FpML5.confirmation.ReturnLegValuation {\n  # Specifies the initial reference price of the underlyer. This price can be expressed either as an actual amount/currency, as a determination method, or by reference to another value specified in the swap document.\n  initialPrice : FpML5.confirmation.ReturnLegValuationPrice\n\n  # For return swaps, this element is equivalent to the term \"Equity Notional Reset\" as defined in the ISDA 2002 Equity Derivatives Definitions. The reference to the ISDA definition is either \"Applicable\" or 'Inapplicable\".\n  notionalReset : boolean?\n\n  # Specifies the final valuation price of the underlyer. This price can be expressed either as an actual amount/currency, as a determination method, or by reference to another value specified in the swap document.\n  valuationPriceInterim : FpML5.confirmation.ReturnLegValuationPrice?\n\n  # Specifies the final valuation price of the underlyer. This price can be expressed either as an actual amount/currency, as a determination method, or by reference to another value specified in the swap document.\n  valuationPriceFinal : FpML5.confirmation.ReturnLegValuationPrice\n\n  # Specifies the payment dates of the swap.\n  paymentDates : FpML5.confirmation.ReturnSwapPaymentDates\n\n  # References a Contract on the Exchange.\n  exchangeTradedContractNearest : FpML5.confirmation.ExchangeTradedContract?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ReturnLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "initialPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the initial reference price of the underlyer. This price can be expressed either as an actual amount/currency, as a determination method, or by reference to another value specified in the swap document.",
+      "Name" : "initialPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ReturnLegValuationPrice",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ReturnLegValuationPrice",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ReturnLegValuationPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13527
+      }
+    },
+    "notionalReset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For return swaps, this element is equivalent to the term \"Equity Notional Reset\" as defined in the ISDA 2002 Equity Derivatives Definitions. The reference to the ISDA definition is either \"Applicable\" or 'Inapplicable\".",
+      "Name" : "notionalReset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13530
+      }
+    },
+    "valuationPriceInterim" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the final valuation price of the underlyer. This price can be expressed either as an actual amount/currency, as a determination method, or by reference to another value specified in the swap document.",
+      "Name" : "valuationPriceInterim",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ReturnLegValuationPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13533
+      }
+    },
+    "valuationPriceFinal" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the final valuation price of the underlyer. This price can be expressed either as an actual amount/currency, as a determination method, or by reference to another value specified in the swap document.",
+      "Name" : "valuationPriceFinal",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ReturnLegValuationPrice",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ReturnLegValuationPrice",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ReturnLegValuationPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13536
+      }
+    },
+    "paymentDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the payment dates of the swap.",
+      "Name" : "paymentDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ReturnSwapPaymentDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ReturnSwapPaymentDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ReturnSwapPaymentDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13539
+      }
+    },
+    "exchangeTradedContractNearest" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "References a Contract on the Exchange.",
+      "Name" : "exchangeTradedContractNearest",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ExchangeTradedContract",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13542
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialPrice", "notionalReset", "valuationPriceInterim", "valuationPriceFinal", "paymentDates", "exchangeTradedContractNearest" ],
+  "IsSynthetic" : false
+}

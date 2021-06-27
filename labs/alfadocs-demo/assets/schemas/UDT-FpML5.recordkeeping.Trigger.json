@@ -1,0 +1,131 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Trigger point at which feature is effective.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Trigger",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Trigger point at which feature is effective.\n #/\nrecord FpML5.recordkeeping.Trigger {\n  # The trigger level.\n  level : decimal\n\n  # The trigger level percentage.\n  levelPercentage : decimal\n\n  creditEvents : FpML5.recordkeeping.CreditEvents\n\n  creditEventsReference : FpML5.recordkeeping.CreditEventsReference\n\n  # The Triggering condition.\n  triggerType : string?\n\n  # The valuation time type of knock condition.\n  triggerTimeType : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.TriggerEvent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "level" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trigger level.",
+      "Name" : "level",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13250
+      }
+    },
+    "levelPercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trigger level percentage.",
+      "Name" : "levelPercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13253
+      }
+    },
+    "creditEvents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creditEvents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CreditEvents",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CreditEvents",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CreditEvents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13256
+      }
+    },
+    "creditEventsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creditEventsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CreditEventsReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CreditEventsReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CreditEventsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13258
+      }
+    },
+    "triggerType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Triggering condition.",
+      "Name" : "triggerType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13260
+      }
+    },
+    "triggerTimeType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The valuation time type of knock condition.",
+      "Name" : "triggerTimeType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 13263
+      }
+    }
+  },
+  "LocalFieldNames" : [ "level", "levelPercentage", "creditEvents", "creditEventsReference", "triggerType", "triggerTimeType" ],
+  "IsSynthetic" : false
+}

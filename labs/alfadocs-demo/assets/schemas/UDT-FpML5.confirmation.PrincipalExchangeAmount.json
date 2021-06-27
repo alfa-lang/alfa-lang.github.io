@@ -1,0 +1,85 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies the principal exchange amount, either by explicitly defining it, or by point to an amount defined somewhere else in the swap document.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PrincipalExchangeAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies the principal exchange amount, either by explicitly defining it, or by point to an amount defined somewhere else in the swap document.\n #/\nrecord FpML5.confirmation.PrincipalExchangeAmount {\n  # Reference to an amount defined elsewhere in the document.\n  amountRelativeTo : FpML5.confirmation.AmountReference\n\n  # Specifies the method according to which an amount or a date is determined.\n  determinationMethod : string\n\n  # Principal exchange amount when explictly stated.\n  principalAmount : FpML5.confirmation.NonNegativeMoney\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PrincipalExchangeDescriptions",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "amountRelativeTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to an amount defined elsewhere in the document.",
+      "Name" : "amountRelativeTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AmountReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AmountReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AmountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30990
+      }
+    },
+    "determinationMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the method according to which an amount or a date is determined.",
+      "Name" : "determinationMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30993
+      }
+    },
+    "principalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Principal exchange amount when explictly stated.",
+      "Name" : "principalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 30996
+      }
+    }
+  },
+  "LocalFieldNames" : [ "amountRelativeTo", "determinationMethod", "principalAmount" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,46 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "The method of calculation to be used when averaging rates. Per ISDA 2000 Definitions, Section 6.2. Certain Definitions Relating to Floating Amounts.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.AveragingMethodEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n The method of calculation to be used when averaging rates. Per ISDA 2000 Definitions, Section 6.2. Certain Definitions Relating to Floating Amounts.\n #/\nenum FpML5.recordkeeping.AveragingMethodEnum {\n    # The arithmetic mean of the relevant rates for each reset date.\n    Unweighted \n    # The arithmetic mean of the relevant rates in effect for each day in a calculation period calculated by multiplying each relevant rate by the number of days such relevant rate is in effect, determining the sum of such products and dividing such sum by the number of days in the calculation period.\n    Weighted \n\n}"
+  },
+  "AllFields" : {
+    "Unweighted" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The arithmetic mean of the relevant rates for each reset date.",
+      "Name" : "Unweighted",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20491
+      }
+    },
+    "Weighted" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The arithmetic mean of the relevant rates in effect for each day in a calculation period calculated by multiplying each relevant rate by the number of days such relevant rate is in effect, determining the sum of such products and dividing such sum by the number of days in the calculation period.",
+      "Name" : "Weighted",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 20493
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Unweighted", "Weighted" ],
+  "IsSynthetic" : false
+}

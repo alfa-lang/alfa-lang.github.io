@@ -1,0 +1,99 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The environmental physical leg describes the nature of the physical underlying, quantities and delivery conditions relating to environmental allowances and certificates such as EU emissions allowances, water pollution credits and the like.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.EnvironmentalPhysicalLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The environmental physical leg describes the nature of the physical underlying, quantities and delivery conditions relating to environmental allowances and certificates such as EU emissions allowances, water pollution credits and the like.\n #/\nrecord FpML5.transparency.EnvironmentalPhysicalLeg {\n  # The number of allowances, certificates or credit to be transaction in the transaction.\n  numberOfAllowances : FpML5.transparency.UnitQuantity\n\n  # The specification of the type of allowance or credit.\n  environmental : FpML5.transparency.EnvironmentalProduct\n\n  # Applies to U.S. Emissions Allowance Transactions. Specifies terms which apply in the event of an Abandonment of Scheme event.\n  abandonmentOfScheme : string?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "numberOfAllowances" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of allowances, certificates or credit to be transaction in the transaction.",
+      "Name" : "numberOfAllowances",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.UnitQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.UnitQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.UnitQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10467
+      }
+    },
+    "environmental" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specification of the type of allowance or credit.",
+      "Name" : "environmental",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.EnvironmentalProduct",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.EnvironmentalProduct",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.EnvironmentalProduct",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10470
+      }
+    },
+    "abandonmentOfScheme" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Applies to U.S. Emissions Allowance Transactions. Specifies terms which apply in the event of an Abandonment of Scheme event.",
+      "Name" : "abandonmentOfScheme",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10473
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 10476
+      }
+    }
+  },
+  "LocalFieldNames" : [ "numberOfAllowances", "environmental", "abandonmentOfScheme", "id" ],
+  "IsSynthetic" : false
+}

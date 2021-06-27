@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.ExpectedCollateralDeliveryReturn {\n  deliver : list< FpML5.reporting.ExpectedCollateralDelivery >?\n\n  return : FpML5.reporting.ProposedCollateralDeliveryReturn?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateral",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralResponse",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "deliver" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "deliver",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ListDataType",
+          "ComponentType" : {
+            "@type" : "alfa.rt.model.UdtDataType",
+            "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateralDelivery",
+            "UdtType" : "recordType"
+          }
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19795
+      }
+    },
+    "return" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "return",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19797
+      }
+    }
+  },
+  "LocalFieldNames" : [ "deliver", "return" ],
+  "IsSynthetic" : false
+}

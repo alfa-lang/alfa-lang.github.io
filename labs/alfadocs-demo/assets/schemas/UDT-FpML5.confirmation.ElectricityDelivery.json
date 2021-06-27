@@ -1,0 +1,122 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery conditions for electricity.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityDelivery",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery conditions for electricity.\n #/\nrecord FpML5.confirmation.ElectricityDelivery {\n  # The point at which delivery of the electricity will occur.\n  deliveryPoint : string\n\n  # Indicates the under what conditions the Parties' delivery obligations apply.\n  deliveryType : FpML5.confirmation.ElectricityDeliveryType?\n\n  # Indicates that the performance of the buyer or seller shall be excused (under the conditions specified) if transmission of the elctricity is unavailable or interrupted.\n  transmissionContingency : FpML5.confirmation.ElectricityTransmissionContingency?\n\n  # Identification of the border(s) or border point(s) of a transportation contract.\n  interconnectionPoint : string?\n\n  # The zone covering potential delivery points for the electricity.\n  deliveryZone : string\n\n  # Indicates the party able to decide which delivery point within the deliveryPoint is used for delivery. For EEI transactions, this should reference the seller of the electricity.\n  electingPartyReference : FpML5.confirmation.PartyReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "deliveryPoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The point at which delivery of the electricity will occur.",
+      "Name" : "deliveryPoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20915
+      }
+    },
+    "deliveryType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the under what conditions the Parties' delivery obligations apply.",
+      "Name" : "deliveryType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ElectricityDeliveryType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20918
+      }
+    },
+    "transmissionContingency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that the performance of the buyer or seller shall be excused (under the conditions specified) if transmission of the elctricity is unavailable or interrupted.",
+      "Name" : "transmissionContingency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ElectricityTransmissionContingency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20921
+      }
+    },
+    "interconnectionPoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the border(s) or border point(s) of a transportation contract.",
+      "Name" : "interconnectionPoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20924
+      }
+    },
+    "deliveryZone" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The zone covering potential delivery points for the electricity.",
+      "Name" : "deliveryZone",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20927
+      }
+    },
+    "electingPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the party able to decide which delivery point within the deliveryPoint is used for delivery. For EEI transactions, this should reference the seller of the electricity.",
+      "Name" : "electingPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20930
+      }
+    }
+  },
+  "LocalFieldNames" : [ "deliveryPoint", "deliveryType", "transmissionContingency", "interconnectionPoint", "deliveryZone", "electingPartyReference" ],
+  "IsSynthetic" : false
+}

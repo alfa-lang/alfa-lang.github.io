@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining the merger events and their treatment.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquityCorporateEvents",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining the merger events and their treatment.\n #/\nrecord FpML5.reporting.EquityCorporateEvents {\n  # The consideration paid for the original shares following the Merger Event consists wholly of new shares.\n  shareForShare : string?\n\n  # The consideration paid for the original shares following the Merger Event consists wholly of cash/securities other than new shares.\n  shareForOther : string?\n\n  # The consideration paid for the original shares following the Merger Event consists of both cash/securities and new shares.\n  shareForCombined : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExtraordinaryEvents",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "shareForShare" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The consideration paid for the original shares following the Merger Event consists wholly of new shares.",
+      "Name" : "shareForShare",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3487
+      }
+    },
+    "shareForOther" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The consideration paid for the original shares following the Merger Event consists wholly of cash/securities other than new shares.",
+      "Name" : "shareForOther",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3490
+      }
+    },
+    "shareForCombined" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The consideration paid for the original shares following the Merger Event consists of both cash/securities and new shares.",
+      "Name" : "shareForCombined",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3493
+      }
+    }
+  },
+  "LocalFieldNames" : [ "shareForShare", "shareForOther", "shareForCombined" ],
+  "IsSynthetic" : false
+}

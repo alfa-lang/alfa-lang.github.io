@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The allocations for a single side of a trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Allocations",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The allocations for a single side of a trade.\n #/\nrecord FpML5.recordkeeping.Allocations {\n  # A pointer style reference to one of the parties to the trade, defined elsewhere in the document. The party referenced has requested its position in the trade to be allocated to several other parties or accounts.\n  allocatingPartyReference : FpML5.recordkeeping.PartyReference?\n\n  allocation : FpML5.recordkeeping.Allocation?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Trade",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "allocatingPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to one of the parties to the trade, defined elsewhere in the document. The party referenced has requested its position in the trade to be allocated to several other parties or accounts.",
+      "Name" : "allocatingPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14369
+      }
+    },
+    "allocation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "allocation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Allocation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14372
+      }
+    }
+  },
+  "LocalFieldNames" : [ "allocatingPartyReference", "allocation" ],
+  "IsSynthetic" : false
+}

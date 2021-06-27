@@ -1,0 +1,147 @@
+# Data Model Tests
+
+### Introduction
+
+Functional testing is an important part of data model development. Errors in the model can have major consequences
+in the correct behaviour of software that is developed using the model. ALFA has a number of features where logic
+can be expressed - constraints, data quality rules, library functions etc. These need to be tested to ensure their
+correct behaviour.
+
+To aid with functional testing, ALFA includes built-in support to define tests alongside model definitions.
+The testing capabilities will be extended to include test coverage reports to ensure that users have a complete
+picture on completeness of model testing.
+
+Having very high or full test coverage should be an assurance to data model consumers of the completeness and
+correctness of the model and rules expressed within. Naturally, these tests can form part of regression testing.
+
+
+### Testing Areas
+
+Models expressed in ALFA have several areas that can be of interest for testing.
+This list is not exhaustive, but highlights some areas worth considering for data model testing.
+
+> 1. Creating a new user-defined-type.
+>    - E.g. Valid numeric values, valid enumeration constants
+> 2. Valid data-type constraints.
+>    - E.g. Valid string size, valid collection size, valid value ranges.
+>    - `string(3,3)`, `list<int>(1,*)`, `int(0,100)`
+> 3. Validate correct `assert` behaviour.
+> 4. Validate :ref:`libraryType` function behaviour.
+> 5. Correct :ref:`serviceType` function operation.
+> 6. Date, time values far in the past or future, or 'edge' values - 00:00, 23:59:59:999, leap years etc.
+> 7. Handing unexpected values.
+>    - Empty strings
+>    - Empty collections ( :ref:`listVectorType`, :ref:`setVectorType`, :ref:`mapVectorType` )
+>    - Negative or zero values
+>    - Optional types with no values
+>    - :ref:`tryType` type values with errors
+
+
+### Support for Testing
+
+> Tests are authored using 2 newly introduced features in ALFA.
+>    1. A new built-in :ref:`serviceType` that executes tests.
+>    2. A new `test` user-defined-type.
+
+#### 1. Test Scenario service
+
+The new `alfa.test.Scenario` :ref:`serviceType` exposes number of methods that can be used to compose tests.
+
+
+```csharp
+// This service is passed into methods that are part of a 'test' user-defined-type. Number of method are available to
+// formula data required for a test, and execute functionality and assert expected results.
+service alfa.test.Scenario() {
+
+    // The specified entity object is available within the test to be accessed via the 'query' or 'lookup' functions.
+    given( description : string, data : dollarentity ) : void
+
+    // Load JSON files from the path specified (file, or directory), and those entity objects are available within the
+    // test to be accessed via the 'query' or 'lookup' functions.
+    givenAll( description : string, path : string ) : void
+
+    // The specified service is available in the context of this Scenario as a mocked service.
+    // When invoked, returns a random value from the results list.
+    with( description : string, srv : dollarservice, results : map< FunctionName : string, ReturnValues : list< string > > ) : void
+
+    // When the testBody is executed, no error is expected and completes normally
+    pass( description : string, testBody : func<(), void > ) : void
+
+    // When the testBody is executed, an error is expected.
+    // This method should be used when the exact error message expected can be implementation specific (E.g.Java, Python etc)
+    fail( description : string, testBody : func<(), void > ) : void
+
+    // When the testBody is executed, an error is expected on the field specified by the 'errorFieldPath' field
+    failOn( description : string, testBody : func<(), void >, expectedErrorFieldPath : string ) : void
+
+    // When the testBody is executed, an error is expected with the message being reported
+    failWith( description : string, testBody : func<(), void >, expectedErrorMessage : string ) : void
+
+    // Assert the lambda returns true
+    assertTrue( description : string, testBody : func<(), boolean > ) : void
+
+    // Create a random object of the given type
+    random( typeName : string ) : dollarudt
+}
+```
+
+Note the `testBody` argument in `testBody : func<(), void >` is a lambda expression that is executed to validate the
+behaviour of the test. This can be a single expression or a code block as `{ ... }`.
+
+
+#### 2. Test Definition
+
+A `testcase` definition allow tests to be expressed as a 'Feature' containing 'Scenarios' containing predefined
+conditions and expected behaviour.
+
+A `testcase` definition is syntactically identical to a :ref:`libraryType`. All functions within a `testcase`
+accept one parameter of type `alfa.test.Scenario`. The `Scenario` service methods are invoked to assert
+the expected behaviour.
+
+```csharp
+testcase NameOfTestFeature {
+    testScenario1( s : alfa.test.Scenario ) : void {
+        // invoke methods on argument 's' to perform testing
+    }
+
+    testScenario2( s : alfa.test.Scenario ) : void {
+        // invoke methods on argument 's' to perform testing
+    }
+}
+
+```
+
+Note the `alfa.test.Scenario` object is valid only for the duration of the method. Each method call will have a new
+instance of the `Scenario` object created.
+
+Users are free to choose a naming strategy for tests. For improving coverage, a `testcase` per user-defined-type can
+be followed as a convention. Tools to enforce availability of tests and test coverage expectations are currently
+being developed.
+
+##### Example Test
+
+```csharp
+testcase FeatureTestDemo {
+    divideByZero( s : alfa.test.Scenario ) : void {
+        // Assert that 10 divide 0 causes a failure
+        s::fails("Divide by zero", ( ) => MathLib::divide( 10, 0 ) )
+    }
+
+    validatePerson( s : alfa.test.Scenario ) : void {
+        // Assert a new Person object can be created
+        s::pass("A Person object can be created", ( ) =>  new Example.Person( "Bob", 20 )  )
+
+        // Assert a new Person with age set to 150 fails ( due to constraints set )
+        s::failsWith("Person object age constraint upto 120", ( ) =>  new Person("Bob", 150 ), "Invalid age 150" )
+    }
+}
+```
+
+### Upcoming Testing Features
+
+> As the core support for ALFA Tests is nearing completion, the following features will be introduced in future releases.
+>
+>    1. The ALFA Randomiser will be extended to overwrite certain fields of interest for testing, reducing code for writing tests.
+>    2. A new `ALFA Test Coverage' Tool will enable specifying what type of coverage is expected and provide reports on current coverage.
+>    3. IDE Integration - the Test Runner and Coverage Tool will be integrated to the ALFA Editor plugin.
+>    4. A new 'Performance Test Data' Tool - using ALFA Randomiser with hints to generate large samples of data that can be used simulate large volumes of data.

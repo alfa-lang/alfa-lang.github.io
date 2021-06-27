@@ -1,0 +1,88 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "Defines the fee type.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FeeElectionEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n Defines the fee type.\n #/\nenum FpML5.reporting.FeeElectionEnum {\n    # The product of (i) the Break Fee Rate multiplied by (ii) the Equity Notional Amount corresponding to the Early Termination Portion.\n    FlatFee \n    # The product of (i) the Break Fee Rate multiplied by (ii) the Equity Notional Amount corresponding to the Early Termination Portion multiplied by (iii) the number of days from the Early Termination Date to the later of the Termination Date or the Cash Settlement Payment Date corresponding to the latest Valuation Date.\n    AmortizedFee \n    # The product of (i) the Equity Notional Amount corresponding to the Early Termination Portion multiplied by (ii) the Break Funding Rate multiplied by (iii) the number of days from the Early Termination Date to the next scheduled Reset Date divided by (iv) a number equivalent to the denominator of the Day Count Fraction applicable to the Floating Rate Option.\n    FundingFee \n    # Both Flat Fee and Funding Fee are applicable.\n    FlatFeeAndFundingFee \n    # Amortized Fee and Funding Fee are applicable.\n    AmortizedFeeAndFundingFee \n\n}"
+  },
+  "AllFields" : {
+    "FlatFee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The product of (i) the Break Fee Rate multiplied by (ii) the Equity Notional Amount corresponding to the Early Termination Portion.",
+      "Name" : "FlatFee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8889
+      }
+    },
+    "AmortizedFee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The product of (i) the Break Fee Rate multiplied by (ii) the Equity Notional Amount corresponding to the Early Termination Portion multiplied by (iii) the number of days from the Early Termination Date to the later of the Termination Date or the Cash Settlement Payment Date corresponding to the latest Valuation Date.",
+      "Name" : "AmortizedFee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8891
+      }
+    },
+    "FundingFee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The product of (i) the Equity Notional Amount corresponding to the Early Termination Portion multiplied by (ii) the Break Funding Rate multiplied by (iii) the number of days from the Early Termination Date to the next scheduled Reset Date divided by (iv) a number equivalent to the denominator of the Day Count Fraction applicable to the Floating Rate Option.",
+      "Name" : "FundingFee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8893
+      }
+    },
+    "FlatFeeAndFundingFee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Both Flat Fee and Funding Fee are applicable.",
+      "Name" : "FlatFeeAndFundingFee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8895
+      }
+    },
+    "AmortizedFeeAndFundingFee" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Amortized Fee and Funding Fee are applicable.",
+      "Name" : "AmortizedFeeAndFundingFee",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 8897
+      }
+    }
+  },
+  "LocalFieldNames" : [ "FlatFee", "AmortizedFee", "FundingFee", "FlatFeeAndFundingFee", "AmortizedFeeAndFundingFee" ],
+  "IsSynthetic" : false
+}

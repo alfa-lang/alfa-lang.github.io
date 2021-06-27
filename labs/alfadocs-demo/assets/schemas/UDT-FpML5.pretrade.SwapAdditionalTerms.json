@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Additional terms to a swap contract. - For use with pre-trade Credit Limit Check messages.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.SwapAdditionalTerms",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Additional terms to a swap contract. - For use with pre-trade Credit Limit Check messages.\n #/\nrecord FpML5.pretrade.SwapAdditionalTerms {\n  # Reference to a bond underlyer to represent an asset swap or Condition Precedent Bond.\n  bondReference : FpML5.pretrade.BondReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Swap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "bondReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to a bond underlyer to represent an asset swap or Condition Precedent Bond.",
+      "Name" : "bondReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.BondReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 4575
+      }
+    }
+  },
+  "LocalFieldNames" : [ "bondReference" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,86 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SubstituteCollateral",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.SubstituteCollateral {\n  # return details for substitute collateral\n  return : FpML5.reporting.ProposedCollateralDeliveryReturn\n\n  # return details for substitute collateral\n  deliver : FpML5.reporting.ProposedCollateralDeliveryReturn\n\n  substitutionAmount : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RequestSubstitution",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "return" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "return details for substitute collateral",
+      "Name" : "return",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14023
+      }
+    },
+    "deliver" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "return details for substitute collateral",
+      "Name" : "deliver",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralDeliveryReturn",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14026
+      }
+    },
+    "substitutionAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "substitutionAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14029
+      }
+    }
+  },
+  "LocalFieldNames" : [ "return", "deliver", "substitutionAmount" ],
+  "IsSynthetic" : false
+}

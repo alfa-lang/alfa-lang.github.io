@@ -1,0 +1,84 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that represents how to contact an individual or organization.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ContactInformation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that represents how to contact an individual or organization.\n #/\nrecord FpML5.recordkeeping.ContactInformation {\n  # A telephonic contact.\n  telephone : FpML5.recordkeeping.TelephoneNumber?\n\n  # An address on an electronic mail or messaging sysem .\n  email : string?\n\n  # A postal or street address.\n  address : FpML5.recordkeeping.Address?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.BusinessUnit",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Party",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Person",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "telephone" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A telephonic contact.",
+      "Name" : "telephone",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TelephoneNumber",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2289
+      }
+    },
+    "email" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An address on an electronic mail or messaging sysem .",
+      "Name" : "email",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2292
+      }
+    },
+    "address" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A postal or street address.",
+      "Name" : "address",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Address",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2295
+      }
+    }
+  },
+  "LocalFieldNames" : [ "telephone", "email", "address" ],
+  "IsSynthetic" : false
+}

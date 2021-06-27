@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the Weather Index Level or Weather Index Strike Level.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.WeatherIndex",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the Weather Index Level or Weather Index Strike Level.\n #/\nrecord FpML5.confirmation.WeatherIndex {\n  # This is the Reference Level. The CDD, HDD or HDD Reference Level is specified as the number of (amount of) Weather Index Units specified by the parties in the related Confirmation.\n  quantity : decimal\n\n  # Weather Index Unit derived from one of the following variable methods of determination: Cooling Degree Day (CDD), Heating Degree Day (HDD), Critical Precipitation Day (CPD) as defined in Section 11.15 of the 2005 ISDA Commodity Definitions and User Guide.\n  unit : string\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.WeatherLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "quantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the Reference Level. The CDD, HDD or HDD Reference Level is specified as the number of (amount of) Weather Index Units specified by the parties in the related Confirmation.",
+      "Name" : "quantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27106
+      }
+    },
+    "unit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Weather Index Unit derived from one of the following variable methods of determination: Cooling Degree Day (CDD), Heating Degree Day (HDD), Critical Precipitation Day (CPD) as defined in Section 11.15 of the 2005 ISDA Commodity Definitions and User Guide.",
+      "Name" : "unit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27109
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 27112
+      }
+    }
+  },
+  "LocalFieldNames" : [ "quantity", "unit", "id" ],
+  "IsSynthetic" : false
+}

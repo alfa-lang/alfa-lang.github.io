@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fields &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="include" href="include.html" />
+    <link rel="prev" title="Type System" href="../typesystem.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../guide.html">Language Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../typesystem.html">Type System</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../typesystem.html#top-level-constructs">Top level constructs</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="include.html">include</a></li>
+<li class="toctree-l4"><a class="reference internal" href="import.html">import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace.html">namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedefs.html">typedefs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../typesystem.html#user-defined-types">User-defined types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../typesystem.html#scalar-types">Scalar types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../typesystem.html#vector-and-composite-types">Vector and composite types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../typesystem.html#auxiliary-types">Auxiliary types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../expressions/expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressions/builtin-funcs.html">Builtin Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otherfeatures.html">Other Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../guide.html">Language Guide</a> &raquo;</li>
+        
+          <li><a href="../typesystem.html">Type System</a> &raquo;</li>
+        
+      <li>fields</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fields">
+<span id="fieldsexpr"></span><h1>fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h1>
+<p>A <code class="docutils literal notranslate"><span class="pre">fields</span></code> declaration can be used to declare reuable field definitions similar to a data dictionary.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fields</span></code> is a top level declaration and its entries are available for use in any UDT (User Defined Type).</p>
+<p>Once fields are declared, they can be used in UDT definitions without having to declare the data type. Declarations can include a default value, as shown in the Currency field below.</p>
+<p>When used in UDTs, declarations from <code class="docutils literal notranslate"><span class="pre">fields</span></code> can co-exist with those fully declared with datatypes.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">fields</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">Currency</span> <span class="p">:</span> <span class="kt">string</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="p">=</span> <span class="s">&quot;USD&quot;</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Person</span> <span class="p">{</span>
+    <span class="n">Name</span>
+    <span class="n">Age</span> <span class="p">:</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Cost</span> <span class="p">{</span>
+    <span class="n">Price</span> <span class="p">:</span> <span class="kt">double</span>
+    <span class="n">Currency</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Use of <code class="docutils literal notranslate"><span class="pre">fields</span></code> is optional. However, its use can encourage creation of a more consistent data models.</p>
+<p>Entries from <code class="docutils literal notranslate"><span class="pre">fields</span></code> can be used anywhere a field or service method parameter needs to be declared. In the example below, field declarations x, y and z are used in a <code class="docutils literal notranslate"><span class="pre">record</span></code> and <code class="docutils literal notranslate"><span class="pre">service</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">fields</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="p">:</span> <span class="kt">double</span>
+    <span class="n">y</span> <span class="p">:</span> <span class="kt">double</span>
+    <span class="n">z</span> <span class="p">:</span> <span class="kt">double</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Point2D</span> <span class="p">{</span> <span class="n">x</span> <span class="n">y</span> <span class="p">}</span>
+
+<span class="k">service</span> <span class="n">Robot</span> <span class="p">{</span>
+    <span class="n">reposition</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The roles of the parties in reporting information such as positions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReportingRoles",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The roles of the parties in reporting information such as positions.\n #/\nrecord FpML5.reporting.ReportingRoles {\n  # A reference to the party from whose perspective the position is valued, ie. the owner or holder of the position.\n  baseParty : FpML5.reporting.PartyReference?\n\n  # A reference to the party from whose perspective the position is valued, ie. the owner or holder of the position.\n  baseAccount : FpML5.reporting.AccountReference?\n\n  # A reference to the party responsible for reporting trading activities.\n  activityProvider : FpML5.reporting.PartyReference?\n\n  # A reference to the party responsible for reporting the position itself and its constituents.\n  positionProvider : FpML5.reporting.PartyReference?\n\n  # A reference to the party responsible for calculating and reporting the valuations of the positions.\n  valuationProvider : FpML5.reporting.PartyReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AssertedPosition",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DefinePosition",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Position",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionProposedMatch",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReportedPosition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "baseParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party from whose perspective the position is valued, ie. the owner or holder of the position.",
+      "Name" : "baseParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17912
+      }
+    },
+    "baseAccount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party from whose perspective the position is valued, ie. the owner or holder of the position.",
+      "Name" : "baseAccount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AccountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17915
+      }
+    },
+    "activityProvider" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for reporting trading activities.",
+      "Name" : "activityProvider",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17918
+      }
+    },
+    "positionProvider" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for reporting the position itself and its constituents.",
+      "Name" : "positionProvider",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17921
+      }
+    },
+    "valuationProvider" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the party responsible for calculating and reporting the valuations of the positions.",
+      "Name" : "valuationProvider",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17924
+      }
+    }
+  },
+  "LocalFieldNames" : [ "baseParty", "baseAccount", "activityProvider", "positionProvider", "valuationProvider" ],
+  "IsSynthetic" : false
+}

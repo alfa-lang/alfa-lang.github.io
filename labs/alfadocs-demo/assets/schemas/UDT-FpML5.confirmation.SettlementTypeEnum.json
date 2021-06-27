@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "Shows how the transaction is to be settled when it is exercised.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SettlementTypeEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n Shows how the transaction is to be settled when it is exercised.\n #/\nenum FpML5.confirmation.SettlementTypeEnum {\n    # The intrinsic value of the option will be delivered by way of a cash settlement amount determined, (i) by reference to the differential between the strike price and the settlement price; or (ii) in accordance with a bilateral agreement between the parties\n    Cash \n    # The securities underlying the transaction will be delivered by (i) in the case of a call, the seller to the buyer, or (ii) in the case of a put, the buyer to the seller versus a settlement amount equivalent to the strike price per share\n    Physical \n    # Allow Election of either Cash or Physical settlement\n    Election \n    # Allow use of either Cash or Physical settlement without prior Election\n    CashOrPhysical \n\n}"
+  },
+  "AllFields" : {
+    "Cash" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The intrinsic value of the option will be delivered by way of a cash settlement amount determined, (i) by reference to the differential between the strike price and the settlement price; or (ii) in accordance with a bilateral agreement between the parties",
+      "Name" : "Cash",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20941
+      }
+    },
+    "Physical" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The securities underlying the transaction will be delivered by (i) in the case of a call, the seller to the buyer, or (ii) in the case of a put, the buyer to the seller versus a settlement amount equivalent to the strike price per share",
+      "Name" : "Physical",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20943
+      }
+    },
+    "Election" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allow Election of either Cash or Physical settlement",
+      "Name" : "Election",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20945
+      }
+    },
+    "CashOrPhysical" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allow use of either Cash or Physical settlement without prior Election",
+      "Name" : "CashOrPhysical",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 20947
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Cash", "Physical", "Election", "CashOrPhysical" ],
+  "IsSynthetic" : false
+}

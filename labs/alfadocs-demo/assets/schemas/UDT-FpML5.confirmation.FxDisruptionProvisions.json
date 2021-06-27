@@ -1,0 +1,88 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes a set of disruption events and the fallbacks they will invoke",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxDisruptionProvisions",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes a set of disruption events and the fallbacks they will invoke\n #/\nrecord FpML5.confirmation.FxDisruptionProvisions {\n  # If any of the events listed in this section occurs then the associated fallbacks willl be applied.\n  events : FpML5.confirmation.FxDisruptionEvents\n\n  # Describes the fallback processing or termination procedures that can be applied if an event occurs,\n  fallbacks : FpML5.confirmation.FxDisruptionFallbacks\n\n  # Indicates the template terms that describe the events and fallbacks.\n  applicableTerms : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxDisruption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "events" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If any of the events listed in this section occurs then the associated fallbacks willl be applied.",
+      "Name" : "events",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxDisruptionEvents",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxDisruptionEvents",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxDisruptionEvents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 24460
+      }
+    },
+    "fallbacks" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the fallback processing or termination procedures that can be applied if an event occurs,",
+      "Name" : "fallbacks",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FxDisruptionFallbacks",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FxDisruptionFallbacks",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxDisruptionFallbacks",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 24463
+      }
+    },
+    "applicableTerms" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates the template terms that describe the events and fallbacks.",
+      "Name" : "applicableTerms",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 24466
+      }
+    }
+  },
+  "LocalFieldNames" : [ "events", "fallbacks", "applicableTerms" ],
+  "IsSynthetic" : false
+}

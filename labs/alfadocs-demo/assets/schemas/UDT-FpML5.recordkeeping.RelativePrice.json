@@ -1,0 +1,112 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type which represents Pricing relative to a Benchmark.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.RelativePrice",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type which represents Pricing relative to a Benchmark.\n #/\nrecord FpML5.recordkeeping.RelativePrice {\n  # Basis Point spread over a Benchmark.\n  spread : decimal?\n\n  # Identifies the underlying asset when it is a series or a class of bonds.\n  bond : FpML5.recordkeeping.Bond\n\n  # Identifies the underlying asset when it is a convertible bond.\n  convertibleBond : FpML5.recordkeeping.ConvertibleBond\n\n  # Identifies the underlying asset when it is a listed equity.\n  equity : FpML5.recordkeeping.EquityAsset\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CollateralValuation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "spread" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Basis Point spread over a Benchmark.",
+      "Name" : "spread",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 10488
+      }
+    },
+    "bond" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a series or a class of bonds.",
+      "Name" : "bond",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.Bond",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.Bond",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Bond",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 10491
+      }
+    },
+    "convertibleBond" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a convertible bond.",
+      "Name" : "convertibleBond",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.ConvertibleBond",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.ConvertibleBond",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ConvertibleBond",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 10494
+      }
+    },
+    "equity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a listed equity.",
+      "Name" : "equity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.EquityAsset",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.EquityAsset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.EquityAsset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 10497
+      }
+    }
+  },
+  "LocalFieldNames" : [ "spread", "bond", "convertibleBond", "equity" ],
+  "IsSynthetic" : false
+}

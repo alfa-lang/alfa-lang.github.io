@@ -1,0 +1,89 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Excess Emission Penalty related parameters.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EEPParameters",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Excess Emission Penalty related parameters.\n #/\nrecord FpML5.confirmation.EEPParameters {\n  # If Excess Emission Penalty is specified to be applicable in the Confirmation then the Excess Emission Penalty will be determined in the manner specified in the Confirmation (see other EEP parameters)\n  eEPApplicable : boolean\n\n  # Used to determine how provisions in Part [7] Page 7 (B) Failure to Deliver Not Remedied are to be applied.\n  riskPeriod : FpML5.confirmation.EEPRiskPeriod\n\n  # When \"true\" the EEP Equivalent is applicable. See Part [7] definition of EEP Equivalent.\n  equivalentApplicable : boolean\n\n  # When \"true\" the Excess Emissions Penalty is applicable. See Part [7] definition of Excess Emissions Penalty.\n  penaltyApplicable : boolean\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EnvironmentalPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eEPApplicable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If Excess Emission Penalty is specified to be applicable in the Confirmation then the Excess Emission Penalty will be determined in the manner specified in the Confirmation (see other EEP parameters)",
+      "Name" : "eEPApplicable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 32947
+      }
+    },
+    "riskPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to determine how provisions in Part [7] Page 7 (B) Failure to Deliver Not Remedied are to be applied.",
+      "Name" : "riskPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.EEPRiskPeriod",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.EEPRiskPeriod",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.EEPRiskPeriod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 32950
+      }
+    },
+    "equivalentApplicable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When \"true\" the EEP Equivalent is applicable. See Part [7] definition of EEP Equivalent.",
+      "Name" : "equivalentApplicable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 32953
+      }
+    },
+    "penaltyApplicable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When \"true\" the Excess Emissions Penalty is applicable. See Part [7] definition of Excess Emissions Penalty.",
+      "Name" : "penaltyApplicable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 32956
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eEPApplicable", "riskPeriod", "equivalentApplicable", "penaltyApplicable" ],
+  "IsSynthetic" : false
+}

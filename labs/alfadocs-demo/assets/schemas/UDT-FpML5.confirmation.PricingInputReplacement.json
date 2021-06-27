@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The substitution of a pricing input (e.g. curve) for another, used in generating prices and risks for valuation scenarios.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PricingInputReplacement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The substitution of a pricing input (e.g. curve) for another, used in generating prices and risks for valuation scenarios.\n #/\nrecord FpML5.confirmation.PricingInputReplacement {\n  # A reference to the original value of the pricing input.\n  originalInputReference : FpML5.confirmation.PricingStructureReference\n\n  # A reference to the substitution to do.\n  replacementInputReference : FpML5.confirmation.PricingStructureReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ValuationScenario",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "originalInputReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the original value of the pricing input.",
+      "Name" : "originalInputReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PricingStructureReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PricingStructureReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19541
+      }
+    },
+    "replacementInputReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the substitution to do.",
+      "Name" : "replacementInputReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PricingStructureReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PricingStructureReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19544
+      }
+    }
+  },
+  "LocalFieldNames" : [ "originalInputReference", "replacementInputReference" ],
+  "IsSynthetic" : false
+}

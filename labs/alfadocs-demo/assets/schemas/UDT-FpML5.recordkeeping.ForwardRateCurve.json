@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A curve used to model a set of forward interest rates. Used for forecasting interest rates as part of a pricing calculation.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ForwardRateCurve",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A curve used to model a set of forward interest rates. Used for forecasting interest rates as part of a pricing calculation.\n #/\nrecord FpML5.recordkeeping.ForwardRateCurve {\n  # A reference to the rate index whose forwards are modeled.\n  assetReference : FpML5.recordkeeping.AssetReference?\n\n  # The curve of forward values.\n  rateCurve : FpML5.recordkeeping.TermCurve?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.YieldCurveValuation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "assetReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the rate index whose forwards are modeled.",
+      "Name" : "assetReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22168
+      }
+    },
+    "rateCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The curve of forward values.",
+      "Name" : "rateCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.TermCurve",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22171
+      }
+    }
+  },
+  "LocalFieldNames" : [ "assetReference", "rateCurve" ],
+  "IsSynthetic" : false
+}

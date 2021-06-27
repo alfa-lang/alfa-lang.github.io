@@ -1,0 +1,104 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that models name, address and supplementary textual information for the purposes of identifying a party involved in the routing of a payment.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RoutingExplicitDetails",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that models name, address and supplementary textual information for the purposes of identifying a party involved in the routing of a payment.\n #/\nrecord FpML5.reporting.RoutingExplicitDetails {\n  # A real name that is used to identify a party involved in the routing of a payment.\n  routingName : string?\n\n  # A physical postal address via which a payment can be routed.\n  routingAddress : FpML5.reporting.Address?\n\n  # An account number via which a payment can be routed.\n  routingAccountNumber : string?\n\n  # A piece of free-format text used to assist the identification of a party involved in the routing of a payment.\n  routingReferenceText : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Beneficiary",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CorrespondentInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.IntermediaryInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Routing",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "routingName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A real name that is used to identify a party involved in the routing of a payment.",
+      "Name" : "routingName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17631
+      }
+    },
+    "routingAddress" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A physical postal address via which a payment can be routed.",
+      "Name" : "routingAddress",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Address",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17634
+      }
+    },
+    "routingAccountNumber" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An account number via which a payment can be routed.",
+      "Name" : "routingAccountNumber",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17637
+      }
+    },
+    "routingReferenceText" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A piece of free-format text used to assist the identification of a party involved in the routing of a payment.",
+      "Name" : "routingReferenceText",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17640
+      }
+    }
+  },
+  "LocalFieldNames" : [ "routingName", "routingAddress", "routingAccountNumber", "routingReferenceText" ],
+  "IsSynthetic" : false
+}

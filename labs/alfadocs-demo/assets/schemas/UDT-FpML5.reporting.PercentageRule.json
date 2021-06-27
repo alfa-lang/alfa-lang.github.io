@@ -1,0 +1,53 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a content model for a calculation rule defined as percentage of the notional amount.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PercentageRule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a content model for a calculation rule defined as percentage of the notional amount.\n #/\nrecord FpML5.reporting.PercentageRule {\n  # A percentage of the notional amount.\n  paymentPercent : decimal?\n\n  # A reference to the notional amount.\n  notionalAmountReference : FpML5.reporting.NotionalAmountReference?\n\n}"
+  },
+  "AllFields" : {
+    "paymentPercent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A percentage of the notional amount.",
+      "Name" : "paymentPercent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22789
+      }
+    },
+    "notionalAmountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the notional amount.",
+      "Name" : "notionalAmountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NotionalAmountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 22792
+      }
+    }
+  },
+  "LocalFieldNames" : [ "paymentPercent", "notionalAmountReference" ],
+  "IsSynthetic" : false
+}

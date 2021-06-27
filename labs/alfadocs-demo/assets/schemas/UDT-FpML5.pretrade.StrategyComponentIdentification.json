@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Associates trade identifiers with components of a strategy.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.StrategyComponentIdentification",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Associates trade identifiers with components of a strategy.\n #/\nrecord FpML5.pretrade.StrategyComponentIdentification {\n  # A reference to a party trade ID. If there are multiple trade IDs for a single component (e.g. USI, UTI, party-specific identifier), create a single \"strategyComponentIdentifier\" with a reference to the component, and multiple tradeIdentifierReferences, one referencing each applicable identifier.\n  tradeIdentifierReference : FpML5.pretrade.PartyTradeIdentifierReference?\n\n  # A reference to a component of the strategy (typically a product).\n  componentReference : FpML5.pretrade.ProductReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Strategy",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "tradeIdentifierReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to a party trade ID. If there are multiple trade IDs for a single component (e.g. USI, UTI, party-specific identifier), create a single \"strategyComponentIdentifier\" with a reference to the component, and multiple tradeIdentifierReferences, one referencing each applicable identifier.",
+      "Name" : "tradeIdentifierReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PartyTradeIdentifierReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5794
+      }
+    },
+    "componentReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to a component of the strategy (typically a product).",
+      "Name" : "componentReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.ProductReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 5797
+      }
+    }
+  },
+  "LocalFieldNames" : [ "tradeIdentifierReference", "componentReference" ],
+  "IsSynthetic" : false
+}

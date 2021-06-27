@@ -1,0 +1,63 @@
+{
+  "@type" : "alfa.rt.model.Trait",
+  "Doc" : "The base type for a legal document.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.ContractualDocument",
+    "UdtType" : "traitType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The base type for a legal document.\n #/\ntrait FpML5.legal.ContractualDocument {\n  # The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.\n  documentType : FpML5.legal.LegalDocumentType\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.LegalDocument",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "documentType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.",
+      "Name" : "documentType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.LegalDocumentType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1846
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 1849
+      }
+    }
+  },
+  "LocalFieldNames" : [ "documentType", "id" ],
+  "IsSynthetic" : false
+}

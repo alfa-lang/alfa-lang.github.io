@@ -1,0 +1,129 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The parameters for defining the expiration date(s) and time(s) for a European style option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalEuropeanExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The parameters for defining the expiration date(s) and time(s) for a European style option.\n #/\nrecord FpML5.recordkeeping.CommodityPhysicalEuropeanExercise {\n  # The Expiration Date of a single expiry European-style option or the first Expiration Date of a multiple expiry or daily expiring option.\n  expirationDate : FpML5.recordkeeping.AdjustableOrRelativeDate\n\n  # The Expiration Date(s) of a European-style option.\n  expirationDates : FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates2\n\n  # The Expiration Date(s) of a European-style option where it is relative to the occurrence of an external event.\n  relativeExpirationDates : FpML5.recordkeeping.CommodityRelativeExpirationDates\n\n  # The specific time of day at which the option expires.\n  expirationTime : FpML5.recordkeeping.PrevailingTime?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalExercise",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "expirationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Expiration Date of a single expiry European-style option or the first Expiration Date of a multiple expiry or daily expiring option.",
+      "Name" : "expirationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5912
+      }
+    },
+    "expirationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Expiration Date(s) of a European-style option.",
+      "Name" : "expirationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates2",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates2",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates2",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5915
+      }
+    },
+    "relativeExpirationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Expiration Date(s) of a European-style option where it is relative to the occurrence of an external event.",
+      "Name" : "relativeExpirationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityRelativeExpirationDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityRelativeExpirationDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityRelativeExpirationDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5918
+      }
+    },
+    "expirationTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specific time of day at which the option expires.",
+      "Name" : "expirationTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PrevailingTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5921
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5924
+      }
+    }
+  },
+  "LocalFieldNames" : [ "expirationDate", "expirationDates", "relativeExpirationDates", "expirationTime", "id" ],
+  "IsSynthetic" : false
+}

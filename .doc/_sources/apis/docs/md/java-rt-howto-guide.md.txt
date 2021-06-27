@@ -1,0 +1,537 @@
+# How-To Guide for ALFA Java
+
+We are keen to add more examples.
+Please contact info@schemarise.com or goto [www.schemarise.com](http://www.schemarise.com) for any questions not covered below.
+
+- `Q1: Setup ALFA compiler in a Maven project`_
+- `Q2: Build and populate an ALFA Java object`_
+- `Q3: Convert an ALFA object to JSON and back`_
+- `Q4: Set JSON encode/decode flags to control JSON processing`_
+- `Q5: Decode JSON to a smaller object - trait used by serialised object`_
+- `Q6: Handling data constraint errors`_
+- `Q7: Estimate ALFA Java object size`_
+- `Q8: Generating a random object`_
+- `Q9: See immutability in practice with ALFA Java objects`_
+- `Q10: See data constraints applied on JSON stream`_
+- `Q11: Build try< T > result or failure or either< L, R > value`_
+- `Q12: Using compressed< T > values`_
+- `Q13: Using encrypted<T> values`_
+- `Q14: View ALFA to Java type mappings`_
+- `Q15: Define and code a native typedef`_
+
+#### Q1: Setup ALFA compiler in a Maven project
+
+Refer to the :ref:`mvnplugin` which contains a complete working example of a `pom.xml` file
+showing how to generate Java for an ALFA model file.
+
+---
+
+#### Q2: Build and populate an ALFA Java object
+
+ALFA generated Java code supports the builder pattern for constructing objects. Given an ALFA definitions like:
+
+```csharp
+namespace demo
+
+record Person {
+   Name : string
+   Age : int(16,120)
+   Friends : list< string >
+}
+```
+
+The following snippet of code shows ways of creating an object.
+
+```java
+import demo.Person;
+...
+// Create builder, set values and build in one line
+Person p1 = Person.newBuilder().setName("Paul").setAge(20).addFriends("John").build();
+
+// Create builder and separately set values and build
+Person.PersonBuilder b = Person.newBuilder();
+b.setName("Paul");
+b.setAge(20);
+b.addFriends("Ringo");
+b.addFriends("George");
+Person p2 = b.build();
+```
+
+When `list< T >`, `set< T >` or `map< K, V>` fields are used, methods to add individual items
+or an entire collection are generated.
+
+The object returned from `build()` is immutable, and further modifications on the
+original builder instance has no impact on the object returned from the
+`build()` method.
+
+It is possible to have a partially constructed builder instance and iteratively
+vary some values and call `build()` to get a series of immutable objects.
+
+---
+
+#### Q3: Convert an ALFA object to JSON and back
+This achieved using methods in the [Codec](https://alfa-lang.io/apis/java/apidocs/alfa/rt/Codec.html) class.
+
+```java
+import alfa.rt.Codec;
+...
+Person p1 = Person p1 = Person.newBuilder().setName("Paul").setAge(20).build();
+String json = Codec.toJsonString( p1 );
+Person decoded = Codec.fromJsonString( json );
+System.out.println( json );
+```
+
+Output : `{"$type":"demo.Person","Name":"Paul","Age":20,"Friends":["John"]}`
+Other methods to work with input and output streams are available.
+
+---
+
+#### Q4: Set JSON encode/decode flags to control JSON processing
+
+Using the [JsonWriterCodecConfig](https://alfa-lang.io/apis/java/apidocs/alfa/rt/codec/json/JsonWriterCodecConfig.html)
+class, behaviour of the JSON encoding can be changed. In the example below, the `skipRootType` is set, therefore
+the output does not contain the `$type` field.
+
+**Note:** Setting `skipRootType` for small objects (with only scalars for example), can significant cut down the size of
+the JSON. For example `{"$type":"Inventory.Items.Price","Ccy":"EUR","Price":1.08}` will be `{"Ccy":"EUR","Price":1.08}`.
+
+```java
+JsonWriterCodecConfig cfg = JsonWriterCodecConfig.newBuilder().setSkipRootTypeInfo(true).build();
+String j2 = Codec.toJsonString(cfg,p1);
+```
+
+Output : `{"Name":"Paul","Age":20,"Friends":["John"]}`
+
+
+Likewise when reading JSON, there are configuration settings that control the reader, for example being
+able to read a JSON without a `$type` field.
+
+```java
+JsonReaderCodecConfig rcfg = JsonReaderCodecConfig.newBuilder().
+        setSkipUnknownFields(true).                     // Ignore unknown fields in the JSON
+        setAssignableToClass(Person.class).build();     // Read the JSON as the specified class
+
+String jsn = "{\"Name\":\"Paul\",\"Age\":20,\"Rating\":3,\"Friends\":[\"John\"]}\n";
+
+// The JSON above will be read as a Person class, and ignore the 'Rating' field, as per the reader configuration.
+Person p3 = Codec.fromJsonString(rcfg, jsn);
+```
+
+---
+
+#### Q5: Decode JSON to a smaller object - trait used by serialised object
+
+Consider the definition below, and a usecase where given a large object containing a Person object with 100 Friends entries,
+and we only want the value of `Name`. Given the `Person` is a subclass of `Named`, ideally we want an object representing
+just the fields from the trait `Named`.
+
+```csharp
+namespace demo
+
+trait Named {
+   Name : string
+}
+
+record Person includes Named {
+   Age : int(16,120)
+   Friends : list< string >
+}
+```
+
+This is possible by implementing the following:
+```java
+JsonReaderCodecConfig rcfg = JsonReaderCodecConfig.newBuilder().
+                                setSkipUnknownFields(true).
+                                setAssignableToClass(Named.class).build();
+
+String jsn = "{\"Name\":\"Paul\",\"Age\":20,\"Rating\":3,\"Friends\":[\"John\"]}\n";
+Named p3 = Codec.fromJsonString(rcfg, jsn);
+```
+
+The decoded object only will contain the `Name` field and all other values in the payload will be ignored.
+This is possible as ALFA traits when generated contain a default implementation containing just the fields in the trait.
+
+---
+
+#### Q6: Handling data constraint errors
+When constraints are set on datatypes, those are enforced when `build()` is called. Consider the following example.
+```java
+Person p1 = Person.newBuilder().setName("Paul").setAge(15).addFriends("John").build();
+```
+Note `Age` is assigned to 15, when in the ALFA model (from Q2) its declared as range from 16 onwards. The following exception is thrown
+when the above code is executed. It clearly indicates the location of the error and cause.
+
+```
+alfa.rt.AlfaValidationException: Validation failed on {
+	"type":"alfa.rt.path.Path",
+	"Field":"Age",
+	"Element":{"$type":"alfa.rt.path.PathElement","ScalarValue":15,}
+}. Minimum size 16, result size 15
+```
+
+If constraints are used, the `build()` method can throw `alfa.rt.AlfaValidationException`, which extends `java.lang.RuntimeException`.
+
+**Note:** The assertion of constraints can be disabled when calling the `build` method
+by passing in a [BuilderConfig](https://alfa-lang.io/apis/java/apidocs/alfa/rt/BuilderConfig.html)
+with a [RuntimeContext](https://alfa-lang.io/apis/java/apidocs/alfa/rt/RuntimeContext.html) where the
+`shouldValidateOnBuild()` method returns false.
+
+---
+
+#### Q7: Estimate ALFA Java object size
+
+ALFA Java runtime has a facility to estimate space consumed by an object.
+This can be particularly useful when making generic data processing decisions. The estimation is performed
+by traversing the object using lambda expressions in the TypeDescriptors, also keeping track of
+unique strings.
+
+The example below shows how this may be used. For sizing multiple objects, a String pool can be
+passed to get a more accurate figure. It should be emphasized that this is an estimate so will not
+be accurate to the byte level give JVM level decisions. However for purposes of getting a
+consistent size estimate and comparing to other ALFA objects, this method will be highly effective.
+
+```
+import alfa.rt.utils.AlfaUtils;
+
+Person p1 = Person.newBuilder().setName("Paul").setAge(20).addFriends("John").build();
+long size = AlfaUtils.estimateSize(p1);
+```
+
+---
+
+#### Q8: Generating a random object
+
+ALFA runtime is able to generate a random object given a type name. This is particular useful
+for mock testing using the model objects.
+
+Given the `Person` model from Q2, running the code below generates an object instance. The randomiser
+respects datatype constraints with the exception of `pattern` types. In the example below, the Age
+value returned will always be within 16 and 120.
+
+By default a collection will be returned with 5 entries, and strings will be randomized to
+5 characters. Additional features will be added to the randomizer, therefore if there is interest
+in particular features, please reach out to info@schemarise.com or goto [www.schemarise.com](http://www.schemarise.com).
+
+See [AlfaRandomiser](https://alfa-lang.io/apis/java/html/classalfa_1_1rt_1_1utils_1_1_alfa_randomizer.html)
+    documentation.
+
+```java
+AlfaRandomizer r = new AlfaRandomizer();
+AlfaObject obj = r.random("demo.Person");
+System.out.println(obj);
+```
+
+Output:
+```
+{
+	"$type":"demo.Person",
+	"Name":"bdvoi",
+	"Age":43,
+	"Friends":["gmtvx", "fthnu", "btoru", "cincj", "tzwjf"]
+}
+```
+
+The :ref:`java` has an example of a matrix data type and value generated from the ALFA Randomizer.
+
+---
+
+#### Q9: See immutability in practice with ALFA Java objects
+The following code can be written for the model from Q2 above.
+```java
+Person.PersonBuilder b = Person.newBuilder().setName("John").setAge(20);
+List< String > friends = new ArrayList<>();
+friends.add("Paul");
+friends.add("Ringo");
+friends.add("George");
+Person john = b.addAllFriends(friends).build();
+
+System.out.println("John.friends:" + john.getFriends().size());
+
+friends.add("Brian");
+System.out.println("John.friends:" + john.getFriends().size());
+System.out.println("Friends size:" + friends.size());
+```
+
+Output:
+```
+John.friends:3
+John.friends:3
+Friends size:4
+```
+
+Having called `build()`, the contents of the Friends field remain unchanged even if the original List is modified.
+Given ALFA performs a deep clone of collections, even when the collection had nested collections, those too will be immutable.
+
+**Note:** The deep cloning of collections can be disabled when calling the `build` method
+by passing in a [BuilderConfig](https://alfa-lang.io/apis/java/apidocs/alfa/rt/BuilderConfig.html)
+with a [RuntimeContext](https://alfa-lang.io/apis/java/apidocs/alfa/rt/RuntimeContext.html) where the
+`shouldCloneCollectionsOnBuild()` method returns false.
+
+---
+
+#### Q10: See data constraints applied on JSON stream
+
+ALFA uses stream-based JSON decoding for optimum performance. As well as decoding, it asserts
+some constraints such as sizes of collections. This is particular useful when the model and application
+expects a limit on data a dataset is received which is significantly larger that it potentially causes
+the application to exceed memory available.
+
+Size constraint assertion can be demonstrated with the following example.
+
+Consider the `Person` definition in Q2 is updated with `Friends : list< string >(0,5)` to set an upper
+limit on number of friends. With that in place the following code can be executed. Note the
+Friends array contain 6 strings.
+
+```java
+String json = "{\"$type\":\"demo.Person\",\"Name\":\"Paul\",\"Age\":20,\"Friends\":[\"A\",\"B\",\"C\",\"D\",\"E\",\"F\"]}\n";
+Person p = Codec.fromJsonString(json);
+```
+
+The above code throws an `AlfaMaxSizeExceedException` exception.
+```
+alfa.rt.AlfaMaxSizeExceedException: Cannot insert to list. Maximum limit 5 reached on field 'Friends'.
+```
+
+Natually this validation is applied on deeply nested models too, and not just the top level.
+
+
+---
+
+#### Q11: Build try< T > result or failure or either< L, R > value
+
+The try and either ALFA types are extremely useful to model results or unexpected results.
+To make constructing these types easier, the
+[AlfaUtils](https://alfa-lang.io/apis/java/html/classalfa_1_1rt_1_1utils_1_1_alfa_utils.html)
+class contains number of utility methods.
+
+```java
+Try< Integer> t1 = AlfaUtils.createTryObject( 10 );
+Try< Double> t2 = AlfaUtils.createTryFailure( "Failed to calculate price" );
+
+Either< String, Double> e1 = AlfaUtils.createEitherLeftObject( "John");
+Either< String, Double> e2 = AlfaUtils.createEitherRightObject( 100000.00 );
+```
+
+---
+
+#### Q12: Using compressed< T > values
+
+Keeping occasionally used large objects in memory can waste resources. However completely eliminating them
+from the model also creates delay when they are needed. Some data types such as strings can consume lot of data
+when stored in large quantities containing descriptions etc. To handle such usescases `compressed<T>` can be used.
+
+ALFA `compressed< T >` can be used for such cases, where T can be any ALFA type.
+
+Consider the data type below.
+```csharp
+record Events {
+    Log : compressed< list< string > >
+}
+```
+
+This type can be used in ALFA to create a compressed set of values.
+```java
+List<String> l = new ArrayList<>();
+l.add("2019.12.12 18:00 INFO Starting");
+l.add("2019.12.12 18:10 INFO Running");
+l.add("2019.12.12 18:12 INFO Processing 1");
+l.add("2019.12.12 18:15 INFO Processing 2");
+l.add("2019.12.12 18:17 INFO Processing ...");
+l.add("2019.12.12 18:20 INFO Saving");
+l.add("2019.12.12 18:30 INFO Completed");
+
+// Create events object containg a list of event strings.
+// As soon as setLog() is called the list of strings are compressed and stored as a byte[ ] internally.
+Events e = Events.newBuilder().setLog(l).build();
+
+String json = Codec.toJsonString(e);
+Events decoded = Codec.fromJsonString(json);
+
+Compressed<List<String>> c = decoded.getLog();
+List<String> val = c.getValue( BuilderConfig.getInstance() );
+
+System.out.println( val.get( val.size() - 1 ));
+```
+
+---
+
+#### Q13: Using encrypted<T> values
+
+Using an ALFA `encrypted<T>` is converted into a Java `alfa.rt.Encrypted<T>` instance. The `Encrypted`
+type internally uses the `RuntimeContext` class to create a `byte[ ]` from encrypting a serialised object of
+the value.
+
+An `Encrypted<T>` object does **not** hold a reference to the object of type `T`. The object is encrypted in the
+constructor of `Encrypted` and only stored as a `byte[ ]`.
+
+Users can extend and supply an alternative `alfa.rt.RuntimeContext` object. By default the RuntimeContext uses a
+private-public keypair to encrypt and decrypt data. This is to demonstrate the capability, however for a real
+application, the  `RuntimeContext` will need to securely source the keypair.
+
+As an example, consdier the following ALFA definition.
+```csharp
+record CreditCard {
+    Pin : encrypted< string(4,6) >
+}
+```
+
+With that definition in place, it is possible to write code that securely hold a PIN where reading is only
+permitted when a correct public/private keypair is used.
+
+```java
+// Create a Card and set a PIN. The reference stored is immediately encrypted by the implemenation of RuntimeContext.encrypt()
+CreditCard.CreditCardBuilder builder = CreditCard.newBuilder().setPin("2341");
+CreditCard cc = builder.build();
+
+String json = Codec.toJsonString(cc);
+System.out.println(json);
+
+// When we need to access the PIN, we get a handle to an Encrypted<> object.
+Encrypted<String> encPin = cc.getPin();
+
+// The value can only be deciphered by supplying a BuilderConfig, which will use the RuntimeContext.decrypt() method
+String pin = encPin.getValue(BuilderConfig.getInstance());
+System.out.println( pin );
+```
+
+As output, the following is printed.
+```
+{
+  "$type":"demo.CreditCard",
+  "Pin":"NBN6YElEGY9VEhlFMn4Dr698SLYKM0LKf+/8vbptZ0aN+J0RQfHOx70avMk87G9sD0VgereLL8zQDR7r/mScdsb84dD36yMjNLsoXwj35PF5q56ob7yr8plbdUSMiC5X2NLXKUizbO3cgaPCi2xCDE0e/N4GQpvamNnwIuljCFA="
+}
+2341
+```
+
+---
+
+#### Q14: View ALFA to Java type mappings
+
+Please refer to section titled 'Type Mappings' in :ref:`java`.
+
+---
+
+#### Q15: Define and code a native typedef
+
+Creating a native type class is straight-forward. The first step is to declare a native type
+as shown below, where `storage` is a new type, which is implemented by the native type `acme.types.Storage`.
+
+
+```
+ typedefs {
+     storage = native acme.types.Storage
+ }
+```
+
+The Storage 'native' ALFA type class needs to implement `alfa.rt.NativeAlfaObject`.
+In addition it needs a `TypeDescriptor` and `Builder` inner classes which support encoding
+and decoding the native type to a string and vice versa.
+
+This class needs to be compiled and available in the classpath of the ALFA runtime and
+generated Java code. The generated Java code will reference this type when the type ( `storage` below)
+is declared a field type.
+
+Given this is the Java 'How-To', the example native type below is Java. Other languages can
+have similar implementations.
+
+```
+package acme.types;
+
+import alfa.rt.*;
+import alfa.rt.model.UdtDataType;
+import alfa.rt.model.UdtMetaType;
+import alfa.rt.utils.DefaultTypeDescriptor;
+
+/***
+ * Storage is an example ALFA 'native' typedef type.
+ */
+public class Storage implements NativeAlfaObject {
+    private final String _size;
+
+    /**
+     * Create a new immutable Storage instance
+     * @param size Size of storage
+     */
+    public Storage(String size) {
+        this._size = size;
+    }
+
+    @Override
+    public int hashCode() {
+        return _size.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if ( obj instanceof Storage )
+        {
+            Storage rhs = (Storage) obj;
+            return rhs._size.equals(_size);
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return _size;
+    }
+
+    @Override
+    public TypeDescriptor descriptor() {
+        return StorageDescriptor.INSTANCE;
+    }
+
+    /***
+     * Convert object to a string representation, which also will be the string
+     * that can be passed to the constructor to create a new instance.
+     * @return
+     */
+    @Override
+    public String encodeToString() {
+        return _size;
+    }
+
+    /**
+     * This class is required and used by ALFA Codec classes.
+     * A Storage builder is able to create a new immutable instance of Storage.
+     */
+    public static class StorageBuilder implements Builder {
+        private String value;
+
+        @Override
+        public <T extends AlfaObject> T build() {
+            if ( value == null )
+                throw new NullPointerException("Value not assigned to storage builder");
+
+            return (T) new Storage(value);
+        }
+
+        @Override
+        public void modify(String fieldName, Object val) {
+            value = ( String ) val;
+        }
+    }
+
+    /**
+     * This class is required and used by ALFA Codec classes.
+     * Descriptor for the Storage class.
+     */
+    public static class StorageDescriptor extends DefaultTypeDescriptor {
+        public static TypeDescriptor INSTANCE = new StorageDescriptor();
+        private static UdtDataType udtDataType = UdtDataType.newBuilder().setUdtType(UdtMetaType.nativeUdtType).setFullyQualifiedName(Storage.class.getName()).build();
+
+        @Override
+        public UdtDataType getUdtDataType() {
+            return udtDataType;
+        }
+
+        @Override
+        public Builder newBuilder(BuilderConfig cc) {
+            return new StorageBuilder();
+        }
+    }
+}
+```
+
+---
+

@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining discounting information. The 2000 ISDA definitions, section 8.4. discounting (related to the calculation of a discounted fixed amount or floating amount) apply. This type must only be included if discounting applies. - For use with pre-trade Credit Limit Check messages.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Discounting",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining discounting information. The 2000 ISDA definitions, section 8.4. discounting (related to the calculation of a discounted fixed amount or floating amount) apply. This type must only be included if discounting applies. - For use with pre-trade Credit Limit Check messages.\n #/\nrecord FpML5.pretrade.Discounting {\n  # The discounting method that is applicable.\n  discountingType : string?\n\n  # A discount rate, expressed as a decimal, to be used in the calculation of a discounted amount. A discount amount of 5% would be represented as 0.05.\n  discountRate : decimal?\n\n  # A discount day count fraction to be used in the calculation of a discounted amount.\n  discountRateDayCountFraction : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Calculation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "discountingType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The discounting method that is applicable.",
+      "Name" : "discountingType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 11315
+      }
+    },
+    "discountRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A discount rate, expressed as a decimal, to be used in the calculation of a discounted amount. A discount amount of 5% would be represented as 0.05.",
+      "Name" : "discountRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 11318
+      }
+    },
+    "discountRateDayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A discount day count fraction to be used in the calculation of a discounted amount.",
+      "Name" : "discountRateDayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 11321
+      }
+    }
+  },
+  "LocalFieldNames" : [ "discountingType", "discountRate", "discountRateDayCountFraction" ],
+  "IsSynthetic" : false
+}

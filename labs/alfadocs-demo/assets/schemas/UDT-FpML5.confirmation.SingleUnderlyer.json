@@ -1,0 +1,135 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing a single underlyer",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SingleUnderlyer",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing a single underlyer\n #/\nrecord FpML5.confirmation.SingleUnderlyer {\n  # Define the underlying asset, either a listed security or other instrument.\n  underlyingAsset : FpML5.confirmation.Asset\n\n  # The number of units (index or securities) that constitute the underlyer of the swap. In the case of a basket swap, this element is used to reference both the number of basket units, and the number of each asset components of the basket when these are expressed in absolute terms.\n  openUnits : decimal?\n\n  # Specifies the dividend payout ratio associated with an equity underlyer. A basket swap can have different payout ratios across the various underlying constituents. In certain cases the actual ratio is not known on trade inception, and only general conditions are then specified. Users should note that FpML makes a distinction between the derivative contract and the underlyer of the contract. It would be better if the agreed dividend payout on a derivative contract was modelled at the level of the derivative contract, an approach which may be adopted in the next major version of FpML.\n  dividendPayout : FpML5.confirmation.DividendPayout?\n\n  # The next upcoming coupon payment.\n  couponPayment : FpML5.confirmation.PendingPayment?\n\n  # The average amount of individual securities traded in a day or over a specified amount of time.\n  averageDailyTradingVolume : FpML5.confirmation.AverageDailyTradingVolumeLimit?\n\n  # A Depository Receipt is a negotiable certificate issued by a trust company or security depository. This element is used to represent whether a Depository Receipt is applicable or not to the underlyer.\n  depositoryReceipt : boolean?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Underlyer",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "underlyingAsset" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Define the underlying asset, either a listed security or other instrument.",
+      "Name" : "underlyingAsset",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Asset",
+        "UdtType" : "traitType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Asset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Asset",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 297
+      }
+    },
+    "openUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of units (index or securities) that constitute the underlyer of the swap. In the case of a basket swap, this element is used to reference both the number of basket units, and the number of each asset components of the basket when these are expressed in absolute terms.",
+      "Name" : "openUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 300
+      }
+    },
+    "dividendPayout" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the dividend payout ratio associated with an equity underlyer. A basket swap can have different payout ratios across the various underlying constituents. In certain cases the actual ratio is not known on trade inception, and only general conditions are then specified. Users should note that FpML makes a distinction between the derivative contract and the underlyer of the contract. It would be better if the agreed dividend payout on a derivative contract was modelled at the level of the derivative contract, an approach which may be adopted in the next major version of FpML.",
+      "Name" : "dividendPayout",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.DividendPayout",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 303
+      }
+    },
+    "couponPayment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The next upcoming coupon payment.",
+      "Name" : "couponPayment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PendingPayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 306
+      }
+    },
+    "averageDailyTradingVolume" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The average amount of individual securities traded in a day or over a specified amount of time.",
+      "Name" : "averageDailyTradingVolume",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AverageDailyTradingVolumeLimit",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 309
+      }
+    },
+    "depositoryReceipt" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A Depository Receipt is a negotiable certificate issued by a trust company or security depository. This element is used to represent whether a Depository Receipt is applicable or not to the underlyer.",
+      "Name" : "depositoryReceipt",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 312
+      }
+    }
+  },
+  "LocalFieldNames" : [ "underlyingAsset", "openUnits", "dividendPayout", "couponPayment", "averageDailyTradingVolume", "depositoryReceipt" ],
+  "IsSynthetic" : false
+}

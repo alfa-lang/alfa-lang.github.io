@@ -1,0 +1,128 @@
+{
+  "@type" : "alfa.rt.model.Trait",
+  "Doc" : "The base SCSA implementation.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnexBase",
+    "UdtType" : "traitType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The base SCSA implementation.\n #/\ntrait FpML5.legal.StandardCreditSupportAnnexBase {\n  # The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.\n  documentType : FpML5.legal.LegalDocumentType\n\n  # Specifies the way the independent amount is determined.\n  independentAmounts : FpML5.legal.IndependentAmounts\n\n  # The base currency to be used as a common denominator for Initial Amount calculation.\n  baseCurrency : string\n\n  # Reference to the legacy CSA that the parties may reference.\n  existingCreditSupportAnnex : FpML5.legal.ExistingCreditSupportAnnex?\n\n  # Settlement under the SCSA is required to be either on a T+1 or, exceptionally, on a T+2 basis (when counterparties are in disparate timezones). T+0 settlement is not allowed under the SCSA.\n  settlementDay : string\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "documentType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.",
+      "Name" : "documentType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.LegalDocumentType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2921
+      }
+    },
+    "independentAmounts" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the way the independent amount is determined.",
+      "Name" : "independentAmounts",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.IndependentAmounts",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.IndependentAmounts",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.IndependentAmounts",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2924
+      }
+    },
+    "baseCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The base currency to be used as a common denominator for Initial Amount calculation.",
+      "Name" : "baseCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2927
+      }
+    },
+    "existingCreditSupportAnnex" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the legacy CSA that the parties may reference.",
+      "Name" : "existingCreditSupportAnnex",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.ExistingCreditSupportAnnex",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2930
+      }
+    },
+    "settlementDay" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Settlement under the SCSA is required to be either on a T+1 or, exceptionally, on a T+2 basis (when counterparties are in disparate timezones). T+0 settlement is not allowed under the SCSA.",
+      "Name" : "settlementDay",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2933
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2936
+      }
+    }
+  },
+  "LocalFieldNames" : [ "documentType", "independentAmounts", "baseCurrency", "existingCreditSupportAnnex", "settlementDay", "id" ],
+  "IsSynthetic" : false
+}

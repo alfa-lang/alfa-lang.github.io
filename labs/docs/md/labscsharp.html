@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CSharp Generator &mdash; Alfa</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/alfa-logo-blue-sm.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exporters/exporters.html">Exporters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs.html">Alfa Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>CSharp Generator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="csharp-generator">
+<h1>CSharp Generator<a class="headerlink" href="#csharp-generator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the Java generator and runtime support from Alfa, this Exporter generates CSharp representations of Alfa definitions.</p>
+<p>The CSharp support has been built for <code class="docutils literal notranslate"><span class="pre">.NET</span> <span class="pre">Core</span> <span class="pre">2.1</span></code> or higher. If other versions are required, please contact <a class="reference external" href="mailto:support&#37;&#52;&#48;alfa-lang&#46;io">support<span>&#64;</span>alfa-lang<span>&#46;</span>io</a>.</p>
+<p>The CSharp generator is provided as part of an extended ‘Pro’ version of the Alfa CLI. This version can be downloaded
+from <a class="reference external" href="https://github.com/alfa-lang/distributions/raw/master/downloads/AlfaProCLI.zip">AlfaProCLI.zip</a>.
+The AlfaProCLI can be setup in the same way as AlfaCLI outlined in <a class="reference internal" href="../../../getstarted.html#getstarted"><span class="std std-ref">Getting Started</span></a>.</p>
+</div>
+<div class="section" id="usage-steps">
+<h2>Usage Steps<a class="headerlink" href="#usage-steps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Similar to generating Java, CSharp is generated using the following commandline.</li>
+</ul>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>alfa -c -g csharp -o generated/csharp src
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>The generated CSharp depends on a library <code class="docutils literal notranslate"><span class="pre">Alfa.Net.Runtime</span></code> which is made available as a NuGet package. Follow the steps below
+to download and install <code class="docutils literal notranslate"><span class="pre">Alfa.Net.Runtime</span></code>. On windows use <code class="docutils literal notranslate"><span class="pre">%USERPROFILE%</span></code> instead of <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>. If <code class="docutils literal notranslate"><span class="pre">curl</span></code> command not available,
+download using the browser and use the nuget command.</li>
+</ul>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>curl -L --http1.1 https://github.com/alfa-lang/distributions/raw/master/downloads/Alfa.Net.Runtime.0.8.0.nupkg --output Alfa.Net.Runtime.0.8.0.nupkg
+nuget add Alfa.Net.Runtime.0.8.0.nupkg  -Source $HOME/.nuget/packages/
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p class="first">Once the NuGet package is installed, create a <code class="docutils literal notranslate"><span class="pre">.csproj</span></code> file and compile the generated code. Refer to the example below for
+contents of the csproj file. Save the contents into a <code class="docutils literal notranslate"><span class="pre">Alfa.Demo.csproj</span></code> file. The subdirectory <code class="docutils literal notranslate"><span class="pre">generated/csharp</span></code> will already
+contain the generated code from the previous step.</p>
+<blockquote>
+<div><div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;PropertyGroup&gt;</span>
+       <span class="nt">&lt;OutputType&gt;</span>Library<span class="nt">&lt;/OutputType&gt;</span>
+       <span class="nt">&lt;AssemblyName&gt;</span>Alfa.Pro.Demo<span class="nt">&lt;/AssemblyName&gt;</span>
+       <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp2.1<span class="nt">&lt;/TargetFramework&gt;</span>
+       <span class="nt">&lt;VersionPrefix&gt;</span>0.8.0<span class="nt">&lt;/VersionPrefix&gt;</span>
+       <span class="nt">&lt;VersionSuffix&gt;&lt;/VersionSuffix&gt;</span>
+   <span class="nt">&lt;/PropertyGroup&gt;</span>
+
+   <span class="nt">&lt;ItemGroup&gt;</span>
+     <span class="nt">&lt;Folder</span> <span class="na">Include=</span><span class="s">&quot;src\generated&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;Folder</span> <span class="na">Include=</span><span class="s">&quot;src\main&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/ItemGroup&gt;</span>
+
+   <span class="nt">&lt;ItemGroup&gt;</span>
+     <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">&quot;Alfa.Net.Runtime&quot;</span> <span class="na">Version=</span><span class="s">&quot;0.8.0&quot;</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/ItemGroup&gt;</span>
+
+<span class="nt">&lt;/Project&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In the directory containing the <code class="docutils literal notranslate"><span class="pre">.csproj</span></code> file, run <code class="docutils literal notranslate"><span class="pre">dotnet</span> <span class="pre">build</span></code>. This will build the generated code and produce a <code class="docutils literal notranslate"><span class="pre">dll</span></code>. Congratulations! You have built your first Alfa .Net type library!</p>
+</li>
+<li><p class="first">If the <code class="docutils literal notranslate"><span class="pre">.csproj</span></code> is opened using an .NET IDE, you can proceed to write some sample code that uses the generated library.
+..</p>
+<blockquote>
+<div><p>Given the Alfa definition below:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">Club</span><span class="p">.</span><span class="n">Player</span> <span class="p">{</span>
+ <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+ <span class="n">Age</span> <span class="p">:</span> <span class="kt">int</span>
+ <span class="n">Average</span> <span class="p">:</span> <span class="kt">double</span>
+ <span class="n">RankingByYear</span> <span class="p">:</span> <span class="k">map</span><span class="p">&lt;</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following CSharp code can be written to run against the generated code.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="nn">alfa.rt</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Club</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Alfa.Pro.Demo</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">App</span>
+   <span class="p">{</span>
+       <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="kt">var</span> <span class="n">rankings</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;{</span>
+               <span class="p">{</span> <span class="m">2018</span><span class="p">,</span> <span class="m">1</span> <span class="p">},</span>
+               <span class="p">{</span> <span class="m">2019</span><span class="p">,</span> <span class="m">3</span> <span class="p">}</span>
+           <span class="p">};</span>
+
+           <span class="c1">// Use a builder to incrementally construct the object</span>
+           <span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Club</span><span class="p">.</span><span class="n">Player</span><span class="p">.</span><span class="n">Builder</span><span class="p">();</span>
+           <span class="n">builder</span><span class="p">.</span><span class="n">setAge</span><span class="p">(</span><span class="m">10</span><span class="p">).</span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">).</span><span class="n">setAverage</span><span class="p">(</span><span class="m">10.12</span><span class="p">).</span><span class="n">putAllRankingByYear</span><span class="p">(</span><span class="n">rankings</span><span class="p">);</span>
+           <span class="c1">// Finalise and build immutable object</span>
+           <span class="kt">var</span> <span class="n">player1</span> <span class="p">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">build</span><span class="p">();</span>
+
+           <span class="c1">// Round trip object &lt;&gt; JSON</span>
+           <span class="kt">var</span> <span class="n">json</span> <span class="p">=</span> <span class="n">Codec</span><span class="p">.</span><span class="n">toJson</span><span class="p">(</span><span class="n">player1</span><span class="p">);</span>
+           <span class="kt">var</span> <span class="n">decoded</span> <span class="p">=</span> <span class="n">Codec</span><span class="p">.</span><span class="n">fromJson</span><span class="p">&lt;</span><span class="n">Player</span><span class="p">&gt;(</span><span class="n">json</span><span class="p">);</span>
+
+           <span class="c1">// Access field as a Property - will print &quot;Bob&quot;</span>
+           <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span> <span class="n">decoded</span><span class="p">.</span><span class="n">Name</span> <span class="p">);</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2019, Schematiks Ltd | 
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

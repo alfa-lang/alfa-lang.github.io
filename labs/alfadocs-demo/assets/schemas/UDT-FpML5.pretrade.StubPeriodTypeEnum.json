@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "Element to define how to deal with a none standard calculation period within a swap stream.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.StubPeriodTypeEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n Element to define how to deal with a none standard calculation period within a swap stream.\n #/\nenum FpML5.pretrade.StubPeriodTypeEnum {\n    # If there is a non regular period remaining it is left shorter than the streams calculation period frequency and placed at the start of the stream\n    ShortInitial \n    # If there is a non regular period remaining it is left shorter than the streams calculation period frequency and placed at the end of the stream\n    ShortFinal \n    # If there is a non regular period remaining it is placed at the start of the stream and combined with the adjacent calculation period to give a long first calculation period\n    LongInitial \n    # If there is a non regular period remaining it is placed at the end of the stream and combined with the adjacent calculation period to give a long last calculation period\n    LongFinal \n\n}"
+  },
+  "AllFields" : {
+    "ShortInitial" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If there is a non regular period remaining it is left shorter than the streams calculation period frequency and placed at the start of the stream",
+      "Name" : "ShortInitial",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 366
+      }
+    },
+    "ShortFinal" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If there is a non regular period remaining it is left shorter than the streams calculation period frequency and placed at the end of the stream",
+      "Name" : "ShortFinal",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 368
+      }
+    },
+    "LongInitial" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If there is a non regular period remaining it is placed at the start of the stream and combined with the adjacent calculation period to give a long first calculation period",
+      "Name" : "LongInitial",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 370
+      }
+    },
+    "LongFinal" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If there is a non regular period remaining it is placed at the end of the stream and combined with the adjacent calculation period to give a long last calculation period",
+      "Name" : "LongFinal",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 372
+      }
+    }
+  },
+  "LocalFieldNames" : [ "ShortInitial", "ShortFinal", "LongInitial", "LongFinal" ],
+  "IsSynthetic" : false
+}

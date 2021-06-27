@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defines the specification of the consequences of Index Events as defined by the 2002 ISDA Equity Derivatives Definitions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.IndexAdjustmentEvents",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defines the specification of the consequences of Index Events as defined by the 2002 ISDA Equity Derivatives Definitions.\n #/\nrecord FpML5.reporting.IndexAdjustmentEvents {\n  # Consequence of index modification.\n  indexModification : string?\n\n  # Consequence of index cancellation.\n  indexCancellation : string?\n\n  # Consequence of index disruption.\n  indexDisruption : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExtraordinaryEvents",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "indexModification" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Consequence of index modification.",
+      "Name" : "indexModification",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1381
+      }
+    },
+    "indexCancellation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Consequence of index cancellation.",
+      "Name" : "indexCancellation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1384
+      }
+    },
+    "indexDisruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Consequence of index disruption.",
+      "Name" : "indexDisruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1387
+      }
+    }
+  },
+  "LocalFieldNames" : [ "indexModification", "indexCancellation", "indexDisruption" ],
+  "IsSynthetic" : false
+}

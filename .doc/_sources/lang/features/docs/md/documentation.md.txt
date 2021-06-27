@@ -1,0 +1,31 @@
+# Model Documentation
+
+Documentation forms a huge part in communicating design and thought process when modelling data.
+ALFA helps in capturing this information to generate HTML documentation showing relationships and links
+between model objects.
+
+ALFA data models can be embedded with specially tagged comments that can be used in generated documentation.
+
+There are 2 forms of documentation tags.
+1. Lines preceding the target declaration to contain lines beginning with `#` or block surrounded with `/#` and `#/`.
+2. At the end of the line declaring the target to be commented, add `##` followed by comment.
+
+```csharp
+/*multistart
+    This is an example of a doc-string on multiple lines.
+    This will be associated with the Request record.
+ multiend*/
+record Request {
+    //single This is a doc-string on the Payload field
+    //single on multiple lines, as individual doc-strings.
+    Payload : binary
+    Origin : string //end This is same-line doc-string on Origin
+}
+```
+
+[Markdown](https://en.wikipedia.org/wiki/Markdown) syntax can be used as formatting for comments which will be formatted as HTML for generated documentation.
+
+In order for Markdown format documentation to be used, when using `/# #/`, the documentation should be in a new
+line and the lines containing `/# #/` should not include any documentation. Lines starting
+with `#` will also be treated as Markdown enabling specifying bold, italic etc.
+

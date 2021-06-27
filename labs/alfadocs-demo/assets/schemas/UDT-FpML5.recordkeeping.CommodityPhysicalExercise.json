@@ -1,0 +1,127 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The parameters for defining how the physically-settled commodity option can be exercised and how it is settled.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The parameters for defining how the physically-settled commodity option can be exercised and how it is settled.\n #/\nrecord FpML5.recordkeeping.CommodityPhysicalExercise {\n  # The parameters for defining the expiration date(s) and time(s) for an American style option.\n  americanExercise : FpML5.recordkeeping.CommodityPhysicalAmericanExercise\n\n  # The parameters for defining the expiration date(s) and time(s) for a European style option.\n  europeanExercise : FpML5.recordkeeping.CommodityPhysicalEuropeanExercise\n\n  # Specifies whether or not Automatic Exercise applies to a Commodity Option Transaction.\n  automaticExercise : boolean?\n\n  # Specifies whether or not Written Confirmation applies to a Commodity Option Transaction.\n  writtenConfirmation : boolean?\n\n  # Specifies any instructions on how the physical settlement is to be effected when the option is exercised.\n  clearingInstructions : FpML5.recordkeeping.SwaptionPhysicalSettlement?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityOption",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommoditySwaption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "americanExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters for defining the expiration date(s) and time(s) for an American style option.",
+      "Name" : "americanExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalAmericanExercise",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityPhysicalAmericanExercise",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalAmericanExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26056
+      }
+    },
+    "europeanExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters for defining the expiration date(s) and time(s) for a European style option.",
+      "Name" : "europeanExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalEuropeanExercise",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.CommodityPhysicalEuropeanExercise",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalEuropeanExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26059
+      }
+    },
+    "automaticExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether or not Automatic Exercise applies to a Commodity Option Transaction.",
+      "Name" : "automaticExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26062
+      }
+    },
+    "writtenConfirmation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether or not Written Confirmation applies to a Commodity Option Transaction.",
+      "Name" : "writtenConfirmation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26065
+      }
+    },
+    "clearingInstructions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies any instructions on how the physical settlement is to be effected when the option is exercised.",
+      "Name" : "clearingInstructions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.SwaptionPhysicalSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26068
+      }
+    }
+  },
+  "LocalFieldNames" : [ "americanExercise", "europeanExercise", "automaticExercise", "writtenConfirmation", "clearingInstructions" ],
+  "IsSynthetic" : false
+}

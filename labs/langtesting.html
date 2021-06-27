@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Model Tests &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AlfaDocs" href="labsalfadocs.html" />
+    <link rel="prev" title="ALFA Language Extensions" href="langextension.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="labs.html">ALFA Labs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="langextension.html">ALFA Language Extensions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Model Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-areas">Testing Areas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-for-testing">Support for Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#test-scenario-service">1. Test Scenario service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-definition">2. Test Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#upcoming-testing-features">Upcoming Testing Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="labsalfadocs.html">AlfaDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsxsd.html">XSD Importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labspython.html">Python Exporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labscassandra.html">Cassandra SQL Exporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsopenapi.html">OpenAPI Exporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labstbl.html">Table Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsbinaryruntimes.html">Binary Runtimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsalfawebide.html">ALFA Web-based Toolset</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="labs.html">ALFA Labs</a> &raquo;</li>
+        
+      <li>Data Model Tests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-model-tests">
+<span id="langtesting"></span><h1>Data Model Tests<a class="headerlink" href="#data-model-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Functional testing is an important part of data model development. Errors in the model can have major consequences
+in the correct behaviour of software that is developed using the model. ALFA has a number of features where logic
+can be expressed - constraints, data quality rules, library functions etc. These need to be tested to ensure their
+correct behaviour.</p>
+<p>To aid with functional testing, ALFA includes built-in support to define tests alongside model definitions.
+The testing capabilities will be extended to include test coverage reports to ensure that users have a complete
+picture on completeness of model testing.</p>
+<p>Having very high or full test coverage should be an assurance to data model consumers of the completeness and
+correctness of the model and rules expressed within. Naturally, these tests can form part of regression testing.</p>
+</div>
+<div class="section" id="testing-areas">
+<h2>Testing Areas<a class="headerlink" href="#testing-areas" title="Permalink to this headline">¶</a></h2>
+<p>Models expressed in ALFA have several areas that can be of interest for testing.
+This list is not exhaustive, but highlights some areas worth considering for data model testing.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Creating a new user-defined-type.<ul>
+<li>E.g. Valid numeric values, valid enumeration constants</li>
+</ul>
+</li>
+<li>Valid data-type constraints.<ul>
+<li>E.g. Valid string size, valid collection size, valid value ranges.</li>
+<li><code class="docutils literal notranslate"><span class="pre">string(3,3)</span></code>, <code class="docutils literal notranslate"><span class="pre">list&lt;int&gt;(1,*)</span></code>, <code class="docutils literal notranslate"><span class="pre">int(0,100)</span></code></li>
+</ul>
+</li>
+<li>Validate correct <code class="docutils literal notranslate"><span class="pre">assert</span></code> behaviour.</li>
+<li>Validate <a class="reference internal" href="../lang/expressions/library.html#librarytype"><span class="std std-ref">library</span></a> function behaviour.</li>
+<li>Correct <a class="reference internal" href="../lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a> function operation.</li>
+<li>Date, time values far in the past or future, or ‘edge’ values - 00:00, 23:59:59:999, leap years etc.</li>
+<li>Handing unexpected values.<ul>
+<li>Empty strings</li>
+<li>Empty collections ( <a class="reference internal" href="../lang/datatypes/vectors/list.html#listvectortype"><span class="std std-ref">list&lt; T &gt;</span></a>, <a class="reference internal" href="../lang/datatypes/vectors/set.html#setvectortype"><span class="std std-ref">set&lt; T &gt;</span></a>, <a class="reference internal" href="../lang/datatypes/vectors/map.html#mapvectortype"><span class="std std-ref">map&lt; K, V &gt;</span></a> )</li>
+<li>Negative or zero values</li>
+<li>Optional types with no values</li>
+<li><a class="reference internal" href="../lang/datatypes/templated/try.html#trytype"><span class="std std-ref">try&lt; T &gt;</span></a> type values with errors</li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="support-for-testing">
+<h2>Support for Testing<a class="headerlink" href="#support-for-testing" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Tests are authored using 2 newly introduced features in ALFA.</p>
+<ol class="arabic simple">
+<li>A new built-in <a class="reference internal" href="../lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a> that executes tests.</li>
+<li>A new <code class="docutils literal notranslate"><span class="pre">test</span></code> user-defined-type.</li>
+</ol>
+</div></blockquote>
+<div class="section" id="test-scenario-service">
+<h3>1. Test Scenario service<a class="headerlink" href="#test-scenario-service" title="Permalink to this headline">¶</a></h3>
+<p>The new <code class="docutils literal notranslate"><span class="pre">alfa.test.Scenario</span></code> <a class="reference internal" href="../lang/constructs/service.html#servicetype"><span class="std std-ref">service</span></a> exposes number of methods that can be used to compose tests.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// This service is passed into methods that are part of a &#39;test&#39; user-defined-type. Number of method are available to</span>
+<span class="c1">// formula data required for a test, and execute functionality and assert expected results.</span>
+<span class="k">service</span> <span class="n">alfa</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">Scenario</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// The specified entity object is available within the test to be accessed via the &#39;query&#39; or &#39;lookup&#39; functions.</span>
+    <span class="n">given</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">data</span> <span class="p">:</span> <span class="k">$entity</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// Load JSON files from the path specified (file, or directory), and those entity objects are available within the</span>
+    <span class="c1">// test to be accessed via the &#39;query&#39; or &#39;lookup&#39; functions.</span>
+    <span class="n">givenAll</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">path</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// The specified service is available in the context of this Scenario as a mocked service.</span>
+    <span class="c1">// When invoked, returns a random value from the results list.</span>
+    <span class="n">with</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">srv</span> <span class="p">:</span> <span class="n">$service</span><span class="p">,</span> <span class="n">results</span> <span class="p">:</span> <span class="k">map</span><span class="p">&lt;</span> <span class="n">FunctionName</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">ReturnValues</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span> <span class="p">&gt;</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// When the testBody is executed, no error is expected and completes normally</span>
+    <span class="n">pass</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">testBody</span> <span class="p">:</span> <span class="n">func</span><span class="p">&lt;(),</span> <span class="k">void</span> <span class="p">&gt;</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// When the testBody is executed, an error is expected.</span>
+    <span class="c1">// This method should be used when the exact error message expected can be implementation specific (E.g.Java, Python etc)</span>
+    <span class="n">fail</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">testBody</span> <span class="p">:</span> <span class="n">func</span><span class="p">&lt;(),</span> <span class="k">void</span> <span class="p">&gt;</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// When the testBody is executed, an error is expected on the field specified by the &#39;errorFieldPath&#39; field</span>
+    <span class="n">failOn</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">testBody</span> <span class="p">:</span> <span class="n">func</span><span class="p">&lt;(),</span> <span class="k">void</span> <span class="p">&gt;,</span> <span class="n">expectedErrorFieldPath</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// When the testBody is executed, an error is expected with the message being reported</span>
+    <span class="n">failWith</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">testBody</span> <span class="p">:</span> <span class="n">func</span><span class="p">&lt;(),</span> <span class="k">void</span> <span class="p">&gt;,</span> <span class="n">expectedErrorMessage</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// Assert the lambda returns true</span>
+    <span class="n">assertTrue</span><span class="p">(</span> <span class="n">description</span> <span class="p">:</span> <span class="kt">string</span><span class="p">,</span> <span class="n">testBody</span> <span class="p">:</span> <span class="n">func</span><span class="p">&lt;(),</span> <span class="n">boolean</span> <span class="p">&gt;</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+
+    <span class="c1">// Create a random object of the given type</span>
+    <span class="n">random</span><span class="p">(</span> <span class="n">typeName</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">)</span> <span class="p">:</span> <span class="n">$udt</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">testBody</span></code> argument in <code class="docutils literal notranslate"><span class="pre">testBody</span> <span class="pre">:</span> <span class="pre">func&lt;(),</span> <span class="pre">void</span> <span class="pre">&gt;</span></code> is a lambda expression that is executed to validate the
+behaviour of the test. This can be a single expression or a code block as <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">...</span> <span class="pre">}</span></code>.</p>
+</div>
+<div class="section" id="test-definition">
+<h3>2. Test Definition<a class="headerlink" href="#test-definition" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">testcase</span></code> definition allow tests to be expressed as a ‘Feature’ containing ‘Scenarios’ containing predefined
+conditions and expected behaviour.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">testcase</span></code> definition is syntactically identical to a <a class="reference internal" href="../lang/expressions/library.html#librarytype"><span class="std std-ref">library</span></a>. All functions within a <code class="docutils literal notranslate"><span class="pre">testcase</span></code>
+accept one parameter of type <code class="docutils literal notranslate"><span class="pre">alfa.test.Scenario</span></code>. The <code class="docutils literal notranslate"><span class="pre">Scenario</span></code> service methods are invoked to assert
+the expected behaviour.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">testcase</span> <span class="n">NameOfTestFeature</span> <span class="p">{</span>
+    <span class="n">testScenario1</span><span class="p">(</span> <span class="n">s</span> <span class="p">:</span> <span class="n">alfa</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">Scenario</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="c1">// invoke methods on argument &#39;s&#39; to perform testing</span>
+    <span class="p">}</span>
+
+    <span class="n">testScenario2</span><span class="p">(</span> <span class="n">s</span> <span class="p">:</span> <span class="n">alfa</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">Scenario</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="c1">// invoke methods on argument &#39;s&#39; to perform testing</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">alfa.test.Scenario</span></code> object is valid only for the duration of the method. Each method call will have a new
+instance of the <code class="docutils literal notranslate"><span class="pre">Scenario</span></code> object created.</p>
+<p>Users are free to choose a naming strategy for tests. For improving coverage, a <code class="docutils literal notranslate"><span class="pre">testcase</span></code> per user-defined-type can
+be followed as a convention. Tools to enforce availability of tests and test coverage expectations are currently
+being developed.</p>
+<div class="section" id="example-test">
+<h4>Example Test<a class="headerlink" href="#example-test" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">testcase</span> <span class="n">FeatureTestDemo</span> <span class="p">{</span>
+    <span class="n">divideByZero</span><span class="p">(</span> <span class="n">s</span> <span class="p">:</span> <span class="n">alfa</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">Scenario</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="c1">// Assert that 10 divide 0 causes a failure</span>
+        <span class="n">s</span><span class="p">::</span><span class="n">fails</span><span class="p">(</span><span class="s">&quot;Divide by zero&quot;</span><span class="p">,</span> <span class="p">(</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="n">MathLib</span><span class="p">::</span><span class="n">divide</span><span class="p">(</span> <span class="m">10</span><span class="p">,</span> <span class="m">0</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">validatePerson</span><span class="p">(</span> <span class="n">s</span> <span class="p">:</span> <span class="n">alfa</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">Scenario</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="c1">// Assert a new Person object can be created</span>
+        <span class="n">s</span><span class="p">::</span><span class="n">pass</span><span class="p">(</span><span class="s">&quot;A Person object can be created&quot;</span><span class="p">,</span> <span class="p">(</span> <span class="p">)</span> <span class="p">=&gt;</span>  <span class="k">new</span> <span class="n">Example</span><span class="p">.</span><span class="n">Person</span><span class="p">(</span> <span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="m">20</span> <span class="p">)</span>  <span class="p">)</span>
+
+        <span class="c1">// Assert a new Person with age set to 150 fails ( due to constraints set )</span>
+        <span class="n">s</span><span class="p">::</span><span class="n">failsWith</span><span class="p">(</span><span class="s">&quot;Person object age constraint upto 120&quot;</span><span class="p">,</span> <span class="p">(</span> <span class="p">)</span> <span class="p">=&gt;</span>  <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="m">150</span> <span class="p">),</span> <span class="s">&quot;Invalid age 150&quot;</span> <span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="upcoming-testing-features">
+<h2>Upcoming Testing Features<a class="headerlink" href="#upcoming-testing-features" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>As the core support for ALFA Tests is nearing completion, the following features will be introduced in future releases.</p>
+<ol class="arabic simple">
+<li>The ALFA Randomiser will be extended to overwrite certain fields of interest for testing, reducing code for writing tests.</li>
+<li>A new <a href="#id1"><span class="problematic" id="id2">`</span></a>ALFA Test Coverage’ Tool will enable specifying what type of coverage is expected and provide reports on current coverage.</li>
+<li>IDE Integration - the Test Runner and Coverage Tool will be integrated to the ALFA Editor plugin.</li>
+<li>A new ‘Performance Test Data’ Tool - using ALFA Randomiser with hints to generate large samples of data that can be used simulate large volumes of data.</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

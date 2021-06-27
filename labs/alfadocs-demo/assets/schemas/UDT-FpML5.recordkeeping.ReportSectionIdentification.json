@@ -1,0 +1,61 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that allows the specific report and section to be identified.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ReportSectionIdentification",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that allows the specific report and section to be identified.\n #/\nrecord FpML5.recordkeeping.ReportSectionIdentification {\n  # An identifier for the specific instance of this report.\n  reportId : string?\n\n  # A strictly ascending sequential (gapless) numeric value that can be used to identify the section of a report.\n  sectionNumber : int( 1, * )?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.RequestRetransmission",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "reportId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An identifier for the specific instance of this report.",
+      "Name" : "reportId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 10120
+      }
+    },
+    "sectionNumber" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A strictly ascending sequential (gapless) numeric value that can be used to identify the section of a report.",
+      "Name" : "sectionNumber",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 10123
+      }
+    }
+  },
+  "LocalFieldNames" : [ "reportId", "sectionNumber" ],
+  "IsSynthetic" : false
+}

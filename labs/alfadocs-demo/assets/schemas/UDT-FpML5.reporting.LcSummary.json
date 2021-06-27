@@ -1,0 +1,35 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A basic set of fields to identify an LC. Please note that the partyReference within the contract identifier should refer to the Issuing Bank. Type borrowed from FpML 4.x Loan definitions.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.LcSummary",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A basic set of fields to identify an LC. Please note that the partyReference within the contract identifier should refer to the Issuing Bank. Type borrowed from FpML 4.x Loan definitions.\n #/\nrecord FpML5.reporting.LcSummary {\n  identifier : FpML5.reporting.ContractIdentifier?\n\n}"
+  },
+  "AllFields" : {
+    "identifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "identifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ContractIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27536
+      }
+    }
+  },
+  "LocalFieldNames" : [ "identifier" ],
+  "IsSynthetic" : false
+}

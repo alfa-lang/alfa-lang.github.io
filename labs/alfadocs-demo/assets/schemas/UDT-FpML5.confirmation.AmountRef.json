@@ -1,0 +1,53 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a nominal amount with a reference.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AmountRef",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a nominal amount with a reference.\n #/\nrecord FpML5.confirmation.AmountRef {\n  amount : decimal\n\n  amountReference : FpML5.confirmation.AmountReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TradeAmendmentContent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17504
+      }
+    },
+    "amountReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "amountReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AmountReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17506
+      }
+    }
+  },
+  "LocalFieldNames" : [ "amount", "amountReference" ],
+  "IsSynthetic" : false
+}

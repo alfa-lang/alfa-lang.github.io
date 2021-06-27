@@ -1,0 +1,147 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The parameters for defining the expiration date(s) and time(s) for an American style option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalAmericanExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The parameters for defining the expiration date(s) and time(s) for an American style option.\n #/\nrecord FpML5.recordkeeping.CommodityPhysicalAmericanExercise {\n  # The first day(s) of the exercise period(s) for an American-style option.\n  commencementDates : FpML5.recordkeeping.AdjustableOrRelativeDates?\n\n  # The Expiration Date(s) of an American-style option.\n  expirationDates : FpML5.recordkeeping.AdjustableOrRelativeDates?\n\n  # The first day(s) of the exercise period(s) for an American-style option where it is relative to the occurrence of an external event.\n  relativeCommencementDates : FpML5.recordkeeping.CommodityRelativeExpirationDates?\n\n  # The Expiration Date(s) of an American-style option where it is relative to the occurrence of an external event.\n  relativeExpirationDates : FpML5.recordkeeping.CommodityRelativeExpirationDates?\n\n  # For a Bermuda or American style option, the latest time on an exercise business day (excluding the expiration date) within the exercise period that notice can be given by the buyer to the seller or seller's agent. Notice of exercise given after this time will be deemed to have been given on the next exercise business day.\n  latestExerciseTime : FpML5.recordkeeping.PrevailingTime?\n\n  # The specific time of day at which the option expires.\n  expirationTime : FpML5.recordkeeping.PrevailingTime?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPhysicalExercise",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "commencementDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The first day(s) of the exercise period(s) for an American-style option.",
+      "Name" : "commencementDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 4992
+      }
+    },
+    "expirationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Expiration Date(s) of an American-style option.",
+      "Name" : "expirationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 4995
+      }
+    },
+    "relativeCommencementDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The first day(s) of the exercise period(s) for an American-style option where it is relative to the occurrence of an external event.",
+      "Name" : "relativeCommencementDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityRelativeExpirationDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 4998
+      }
+    },
+    "relativeExpirationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Expiration Date(s) of an American-style option where it is relative to the occurrence of an external event.",
+      "Name" : "relativeExpirationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityRelativeExpirationDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5001
+      }
+    },
+    "latestExerciseTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For a Bermuda or American style option, the latest time on an exercise business day (excluding the expiration date) within the exercise period that notice can be given by the buyer to the seller or seller's agent. Notice of exercise given after this time will be deemed to have been given on the next exercise business day.",
+      "Name" : "latestExerciseTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PrevailingTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5004
+      }
+    },
+    "expirationTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specific time of day at which the option expires.",
+      "Name" : "expirationTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PrevailingTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5007
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 5010
+      }
+    }
+  },
+  "LocalFieldNames" : [ "commencementDates", "expirationDates", "relativeCommencementDates", "relativeExpirationDates", "latestExerciseTime", "expirationTime", "id" ],
+  "IsSynthetic" : false
+}

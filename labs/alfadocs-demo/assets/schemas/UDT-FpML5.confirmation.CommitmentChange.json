@@ -1,0 +1,85 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A structure which specifies the commitment changes occurring throughout the life of a facility.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommitmentChange",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A structure which specifies the commitment changes occurring throughout the life of a facility.\n #/\nrecord FpML5.confirmation.CommitmentChange {\n  # The date on which a facility increase/decrease has/will occur.\n  `date` : date\n\n  # The total remaining commitment amount (in facility currency), once the adjustnment has been applied.\n  adjustment : FpML5.confirmation.Adjustment\n\n  # The total remaining commitment amount (in facility currency), once the adjustnment has been applied.\n  remaining : FpML5.confirmation.MoneyWithParticipantShare\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommitmentSchedule",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "date" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which a facility increase/decrease has/will occur.",
+      "Name" : "date",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1768
+      }
+    },
+    "adjustment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The total remaining commitment amount (in facility currency), once the adjustnment has been applied.",
+      "Name" : "adjustment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Adjustment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Adjustment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Adjustment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1771
+      }
+    },
+    "remaining" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The total remaining commitment amount (in facility currency), once the adjustnment has been applied.",
+      "Name" : "remaining",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 1774
+      }
+    }
+  },
+  "LocalFieldNames" : [ "date", "adjustment", "remaining" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,46 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "A duration code for a Repo (or Securities Lending) transaction. There are many business and market rules that are derived from the duration of the transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RepoDurationEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n A duration code for a Repo (or Securities Lending) transaction. There are many business and market rules that are derived from the duration of the transaction.\n #/\nenum FpML5.reporting.RepoDurationEnum {\n    # Indicates that a contract is classified as overnight, meaning that there is one business day difference between the start and end date of the contract. Business rule: When the repo is overnight, the number of business days between the spot and forward value dates must be one. Forward leg must be specified.\n    Overnight \n    # Indicates that a contract is a regular term contract, with a start date and an end date. Business rule: When the repo is 'Term', both spot and forward legs must be specified.\n    Term \n\n}"
+  },
+  "AllFields" : {
+    "Overnight" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that a contract is classified as overnight, meaning that there is one business day difference between the start and end date of the contract. Business rule: When the repo is overnight, the number of business days between the spot and forward value dates must be one. Forward leg must be specified.",
+      "Name" : "Overnight",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24526
+      }
+    },
+    "Term" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that a contract is a regular term contract, with a start date and an end date. Business rule: When the repo is 'Term', both spot and forward legs must be specified.",
+      "Name" : "Term",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24528
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Overnight", "Term" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,96 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.PeriodicDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.transparency.PeriodicDates {\n  calculationStartDate : FpML5.transparency.AdjustableOrRelativeDate?\n\n  calculationEndDate : FpML5.transparency.AdjustableOrRelativeDate?\n\n  # The frequency at which calculation period end dates occur with the regular part of the calculation period schedule and their roll date convention.\n  calculationPeriodFrequency : FpML5.transparency.CalculationPeriodFrequency?\n\n  # The business day convention to apply to each calculation period end date if it would otherwise fall on a day that is not a business day in the specified financial business centers.\n  calculationPeriodDatesAdjustments : FpML5.transparency.BusinessDayAdjustments?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.AdjustableRelativeOrPeriodicDates",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.AdjustableRelativeOrPeriodicDates2",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "calculationStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 937
+      }
+    },
+    "calculationEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "calculationEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 939
+      }
+    },
+    "calculationPeriodFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The frequency at which calculation period end dates occur with the regular part of the calculation period schedule and their roll date convention.",
+      "Name" : "calculationPeriodFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CalculationPeriodFrequency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 941
+      }
+    },
+    "calculationPeriodDatesAdjustments" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The business day convention to apply to each calculation period end date if it would otherwise fall on a day that is not a business day in the specified financial business centers.",
+      "Name" : "calculationPeriodDatesAdjustments",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.BusinessDayAdjustments",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 944
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationStartDate", "calculationEndDate", "calculationPeriodFrequency", "calculationPeriodDatesAdjustments" ],
+  "IsSynthetic" : false
+}

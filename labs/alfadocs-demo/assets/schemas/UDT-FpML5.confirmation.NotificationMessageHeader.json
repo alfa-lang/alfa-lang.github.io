@@ -1,0 +1,206 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that refines the generic message header to match the requirements of a NotificationMessage.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.NotificationMessageHeader",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that refines the generic message header to match the requirements of a NotificationMessage.\n #/\nrecord FpML5.confirmation.NotificationMessageHeader {\n  # A unique identifier (within its coding scheme) assigned to the message by its creating party.\n  messageId : string\n\n  # A copy of the unique message identifier (within it own coding scheme) to which this message is responding.\n  inReplyTo : string?\n\n  # The unique identifier (within its coding scheme) for the originator of a message instance.\n  sentBy : string\n\n  # A unique identifier (within its coding scheme) indicating an intended recipent of a message.\n  sendTo : string?\n\n  # A unique identifier (within the specified coding scheme) giving the details of some party to whom a copy of this message will be sent for reference.\n  copyTo : string?\n\n  # The date and time (on the source system) when this message instance was created.\n  creationTimestamp : datetime\n\n  # The date and time (on the source system) when this message instance will be considered expired.\n  expiryTimestamp : datetime?\n\n  # The version(s) of specifications that the sender asserts the message was developed for.\n  implementationSpecification : FpML5.confirmation.ImplementationSpecification?\n\n  # Additional message information that may be provided by each involved party.\n  partyMessageInformation : FpML5.confirmation.PartyMessageInformation?\n\n  Signature : N2000.N09.xmldsig.SignatureType?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ApprovalStatusNotification",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ClearingConfirmed",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ClearingRefused",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ClearingStatus",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.NotificationMessage",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ServiceNotification",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "messageId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique identifier (within its coding scheme) assigned to the message by its creating party.",
+      "Name" : "messageId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13405
+      }
+    },
+    "inReplyTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A copy of the unique message identifier (within it own coding scheme) to which this message is responding.",
+      "Name" : "inReplyTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13408
+      }
+    },
+    "sentBy" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The unique identifier (within its coding scheme) for the originator of a message instance.",
+      "Name" : "sentBy",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13411
+      }
+    },
+    "sendTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique identifier (within its coding scheme) indicating an intended recipent of a message.",
+      "Name" : "sendTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13414
+      }
+    },
+    "copyTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique identifier (within the specified coding scheme) giving the details of some party to whom a copy of this message will be sent for reference.",
+      "Name" : "copyTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13417
+      }
+    },
+    "creationTimestamp" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date and time (on the source system) when this message instance was created.",
+      "Name" : "creationTimestamp",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "datetimeType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13420
+      }
+    },
+    "expiryTimestamp" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date and time (on the source system) when this message instance will be considered expired.",
+      "Name" : "expiryTimestamp",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13423
+      }
+    },
+    "implementationSpecification" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The version(s) of specifications that the sender asserts the message was developed for.",
+      "Name" : "implementationSpecification",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ImplementationSpecification",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13426
+      }
+    },
+    "partyMessageInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Additional message information that may be provided by each involved party.",
+      "Name" : "partyMessageInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyMessageInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13429
+      }
+    },
+    "Signature" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "Signature",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "N2000.N09.xmldsig.SignatureType",
+          "UdtType" : "traitType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 13432
+      }
+    }
+  },
+  "LocalFieldNames" : [ "messageId", "inReplyTo", "sentBy", "sendTo", "copyTo", "creationTimestamp", "expiryTimestamp", "implementationSpecification", "partyMessageInformation", "Signature" ],
+  "IsSynthetic" : false
+}

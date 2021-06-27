@@ -1,0 +1,250 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the details for one of the transactions in an FX swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxSwapLeg",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the details for one of the transactions in an FX swap.\n #/\nrecord FpML5.reporting.FxSwapLeg {\n  # A reference to a party trade ID. This is provided in case the message creator wishes to record that the swap leg is assocatiated with a particular trade identifier; typically this is used for identifying a USI assocatied wih the leg.\n  tradeIdentifierReference : FpML5.reporting.PartyTradeIdentifierReference?\n\n  # This is the first of the two currency flows that define a single leg of a standard foreign exchange transaction.\n  exchangedCurrency1 : FpML5.reporting.Payment?\n\n  # This is the second of the two currency flows that define a single leg of a standard foreign exchange transaction.\n  exchangedCurrency2 : FpML5.reporting.Payment?\n\n  # Indicates which currency was dealt.\n  dealtCurrency : string?\n\n  # A tenor expressed with a standard business term (i.e. Spot, TomorrowNext, etc.)\n  tenorName : string\n\n  # A tenor expressed as a period type and multiplier (e.g. 1D, 1Y, etc.)\n  tenorPeriod : FpML5.reporting.Period\n\n  # The date on which both currencies traded will settle.\n  valueDate : date\n\n  # The date on which the currency1 amount will be settled. To be used in a split value date scenario.\n  currency1ValueDate : date?\n\n  # The date on which the currency2 amount will be settled. To be used in a split value date scenario.\n  currency2ValueDate : date?\n\n  # The rate of exchange between the two currencies.\n  exchangeRate : FpML5.reporting.ExchangeRate?\n\n  # Used to describe a particular type of FX forward transaction that is settled in a single currency (for example, a non-deliverable forward).\n  nonDeliverableSettlement : FpML5.reporting.FxCashSettlement?\n\n  # Describes the disruption events and fallbacks applicable to a currency pair referenced by the transaction.\n  disruption : FpML5.reporting.FxDisruption?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxSwap",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "tradeIdentifierReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to a party trade ID. This is provided in case the message creator wishes to record that the swap leg is assocatiated with a particular trade identifier; typically this is used for identifying a USI assocatied wih the leg.",
+      "Name" : "tradeIdentifierReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifierReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26413
+      }
+    },
+    "exchangedCurrency1" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the first of the two currency flows that define a single leg of a standard foreign exchange transaction.",
+      "Name" : "exchangedCurrency1",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Payment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26416
+      }
+    },
+    "exchangedCurrency2" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This is the second of the two currency flows that define a single leg of a standard foreign exchange transaction.",
+      "Name" : "exchangedCurrency2",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Payment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26419
+      }
+    },
+    "dealtCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates which currency was dealt.",
+      "Name" : "dealtCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26422
+      }
+    },
+    "tenorName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A tenor expressed with a standard business term (i.e. Spot, TomorrowNext, etc.)",
+      "Name" : "tenorName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26425
+      }
+    },
+    "tenorPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A tenor expressed as a period type and multiplier (e.g. 1D, 1Y, etc.)",
+      "Name" : "tenorPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Period",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Period",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26428
+      }
+    },
+    "valueDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which both currencies traded will settle.",
+      "Name" : "valueDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26431
+      }
+    },
+    "currency1ValueDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the currency1 amount will be settled. To be used in a split value date scenario.",
+      "Name" : "currency1ValueDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26434
+      }
+    },
+    "currency2ValueDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the currency2 amount will be settled. To be used in a split value date scenario.",
+      "Name" : "currency2ValueDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26437
+      }
+    },
+    "exchangeRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate of exchange between the two currencies.",
+      "Name" : "exchangeRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExchangeRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26440
+      }
+    },
+    "nonDeliverableSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Used to describe a particular type of FX forward transaction that is settled in a single currency (for example, a non-deliverable forward).",
+      "Name" : "nonDeliverableSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxCashSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26443
+      }
+    },
+    "disruption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes the disruption events and fallbacks applicable to a currency pair referenced by the transaction.",
+      "Name" : "disruption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxDisruption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26446
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 26449
+      }
+    }
+  },
+  "LocalFieldNames" : [ "tradeIdentifierReference", "exchangedCurrency1", "exchangedCurrency2", "dealtCurrency", "tenorName", "tenorPeriod", "valueDate", "currency1ValueDate", "currency2ValueDate", "exchangeRate", "nonDeliverableSettlement", "disruption", "id" ],
+  "IsSynthetic" : false
+}

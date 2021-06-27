@@ -1,0 +1,34 @@
+# Generic types
+
+ALFA supports generic types definitions as shown below.
+```csharp
+record Pair<T1,T2> {
+    V1 : T1
+    V2 : T2
+}
+
+record Room {
+    Dimensions : Pair<double,double>
+}
+```
+
+The templated definition `Pair` can be reused specifying the template
+types at usage time avoiding the need for additional definitions.
+
+Other examples:
+
+```csharp
+record Timeseries<T>{
+    When : datetime
+    Value : T
+}
+
+record Match {
+    Goals : Timeseries<int>
+}
+
+record Auction {
+    ItemId : uuid
+    Bids : Timeseries<double>
+}
+```

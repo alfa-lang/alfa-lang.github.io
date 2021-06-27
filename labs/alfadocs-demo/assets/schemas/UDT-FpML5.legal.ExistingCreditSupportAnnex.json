@@ -1,0 +1,94 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The reference to the existing Credit Support Annex (CSA). Used as part of the Standard CSA document.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.ExistingCreditSupportAnnex",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The reference to the existing Credit Support Annex (CSA). Used as part of the Standard CSA document.\n #/\nrecord FpML5.legal.ExistingCreditSupportAnnex {\n  agreementDate : date\n\n  # The recognizable attributes of the particular legal document.\n  documentType : FpML5.legal.LegalDocumentType\n\n  # The legal document identifier. Several identifiers can be specified.\n  partyDocumentIdentifier : FpML5.legal.PartyDocumentIdentifier?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013EnglishLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013NewYorkLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2014EnglishLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2014NewYorkLaw",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnexBase",
+    "UdtType" : "traitType"
+  } ],
+  "AllFields" : {
+    "agreementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "agreementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4503
+      }
+    },
+    "documentType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The recognizable attributes of the particular legal document.",
+      "Name" : "documentType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.LegalDocumentType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4505
+      }
+    },
+    "partyDocumentIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The legal document identifier. Several identifiers can be specified.",
+      "Name" : "partyDocumentIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyDocumentIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4508
+      }
+    }
+  },
+  "LocalFieldNames" : [ "agreementDate", "documentType", "partyDocumentIdentifier" ],
+  "IsSynthetic" : false
+}

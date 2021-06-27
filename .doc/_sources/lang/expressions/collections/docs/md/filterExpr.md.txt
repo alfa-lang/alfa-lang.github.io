@@ -1,0 +1,24 @@
+filter
+======
+
+Filters data in a :ref:`mapVectorType`, :ref:`listVectorType`,
+or :ref:`setVectorType`.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType`|The object to be filtered|
+|2|A lambda that accepts 1 or 2 parameters and returns a boolean result.| When 1st parameter to `filter` is a :ref:`listVectorType` or :ref:`setVectorType`,then the 1st parameter to lambda is one of its elements.<br/>When 1st parameter to `filter` is a :ref:`mapVectorType`, the lambda accepts the key and value per entry.|
+
+
+__Returns:__
+
+A :ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType` that has been filtered.
+
+
+__Usages:__
+
+>- `filter( v:list<T>, e => boolean-expression ) : list<T>`
+>- `filter( v:set<T>, e => boolean-expression ) : set<T>`
+>- `filter( v:map<K, V>, (k, v) => boolean-expression ) : map<K, V>`

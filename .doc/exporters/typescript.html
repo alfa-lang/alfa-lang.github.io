@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Typescript &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python" href="python.html" />
+    <link rel="prev" title="CSharp" href="csharp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="exporters.html">Code Generators</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="exporters.html#exporters">Exporters</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="java.html">Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="avro.html">Avro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protobuf.html">Protocol Buffers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csharp.html">CSharp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Typescript</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exporter-concepts">Exporter Concepts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporter-example">Exporter Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type-mappings">Type Mappings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javajpa.html">Java JPA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exporters.html#importers">Importers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="exporters.html">Code Generators</a> &raquo;</li>
+        
+      <li>Typescript</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="typescript">
+<span id="id1"></span><h1>Typescript<a class="headerlink" href="#typescript" title="Permalink to this headline">¶</a></h1>
+<p>The ALFA Typescript generator creates Typescript files relating to the ALFA model definition.</p>
+<p>The generated code depends on a single <code class="docutils literal notranslate"><span class="pre">alfa.builtins.ts</span></code> file which is saved in the root of the namespace. This will be packaged
+in future to avoid duplication.</p>
+<div class="section" id="exporter-concepts">
+<h2>Exporter Concepts<a class="headerlink" href="#exporter-concepts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>All code relating to a single ALFA namespace is generated into a single Typescript file.</li>
+<li>The generated code is plain Typescript with no alignment to a library such as Angular, React or Vue.</li>
+<li>If UI specific features are required, they can be added as an extension to this generator, or a new type of generator.</li>
+<li>Main focus for ALFA Typescript is to have type-safe, runtime validated JSON interchange supported code.</li>
+<li>Optional data types and other data type constraints will be checked for correctness before serialisation.</li>
+<li>To help code readability, even though Typescript does not support the range of primitive types of ALFA, those have been defined
+as type aliases. E.g. <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">INT</span> <span class="pre">=</span> <span class="pre">number</span></code>.</li>
+<li>Unlike other ALFA generated code, ALFA Typescript generated code is mutable. This was done to avoid generating excessive code.</li>
+<li>All objects have accessor/mutator - <code class="docutils literal notranslate"><span class="pre">get*</span></code>, <code class="docutils literal notranslate"><span class="pre">set*</span></code> methods. The <code class="docutils literal notranslate"><span class="pre">set*</span></code> method allow method chaining. All variables are private.</li>
+<li>Currently ALFA record, enum, service, trait is supported in the code generator. Entity and union will be added soon.</li>
+<li>ALFA generic data types, compressed<span class="raw-html-m2r"><T></span>, try<span class="raw-html-m2r"><T></span> and handful of other types are not yet supported, and will be added soon.</li>
+<li>The supplied <code class="docutils literal notranslate"><span class="pre">JsonCodec</span></code> class supports converting to and from JSON compatible with other ALFA generated code ( Java, C#, Python ).</li>
+</ul>
+</div>
+<div class="section" id="exporter-example">
+<h2>Exporter Example<a class="headerlink" href="#exporter-example" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following <code class="docutils literal notranslate"><span class="pre">demo.alfa</span></code> definition. Lets look at what Java code is generated from this.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">Example</span>
+
+<span class="k">enum</span> <span class="n">PropertyType</span> <span class="p">{</span>
+   <span class="n">Home</span>
+   <span class="n">Office</span>
+<span class="p">}</span>
+
+<span class="k">service</span> <span class="nf">Updater</span><span class="p">(</span> <span class="n">token</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="n">getProperties</span><span class="p">()</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="n">Property</span> <span class="p">&gt;</span>
+   <span class="n">saveProperty</span><span class="p">(</span> <span class="n">a</span> <span class="p">:</span> <span class="n">Property</span> <span class="p">)</span> <span class="p">:</span> <span class="k">void</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Property</span> <span class="p">{</span>
+   <span class="n">HouseNo</span> <span class="p">:</span> <span class="kt">int</span>
+   <span class="n">Street</span> <span class="p">:</span> <span class="kt">string</span>
+   <span class="n">CurrentValue</span> <span class="p">:</span> <span class="kt">double</span>
+   <span class="n">ConstructedDate</span> <span class="p">:</span> <span class="k">date</span><span class="p">?</span>
+   <span class="n">LocalAreas</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="n">Region</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Region</span> <span class="p">{</span>
+   <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This can be generated to Typescript using the ALFA CLI - <code class="docutils literal notranslate"><span class="pre">alfa</span> <span class="pre">-c</span> <span class="pre">-e</span> <span class="pre">typescript</span> <span class="pre">-o</span> <span class="pre">gen/java</span> <span class="pre">demo.alfa</span></code> or by setting
+the <code class="docutils literal notranslate"><span class="pre">exportType</span></code> to <code class="docutils literal notranslate"><span class="pre">typescript</span></code> in the ALFA Maven Plugin.</p>
+<p>The generated Java code is shown in the
+screenshot below.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">JsonCodec</span><span class="p">,</span> <span class="nx">AlfaTypeFactory</span><span class="p">,</span> <span class="nx">AlfaObject</span><span class="p">,</span> <span class="nx">AlfaDescriptor</span><span class="p">,</span>
+         <span class="nx">TRY</span><span class="p">,</span> <span class="nx">SHORT</span><span class="p">,</span> <span class="nx">INT</span><span class="p">,</span> <span class="nx">DOUBLE</span><span class="p">,</span> <span class="nx">LONG</span><span class="p">,</span> <span class="nx">DURATION</span><span class="p">,</span> <span class="nx">TIME</span><span class="p">,</span> <span class="nx">URI</span><span class="p">,</span> <span class="nx">UUID</span><span class="p">,</span> <span class="nx">FLOAT</span><span class="p">,</span> <span class="nx">DATETIME</span><span class="p">,</span> <span class="nx">DECIMAL</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./alfa.builtin&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Updater</span> <span class="p">{</span>
+    <span class="nx">getProperties</span><span class="p">()</span> <span class="o">:</span> <span class="nb">Array</span><span class="o">&lt;</span> <span class="nx">Property</span> <span class="o">&gt;</span><span class="p">;</span>
+    <span class="nx">saveProperty</span><span class="p">(</span><span class="nx">_a</span> : <span class="kt">Property</span><span class="p">)</span> <span class="o">:</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">UpdaterFactory</span> <span class="p">{</span>
+   <span class="nx">create</span><span class="p">(</span><span class="nx">_token</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Updater</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PropertyType</span> <span class="p">{</span>
+    <span class="nx">Home</span><span class="p">,</span>
+    <span class="nx">Office</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">Property</span> <span class="kr">implements</span> <span class="nx">AlfaObject</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">_HouseNo</span>: <span class="kt">INT</span>
+    <span class="kr">private</span> <span class="nx">_Street</span>: <span class="kt">string</span>
+    <span class="kr">private</span> <span class="nx">_CurrentValue</span>: <span class="kt">DOUBLE</span>
+    <span class="kr">private</span> <span class="nx">_ConstructedDate</span>: <span class="kt">Date</span> <span class="o">|</span> <span class="kc">undefined</span>
+    <span class="kr">private</span> <span class="nx">_LocalAreas</span>: <span class="kt">Array</span><span class="o">&lt;</span> <span class="nx">Region</span> <span class="o">&gt;</span>
+
+    <span class="nx">getHouseNo</span><span class="p">()</span> <span class="o">:</span> <span class="nx">INT</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_HouseNo</span>
+    <span class="p">}</span>
+
+    <span class="nx">setHouseNo</span><span class="p">(</span> <span class="nx">v</span> : <span class="kt">INT</span> <span class="p">)</span> <span class="o">:</span> <span class="nx">Property</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_HouseNo</span> <span class="o">=</span> <span class="nx">v</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+
+    <span class="nx">getStreet</span><span class="p">()</span> <span class="o">:</span> <span class="kt">string</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_Street</span>
+    <span class="p">}</span>
+
+    <span class="nx">setStreet</span><span class="p">(</span> <span class="nx">v</span> : <span class="kt">string</span> <span class="p">)</span> <span class="o">:</span> <span class="nx">Property</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_Street</span> <span class="o">=</span> <span class="nx">v</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+
+    <span class="nx">getCurrentValue</span><span class="p">()</span> <span class="o">:</span> <span class="nx">DOUBLE</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_CurrentValue</span>
+    <span class="p">}</span>
+
+    <span class="nx">setCurrentValue</span><span class="p">(</span> <span class="nx">v</span> : <span class="kt">DOUBLE</span> <span class="p">)</span> <span class="o">:</span> <span class="nx">Property</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_CurrentValue</span> <span class="o">=</span> <span class="nx">v</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+
+    <span class="nx">getConstructedDate</span><span class="p">()</span> <span class="o">:</span> <span class="nb">Date</span> <span class="o">|</span> <span class="kc">undefined</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_ConstructedDate</span>
+    <span class="p">}</span>
+
+    <span class="nx">setConstructedDate</span><span class="p">(</span> <span class="nx">v</span> : <span class="kt">Date</span> <span class="o">|</span> <span class="kc">undefined</span> <span class="p">)</span> <span class="o">:</span> <span class="nx">Property</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_ConstructedDate</span> <span class="o">=</span> <span class="nx">v</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+
+    <span class="nx">getLocalAreas</span><span class="p">()</span> <span class="o">:</span> <span class="nb">Array</span><span class="o">&lt;</span> <span class="nx">Region</span> <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_LocalAreas</span>
+    <span class="p">}</span>
+
+    <span class="nx">setLocalAreas</span><span class="p">(</span> <span class="nx">v</span> : <span class="kt">Array</span><span class="o">&lt;</span> <span class="nx">Region</span> <span class="o">&gt;</span> <span class="p">)</span> <span class="o">:</span> <span class="nx">Property</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_LocalAreas</span> <span class="o">=</span> <span class="nx">v</span>
+        <span class="k">return</span> <span class="k">this</span>
+    <span class="p">}</span>
+
+    <span class="nx">toJSON</span><span class="p">()</span> <span class="o">:</span> <span class="nx">object</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">JsonCodec</span><span class="p">.</span><span class="nx">toJsonObject</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">descriptor</span><span class="p">()</span> <span class="o">:</span> <span class="nx">AlfaDescriptor</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">Property</span><span class="p">.</span><span class="nx">__descriptor</span>
+    <span class="p">}</span>
+
+    <span class="kr">static</span> <span class="nx">__descriptor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AlfaDescriptor</span><span class="p">(</span> <span class="s2">&quot;Example.Property&quot;</span><span class="p">,</span> <span class="s2">&quot;record&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="c1">// Removed for clarity</span>
+    <span class="p">}</span> <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ExampleTypesFactory</span> <span class="kr">implements</span> <span class="nx">AlfaTypeFactory</span> <span class="p">{</span>
+
+    <span class="kr">private</span> <span class="kr">static</span> <span class="nx">types</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Example.Region&quot;</span> <span class="o">:</span> <span class="nx">Region</span><span class="p">,</span>
+        <span class="s2">&quot;Example.PropertyType&quot;</span> <span class="o">:</span> <span class="nx">PropertyType</span><span class="p">,</span>
+        <span class="s2">&quot;Example.Property&quot;</span> <span class="o">:</span> <span class="nx">Property</span>
+    <span class="p">}</span>
+
+    <span class="kr">private</span> <span class="kr">static</span> <span class="nx">typeNames</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">(</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">ExampleTypesFactory</span><span class="p">.</span><span class="nx">types</span><span class="p">)</span> <span class="p">)</span>
+
+    <span class="nx">getAlfaTypeNames</span><span class="p">()</span><span class="o">:</span> <span class="nx">Set</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">ExampleTypesFactory</span><span class="p">.</span><span class="nx">typeNames</span>
+    <span class="p">}</span>
+
+    <span class="nx">createInstance</span><span class="p">(</span><span class="nx">alfaTypeName</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">AlfaObject</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">clz</span> <span class="o">=</span> <span class="nx">ExampleTypesFactory</span><span class="p">.</span><span class="nx">types</span><span class="p">[</span><span class="nx">alfaTypeName</span><span class="p">]</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">clz</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="type-mappings">
+<h2>Type Mappings<a class="headerlink" href="#type-mappings" title="Permalink to this headline">¶</a></h2>
+<p>ALFA types are mapped to Typescript with all numeric values being number and most other scalars being string.
+ALFA list, set and map are happed to Typescript Array, Set and Map.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The following is an example Typescript code using the Typescript above. It demonstrates an object being created, serialised
+and deserialised.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span><span class="nx">Property</span><span class="p">,</span> <span class="nx">Region</span><span class="p">,</span> <span class="nx">ExampleTypesFactory</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../gen/Example&#39;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">JsonCodec</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../gen/alfa.builtin&#39;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Property</span><span class="p">()</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">setHouseNo</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">setStreet</span><span class="p">(</span><span class="s2">&quot;Main Street&quot;</span><span class="p">)</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">setCurrentValue</span><span class="p">(</span><span class="mi">800000</span><span class="p">)</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">setConstructedDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="kd">let</span> <span class="nx">areas</span> <span class="o">=</span> <span class="p">[</span> <span class="k">new</span> <span class="nx">Region</span><span class="p">().</span><span class="nx">setName</span><span class="p">(</span><span class="s2">&quot;NY&quot;</span><span class="p">),</span> <span class="k">new</span> <span class="nx">Region</span><span class="p">().</span><span class="nx">setName</span><span class="p">(</span><span class="s2">&quot;MT&quot;</span><span class="p">)</span> <span class="p">]</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">setLocalAreas</span><span class="p">(</span><span class="nx">areas</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nx">jsonObj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ExampleTypesFactory</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">decodedProperty</span> <span class="o">=</span> <span class="nx">JsonCodec</span><span class="p">.</span><span class="nx">toAlfaObject</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">jsonObj</span><span class="p">)</span> <span class="kr">as</span> <span class="nx">Property</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s2">&quot;Year:&quot;</span> <span class="o">+</span> <span class="nx">decodedProperty</span><span class="p">.</span><span class="nx">getConstructedDate</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">()</span> <span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s2">&quot;Local area:&quot;</span> <span class="o">+</span> <span class="nx">decodedProperty</span><span class="p">.</span><span class="nx">getLocalAreas</span><span class="p">()[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getName</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>To execute the sample:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>tsc -lib es6,dom Tests.ts
+node Tests.js
+</pre></div>
+</div>
+<p>The following output is produced.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>{&quot;$type&quot;:&quot;Example.Property&quot;,&quot;HouseNo&quot;:10,&quot;Street&quot;:&quot;Main Street&quot;,&quot;CurrentValue&quot;:800000,&quot;ConstructedDate&quot;:&quot;2010-11-30&quot;,&quot;LocalAreas&quot;:[{&quot;$type&quot;:&quot;Example.Region&quot;,&quot;Name&quot;:&quot;NY&quot;},{&quot;$type&quot;:&quot;Example.Region&quot;,&quot;Name&quot;:&quot;MT&quot;}]}
+Year:2010
+Local area:MT
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

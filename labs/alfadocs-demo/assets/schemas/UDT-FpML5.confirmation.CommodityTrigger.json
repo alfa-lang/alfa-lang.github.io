@@ -1,0 +1,107 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The barrier which, when breached, triggers the knock-in or knock-out of the barrier option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityTrigger",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The barrier which, when breached, triggers the knock-in or knock-out of the barrier option.\n #/\nrecord FpML5.confirmation.CommodityTrigger {\n  # The amount used the specify the barrier in terms of an quantity of commodity or a change in the quantity of commodity. In confirmations this is often described as the \"Strike Volume\" or \"Strike Quantity\".\n  levelQuantity : decimal\n\n  # The units (e.g. BCF) used to specify the barrier in terms of an quantity of commodity or change in the quantity of commodity.\n  levelUnit : string\n\n  # A barrier expressed as a percentage of notional quantity or commodity price level.\n  levelPercentage : decimal\n\n  # A barrier expressed as a price level.\n  levelPrice : FpML5.confirmation.FixedPrice\n\n  # For barrier options: the specification of how an option will trigger or expire based on the position of the spot rate relative to the trigger level. For trades with selectable notionals: the specification of the conditions where one of the alternative notional values would apply.\n  triggerType : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityBarrier",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CommodityDigital",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "levelQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount used the specify the barrier in terms of an quantity of commodity or a change in the quantity of commodity. In confirmations this is often described as the \"Strike Volume\" or \"Strike Quantity\".",
+      "Name" : "levelQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 274
+      }
+    },
+    "levelUnit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The units (e.g. BCF) used to specify the barrier in terms of an quantity of commodity or change in the quantity of commodity.",
+      "Name" : "levelUnit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 277
+      }
+    },
+    "levelPercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A barrier expressed as a percentage of notional quantity or commodity price level.",
+      "Name" : "levelPercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 280
+      }
+    },
+    "levelPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A barrier expressed as a price level.",
+      "Name" : "levelPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FixedPrice",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FixedPrice",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FixedPrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 283
+      }
+    },
+    "triggerType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For barrier options: the specification of how an option will trigger or expire based on the position of the spot rate relative to the trigger level. For trades with selectable notionals: the specification of the conditions where one of the alternative notional values would apply.",
+      "Name" : "triggerType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 286
+      }
+    }
+  },
+  "LocalFieldNames" : [ "levelQuantity", "levelUnit", "levelPercentage", "levelPrice", "triggerType" ],
+  "IsSynthetic" : false
+}

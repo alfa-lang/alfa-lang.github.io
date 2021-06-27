@@ -1,0 +1,535 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A facility designed to issue letter of credit products.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.LetterOfCreditFacility",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A facility designed to issue letter of credit products.\n #/\nrecord FpML5.confirmation.LetterOfCreditFacility {\n  # Identification of the underlying asset, using public and/or private identifiers.\n  instrumentId : string\n\n  # Long name of the underlying asset.\n  description : string?\n\n  # A party reference to the (main) borrower. This may be different to the issuer defined at the deal-level.\n  borrowerPartyReference : FpML5.confirmation.PartyReference\n\n  # Party references to co-borrowers as listed on the credit agreement.\n  coBorrowerPartyReference : FpML5.confirmation.PartyReference?\n\n  # A party reference to the agent bank. Each facility (within a single deal) can have specific/different agent banks, especially if there are jurisdictional boundaries being crossed.\n  agentPartyReference : FpML5.confirmation.PartyReference?\n\n  # Party references to any guarantors associated with the facility borrower.\n  lcIssuingBankPartyReference : FpML5.confirmation.PartyReference?\n\n  # Party references to any guarantors associated with the facility borrower.\n  guarantorPartyReference : FpML5.confirmation.PartyReference?\n\n  # The start date of the facility.\n  startDate : date\n\n  # The latest date that a drawdown can be made effective against the facility.\n  expiryDate : date?\n\n  # The maturity date of the facility.\n  maturityDate : date?\n\n  # The current global/lender share commitment amount. This defines the current limit against which the borrower may draw funds.\n  currentCommitment : FpML5.confirmation.FacilityCommitment\n\n  # The original global commitment amount. This defines the limit, as of the start date, against which the borrower may draw funds.\n  originalCommitment : FpML5.confirmation.MoneyWithParticipantShare?\n\n  # The commitment schedule associated with the facility.\n  commitmentSchedule : FpML5.confirmation.CommitmentSchedule?\n\n  # Defines the exchange rate between the facility and deal denomination currencies (only required if the currencies are different).\n  dealFxRate : FpML5.confirmation.FxTerms?\n\n  # Defines the governing law (jurisdiction) under which the facility operates.\n  governingLaw : string?\n\n  # Facility features which help define the instrument with greater granularity. E.g. bridge, acquisition etc.\n  feature : string?\n\n  # The lien level associated with the facility. E.g. 1st, 2nd, 3rd.\n  lien : string?\n\n  # The seniority of the facility. E.g. senior, senior secured etc.\n  seniority : string?\n\n  # A set of default cash accrual options. Each option is usually available to any borrowers defined within the facility, but an explicitly defined set of borrower entities (within the option) or be applicable to all borrower(s) within the facility.\n  fixedRateOption : FpML5.confirmation.FixedRateOption\n\n  # A set of default cash accrual options. Each option is usually available to any borrowers defined within the facility, but an explicitly defined set of borrower entities (within the option) or be applicable to all borrower(s) within the facility.\n  floatingRateOption : FpML5.confirmation.FloatingRateOption\n\n  # A description of all the letter of credit fee types which apply to the facility.\n  lcOption : FpML5.confirmation.LcOption\n\n  # A loan contract PIK accrual option.\n  accruingPikOption : FpML5.confirmation.AccruingPikOption?\n\n  # A description of all the different types of accruing fees which apply to the facility.\n  accruingFeeOption : FpML5.confirmation.AccruingFeeOption?\n\n  # This represents a default rate that may apply in addition to a regular margin rate (on outstanding loan contracts). This rate applied at the discretion of the agent bank, if the borrower is deemed to be in default.\n  defaultRate : FpML5.confirmation.PeriodRate?\n\n  # The mandatory cost rate currently applied to the interest rate period.\n  mandatoryCostRate : FpML5.confirmation.PeriodRate?\n\n  # This represents a penalty rate that may apply in addition to the regular margin rate (on outstanding loan contracts). This rate is applied at the discretion of the agent bank, if the borrower has broken terms stated within the credit agreement.\n  penaltyRate : FpML5.confirmation.PeriodRate?\n\n  # A container to denote whether funds may be drawn in multiple currency denominations, in addition to the base (facility) currency. The current commitment amount defines the base currency associated with the facility.\n  multiCurrency : FpML5.confirmation.MultiCurrency?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "instrumentId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the underlying asset, using public and/or private identifiers.",
+      "Name" : "instrumentId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26575
+      }
+    },
+    "description" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Long name of the underlying asset.",
+      "Name" : "description",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26578
+      }
+    },
+    "borrowerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party reference to the (main) borrower. This may be different to the issuer defined at the deal-level.",
+      "Name" : "borrowerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26581
+      }
+    },
+    "coBorrowerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Party references to co-borrowers as listed on the credit agreement.",
+      "Name" : "coBorrowerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26584
+      }
+    },
+    "agentPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party reference to the agent bank. Each facility (within a single deal) can have specific/different agent banks, especially if there are jurisdictional boundaries being crossed.",
+      "Name" : "agentPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26587
+      }
+    },
+    "lcIssuingBankPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Party references to any guarantors associated with the facility borrower.",
+      "Name" : "lcIssuingBankPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26590
+      }
+    },
+    "guarantorPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Party references to any guarantors associated with the facility borrower.",
+      "Name" : "guarantorPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26593
+      }
+    },
+    "startDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The start date of the facility.",
+      "Name" : "startDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26596
+      }
+    },
+    "expiryDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The latest date that a drawdown can be made effective against the facility.",
+      "Name" : "expiryDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26599
+      }
+    },
+    "maturityDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maturity date of the facility.",
+      "Name" : "maturityDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26602
+      }
+    },
+    "currentCommitment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The current global/lender share commitment amount. This defines the current limit against which the borrower may draw funds.",
+      "Name" : "currentCommitment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FacilityCommitment",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FacilityCommitment",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FacilityCommitment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26605
+      }
+    },
+    "originalCommitment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The original global commitment amount. This defines the limit, as of the start date, against which the borrower may draw funds.",
+      "Name" : "originalCommitment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26608
+      }
+    },
+    "commitmentSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The commitment schedule associated with the facility.",
+      "Name" : "commitmentSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CommitmentSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26611
+      }
+    },
+    "dealFxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the exchange rate between the facility and deal denomination currencies (only required if the currencies are different).",
+      "Name" : "dealFxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26614
+      }
+    },
+    "governingLaw" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the governing law (jurisdiction) under which the facility operates.",
+      "Name" : "governingLaw",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26617
+      }
+    },
+    "feature" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Facility features which help define the instrument with greater granularity. E.g. bridge, acquisition etc.",
+      "Name" : "feature",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26620
+      }
+    },
+    "lien" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The lien level associated with the facility. E.g. 1st, 2nd, 3rd.",
+      "Name" : "lien",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26623
+      }
+    },
+    "seniority" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The seniority of the facility. E.g. senior, senior secured etc.",
+      "Name" : "seniority",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26626
+      }
+    },
+    "fixedRateOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of default cash accrual options. Each option is usually available to any borrowers defined within the facility, but an explicitly defined set of borrower entities (within the option) or be applicable to all borrower(s) within the facility.",
+      "Name" : "fixedRateOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FixedRateOption",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FixedRateOption",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FixedRateOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26629
+      }
+    },
+    "floatingRateOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of default cash accrual options. Each option is usually available to any borrowers defined within the facility, but an explicitly defined set of borrower entities (within the option) or be applicable to all borrower(s) within the facility.",
+      "Name" : "floatingRateOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FloatingRateOption",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FloatingRateOption",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FloatingRateOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26632
+      }
+    },
+    "lcOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A description of all the letter of credit fee types which apply to the facility.",
+      "Name" : "lcOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.LcOption",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.LcOption",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.LcOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26635
+      }
+    },
+    "accruingPikOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A loan contract PIK accrual option.",
+      "Name" : "accruingPikOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccruingPikOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26638
+      }
+    },
+    "accruingFeeOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A description of all the different types of accruing fees which apply to the facility.",
+      "Name" : "accruingFeeOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AccruingFeeOption",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26641
+      }
+    },
+    "defaultRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This represents a default rate that may apply in addition to a regular margin rate (on outstanding loan contracts). This rate applied at the discretion of the agent bank, if the borrower is deemed to be in default.",
+      "Name" : "defaultRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PeriodRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26644
+      }
+    },
+    "mandatoryCostRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The mandatory cost rate currently applied to the interest rate period.",
+      "Name" : "mandatoryCostRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PeriodRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26647
+      }
+    },
+    "penaltyRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This represents a penalty rate that may apply in addition to the regular margin rate (on outstanding loan contracts). This rate is applied at the discretion of the agent bank, if the borrower has broken terms stated within the credit agreement.",
+      "Name" : "penaltyRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PeriodRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26650
+      }
+    },
+    "multiCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A container to denote whether funds may be drawn in multiple currency denominations, in addition to the base (facility) currency. The current commitment amount defines the base currency associated with the facility.",
+      "Name" : "multiCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MultiCurrency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26653
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 26656
+      }
+    }
+  },
+  "LocalFieldNames" : [ "instrumentId", "description", "borrowerPartyReference", "coBorrowerPartyReference", "agentPartyReference", "lcIssuingBankPartyReference", "guarantorPartyReference", "startDate", "expiryDate", "maturityDate", "currentCommitment", "originalCommitment", "commitmentSchedule", "dealFxRate", "governingLaw", "feature", "lien", "seniority", "fixedRateOption", "floatingRateOption", "lcOption", "accruingPikOption", "accruingFeeOption", "defaultRate", "mandatoryCostRate", "penaltyRate", "multiCurrency", "id" ],
+  "IsSynthetic" : false
+}

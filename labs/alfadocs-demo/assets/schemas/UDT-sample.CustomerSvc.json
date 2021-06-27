@@ -1,0 +1,172 @@
+{
+  "@type" : "alfa.rt.model.Service",
+  "Doc" : "Access point to Customer data",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "sample.CustomerSvc",
+    "UdtType" : "serviceType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "# Access point to Customer data\nservice CustomerSvc(\n    authtoken : string ## The auth token to access the service\n)\n{\n    # Fetch the Customer record for the supplied key\n    get( custKey : CustKey ) : Customer?\n\n    # Get all customers of given type\n    getByType( custType : enums.CustType ) : list< Customer >\n\n    # Write new customer\n    create( Id : uuid, person : Person, Accounts : set< string > ) : Customer\n}"
+  },
+  "ConstructorFormals" : {
+    "authtoken" : {
+      "@type" : "alfa.rt.model.Formal",
+      "Doc" : "The auth token to access the service",
+      "Name" : "authtoken",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+        "line" : 27
+      }
+    }
+  },
+  "MethodSignatures" : {
+    "get" : {
+      "@type" : "alfa.rt.model.MethodSignature",
+      "Doc" : "Fetch the Customer record for the supplied key",
+      "Name" : "get",
+      "Formals" : {
+        "custKey" : {
+          "@type" : "alfa.rt.model.Formal",
+          "Name" : "custKey",
+          "DataType" : {
+            "@type" : "alfa.rt.model.UdtDataType",
+            "FullyQualifiedName" : "sample.CustKey",
+            "UdtType" : "keyType"
+          },
+          "DeclTypeDefDataType" : {
+            "@type" : "alfa.rt.model.TypeDefDataType",
+            "TypeName" : "CustKey",
+            "FinalType" : {
+              "@type" : "alfa.rt.model.UdtDataType",
+              "FullyQualifiedName" : "sample.CustKey",
+              "UdtType" : "keyType"
+            }
+          },
+          "SrcLocation" : {
+            "@type" : "alfa.rt.model.Location",
+            "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+            "line" : 31
+          }
+        }
+      },
+      "ReturnType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "sample.Customer",
+          "UdtType" : "entityType"
+        }
+      }
+    },
+    "getByType" : {
+      "@type" : "alfa.rt.model.MethodSignature",
+      "Doc" : "Get all customers of given type",
+      "Name" : "getByType",
+      "Formals" : {
+        "custType" : {
+          "@type" : "alfa.rt.model.Formal",
+          "Name" : "custType",
+          "DataType" : {
+            "@type" : "alfa.rt.model.UdtDataType",
+            "FullyQualifiedName" : "sample.enums.CustType",
+            "UdtType" : "enumType"
+          },
+          "DeclTypeDefDataType" : {
+            "@type" : "alfa.rt.model.TypeDefDataType",
+            "TypeName" : "enums.CustType",
+            "FinalType" : {
+              "@type" : "alfa.rt.model.UdtDataType",
+              "FullyQualifiedName" : "sample.enums.CustType",
+              "UdtType" : "enumType"
+            }
+          },
+          "SrcLocation" : {
+            "@type" : "alfa.rt.model.Location",
+            "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+            "line" : 34
+          }
+        }
+      },
+      "ReturnType" : {
+        "@type" : "alfa.rt.model.ListDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "sample.Customer",
+          "UdtType" : "entityType"
+        }
+      }
+    },
+    "create" : {
+      "@type" : "alfa.rt.model.MethodSignature",
+      "Doc" : "Write new customer",
+      "Name" : "create",
+      "Formals" : {
+        "Id" : {
+          "@type" : "alfa.rt.model.Formal",
+          "Name" : "Id",
+          "DataType" : {
+            "@type" : "alfa.rt.model.ScalarDataType",
+            "ScalarType" : "uuidType"
+          },
+          "SrcLocation" : {
+            "@type" : "alfa.rt.model.Location",
+            "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+            "line" : 37
+          }
+        },
+        "person" : {
+          "@type" : "alfa.rt.model.Formal",
+          "Name" : "person",
+          "DataType" : {
+            "@type" : "alfa.rt.model.UdtDataType",
+            "FullyQualifiedName" : "sample.Person",
+            "UdtType" : "traitType"
+          },
+          "DeclTypeDefDataType" : {
+            "@type" : "alfa.rt.model.TypeDefDataType",
+            "TypeName" : "Person",
+            "FinalType" : {
+              "@type" : "alfa.rt.model.UdtDataType",
+              "FullyQualifiedName" : "sample.Person",
+              "UdtType" : "traitType"
+            }
+          },
+          "SrcLocation" : {
+            "@type" : "alfa.rt.model.Location",
+            "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+            "line" : 37
+          }
+        },
+        "Accounts" : {
+          "@type" : "alfa.rt.model.Formal",
+          "Name" : "Accounts",
+          "DataType" : {
+            "@type" : "alfa.rt.model.SetDataType",
+            "ComponentType" : {
+              "@type" : "alfa.rt.model.ScalarDataType",
+              "ScalarType" : "stringType"
+            }
+          },
+          "SrcLocation" : {
+            "@type" : "alfa.rt.model.Location",
+            "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/items.alfa",
+            "line" : 37
+          }
+        }
+      },
+      "ReturnType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "sample.Customer",
+        "UdtType" : "entityType"
+      }
+    }
+  }
+}

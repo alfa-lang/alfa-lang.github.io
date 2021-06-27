@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The physical delivery conditions for the transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MetalDelivery",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The physical delivery conditions for the transaction.\n #/\nrecord FpML5.reporting.MetalDelivery {\n  # The Delivery Point for a physically settled non-precious metal transaction.\n  deliveryLocation : string?\n\n  # \"Risk of loss\" may also be used, equivalently, on confirmation documents.\n  risk : string?\n\n  # The +/- percent tolerance in seller's option which applies to the total quantity delivered over all shipment periods.\n  totalQuantityTolerance : decimal?\n\n  # The +/- percentage quantity tolerance in seller's option which applied to each shipment period.\n  periodQuantityTolerance : decimal?\n\n  # Describes how and when title to the commodity transfers.\n  title : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MetalPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "deliveryLocation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Delivery Point for a physically settled non-precious metal transaction.",
+      "Name" : "deliveryLocation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23867
+      }
+    },
+    "risk" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "\"Risk of loss\" may also be used, equivalently, on confirmation documents.",
+      "Name" : "risk",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23870
+      }
+    },
+    "totalQuantityTolerance" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The +/- percent tolerance in seller's option which applies to the total quantity delivered over all shipment periods.",
+      "Name" : "totalQuantityTolerance",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23873
+      }
+    },
+    "periodQuantityTolerance" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The +/- percentage quantity tolerance in seller's option which applied to each shipment period.",
+      "Name" : "periodQuantityTolerance",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23876
+      }
+    },
+    "title" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes how and when title to the commodity transfers.",
+      "Name" : "title",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23879
+      }
+    }
+  },
+  "LocalFieldNames" : [ "deliveryLocation", "risk", "totalQuantityTolerance", "periodQuantityTolerance", "title" ],
+  "IsSynthetic" : false
+}

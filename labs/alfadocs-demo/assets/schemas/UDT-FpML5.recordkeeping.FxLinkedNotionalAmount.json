@@ -1,0 +1,90 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to describe the cashflow representation for fx linked notionals.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxLinkedNotionalAmount",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to describe the cashflow representation for fx linked notionals.\n #/\nrecord FpML5.recordkeeping.FxLinkedNotionalAmount {\n  resetDate : date?\n\n  # The date on which the fx spot rate is observed. This date should already be adjusted for any applicable business day convention.\n  adjustedFxSpotFixingDate : date?\n\n  # The actual observed fx spot rate.\n  observedFxSpotRate : decimal?\n\n  # The calculation period notional amount.\n  notionalAmount : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriod",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "resetDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "resetDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15139
+      }
+    },
+    "adjustedFxSpotFixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the fx spot rate is observed. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedFxSpotFixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15141
+      }
+    },
+    "observedFxSpotRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The actual observed fx spot rate.",
+      "Name" : "observedFxSpotRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15144
+      }
+    },
+    "notionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period notional amount.",
+      "Name" : "notionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 15147
+      }
+    }
+  },
+  "LocalFieldNames" : [ "resetDate", "adjustedFxSpotFixingDate", "observedFxSpotRate", "notionalAmount" ],
+  "IsSynthetic" : false
+}

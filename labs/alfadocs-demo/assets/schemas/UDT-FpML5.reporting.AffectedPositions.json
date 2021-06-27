@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that allows a list of positions affected by some event to be represented.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AffectedPositions",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that allows a list of positions affected by some event to be represented.\n #/\nrecord FpML5.reporting.AffectedPositions {\n  # Positions affected by this event.\n  position : FpML5.reporting.Position?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ResetReport",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "position" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Positions affected by this event.",
+      "Name" : "position",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Position",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23890
+      }
+    }
+  },
+  "LocalFieldNames" : [ "position" ],
+  "IsSynthetic" : false
+}

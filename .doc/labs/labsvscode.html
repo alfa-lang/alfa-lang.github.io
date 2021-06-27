@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IDE - VSCode Plugin &mdash; Alfa</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Alfa Web-based Toolset" href="labsalfawebide.html" />
+    <link rel="prev" title="Alfa Maven Plugin" href="../tools/mvnplugin.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tools/tools.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tools/alfacli.html">Alfa CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/mvnplugin.html">Alfa Maven Plugin</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IDE - VSCode Plugin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#editor-usage-preview">Editor Usage Preview</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="labsalfawebide.html">Alfa Web-based Toolset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../exporters/exporters.html">Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labs.html">Alfa Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../tools/tools.html">Tools</a> &raquo;</li>
+        
+      <li>IDE - VSCode Plugin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="labsvscode">
+<span id="ide-vscode-plugin"></span><h1>IDE - VSCode Plugin<a class="headerlink" href="#labsvscode" title="Permalink to this headline">¶</a></h1>
+<p>Alfa is designed as a language that is simple to work with. However when dealing with relatively large projects involving 10s to
+100s or 1000s of definitions, having features expected in more advanced code editors (IDEs) such as code navigation, syntax
+highlighting, error highlighting etc become invaluable.</p>
+<p>Having comprehensive code editing capabilities has been a key aim for the Alfa toolset and the platform has been engineered with
+these features in mind from inception. As part of the Alfa Pro package, an IDE based on VSCode will be provided.
+The Alfa IDE will be a fully-featured editor for Alfa with numerous features summarised below.</p>
+<p>As the plugin is at an early stage of development, it is not available to download. However the screenshot and summary below
+should give a preview of what capabilities can be expected when it is complete.</p>
+<a class="reference external image-reference" href="/_static/images/alfa-ide.jpg"><img alt="Alfa Editor" src="../_images/alfa-ide.jpg" /></a>
+<ol class="arabic simple">
+<li>Complete outline of the UDTs defined in the currently opened file along with their fields or methods in the case for <code class="docutils literal notranslate"><span class="pre">service</span></code>.</li>
+<li>Syntax highlighting on all keywords, datatypes etc. driven directly from the Alfa compiler.</li>
+<li>Errors are underlined ( in the VSCode standard ) sqiggly lines ( ‘strng’ should be ‘string’, RegisteredDate is duplicated ).</li>
+<li>The count of errors identified is identified against the UDT.</li>
+<li>Smart tooltips - not simply static HTML. Here the tooltip is showing the flatten columns for <code class="docutils literal notranslate"><span class="pre">table&lt;</span> <span class="pre">Transaction</span> <span class="pre">&gt;</span></code> type.</li>
+<li>Documentation comments will be shown as tooltip. Hovering over ‘Transaction’ will show tooltips with user-supplied documentation.</li>
+<li>The plugin shares documentation as defined in this site ( compare <code class="docutils literal notranslate"><span class="pre">table</span></code> documentation in tooltip to <a class="reference internal" href="../lang/prodatatypes/templated/table.html#tabletype"><span class="std std-ref">table&lt; T &gt;</span></a> ). i.e.
+the entire suite of tools, by design, is highly integrated.</li>
+</ol>
+<p>The Alfa IDE will not be limited to code editing features. Other features will be added to enable a data modelling toolset
+around the IDE.</p>
+<div class="section" id="editor-usage-preview">
+<h2>Editor Usage Preview<a class="headerlink" href="#editor-usage-preview" title="Permalink to this headline">¶</a></h2>
+<video width="100%" controls>
+  <source src="/_static/images/alfa-ide.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020, Schematiks Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

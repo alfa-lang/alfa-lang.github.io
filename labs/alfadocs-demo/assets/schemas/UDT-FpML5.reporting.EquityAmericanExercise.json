@@ -1,0 +1,197 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining exercise procedures associated with an American style exercise of an equity option. This entity inherits from the type SharedAmericanExercise.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquityAmericanExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining exercise procedures associated with an American style exercise of an equity option. This entity inherits from the type SharedAmericanExercise.\n #/\nrecord FpML5.reporting.EquityAmericanExercise {\n  # The first day of the exercise period for an American style option.\n  commencementDate : FpML5.reporting.AdjustableOrRelativeDate?\n\n  # The last day within an exercise period for an American style option. For a European style option it is the only day within the exercise period.\n  expirationDate : FpML5.reporting.AdjustableOrRelativeDate?\n\n  # For a Bermuda or American style option, the latest time on an exercise business day (excluding the expiration date) within the exercise period that notice can be given by the buyer to the seller or seller's agent. Notice of exercise given after this time will be deemed to have been given on the next exercise business day.\n  latestExerciseTime : FpML5.reporting.BusinessCenterTime\n\n  # Latest exercise time determination method.\n  latestExerciseTimeDetermination : string\n\n  # The latest time of day at which the equity option can be exercised, for example the official closing time of the exchange.\n  latestExerciseTimeType : string?\n\n  # The time of day at which the equity option expires, for example the official closing time of the exchange.\n  equityExpirationTimeType : string?\n\n  # The specific time of day at which the equity option expires.\n  equityExpirationTime : FpML5.reporting.BusinessCenterTime?\n\n  # Expiration time determination method.\n  expirationTimeDetermination : string\n\n  # The presence of this element indicates that the option may be exercised on different days. It is not applicable to European options.\n  equityMultipleExercise : FpML5.reporting.EquityMultipleExercise?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EquityExerciseValuationSettlement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "commencementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The first day of the exercise period for an American style option.",
+      "Name" : "commencementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21679
+      }
+    },
+    "expirationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The last day within an exercise period for an American style option. For a European style option it is the only day within the exercise period.",
+      "Name" : "expirationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21682
+      }
+    },
+    "latestExerciseTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For a Bermuda or American style option, the latest time on an exercise business day (excluding the expiration date) within the exercise period that notice can be given by the buyer to the seller or seller's agent. Notice of exercise given after this time will be deemed to have been given on the next exercise business day.",
+      "Name" : "latestExerciseTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.BusinessCenterTime",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21685
+      }
+    },
+    "latestExerciseTimeDetermination" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Latest exercise time determination method.",
+      "Name" : "latestExerciseTimeDetermination",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21688
+      }
+    },
+    "latestExerciseTimeType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The latest time of day at which the equity option can be exercised, for example the official closing time of the exchange.",
+      "Name" : "latestExerciseTimeType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21691
+      }
+    },
+    "equityExpirationTimeType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time of day at which the equity option expires, for example the official closing time of the exchange.",
+      "Name" : "equityExpirationTimeType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21694
+      }
+    },
+    "equityExpirationTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specific time of day at which the equity option expires.",
+      "Name" : "equityExpirationTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21697
+      }
+    },
+    "expirationTimeDetermination" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Expiration time determination method.",
+      "Name" : "expirationTimeDetermination",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21700
+      }
+    },
+    "equityMultipleExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The presence of this element indicates that the option may be exercised on different days. It is not applicable to European options.",
+      "Name" : "equityMultipleExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.EquityMultipleExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21703
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21706
+      }
+    }
+  },
+  "LocalFieldNames" : [ "commencementDate", "expirationDate", "latestExerciseTime", "latestExerciseTimeDetermination", "latestExerciseTimeType", "equityExpirationTimeType", "equityExpirationTime", "expirationTimeDetermination", "equityMultipleExercise", "id" ],
+  "IsSynthetic" : false
+}

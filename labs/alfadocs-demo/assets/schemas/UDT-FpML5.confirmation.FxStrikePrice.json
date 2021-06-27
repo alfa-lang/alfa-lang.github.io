@@ -1,0 +1,51 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that describes the rate of exchange at which the option has been struck.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxStrikePrice",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that describes the rate of exchange at which the option has been struck.\n #/\nrecord FpML5.confirmation.FxStrikePrice {\n  # The rate of exchange between the two currencies of the leg of a deal.\n  rate : decimal\n\n  # The method by which the strike rate is quoted.\n  strikeQuoteBasis : string\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "rate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The rate of exchange between the two currencies of the leg of a deal.",
+      "Name" : "rate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17191
+      }
+    },
+    "strikeQuoteBasis" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which the strike rate is quoted.",
+      "Name" : "strikeQuoteBasis",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17194
+      }
+    }
+  },
+  "LocalFieldNames" : [ "rate", "strikeQuoteBasis" ],
+  "IsSynthetic" : false
+}

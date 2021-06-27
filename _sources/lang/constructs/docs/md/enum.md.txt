@@ -1,0 +1,35 @@
+# enum
+
+An `enum` is set of predefined constants that are associated with the given name.
+
+```csharp 
+enum Direction {
+    North South East West
+}
+```
+
+__Combining Enums__
+
+>ALFA allows enums to be combined to create another using `includes`. An enum can `includes` another enum to include the other's constants. This is
+>demonstrated below.
+>
+>```csharp
+>enum CategoryA {
+>    A1 A2 A3
+>}
+>
+>enum CategoryB {
+>    B1 B3 B3
+>}
+>
+>enum CategoryC {
+>    C1 C2 C3
+>}
+>
+>enum AllCategories includes CategoryA, CategoryB, CategoryC { }
+>```
+>
+>There is no implied relationship between AllCategories and its includes.
+>It will simply contain all constants from its included Categories.
+>
+>This `includes` feature is supported in enums to avoid duplication of constants between related enums.

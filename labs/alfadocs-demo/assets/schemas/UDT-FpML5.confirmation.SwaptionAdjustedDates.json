@@ -1,0 +1,47 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the adjusted dates associated with swaption exercise and settlement.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SwaptionAdjustedDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the adjusted dates associated with swaption exercise and settlement.\n #/\nrecord FpML5.confirmation.SwaptionAdjustedDates {\n  # The adjusted dates associated with an individual swaption exercise date.\n  exerciseEvent : FpML5.confirmation.ExerciseEvent\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Swaption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "exerciseEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted dates associated with an individual swaption exercise date.",
+      "Name" : "exerciseEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ExerciseEvent",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ExerciseEvent",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ExerciseEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 7708
+      }
+    }
+  },
+  "LocalFieldNames" : [ "exerciseEvent" ],
+  "IsSynthetic" : false
+}

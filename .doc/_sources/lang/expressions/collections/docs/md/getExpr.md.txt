@@ -1,0 +1,21 @@
+get
+===
+
+Gets the item for the given key from a :ref:`mapVectorType` or given index from a
+:ref:`listVectorType` or nested value from an optional value.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`mapVectorType` or :ref:`listVectorType` or :ref:`optionalType`|The target map, list or optional value|
+|2|Value of type `K` or `int`|Key or index to be used to read the map or list. Not specified if 1st arg is an optional value|
+
+__Returns:__
+Optional map value or list element 
+
+__Usages:__
+
+>- `get( v:map<K, V>, key:K ) : V ?`
+>- `get( v:list<T>, index:int ) : T ?`
+>- `get( v: T ?) : T`

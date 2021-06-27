@@ -1,0 +1,61 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the method for accruing interests on dividends. Can be either a fixed rate reference or a floating rate reference.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.InterestAccrualsMethod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the method for accruing interests on dividends. Can be either a fixed rate reference or a floating rate reference.\n #/\nrecord FpML5.transparency.InterestAccrualsMethod {\n  # The floating rate calculation definitions\n  floatingRateCalculation : FpML5.transparency.FloatingRateCalculation\n\n  # The calculation period fixed rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05.\n  fixedRate : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CompoundingRate",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "floatingRateCalculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The floating rate calculation definitions",
+      "Name" : "floatingRateCalculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.FloatingRateCalculation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.FloatingRateCalculation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.FloatingRateCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6502
+      }
+    },
+    "fixedRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The calculation period fixed rate. A per annum rate, expressed as a decimal. A fixed rate of 5% would be represented as 0.05.",
+      "Name" : "fixedRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 6505
+      }
+    }
+  },
+  "LocalFieldNames" : [ "floatingRateCalculation", "fixedRate" ],
+  "IsSynthetic" : false
+}

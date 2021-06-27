@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the weight of each of the underlyer constituent within the basket, either in absolute or relative terms.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ConstituentWeight",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the weight of each of the underlyer constituent within the basket, either in absolute or relative terms.\n #/\nrecord FpML5.pretrade.ConstituentWeight {\n  # The number of units (index or securities) that constitute the underlyer of the swap. In the case of a basket swap, this element is used to reference both the number of basket units, and the number of each asset components of the basket when these are expressed in absolute terms.\n  openUnits : decimal?\n\n  # The relative weight of each respective basket constituent, expressed in percentage. A basket percentage of 5% would be represented as 0.05.\n  basketPercentage : decimal?\n\n  # DEPRECATED. The relative weight of each respective basket constituent, expressed as a monetary amount.\n  basketAmount : FpML5.pretrade.Money?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.ReferencePoolItem",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "openUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of units (index or securities) that constitute the underlyer of the swap. In the case of a basket swap, this element is used to reference both the number of basket units, and the number of each asset components of the basket when these are expressed in absolute terms.",
+      "Name" : "openUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1436
+      }
+    },
+    "basketPercentage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The relative weight of each respective basket constituent, expressed in percentage. A basket percentage of 5% would be represented as 0.05.",
+      "Name" : "basketPercentage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1439
+      }
+    },
+    "basketAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. The relative weight of each respective basket constituent, expressed as a monetary amount.",
+      "Name" : "basketAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1442
+      }
+    }
+  },
+  "LocalFieldNames" : [ "openUnits", "basketPercentage", "basketAmount" ],
+  "IsSynthetic" : false
+}

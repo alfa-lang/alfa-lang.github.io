@@ -1,0 +1,95 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Data elements that can be used to identify the trade for which cashflows are being communicated. This includes both explicit trade identifiers and summary economic details.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeIdentifyingItems",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Data elements that can be used to identify the trade for which cashflows are being communicated. This includes both explicit trade identifiers and summary economic details.\n #/\nrecord FpML5.reporting.TradeIdentifyingItems {\n  # Structure defining one or more trade identifiers allocated to the trade by a party. It is expected that for external communication of trade there will be only one tradeId sent in the document per party.\n  partyTradeIdentifier : FpML5.reporting.PartyTradeIdentifier?\n\n  # Structure that holds some trade-specific elements for identifying the trade only in the case of trades that have not been negotiated through electronic platforms and for which the counterparty's trade ID has not been captured.\n  tradeDetails : FpML5.reporting.TradeDetails?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AllegedCashflow",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AllegedNettedCashflow",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AssertedCashflow",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AssertedNettedCashflow",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CancelTradeCashflows",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NettedTradeCashflowsAsserted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NettedTradeCashflowsProposedMatch",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NettedTradeCashflowsRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeCashflowsAsserted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeCashflowsProposedMatch",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Structure defining one or more trade identifiers allocated to the trade by a party. It is expected that for external communication of trade there will be only one tradeId sent in the document per party.",
+      "Name" : "partyTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9052
+      }
+    },
+    "tradeDetails" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Structure that holds some trade-specific elements for identifying the trade only in the case of trades that have not been negotiated through electronic platforms and for which the counterparty's trade ID has not been captured.",
+      "Name" : "tradeDetails",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeDetails",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 9055
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyTradeIdentifier", "tradeDetails" ],
+  "IsSynthetic" : false
+}

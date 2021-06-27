@@ -1,0 +1,105 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The quantity of gas to be delivered.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityPhysicalQuantity",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The quantity of gas to be delivered.\n #/\nrecord FpML5.confirmation.ElectricityPhysicalQuantity {\n  # The Quantity per Delivery Period.\n  physicalQuantity : FpML5.confirmation.ElectricityPhysicalDeliveryQuantity\n\n  # Allows the documentation of a shaped quantity trade where the quantity changes over the life of the transaction. Note that if the range of Settlement Periods also varies over the life of the transaction this element should not be used. Instead, physicalQuantity should be repeated for each range of Settlement Periods that apply at any point during the trade.\n  physicalQuantitySchedule : FpML5.confirmation.ElectricityPhysicalDeliveryQuantitySchedule\n\n  # The Total Quantity of the commodity to be delivered.\n  totalPhysicalQuantity : FpML5.confirmation.UnitQuantity?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ElectricityPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "physicalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Quantity per Delivery Period.",
+      "Name" : "physicalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ElectricityPhysicalDeliveryQuantity",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ElectricityPhysicalDeliveryQuantity",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ElectricityPhysicalDeliveryQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29804
+      }
+    },
+    "physicalQuantitySchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Allows the documentation of a shaped quantity trade where the quantity changes over the life of the transaction. Note that if the range of Settlement Periods also varies over the life of the transaction this element should not be used. Instead, physicalQuantity should be repeated for each range of Settlement Periods that apply at any point during the trade.",
+      "Name" : "physicalQuantitySchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ElectricityPhysicalDeliveryQuantitySchedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ElectricityPhysicalDeliveryQuantitySchedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ElectricityPhysicalDeliveryQuantitySchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29807
+      }
+    },
+    "totalPhysicalQuantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Total Quantity of the commodity to be delivered.",
+      "Name" : "totalPhysicalQuantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.UnitQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29810
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29813
+      }
+    }
+  },
+  "LocalFieldNames" : [ "physicalQuantity", "physicalQuantitySchedule", "totalPhysicalQuantity", "id" ],
+  "IsSynthetic" : false
+}

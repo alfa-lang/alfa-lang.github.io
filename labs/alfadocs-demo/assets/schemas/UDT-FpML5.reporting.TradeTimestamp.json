@@ -1,0 +1,55 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A generic trade timestamp",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeTimestamp",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A generic trade timestamp\n #/\nrecord FpML5.reporting.TradeTimestamp {\n  type : string?\n\n  value : datetime?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeProcessingTimestamps",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 2894
+      }
+    },
+    "value" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "value",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 2896
+      }
+    }
+  },
+  "LocalFieldNames" : [ "type", "value" ],
+  "IsSynthetic" : false
+}

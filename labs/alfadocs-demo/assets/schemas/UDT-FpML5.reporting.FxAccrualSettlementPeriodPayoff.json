@@ -1,0 +1,186 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Payoff region",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrualSettlementPeriodPayoff",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Payoff region\n #/\nrecord FpML5.reporting.FxAccrualSettlementPeriodPayoff {\n  # Optional reference to the Payoff Region in the parametric representation of the product.\n  payoffRegionReference : FpML5.reporting.FxAccrualPayoffRegionReference?\n\n  # Strike for the settlement period.\n  strike : decimal?\n\n  # Counter Currency Amount for the settlement period. Multiple Counter Currency Amount elements may appear if there are more than one strike in the settlement period.\n  counterCurrencyAmount : decimal?\n\n  # Average Strike Fixing Dates.\n  averageStrikeFixingDates : FpML5.reporting.SettlementPeriodFixingDates\n\n  # Average Rate Fixing Dates.\n  averageRateFixingDates : FpML5.reporting.SettlementPeriodFixingDates?\n\n  # Lower bound to the region.\n  lowerBound : decimal?\n\n  # Upper bound to the region.\n  upperBound : decimal?\n\n  # Leverage within the period expressed as either an amount or ratio.\n  leverage : FpML5.reporting.SettlementPeriodLeverage?\n\n  # The amount of gain on the client upside or firm upside is limited. If spot settles above the cap, or below the floor, the payout is adjusted to limit the gain. The adjustment may be made by varying the strike, or by maintaining the strike, but varying the payout notionals.\n  payoffCap : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxAccrualSettlementPeriod",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "payoffRegionReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Optional reference to the Payoff Region in the parametric representation of the product.",
+      "Name" : "payoffRegionReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxAccrualPayoffRegionReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20895
+      }
+    },
+    "strike" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Strike for the settlement period.",
+      "Name" : "strike",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20898
+      }
+    },
+    "counterCurrencyAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Counter Currency Amount for the settlement period. Multiple Counter Currency Amount elements may appear if there are more than one strike in the settlement period.",
+      "Name" : "counterCurrencyAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20901
+      }
+    },
+    "averageStrikeFixingDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Average Strike Fixing Dates.",
+      "Name" : "averageStrikeFixingDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodFixingDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.SettlementPeriodFixingDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodFixingDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20904
+      }
+    },
+    "averageRateFixingDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Average Rate Fixing Dates.",
+      "Name" : "averageRateFixingDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodFixingDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20907
+      }
+    },
+    "lowerBound" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Lower bound to the region.",
+      "Name" : "lowerBound",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20910
+      }
+    },
+    "upperBound" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Upper bound to the region.",
+      "Name" : "upperBound",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20913
+      }
+    },
+    "leverage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Leverage within the period expressed as either an amount or ratio.",
+      "Name" : "leverage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodLeverage",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20916
+      }
+    },
+    "payoffCap" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of gain on the client upside or firm upside is limited. If spot settles above the cap, or below the floor, the payout is adjusted to limit the gain. The adjustment may be made by varying the strike, or by maintaining the strike, but varying the payout notionals.",
+      "Name" : "payoffCap",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20919
+      }
+    }
+  },
+  "LocalFieldNames" : [ "payoffRegionReference", "strike", "counterCurrencyAmount", "averageStrikeFixingDates", "averageRateFixingDates", "lowerBound", "upperBound", "leverage", "payoffCap" ],
+  "IsSynthetic" : false
+}

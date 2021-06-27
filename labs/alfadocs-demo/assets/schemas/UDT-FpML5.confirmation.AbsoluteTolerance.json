@@ -1,0 +1,83 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The acceptable tolerance in the delivered quantity of a physical commodity product in terms of a number of units of that product.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AbsoluteTolerance",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The acceptable tolerance in the delivered quantity of a physical commodity product in terms of a number of units of that product.\n #/\nrecord FpML5.confirmation.AbsoluteTolerance {\n  # The maxmium amount by which the quantity delivered can exceed the agreed quantity.\n  positive : decimal\n\n  # The maximum amount by which the quantity delivered can be less than the agreed quantity.\n  negative : decimal\n\n  # The unit in which the tolerance is specified.\n  unit : string\n\n  # Indicates whether the tolerance is at the seller's or buyer's option.\n  optionOwnerPartyReference : FpML5.confirmation.PartyReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OilDelivery",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "positive" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maxmium amount by which the quantity delivered can exceed the agreed quantity.",
+      "Name" : "positive",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9407
+      }
+    },
+    "negative" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum amount by which the quantity delivered can be less than the agreed quantity.",
+      "Name" : "negative",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9410
+      }
+    },
+    "unit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The unit in which the tolerance is specified.",
+      "Name" : "unit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9413
+      }
+    },
+    "optionOwnerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether the tolerance is at the seller's or buyer's option.",
+      "Name" : "optionOwnerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 9416
+      }
+    }
+  },
+  "LocalFieldNames" : [ "positive", "negative", "unit", "optionOwnerPartyReference" ],
+  "IsSynthetic" : false
+}

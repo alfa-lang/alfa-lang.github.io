@@ -1,0 +1,152 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Under 2002 Definitions, When entering into the Transaction, the parties should specify whether, for purposes of determining the initial Share price, they are agreeing to (a) a specific initial price (in which case, the initialLevel element should be populated with the price) or (b) use the price of a Share at the close of the regular trading session on the Trade Date (in which case the closingLevel element should be populated as true) or (c) in the case of a forward starting transaction only, use the Official Settlement Price of the Expiring Contract on the Observation Start Date (in which case expiring Level element should be populated as true). Under 2011 definitions, When entering into the Transaction, the parties should specify whether, for purposes of determining the OPSD Pricing Election, they are agreeing to (a) an agreed price (in which case, the initialLevel element should be populated with the price) or (b) use the Index Close Pricing (Official), (in which case closingLevel element should be populated as true) or (c) use OSP Pricing (in which case the initialLevelSource element should be populated with “OSPPrice”).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Volatility",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Under 2002 Definitions, When entering into the Transaction, the parties should specify whether, for purposes of determining the initial Share price, they are agreeing to (a) a specific initial price (in which case, the initialLevel element should be populated with the price) or (b) use the price of a Share at the close of the regular trading session on the Trade Date (in which case the closingLevel element should be populated as true) or (c) in the case of a forward starting transaction only, use the Official Settlement Price of the Expiring Contract on the Observation Start Date (in which case expiring Level element should be populated as true). Under 2011 definitions, When entering into the Transaction, the parties should specify whether, for purposes of determining the OPSD Pricing Election, they are agreeing to (a) an agreed price (in which case, the initialLevel element should be populated with the price) or (b) use the Index Close Pricing (Official), (in which case closingLevel element should be populated as true) or (c) use OSP Pricing (in which case the initialLevelSource element should be populated with “OSPPrice”).\n #/\nrecord FpML5.reporting.Volatility {\n  # Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.\n  initialLevel : decimal\n\n  # Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.\n  initialLevelSource : string\n\n  # DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.\n  closingLevel : boolean\n\n  # DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.\n  expiringLevel : boolean\n\n  # Expected number of trading days.\n  expectedN : int( 1, * )?\n\n  # Volatility Cap needs to be specified in accordance with the ISDA 2011 Equity Derivatives Definitions.\n  volatilityCap : FpML5.reporting.VolatilityCap?\n\n  # Volatility Strike Price in accordance with the ISDA 2011 Equity Derivatives Definitions.\n  volatilityStrikePrice : decimal?\n\n  # Vega Notional represents the approximate gain/loss at maturity for a 1% difference between RVol(realised vol) and KVol (strike vol). It does not necessarily represent the Vega Risk of the trade. Volatility Amount means the Vega Notional Amount. In accordance with the ISDA 2002 and 2011 Equity Derivatives Definitions.\n  vegaNotionalAmount : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.VolatilityAmount",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "initialLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.",
+      "Name" : "initialLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28283
+      }
+    },
+    "initialLevelSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.",
+      "Name" : "initialLevelSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28286
+      }
+    },
+    "closingLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.",
+      "Name" : "closingLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28289
+      }
+    },
+    "expiringLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.",
+      "Name" : "expiringLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28292
+      }
+    },
+    "expectedN" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Expected number of trading days.",
+      "Name" : "expectedN",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28295
+      }
+    },
+    "volatilityCap" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Volatility Cap needs to be specified in accordance with the ISDA 2011 Equity Derivatives Definitions.",
+      "Name" : "volatilityCap",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.VolatilityCap",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28298
+      }
+    },
+    "volatilityStrikePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Volatility Strike Price in accordance with the ISDA 2011 Equity Derivatives Definitions.",
+      "Name" : "volatilityStrikePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28301
+      }
+    },
+    "vegaNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Vega Notional represents the approximate gain/loss at maturity for a 1% difference between RVol(realised vol) and KVol (strike vol). It does not necessarily represent the Vega Risk of the trade. Volatility Amount means the Vega Notional Amount. In accordance with the ISDA 2002 and 2011 Equity Derivatives Definitions.",
+      "Name" : "vegaNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 28304
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialLevel", "initialLevelSource", "closingLevel", "expiringLevel", "expectedN", "volatilityCap", "volatilityStrikePrice", "vegaNotionalAmount" ],
+  "IsSynthetic" : false
+}

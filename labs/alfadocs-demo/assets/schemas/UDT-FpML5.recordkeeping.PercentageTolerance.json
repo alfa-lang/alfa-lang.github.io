@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The acceptable tolerance in the delivered quantity of a physical commodity product in terms of a percentage of the agreed delivery quantity.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.PercentageTolerance",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The acceptable tolerance in the delivered quantity of a physical commodity product in terms of a percentage of the agreed delivery quantity.\n #/\nrecord FpML5.recordkeeping.PercentageTolerance {\n  # The maximum percentage amount by which the quantity delivered can exceed the agreed quantity.\n  postitive : decimal?\n\n  # The maximum percentage amount by which the quantity delivered can be less than the agreed quantity.\n  negative : decimal?\n\n  # Indicates whether the tolerance it at the seller's or buyer's option.\n  option : FpML5.recordkeeping.PartyReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.OilDelivery",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "postitive" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum percentage amount by which the quantity delivered can exceed the agreed quantity.",
+      "Name" : "postitive",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26569
+      }
+    },
+    "negative" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The maximum percentage amount by which the quantity delivered can be less than the agreed quantity.",
+      "Name" : "negative",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26572
+      }
+    },
+    "option" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether the tolerance it at the seller's or buyer's option.",
+      "Name" : "option",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26575
+      }
+    }
+  },
+  "LocalFieldNames" : [ "postitive", "negative", "option" ],
+  "IsSynthetic" : false
+}

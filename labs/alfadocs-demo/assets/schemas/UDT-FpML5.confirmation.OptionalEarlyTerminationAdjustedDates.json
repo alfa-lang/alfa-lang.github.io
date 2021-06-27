@@ -1,0 +1,47 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the adjusted dates associated with an optional early termination provision.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionalEarlyTerminationAdjustedDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the adjusted dates associated with an optional early termination provision.\n #/\nrecord FpML5.confirmation.OptionalEarlyTerminationAdjustedDates {\n  # The adjusted dates associated with an individual earley termination date.\n  earlyTerminationEvent : FpML5.confirmation.EarlyTerminationEvent\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OptionalEarlyTermination",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "earlyTerminationEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted dates associated with an individual earley termination date.",
+      "Name" : "earlyTerminationEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.EarlyTerminationEvent",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.EarlyTerminationEvent",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.EarlyTerminationEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22305
+      }
+    }
+  },
+  "LocalFieldNames" : [ "earlyTerminationEvent" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,23 @@
+# XSD Importer
+
+Similar to ALFA 'exporters' generating other formats from ALFA files,
+ALFA 'importers' will perform the reverse - generate ALFA files from
+other schemas.
+
+The first importer will be an XML Schema to ALFA importer. The XSD
+importer will convert to the equivalent ALFA data types. ALFA types
+are a superset of what XSD supports therefore there is no risk in loss
+of detail. Any XSD documentation will be imported  as ALFA documentation
+comments.
+
+Given XML Schema allows extensions to be defined, the importer may not
+be fully generic. Further development is taking place to ensure complete
+coverage and correctness of the translated model.
+
+To validate the implementation with a real world usecase, a popular XML
+Schema model from the Financial Industry was
+selected - [FpML 5.0](https://www.fpml.org/). The results of the import
+was run through the AlfaDocs tools, to provide
+the following -
+[ALFA FpML](https://alfa-lang.io/labs/alfadocs-demo/index.html).
+

@@ -1,0 +1,162 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A time bounded dividend period, with fixed strike and a dividend payment date per period.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.DividendPeriodPayment",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A time bounded dividend period, with fixed strike and a dividend payment date per period.\n #/\nrecord FpML5.recordkeeping.DividendPeriodPayment {\n  # Unadjusted inclusive dividend period start date.\n  unadjustedStartDate : date?\n\n  # Unadjusted inclusive dividend period end date.\n  unadjustedEndDate : date?\n\n  # Date adjustments for all unadjusted dates in this dividend period.\n  dateAdjustments : FpML5.recordkeeping.BusinessDayAdjustments?\n\n  # Reference to the underlyer which is paying dividends. This should be used in all cases, and must be used where there are multiple underlying assets, to avoid any ambiguity about which asset the dividend period relates to.\n  underlyerReference : FpML5.recordkeeping.AssetReference?\n\n  # Fixed strike.\n  fixedStrike : decimal?\n\n  # Dividend period amount payment date.\n  paymentDate : FpML5.recordkeeping.AdjustableOrRelativeDate?\n\n  # Dividend period amount valuation date.\n  valuationDate : FpML5.recordkeeping.AdjustableOrRelativeDate?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.DividendLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "unadjustedStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Unadjusted inclusive dividend period start date.",
+      "Name" : "unadjustedStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23863
+      }
+    },
+    "unadjustedEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Unadjusted inclusive dividend period end date.",
+      "Name" : "unadjustedEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23866
+      }
+    },
+    "dateAdjustments" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date adjustments for all unadjusted dates in this dividend period.",
+      "Name" : "dateAdjustments",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BusinessDayAdjustments",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23869
+      }
+    },
+    "underlyerReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the underlyer which is paying dividends. This should be used in all cases, and must be used where there are multiple underlying assets, to avoid any ambiguity about which asset the dividend period relates to.",
+      "Name" : "underlyerReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23872
+      }
+    },
+    "fixedStrike" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Fixed strike.",
+      "Name" : "fixedStrike",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23875
+      }
+    },
+    "paymentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Dividend period amount payment date.",
+      "Name" : "paymentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23878
+      }
+    },
+    "valuationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Dividend period amount valuation date.",
+      "Name" : "valuationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23881
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 23884
+      }
+    }
+  },
+  "LocalFieldNames" : [ "unadjustedStartDate", "unadjustedEndDate", "dateAdjustments", "underlyerReference", "fixedStrike", "paymentDate", "valuationDate", "id" ],
+  "IsSynthetic" : false
+}

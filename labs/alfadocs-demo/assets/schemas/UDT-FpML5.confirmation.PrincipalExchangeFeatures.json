@@ -1,0 +1,73 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the principal exchange features of the return swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PrincipalExchangeFeatures",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the principal exchange features of the return swap.\n #/\nrecord FpML5.confirmation.PrincipalExchangeFeatures {\n  # The true/false flags indicating whether initial, intermediate or final exchanges of principal should occur.\n  principalExchanges : FpML5.confirmation.PrincipalExchanges?\n\n  # Specifies each of the characteristics of the principal exchange cashflows, in terms of paying/receiving counterparties, amounts and dates.\n  principalExchangeDescriptions : FpML5.confirmation.PrincipalExchangeDescriptions\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.EquitySwapTransactionSupplement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ReturnSwap",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ReturnSwapBase",
+    "UdtType" : "traitType"
+  } ],
+  "AllFields" : {
+    "principalExchanges" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The true/false flags indicating whether initial, intermediate or final exchanges of principal should occur.",
+      "Name" : "principalExchanges",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PrincipalExchanges",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 458
+      }
+    },
+    "principalExchangeDescriptions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies each of the characteristics of the principal exchange cashflows, in terms of paying/receiving counterparties, amounts and dates.",
+      "Name" : "principalExchangeDescriptions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PrincipalExchangeDescriptions",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PrincipalExchangeDescriptions",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PrincipalExchangeDescriptions",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 461
+      }
+    }
+  },
+  "LocalFieldNames" : [ "principalExchanges", "principalExchangeDescriptions" ],
+  "IsSynthetic" : false
+}

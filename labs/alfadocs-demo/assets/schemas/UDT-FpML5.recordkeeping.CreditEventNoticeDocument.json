@@ -1,0 +1,166 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An event type that records the occurrence of a credit event notice.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CreditEventNoticeDocument",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An event type that records the occurrence of a credit event notice.\n #/\nrecord FpML5.recordkeeping.CreditEventNoticeDocument {\n  # Trades affected by this event.\n  affectedTransactions : list< FpML5.recordkeeping.AffectedTransactions >?\n\n  referenceEntity : FpML5.recordkeeping.LegalEntity?\n\n  creditEvent : FpML5.recordkeeping.CreditEvent?\n\n  # A public information source, e.g. a particular newspaper or electronic news service, that may publish relevant information used in the determination of whether or not a credit event has occurred.\n  publiclyAvailableInformation : FpML5.recordkeeping.Resource?\n\n  notifyingPartyReference : FpML5.recordkeeping.PartyReference?\n\n  notifiedPartyReference : FpML5.recordkeeping.PartyReference?\n\n  creditEventNoticeDate : date?\n\n  creditEventDate : date?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CreditEventNotification",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CreditEventNotificationRetracted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "affectedTransactions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Trades affected by this event.",
+      "Name" : "affectedTransactions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ListDataType",
+          "ComponentType" : {
+            "@type" : "alfa.rt.model.UdtDataType",
+            "FullyQualifiedName" : "FpML5.recordkeeping.AffectedTransactions",
+            "UdtType" : "recordType"
+          }
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2919
+      }
+    },
+    "referenceEntity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "referenceEntity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.LegalEntity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2922
+      }
+    },
+    "creditEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creditEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CreditEvent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2924
+      }
+    },
+    "publiclyAvailableInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A public information source, e.g. a particular newspaper or electronic news service, that may publish relevant information used in the determination of whether or not a credit event has occurred.",
+      "Name" : "publiclyAvailableInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Resource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2926
+      }
+    },
+    "notifyingPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "notifyingPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2929
+      }
+    },
+    "notifiedPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "notifiedPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2931
+      }
+    },
+    "creditEventNoticeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creditEventNoticeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2933
+      }
+    },
+    "creditEventDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "creditEventDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 2935
+      }
+    }
+  },
+  "LocalFieldNames" : [ "affectedTransactions", "referenceEntity", "creditEvent", "publiclyAvailableInformation", "notifyingPartyReference", "notifiedPartyReference", "creditEventNoticeDate", "creditEventDate" ],
+  "IsSynthetic" : false
+}

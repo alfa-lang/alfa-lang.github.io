@@ -1,0 +1,54 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to describe an institution (party) identified by means of a coding scheme and an optional name.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ReferenceBank",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to describe an institution (party) identified by means of a coding scheme and an optional name.\n #/\nrecord FpML5.confirmation.ReferenceBank {\n  # An institution (party) identifier, e.g. a bank identifier code (BIC).\n  referenceBankId : string\n\n  # The name of the institution (party). A free format string. FpML does not define usage rules for the element.\n  referenceBankName : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CashSettlementReferenceBanks",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "referenceBankId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An institution (party) identifier, e.g. a bank identifier code (BIC).",
+      "Name" : "referenceBankId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 10670
+      }
+    },
+    "referenceBankName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the institution (party). A free format string. FpML does not define usage rules for the element.",
+      "Name" : "referenceBankName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 10673
+      }
+    }
+  },
+  "LocalFieldNames" : [ "referenceBankId", "referenceBankName" ],
+  "IsSynthetic" : false
+}

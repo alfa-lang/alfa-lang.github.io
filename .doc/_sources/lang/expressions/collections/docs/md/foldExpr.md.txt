@@ -1,0 +1,24 @@
+fold
+====
+
+Traverse items of a collection while applying a lambda allowing data to be combined in a particular way to return a result.
+
+`fold` can be applied on a :ref:`mapVectorType`, :ref:`listVectorType`, or :ref:`setVectorType`.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|:ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType`|The object on which the `fold` should be applied|
+|2|Initial value of type R|An initial value for the accumulator|
+|3|A lambda that accepts 2 or 3 parameter| The 1st lambda parameter will always be the current accumulator.<br/>When 1st parameter to `fold` is a :ref:`listVectorType` or :ref:`setVectorType`,then the 2nd parameter to lambda is one of its elements.<br/>When 1st parameter to `map` is a :ref:`mapVectorType`, the lambda accepts 3 parameters - accumulator, entry key and entry value.|
+
+__Returns:__
+
+The final value of the accumulator, which was the 2nd argument to `fold`.
+
+__Usages:__
+
+>- `reduce( v:list<T>, accumulator : R, ( acc, e ) => result : R ) : R`
+>- `reduce( v:set<T>, accumulator : R,  ( acc, e ) => result : R ) : R`
+>- `reduce( v:map<K, V>, accumulator : R, (acc, k, v) => result : R ) : R`

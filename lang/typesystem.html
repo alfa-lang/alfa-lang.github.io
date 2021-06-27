@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Type System &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fields" href="constructs/fields.html" />
+    <link rel="prev" title="Language Guide" href="guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="guide.html">Language Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Type System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#top-level-constructs">Top level constructs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="constructs/fields.html">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/include.html">include</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/import.html">import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/namespace.html">namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/typedefs.html">typedefs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined-types">User-defined types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="constructs/entity.html">entity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/enum.html">enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/key.html">key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/record.html">record</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/trait.html">trait</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constructs/service.html">service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="expressions/library.html">library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="expressions/assert.html">assert</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#scalar-types">Scalar types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/binary.html">binary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/boolean.html">boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/date.html">date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/datetime.html">datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/decimal.html">decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/double.html">double</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/duration.html">duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/int.html">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/long.html">long</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/short.html">short</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/string.html">string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/time.html">time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/uuid.html">uuid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/scalar/void.html">void</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vector-and-composite-types">Vector and composite types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/vectors/enum.html">enum&lt; C1, C2, … &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/vectors/map.html">map&lt; K, V &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/vectors/list.html">list&lt; T &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/vectors/set.html">set&lt; T &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/vectors/tuple.html">tuple&lt; :T1, :T2, .. &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/vectors/union.html">union&lt; :T1, :T2, ..&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#auxiliary-types">Auxiliary types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="prodatatypes/templated/compress.html">compressed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/templated/either.html">either&lt; L, R &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prodatatypes/templated/encrypt.html">encrypted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/templated/future.html">future&lt; T &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/templated/optional.html">T ?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/templated/stream.html">stream&lt; T &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prodatatypes/templated/table.html">table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/templated/templates.html">Generic types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypes/templated/try.html">try&lt; T &gt;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="expressions/expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions/builtin-funcs.html">Builtin Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otherfeatures.html">Other Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/labs.html">ALFA Labs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="guide.html">Language Guide</a> &raquo;</li>
+        
+      <li>Type System</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="type-system">
+<span id="typesystem"></span><h1>Type System<a class="headerlink" href="#type-system" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="top-level-constructs">
+<h2>Top level constructs<a class="headerlink" href="#top-level-constructs" title="Permalink to this headline">¶</a></h2>
+<p>These <strong>optional</strong> constructs can be used to organise your definitions better,
+reuse declarations, and define reusable fields types.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="constructs/fields.html">fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/include.html">include</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/import.html">import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/namespace.html">namespace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/typedefs.html">typedefs</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="user-defined-types">
+<h2>User-defined types<a class="headerlink" href="#user-defined-types" title="Permalink to this headline">¶</a></h2>
+<p>These are the user-defined-types ( UDTs ) used to define the data model.
+UDTs can be nested within <a class="reference internal" href="constructs/namespace.html#namespaceexpr"><span class="std std-ref">namespace</span></a> declarations or be top-level
+declarations themselves by having namespace prefixed as part of the
+declaration. UDTs can be declared in any order.</p>
+<p>UDTs that define fields (<a class="reference internal" href="constructs/entity.html#entitytype"><span class="std std-ref">entity</span></a>, <a class="reference internal" href="constructs/key.html#keytype"><span class="std std-ref">key</span></a>, <a class="reference internal" href="constructs/record.html#recordtype"><span class="std std-ref">record</span></a>, <a class="reference internal" href="constructs/trait.html#traittype"><span class="std std-ref">trait</span></a>, <a class="reference internal" href="constructs/union.html#uniontype"><span class="std std-ref">union</span></a>), optionally support
+a nested <a class="reference internal" href="expressions/assert.html#assertexpr"><span class="std std-ref">assert</span></a> declaration allowing object level validation to be performed.</p>
+<p><strong>Structural</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="constructs/entity.html">entity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/enum.html">enum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/key.html">key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/record.html">record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/trait.html">trait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constructs/union.html">union</a></li>
+</ul>
+</div>
+<p><strong>Behavioural</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="constructs/service.html">service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expressions/library.html">library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expressions/assert.html">assert</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="scalar-types">
+<h2>Scalar types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">¶</a></h2>
+<p>ALFA supports a wide range of primitive scalar types. Some of these will not translate directly a primitive type
+in target languages. However ALFA runtime libraries will encapsulate the required validation required.</p>
+<p>Where applicable, scalar types accept optional size constraints to be enforced by the runtime code.
+This can further improve data quality. Refer to individual types for further details.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/binary.html">binary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/boolean.html">boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/date.html">date</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/datetime.html">datetime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/decimal.html">decimal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/double.html">double</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/duration.html">duration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/int.html">int</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/long.html">long</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/short.html">short</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/string.html">string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/time.html">time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/uuid.html">uuid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/scalar/void.html">void</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="vector-and-composite-types">
+<h2>Vector and composite types<a class="headerlink" href="#vector-and-composite-types" title="Permalink to this headline">¶</a></h2>
+<p>All ALFA parameterized types can nested, unless otherwise stated.
+e.g. <cite>map&lt; string, list&lt; int ? &gt; &gt;</cite> or <cite>map&lt; string, map&lt; int, string &gt; &gt;</cite> are valid declarations.</p>
+<p>Vector types accept optional size constraints to be enforced by the runtime code. This can be used to safeguard
+against under or over supply of values. Refer to individual types for further details.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/vectors/enum.html">enum&lt; C1, C2, … &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/vectors/map.html">map&lt; K, V &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/vectors/list.html">list&lt; T &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/vectors/set.html">set&lt; T &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/vectors/tuple.html">tuple&lt; :T1, :T2, .. &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/vectors/union.html">union&lt; :T1, :T2, ..&gt;</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="auxiliary-types">
+<h2>Auxiliary types<a class="headerlink" href="#auxiliary-types" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="prodatatypes/templated/compress.html">compressed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/templated/either.html">either&lt; L, R &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prodatatypes/templated/encrypt.html">encrypted</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/templated/future.html">future&lt; T &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/templated/optional.html">T ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/templated/stream.html">stream&lt; T &gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prodatatypes/templated/table.html">table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/templated/templates.html">Generic types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes/templated/try.html">try&lt; T &gt;</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

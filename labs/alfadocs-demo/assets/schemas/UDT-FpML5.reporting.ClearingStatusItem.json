@@ -1,0 +1,182 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A component of a clearing status report. This provides the clearing status for a single trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ClearingStatusItem",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A component of a clearing status report. This provides the clearing status for a single trade.\n #/\nrecord FpML5.reporting.ClearingStatusItem {\n  # Identifier(s) for the trade which is the subject of the clearing request to which this status relates.\n  tradeIdentifier : FpML5.reporting.TradeIdentifier\n\n  # Information about a trade.\n  tradeReferenceInformation : FpML5.reporting.TradeReferenceInformation?\n\n  # Complete economics of the trade\n  trade : FpML5.reporting.Trade\n\n  tradePackage : FpML5.reporting.TradePackage\n\n  # The status of the clearing process for the identified trade. For example, Received, Pending (Approval), Registered (i.e. cleared), Rejected, etc.\n  clearingStatusValue : string?\n\n  # When the clearing status changed to the current value. This is mostly useful if the clearing status messages could be delayed from when the status actually changes; this could be important if the status date is used as the basis of any settlement calculations.\n  updatedDateTime : datetime?\n\n  # Supporting information which may be produced to explain the clearing process status. This may be a business reason e.g. failed eligibility criteria for a trade in Rejected status.\n  reason : FpML5.reporting.Reason?\n\n  # Reference to parties currently in this status, e.g. parties for which we are awaiting approval. For example, if a trade is in \"Pending\" status, this would identify which parties' approval the trade was pending.\n  statusAppliesTo : FpML5.reporting.PartyReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.EventActivityReport",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "tradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifier(s) for the trade which is the subject of the clearing request to which this status relates.",
+      "Name" : "tradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.TradeIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.TradeIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29799
+      }
+    },
+    "tradeReferenceInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information about a trade.",
+      "Name" : "tradeReferenceInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeReferenceInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29802
+      }
+    },
+    "trade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Complete economics of the trade",
+      "Name" : "trade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29805
+      }
+    },
+    "tradePackage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradePackage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.TradePackage",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.TradePackage",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradePackage",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29808
+      }
+    },
+    "clearingStatusValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The status of the clearing process for the identified trade. For example, Received, Pending (Approval), Registered (i.e. cleared), Rejected, etc.",
+      "Name" : "clearingStatusValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29810
+      }
+    },
+    "updatedDateTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "When the clearing status changed to the current value. This is mostly useful if the clearing status messages could be delayed from when the status actually changes; this could be important if the status date is used as the basis of any settlement calculations.",
+      "Name" : "updatedDateTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29813
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Supporting information which may be produced to explain the clearing process status. This may be a business reason e.g. failed eligibility criteria for a trade in Rejected status.",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Reason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29816
+      }
+    },
+    "statusAppliesTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to parties currently in this status, e.g. parties for which we are awaiting approval. For example, if a trade is in \"Pending\" status, this would identify which parties' approval the trade was pending.",
+      "Name" : "statusAppliesTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29819
+      }
+    }
+  },
+  "LocalFieldNames" : [ "tradeIdentifier", "tradeReferenceInformation", "trade", "tradePackage", "clearingStatusValue", "updatedDateTime", "reason", "statusAppliesTo" ],
+  "IsSynthetic" : false
+}

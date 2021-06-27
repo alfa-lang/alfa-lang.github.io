@@ -1,0 +1,89 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The specification of the Settlement Periods in which the electricity will be delivered for a \"shaped\" trade i.e. where different Settlement Period ranges will apply to different periods of the trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodsSchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The specification of the Settlement Periods in which the electricity will be delivered for a \"shaped\" trade i.e. where different Settlement Period ranges will apply to different periods of the trade.\n #/\nrecord FpML5.reporting.SettlementPeriodsSchedule {\n  # The range of Settlement Periods per Calculation Period. There must be a range of Settlement Periods specified for each Calculation Period, regardless of whether the range of Settlement Periods changes or stays the same between periods.\n  settlementPeriodsStep : FpML5.reporting.SettlementPeriodsStep?\n\n  # A pointer style reference to the Delivery Periods defined elsewhere.\n  deliveryPeriodsReference : FpML5.reporting.CalculationPeriodsReference\n\n  # A pointer style reference to the Calculation Periods Schedule defined elsewhere.\n  deliveryPeriodsScheduleReference : FpML5.reporting.CalculationPeriodsScheduleReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ElectricityPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementPeriodsStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The range of Settlement Periods per Calculation Period. There must be a range of Settlement Periods specified for each Calculation Period, regardless of whether the range of Settlement Periods changes or stays the same between periods.",
+      "Name" : "settlementPeriodsStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodsStep",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6555
+      }
+    },
+    "deliveryPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Delivery Periods defined elsewhere.",
+      "Name" : "deliveryPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CalculationPeriodsReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6558
+      }
+    },
+    "deliveryPeriodsScheduleReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the Calculation Periods Schedule defined elsewhere.",
+      "Name" : "deliveryPeriodsScheduleReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsScheduleReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CalculationPeriodsScheduleReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodsScheduleReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 6561
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementPeriodsStep", "deliveryPeriodsReference", "deliveryPeriodsScheduleReference" ],
+  "IsSynthetic" : false
+}

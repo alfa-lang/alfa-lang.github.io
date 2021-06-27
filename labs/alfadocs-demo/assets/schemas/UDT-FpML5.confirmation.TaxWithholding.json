@@ -1,0 +1,81 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Represents the withholding tax being applied to a particular cash flow.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TaxWithholding",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Represents the withholding tax being applied to a particular cash flow.\n #/\nrecord FpML5.confirmation.TaxWithholding {\n  # The amount of withholding tax being applied.\n  amount : FpML5.confirmation.NonNegativeMoney\n\n  # The tax rate being applied to the associated cash flow.\n  taxRate : decimal?\n\n  # A scheme used to identify the reason for withholding tax being applied to a cash flow.\n  reason : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CashPayable",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of withholding tax being applied.",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22664
+      }
+    },
+    "taxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The tax rate being applied to the associated cash flow.",
+      "Name" : "taxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22667
+      }
+    },
+    "reason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A scheme used to identify the reason for withholding tax being applied to a cash flow.",
+      "Name" : "reason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 22670
+      }
+    }
+  },
+  "LocalFieldNames" : [ "amount", "taxRate", "reason" ],
+  "IsSynthetic" : false
+}

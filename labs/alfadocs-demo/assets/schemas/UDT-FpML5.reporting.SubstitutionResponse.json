@@ -1,0 +1,55 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SubstitutionResponse",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.SubstitutionResponse {\n  substitutionApproved : boolean?\n\n  substitutionResponseReason : FpML5.reporting.SubstitutionResponseReason?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SubstitutionStatus",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "substitutionApproved" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "substitutionApproved",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3033
+      }
+    },
+    "substitutionResponseReason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "substitutionResponseReason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SubstitutionResponseReason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3035
+      }
+    }
+  },
+  "LocalFieldNames" : [ "substitutionApproved", "substitutionResponseReason" ],
+  "IsSynthetic" : false
+}

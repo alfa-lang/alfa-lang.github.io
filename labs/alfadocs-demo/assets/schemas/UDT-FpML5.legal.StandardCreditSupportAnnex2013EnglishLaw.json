@@ -1,0 +1,299 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The English Law 2013 SCSA implementation, which extends StandardCreditSupportAnnexBase.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013EnglishLaw",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The English Law 2013 SCSA implementation, which extends StandardCreditSupportAnnexBase.\n #/\nrecord FpML5.legal.StandardCreditSupportAnnex2013EnglishLaw {\n  # The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.\n  documentType : FpML5.legal.LegalDocumentType\n\n  # Specifies the way the independent amount is determined.\n  independentAmounts : FpML5.legal.IndependentAmounts\n\n  # The base currency to be used as a common denominator for Initial Amount calculation.\n  baseCurrency : string\n\n  # Reference to the legacy CSA that the parties may reference.\n  existingCreditSupportAnnex : FpML5.legal.ExistingCreditSupportAnnex?\n\n  # Settlement under the SCSA is required to be either on a T+1 or, exceptionally, on a T+2 basis (when counterparties are in disparate timezones). T+0 settlement is not allowed under the SCSA.\n  settlementDay : string\n\n  # The SCSA specifies a default resolution time, while it refers by default to the existing CSA for calculation of the value of Posted Credit Support. This element is meant to address the case where another resolution time is specified.\n  disputeResolution : FpML5.legal.DisputeResolution?\n\n  # The contact information to which demands and notices should be addressed. There could be several of such contacts for each party to the agreement.\n  demandsAndNotices : FpML5.legal.PartyContactInformation\n\n  otherProvisions : string?\n\n  # The Transport Currency to be used by the respective parties to the agreement.\n  transportCurrency : FpML5.legal.TransportCurrency\n\n  # The day count is the denominator for accrual calculation. If no currency is specified, the value applies to all currencies. If some currencies are specified, it only applies to those currencies.\n  dayCount : FpML5.legal.DayCount\n\n  # The interest rate applicable to the cash held/posted as Independent Amount when expressed in currencies other than the Transport Currencies. (In the case of Transport Currencies, the SCSA states that the interest rate is OIS flat.)\n  independentAmountInterestRate : FpML5.legal.IndependentAmountInterestRate\n\n  # Specifies the assets that qualify as Independent Amount Eligible Credit Support.\n  independentAmountEligibleCreditSupport : FpML5.legal.IndependentAmountEligibleCollateral\n\n  # Specifies the date on which the Transferor will be obliged to transfer Equivalent Credit Support in accordance with Paragraph 3 (d) in the case where such date is different from the one specified in Paragraph 3(d)(ii).\n  exchangeDate : string?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "documentType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of legal document, identified via a set of distinct attributes, e.g. ISDA 2013 Standard Credit Support Annex English Law.",
+      "Name" : "documentType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.LegalDocumentType",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.LegalDocumentType",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3775
+      }
+    },
+    "independentAmounts" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the way the independent amount is determined.",
+      "Name" : "independentAmounts",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.IndependentAmounts",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.IndependentAmounts",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.IndependentAmounts",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3778
+      }
+    },
+    "baseCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The base currency to be used as a common denominator for Initial Amount calculation.",
+      "Name" : "baseCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3781
+      }
+    },
+    "existingCreditSupportAnnex" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the legacy CSA that the parties may reference.",
+      "Name" : "existingCreditSupportAnnex",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.ExistingCreditSupportAnnex",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3784
+      }
+    },
+    "settlementDay" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Settlement under the SCSA is required to be either on a T+1 or, exceptionally, on a T+2 basis (when counterparties are in disparate timezones). T+0 settlement is not allowed under the SCSA.",
+      "Name" : "settlementDay",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3787
+      }
+    },
+    "disputeResolution" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The SCSA specifies a default resolution time, while it refers by default to the existing CSA for calculation of the value of Posted Credit Support. This element is meant to address the case where another resolution time is specified.",
+      "Name" : "disputeResolution",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.DisputeResolution",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3790
+      }
+    },
+    "demandsAndNotices" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The contact information to which demands and notices should be addressed. There could be several of such contacts for each party to the agreement.",
+      "Name" : "demandsAndNotices",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.PartyContactInformation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.PartyContactInformation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyContactInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3793
+      }
+    },
+    "otherProvisions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "otherProvisions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3796
+      }
+    },
+    "transportCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Transport Currency to be used by the respective parties to the agreement.",
+      "Name" : "transportCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.TransportCurrency",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.TransportCurrency",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.TransportCurrency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3798
+      }
+    },
+    "dayCount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count is the denominator for accrual calculation. If no currency is specified, the value applies to all currencies. If some currencies are specified, it only applies to those currencies.",
+      "Name" : "dayCount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.DayCount",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.DayCount",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.DayCount",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3801
+      }
+    },
+    "independentAmountInterestRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The interest rate applicable to the cash held/posted as Independent Amount when expressed in currencies other than the Transport Currencies. (In the case of Transport Currencies, the SCSA states that the interest rate is OIS flat.)",
+      "Name" : "independentAmountInterestRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.IndependentAmountInterestRate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.IndependentAmountInterestRate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.IndependentAmountInterestRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3804
+      }
+    },
+    "independentAmountEligibleCreditSupport" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the assets that qualify as Independent Amount Eligible Credit Support.",
+      "Name" : "independentAmountEligibleCreditSupport",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.IndependentAmountEligibleCollateral",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.IndependentAmountEligibleCollateral",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.IndependentAmountEligibleCollateral",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3807
+      }
+    },
+    "exchangeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the date on which the Transferor will be obliged to transfer Equivalent Credit Support in accordance with Paragraph 3 (d) in the case where such date is different from the one specified in Paragraph 3(d)(ii).",
+      "Name" : "exchangeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3810
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 3813
+      }
+    }
+  },
+  "LocalFieldNames" : [ "documentType", "independentAmounts", "baseCurrency", "existingCreditSupportAnnex", "settlementDay", "disputeResolution", "demandsAndNotices", "otherProvisions", "transportCurrency", "dayCount", "independentAmountInterestRate", "independentAmountEligibleCreditSupport", "exchangeDate", "id" ],
+  "IsSynthetic" : false
+}

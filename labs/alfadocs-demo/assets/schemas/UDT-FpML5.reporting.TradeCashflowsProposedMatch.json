@@ -1,0 +1,145 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "\"Other side's\" cashflow that meets the minimimum matching criteria and is proposed as match to the cash flow that is being asserted.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeCashflowsProposedMatch",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   \"Other side's\" cashflow that meets the minimimum matching criteria and is proposed as match to the cash flow that is being asserted.\n #/\nrecord FpML5.reporting.TradeCashflowsProposedMatch {\n  # Unique identifier assigned by either party to a set of cashflows.\n  tradeCashflowsId : string?\n\n  # Structure that holds reference to the trade through the tradeId and optionally some trade-specific elements for identifying the trade in the case of trades that have not been negotiated through electronic platforms and for which the counterparty's trade ID has not been captured.\n  tradeIdentifyingItems : FpML5.reporting.TradeIdentifyingItems?\n\n  # The adjusted date in which the payments are being paid/received.\n  adjustedPaymentDate : date?\n\n  # Specifies the payment that is exposed to the matching process. Usually there will be a single payment but for cross-currency swaps a different payment per currency shall be provided.\n  payment : FpML5.reporting.PaymentMatching?\n\n  # A unique identifier assigned by the matching service to each set of matched positions.\n  matchId : string?\n\n  # A type used to record the details of a difference between two sides of a business event.\n  difference : FpML5.reporting.TradeDifference?\n\n  # Numeric score to represent the quality of the match.\n  matchScore : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.TradeCashflowsMatchResult",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "tradeCashflowsId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Unique identifier assigned by either party to a set of cashflows.",
+      "Name" : "tradeCashflowsId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19681
+      }
+    },
+    "tradeIdentifyingItems" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Structure that holds reference to the trade through the tradeId and optionally some trade-specific elements for identifying the trade in the case of trades that have not been negotiated through electronic platforms and for which the counterparty's trade ID has not been captured.",
+      "Name" : "tradeIdentifyingItems",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeIdentifyingItems",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19684
+      }
+    },
+    "adjustedPaymentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted date in which the payments are being paid/received.",
+      "Name" : "adjustedPaymentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19687
+      }
+    },
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the payment that is exposed to the matching process. Usually there will be a single payment but for cross-currency swaps a different payment per currency shall be provided.",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PaymentMatching",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19690
+      }
+    },
+    "matchId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique identifier assigned by the matching service to each set of matched positions.",
+      "Name" : "matchId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19693
+      }
+    },
+    "difference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A type used to record the details of a difference between two sides of a business event.",
+      "Name" : "difference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeDifference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19696
+      }
+    },
+    "matchScore" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Numeric score to represent the quality of the match.",
+      "Name" : "matchScore",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 19699
+      }
+    }
+  },
+  "LocalFieldNames" : [ "tradeCashflowsId", "tradeIdentifyingItems", "adjustedPaymentDate", "payment", "matchId", "difference", "matchScore" ],
+  "IsSynthetic" : false
+}

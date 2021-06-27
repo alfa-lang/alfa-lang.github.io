@@ -1,0 +1,44 @@
+# fields
+
+A `fields` declaration can be used to declare reuable field definitions similar to a data dictionary.
+
+`fields` is a top level declaration and its entries are available for use in any UDT (User Defined Type).
+
+Once fields are declared, they can be used in UDT definitions without having to declare the data type. Declarations can include a default value, as shown in the Currency field below.
+
+When used in UDTs, declarations from `fields` can co-exist with those fully declared with datatypes.
+
+```csharp
+fields {
+    Name : string
+    Currency : string(3,3) = "USD"
+} 
+
+record Person {
+    Name
+    Age : int
+}
+
+record Cost {
+    Price : double
+    Currency
+}
+```
+
+Use of `fields` is optional. However, its use can encourage creation of a more consistent data models.
+
+Entries from `fields` can be used anywhere a field or service method parameter needs to be declared. In the example below, field declarations x, y and z are used in a `record` and `service`.
+
+```csharp
+fields {
+    x : double
+    y : double
+    z : double
+}
+
+record Point2D { x y }
+
+service Robot {
+    reposition( x, y, z ) : void
+}
+```

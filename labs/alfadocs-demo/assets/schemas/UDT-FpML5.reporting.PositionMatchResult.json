@@ -1,0 +1,99 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionMatchResult",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.PositionMatchResult {\n  # Reconciliation status of the position.\n  status : string?\n\n  # Position asserted by one of the parties.\n  assertedPosition : FpML5.reporting.AssertedPosition?\n\n  # \"Other side's\" position that meets the minimimum matching criteria and is proposed as match to the position that is being asserted.\n  proposedMatch : FpML5.reporting.PositionProposedMatch?\n\n  # Position asserted by the \"other side's\" party.\n  allegedPosition : FpML5.reporting.AssertedPosition\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionsMatchResults",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "status" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reconciliation status of the position.",
+      "Name" : "status",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17010
+      }
+    },
+    "assertedPosition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Position asserted by one of the parties.",
+      "Name" : "assertedPosition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AssertedPosition",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17013
+      }
+    },
+    "proposedMatch" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "\"Other side's\" position that meets the minimimum matching criteria and is proposed as match to the position that is being asserted.",
+      "Name" : "proposedMatch",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositionProposedMatch",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17016
+      }
+    },
+    "allegedPosition" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Position asserted by the \"other side's\" party.",
+      "Name" : "allegedPosition",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.AssertedPosition",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.AssertedPosition",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AssertedPosition",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17019
+      }
+    }
+  },
+  "LocalFieldNames" : [ "status", "assertedPosition", "proposedMatch", "allegedPosition" ],
+  "IsSynthetic" : false
+}

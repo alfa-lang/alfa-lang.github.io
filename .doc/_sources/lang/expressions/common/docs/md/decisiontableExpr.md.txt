@@ -1,0 +1,89 @@
+decision table and bucketing
+============================
+
+[Decision tables](https://en.wikipedia.org/wiki/Decision_table) are a well known technique to specify what output to produce given
+combination of input values.
+
+Bucketing is a technique where data is allocated into specified number of 'buckets'
+based on values from the inputs. The decision table can be used to express buckets as input
+expressions.
+
+
+The decision table belows shows how based on the input ( Temperature, Humidity, WindSpeed),
+the output ( Sport ) will be determined.
+
+|Temperature|Humidity|WindSpeed|SportActivity|
+|--------|----------|--------|------|
+|\[ 20 .. 35 \]|< 85|< 20|Tennis|
+|\[ 20 .. 35 \]|< 85|< 10|Cycling|
+|> 20| `*` | > 20 | KiteFlying|
+|> 35| `*` | `*` |Chess|
+
+Note:
+- `[ n .. m ]` denotes a range of possible values.
+- `*` denotes a wildcard.
+
+
+ALFA supports decision table expressions to express similar decision making capabilities.
+The above table can be expressed as below.
+
+```csharp
+library Activities {
+    decideSport( temperature : int, humidity : int, wind : int ) : try< string > {
+        let sport =
+            ( temperature,   humidity,   wind  ) match {
+            ( [20 .. 35] ,   < 85    ,   < 20  ) => "Tennis"
+            ( [20 .. 35] ,   < 85    ,   < 10  ) => "Cycling"
+            ( > 20       ,   *       ,   >= 20 ) => "KiteFlying"
+            ( 35         ,   *       ,   *     ) => "Chess"
+            }
+        return sport
+    }
+}
+```
+
+ALFA decision table syntax greatly simplifies what would normally would be expressed
+in several lines of `if` and `else` conditions.
+
+Escape analysis will be performed in future to ensure at least a single decision
+row will be matched.
+
+__Syntax:__
+
+Note:
+- Syntax within `<` and `>` is mandatory.
+- Syntax within `[` and `]` is optional.
+
+```csharp
+( < comma seperated n number of comma seperated input expressions >  ) match [ unique | anyof | first | all > ]
+{
+ (< n comma separated decision-input rules >)  => expression
+}
+```
+
+The decision-input rule can be:
+- A literal value to match/equal the input
+- Not equal to a literal `!= <value>`
+- A relative expression - `>`, `>=`, `<` or `<=` followed by an expression
+- A range value `['inclusive value' .. 'inclusive numeric value']`
+- Excluding a range - `not in ['inclusive value' .. 'inclusive numeric value']`
+
+
+The match type of `unique` | `anyof` | `first` | `all` is optional, and the default is `first`.
+
+
+|Match type|Comments|
+|----------|--------|
+|unique    |Only a single rule can be satisfied|
+|anyof     |Multiple rules can be satisfied. However, all satisfied rules must generate the same output|
+|first     |Multiple rules can be satisfied|
+|all       |Multiple rules can be satisfied. Outputs returned as a list.|
+
+__Returns:__
+
+The value returned from a decision expression is a `try<T>` of the output expression.
+
+For match type `all`, `try< list< T > >` is returned.
+
+`try` is returned as the matching may fail due to invalid match.
+`isError` can be used to check if the result is valid, and `get` can be used to read the wrapped value.

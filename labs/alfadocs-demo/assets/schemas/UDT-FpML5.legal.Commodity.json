@@ -1,0 +1,302 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing a commodity underlying asset.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.Commodity",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing a commodity underlying asset.\n #/\nrecord FpML5.legal.Commodity {\n  # Identification of the underlying asset, using public and/or private identifiers.\n  instrumentId : string\n\n  # Long name of the underlying asset.\n  description : string?\n\n  # A coding scheme value to identify the base type of the commodity being traded. Where possible, this should follow the naming convention used in the 2005 ISDA Commodity Definitions. For example, 'Oil'.\n  commodityBase : string\n\n  # A coding scheme value to identify the commodity being traded more specifically. Where possible, this should follow the naming convention used in the 2005 ISDA Commodity Definitions. For example, 'Brent'.\n  commodityDetails : string\n\n  # A coding scheme value to identify the unit of measure (e.g. Therms) in which the undelryer is denominated. Where possible, this should follow the naming convention used in the 2005 ISDA Commodity Definitions.\n  unit : string\n\n  # The currency in which the Commodity Reference Price is published (e.g. GBP).\n  currency : string\n\n  # For those commodities being traded with reference to the price of a listed instrument, the exchange where that instrument is listed should be specified in the 'exchange' element.\n  exchangeId : string\n\n  # For those commodities being traded with reference to a price distributed by a publication, that publication should be specified in the 'publication' element.\n  publication : FpML5.legal.CommodityInformationSource\n\n  # The 'specified Price' describes the nature of the underlying price that is observed. It must be be stated in the underlyer definition as it is not defined in the Commodity Reference Price. Example values of 'specifiedPrice' are 'Settlement' (for a futures contract) and 'WeightedAverage' (for some published prices and indices).\n  specifiedPrice : string\n\n  # Deprecated: The 'deliveryDates' element is applicable for a Commodity Reference Price that references a listed future contract (e.g. The Delivery Date is a NearbyMonth).\n  deliveryDates : string\n\n  # A container for the parametric representation of nearby contracts.\n  deliveryNearby : FpML5.legal.DeliveryNearby\n\n  # The Delivery Date is a fixed, single day.\n  deliveryDate : FpML5.legal.AdjustableDate\n\n  # The Delivery Date is a fixed, single month.\n  deliveryDateYearMonth : int\n\n  # The 'deliveryDateRollConvention' specifies, for a Commodity Transaction that references a listed future via the 'deliveryDates' element, the day on which the specified future will roll to the next nearby month prior to the expiration of the referenced future. If the future will not roll at all - i.e. the price will be taken from the expiring contract, 0 should be specified here. If the future will roll to the next nearby on the last trading day - i.e. the price will be taken from the next nearby on the last trading day, then 1 should be specified and so on.\n  deliveryDateRollConvention : FpML5.legal.Offset?\n\n  # The 'deliveryDateExpirationConvention' specifies, for a Commodity Transaction that references a listed future via the 'deliveryDates' element, the day on which the specified future will expire ahead of the actual expiration of the referenced future. For example: Z21 Contract expires on 19Nov21, with an adjust of 2D the \"expire\" will be 16Nov21. DeliveryDateRollConvention takes precedence. Example: Pricing on the Z21 Contract with NearbyContractDay and a deliveryDateRoll of 10D, Sampling of the F22 Contract will occur on 8Nov21 through the last Date of the Z21 Contract. With an ExpConvention of 5D, the last sampling date on the F22 contract will be 12Nov21.\n  deliveryDateExpirationConvention : FpML5.legal.Offset?\n\n  # The 'multiplier' specifies the multiplier associated with the Transaction. The 'multiplier' element has two uses: (1) for Freight Transactions or any Calculation Period specified for a Freight Transaction, if an amount is specified as the Multiplier then it is captured by this element and (2) if the Transaction is a heat rate option, the heat rate multiplier is represented in this element. If multiplier is not provided, multiplier is assumed to be 1. (i.e. rate source states 1 BBL of Oil as 90 Dollars. Multiplier of 10 will change the value to 900 dollars.)\n  multiplier : decimal?\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "instrumentId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identification of the underlying asset, using public and/or private identifiers.",
+      "Name" : "instrumentId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2679
+      }
+    },
+    "description" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Long name of the underlying asset.",
+      "Name" : "description",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2682
+      }
+    },
+    "commodityBase" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A coding scheme value to identify the base type of the commodity being traded. Where possible, this should follow the naming convention used in the 2005 ISDA Commodity Definitions. For example, 'Oil'.",
+      "Name" : "commodityBase",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2685
+      }
+    },
+    "commodityDetails" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A coding scheme value to identify the commodity being traded more specifically. Where possible, this should follow the naming convention used in the 2005 ISDA Commodity Definitions. For example, 'Brent'.",
+      "Name" : "commodityDetails",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2688
+      }
+    },
+    "unit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A coding scheme value to identify the unit of measure (e.g. Therms) in which the undelryer is denominated. Where possible, this should follow the naming convention used in the 2005 ISDA Commodity Definitions.",
+      "Name" : "unit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2691
+      }
+    },
+    "currency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency in which the Commodity Reference Price is published (e.g. GBP).",
+      "Name" : "currency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2694
+      }
+    },
+    "exchangeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For those commodities being traded with reference to the price of a listed instrument, the exchange where that instrument is listed should be specified in the 'exchange' element.",
+      "Name" : "exchangeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2697
+      }
+    },
+    "publication" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For those commodities being traded with reference to a price distributed by a publication, that publication should be specified in the 'publication' element.",
+      "Name" : "publication",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.CommodityInformationSource",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.CommodityInformationSource",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.CommodityInformationSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2700
+      }
+    },
+    "specifiedPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The 'specified Price' describes the nature of the underlying price that is observed. It must be be stated in the underlyer definition as it is not defined in the Commodity Reference Price. Example values of 'specifiedPrice' are 'Settlement' (for a futures contract) and 'WeightedAverage' (for some published prices and indices).",
+      "Name" : "specifiedPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2703
+      }
+    },
+    "deliveryDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Deprecated: The 'deliveryDates' element is applicable for a Commodity Reference Price that references a listed future contract (e.g. The Delivery Date is a NearbyMonth).",
+      "Name" : "deliveryDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2706
+      }
+    },
+    "deliveryNearby" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A container for the parametric representation of nearby contracts.",
+      "Name" : "deliveryNearby",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.DeliveryNearby",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.DeliveryNearby",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.DeliveryNearby",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2709
+      }
+    },
+    "deliveryDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Delivery Date is a fixed, single day.",
+      "Name" : "deliveryDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.AdjustableDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.AdjustableDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.AdjustableDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2712
+      }
+    },
+    "deliveryDateYearMonth" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The Delivery Date is a fixed, single month.",
+      "Name" : "deliveryDateYearMonth",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2715
+      }
+    },
+    "deliveryDateRollConvention" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The 'deliveryDateRollConvention' specifies, for a Commodity Transaction that references a listed future via the 'deliveryDates' element, the day on which the specified future will roll to the next nearby month prior to the expiration of the referenced future. If the future will not roll at all - i.e. the price will be taken from the expiring contract, 0 should be specified here. If the future will roll to the next nearby on the last trading day - i.e. the price will be taken from the next nearby on the last trading day, then 1 should be specified and so on.",
+      "Name" : "deliveryDateRollConvention",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.Offset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2718
+      }
+    },
+    "deliveryDateExpirationConvention" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The 'deliveryDateExpirationConvention' specifies, for a Commodity Transaction that references a listed future via the 'deliveryDates' element, the day on which the specified future will expire ahead of the actual expiration of the referenced future. For example: Z21 Contract expires on 19Nov21, with an adjust of 2D the \"expire\" will be 16Nov21. DeliveryDateRollConvention takes precedence. Example: Pricing on the Z21 Contract with NearbyContractDay and a deliveryDateRoll of 10D, Sampling of the F22 Contract will occur on 8Nov21 through the last Date of the Z21 Contract. With an ExpConvention of 5D, the last sampling date on the F22 contract will be 12Nov21.",
+      "Name" : "deliveryDateExpirationConvention",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.Offset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2721
+      }
+    },
+    "multiplier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The 'multiplier' specifies the multiplier associated with the Transaction. The 'multiplier' element has two uses: (1) for Freight Transactions or any Calculation Period specified for a Freight Transaction, if an amount is specified as the Multiplier then it is captured by this element and (2) if the Transaction is a heat rate option, the heat rate multiplier is represented in this element. If multiplier is not provided, multiplier is assumed to be 1. (i.e. rate source states 1 BBL of Oil as 90 Dollars. Multiplier of 10 will change the value to 900 dollars.)",
+      "Name" : "multiplier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2724
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2727
+      }
+    }
+  },
+  "LocalFieldNames" : [ "instrumentId", "description", "commodityBase", "commodityDetails", "unit", "currency", "exchangeId", "publication", "specifiedPrice", "deliveryDates", "deliveryNearby", "deliveryDate", "deliveryDateYearMonth", "deliveryDateRollConvention", "deliveryDateExpirationConvention", "multiplier", "id" ],
+  "IsSynthetic" : false
+}

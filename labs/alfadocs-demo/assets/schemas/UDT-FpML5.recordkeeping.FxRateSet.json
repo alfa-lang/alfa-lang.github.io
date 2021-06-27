@@ -1,0 +1,62 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A collection of spot FX rates used in pricing.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxRateSet",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A collection of spot FX rates used in pricing.\n #/\nrecord FpML5.recordkeeping.FxRateSet {\n  # A collection of instruments used as a basis for quotation.\n  instrumentSet : list< FpML5.recordkeeping.InstrumentSet >?\n\n  # A collection of valuations (quotes) for the assets needed in the set. Normally these quotes will be for the underlying assets listed above, but they don't necesarily have to be.\n  assetQuote : FpML5.recordkeeping.BasicAssetValuation?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxCurveValuation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "instrumentSet" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A collection of instruments used as a basis for quotation.",
+      "Name" : "instrumentSet",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ListDataType",
+          "ComponentType" : {
+            "@type" : "alfa.rt.model.UdtDataType",
+            "FullyQualifiedName" : "FpML5.recordkeeping.InstrumentSet",
+            "UdtType" : "recordType"
+          }
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26042
+      }
+    },
+    "assetQuote" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A collection of valuations (quotes) for the assets needed in the set. Normally these quotes will be for the underlying assets listed above, but they don't necesarily have to be.",
+      "Name" : "assetQuote",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BasicAssetValuation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26045
+      }
+    }
+  },
+  "LocalFieldNames" : [ "instrumentSet", "assetQuote" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,245 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "This type is used in Repo trades, to specify the valuation of a specific piece of collateral in the transaction.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CollateralValuation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   This type is used in Repo trades, to specify the valuation of a specific piece of collateral in the transaction.\n #/\nrecord FpML5.confirmation.CollateralValuation {\n  # Total nominal amount of the given bonds used as collateral.\n  nominalAmount : FpML5.confirmation.Money\n\n  # Bond clean price, expressed in percentage points, 100 is the initial value of the bond.\n  cleanPrice : decimal\n\n  # Accruals, relationship is clean price and accruals equals dirty price, all prices are expressed in percentage points, 100 is the initial value of the bond.\n  accruals : decimal?\n\n  # Bond dirty price, expressed in percentage points, 100 is the initial value of the bond.\n  dirtyPrice : decimal\n\n  # Bond price relative to a Benchmark.\n  relativePrice : FpML5.confirmation.RelativePrice?\n\n  # Yield to Maturity.\n  yieldToMaturity : decimal?\n\n  # The inflation factor is specified for inflation-linked products which require some additional elements to calculate prices correctly.\n  inflationFactor : decimal?\n\n  # Bond all-in-price which is a price that includes all relevant price adjustments (i.e. accrued interest, haircut or margin ratio, inflation factor,etc.). It expresses a price in terms of percentage of nominal amount.\n  allInPrice : decimal?\n\n  # Accruals expressed as amount.\n  accrualsAmount : FpML5.confirmation.Money?\n\n  # The number of units (index or securities).\n  numberOfUnits : decimal\n\n  # The price of each unit.\n  unitPrice : FpML5.confirmation.NonNegativeMoney\n\n  # A reference to explicitly identify which asset is being valued.\n  assetReference : FpML5.confirmation.AssetReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RepoFarLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RepoNearLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "nominalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Total nominal amount of the given bonds used as collateral.",
+      "Name" : "nominalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Money",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Money",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12019
+      }
+    },
+    "cleanPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Bond clean price, expressed in percentage points, 100 is the initial value of the bond.",
+      "Name" : "cleanPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12022
+      }
+    },
+    "accruals" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Accruals, relationship is clean price and accruals equals dirty price, all prices are expressed in percentage points, 100 is the initial value of the bond.",
+      "Name" : "accruals",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12025
+      }
+    },
+    "dirtyPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Bond dirty price, expressed in percentage points, 100 is the initial value of the bond.",
+      "Name" : "dirtyPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12028
+      }
+    },
+    "relativePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Bond price relative to a Benchmark.",
+      "Name" : "relativePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RelativePrice",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12031
+      }
+    },
+    "yieldToMaturity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Yield to Maturity.",
+      "Name" : "yieldToMaturity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12034
+      }
+    },
+    "inflationFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The inflation factor is specified for inflation-linked products which require some additional elements to calculate prices correctly.",
+      "Name" : "inflationFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12037
+      }
+    },
+    "allInPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Bond all-in-price which is a price that includes all relevant price adjustments (i.e. accrued interest, haircut or margin ratio, inflation factor,etc.). It expresses a price in terms of percentage of nominal amount.",
+      "Name" : "allInPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12040
+      }
+    },
+    "accrualsAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Accruals expressed as amount.",
+      "Name" : "accrualsAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12043
+      }
+    },
+    "numberOfUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of units (index or securities).",
+      "Name" : "numberOfUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12046
+      }
+    },
+    "unitPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The price of each unit.",
+      "Name" : "unitPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12049
+      }
+    },
+    "assetReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to explicitly identify which asset is being valued.",
+      "Name" : "assetReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AssetReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AssetReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 12052
+      }
+    }
+  },
+  "LocalFieldNames" : [ "nominalAmount", "cleanPrice", "accruals", "dirtyPrice", "relativePrice", "yieldToMaturity", "inflationFactor", "allInPrice", "accrualsAmount", "numberOfUnits", "unitPrice", "assetReference" ],
+  "IsSynthetic" : false
+}

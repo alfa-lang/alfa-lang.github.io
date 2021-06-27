@@ -1,0 +1,22 @@
+# key< T >
+
+Where `T` is an entity UDT name.
+
+Representation of a key of an entity, typically used when the entity is declared with an in-place key.
+
+Given :
+```csharp
+entity Employee key( id : uuid ) {
+    Name : string
+    Age : int
+}
+```
+
+Using `key<T>` allows the key of Employee to be referenced as shown below.
+
+```csharp 
+entity Department {
+   Manager : key < Employee >
+   Employees : list< key < Employee > >
+}
+```

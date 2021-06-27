@@ -1,0 +1,189 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Straddle details. Straddle is composed of two options: a call and a put involving the quotedCurrencyPair.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxStraddle",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Straddle details. Straddle is composed of two options: a call and a put involving the quotedCurrencyPair.\n #/\nrecord FpML5.recordkeeping.FxStraddle {\n  # The type Straddle as agreed on the Trade Date, e.g. at the money forward straddle, or delta neutral straddle.\n  straddleType : string\n\n  # A Tenor (time to maturity) of the straddle starting from the Fixing Date (e.g. 1y, 3m)\n  tenorPeriod : FpML5.recordkeeping.Period?\n\n  # The parameters for exercising the FxStraddle (underlying options), the underlying options are always European style options.\n  europeanExercise : FpML5.recordkeeping.FxEuropeanExercise\n\n  # A set of parameters defining procedures associated with the exercise.\n  exerciseProcedure : FpML5.recordkeeping.ExerciseProcedure?\n\n  # The currency amount for the FxStraddle. This will be the notional for the underlying options, which may be exercised by the Buyer.\n  notional : FpML5.recordkeeping.NonNegativeMoney\n\n  # The counter currency and amount for the FxStraddle. The Counter Currency Amount is determined using the notional and the Strike Price (which is determined at the fixingTime on the fixingDate).\n  counterCurrency : string\n\n  # Defines the FX Straddle premium amount, payer and dates. This amount is also determined at the fixingTime on the fixingDate.\n  premium : FpML5.recordkeeping.FxStraddlePremium?\n\n  # DEPRECATED. The settlement date is already expressed by europeanExercise/valueDate. The Settlement Date for the FxStraddle (if exercised at the expiryTime on the expiry Date).\n  settlementDate : FpML5.recordkeeping.AdjustableOrAdjustedDate?\n\n  # Specifies the settlement type for the FxStraddle. If deliverable then this element is removed. If non-deliverable, then the In-The-Money amount of the relevant option within the FxStraddle is paid by the Seller to the Buyer. The In-The-Money amount is calculated using the parameters within this element.\n  cashSettlement : FpML5.recordkeeping.FxCashSettlementSimple?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxForwardVolatilityAgreement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "straddleType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type Straddle as agreed on the Trade Date, e.g. at the money forward straddle, or delta neutral straddle.",
+      "Name" : "straddleType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24219
+      }
+    },
+    "tenorPeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A Tenor (time to maturity) of the straddle starting from the Fixing Date (e.g. 1y, 3m)",
+      "Name" : "tenorPeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.Period",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24222
+      }
+    },
+    "europeanExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The parameters for exercising the FxStraddle (underlying options), the underlying options are always European style options.",
+      "Name" : "europeanExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.FxEuropeanExercise",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.FxEuropeanExercise",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxEuropeanExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24225
+      }
+    },
+    "exerciseProcedure" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of parameters defining procedures associated with the exercise.",
+      "Name" : "exerciseProcedure",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.ExerciseProcedure",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24228
+      }
+    },
+    "notional" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency amount for the FxStraddle. This will be the notional for the underlying options, which may be exercised by the Buyer.",
+      "Name" : "notional",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24231
+      }
+    },
+    "counterCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The counter currency and amount for the FxStraddle. The Counter Currency Amount is determined using the notional and the Strike Price (which is determined at the fixingTime on the fixingDate).",
+      "Name" : "counterCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24234
+      }
+    },
+    "premium" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the FX Straddle premium amount, payer and dates. This amount is also determined at the fixingTime on the fixingDate.",
+      "Name" : "premium",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxStraddlePremium",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24237
+      }
+    },
+    "settlementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. The settlement date is already expressed by europeanExercise/valueDate. The Settlement Date for the FxStraddle (if exercised at the expiryTime on the expiry Date).",
+      "Name" : "settlementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrAdjustedDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24240
+      }
+    },
+    "cashSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the settlement type for the FxStraddle. If deliverable then this element is removed. If non-deliverable, then the In-The-Money amount of the relevant option within the FxStraddle is paid by the Seller to the Buyer. The In-The-Money amount is calculated using the parameters within this element.",
+      "Name" : "cashSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxCashSettlementSimple",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 24243
+      }
+    }
+  },
+  "LocalFieldNames" : [ "straddleType", "tenorPeriod", "europeanExercise", "exerciseProcedure", "notional", "counterCurrency", "premium", "settlementDate", "cashSettlement" ],
+  "IsSynthetic" : false
+}

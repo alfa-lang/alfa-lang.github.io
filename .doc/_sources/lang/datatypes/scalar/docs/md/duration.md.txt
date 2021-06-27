@@ -1,0 +1,15 @@
+duration
+========
+
+ISO 8601 duration.
+
+__Optional Parameters__
+
+- Value range constraint - `duration( min, max )`
+
+>>An optional range can be specified to a `duration` in order to specify a restriction on permitted values. The values for `min` and `max` can be a ISO 8601 duration string value or `*` to indicate wildcard maximum or minimum permitted value.
+>>
+>>Examples
+>>- `duration("P2D","P5D")` A duration between 2 and 5 days.
+>>- `duration(*,"P1D")` A duration between 0 to 1 day.
+>>- `duration("P10D",*)` A duration between 10 days and highest duration supported by target language.

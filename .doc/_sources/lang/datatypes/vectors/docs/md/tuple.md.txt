@@ -1,0 +1,34 @@
+tuple< :T1, :T2, .. >
+===================
+
+Represents a fixed sequence of objects of type `T1, T2, Tn`, where the `T`'s can be any datatype.
+
+Tuple can be considered an in-line :ref:`recordType` declaration. 
+
+Example:
+
+-   `Data : tuple< :string, :int, :date >` Tuple containing given types for fields
+
+Using the named syntax below is recommended to clarify the use of the field. When the name is not specified as is the case with the example above, a default name of 'TupleField__< number >' will be assigned.
+
+__Optional Parameters__
+
+- `tuple< Name1:T1, Name2:T2, ... >`
+>
+>Labels can be optionally specified.
+>
+>Example:
+>
+>-   `Data : tuple< Name:string, Height:int, DOB:date >` Tuple containing
+>    labelled entries.
+>
+
+- `tuple< FieldName1, FieldName2, ... >`
+
+>Fields declared in `fields {}` block can be referenced simply by specifying their name. The above example would require a `fields` declaration such as:
+>```csharp
+>fields {
+>   FieldName1 : int
+>   FieldName1 : string    
+>}
+>```

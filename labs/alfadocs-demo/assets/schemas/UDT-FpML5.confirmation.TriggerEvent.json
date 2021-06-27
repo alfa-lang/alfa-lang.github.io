@@ -1,0 +1,105 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Observation point for trigger.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.TriggerEvent",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Observation point for trigger.\n #/\nrecord FpML5.confirmation.TriggerEvent {\n  # A Equity Derivative schedule.\n  schedule : FpML5.confirmation.AveragingSchedule?\n\n  # The trigger Dates.\n  triggerDates : FpML5.confirmation.DateList?\n\n  # The trigger level.\n  trigger : FpML5.confirmation.Trigger\n\n  # The feature payment.\n  featurePayment : FpML5.confirmation.FeaturePayment?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Barrier",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Knock",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "schedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A Equity Derivative schedule.",
+      "Name" : "schedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AveragingSchedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23399
+      }
+    },
+    "triggerDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trigger Dates.",
+      "Name" : "triggerDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.DateList",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23402
+      }
+    },
+    "trigger" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trigger level.",
+      "Name" : "trigger",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Trigger",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Trigger",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Trigger",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23405
+      }
+    },
+    "featurePayment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The feature payment.",
+      "Name" : "featurePayment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FeaturePayment",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23408
+      }
+    }
+  },
+  "LocalFieldNames" : [ "schedule", "triggerDates", "trigger", "featurePayment" ],
+  "IsSynthetic" : false
+}

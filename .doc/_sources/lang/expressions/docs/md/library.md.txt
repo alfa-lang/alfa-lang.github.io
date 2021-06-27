@@ -1,0 +1,40 @@
+# library
+
+`library` is a top level declaration containing functions implementing common business rules and utilities.
+
+
+Unlike an ALFA :ref:`serviceType` which defines a 'contract' or interface without an implementation, a `library` contains
+implementations of functions.
+
+The use of library is optional, however common rules and logic can be encapsulated in a `library` to be reused from :ref:`assertExpr`
+or other ALFA expression statements.  Using ALFA's powerful expression syntax, `library` functions can implement data manipulation
+and validation logic.
+
+Similar to ALFA top level constructions such as :ref:`recordType`, logic implemented in a `library` can be code-generated into
+native code.
+
+A `library` can be declared within a :ref:`namespaceExpr`, and has a given name.
+
+__Example Library__
+```csharp
+library CountryGroups {
+    isG7( countryCode : string ) : boolean {
+        let g7 = { "CA", "FR", "DE", "IT", "JP", "UK", "US" }
+        return contains( g7, countryCode )
+    }
+
+    isOpec( countryCode : string ) : boolean {
+        let opec = { "IRN", "IRQ", "DZA", "SAU", "IDN", "VEN", "LBY", "ARE", "NGA", "KWT", "ECU", "AGO", "GAB" }
+        return contains( opec, countryCode )
+    }
+}
+```
+
+__Syntax of a library function__
+```
+<function name>( <list of parameters> ) : <result type> {
+    <statements>
+}
+```
+
+Functions can refer to existing ALFA definitions for data types.

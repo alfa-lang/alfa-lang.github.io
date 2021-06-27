@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "This composite type is an aggregation of the data supplied in the Margin Requirement composite type. It allows for the sum of the deliver and return requirements in to a single Margin Call Amount for Segregated Independent Amount and/or Variation Margin..",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.MarginCallResult",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   This composite type is an aggregation of the data supplied in the Margin Requirement composite type. It allows for the sum of the deliver and return requirements in to a single Margin Call Amount for Segregated Independent Amount and/or Variation Margin..\n #/\nrecord FpML5.reporting.MarginCallResult {\n  # summary of the variation margin.\n  variationMargin : FpML5.reporting.VariationResult\n\n  # summary of the segregated independent amount.\n  segregatedIndependentAmount : FpML5.reporting.VariationResult\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RequestMargin",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "variationMargin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "summary of the variation margin.",
+      "Name" : "variationMargin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.VariationResult",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.VariationResult",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.VariationResult",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21217
+      }
+    },
+    "segregatedIndependentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "summary of the segregated independent amount.",
+      "Name" : "segregatedIndependentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.VariationResult",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.VariationResult",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.VariationResult",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 21220
+      }
+    }
+  },
+  "LocalFieldNames" : [ "variationMargin", "segregatedIndependentAmount" ],
+  "IsSynthetic" : false
+}

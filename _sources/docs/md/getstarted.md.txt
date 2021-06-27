@@ -1,0 +1,145 @@
+# Getting Started
+
+There are 2 ways to get started using the ALFA modeling toolset.
+1. :ref:`alfacli`
+2. :ref:`mvnplugin`
+
+__Prerequisite__:
+Java 1.8 or higher is required for the :ref:`alfacli`. To confirm the version of Java you have installed, run `java -version`, on a shell/command window.
+ALFA has been tested with `Java 8` and `Java 14`. Java can be downloaded from [www.java.com/en/download](http://www.java.com/en/download).
+
+Provided you have Java installed, you will able install and run the ALFA CLI in under 3 minutes.
+
+
+## CLI (Command Line Tool) Setup
+
+The :ref:`alfacli` should be downloaded and installed as per the platform in use.
+
+>__Mac/Linux__
+>
+>Create a directory `$HOME/tools/alfa` to install the ALFA CLI. If an alternate path is used, change the path in the steps below accordingly.
+>The remaining steps downloads the AlfaCLI-0.9.0-RC1.zip and unzips the contents.
+>
+>>```
+>>mkdir -p $HOME/tools/alfa
+>>cd $HOME/tools/alfa
+>>curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip --output AlfaCLI-0.9.0-RC1.zip
+>>unzip AlfaCLI-0.9.0-RC1.zip
+>>```
+>
+>Add the following to your `~/.profile`, or shell profile file (e.g: On a Mac `~/.zprofile`, `~/.bash_profile` etc.)
+>
+>>```
+>># ALFA settings after unzipping AlfaCLI-0.9.0-RC1.zip
+>>export ALFA_HOME=$HOME/tools/alfa
+>>PATH="$ALFA_HOME/bin:${PATH}"
+>>export PATH
+>>```
+>
+>__Windows__
+>
+>- Download [AlfaCLI-0.9.0-RC1.zip](https://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip)
+>- Unzip AlfaCLI-0.9.0-RC1.zip to a local directory, e.g. `%LOCALAPPDATA%\alfa\`.
+>  This path has been suggested as some users may have restrictions in creating directories elsewhere.
+
+>>```python
+>>mkdir %LOCALAPPDATA%\alfa
+>>cd %LOCALAPPDATA%\alfa
+>>
+>>  < download AlfaCLI-0.9.0-RC1.zip and extract >
+>>
+>>set ALFA_HOME=%LOCALAPPDATA%\alfa
+>>set PATH=%ALFA_HOME%\bin;%PATH%
+>>```
+
+To have the settings permanantly defined, do the following:
+>- Set a new Windows environment variable `ALFA_HOME` and assign its value to the unzipped path, e.g. `%LOCALAPPDATA%\alfa.
+>- Append `%ALFA_HOME%\bin` to the user environment variable `PATH`.
+
+
+### Verify Installation
+
+>Once setup on Mac/Linux/Windows, it should be possible to open a **new** terminal or command window and
+>type `alfa -h` and view command line usage help.
+
+## Maven plugin setup
+
+>__Prerequisite__:
+>Maven (version 3 or higher) command line tool, confirm by running `mvn -v` on your terminal window.
+>
+>For details on using the plugin and a __complete example__ of using Maven, see :ref:`mvnplugin`.
+
+## Test Drive
+
+ALFA CLI is the simplest way to compile an ALFA model. Once installed, you can trail with the samples provided.
+```
+alfa -c $ALFA_HOME/samples/demo/
+```
+
+Alternatively, you can create a new project directory and create a `src/demo.alfa` file and write a model such
+as the one shown below.
+
+```csharp
+record Club.Player {
+  Name : string
+  Age : int
+  Average : double
+  RankingByYear : map< int, int >
+}
+```
+
+Compile the model by running:
+```
+alfa -c src/demo.alfa
+```
+The path can be a directory or a file ( e.g. to compile all files under `src`, run `alfa -c src` ).
+
+### Export to Java
+
+You can generate a Java POJO data model by adding `-g java -o generated/java` to the command:
+```
+alfa -c -e java -o generated/java src
+```
+
+This runs the :ref:`java`.
+
+The generated Java code will be written to the `generated/java` directory. In order to
+compile the generated code, you will need the ALFA Java runtime library.
+
+>The Runtime library dependency can be expressed in Maven:
+>```
+><dependency>
+>    <artifactId>alfa-rt-java-core</artifactId>
+>    <groupId>io.alfa-lang.rt</groupId>
+>    <version>0.9.0-RC1</version>
+></dependency>
+>```
+>Or Gradle:
+>```
+>compile group: 'io.alfa-lang.rt', name: 'alfa-rt-java-core', version: '0.9.0-RC1'
+>```
+>
+
+
+### Export to Protocol Buffers
+
+A Protocol Buffers definition can be generated off the model using the command line:
+```
+alfa -c -e protobuf -o generated/pb src
+```
+
+Assuming the `protoc` compiler is available in the path, the generated Protocol Buffer model can be compiled.
+```
+protoc --java_out=generated/pbjava -Igenerated/pb3 generated/pb3/Club/Player.proto 
+```
+This runs the :ref:`protobuf`.
+
+### Dealing with compilation errors
+
+The ALFA compiler emits succinct error messages, and they are displayed by the CLI in a manner that errors
+will be easy to identify and resolve quickly. 
+
+See below for an example of multiple errors being reported. For each error, the source line is printed with
+the problematic area in the line being underlined in red text.
+
+The error messages should have sufficient details to understand and resolve the problem.

@@ -1,0 +1,147 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Describes the characteristics for american exercise of FX products.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAmericanExercise",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Describes the characteristics for american exercise of FX products.\n #/\nrecord FpML5.recordkeeping.FxAmericanExercise {\n  # The earliest date on which the option can be exercised.\n  commencementDate : FpML5.recordkeeping.AdjustableOrRelativeDate\n\n  # The latest date on which the option can be exercised.\n  expiryDate : date\n\n  # Time at which the option expires on the expiry date, at the specified business center. This component represents the formal definition of option expiry time.\n  expiryTime : FpML5.recordkeeping.BusinessCenterTime?\n\n  # A code by which the expiry time is known in the market. This element is available to supplement the formal definition of expiry time, and must not be used in absence of the expiryTime element.\n  cutName : string?\n\n  # The latest date on which both currencies traded will settle.\n  latestValueDate : date?\n\n  # Characteristics for multiple exercise.\n  multipleExercise : FpML5.recordkeeping.FxMultipleExercise?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "commencementDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The earliest date on which the option can be exercised.",
+      "Name" : "commencementDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14943
+      }
+    },
+    "expiryDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The latest date on which the option can be exercised.",
+      "Name" : "expiryDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14946
+      }
+    },
+    "expiryTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Time at which the option expires on the expiry date, at the specified business center. This component represents the formal definition of option expiry time.",
+      "Name" : "expiryTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14949
+      }
+    },
+    "cutName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A code by which the expiry time is known in the market. This element is available to supplement the formal definition of expiry time, and must not be used in absence of the expiryTime element.",
+      "Name" : "cutName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14952
+      }
+    },
+    "latestValueDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The latest date on which both currencies traded will settle.",
+      "Name" : "latestValueDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14955
+      }
+    },
+    "multipleExercise" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Characteristics for multiple exercise.",
+      "Name" : "multipleExercise",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.FxMultipleExercise",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14958
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14961
+      }
+    }
+  },
+  "LocalFieldNames" : [ "commencementDate", "expiryDate", "expiryTime", "cutName", "latestValueDate", "multipleExercise", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,129 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The items (trades, trade references, holdings, other positions) that comprise this position. Currently a position may consist only of a single trade, a reference to a previously submitted position, or a reference to the trade. The choice structure is optional to allow extensions to be placed within this container.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionConstituent",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The items (trades, trade references, holdings, other positions) that comprise this position. Currently a position may consist only of a single trade, a reference to a previously submitted position, or a reference to the trade. The choice structure is optional to allow extensions to be placed within this container.\n #/\nrecord FpML5.reporting.PositionConstituent {\n  # An element that allows the full details of the trade to be used as a mechanism for identifying the trade for which the post-trade event pertains.\n  trade : FpML5.reporting.Trade\n\n  # A previously submitted version of the position.\n  positionVersionReference : int( 1, * )\n\n  # The trade reference identifier(s) allocated to the trade by the parties involved.\n  tradeReference : FpML5.reporting.PartyTradeIdentifiers\n\n  # An amount of an instrument that is held.\n  holding : FpML5.reporting.Holding\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AssertedPosition",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.DefinePosition",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Position",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionProposedMatch",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ReportedPosition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "trade" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An element that allows the full details of the trade to be used as a mechanism for identifying the trade for which the post-trade event pertains.",
+      "Name" : "trade",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Trade",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Trade",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Trade",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24338
+      }
+    },
+    "positionVersionReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A previously submitted version of the position.",
+      "Name" : "positionVersionReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "min" : {
+          "@type" : "alfa.rt.model.RangeValue",
+          "intValue" : 1
+        },
+        "ScalarType" : "intType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24341
+      }
+    },
+    "tradeReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trade reference identifier(s) allocated to the trade by the parties involved.",
+      "Name" : "tradeReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifiers",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.PartyTradeIdentifiers",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PartyTradeIdentifiers",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24344
+      }
+    },
+    "holding" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An amount of an instrument that is held.",
+      "Name" : "holding",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.Holding",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.Holding",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Holding",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 24347
+      }
+    }
+  },
+  "LocalFieldNames" : [ "trade", "positionVersionReference", "tradeReference", "holding" ],
+  "IsSynthetic" : false
+}

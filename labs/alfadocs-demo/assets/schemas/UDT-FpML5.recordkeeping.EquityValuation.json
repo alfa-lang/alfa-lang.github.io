@@ -1,0 +1,226 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining how and when an equity option is to be valued.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.EquityValuation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining how and when an equity option is to be valued.\n #/\nrecord FpML5.recordkeeping.EquityValuation {\n  # The term \"Valuation Date\" is assumed to have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. Cash Settlement Payment Date in accordance with the ISDA 2002 Equity Derivatives Definitions. SettlementCycle in accordance with the ISDA 2011 Equity Derivatives Definitions.\n  valuationDate : FpML5.recordkeeping.AdjustableDateOrRelativeDateSequence\n\n  # Specifies the interim equity valuation dates of a swap.\n  valuationDates : FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates\n\n  # The time of day at which the calculation agent values the underlying, for example the official closing time of the exchange.\n  valuationTimeType : string?\n\n  # The specific time of day at which the calculation agent values the underlying. The SpecificTime is the only case when the valuationTime (time + business center location – e.g. 10:00:00 USNY) should be provided. You should be able to provide just the valuationTime without valuationTimeType, which infer that this is a specific time.\n  valuationTime : FpML5.recordkeeping.BusinessCenterTime?\n\n  # The official settlement price as announced by the related exchange is applicable, in accordance with the ISDA 2002 definitions.\n  futuresPriceValuation : boolean\n\n  # The official settlement price as announced by the related exchange is applicable, in accordance with the ISDA 2002 definitions.\n  optionsPriceValuation : boolean\n\n  # The number of valuation dates between valuation start date and valuation end date.\n  numberOfValuationDates : int( 0, * )?\n\n  # Specifies the dividend valuation dates of the swap.\n  dividendValuationDates : FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates?\n\n  # Specifies the fallback provisions for Hedging Party in the determination of the Final Price.\n  fPVFinalPriceElectionFallback : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CorrelationLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.DirectionalLegUnderlyerValuation",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.EquityExerciseValuationSettlement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ReturnLegValuationPrice",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.VarianceLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.VolatilityLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "valuationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The term \"Valuation Date\" is assumed to have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. Cash Settlement Payment Date in accordance with the ISDA 2002 Equity Derivatives Definitions. SettlementCycle in accordance with the ISDA 2011 Equity Derivatives Definitions.",
+      "Name" : "valuationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableDateOrRelativeDateSequence",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.AdjustableDateOrRelativeDateSequence",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableDateOrRelativeDateSequence",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22862
+      }
+    },
+    "valuationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the interim equity valuation dates of a swap.",
+      "Name" : "valuationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22865
+      }
+    },
+    "valuationTimeType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time of day at which the calculation agent values the underlying, for example the official closing time of the exchange.",
+      "Name" : "valuationTimeType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22868
+      }
+    },
+    "valuationTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specific time of day at which the calculation agent values the underlying. The SpecificTime is the only case when the valuationTime (time + business center location – e.g. 10:00:00 USNY) should be provided. You should be able to provide just the valuationTime without valuationTimeType, which infer that this is a specific time.",
+      "Name" : "valuationTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22871
+      }
+    },
+    "futuresPriceValuation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The official settlement price as announced by the related exchange is applicable, in accordance with the ISDA 2002 definitions.",
+      "Name" : "futuresPriceValuation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22874
+      }
+    },
+    "optionsPriceValuation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The official settlement price as announced by the related exchange is applicable, in accordance with the ISDA 2002 definitions.",
+      "Name" : "optionsPriceValuation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22877
+      }
+    },
+    "numberOfValuationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of valuation dates between valuation start date and valuation end date.",
+      "Name" : "numberOfValuationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 0
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22880
+      }
+    },
+    "dividendValuationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the dividend valuation dates of the swap.",
+      "Name" : "dividendValuationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AdjustableRelativeOrPeriodicDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22883
+      }
+    },
+    "fPVFinalPriceElectionFallback" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fallback provisions for Hedging Party in the determination of the Final Price.",
+      "Name" : "fPVFinalPriceElectionFallback",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22886
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22889
+      }
+    }
+  },
+  "LocalFieldNames" : [ "valuationDate", "valuationDates", "valuationTimeType", "valuationTime", "futuresPriceValuation", "optionsPriceValuation", "numberOfValuationDates", "dividendValuationDates", "fPVFinalPriceElectionFallback", "id" ],
+  "IsSynthetic" : false
+}

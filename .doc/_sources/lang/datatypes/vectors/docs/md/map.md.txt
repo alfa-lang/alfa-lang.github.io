@@ -1,0 +1,30 @@
+map< K, V >
+===========
+
+Represents an unordered map of keys K to value V, where K and V can be any
+datatype with some exceptions for K.
+
+Example:
+
+-   `Data : map< int, string >` Map of integer to string
+-   `Data : map< uuid, OrderItem >` Map of uuid to OrderItem
+
+__Optional Parameters__
+
+- `map< KName : K, VName : V >`
+
+> Optionally a label can be specified for the key or value. This can be useful in order to give better meaning to data compared to using just the data type specially when dealing with primitive data types.
+>
+> These labels will be used in place of column names with `table<T>` type.
+>
+> Example:
+> - `Data : map< ItemId:uuid, UnitPrice:double >` is more meaningful than > `map< uuid, double >`.
+> - `Data : map< ZipCode : string, list< Order > >` Label only the key to 
+> be more meaningful. Value type convey sufficient information.
+
+
+-  Size constraint - `map< K, V >( min, max )`
+
+> A range can be optionally specified that can be used as the minimum and maximum number of entries permitted.
+>
+> - `Data : map< ISOCode : string, Country >( 200, 256 )` a map of country codes with 200 to 256 entries.

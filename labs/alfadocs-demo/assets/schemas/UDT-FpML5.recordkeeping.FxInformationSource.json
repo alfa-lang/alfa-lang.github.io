@@ -1,0 +1,115 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxInformationSource",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.recordkeeping.FxInformationSource {\n  # An information source for obtaining a market rate. For example Bloomberg, Reuters, Telerate etc.\n  rateSource : string?\n\n  # A specific page for the rate source for obtaining a market rate.\n  rateSourcePage : string?\n\n  # The heading for the rate source on a given rate source page.\n  rateSourcePageHeading : string?\n\n  # The time that the fixing will be taken along with a business center to define the time zone\n  fixingTime : FpML5.recordkeeping.BusinessCenterTime?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAverageRate",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAverageStrike",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxAveragingProcess",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxCrossRateObservable",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxRateObservable",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxSettlementRateSource",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxTargetKnockoutForward",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "rateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An information source for obtaining a market rate. For example Bloomberg, Reuters, Telerate etc.",
+      "Name" : "rateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25332
+      }
+    },
+    "rateSourcePage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A specific page for the rate source for obtaining a market rate.",
+      "Name" : "rateSourcePage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25335
+      }
+    },
+    "rateSourcePageHeading" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The heading for the rate source on a given rate source page.",
+      "Name" : "rateSourcePageHeading",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25338
+      }
+    },
+    "fixingTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time that the fixing will be taken along with a business center to define the time zone",
+      "Name" : "fixingTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 25341
+      }
+    }
+  },
+  "LocalFieldNames" : [ "rateSource", "rateSourcePage", "rateSourcePageHeading", "fixingTime" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The agreement executed between the parties and intended to govern collateral arrangement for all OTC derivatives transactions between those parties.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.CreditSupportAgreement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The agreement executed between the parties and intended to govern collateral arrangement for all OTC derivatives transactions between those parties.\n #/\nrecord FpML5.pretrade.CreditSupportAgreement {\n  # The type of ISDA Credit Support Agreement\n  type : string?\n\n  # The date of the agreement executed between the parties and intended to govern collateral arrangements for all OTC derivatives transactions between those parties.\n  `date` : date?\n\n  # An identifier used to uniquely identify the CSA\n  identifier : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Documentation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "type" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of ISDA Credit Support Agreement",
+      "Name" : "type",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 8745
+      }
+    },
+    "date" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date of the agreement executed between the parties and intended to govern collateral arrangements for all OTC derivatives transactions between those parties.",
+      "Name" : "date",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 8748
+      }
+    },
+    "identifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An identifier used to uniquely identify the CSA",
+      "Name" : "identifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 8751
+      }
+    }
+  },
+  "LocalFieldNames" : [ "type", "date", "identifier" ],
+  "IsSynthetic" : false
+}

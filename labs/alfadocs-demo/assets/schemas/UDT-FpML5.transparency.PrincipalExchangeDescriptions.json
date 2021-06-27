@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies each of the characteristics of the principal exchange cashflows, in terms of paying/receiving counterparties, amounts and dates.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.PrincipalExchangeDescriptions",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies each of the characteristics of the principal exchange cashflows, in terms of paying/receiving counterparties, amounts and dates.\n #/\nrecord FpML5.transparency.PrincipalExchangeDescriptions {\n  # Specifies the principal echange amount, either by explicitly defining it, or by point to an amount defined somewhere else in the swap document.\n  principalExchangeAmount : FpML5.transparency.PrincipalExchangeAmount?\n\n  # Date on which each of the principal exchanges will take place. This date is either explictly stated, or is defined by reference to another date in the swap document. In this latter case, it will typically refer to one other date of the equity leg: either the effective date (initial exchange), or the last payment date (final exchange).\n  principalExchangeDate : FpML5.transparency.AdjustableOrRelativeDate?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.PrincipalExchangeFeatures",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "principalExchangeAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the principal echange amount, either by explicitly defining it, or by point to an amount defined somewhere else in the swap document.",
+      "Name" : "principalExchangeAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.PrincipalExchangeAmount",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4200
+      }
+    },
+    "principalExchangeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date on which each of the principal exchanges will take place. This date is either explictly stated, or is defined by reference to another date in the swap document. In this latter case, it will typically refer to one other date of the equity leg: either the effective date (initial exchange), or the last payment date (final exchange).",
+      "Name" : "principalExchangeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4203
+      }
+    }
+  },
+  "LocalFieldNames" : [ "principalExchangeAmount", "principalExchangeDate" ],
+  "IsSynthetic" : false
+}

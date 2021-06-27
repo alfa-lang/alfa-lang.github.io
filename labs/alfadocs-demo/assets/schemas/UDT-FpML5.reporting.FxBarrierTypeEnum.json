@@ -1,0 +1,74 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "The specification of whether a barrier within an FX OTC option is a knockin or knockout.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxBarrierTypeEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n The specification of whether a barrier within an FX OTC option is a knockin or knockout.\n #/\nenum FpML5.reporting.FxBarrierTypeEnum {\n    # The option exists if the spot rate is at or above, or at or below the barrier level according to the specified barrier direction.\n    Knockin \n    # The option ceases to exist if the spot rate is at or above, or at or below the barrier level according to the specified barrier direction.\n    Knockout \n    # DEPRECATE: Option exists once the barrier is hit. The trigger rate is in-the money in relation to the strike rate.\n    ReverseKnockin \n    # DEPRECATE: Option ceases to exist once the barrier is hit. The trigger rate is in-the money in relation to the strike rate.\n    ReverseKnockout \n\n}"
+  },
+  "AllFields" : {
+    "Knockin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The option exists if the spot rate is at or above, or at or below the barrier level according to the specified barrier direction.",
+      "Name" : "Knockin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20683
+      }
+    },
+    "Knockout" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The option ceases to exist if the spot rate is at or above, or at or below the barrier level according to the specified barrier direction.",
+      "Name" : "Knockout",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20685
+      }
+    },
+    "ReverseKnockin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATE: Option exists once the barrier is hit. The trigger rate is in-the money in relation to the strike rate.",
+      "Name" : "ReverseKnockin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20687
+      }
+    },
+    "ReverseKnockout" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATE: Option ceases to exist once the barrier is hit. The trigger rate is in-the money in relation to the strike rate.",
+      "Name" : "ReverseKnockout",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 20689
+      }
+    }
+  },
+  "LocalFieldNames" : [ "Knockin", "Knockout", "ReverseKnockin", "ReverseKnockout" ],
+  "IsSynthetic" : false
+}

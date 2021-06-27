@@ -1,0 +1,430 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A Repo, modeled as an FpML:Product. Note: this Repo model is a candidate model for further industry input.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Repo",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A Repo, modeled as an FpML:Product. Note: this Repo model is a candidate model for further industry input.\n #/\nrecord FpML5.confirmation.Repo {\n  # A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  primaryAssetClass : string?\n\n  # A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.\n  secondaryAssetClass : string?\n\n  # A classification of the type of product. FpML defines a simple product categorization using a coding scheme.\n  productType : string?\n\n  # A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.\n  productId : string?\n\n  # A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.\n  assetClass : string?\n\n  # The fixed repo rate. It is usually fixed for the duration of the agreement but can be changed with mid-life events (rate changes) except for sell/buy-back trades.\n  fixedRateSchedule : FpML5.confirmation.Schedule\n\n  # The floating rate index and tenor, with additional definitions relating to the calculation of floating rate amounts, including spread and multiplier. It is used for floating rate repos. For example, floating rate repos on European markets are made against EONIA.\n  floatingRateCalculation : FpML5.confirmation.FloatingRateCalculation\n\n  # The day count fraction.\n  dayCountFraction : string\n\n  # A duration code for the repo transaction. This defines a type of a repo transaction with fixed duration.\n  `duration` : string\n\n  # A party to the open repo transaction that has a right to demand for exercise of far leg of the open repo transaction. This element represents an enumerated list that includes InitialBuyer, InitialSeller, Either, AsDefinedInMasterAgreement. In the default case either party can call for closing open repo transaction, unless otherwise specified. If electing parties are not defined in open repo confirmation, when they are defined by default in the Master Agreement, AsDefinedInMasterAgreement value should be used. Exact buyer/seller related parties, including any third parties who can demand exercise of open repo transactions on behalf of the parties to the trade (calculation agent, executing broker, etc.), can be defined in the relatedParty element (tradeHeader/partyTradeInformation).\n  callingParty : string\n\n  # Defines the latest date when the open repo transaction can be exercised (and no later than which it must be exercised) on demand by a party to the trade indicated in the electingParty element (or in the Master Agreement, if the electingParty element has AsDefinedInMasterAgreement value). For instance, in the open repo transaction with callDate agreed as business day one year after the trade date far leg can be settled on any day after the near leg settlement date and before and including the callDate. If the call date is not defined in trade terms and / or not included into trade confirmation this element can be omitted.\n  callDate : FpML5.confirmation.AdjustableOrRelativeDate?\n\n  # Notice period for open repo transactions in number of days. This element represents agreed period of notice to be given in advance before exercise of the repo trade by a party requesting such exercise.\n  noticePeriod : FpML5.confirmation.AdjustableOffset\n\n  # Notice period for open repo transactions referenced to a party to the trade, in number of days. This element represents agreed period of notice to be given in advance before exercise of the repo trade by a party requesting such exercise and reference to that party.\n  partyNoticePeriod : FpML5.confirmation.PartyNoticePeriod\n\n  # Defines initial margin applied to a repo transaction.\n  initialMargin : FpML5.confirmation.InitialMargin?\n\n  # A repo contract is modeled as two purchase/repurchase transactions which are called legs. This is the near leg, i.e. the transaction that will be executed on the near settlement date of the contract.\n  nearLeg : FpML5.confirmation.RepoNearLeg\n\n  # The far leg of the repo contract, i.e. the repurchase transaction. The BuyerSeller model in the far leg must be the exact opposite of the one found in the near leg.\n  farLeg : FpML5.confirmation.RepoFarLeg?\n\n  # Identifies the underlying asset when it is a series or a class of bonds.\n  bond : FpML5.confirmation.Bond\n\n  # Identifies the underlying asset when it is a convertible bond.\n  convertibleBond : FpML5.confirmation.ConvertibleBond\n\n  # Identifies the underlying asset when it is a listed equity.\n  equity : FpML5.confirmation.EquityAsset\n\n  triParty : FpML5.confirmation.TriParty\n\n  id : string?\n\n}"
+  },
+  "AllFields" : {
+    "primaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the most important risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "primaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17228
+      }
+    },
+    "secondaryAssetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of additional risk classes of the trade, if any. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "secondaryAssetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17231
+      }
+    },
+    "productType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the type of product. FpML defines a simple product categorization using a coding scheme.",
+      "Name" : "productType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17234
+      }
+    },
+    "productId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A product reference identifier. The product ID is an identifier that describes the key economic characteristics of the trade type, with the exception of concepts such as size (notional, quantity, number of units) and price (fixed rate, strike, etc.) that are negotiated for each transaction. It can be used to hold identifiers such as the \"UPI\" (universal product identifier) required by certain regulatory reporting rules. It can also be used to hold identifiers of benchmark products or product temnplates used by certain trading systems or facilities. FpML does not define the domain values associated with this element. Note that the domain values for this element are not strictly an enumerated list.",
+      "Name" : "productId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17237
+      }
+    },
+    "assetClass" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A classification of the risk class of the trade. FpML defines a simple asset class categorization using a coding scheme.",
+      "Name" : "assetClass",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17240
+      }
+    },
+    "fixedRateSchedule" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The fixed repo rate. It is usually fixed for the duration of the agreement but can be changed with mid-life events (rate changes) except for sell/buy-back trades.",
+      "Name" : "fixedRateSchedule",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Schedule",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Schedule",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Schedule",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17243
+      }
+    },
+    "floatingRateCalculation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The floating rate index and tenor, with additional definitions relating to the calculation of floating rate amounts, including spread and multiplier. It is used for floating rate repos. For example, floating rate repos on European markets are made against EONIA.",
+      "Name" : "floatingRateCalculation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FloatingRateCalculation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FloatingRateCalculation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FloatingRateCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17246
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The day count fraction.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17249
+      }
+    },
+    "duration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A duration code for the repo transaction. This defines a type of a repo transaction with fixed duration.",
+      "Name" : "duration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17252
+      }
+    },
+    "callingParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A party to the open repo transaction that has a right to demand for exercise of far leg of the open repo transaction. This element represents an enumerated list that includes InitialBuyer, InitialSeller, Either, AsDefinedInMasterAgreement. In the default case either party can call for closing open repo transaction, unless otherwise specified. If electing parties are not defined in open repo confirmation, when they are defined by default in the Master Agreement, AsDefinedInMasterAgreement value should be used. Exact buyer/seller related parties, including any third parties who can demand exercise of open repo transactions on behalf of the parties to the trade (calculation agent, executing broker, etc.), can be defined in the relatedParty element (tradeHeader/partyTradeInformation).",
+      "Name" : "callingParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17255
+      }
+    },
+    "callDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the latest date when the open repo transaction can be exercised (and no later than which it must be exercised) on demand by a party to the trade indicated in the electingParty element (or in the Master Agreement, if the electingParty element has AsDefinedInMasterAgreement value). For instance, in the open repo transaction with callDate agreed as business day one year after the trade date far leg can be settled on any day after the near leg settlement date and before and including the callDate. If the call date is not defined in trade terms and / or not included into trade confirmation this element can be omitted.",
+      "Name" : "callDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableOrRelativeDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17258
+      }
+    },
+    "noticePeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Notice period for open repo transactions in number of days. This element represents agreed period of notice to be given in advance before exercise of the repo trade by a party requesting such exercise.",
+      "Name" : "noticePeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.AdjustableOffset",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.AdjustableOffset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17261
+      }
+    },
+    "partyNoticePeriod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Notice period for open repo transactions referenced to a party to the trade, in number of days. This element represents agreed period of notice to be given in advance before exercise of the repo trade by a party requesting such exercise and reference to that party.",
+      "Name" : "partyNoticePeriod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyNoticePeriod",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyNoticePeriod",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyNoticePeriod",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17264
+      }
+    },
+    "initialMargin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines initial margin applied to a repo transaction.",
+      "Name" : "initialMargin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.InitialMargin",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17267
+      }
+    },
+    "nearLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A repo contract is modeled as two purchase/repurchase transactions which are called legs. This is the near leg, i.e. the transaction that will be executed on the near settlement date of the contract.",
+      "Name" : "nearLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.RepoNearLeg",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.RepoNearLeg",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RepoNearLeg",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17270
+      }
+    },
+    "farLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The far leg of the repo contract, i.e. the repurchase transaction. The BuyerSeller model in the far leg must be the exact opposite of the one found in the near leg.",
+      "Name" : "farLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RepoFarLeg",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17273
+      }
+    },
+    "bond" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a series or a class of bonds.",
+      "Name" : "bond",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.Bond",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.Bond",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Bond",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17276
+      }
+    },
+    "convertibleBond" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a convertible bond.",
+      "Name" : "convertibleBond",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ConvertibleBond",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ConvertibleBond",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ConvertibleBond",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17279
+      }
+    },
+    "equity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Identifies the underlying asset when it is a listed equity.",
+      "Name" : "equity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.EquityAsset",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.EquityAsset",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.EquityAsset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17282
+      }
+    },
+    "triParty" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "triParty",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.TriParty",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.TriParty",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TriParty",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17285
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17287
+      }
+    }
+  },
+  "LocalFieldNames" : [ "primaryAssetClass", "secondaryAssetClass", "productType", "productId", "assetClass", "fixedRateSchedule", "floatingRateCalculation", "dayCountFraction", "duration", "callingParty", "callDate", "noticePeriod", "partyNoticePeriod", "initialMargin", "nearLeg", "farLeg", "bond", "convertibleBond", "equity", "triParty", "id" ],
+  "IsSynthetic" : false
+}

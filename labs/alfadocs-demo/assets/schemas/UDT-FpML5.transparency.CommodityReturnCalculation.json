@@ -1,0 +1,89 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommodityReturnCalculation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.transparency.CommodityReturnCalculation {\n  # Defines the value of the commodity return calculation formula as simple or compound.\n  formula : string\n\n  # Describes which dates are valid dates on which to observe a price or index level\n  pricingDates : FpML5.transparency.CommodityPricingDates?\n\n  # Defines when a price or index level will be observed that will figure in the return calculation.\n  valuationDates : FpML5.transparency.CommodityValuationDates?\n\n  # If specified in the confirmation, the price or index level at the beginning of the initial Calculation Period. For example, if the return calculation is [(Index End / Index Begin) - 1] and Index Begin is defined as equal to Index End for the immediately preceeding Calculation Period, then the value of Index Begin in the very first Calculation Period is not defined and is usually specified in the confirmation.\n  initialPrice : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CommodityReturnLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "formula" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the value of the commodity return calculation formula as simple or compound.",
+      "Name" : "formula",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4312
+      }
+    },
+    "pricingDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Describes which dates are valid dates on which to observe a price or index level",
+      "Name" : "pricingDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CommodityPricingDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4315
+      }
+    },
+    "valuationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines when a price or index level will be observed that will figure in the return calculation.",
+      "Name" : "valuationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.CommodityValuationDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4318
+      }
+    },
+    "initialPrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If specified in the confirmation, the price or index level at the beginning of the initial Calculation Period. For example, if the return calculation is [(Index End / Index Begin) - 1] and Index Begin is defined as equal to Index End for the immediately preceeding Calculation Period, then the value of Index Begin in the very first Calculation Period is not defined and is usually specified in the confirmation.",
+      "Name" : "initialPrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4321
+      }
+    }
+  },
+  "LocalFieldNames" : [ "formula", "pricingDates", "valuationDates", "initialPrice" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,57 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing correlation bounds, which form a cap and a floor on the realized correlation.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.BoundedCorrelation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing correlation bounds, which form a cap and a floor on the realized correlation.\n #/\nrecord FpML5.reporting.BoundedCorrelation {\n  # Minimum Boundary as a percentage of the Strike Price.\n  minimumBoundaryPercent : decimal?\n\n  # Maximum Boundary as a percentage of the Strike Price.\n  maximumBoundaryPercent : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Correlation",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "minimumBoundaryPercent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Minimum Boundary as a percentage of the Strike Price.",
+      "Name" : "minimumBoundaryPercent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27858
+      }
+    },
+    "maximumBoundaryPercent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Maximum Boundary as a percentage of the Strike Price.",
+      "Name" : "maximumBoundaryPercent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 27861
+      }
+    }
+  },
+  "LocalFieldNames" : [ "minimumBoundaryPercent", "maximumBoundaryPercent" ],
+  "IsSynthetic" : false
+}

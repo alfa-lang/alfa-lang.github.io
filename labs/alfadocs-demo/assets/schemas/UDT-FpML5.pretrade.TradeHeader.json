@@ -1,0 +1,125 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining trade related information which is not product specific.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.TradeHeader",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining trade related information which is not product specific.\n #/\nrecord FpML5.pretrade.TradeHeader {\n  # The trade reference identifier(s) allocated to the trade by the parties involved.\n  partyTradeIdentifier : FpML5.pretrade.PartyTradeIdentifier?\n\n  # Additional trade information that may be provided by each involved party.\n  partyTradeInformation : FpML5.pretrade.PartyTradeInformation?\n\n  tradeSummary : FpML5.pretrade.TradeSummary?\n\n  # Information about the trade package if any that the trade originated from.\n  originatingPackage : FpML5.pretrade.PackageSummary?\n\n  # The trade date. This is the date the trade was originally executed. In the case of a novation, the novated part of the trade should be reported (by both the remaining party and the transferee) using a trade date corresponding to the date the novation was agreed. The remaining part of a trade should be reported (by both the transferor and the remaining party) using a trade date corresponding to the original execution date.\n  tradeDate : date\n\n  # If the trade was cleared (novated) through a central counterparty clearing service, this represents the date the trade was cleared (transferred to the central counterparty).\n  clearedDate : date?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.Trade",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trade reference identifier(s) allocated to the trade by the parties involved.",
+      "Name" : "partyTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PartyTradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10275
+      }
+    },
+    "partyTradeInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Additional trade information that may be provided by each involved party.",
+      "Name" : "partyTradeInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PartyTradeInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10278
+      }
+    },
+    "tradeSummary" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "tradeSummary",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.TradeSummary",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10281
+      }
+    },
+    "originatingPackage" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information about the trade package if any that the trade originated from.",
+      "Name" : "originatingPackage",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PackageSummary",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10283
+      }
+    },
+    "tradeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The trade date. This is the date the trade was originally executed. In the case of a novation, the novated part of the trade should be reported (by both the remaining party and the transferee) using a trade date corresponding to the date the novation was agreed. The remaining part of a trade should be reported (by both the transferor and the remaining party) using a trade date corresponding to the original execution date.",
+      "Name" : "tradeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10286
+      }
+    },
+    "clearedDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If the trade was cleared (novated) through a central counterparty clearing service, this represents the date the trade was cleared (transferred to the central counterparty).",
+      "Name" : "clearedDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 10289
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyTradeIdentifier", "partyTradeInformation", "tradeSummary", "originatingPackage", "tradeDate", "clearedDate" ],
+  "IsSynthetic" : false
+}

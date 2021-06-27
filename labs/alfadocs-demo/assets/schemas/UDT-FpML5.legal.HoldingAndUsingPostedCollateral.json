@@ -1,0 +1,85 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The provisions related to the holding and usage of posted collateral.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.HoldingAndUsingPostedCollateral",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The provisions related to the holding and usage of posted collateral.\n #/\nrecord FpML5.legal.HoldingAndUsingPostedCollateral {\n  # The party to which the terms apply.\n  partyReference : FpML5.legal.PartyReference\n\n  # Specifies the conditions under which a party and its custodian(s) are entitled to hold collateral.\n  eligibilityToHoldCollateral : FpML5.legal.EligibilityToHoldCollateral\n\n  # Specifies whether the respective parties to the agreement have the right to rehypothecate the collateral held.\n  useOfPostedCollateral : boolean\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.StandardCreditSupportAnnex2013NewYorkLaw",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "partyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The party to which the terms apply.",
+      "Name" : "partyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2373
+      }
+    },
+    "eligibilityToHoldCollateral" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the conditions under which a party and its custodian(s) are entitled to hold collateral.",
+      "Name" : "eligibilityToHoldCollateral",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.legal.EligibilityToHoldCollateral",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.legal.EligibilityToHoldCollateral",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.EligibilityToHoldCollateral",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2376
+      }
+    },
+    "useOfPostedCollateral" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the respective parties to the agreement have the right to rehypothecate the collateral held.",
+      "Name" : "useOfPostedCollateral",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 2379
+      }
+    }
+  },
+  "LocalFieldNames" : [ "partyReference", "eligibilityToHoldCollateral", "useOfPostedCollateral" ],
+  "IsSynthetic" : false
+}

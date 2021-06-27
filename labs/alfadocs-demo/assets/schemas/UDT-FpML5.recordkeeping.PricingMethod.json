@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "For an asset (e.g. a reference/benchmark asset), the pricing structure used to price it. Used, for example, to specify that the rateIndex \"USD-LIBOR-Telerate\" with term = 6M is priced using the \"USD-LIBOR-Close\" curve.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.PricingMethod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   For an asset (e.g. a reference/benchmark asset), the pricing structure used to price it. Used, for example, to specify that the rateIndex \"USD-LIBOR-Telerate\" with term = 6M is priced using the \"USD-LIBOR-Close\" curve.\n #/\nrecord FpML5.recordkeeping.PricingMethod {\n  # The asset whose price is required.\n  assetReference : FpML5.recordkeeping.AnyAssetReference?\n\n  # A reference to the pricing input used to value the asset.\n  pricingInputReference : FpML5.recordkeeping.PricingStructureReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.Market",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "assetReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The asset whose price is required.",
+      "Name" : "assetReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.AnyAssetReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21690
+      }
+    },
+    "pricingInputReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the pricing input used to value the asset.",
+      "Name" : "pricingInputReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21693
+      }
+    }
+  },
+  "LocalFieldNames" : [ "assetReference", "pricingInputReference" ],
+  "IsSynthetic" : false
+}

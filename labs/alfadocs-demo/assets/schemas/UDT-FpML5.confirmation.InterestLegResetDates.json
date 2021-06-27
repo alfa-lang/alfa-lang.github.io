@@ -1,0 +1,120 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.InterestLegResetDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.InterestLegResetDates {\n  # A pointer style reference to the associated calculation period dates component defined elsewhere in the document.\n  calculationPeriodDatesReference : FpML5.confirmation.InterestLegCalculationPeriodDatesReference\n\n  # Specifies whether the reset dates are determined with respect to each adjusted calculation period start date or adjusted calculation period end date. If the reset frequency is specified as daily this element must not be included.\n  resetRelativeTo : string\n\n  # The frequency at which reset dates occur. In the case of a weekly reset frequency, also specifies the day of the week that the reset occurs. If the reset frequency is greater than the calculation period frequency then this implies that more than one reset date is established for each calculation period and some form of rate averaging is applicable.\n  resetFrequency : FpML5.confirmation.ResetFrequency\n\n  # Initial fixing date expressed as an offset to another date defined elsewhere in the document.\n  initialFixingDate : FpML5.confirmation.RelativeDateOffset?\n\n  # Specifies the fixing date relative to the reset date in terms of a business days offset, or by providing a series of adjustable dates.\n  fixingDates : FpML5.confirmation.AdjustableDatesOrRelativeDateOffset?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.InterestLegCalculationPeriodDates",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationPeriodDatesReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the associated calculation period dates component defined elsewhere in the document.",
+      "Name" : "calculationPeriodDatesReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.InterestLegCalculationPeriodDatesReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.InterestLegCalculationPeriodDatesReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.InterestLegCalculationPeriodDatesReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8582
+      }
+    },
+    "resetRelativeTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the reset dates are determined with respect to each adjusted calculation period start date or adjusted calculation period end date. If the reset frequency is specified as daily this element must not be included.",
+      "Name" : "resetRelativeTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8585
+      }
+    },
+    "resetFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The frequency at which reset dates occur. In the case of a weekly reset frequency, also specifies the day of the week that the reset occurs. If the reset frequency is greater than the calculation period frequency then this implies that more than one reset date is established for each calculation period and some form of rate averaging is applicable.",
+      "Name" : "resetFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ResetFrequency",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ResetFrequency",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ResetFrequency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8588
+      }
+    },
+    "initialFixingDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Initial fixing date expressed as an offset to another date defined elsewhere in the document.",
+      "Name" : "initialFixingDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RelativeDateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8591
+      }
+    },
+    "fixingDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the fixing date relative to the reset date in terms of a business days offset, or by providing a series of adjustable dates.",
+      "Name" : "fixingDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.AdjustableDatesOrRelativeDateOffset",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8594
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationPeriodDatesReference", "resetRelativeTo", "resetFrequency", "initialFixingDate", "fixingDates" ],
+  "IsSynthetic" : false
+}

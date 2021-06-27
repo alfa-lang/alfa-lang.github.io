@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146018870-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Table Runtime &mdash; ALFA</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/alfa-a.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/alfa-theme.css" type="text/css" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Binary Runtimes" href="labsbinaryruntimes.html" />
+    <link rel="prev" title="OpenAPI Exporter" href="labsopenapi.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/AlfaLogo4c4c4c.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lang/guide.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exporters/exporters.html">Code Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/runtimeapis.html">Runtime APIs &amp; Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="labs.html">ALFA Labs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="langextension.html">ALFA Language Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="langtesting.html">Data Model Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsalfadocs.html">AlfaDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsxsd.html">XSD Importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labspython.html">Python Exporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labscassandra.html">Cassandra SQL Exporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsopenapi.html">OpenAPI Exporter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Table Runtime</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generic-flattening-of-alfa-object">Generic Flattening of ALFA Object</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="labsbinaryruntimes.html">Binary Runtimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labsalfawebide.html">ALFA Web-based Toolset</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alfa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="labs.html">ALFA Labs</a> &raquo;</li>
+        
+      <li>Table Runtime</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="table-runtime">
+<span id="labstbl"></span><h1>Table Runtime<a class="headerlink" href="#table-runtime" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">table&lt;T&gt;</span></code> type will be highly useful in being able to represent hierarchical Afla UDT structures in a tabular manner.
+This can be useful for storage, display purposes and various other use-cases.</p>
+<p>Given there are several representations of a ‘table’ in various platforms/languages, the ALFA table will be
+represented differently based on usage (e.g. Java SQL ResultSet, Spark DataFrame, Pandas DataFrame) instead of expecting
+developers to adapt another new table-like API.</p>
+<p>In addition the generic flattener utility is available that is capable for flattening <em>any</em> ALFA object. The example below
+shows this in action.</p>
+<div class="section" id="generic-flattening-of-alfa-object">
+<h2>Generic Flattening of ALFA Object<a class="headerlink" href="#generic-flattening-of-alfa-object" title="Permalink to this headline">¶</a></h2>
+<p>Given the following ALFA definition:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">record</span> <span class="n">SalesPerson</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">Customers</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="n">Customer</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="k">record</span> <span class="n">Customer</span> <span class="p">{</span>
+    <span class="n">Id</span> <span class="p">:</span> <span class="k">uuid</span>
+    <span class="n">Name</span> <span class="p">:</span> <span class="kt">string</span>
+    <span class="n">DateOfBirth</span> <span class="p">:</span> <span class="k">date</span>
+    <span class="n">Accounts</span> <span class="p">:</span> <span class="k">set</span><span class="p">&lt;</span> <span class="kt">string</span> <span class="p">&gt;</span>
+    <span class="n">CustomerType</span> <span class="p">:</span> <span class="k">enum</span><span class="p">&lt;</span> <span class="n">Standard</span><span class="p">,</span> <span class="n">Gold</span><span class="p">,</span> <span class="n">Platinum</span> <span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>ALFA runtime implementations are able to create a flattened table representation. The output below is a Pandas Dataframe
+created from the ALFA’s Python library for an instance of the SalesPerson record above.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>   Name  __Customers__Id                          Customers_Id Customers_Name Customers_DateOfBirth Customers_CustomerType   __Customers_Accounts__Id_L1 Customers_Accounts
+0  Fred                1  f75b85fc-c713-4e4d-971e-6a23c6642507         George            1998-03-05               Platinum                             1           G6450981
+1  Fred                1  f75b85fc-c713-4e4d-971e-6a23c6642507         George            1998-03-05               Platinum                             2           G5234523
+2  Fred                1  f75b85fc-c713-4e4d-971e-6a23c6642507         George            1998-03-05               Platinum                             3           G2323612
+3  Fred                2  e6c4aae7-9472-4245-b6cf-faa8acd6f8e3            Bob            2002-05-22                   Gold                             1           J2323975
+4  Fred                2  e6c4aae7-9472-4245-b6cf-faa8acd6f8e3            Bob            2002-05-22                   Gold                             2           J6458031
+5  Fred                2  e6c4aae7-9472-4245-b6cf-faa8acd6f8e3            Bob            2002-05-22                   Gold                             3           J5234523
+6  Fred                3  199a8266-572a-4c02-b573-4c1de0c21dcc           Fred            2000-10-12               Standard                             1           F6458764
+7  Fred                3  199a8266-572a-4c02-b573-4c1de0c21dcc           Fred            2000-10-12               Standard                             2           F2323431
+8  Fred                3  199a8266-572a-4c02-b573-4c1de0c21dcc           Fred            2000-10-12               Standard                             3           F5234523
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <center>
+    <footer>
+        <hr/>
+        <div role="contentinfo">
+            <p>
+                    © Copyright 2020 Schemarise Ltd |
+                    <a href='/legal/privacy.html'>Privacy</a> | 
+                    <a href='/legal/terms.html'>Terms</a>
+            </p>
+        </div> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?"></script>
+</center> 
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

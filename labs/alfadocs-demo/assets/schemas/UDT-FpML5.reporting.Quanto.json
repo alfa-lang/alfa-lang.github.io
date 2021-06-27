@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Determines the currency rate that the seller of the equity amounts will apply at each valuation date for converting the respective amounts into a currency that is different from the currency denomination of the underlyer.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Quanto",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Determines the currency rate that the seller of the equity amounts will apply at each valuation date for converting the respective amounts into a currency that is different from the currency denomination of the underlyer.\n #/\nrecord FpML5.reporting.Quanto {\n  # Specifies a currency conversion rate.\n  fxRate : FpML5.reporting.FxRate?\n\n  # Specifies the methodology (reference source and, optionally, fixing time) to be used for determining a currency conversion rate.\n  fxSpotRateSource : FpML5.reporting.FxSpotRateSource?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.FxFeature",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "fxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies a currency conversion rate.",
+      "Name" : "fxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxRate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23843
+      }
+    },
+    "fxSpotRateSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the methodology (reference source and, optionally, fixing time) to be used for determining a currency conversion rate.",
+      "Name" : "fxSpotRateSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.FxSpotRateSource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 23846
+      }
+    }
+  },
+  "LocalFieldNames" : [ "fxRate", "fxSpotRateSource" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the specification of settlement terms, occuring when the settlement currency is different to the notional currency of the trade.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.SettlementProvision",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the specification of settlement terms, occuring when the settlement currency is different to the notional currency of the trade.\n #/\nrecord FpML5.reporting.SettlementProvision {\n  # The currency that stream settles in (to support swaps that settle in a currency different from the notional currency).\n  settlementCurrency : string?\n\n  # The specification of the non-deliverable settlement provision.\n  nonDeliverableSettlement : FpML5.reporting.NonDeliverableSettlement?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InterestRateStream",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementCurrency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The currency that stream settles in (to support swaps that settle in a currency different from the notional currency).",
+      "Name" : "settlementCurrency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3839
+      }
+    },
+    "nonDeliverableSettlement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specification of the non-deliverable settlement provision.",
+      "Name" : "nonDeliverableSettlement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonDeliverableSettlement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3842
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementCurrency", "nonDeliverableSettlement" ],
+  "IsSynthetic" : false
+}

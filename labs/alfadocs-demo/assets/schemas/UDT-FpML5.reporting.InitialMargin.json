@@ -1,0 +1,94 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Defines initial margin applied to a repo transaction. Initial margin is an agreed premium to the Purchase Price of a repo to determine the required Market Value of the collateral to be delivered on the Purchase Date. It reflects quality of the collateral. Its aim is to calculate the risk-adjusted or liquidation value of collateral.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.InitialMargin",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Defines initial margin applied to a repo transaction. Initial margin is an agreed premium to the Purchase Price of a repo to determine the required Market Value of the collateral to be delivered on the Purchase Date. It reflects quality of the collateral. Its aim is to calculate the risk-adjusted or liquidation value of collateral.\n #/\nrecord FpML5.reporting.InitialMargin {\n  # An element defining the type of assets (cash or securities) specified to apply as margin to the repo transaction. See GMRA 2011 paragraph 2(h) for \"Cash Margin\" and GMRA 2011 paragraph 2(cc) for \"Margin Securities\".\n  marginType : string?\n\n  # Initial margin calculation for a collateral asset. Initial margin requirements may be specified for multiple pieces of collateral.\n  margin : FpML5.reporting.InitialMarginCalculation?\n\n  # An element defining a margin threshold which is the Net Exposure of a trade below which parties agree they will not call a margin from each other.\n  marginThreshold : FpML5.reporting.NonNegativeMoney?\n\n  # An element defining a minimum transfer amount which is the minimum margin call parties will make once the margin threshold (or margin ratio threshold / haircut threshold) has been exceeded.\n  minimumTransferAmount : FpML5.reporting.NonNegativeMoney?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Repo",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "marginType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An element defining the type of assets (cash or securities) specified to apply as margin to the repo transaction. See GMRA 2011 paragraph 2(h) for \"Cash Margin\" and GMRA 2011 paragraph 2(cc) for \"Margin Securities\".",
+      "Name" : "marginType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 2233
+      }
+    },
+    "margin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Initial margin calculation for a collateral asset. Initial margin requirements may be specified for multiple pieces of collateral.",
+      "Name" : "margin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.InitialMarginCalculation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 2236
+      }
+    },
+    "marginThreshold" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An element defining a margin threshold which is the Net Exposure of a trade below which parties agree they will not call a margin from each other.",
+      "Name" : "marginThreshold",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 2239
+      }
+    },
+    "minimumTransferAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An element defining a minimum transfer amount which is the minimum margin call parties will make once the margin threshold (or margin ratio threshold / haircut threshold) has been exceeded.",
+      "Name" : "minimumTransferAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 2242
+      }
+    }
+  },
+  "LocalFieldNames" : [ "marginType", "margin", "marginThreshold", "minimumTransferAmount" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,41 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type to provide the ability to point to multiple payment nodes in the document through the unbounded paymentDatesReference.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.DateRelativeToCalculationPeriodDates",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type to provide the ability to point to multiple payment nodes in the document through the unbounded paymentDatesReference.\n #/\nrecord FpML5.recordkeeping.DateRelativeToCalculationPeriodDates {\n  # A set of href pointers to calculation period dates defined somewhere else in the document.\n  calculationPeriodDatesReference : FpML5.recordkeeping.CalculationPeriodDatesReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.FxFixingDate",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationPeriodDatesReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of href pointers to calculation period dates defined somewhere else in the document.",
+      "Name" : "calculationPeriodDatesReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CalculationPeriodDatesReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 26512
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationPeriodDatesReference" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,58 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A complex type used to specify the option and convertible bond option strike when expressed in reference to a swap curve.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ReferenceSwapCurve",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A complex type used to specify the option and convertible bond option strike when expressed in reference to a swap curve.\n #/\nrecord FpML5.recordkeeping.ReferenceSwapCurve {\n  swapUnwindValue : FpML5.recordkeeping.SwapCurveValuation?\n\n  # Amount to be paid by the buyer of the option if the option is exercised prior to the Early Call Date. (The market practice in the convertible bond option space being that the buyer should be penalized if he/she exercises the option early on.)\n  makeWholeAmount : FpML5.recordkeeping.MakeWholeAmount?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.BondOptionStrike",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "swapUnwindValue" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "swapUnwindValue",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.SwapCurveValuation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22899
+      }
+    },
+    "makeWholeAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Amount to be paid by the buyer of the option if the option is exercised prior to the Early Call Date. (The market practice in the convertible bond option space being that the buyer should be penalized if he/she exercises the option early on.)",
+      "Name" : "makeWholeAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.MakeWholeAmount",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 22901
+      }
+    }
+  },
+  "LocalFieldNames" : [ "swapUnwindValue", "makeWholeAmount" ],
+  "IsSynthetic" : false
+}

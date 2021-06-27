@@ -1,0 +1,77 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defines nearest Delivery Date of the underlying Commodity of expiration of the futures contract.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.DeliveryNearby",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defines nearest Delivery Date of the underlying Commodity of expiration of the futures contract.\n #/\nrecord FpML5.transparency.DeliveryNearby {\n  # A time multiplier, e.g. 1, 2 or 3 etc. used in defining Delivery Nearby date.\n  deliveryNearbyMultiplier : int( 1, * )?\n\n  # Defines a type of the delivery nearby qualifier, expect to be used in conjunction with a delivery nearby multiplier, e.g. 1NearByMonth, 1NearbyWeek, etc. If 'CalculationPeriod' is used, the delivery nearby multiplier is expected to be '0'. To represent 'Spot', the value of the delivery nearby type should be 'NearbyMonth' and the delivery period multiplier should be set to '0' (zero).\n  deliveryNearbyType : string?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Commodity",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "deliveryNearbyMultiplier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A time multiplier, e.g. 1, 2 or 3 etc. used in defining Delivery Nearby date.",
+      "Name" : "deliveryNearbyMultiplier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1303
+      }
+    },
+    "deliveryNearbyType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines a type of the delivery nearby qualifier, expect to be used in conjunction with a delivery nearby multiplier, e.g. 1NearByMonth, 1NearbyWeek, etc. If 'CalculationPeriod' is used, the delivery nearby multiplier is expected to be '0'. To represent 'Spot', the value of the delivery nearby type should be 'NearbyMonth' and the delivery period multiplier should be set to '0' (zero).",
+      "Name" : "deliveryNearbyType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1306
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 1309
+      }
+    }
+  },
+  "LocalFieldNames" : [ "deliveryNearbyMultiplier", "deliveryNearbyType", "id" ],
+  "IsSynthetic" : false
+}

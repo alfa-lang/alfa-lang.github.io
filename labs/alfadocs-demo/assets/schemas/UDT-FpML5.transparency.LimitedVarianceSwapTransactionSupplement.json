@@ -1,0 +1,47 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A Variance Swap Transaction Supplement - limited form for use as underlyer to option on variance swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.LimitedVarianceSwapTransactionSupplement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A Variance Swap Transaction Supplement - limited form for use as underlyer to option on variance swap.\n #/\nrecord FpML5.transparency.LimitedVarianceSwapTransactionSupplement {\n  # Variance Leg.\n  varianceLeg : FpML5.transparency.VarianceLeg\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.VarianceOptionTransactionSupplement",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "varianceLeg" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Variance Leg.",
+      "Name" : "varianceLeg",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.VarianceLeg",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.VarianceLeg",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.VarianceLeg",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 7514
+      }
+    }
+  },
+  "LocalFieldNames" : [ "varianceLeg" ],
+  "IsSynthetic" : false
+}

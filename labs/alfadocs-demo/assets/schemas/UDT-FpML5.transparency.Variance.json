@@ -1,0 +1,237 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing the variance amount of a variance swap.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Variance",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing the variance amount of a variance swap.\n #/\nrecord FpML5.transparency.Variance {\n  # Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.\n  initialLevel : decimal\n\n  # Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.\n  initialLevelSource : string\n\n  # DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.\n  closingLevel : boolean\n\n  # DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.\n  expiringLevel : boolean\n\n  # Expected number of trading days.\n  expectedN : int( 1, * )?\n\n  # Variance amount, which is a cash multiplier.\n  varianceAmount : FpML5.transparency.NonNegativeMoney\n\n  volatilityStrikePrice : decimal\n\n  varianceStrikePrice : decimal\n\n  # If present and true, then variance cap is applicable.\n  varianceCap : boolean?\n\n  # For use when varianceCap is applicable. Contains the scaling factor of the Variance Cap that can differ on a trade-by-trade basis in the European market. For example, a Variance Cap of 2.5^2 x Variance Strike Price has an unadjustedVarianceCap of 2.5.\n  unadjustedVarianceCap : decimal?\n\n  # Conditions which bound variance. The contract specifies one or more boundary levels. These levels are expressed as prices for confirmation purposes Underlyer price must be equal to or higher than Lower Barrier is known as Up Conditional Swap Underlyer price must be equal to or lower than Upper Barrier is known as Down Conditional Swap Underlyer price must be equal to or higher than Lower Barrier and must be equal to or lower than Upper Barrier is known as Barrier Conditional Swap.\n  boundedVariance : FpML5.transparency.BoundedVariance?\n\n  # Specification of the exchange traded contract nearest.\n  exchangeTradedContractNearest : FpML5.transparency.ExchangeTradedContract?\n\n  # Vega Notional represents the approximate gain/loss at maturity for a 1% difference between RVol (realised vol) and KVol (strike vol). It does not necessarily represent the Vega Risk of the trade.\n  vegaNotionalAmount : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.VarianceAmount",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "initialLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Contract will strike off this initial level. Providing just the initialLevel without initialLevelSource, infers that this is AgreedInitialPrice - a specified Initial Index Level.",
+      "Name" : "initialLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 965
+      }
+    },
+    "initialLevelSource" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the Initial Index Level determination method should be the Closing Price Level, the Expiring Contract Level, VWAPPrice, TWAPPrice, NAV or Open Price. Note: the AgreedInitialPrice value is not allowed here.",
+      "Name" : "initialLevelSource",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 968
+      }
+    },
+    "closingLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the closing level of the default exchange traded contract.",
+      "Name" : "closingLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 971
+      }
+    },
+    "expiringLevel" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "DEPRECATED. If true this contract will strike off the expiring level of the default exchange traded contract.",
+      "Name" : "expiringLevel",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 974
+      }
+    },
+    "expectedN" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Expected number of trading days.",
+      "Name" : "expectedN",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 977
+      }
+    },
+    "varianceAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Variance amount, which is a cash multiplier.",
+      "Name" : "varianceAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.NonNegativeMoney",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.NonNegativeMoney",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 980
+      }
+    },
+    "volatilityStrikePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "volatilityStrikePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 983
+      }
+    },
+    "varianceStrikePrice" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "varianceStrikePrice",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 985
+      }
+    },
+    "varianceCap" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If present and true, then variance cap is applicable.",
+      "Name" : "varianceCap",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 987
+      }
+    },
+    "unadjustedVarianceCap" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For use when varianceCap is applicable. Contains the scaling factor of the Variance Cap that can differ on a trade-by-trade basis in the European market. For example, a Variance Cap of 2.5^2 x Variance Strike Price has an unadjustedVarianceCap of 2.5.",
+      "Name" : "unadjustedVarianceCap",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 990
+      }
+    },
+    "boundedVariance" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Conditions which bound variance. The contract specifies one or more boundary levels. These levels are expressed as prices for confirmation purposes Underlyer price must be equal to or higher than Lower Barrier is known as Up Conditional Swap Underlyer price must be equal to or lower than Upper Barrier is known as Down Conditional Swap Underlyer price must be equal to or higher than Lower Barrier and must be equal to or lower than Upper Barrier is known as Barrier Conditional Swap.",
+      "Name" : "boundedVariance",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.BoundedVariance",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 993
+      }
+    },
+    "exchangeTradedContractNearest" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specification of the exchange traded contract nearest.",
+      "Name" : "exchangeTradedContractNearest",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.ExchangeTradedContract",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 996
+      }
+    },
+    "vegaNotionalAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Vega Notional represents the approximate gain/loss at maturity for a 1% difference between RVol (realised vol) and KVol (strike vol). It does not necessarily represent the Vega Risk of the trade.",
+      "Name" : "vegaNotionalAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 999
+      }
+    }
+  },
+  "LocalFieldNames" : [ "initialLevel", "initialLevelSource", "closingLevel", "expiringLevel", "expectedN", "varianceAmount", "volatilityStrikePrice", "varianceStrikePrice", "varianceCap", "unadjustedVarianceCap", "boundedVariance", "exchangeTradedContractNearest", "vegaNotionalAmount" ],
+  "IsSynthetic" : false
+}

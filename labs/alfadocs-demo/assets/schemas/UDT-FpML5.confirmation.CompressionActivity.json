@@ -1,0 +1,109 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that shows how multiple trades have been combined into a result.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CompressionActivity",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that shows how multiple trades have been combined into a result.\n #/\nrecord FpML5.confirmation.CompressionActivity {\n  compressionType : string?\n\n  replacementTradeIdentifier : FpML5.confirmation.TradeIdentifier?\n\n  originatingTradeIdentifier : FpML5.confirmation.TradeIdentifier?\n\n  replacementTradeId : string?\n\n  originatingTradeId : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.ClearingConfirmed",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RequestConsent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "compressionType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "compressionType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4378
+      }
+    },
+    "replacementTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "replacementTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4380
+      }
+    },
+    "originatingTradeIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "originatingTradeIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.TradeIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4382
+      }
+    },
+    "replacementTradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "replacementTradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4384
+      }
+    },
+    "originatingTradeId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "originatingTradeId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 4386
+      }
+    }
+  },
+  "LocalFieldNames" : [ "compressionType", "replacementTradeIdentifier", "originatingTradeIdentifier", "replacementTradeId", "originatingTradeId" ],
+  "IsSynthetic" : false
+}

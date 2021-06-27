@@ -1,0 +1,133 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A description of how a numerical derivative is computed.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DerivativeCalculationProcedure",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A description of how a numerical derivative is computed.\n #/\nrecord FpML5.confirmation.DerivativeCalculationProcedure {\n  # The method by which a derivative is computed, e.g. analytic, numerical model, perturbation, etc.\n  method : string?\n\n  # The size and direction of the perturbation used to compute the derivative, e.g. 0.0001 = 1 bp.\n  perturbationAmount : decimal?\n\n  # The value is calculated by perturbing by the perturbationAmount and then the negative of the perturbationAmount and then averaging the two values (i.e. the value is half of the difference between perturbing up and perturbing down).\n  averaged : boolean\n\n  # The type of perturbation, if any, used to compute the derivative (Absolute vs Relative).\n  perturbationType : string?\n\n  # The formula used to compute the derivative (perhaps could be updated to use the Formula type in EQS.).\n  derivativeFormula : string?\n\n  # A reference to the replacement version of the market input, e.g. a bumped yield curve.\n  replacementMarketInput : FpML5.confirmation.PricingStructureReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.PricingParameterDerivative",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SensitivitySetDefinition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "method" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The method by which a derivative is computed, e.g. analytic, numerical model, perturbation, etc.",
+      "Name" : "method",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15409
+      }
+    },
+    "perturbationAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The size and direction of the perturbation used to compute the derivative, e.g. 0.0001 = 1 bp.",
+      "Name" : "perturbationAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15412
+      }
+    },
+    "averaged" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value is calculated by perturbing by the perturbationAmount and then the negative of the perturbationAmount and then averaging the two values (i.e. the value is half of the difference between perturbing up and perturbing down).",
+      "Name" : "averaged",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15415
+      }
+    },
+    "perturbationType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The type of perturbation, if any, used to compute the derivative (Absolute vs Relative).",
+      "Name" : "perturbationType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15418
+      }
+    },
+    "derivativeFormula" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The formula used to compute the derivative (perhaps could be updated to use the Formula type in EQS.).",
+      "Name" : "derivativeFormula",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15421
+      }
+    },
+    "replacementMarketInput" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the replacement version of the market input, e.g. a bumped yield curve.",
+      "Name" : "replacementMarketInput",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PricingStructureReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PricingStructureReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 15424
+      }
+    }
+  },
+  "LocalFieldNames" : [ "method", "perturbationAmount", "averaged", "perturbationType", "derivativeFormula", "replacementMarketInput" ],
+  "IsSynthetic" : false
+}

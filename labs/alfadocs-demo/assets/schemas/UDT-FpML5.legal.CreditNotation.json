@@ -1,0 +1,86 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The credit rating notation base construct, which includes agency, notation, scale and debt type qualifications.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.CreditNotation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The credit rating notation base construct, which includes agency, notation, scale and debt type qualifications.\n #/\nrecord FpML5.legal.CreditNotation {\n  # The credit agency to which the other variables (notation, scale, debt type) refer to.\n  agency : string\n\n  # The credit rating notation. It varies among credit rating agencies. FpML doesn't specify a default scheme.\n  notation : string\n\n  # The credit rating scale, with a typical distinction between short term, long term. FpML doesn't specify a default scheme.\n  scale : string?\n\n  # The credit rating debt type (e.g. long term, high yield, deposits, ...) associated with the credit rating notation and scale. When several debt types are specified, 'any' or 'all' may be applicable.\n  debt : FpML5.legal.CreditRatingDebt?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.CreditNotations",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "agency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The credit agency to which the other variables (notation, scale, debt type) refer to.",
+      "Name" : "agency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4643
+      }
+    },
+    "notation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The credit rating notation. It varies among credit rating agencies. FpML doesn't specify a default scheme.",
+      "Name" : "notation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4646
+      }
+    },
+    "scale" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The credit rating scale, with a typical distinction between short term, long term. FpML doesn't specify a default scheme.",
+      "Name" : "scale",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4649
+      }
+    },
+    "debt" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The credit rating debt type (e.g. long term, high yield, deposits, ...) associated with the credit rating notation and scale. When several debt types are specified, 'any' or 'all' may be applicable.",
+      "Name" : "debt",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.CreditRatingDebt",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 4652
+      }
+    }
+  },
+  "LocalFieldNames" : [ "agency", "notation", "scale", "debt" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,182 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The period calculation details for a calculation/accrual period. This will include information about the dates and duration of the accrual period, the rate fixing(s), the notional in effect, and the amount of the accrual.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CashflowCalculationPeriod",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The period calculation details for a calculation/accrual period. This will include information about the dates and duration of the accrual period, the rate fixing(s), the notional in effect, and the amount of the accrual.\n #/\nrecord FpML5.reporting.CashflowCalculationPeriod {\n  # Reference to the fixing details defined somewhere in the document.\n  calculatedRateReference : FpML5.reporting.CashflowFixingReference?\n\n  # Date that defines the beginning of the calculation period.\n  adjustedStartDate : date?\n\n  # Date that defines the end of the calculation period.\n  adjustedEndDate : date?\n\n  # The number of days from the adjusted effective / start date to the adjusted termination / end date calculated in accordance with the applicable day count fraction.\n  numberOfDays : int( 1, * )?\n\n  # Reference to the fixed rate schedule's step in order to identify the calculation period fixed rate.\n  fixedRateStepReference : FpML5.reporting.StepReference?\n\n  # The specification for how the number of days between two dates is calculated for purposes of calculation of a fixed or floating payment amount and the basis for how many days are assumed to be in a year. Day Count Fraction is an ISDA term. The equivalent AFB (Association Francaise de Banques) term is Calculation Basis.\n  dayCountFraction : string?\n\n  # The year fraction value of the calculation period, result of applying the ISDA rules for day count fraction defined in the ISDA Annex.\n  dayCountYearFraction : decimal?\n\n  # If more that one calculation period contributes to a single payment amount this element specifies whether compounding is applicable, and if so, what compounding method is to be used. This element must only be included when more that one calculation period contributes to a single payment amount.\n  compoundingMethod : string?\n\n  # The amount of payment accrued during this accrual period. This is required only when there are multiple calculation periods within the same cashflow component, for example when the calculation period is shorter than the payment period.\n  accruedAmount : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CashflowCalculationElements",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculatedRateReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the fixing details defined somewhere in the document.",
+      "Name" : "calculatedRateReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CashflowFixingReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3671
+      }
+    },
+    "adjustedStartDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date that defines the beginning of the calculation period.",
+      "Name" : "adjustedStartDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3674
+      }
+    },
+    "adjustedEndDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Date that defines the end of the calculation period.",
+      "Name" : "adjustedEndDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3677
+      }
+    },
+    "numberOfDays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The number of days from the adjusted effective / start date to the adjusted termination / end date calculated in accordance with the applicable day count fraction.",
+      "Name" : "numberOfDays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3680
+      }
+    },
+    "fixedRateStepReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Reference to the fixed rate schedule's step in order to identify the calculation period fixed rate.",
+      "Name" : "fixedRateStepReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.StepReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3683
+      }
+    },
+    "dayCountFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specification for how the number of days between two dates is calculated for purposes of calculation of a fixed or floating payment amount and the basis for how many days are assumed to be in a year. Day Count Fraction is an ISDA term. The equivalent AFB (Association Francaise de Banques) term is Calculation Basis.",
+      "Name" : "dayCountFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3686
+      }
+    },
+    "dayCountYearFraction" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The year fraction value of the calculation period, result of applying the ISDA rules for day count fraction defined in the ISDA Annex.",
+      "Name" : "dayCountYearFraction",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3689
+      }
+    },
+    "compoundingMethod" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "If more that one calculation period contributes to a single payment amount this element specifies whether compounding is applicable, and if so, what compounding method is to be used. This element must only be included when more that one calculation period contributes to a single payment amount.",
+      "Name" : "compoundingMethod",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3692
+      }
+    },
+    "accruedAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount of payment accrued during this accrual period. This is required only when there are multiple calculation periods within the same cashflow component, for example when the calculation period is shorter than the payment period.",
+      "Name" : "accruedAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3695
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculatedRateReference", "adjustedStartDate", "adjustedEndDate", "numberOfDays", "fixedRateStepReference", "dayCountFraction", "dayCountYearFraction", "compoundingMethod", "accruedAmount" ],
+  "IsSynthetic" : false
+}

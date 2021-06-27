@@ -1,0 +1,113 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that describes the information to identify a correspondent bank that will make delivery of the funds on the paying bank's behalf in the country where the payment is to be made.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CorrespondentInformation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that describes the information to identify a correspondent bank that will make delivery of the funds on the paying bank's behalf in the country where the payment is to be made.\n #/\nrecord FpML5.recordkeeping.CorrespondentInformation {\n  # A set of unique identifiers for a party, eachone identifying the party within a payment system. The assumption is that each party will not have more than one identifier within the same payment system.\n  routingIds : FpML5.recordkeeping.RoutingIds\n\n  # A set of details that is used to identify a party involved in the routing of a payment when the party does not have a code that identifies it within one of the recognized payment systems.\n  routingExplicitDetails : FpML5.recordkeeping.RoutingExplicitDetails\n\n  # A combination of coded payment system identifiers and details for physical addressing for a party involved in the routing of a payment.\n  routingIdsAndExplicitDetails : FpML5.recordkeeping.RoutingIdsAndExplicitDetails\n\n  # Link to the party acting as correspondent. This element can only appear within the correspondentInformation container element.\n  correspondentPartyReference : FpML5.recordkeeping.PartyReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.SettlementInstruction",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "routingIds" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of unique identifiers for a party, eachone identifying the party within a payment system. The assumption is that each party will not have more than one identifier within the same payment system.",
+      "Name" : "routingIds",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.RoutingIds",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.RoutingIds",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.RoutingIds",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21446
+      }
+    },
+    "routingExplicitDetails" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of details that is used to identify a party involved in the routing of a payment when the party does not have a code that identifies it within one of the recognized payment systems.",
+      "Name" : "routingExplicitDetails",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.RoutingExplicitDetails",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.RoutingExplicitDetails",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.RoutingExplicitDetails",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21449
+      }
+    },
+    "routingIdsAndExplicitDetails" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A combination of coded payment system identifiers and details for physical addressing for a party involved in the routing of a payment.",
+      "Name" : "routingIdsAndExplicitDetails",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.RoutingIdsAndExplicitDetails",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.RoutingIdsAndExplicitDetails",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.RoutingIdsAndExplicitDetails",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21452
+      }
+    },
+    "correspondentPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Link to the party acting as correspondent. This element can only appear within the correspondentInformation container element.",
+      "Name" : "correspondentPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 21455
+      }
+    }
+  },
+  "LocalFieldNames" : [ "routingIds", "routingExplicitDetails", "routingIdsAndExplicitDetails", "correspondentPartyReference" ],
+  "IsSynthetic" : false
+}

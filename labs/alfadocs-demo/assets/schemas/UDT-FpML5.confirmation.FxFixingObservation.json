@@ -1,0 +1,53 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxFixingObservation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.FxFixingObservation {\n  # A specific date for which an observation against a particular rate will be made and will be used for subsequent computations.\n  `date` : date\n\n  # An optional factor that can be used for weighting certain observation dates. Typically, firms will weight each date with a factor of 1 if there are standard, unweighted adjustments. If omitted, weight is defaulted to 1.\n  weight : decimal?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FxWeightedFixingSchedule",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "date" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A specific date for which an observation against a particular rate will be made and will be used for subsequent computations.",
+      "Name" : "date",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6133
+      }
+    },
+    "weight" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An optional factor that can be used for weighting certain observation dates. Typically, firms will weight each date with a factor of 1 if there are standard, unweighted adjustments. If omitted, weight is defaulted to 1.",
+      "Name" : "weight",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 6136
+      }
+    }
+  },
+  "LocalFieldNames" : [ "date", "weight" ],
+  "IsSynthetic" : false
+}

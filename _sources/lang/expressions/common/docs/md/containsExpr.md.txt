@@ -1,0 +1,24 @@
+contains
+========
+
+Checks if a value is contained within another object.
+Depending on the target object, the meaning of 'contains' will be different and the
+parameters expected will differ.
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|Object of type :ref:`stringType`, :ref:`mapVectorType`, :ref:`listVectorType` or :ref:`setVectorType`|Containing object |
+|2|Value being checked for existence|Depends on the type of the 1st argument to `contains`|
+
+__Returns:__
+`boolean` - `true` if the value specified by the 2nd argument exists in the 1st.
+The existence of a key is checked for a :ref:`mapVectorType`.
+
+__Usages:__
+
+>- `contains( v:list<T>, value : T ) : boolean`
+>- `contains( v:set<T>, value : T ) : boolean`
+>- `contains( v:map<K, V>, key : K ) : boolean`
+>- `contains( v:string, entry:string ) : boolean`

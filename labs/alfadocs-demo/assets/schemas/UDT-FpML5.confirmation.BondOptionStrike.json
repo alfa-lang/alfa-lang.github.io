@@ -1,0 +1,70 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A complex type to specify the strike of a bond or convertible bond option.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.BondOptionStrike",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A complex type to specify the strike of a bond or convertible bond option.\n #/\nrecord FpML5.confirmation.BondOptionStrike {\n  # The strike of an option when expressed by reference to a swap curve. (Typically the case for a convertible bond option.)\n  referenceSwapCurve : FpML5.confirmation.ReferenceSwapCurve\n\n  price : FpML5.confirmation.OptionStrike\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.BondOption",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "referenceSwapCurve" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The strike of an option when expressed by reference to a swap curve. (Typically the case for a convertible bond option.)",
+      "Name" : "referenceSwapCurve",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.ReferenceSwapCurve",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.ReferenceSwapCurve",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ReferenceSwapCurve",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11108
+      }
+    },
+    "price" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "price",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.OptionStrike",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.OptionStrike",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.OptionStrike",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 11111
+      }
+    }
+  },
+  "LocalFieldNames" : [ "referenceSwapCurve", "price" ],
+  "IsSynthetic" : false
+}

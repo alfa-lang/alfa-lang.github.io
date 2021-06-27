@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The substitution of a pricing input (e.g. curve) for another, used in generating prices and risks for valuation scenarios.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PricingInputReplacement",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The substitution of a pricing input (e.g. curve) for another, used in generating prices and risks for valuation scenarios.\n #/\nrecord FpML5.reporting.PricingInputReplacement {\n  # A reference to the original value of the pricing input.\n  originalInputReference : FpML5.reporting.PricingStructureReference?\n\n  # A reference to the substitution to do.\n  replacementInputReference : FpML5.reporting.PricingStructureReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ValuationScenario",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "originalInputReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the original value of the pricing input.",
+      "Name" : "originalInputReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 11497
+      }
+    },
+    "replacementInputReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the substitution to do.",
+      "Name" : "replacementInputReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PricingStructureReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 11500
+      }
+    }
+  },
+  "LocalFieldNames" : [ "originalInputReference", "replacementInputReference" ],
+  "IsSynthetic" : false
+}

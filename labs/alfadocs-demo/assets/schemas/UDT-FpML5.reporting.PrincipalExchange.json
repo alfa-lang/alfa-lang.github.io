@@ -1,0 +1,124 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a principal exchange amount and adjusted exchange date. The type forms part of the cashflow representation of a swap stream.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PrincipalExchange",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a principal exchange amount and adjusted exchange date. The type forms part of the cashflow representation of a swap stream.\n #/\nrecord FpML5.reporting.PrincipalExchange {\n  unadjustedPrincipalExchangeDate : date?\n\n  # The principal exchange date. This date should already be adjusted for any applicable business day convention.\n  adjustedPrincipalExchangeDate : date?\n\n  # The principal exchange amount. This amount should be positive if the stream payer is paying the exchange amount and signed negative if they are receiving it.\n  principalExchangeAmount : decimal?\n\n  # The value representing the discount factor used to calculate the present value of the principal exchange amount.\n  discountFactor : decimal?\n\n  # The amount representing the present value of the principal exchange.\n  presentValuePrincipalExchangeAmount : FpML5.reporting.Money?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Cashflows",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "unadjustedPrincipalExchangeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "unadjustedPrincipalExchangeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14890
+      }
+    },
+    "adjustedPrincipalExchangeDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The principal exchange date. This date should already be adjusted for any applicable business day convention.",
+      "Name" : "adjustedPrincipalExchangeDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14892
+      }
+    },
+    "principalExchangeAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The principal exchange amount. This amount should be positive if the stream payer is paying the exchange amount and signed negative if they are receiving it.",
+      "Name" : "principalExchangeAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14895
+      }
+    },
+    "discountFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The value representing the discount factor used to calculate the present value of the principal exchange amount.",
+      "Name" : "discountFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14898
+      }
+    },
+    "presentValuePrincipalExchangeAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The amount representing the present value of the principal exchange.",
+      "Name" : "presentValuePrincipalExchangeAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14901
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 14904
+      }
+    }
+  },
+  "LocalFieldNames" : [ "unadjustedPrincipalExchangeDate", "adjustedPrincipalExchangeDate", "principalExchangeAmount", "discountFactor", "presentValuePrincipalExchangeAmount", "id" ],
+  "IsSynthetic" : false
+}

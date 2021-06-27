@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Expected Collateral allows for the definition of collateral that the party making the margin call would prefer to receive or have returned. This can be defined for the Variation Requirement and /or the Segregated Independent Amount Requirement. For deliveries only the type of cash i.e. USD or security type i.e. US Treasuries is expected to be defined. For the return the calling party will know what they posted and therefore can define the expected collateral down to the specific instrument identifier, currency and amount.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateral",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Expected Collateral allows for the definition of collateral that the party making the margin call would prefer to receive or have returned. This can be defined for the Variation Requirement and /or the Segregated Independent Amount Requirement. For deliveries only the type of cash i.e. USD or security type i.e. US Treasuries is expected to be defined. For the return the calling party will know what they posted and therefore can define the expected collateral down to the specific instrument identifier, currency and amount.\n #/\nrecord FpML5.reporting.ExpectedCollateral {\n  # variation margin part of the expected collateral.\n  variationMargin : FpML5.reporting.ExpectedCollateralDeliveryReturn\n\n  # segregated independent amount part of the expected collateral.\n  segregatedIndependentAmount : FpML5.reporting.ExpectedCollateralDeliveryReturn\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RequestMargin",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "variationMargin" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "variation margin part of the expected collateral.",
+      "Name" : "variationMargin",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3863
+      }
+    },
+    "segregatedIndependentAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "segregated independent amount part of the expected collateral.",
+      "Name" : "segregatedIndependentAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 3866
+      }
+    }
+  },
+  "LocalFieldNames" : [ "variationMargin", "segregatedIndependentAmount" ],
+  "IsSynthetic" : false
+}

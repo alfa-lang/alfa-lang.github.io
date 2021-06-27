@@ -1,0 +1,76 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The stipulation of the terms under which a custody agent will be deemed acceptable by the parties. This construct has been initially developed for the purpose of the Standard CSA.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.CustodianTerms",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The stipulation of the terms under which a custody agent will be deemed acceptable by the parties. This construct has been initially developed for the purpose of the Standard CSA.\n #/\nrecord FpML5.legal.CustodianTerms {\n  # Terms related to the minimal level of assets that the agent should have under custody.\n  minimumAssets : FpML5.legal.Money?\n\n  # Terms related to the minimal rating that the agent should have.\n  minimumRating : FpML5.legal.CreditNotations?\n\n  # The respective parties have the possibility to designate the initial custodian.\n  initialDesignation : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.legal.EligibilityToHoldCollateral",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "minimumAssets" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Terms related to the minimal level of assets that the agent should have under custody.",
+      "Name" : "minimumAssets",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.Money",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 535
+      }
+    },
+    "minimumRating" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Terms related to the minimal rating that the agent should have.",
+      "Name" : "minimumRating",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.legal.CreditNotations",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 538
+      }
+    },
+    "initialDesignation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The respective parties have the possibility to designate the initial custodian.",
+      "Name" : "initialDesignation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/legal/fpml-main-5-9.alfa",
+        "line" : 541
+      }
+    }
+  },
+  "LocalFieldNames" : [ "minimumAssets", "minimumRating", "initialDesignation" ],
+  "IsSynthetic" : false
+}

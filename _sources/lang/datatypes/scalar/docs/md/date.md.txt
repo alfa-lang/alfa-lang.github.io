@@ -1,0 +1,19 @@
+date
+====
+
+An ISO 8601 date.
+
+__Optional Parameters__
+
+- Value constraints - `date( min, max, format )`
+
+  The format, when specified will be used to read/write the value into external
+  representations even though internally the value may be represented as a date.
+
+>>An optional range can be specified to a `date` in order to specify a restriction on permitted values. The values for `min` and `max` can be a ISO 8601 date string value or `*` to indicate wildcard maximum or minimum permitted value.
+>>
+>>Examples
+>>- `date("1900-01-01","2100-01-01")` A date between 1900-01-01 and 2100-01-01.
+>>- `date(*,"2000-01-01")` A date between lowest date supported by target  language and 2000-01-01.
+>>- `date("2000-01-01",*)` A date between 2000-01-01 and highest date supported by target language.
+>>- `date(*,*,"YYYY-MM")` No date range restrictions, but a format for reading/writing dates is specified.

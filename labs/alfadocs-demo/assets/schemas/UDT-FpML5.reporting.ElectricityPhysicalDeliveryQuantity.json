@@ -1,0 +1,108 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining the physical quantity of the electricity to be delivered.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ElectricityPhysicalDeliveryQuantity",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining the physical quantity of the electricity to be delivered.\n #/\nrecord FpML5.reporting.ElectricityPhysicalDeliveryQuantity {\n  # Quantity Unit is the unit of measure applicable for the quantity on the Transaction.\n  quantityUnit : string?\n\n  # The frequency at which the Notional Quantity is deemed to apply for purposes of calculating the Total Notional Quantity.\n  quantityFrequency : string?\n\n  # Amount of commodity per quantity frequency.\n  quantity : decimal?\n\n  # A pointer style reference to the range(s) of Settlement Periods to which this quantity applies.\n  settlementPeriodsReference : FpML5.reporting.SettlementPeriodsReference?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ElectricityPhysicalQuantity",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "quantityUnit" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Quantity Unit is the unit of measure applicable for the quantity on the Transaction.",
+      "Name" : "quantityUnit",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1338
+      }
+    },
+    "quantityFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The frequency at which the Notional Quantity is deemed to apply for purposes of calculating the Total Notional Quantity.",
+      "Name" : "quantityFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1341
+      }
+    },
+    "quantity" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Amount of commodity per quantity frequency.",
+      "Name" : "quantity",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1344
+      }
+    },
+    "settlementPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the range(s) of Settlement Periods to which this quantity applies.",
+      "Name" : "settlementPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.SettlementPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1347
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 1350
+      }
+    }
+  },
+  "LocalFieldNames" : [ "quantityUnit", "quantityFrequency", "quantity", "settlementPeriodsReference", "id" ],
+  "IsSynthetic" : false
+}

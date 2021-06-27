@@ -1,0 +1,125 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that provides a combination of payment system identification codes with physical postal address details, for the purposes of identifying a party involved in the routing of a payment.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.RoutingIdsAndExplicitDetails",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that provides a combination of payment system identification codes with physical postal address details, for the purposes of identifying a party involved in the routing of a payment.\n #/\nrecord FpML5.confirmation.RoutingIdsAndExplicitDetails {\n  # A set of unique identifiers for a party, eachone identifying the party within a payment system. The assumption is that each party will not have more than one identifier within the same payment system.\n  routingIds : FpML5.confirmation.RoutingIds\n\n  # A real name that is used to identify a party involved in the routing of a payment.\n  routingName : string\n\n  # A physical postal address via which a payment can be routed.\n  routingAddress : FpML5.confirmation.Address?\n\n  # An account number via which a payment can be routed.\n  routingAccountNumber : string?\n\n  # A piece of free-format text used to assist the identification of a party involved in the routing of a payment.\n  routingReferenceText : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Beneficiary",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CorrespondentInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.IntermediaryInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Routing",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "routingIds" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A set of unique identifiers for a party, eachone identifying the party within a payment system. The assumption is that each party will not have more than one identifier within the same payment system.",
+      "Name" : "routingIds",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.RoutingIds",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.RoutingIds",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.RoutingIds",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 882
+      }
+    },
+    "routingName" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A real name that is used to identify a party involved in the routing of a payment.",
+      "Name" : "routingName",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 885
+      }
+    },
+    "routingAddress" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A physical postal address via which a payment can be routed.",
+      "Name" : "routingAddress",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Address",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 888
+      }
+    },
+    "routingAccountNumber" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An account number via which a payment can be routed.",
+      "Name" : "routingAccountNumber",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 891
+      }
+    },
+    "routingReferenceText" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A piece of free-format text used to assist the identification of a party involved in the routing of a payment.",
+      "Name" : "routingReferenceText",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 894
+      }
+    }
+  },
+  "LocalFieldNames" : [ "routingIds", "routingName", "routingAddress", "routingAccountNumber", "routingReferenceText" ],
+  "IsSynthetic" : false
+}

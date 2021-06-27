@@ -1,0 +1,218 @@
+# TypeScript
+
+The Alfa TypeScript generator creates TypeScript files relating to the Alfa model definition.
+
+The generate code depends on a single `alfa.builtins.ts` file which is saved in the root of the namespace. This will be packaged
+in future to avoid duplication.
+
+### Exporter Concepts
+
+- All code relating to a single Alfa namespace is generated into a single TypeScript file.
+- The generated code is plain TypeScript with no alignment to a library such as Angular, React or Vue.
+- If UI specific features are required, they can be added as an extension to this generator, or a new type of generator.
+- Main focus for Alfa TypeScript is to have type-safe, runtime validated JSON interchange supported code.
+- Optional data types and other data type constraints will be checked for correctness before serialisation.
+- To help code readability, even though TypeScript does not support the range of primitive types of Alfa, those have been defined
+as type aliases. E.g. `type INT = number`.
+- Unlike other Alfa generated code, Alfa TypeScript generated code is mutable. This was done to avoid generating excessive code.
+- All objects have `get*`, `set*` methods, while the `set*` method allow method chaining. All variables are private.
+- Currently ALFA record, enum, service, trait is supported in the code generator. Entity and union will be added soon.
+- Alfa generic data types, compressed<T>, try<T> and handful of other types are not yet supported, and will be added soon.
+- The supplied `JsonCodec` class supports converting to and from JSON compatible with other Alfa generated code ( Java, C#, Python ).
+
+
+
+### Exporter Example
+
+Consider the following `demo.alfa` definition. Lets look at what Java code is generated from this.
+
+```csharp
+namespace Example
+
+enum PropertyType {
+   Home
+   Office
+}
+
+service Updater( token : string ) {
+   getProperties() : list< Property >
+   saveProperty( a : Property ) : void
+}
+
+record Property {
+   HouseNo : int
+   Street : string
+   CurrentValue : double
+   ConstructedDate : date?
+   LocalAreas : list< Region >
+}
+
+record Region {
+   Name : string
+}
+```
+
+This can be generated to TypeScript using the Alfa CLI - `alfa -c -e typescript -o gen/java demo.alfa` or by setting
+the `exportType` to `typescript` in the Alfa Maven Plugin.
+
+The generated Java code is shown in the
+screenshot below.
+
+```typescript
+import { JsonCodec, AlfaTypeFactory, AlfaObject, AlfaDescriptor,
+         TRY, SHORT, INT, DOUBLE, LONG, DURATION, TIME, URI, UUID, FLOAT, DATETIME, DECIMAL} from './alfa.builtin';
+
+export interface Updater {
+    getProperties() : Array< Property >;
+    saveProperty(_a : Property) : void;
+}
+
+export interface UpdaterFactory {
+   create(_token: string) : Updater
+}
+
+export enum PropertyType {
+    Home,
+    Office
+}
+
+export class Property implements AlfaObject {
+    private _HouseNo: INT
+    private _Street: string
+    private _CurrentValue: DOUBLE
+    private _ConstructedDate: Date | undefined
+    private _LocalAreas: Array< Region >
+
+    getHouseNo() : INT {
+        return this._HouseNo
+    }
+
+    setHouseNo( v : INT ) : Property {
+        this._HouseNo = v
+        return this
+    }
+
+    getStreet() : string {
+        return this._Street
+    }
+
+    setStreet( v : string ) : Property {
+        this._Street = v
+        return this
+    }
+
+    getCurrentValue() : DOUBLE {
+        return this._CurrentValue
+    }
+
+    setCurrentValue( v : DOUBLE ) : Property {
+        this._CurrentValue = v
+        return this
+    }
+
+    getConstructedDate() : Date | undefined {
+        return this._ConstructedDate
+    }
+
+    setConstructedDate( v : Date | undefined ) : Property {
+        this._ConstructedDate = v
+        return this
+    }
+
+    getLocalAreas() : Array< Region > {
+        return this._LocalAreas
+    }
+
+    setLocalAreas( v : Array< Region > ) : Property {
+        this._LocalAreas = v
+        return this
+    }
+
+    toJSON() : object {
+        return JsonCodec.toJsonObject(this)
+    }
+
+    descriptor() : AlfaDescriptor {
+        return Property.__descriptor
+    }
+
+    static __descriptor = new AlfaDescriptor( "Example.Property", "record", {
+    // Removed for clarity
+    } )
+}
+
+export class ExampleTypesFactory implements AlfaTypeFactory {
+
+    private static types = {
+        "Example.Region" : Region,
+        "Example.PropertyType" : PropertyType,
+        "Example.Property" : Property
+    }
+
+    private static typeNames = new Set( Object.keys(ExampleTypesFactory.types) )
+
+    getAlfaTypeNames(): Set<string> {
+        return ExampleTypesFactory.typeNames
+    }
+
+    createInstance(alfaTypeName: string): AlfaObject {
+        let clz = ExampleTypesFactory.types[alfaTypeName]
+        return new clz()
+    }
+}
+```
+
+### Type Mappings
+
+Alfa types are mapped to TypeScript with all numeric values being number and most other scalars being string.
+Alfa list, set and map are happed to TypeScript Array, Set and Map.
+
+
+### Example
+
+The following is an example TypeScript code using the TypeScript above. It demonstrates an object being created, serialised
+and deserialised.
+
+```typescript
+import {Property, Region, ExampleTypesFactory} from '../gen/Example'
+import {JsonCodec} from '../gen/alfa.builtin'
+
+let a = new Property()
+a.setHouseNo(10)
+a.setStreet("Main Street")
+a.setCurrentValue(800000)
+a.setConstructedDate(new Date(2010, 10, 30))
+
+let areas = [ new Region().setName("NY"), new Region().setName("MT") ]
+a.setLocalAreas(areas)
+
+let json = JSON.stringify(a)
+console.log(json)
+
+let jsonObj = JSON.parse(json)
+
+let n = new ExampleTypesFactory()
+let decodedProperty = JsonCodec.toAlfaObject(n, jsonObj) as Property
+
+console.log( "Year:" + decodedProperty.getConstructedDate().getFullYear() )
+console.log( "Local area:" + decodedProperty.getLocalAreas()[1].getName() )
+```
+
+
+To execute the sample:
+
+```
+tsc -lib es6,dom Tests.ts
+node Tests.js
+```
+
+
+The following output is produced.
+
+```
+{"$type":"Example.Property","HouseNo":10,"Street":"Main Street","CurrentValue":800000,"ConstructedDate":"2010-11-30","LocalAreas":[{"$type":"Example.Region","Name":"NY"},{"$type":"Example.Region","Name":"MT"}]}
+Year:2010
+Local area:MT
+```
+
+

@@ -1,0 +1,200 @@
+# JDBC Schema
+
+Alfa tools generates set of Java POJO classes for the model defined.
+
+The generated code has a single dependency;
+
+```
+<dependency>
+    <artifactId>alfa-rt-java-core</artifactId>
+    <groupId>io.alfa.rt</groupId>
+    <version>0.8</version>
+</dependency>
+```
+Refer to the :ref:`mvnplugin` for setting up Maven to generate Alfa into Java.
+
+### Exporter Concepts
+
+- Code is generated into matching packages and as a `.java` file per user-defined-type (UDT).
+- Immutablity is strongly enforced in generated code.
+- Similar to API patterns used in POJO/serialisation frameworks, Alfa supports builder pattern and method chaining.
+E.g. ```MyType.newBuilder().setProp1(p1).setProp2(p2).build();```
+
+- Core Java interfaces are used to represent Alfa collection ( e.g. java.util.Map/Set/List/Optional, java.util.stream.Stream ).
+- To minimize dependencies, generated code only depend on the runtime library, and that in turn only depends on Jackson JSON parser.
+- If :ref:`assertExpr` are defined in the model, code is generated in the `Builder` such that before `build()` completes,
+  all assert conditions and expressions are applied on the object.
+
+### Exporter Example
+
+Consider the following `demo.alfa` definition. Lets look at what Java code is generated from this.
+
+```csharp
+namespace com.acme
+
+key BankAccountKey {
+    IBAN : string
+}
+
+entity BankAccount key BankAccountKey {
+    Name : string
+    Transactions : list< Transaction >
+    RegisteredDate : date
+    Type : enum< Silver, Gold, Platinum >
+}
+
+record Transaction {
+   Amount : double
+   Description : string
+   Date : date
+   CorrespondingIBAN  : string
+}
+
+service BankService( AuthToken : uuid ) {
+   getAccount( IBAN : string ) : try< BankAccount >
+   getTransactions( k : BankAccountKey ) : stream< Transaction >
+}
+```
+
+This can be generated to Java using the Alfa CLI - `alfa -c -e java -o gen/java demo.alfa`.
+
+The generated Java code is shown in the
+screenshot below.
+- A `.java` file is generated per UDT.
+- The in-line enum in BankAccount Type field is generated as a top level enum.
+- Use platform native types - `java.*` classes over adding unnecessary abstractions.
+- Utility inner classes are generated - `Builder`, `Mutator`,
+`TypeDescriptor` and `Concrete`, and are enclosed in auto code-folded blocks.
+- Inner classes are generated with auto code-folding for IntelliJ.
+
+![Alfa Generated Java Code](/_static/images/alfa-java.png)
+
+
+### Type Mappings
+
+Alfa types are mapped to Java as outlined in the table below.
+
+|AlfaType|JavaType  |Comments|
+|--------|----------|--------|
+|entity|Java class|Implements alfa.rt.Entity with method to get entity key|
+|enum|Java enum|Implements alfa.rt.Enum|
+|key|Java class|Implements alfa.rt.Key|
+|record|Java class|Implements alfa.rt.Record|
+|service|Java interface|Implements alfa.rt.Service, and contains all method declarations|
+|trait|Java interface|Implements alfa.rt.Trait|
+|union|Java interface|Implements alfa.rt.Union, and a class per union case containing a single value|
+| | | |
+|compressed< T > |alfa.rt.Compressed< T > | Where T can be any Alfa type|
+|future< T > |java.util.concurrent.Future< T > | Where T can be any Alfa type|
+|either< L, R > |alfa.rt.Either< L, R > | Where L and R can be any Alfa type|
+|encrypted< T > |alfa.rt.Encrypted< T > | Where T can be any Alfa type|
+|try< T > |alfa.rt.Try< T > | Where T can be any Alfa type|
+|stream< T > |java.util.stream.Stream< T > | Where T can be any Alfa type|
+|T **?** |java.lang.Optional< T > | Where T can be any Alfa type|
+|list< T >   |java.util.List< T >    | Where T can be any Alfa type|
+|map< K, V > |java.util.Map< K, V >  | Where K and V can be any Alfa type|
+|set< T >    |java.util.Set< T >     | Where T can be any Alfa type|
+| | | |
+|boolean     |boolean                | |
+|byte        |byte                | |
+|binary      |byte[ ]                | |
+|char        |char                | |
+|int         |int                    | |
+|short       |short                  | |
+|long        |long                   | |
+|double      |double                 | |
+|float       |float                  | |
+|string      |String                 | |
+|date        |java.time.LocalDate    | |
+|time        |java.time.LocalTime    | |
+|datetime    |java.time.LocalDatetime| |
+|duration    |java.time.Duration     | |
+|uuid        |java.util.UUID         | |
+|uri         |java.net.URI           | |
+|--------|----------|--------|
+
+
+### Runtime Library
+
+The Alfa runtime library, `alfa-rt-java-core`, contains the core interfaces and utilities required to use the generated code along
+with a JSON encoder/decoder.
+
+Example creating an Alfa Java POJO:
+```java
+    import alfa.rt.*;
+
+    public void testBuildingPojo() throws IOException {
+        BankAccount.Builder accBuilder = BankAccount.newBuilder();
+        accBuilder.setName("Joe Bloggs").setRegisteredDate( LocalDate.of(1990, 10, 12));
+        accBuilder.setType( BankAccount_Type_.Gold);
+
+        BankAccountKey.Builder kb = BankAccountKey.newBuilder();
+        accBuilder.key( kb.setIBAN("IBAN342").build() );
+
+        for (int i = 0; i < 5; i++) {
+            Transaction.Builder tb = Transaction.newBuilder();
+            tb.setAmount( Math.random() * 1000 ).
+               setCorrespondingIBAN( "ABCDE" + i ).
+               setDate( LocalDate.of( 2020, 2, i+1)).
+               setDescription("Purchase from Store" + i );
+
+            accBuilder.addTransactions( tb.build() );
+        }
+
+        // Create JSON representation
+        String json = Codec.toJsonString(ba);
+        System.out.println(json);
+
+        // Decode JSON
+        BankAccount decoded = Codec.fromJsonString(json);
+        Assert.assertEquals(ba, decoded);
+    }
+```
+
+Refer to :ref:`runtimeapis` Java section for documentation on the Alfa Java APIs and a How-To guide.
+
+
+### Runtime Utilities Library
+
+Further to the Alfa Java Runtime library, an optional Alfa Runtime Utilities library is available.
+
+
+#### Randomiser
+
+This is a useful utility that generates a random value generators which is extremely useful for testing applications with sample data.
+The Java Alfa Object randomiser is able to randomise any value also while respecting any Alfa field constraints.
+
+Given an Alfa definition such as:
+```csharp
+record Sample.Result {
+    // 3x3 matrix of numbers between 10 to 100
+    Matrix3x3 : list<
+                   list<
+                      int(10,100)
+                   >(3,3)
+                >(3,3)
+}
+```
+
+The randomiser generates the following object, serialized to JSON.
+
+Naturally, the generator respects the model and constraints to accurately generate a valid object.
+The randomiser is fully model-aware, as a result can generate random values for _any_ Alfa definition.
+
+
+```json
+{
+  "$type":"Sample.Result",
+  "Matrix": [
+                [96, 10, 92], 
+                [26, 97, 20], 
+                [14, 44, 83]
+            ]
+}
+```
+
+If no constraints are defined, the randomiser will create lists with a default length of 5 elements.
+In the example above, when the JSON is being read, the Alfa Runtime will validate the values against the constraints that have been defined.
+
+Refer to :ref:`runtimeapis` Java section How-To guide for examples of using the Randomiser.
+

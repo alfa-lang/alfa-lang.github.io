@@ -1,0 +1,59 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "The notional quantity schedule of electricity that applies to one or more groups of Settlement Periods.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommoditySettlementPeriodsNotionalQuantitySchedule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   The notional quantity schedule of electricity that applies to one or more groups of Settlement Periods.\n #/\nrecord FpML5.recordkeeping.CommoditySettlementPeriodsNotionalQuantitySchedule {\n  # For an electricity transaction, the Notional Quantity for a given Calculation Period during the life of the trade which applies to the range(s) of Settlement Periods referenced by settlementPeriodsReference. There must be a settlementPeriodsNotionalQuantityStep specified for each Calculation Period, regardless of whether the NotionalQuantity changes or remains the same between periods.\n  settlementPeriodsNotionalQuantityStep : FpML5.recordkeeping.CommodityNotionalQuantity?\n\n  # The range(s) of Settlement Periods to which the Fixed Price steps apply.\n  settlementPeriodsReference : FpML5.recordkeeping.SettlementPeriodsReference?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalQuantitySchedule",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "settlementPeriodsNotionalQuantityStep" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "For an electricity transaction, the Notional Quantity for a given Calculation Period during the life of the trade which applies to the range(s) of Settlement Periods referenced by settlementPeriodsReference. There must be a settlementPeriodsNotionalQuantityStep specified for each Calculation Period, regardless of whether the NotionalQuantity changes or remains the same between periods.",
+      "Name" : "settlementPeriodsNotionalQuantityStep",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.CommodityNotionalQuantity",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12894
+      }
+    },
+    "settlementPeriodsReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The range(s) of Settlement Periods to which the Fixed Price steps apply.",
+      "Name" : "settlementPeriodsReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.SettlementPeriodsReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 12897
+      }
+    }
+  },
+  "LocalFieldNames" : [ "settlementPeriodsNotionalQuantityStep", "settlementPeriodsReference" ],
+  "IsSynthetic" : false
+}

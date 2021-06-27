@@ -1,0 +1,159 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type for defining how and when an equity option is to be valued.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.EquityValuation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type for defining how and when an equity option is to be valued.\n #/\nrecord FpML5.transparency.EquityValuation {\n  # The term \"Valuation Date\" is assumed to have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. Cash Settlement Payment Date in accordance with the ISDA 2002 Equity Derivatives Definitions. SettlementCycle in accordance with the ISDA 2011 Equity Derivatives Definitions.\n  valuationDate : FpML5.transparency.AdjustableDateOrRelativeDateSequence\n\n  # Specifies the interim equity valuation dates of a swap.\n  valuationDates : FpML5.transparency.AdjustableRelativeOrPeriodicDates\n\n  # The time of day at which the calculation agent values the underlying, for example the official closing time of the exchange.\n  valuationTimeType : string?\n\n  # The specific time of day at which the calculation agent values the underlying. The SpecificTime is the only case when the valuationTime (time + business center location – e.g. 10:00:00 USNY) should be provided. You should be able to provide just the valuationTime without valuationTimeType, which infer that this is a specific time.\n  valuationTime : FpML5.transparency.BusinessCenterTime?\n\n  # The official settlement price as announced by the related exchange is applicable, in accordance with the ISDA 2002 definitions.\n  futuresPriceValuation : boolean?\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.CorrelationLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.DirectionalLegUnderlyerValuation",
+    "UdtType" : "traitType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.EquityExerciseValuationSettlement",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.ReturnLegValuationPrice",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.VarianceLeg",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.VolatilityLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "valuationDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The term \"Valuation Date\" is assumed to have the meaning as defined in the ISDA 2002 Equity Derivatives Definitions. Cash Settlement Payment Date in accordance with the ISDA 2002 Equity Derivatives Definitions. SettlementCycle in accordance with the ISDA 2011 Equity Derivatives Definitions.",
+      "Name" : "valuationDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.AdjustableDateOrRelativeDateSequence",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.AdjustableDateOrRelativeDateSequence",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableDateOrRelativeDateSequence",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4889
+      }
+    },
+    "valuationDates" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the interim equity valuation dates of a swap.",
+      "Name" : "valuationDates",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.transparency.AdjustableRelativeOrPeriodicDates",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.transparency.AdjustableRelativeOrPeriodicDates",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.AdjustableRelativeOrPeriodicDates",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4892
+      }
+    },
+    "valuationTimeType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The time of day at which the calculation agent values the underlying, for example the official closing time of the exchange.",
+      "Name" : "valuationTimeType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4895
+      }
+    },
+    "valuationTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specific time of day at which the calculation agent values the underlying. The SpecificTime is the only case when the valuationTime (time + business center location – e.g. 10:00:00 USNY) should be provided. You should be able to provide just the valuationTime without valuationTimeType, which infer that this is a specific time.",
+      "Name" : "valuationTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.BusinessCenterTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4898
+      }
+    },
+    "futuresPriceValuation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The official settlement price as announced by the related exchange is applicable, in accordance with the ISDA 2002 definitions.",
+      "Name" : "futuresPriceValuation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4901
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 4904
+      }
+    }
+  },
+  "LocalFieldNames" : [ "valuationDate", "valuationDates", "valuationTimeType", "valuationTime", "futuresPriceValuation", "id" ],
+  "IsSynthetic" : false
+}

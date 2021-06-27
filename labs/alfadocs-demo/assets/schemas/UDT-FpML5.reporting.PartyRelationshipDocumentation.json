@@ -1,0 +1,95 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A description of the legal agreement(s) and definitions that document a party's relationships with other parties",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PartyRelationshipDocumentation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A description of the legal agreement(s) and definitions that document a party's relationships with other parties\n #/\nrecord FpML5.reporting.PartyRelationshipDocumentation {\n  # A agreement executed between two parties that includes or references the related party.\n  masterAgreement : FpML5.reporting.MasterAgreement\n\n  # An agreement executed between two parties intended to govern collateral arrangement for OTC derivatives transactions between those parties, and that references the related party.\n  creditSupportAgreement : FpML5.reporting.CreditSupportAgreement\n\n  # An agrement that references the related party.\n  agreement : FpML5.reporting.GenericAgreement\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PartyRelationship",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "masterAgreement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A agreement executed between two parties that includes or references the related party.",
+      "Name" : "masterAgreement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.MasterAgreement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.MasterAgreement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.MasterAgreement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 11480
+      }
+    },
+    "creditSupportAgreement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An agreement executed between two parties intended to govern collateral arrangement for OTC derivatives transactions between those parties, and that references the related party.",
+      "Name" : "creditSupportAgreement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.CreditSupportAgreement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.CreditSupportAgreement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CreditSupportAgreement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 11483
+      }
+    },
+    "agreement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An agrement that references the related party.",
+      "Name" : "agreement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.reporting.GenericAgreement",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.reporting.GenericAgreement",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.GenericAgreement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 11486
+      }
+    }
+  },
+  "LocalFieldNames" : [ "masterAgreement", "creditSupportAgreement", "agreement" ],
+  "IsSynthetic" : false
+}

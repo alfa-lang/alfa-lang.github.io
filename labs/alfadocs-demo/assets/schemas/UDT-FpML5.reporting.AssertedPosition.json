@@ -1,0 +1,133 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that defines a position asserted by one of the parties.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AssertedPosition",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that defines a position asserted by one of the parties.\n #/\nrecord FpML5.reporting.AssertedPosition {\n  # A version-independent identifier for the position, possibly based on trade identifier.\n  positionId : string?\n\n  # A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.\n  version : int( 1, * )?\n\n  # Information about the roles of the parties with respect to reporting the positions.\n  reportingRoles : FpML5.reporting.ReportingRoles?\n\n  # The components that create this position.\n  constituent : FpML5.reporting.PositionConstituent?\n\n  # Position level schedule date, such as final payment dates, in a simple and flexible format.\n  scheduledDate : FpML5.reporting.ScheduledDate?\n\n  # Valuation reported for the position, such as NPV or accrued interest. The asset/object references in the valuations should refer to the deal or components of the deal in the position, e.g. legs, streams, or underlyers.\n  valuation : FpML5.reporting.AssetValuation?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.PositionMatchResult",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "positionId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version-independent identifier for the position, possibly based on trade identifier.",
+      "Name" : "positionId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25113
+      }
+    },
+    "version" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A version identifier. Version identifiers must be ascending, i.e. higher numbers imply newer versions. There is no requirement that version identifiers for a position be sequential or small, so for example timestamp-based version identifiers could be used.",
+      "Name" : "version",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "min" : {
+            "@type" : "alfa.rt.model.RangeValue",
+            "intValue" : 1
+          },
+          "ScalarType" : "intType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25116
+      }
+    },
+    "reportingRoles" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Information about the roles of the parties with respect to reporting the positions.",
+      "Name" : "reportingRoles",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ReportingRoles",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25119
+      }
+    },
+    "constituent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The components that create this position.",
+      "Name" : "constituent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PositionConstituent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25122
+      }
+    },
+    "scheduledDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Position level schedule date, such as final payment dates, in a simple and flexible format.",
+      "Name" : "scheduledDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ScheduledDate",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25125
+      }
+    },
+    "valuation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Valuation reported for the position, such as NPV or accrued interest. The asset/object references in the valuations should refer to the deal or components of the deal in the position, e.g. legs, streams, or underlyers.",
+      "Name" : "valuation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.AssetValuation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 25128
+      }
+    }
+  },
+  "LocalFieldNames" : [ "positionId", "version", "reportingRoles", "constituent", "scheduledDate", "valuation" ],
+  "IsSynthetic" : false
+}

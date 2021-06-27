@@ -1,0 +1,226 @@
+{
+  "@type" : "alfa.rt.model.Trait",
+  "Doc" : "An abstract base type for all facility-level business events.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityEvent",
+    "UdtType" : "traitType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An abstract base type for all facility-level business events.\n #/\ntrait FpML5.confirmation.FacilityEvent {\n  eventIdentifier : FpML5.confirmation.BusinessEventIdentifier\n\n  # An identifier used to group related business events together.\n  businessEventGroupId : FpML5.confirmation.BusinessEventGroupIdentifier?\n\n  # A unique id associated with a previous inaccurate event. Population of this identifier reflects the fact that this new event is being used to apply a 'corrective measure' to the referenced event (rather than this being an actual real-life event). The net result (across both events) ensures accurate accounting.\n  previousInaccurateEventId : FpML5.confirmation.BusinessEventIdentifier?\n\n  # A reference to the agent bank for the associated deal.\n  agentPartyReference : FpML5.confirmation.PartyReference?\n\n  # A reference to the main borrower associated with the specific business event.\n  borrowerPartyReference : FpML5.confirmation.PartyReference?\n\n  # The date on which the associated business event is effective.\n  effectiveDate : date\n\n  # A reference to the lender associated with a specific business event.\n  lenderPartyReference : FpML5.confirmation.PartyReference\n\n  # Defines the overall net cash payable, as well as, the breakdown of individual cashflows.\n  cashPayable : FpML5.confirmation.CashPayable?\n\n  # A freetext field which allows the sender to add further details around the business event.\n  comment : string?\n\n  facilityReference : FpML5.confirmation.FacilityReference\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AccruingFeeChangeNotification",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.AccruingFeeChangeNotificationRetracted",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityNotification",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityNotificationRetracted",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "eventIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "eventIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BusinessEventIdentifier",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BusinessEventIdentifier",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessEventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19588
+      }
+    },
+    "businessEventGroupId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An identifier used to group related business events together.",
+      "Name" : "businessEventGroupId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessEventGroupIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19590
+      }
+    },
+    "previousInaccurateEventId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A unique id associated with a previous inaccurate event. Population of this identifier reflects the fact that this new event is being used to apply a 'corrective measure' to the referenced event (rather than this being an actual real-life event). The net result (across both events) ensures accurate accounting.",
+      "Name" : "previousInaccurateEventId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BusinessEventIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19593
+      }
+    },
+    "agentPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the agent bank for the associated deal.",
+      "Name" : "agentPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19596
+      }
+    },
+    "borrowerPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the main borrower associated with the specific business event.",
+      "Name" : "borrowerPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19599
+      }
+    },
+    "effectiveDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date on which the associated business event is effective.",
+      "Name" : "effectiveDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "dateType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19602
+      }
+    },
+    "lenderPartyReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to the lender associated with a specific business event.",
+      "Name" : "lenderPartyReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.PartyReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.PartyReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19605
+      }
+    },
+    "cashPayable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines the overall net cash payable, as well as, the breakdown of individual cashflows.",
+      "Name" : "cashPayable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CashPayable",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19608
+      }
+    },
+    "comment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A freetext field which allows the sender to add further details around the business event.",
+      "Name" : "comment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19611
+      }
+    },
+    "facilityReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "facilityReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FacilityReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FacilityReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FacilityReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 19614
+      }
+    }
+  },
+  "LocalFieldNames" : [ "eventIdentifier", "businessEventGroupId", "previousInaccurateEventId", "agentPartyReference", "borrowerPartyReference", "effectiveDate", "lenderPartyReference", "cashPayable", "comment", "facilityReference" ],
+  "IsSynthetic" : false
+}

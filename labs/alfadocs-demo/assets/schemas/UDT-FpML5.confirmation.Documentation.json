@@ -1,0 +1,196 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An entity for defining the definitions that govern the document and should include the year and type of definitions referenced, along with any relevant documentation (such as master agreement) and the date it was signed.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Documentation",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An entity for defining the definitions that govern the document and should include the year and type of definitions referenced, along with any relevant documentation (such as master agreement) and the date it was signed.\n #/\nrecord FpML5.confirmation.Documentation {\n  # The agreement executed between the parties and intended to govern all OTC derivatives transactions between those parties.\n  masterAgreement : FpML5.confirmation.MasterAgreement?\n\n  # The agreement executed between the parties and intended to govern all OTC derivatives transactions between those parties.\n  masterConfirmation : FpML5.confirmation.MasterConfirmation\n\n  # Specifies the deails for a broker confirm.\n  brokerConfirmation : FpML5.confirmation.BrokerConfirmation\n\n  # The definitions such as those published by ISDA that will define the terms of the trade.\n  contractualDefinitions : string?\n\n  # A contractual supplement (such as those published by ISDA) that will apply to the trade.\n  contractualTermsSupplement : FpML5.confirmation.ContractualTermsSupplement?\n\n  # A reference to a contractual matrix of elected terms/values (such as those published by ISDA) that shall be deemed to apply to the trade. The applicable matrix is identified by reference to a name and optionally a publication date. Depending on the structure of the matrix, an additional term (specified in the matrixTerm element) may be required to further identify a subset of applicable terms/values within the matrix.\n  contractualMatrix : FpML5.confirmation.ContractualMatrix?\n\n  # The agreement executed between the parties and intended to govern collateral arrangement for all OTC derivatives transactions between those parties.\n  creditSupportAgreement : FpML5.confirmation.CreditSupportAgreement?\n\n  # Any other agreement executed between the parties.\n  otherAgreement : FpML5.confirmation.OtherAgreement?\n\n  # A human readable document related to this transaction, for example a confirmation.\n  attachment : FpML5.confirmation.Resource?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Trade",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "masterAgreement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The agreement executed between the parties and intended to govern all OTC derivatives transactions between those parties.",
+      "Name" : "masterAgreement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MasterAgreement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23740
+      }
+    },
+    "masterConfirmation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The agreement executed between the parties and intended to govern all OTC derivatives transactions between those parties.",
+      "Name" : "masterConfirmation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.MasterConfirmation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.MasterConfirmation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MasterConfirmation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23743
+      }
+    },
+    "brokerConfirmation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the deails for a broker confirm.",
+      "Name" : "brokerConfirmation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.BrokerConfirmation",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.BrokerConfirmation",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.BrokerConfirmation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23746
+      }
+    },
+    "contractualDefinitions" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The definitions such as those published by ISDA that will define the terms of the trade.",
+      "Name" : "contractualDefinitions",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23749
+      }
+    },
+    "contractualTermsSupplement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A contractual supplement (such as those published by ISDA) that will apply to the trade.",
+      "Name" : "contractualTermsSupplement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ContractualTermsSupplement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23752
+      }
+    },
+    "contractualMatrix" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A reference to a contractual matrix of elected terms/values (such as those published by ISDA) that shall be deemed to apply to the trade. The applicable matrix is identified by reference to a name and optionally a publication date. Depending on the structure of the matrix, an additional term (specified in the matrixTerm element) may be required to further identify a subset of applicable terms/values within the matrix.",
+      "Name" : "contractualMatrix",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.ContractualMatrix",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23755
+      }
+    },
+    "creditSupportAgreement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The agreement executed between the parties and intended to govern collateral arrangement for all OTC derivatives transactions between those parties.",
+      "Name" : "creditSupportAgreement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.CreditSupportAgreement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23758
+      }
+    },
+    "otherAgreement" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Any other agreement executed between the parties.",
+      "Name" : "otherAgreement",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.OtherAgreement",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23761
+      }
+    },
+    "attachment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A human readable document related to this transaction, for example a confirmation.",
+      "Name" : "attachment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.Resource",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 23764
+      }
+    }
+  },
+  "LocalFieldNames" : [ "masterAgreement", "masterConfirmation", "brokerConfirmation", "contractualDefinitions", "contractualTermsSupplement", "contractualMatrix", "creditSupportAgreement", "otherAgreement", "attachment" ],
+  "IsSynthetic" : false
+}

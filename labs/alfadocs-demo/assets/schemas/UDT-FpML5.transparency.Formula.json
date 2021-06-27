@@ -1,0 +1,84 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type describing a financial formula, with its description and components.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Formula",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type describing a financial formula, with its description and components.\n #/\nrecord FpML5.transparency.Formula {\n  # Text description of the formula\n  formulaDescription : string?\n\n  # An element for containing an XML representation of the formula. Defined using xsd:any currently for flexibility in choice of language (MathML, OpenMath)\n  math : FpML5.transparency.Math?\n\n  # Elements describing the components of the formula. The name attribute points to a value used in the math element. The href attribute points to a value elsewhere in the document\n  formulaComponent : FpML5.transparency.FormulaComponent?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.AdditionalPaymentAmount",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.Formula",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.transparency.FormulaComponent",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "formulaDescription" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Text description of the formula",
+      "Name" : "formulaDescription",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5192
+      }
+    },
+    "math" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "An element for containing an XML representation of the formula. Defined using xsd:any currently for flexibility in choice of language (MathML, OpenMath)",
+      "Name" : "math",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.Math",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5195
+      }
+    },
+    "formulaComponent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Elements describing the components of the formula. The name attribute points to a value used in the math element. The href attribute points to a value elsewhere in the document",
+      "Name" : "formulaComponent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.transparency.FormulaComponent",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/trans/fpml-main-5-9.alfa",
+        "line" : 5198
+      }
+    }
+  },
+  "LocalFieldNames" : [ "formulaDescription", "math", "formulaComponent" ],
+  "IsSynthetic" : false
+}

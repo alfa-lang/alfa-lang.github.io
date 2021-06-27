@@ -1,0 +1,124 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Identifying information for a tradePackage (a bundle of trades).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.PackageHeader",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Identifying information for a tradePackage (a bundle of trades).\n #/\nrecord FpML5.pretrade.PackageHeader {\n  packageIdentifier : FpML5.pretrade.IssuerTradeId?\n\n  orderIdentifier : FpML5.pretrade.OrderIdentifier?\n\n  # Classification of the package. FpML has defined a list of coding scheme values. Different organizations might have different naming schemes for the packages so the multiplicity of unbounded is meant to support synonyms but it does not mean that a trade has multiple package types.\n  packageType : string?\n\n  size : decimal?\n\n  # This may be used to describe why a package was created. This can be used to provide context for a newly created package that is not part of a post-trade event. For example, it can report that the package was created as a result of netting activity, or due to a transfer, an allocation process, etc.\n  originatingEvent : string?\n\n  packageInformation : FpML5.pretrade.PackageInformation?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.pretrade.TradePackage",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "packageIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "packageIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.IssuerTradeId",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1320
+      }
+    },
+    "orderIdentifier" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "orderIdentifier",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.OrderIdentifier",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1322
+      }
+    },
+    "packageType" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Classification of the package. FpML has defined a list of coding scheme values. Different organizations might have different naming schemes for the packages so the multiplicity of unbounded is meant to support synonyms but it does not mean that a trade has multiple package types.",
+      "Name" : "packageType",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1324
+      }
+    },
+    "size" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "size",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1327
+      }
+    },
+    "originatingEvent" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "This may be used to describe why a package was created. This can be used to provide context for a newly created package that is not part of a post-trade event. For example, it can report that the package was created as a result of netting activity, or due to a transfer, an allocation process, etc.",
+      "Name" : "originatingEvent",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1329
+      }
+    },
+    "packageInformation" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "packageInformation",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.pretrade.PackageInformation",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/pt/fpml-main-5-9.alfa",
+        "line" : 1332
+      }
+    }
+  },
+  "LocalFieldNames" : [ "packageIdentifier", "orderIdentifier", "packageType", "size", "originatingEvent", "packageInformation" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,169 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Specifies a set of Settlement Periods associated with an Electricity Transaction for delivery on an Applicable Day or for a series of Applicable Days.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.SettlementPeriods",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Specifies a set of Settlement Periods associated with an Electricity Transaction for delivery on an Applicable Day or for a series of Applicable Days.\n #/\nrecord FpML5.recordkeeping.SettlementPeriods {\n  # The length of each Settlement Period.\n  `duration` : string?\n\n  # Specifies the Applicable Day with respect to a range of Settlement Periods. This element can only be omitted if includesHolidays is present, in which case this range of Settlement Periods will apply to days that are holidays only.\n  applicableDay : FpML5.recordkeeping.DayOfWeekExtEnum?\n\n  # Specifies the hour-ending Start Time with respect to a range of Settlement Periods.\n  startTime : FpML5.recordkeeping.OffsetPrevailingTime\n\n  # Specifies the hour-ending End Time with respect to a range of Settlement Periods. If neither startTime nor endTime contain an offset element and endTime is earlier than startTime, this indicates that the time period \"wraps around\" midnight. For example, if startTime is 23:00 and endTime is 01:00 then Settlement Periods apply from 22:00 to 23:00 and 23:00 to 00:00 and 00:00 to 01:00 on each included day.\n  endTime : FpML5.recordkeeping.OffsetPrevailingTime?\n\n  # Specifies the duration of the time window during which settlement/delivery occurs.\n  timeDuration : time?\n\n  # Indicates that days that are holidays according to the referenced commodity business calendar should be excluded from this range of Settlement Periods, even if such day is an applicable day.\n  excludeHolidays : string\n\n  # Indicates that days that are holidays according to the referenced commodity business calendar should be included in this range of Settlement Periods, even if such day is not an applicable day.\n  includeHolidays : string\n\n  id : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityPricingDates",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.CommodityValuationDates",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.recordkeeping.ElectricityPhysicalLeg",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "duration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The length of each Settlement Period.",
+      "Name" : "duration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14891
+      }
+    },
+    "applicableDay" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the Applicable Day with respect to a range of Settlement Periods. This element can only be omitted if includesHolidays is present, in which case this range of Settlement Periods will apply to days that are holidays only.",
+      "Name" : "applicableDay",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.DayOfWeekExtEnum",
+          "UdtType" : "enumType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14894
+      }
+    },
+    "startTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the hour-ending Start Time with respect to a range of Settlement Periods.",
+      "Name" : "startTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.recordkeeping.OffsetPrevailingTime",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.recordkeeping.OffsetPrevailingTime",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.OffsetPrevailingTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14897
+      }
+    },
+    "endTime" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the hour-ending End Time with respect to a range of Settlement Periods. If neither startTime nor endTime contain an offset element and endTime is earlier than startTime, this indicates that the time period \"wraps around\" midnight. For example, if startTime is 23:00 and endTime is 01:00 then Settlement Periods apply from 22:00 to 23:00 and 23:00 to 00:00 and 00:00 to 01:00 on each included day.",
+      "Name" : "endTime",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.recordkeeping.OffsetPrevailingTime",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14900
+      }
+    },
+    "timeDuration" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the duration of the time window during which settlement/delivery occurs.",
+      "Name" : "timeDuration",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "timeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14903
+      }
+    },
+    "excludeHolidays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that days that are holidays according to the referenced commodity business calendar should be excluded from this range of Settlement Periods, even if such day is an applicable day.",
+      "Name" : "excludeHolidays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14906
+      }
+    },
+    "includeHolidays" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates that days that are holidays according to the referenced commodity business calendar should be included in this range of Settlement Periods, even if such day is not an applicable day.",
+      "Name" : "includeHolidays",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "stringType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14909
+      }
+    },
+    "id" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "id",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rk/fpml-main-5-9.alfa",
+        "line" : 14912
+      }
+    }
+  },
+  "LocalFieldNames" : [ "duration", "applicableDay", "startTime", "endTime", "timeDuration", "excludeHolidays", "includeHolidays", "id" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,129 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "Represents outstanding loan contracts or outstanding letter of credit position. Both the global and lender position (current and prior) levels can be represented.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.OutstandingsPosition",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   Represents outstanding loan contracts or outstanding letter of credit position. Both the global and lender position (current and prior) levels can be represented.\n #/\nrecord FpML5.confirmation.OutstandingsPosition {\n  loanContractReference : FpML5.confirmation.LoanContractReference\n\n  letterOfCreditReference : FpML5.confirmation.LetterOfCreditReference\n\n  # The global and share amounts against the associated instrument. This is after any referenced business events have taken place.\n  amount : FpML5.confirmation.MoneyWithParticipantShare\n\n  # The global and share amounts against the associated instrument. This is prior to any referenced business events.\n  priorAmount : FpML5.confirmation.MoneyWithParticipantShare?\n\n  # Defines a single (current) FX rate used to calculate utilization in the facility currency. Used in the case where the loan contract currency is different to the facility currency.\n  facilityFxRate : FpML5.confirmation.FxTerms?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.FacilityOutstandingsPosition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "loanContractReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "loanContractReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.LoanContractReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.LoanContractReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.LoanContractReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8182
+      }
+    },
+    "letterOfCreditReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "letterOfCreditReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.LetterOfCreditReference",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.LetterOfCreditReference",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.LetterOfCreditReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8184
+      }
+    },
+    "amount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The global and share amounts against the associated instrument. This is after any referenced business events have taken place.",
+      "Name" : "amount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.MoneyWithParticipantShare",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8186
+      }
+    },
+    "priorAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The global and share amounts against the associated instrument. This is prior to any referenced business events.",
+      "Name" : "priorAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.MoneyWithParticipantShare",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8189
+      }
+    },
+    "facilityFxRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Defines a single (current) FX rate used to calculate utilization in the facility currency. Used in the case where the loan contract currency is different to the facility currency.",
+      "Name" : "facilityFxRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FxTerms",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 8192
+      }
+    }
+  },
+  "LocalFieldNames" : [ "loanContractReference", "letterOfCreditReference", "amount", "priorAmount", "facilityFxRate" ],
+  "IsSynthetic" : false
+}

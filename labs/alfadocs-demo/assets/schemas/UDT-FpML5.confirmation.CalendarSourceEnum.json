@@ -1,0 +1,46 @@
+{
+  "@type" : "alfa.rt.model.Enum",
+  "Doc" : "Describes the date source calendar for a contract whereby the prices are from the underlying commodity price source (e.g. exchange traded futures contract), but the dates are based off another calendar (e.g. the listed option on the futures contract).",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.CalendarSourceEnum",
+    "UdtType" : "enumType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n Describes the date source calendar for a contract whereby the prices are from the underlying commodity price source (e.g. exchange traded futures contract), but the dates are based off another calendar (e.g. the listed option on the futures contract).\n #/\nenum FpML5.confirmation.CalendarSourceEnum {\n    # Pricing Dates (based off of listed options dates) in respect of each Calculation Period, the last Commodity Business Day on which the relevant Options Contract is scheduled to trade on the Exchange.\n    ListedOption \n    # Pricing Dates (based off of futures dates) in respect of each Calculation Period, the last Commodity Business Day on which the relevant Futures Contract is scheduled to trade on the Exchange.\n    Future \n\n}"
+  },
+  "AllFields" : {
+    "ListedOption" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Pricing Dates (based off of listed options dates) in respect of each Calculation Period, the last Commodity Business Day on which the relevant Options Contract is scheduled to trade on the Exchange.",
+      "Name" : "ListedOption",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29316
+      }
+    },
+    "Future" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Pricing Dates (based off of futures dates) in respect of each Calculation Period, the last Commodity Business Day on which the relevant Futures Contract is scheduled to trade on the Exchange.",
+      "Name" : "Future",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "voidType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 29318
+      }
+    }
+  },
+  "LocalFieldNames" : [ "ListedOption", "Future" ],
+  "IsSynthetic" : false
+}

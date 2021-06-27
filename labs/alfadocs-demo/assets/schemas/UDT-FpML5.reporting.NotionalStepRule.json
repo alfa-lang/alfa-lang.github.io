@@ -1,0 +1,141 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type defining a parametric representation of the notional step schedule, i.e. parameters used to generate the notional balance on each step date. The step change in notional can be expressed in terms of either a fixed amount or as a percentage of either the initial notional or previous notional amount. This parametric representation is intended to cover the more common amortizing/accreting.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NotionalStepRule",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type defining a parametric representation of the notional step schedule, i.e. parameters used to generate the notional balance on each step date. The step change in notional can be expressed in terms of either a fixed amount or as a percentage of either the initial notional or previous notional amount. This parametric representation is intended to cover the more common amortizing/accreting.\n #/\nrecord FpML5.reporting.NotionalStepRule {\n  # A pointer style reference to the associated calculation period dates component defined elsewhere in the document.\n  calculationPeriodDatesReference : FpML5.reporting.CalculationPeriodDatesReference?\n\n  # The frequency at which the notional step changes occur. This frequency must be an integer multiple of the stream calculation period frequency.\n  stepFrequency : FpML5.reporting.Frequency?\n\n  # Effective date of the first change in notional (i.e. a calculation period start date).\n  firstNotionalStepDate : date?\n\n  # Effective date of the last change in notional (i.e. a calculation period start date).\n  lastNotionalStepDate : date?\n\n  # The explicit amount that the notional changes on each step date. This can be a positive or negative amount.\n  notionalStepAmount : decimal\n\n  # The percentage amount by which the notional changes on each step date. The percentage is either a percentage applied to the initial notional amount or the previous outstanding notional, depending on the value of the element stepRelativeTo. The percentage can be either positive or negative. A percentage of 5% would be represented as 0.05.\n  notionalStepRate : decimal?\n\n  # Specifies whether the notionalStepRate should be applied to the initial notional or the previous notional in order to calculate the notional step change amount.\n  stepRelativeTo : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Notional",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "calculationPeriodDatesReference" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A pointer style reference to the associated calculation period dates component defined elsewhere in the document.",
+      "Name" : "calculationPeriodDatesReference",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CalculationPeriodDatesReference",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4383
+      }
+    },
+    "stepFrequency" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The frequency at which the notional step changes occur. This frequency must be an integer multiple of the stream calculation period frequency.",
+      "Name" : "stepFrequency",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.Frequency",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4386
+      }
+    },
+    "firstNotionalStepDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Effective date of the first change in notional (i.e. a calculation period start date).",
+      "Name" : "firstNotionalStepDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4389
+      }
+    },
+    "lastNotionalStepDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Effective date of the last change in notional (i.e. a calculation period start date).",
+      "Name" : "lastNotionalStepDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4392
+      }
+    },
+    "notionalStepAmount" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The explicit amount that the notional changes on each step date. This can be a positive or negative amount.",
+      "Name" : "notionalStepAmount",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4395
+      }
+    },
+    "notionalStepRate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The percentage amount by which the notional changes on each step date. The percentage is either a percentage applied to the initial notional amount or the previous outstanding notional, depending on the value of the element stepRelativeTo. The percentage can be either positive or negative. A percentage of 5% would be represented as 0.05.",
+      "Name" : "notionalStepRate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4398
+      }
+    },
+    "stepRelativeTo" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies whether the notionalStepRate should be applied to the initial notional or the previous notional in order to calculate the notional step change amount.",
+      "Name" : "stepRelativeTo",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4401
+      }
+    }
+  },
+  "LocalFieldNames" : [ "calculationPeriodDatesReference", "stepFrequency", "firstNotionalStepDate", "lastNotionalStepDate", "notionalStepAmount", "notionalStepRate", "stepRelativeTo" ],
+  "IsSynthetic" : false
+}

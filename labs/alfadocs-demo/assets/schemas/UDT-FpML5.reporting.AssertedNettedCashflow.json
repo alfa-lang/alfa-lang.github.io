@@ -1,0 +1,128 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that defines a cashflow (or set of cashflows for cross-currency swap) asserted by one of the parties.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.AssertedNettedCashflow",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that defines a cashflow (or set of cashflows for cross-currency swap) asserted by one of the parties.\n #/\nrecord FpML5.reporting.AssertedNettedCashflow {\n  # The date and time at which the set of cashflows was defined.\n  asOfDate : datetime?\n\n  # The specific characteristics included in the report.\n  reportContents : FpML5.reporting.ReportContents?\n\n  # Unique identifier assigned by the party asserting the set of cashflows to be reconciled.\n  tradeCashflowsId : string?\n\n  # A collection of structures holding a reference or references to each trade through the tradeId, and optionally some trade-specific elements for identifying the trade in the case of trades that have not been negotiated through electronic platforms, and for which the counterparty's trade ID has not been captured.\n  tradeIdentifyingItems : FpML5.reporting.TradeIdentifyingItems?\n\n  # The adjusted date in which the payments are being paid/received.\n  adjustedPaymentDate : date?\n\n  # Specifies the payment that is exposed to the matching process. Usually there will be a single payment but for cross-currency swaps a different payment per currency shall be provided.\n  payment : FpML5.reporting.PaymentMatching?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.NettedTradeCashflowsMatchResult",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "asOfDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The date and time at which the set of cashflows was defined.",
+      "Name" : "asOfDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "datetimeType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10383
+      }
+    },
+    "reportContents" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The specific characteristics included in the report.",
+      "Name" : "reportContents",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ReportContents",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10386
+      }
+    },
+    "tradeCashflowsId" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Unique identifier assigned by the party asserting the set of cashflows to be reconciled.",
+      "Name" : "tradeCashflowsId",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10389
+      }
+    },
+    "tradeIdentifyingItems" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A collection of structures holding a reference or references to each trade through the tradeId, and optionally some trade-specific elements for identifying the trade in the case of trades that have not been negotiated through electronic platforms, and for which the counterparty's trade ID has not been captured.",
+      "Name" : "tradeIdentifyingItems",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.TradeIdentifyingItems",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10392
+      }
+    },
+    "adjustedPaymentDate" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The adjusted date in which the payments are being paid/received.",
+      "Name" : "adjustedPaymentDate",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "dateType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10395
+      }
+    },
+    "payment" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Specifies the payment that is exposed to the matching process. Usually there will be a single payment but for cross-currency swaps a different payment per currency shall be provided.",
+      "Name" : "payment",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.PaymentMatching",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 10398
+      }
+    }
+  },
+  "LocalFieldNames" : [ "asOfDate", "reportContents", "tradeCashflowsId", "tradeIdentifyingItems", "adjustedPaymentDate", "payment" ],
+  "IsSynthetic" : false
+}

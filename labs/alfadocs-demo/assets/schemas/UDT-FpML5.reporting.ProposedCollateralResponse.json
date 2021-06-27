@@ -1,0 +1,72 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ProposedCollateralResponse",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.reporting.ProposedCollateralResponse {\n  proposalApproved : boolean?\n\n  collateralResponseReason : FpML5.reporting.CollateralResponseReason?\n\n  expectedCollateral : FpML5.reporting.ExpectedCollateralDeliveryReturn?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.CollateralProposalStatus",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "proposalApproved" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "proposalApproved",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "booleanType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4501
+      }
+    },
+    "collateralResponseReason" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "collateralResponseReason",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.CollateralResponseReason",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4503
+      }
+    },
+    "expectedCollateral" : {
+      "@type" : "alfa.rt.model.Field",
+      "Name" : "expectedCollateral",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ExpectedCollateralDeliveryReturn",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 4505
+      }
+    }
+  },
+  "LocalFieldNames" : [ "proposalApproved", "collateralResponseReason", "expectedCollateral" ],
+  "IsSynthetic" : false
+}

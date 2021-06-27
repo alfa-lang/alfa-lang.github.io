@@ -1,0 +1,67 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.VolatilityCap",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "record FpML5.confirmation.VolatilityCap {\n  # Indicates whether the volatility cap is applicable in accordance with the ISDA 2011 Equity Derivatives Definitions. Setting the element 'applicable' to 'False' - means No Volatility Cap and no 'totalVolatilityCap' or 'volatilityCapFactor' should be provided. Setting the element 'applicable' to 'True' - means Volatility Cap election, then 'totalVolatilityCap' or 'volatilityCapFactor' should be provided, otherwise it defaults to volatilityCapFactor=2.5.\n  applicable : boolean\n\n  # Volatility Cap Amount in accordance with the ISDA 2011 Equity Derivatives Definitions. The Calculated VolCapAmt can be optionally provided.\n  totalVolatilityCap : decimal?\n\n  # Volatility Cap Factor in accordance with the ISDA 2011 Equity Derivatives Definitions. This means the Volatility Cap Amount election is Calculated VolCapAmt ('volatilityCapFactor' * 'volatilityStrikePrice'). By specifying a decimal for 'volatilityCapFactor', means the default value of 2.5 does not apply.\n  volatilityCapFactor : decimal\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.Volatility",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "applicable" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Indicates whether the volatility cap is applicable in accordance with the ISDA 2011 Equity Derivatives Definitions. Setting the element 'applicable' to 'False' - means No Volatility Cap and no 'totalVolatilityCap' or 'volatilityCapFactor' should be provided. Setting the element 'applicable' to 'True' - means Volatility Cap election, then 'totalVolatilityCap' or 'volatilityCapFactor' should be provided, otherwise it defaults to volatilityCapFactor=2.5.",
+      "Name" : "applicable",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "booleanType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21085
+      }
+    },
+    "totalVolatilityCap" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Volatility Cap Amount in accordance with the ISDA 2011 Equity Derivatives Definitions. The Calculated VolCapAmt can be optionally provided.",
+      "Name" : "totalVolatilityCap",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "decimalType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21088
+      }
+    },
+    "volatilityCapFactor" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "Volatility Cap Factor in accordance with the ISDA 2011 Equity Derivatives Definitions. This means the Volatility Cap Amount election is Calculated VolCapAmt ('volatilityCapFactor' * 'volatilityStrikePrice'). By specifying a decimal for 'volatilityCapFactor', means the default value of 2.5 does not apply.",
+      "Name" : "volatilityCapFactor",
+      "DataType" : {
+        "@type" : "alfa.rt.model.ScalarDataType",
+        "ScalarType" : "decimalType"
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 21091
+      }
+    }
+  },
+  "LocalFieldNames" : [ "applicable", "totalVolatilityCap", "volatilityCapFactor" ],
+  "IsSynthetic" : false
+}

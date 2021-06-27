@@ -1,0 +1,42 @@
+# namespace
+
+Similar to `namespace` or `package` keywords in programming languages, ALFA namespace allows modulularity in data model names.
+
+
+Declarations below the `namespace` keyword are considered as part of that namespace. For example, the `Invoice` user-defined-type will have a fully-qualified name of `Acme.Accounts.Invoice`.
+
+```csharp
+namespace Acme.Accounts
+
+record Invoice { }
+```
+
+Furthermore, a user-defined-type can also include a namespace prefix. 
+For example the `OutgoingPayment` below will have a fully-qualified name of `Acme.Accounts.Payments.OutgoingPayment`.
+
+```csharp
+namespace Acme.Accounts
+
+record Payments.OutgoingPayment { } 
+```
+
+An `.alfa` file can contain multiple namespaces. Given the declaration below, there will be 2 user-defined-types named `Acme.Accounts.Invoice` and `Acme.HR.Employee`.
+
+```csharp
+namespace Acme.Accounts
+
+record Invoice { }
+
+
+namespace Acme.HR
+
+record Employee { }
+```
+
+Given user-defined-types can be prefixed with a namespace, the top level namespace declaration is optional. The declaration below is equivalent to the one above.
+
+```csharp
+record Acme.Accounts.Invoice { }
+
+record Acme.HR.Employee { }
+```

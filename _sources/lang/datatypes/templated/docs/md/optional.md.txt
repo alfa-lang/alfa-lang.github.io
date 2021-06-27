@@ -1,0 +1,27 @@
+# T ?
+
+Express a type optional `T`, where `T` can be any ALFA type.
+
+**Examples:**
+
+In the declaration below, `Line2` and `Line3` fields are declared as optional `string`.
+
+```csharp
+record Address {
+    BuildingNameOrNumber : string
+    Line1 : string
+    Line2 : string?
+    Line3 : string?
+    PostalCode : string
+}
+```
+
+Optional types can be arbitrarily nested. In the declaration below, the map value
+is an optional `int`.
+
+```csharp
+record Precipitation {
+     Measurements : map< date, int?  >
+}
+```
+

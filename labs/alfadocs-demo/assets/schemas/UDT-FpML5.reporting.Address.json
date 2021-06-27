@@ -1,0 +1,117 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A type that represents a physical postal address.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.Address",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A type that represents a physical postal address.\n #/\nrecord FpML5.reporting.Address {\n  # The set of street and building number information that identifies a postal address within a city.\n  streetAddress : FpML5.reporting.StreetAddress?\n\n  # The city component of a postal address.\n  city : string?\n\n  # A country subdivision used in postal addresses in some countries. For example, US states, Canadian provinces, Swiss cantons.\n  state : string?\n\n  # The ISO 3166 standard code for the country within which the postal address is located.\n  country : string?\n\n  # The code, required for computerised mail sorting systems, that is allocated to a physical address by a national postal authority.\n  postalCode : string?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ContactInformation",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RoutingExplicitDetails",
+    "UdtType" : "recordType"
+  }, {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.RoutingIdsAndExplicitDetails",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "streetAddress" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The set of street and building number information that identifies a postal address within a city.",
+      "Name" : "streetAddress",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.StreetAddress",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29143
+      }
+    },
+    "city" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The city component of a postal address.",
+      "Name" : "city",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29146
+      }
+    },
+    "state" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A country subdivision used in postal addresses in some countries. For example, US states, Canadian provinces, Swiss cantons.",
+      "Name" : "state",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29149
+      }
+    },
+    "country" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The ISO 3166 standard code for the country within which the postal address is located.",
+      "Name" : "country",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29152
+      }
+    },
+    "postalCode" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The code, required for computerised mail sorting systems, that is allocated to a physical address by a national postal authority.",
+      "Name" : "postalCode",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 29155
+      }
+    }
+  },
+  "LocalFieldNames" : [ "streetAddress", "city", "state", "country", "postalCode" ],
+  "IsSynthetic" : false
+}

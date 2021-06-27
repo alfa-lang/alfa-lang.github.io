@@ -1,0 +1,75 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "An adjustment used to accommodate a parameter of the input trade, e.g. the strike.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.ParametricAdjustment",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   An adjustment used to accommodate a parameter of the input trade, e.g. the strike.\n #/\nrecord FpML5.reporting.ParametricAdjustment {\n  # The name of the adjustment parameter (e.g. \"Volatility Skew\").\n  name : string?\n\n  # The units of the input parameter, e.g. Yield.\n  inputUnits : string?\n\n  # The values of the adjustment parameter.\n  datapoint : FpML5.reporting.ParametricAdjustmentPoint?\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.reporting.VolatilityMatrix",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "name" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The name of the adjustment parameter (e.g. \"Volatility Skew\").",
+      "Name" : "name",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17402
+      }
+    },
+    "inputUnits" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The units of the input parameter, e.g. Yield.",
+      "Name" : "inputUnits",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.ScalarDataType",
+          "ScalarType" : "stringType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17405
+      }
+    },
+    "datapoint" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "The values of the adjustment parameter.",
+      "Name" : "datapoint",
+      "DataType" : {
+        "@type" : "alfa.rt.model.OptionalDataType",
+        "ComponentType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.reporting.ParametricAdjustmentPoint",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/rep/fpml-main-5-9.alfa",
+        "line" : 17408
+      }
+    }
+  },
+  "LocalFieldNames" : [ "name", "inputUnits", "datapoint" ],
+  "IsSynthetic" : false
+}

@@ -1,0 +1,71 @@
+{
+  "@type" : "alfa.rt.model.Record",
+  "Doc" : "A formula for computing a complex derivative from partial derivatives. Its value is the sum of the terms divided by the product of the denominator terms.",
+  "Name" : {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.DerivativeFormula",
+    "UdtType" : "recordType"
+  },
+  "Includes" : [ ],
+  "Source" : {
+    "@type" : "alfa.rt.model.Union__ModelBaseNode_Source",
+    "Contents" : "/#\n   A formula for computing a complex derivative from partial derivatives. Its value is the sum of the terms divided by the product of the denominator terms.\n #/\nrecord FpML5.confirmation.DerivativeFormula {\n  # A term of the formula. Its value is the product of the its coefficient and the referenced partial derivatives.\n  term : FpML5.confirmation.FormulaTerm\n\n  # A denominator term of the formula. Its value is (sum of weighted partials) ^ power.\n  denominatorTerm : FpML5.confirmation.DenominatorTerm\n\n}"
+  },
+  "ImmediateDependants" : [ {
+    "@type" : "alfa.rt.model.UdtVersionedName",
+    "FullyQualifiedName" : "FpML5.confirmation.SensitivityDefinition",
+    "UdtType" : "recordType"
+  } ],
+  "AllFields" : {
+    "term" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A term of the formula. Its value is the product of the its coefficient and the referenced partial derivatives.",
+      "Name" : "term",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.FormulaTerm",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.FormulaTerm",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.FormulaTerm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17424
+      }
+    },
+    "denominatorTerm" : {
+      "@type" : "alfa.rt.model.Field",
+      "Doc" : "A denominator term of the formula. Its value is (sum of weighted partials) ^ power.",
+      "Name" : "denominatorTerm",
+      "DataType" : {
+        "@type" : "alfa.rt.model.UdtDataType",
+        "FullyQualifiedName" : "FpML5.confirmation.DenominatorTerm",
+        "UdtType" : "recordType"
+      },
+      "DeclTypeDefDataType" : {
+        "@type" : "alfa.rt.model.TypeDefDataType",
+        "TypeName" : "FpML5.confirmation.DenominatorTerm",
+        "FinalType" : {
+          "@type" : "alfa.rt.model.UdtDataType",
+          "FullyQualifiedName" : "FpML5.confirmation.DenominatorTerm",
+          "UdtType" : "recordType"
+        }
+      },
+      "SrcLocation" : {
+        "@type" : "alfa.rt.model.Location",
+        "path" : "/Users/sadia/IdeaProjects/smt/utils/alfadocs/test/alfa/fpml/conf/fpml-main-5-9.alfa",
+        "line" : 17427
+      }
+    }
+  },
+  "LocalFieldNames" : [ "term", "denominatorTerm" ],
+  "IsSynthetic" : false
+}
