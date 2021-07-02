@@ -1,13 +1,11 @@
 lookup
 ======
 
-Finds an entity data stored in storage ( e.g. RDBMS, cache etc ) based on a key search.
-
-This function is meant for relatively simple data search. For complex multi-stage queries
-a `service` with its custom implementation will be more suitable.
+Finds a persisted entity from storage (e.g. RDBMS, Document Store, Big Data, cache) based on a key search.
 
 Given `entity` types are stored based on a key, a `lookup` function and fetch the entity
-with a matching key.
+with a matching key. This operation is expected to be fast given its a primary-key based fetch with
+the option of being cached.
 
 __Parameters:__
 
@@ -20,9 +18,12 @@ __Parameters:__
 __Returns:__
 
 An optional :ref:`entityType` type specified as the 1st argument.
-If no match found, `none` value returned.
+If no match found, a `none` value returned.
 
 
 __Usages:__
 
->- `lookup( <entity>,  <key instance> ) : <entity instance> ?`
+- `lookup( <entity type>,  <key instance> ) : <entity instance> ?` - Object returned is optional
+
+__Example:__
+- `let optOrder = lookup( Order, new OrderKey(orderId) )` Lookup an Order given an id string.

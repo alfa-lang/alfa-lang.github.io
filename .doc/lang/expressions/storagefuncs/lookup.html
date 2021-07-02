@@ -198,11 +198,10 @@
             
   <div class="section" id="lookup">
 <span id="lookupexpr"></span><h1>lookup<a class="headerlink" href="#lookup" title="Permalink to this headline">¶</a></h1>
-<p>Finds an entity data stored in storage ( e.g. RDBMS, cache etc ) based on a key search.</p>
-<p>This function is meant for relatively simple data search. For complex multi-stage queries
-a <code class="docutils literal notranslate"><span class="pre">service</span></code> with its custom implementation will be more suitable.</p>
+<p>Finds a persisted entity from storage (e.g. RDBMS, Document Store, Big Data, cache) based on a key search.</p>
 <p>Given <code class="docutils literal notranslate"><span class="pre">entity</span></code> types are stored based on a key, a <code class="docutils literal notranslate"><span class="pre">lookup</span></code> function and fetch the entity
-with a matching key.</p>
+with a matching key. This operation is expected to be fast given its a primary-key based fetch with
+the option of being cached.</p>
 <p><strong>Parameters:</strong></p>
 <table border="1" class="docutils">
 <colgroup>
@@ -229,13 +228,15 @@ with a matching key.</p>
 </table>
 <p><strong>Returns:</strong></p>
 <p>An optional <a class="reference internal" href="../../constructs/entity.html#entitytype"><span class="std std-ref">entity</span></a> type specified as the 1st argument.
-If no match found, <code class="docutils literal notranslate"><span class="pre">none</span></code> value returned.</p>
+If no match found, a <code class="docutils literal notranslate"><span class="pre">none</span></code> value returned.</p>
 <p><strong>Usages:</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">lookup(</span> <span class="pre">&lt;entity&gt;,</span>&#160; <span class="pre">&lt;key</span> <span class="pre">instance&gt;</span> <span class="pre">)</span> <span class="pre">:</span> <span class="pre">&lt;entity</span> <span class="pre">instance&gt;</span> <span class="pre">?</span></code></li>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">lookup(</span> <span class="pre">&lt;entity</span> <span class="pre">type&gt;,</span>&#160; <span class="pre">&lt;key</span> <span class="pre">instance&gt;</span> <span class="pre">)</span> <span class="pre">:</span> <span class="pre">&lt;entity</span> <span class="pre">instance&gt;</span> <span class="pre">?</span></code> - Object returned is optional</li>
 </ul>
-</div></blockquote>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">optOrder</span> <span class="pre">=</span> <span class="pre">lookup(</span> <span class="pre">Order,</span> <span class="pre">new</span> <span class="pre">OrderKey(orderId)</span> <span class="pre">)</span></code> Lookup an Order given an id string.</li>
+</ul>
 </div>
 
 
