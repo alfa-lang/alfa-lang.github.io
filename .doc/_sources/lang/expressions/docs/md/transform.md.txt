@@ -1,0 +1,40 @@
+# transform
+
+`transform` is a top level declaration expressing how a type can be transformed to another.
+
+A `transform` definition accepts an objects of an input type, and returns an object of the
+output type by executing expressions/statements in the transformer. Multiple inputs can be specified.
+
+
+`transform` definitions are generated into code to be used as part of a native-code code library or to be hosted in a service.
+A `transform` is uniquely identified by its input types and output type. The types specified to a `transform` will be resolved
+relative to the current namespace.
+
+Types specified to `tranform` need to be concrete types, :ref:`traitType` cannot be specified to a `transform`.
+Future versions will allow transforms based on :ref:`traitType` types.
+
+Also see :ref:`transformExpr` on how to use the `transform()` function.
+
+__Example Transform__
+```csharp
+// Single input value transform
+transform( i : InputType ) : OutputType {
+   ...
+   return new OutputType( ... )
+}
+
+// Multi-input value transform
+transform( x : InputTypeX, y : InputTypeY ) : OutputType {
+   ...
+   return new OutputType( ... )
+}
+```
+
+__Syntax of a transform declaration__
+```
+transform( <list of named input parameters> ) : <result type> {
+    <statements>
+    return <new object of result type>
+}
+```
+

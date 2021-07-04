@@ -1,0 +1,49 @@
+transform
+=========
+
+Invoke matching :ref:`transformType` definition to convert input type(s)
+to the output type.
+
+If no matching type transform exists, an error will be reported.
+
+
+__Inferred transforms:__
+
+Transforms can be inferred (by default). When being inferred even if no immediate transform is 
+available, if input to output can be achieved by used other transforms, it is permitted - i.e.
+it can find a path between the input and output types.
+
+This behaviour can be disabled by setting the last parameter to `false`. If a multi-step transform
+is found and the last parameter is not set, a warming will be reported requesting to explicitly
+set the last parameter to `true`.
+
+Consider if there are transformations defined for:
+1. TypeA -> TypeB
+1. TypeB -> TypeC
+
+Then `transform< TypeC >( i : TypeA )` would be valid. To avoid a warning, it should be expressed
+as `transform< TypeC >( i : TypeA, true )`.
+
+If the 1st tranform definition was to be removed, `transform< TypeC >( i : TypeA, true )` would
+fail to compile as there is no valid path from TypeA to TypeC.
+
+
+__Parameters:__
+
+|No.|Type  |Comments|
+|--------|----------|--------|
+|1|1st user-defined-type|1st type of the transformer to be used|
+|2|2nd user-defined-type|Optional 2nd type of the transformer to be used|
+|..|...|Optional n'th type of the transformer to be used|
+|last parameter|boolean|Optional boolean indicating if inferred transforms can be used. True by default|
+
+__Returns:__
+
+user-defined-type - Output result
+
+__Usages:__
+
+>- `let o1 = transform< OutputType >( i : InputType )`
+>- `let o2 = transform< OutputType >( a : InputTypeA, b : InputTypeB )`
+
+         

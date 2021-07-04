@@ -19,7 +19,7 @@
     </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>service &mdash; ALFA</title>
+  <title>transform &mdash; ALFA</title>
   
 
   
@@ -57,8 +57,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/alfa-theme.css" type="text/css" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="transform" href="../expressions/transform.html" />
-    <link rel="prev" title="library" href="../expressions/library.html" /> 
+    <link rel="next" title="binary" href="../datatypes/scalar/binary.html" />
+    <link rel="prev" title="service" href="../constructs/service.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,16 +108,16 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../typesystem.html">Type System</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../typesystem.html#top-level-constructs">Top level constructs</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../typesystem.html#user-defined-types">User-defined types</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="entity.html">entity</a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum.html">enum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="key.html">key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="record.html">record</a></li>
-<li class="toctree-l4"><a class="reference internal" href="trait.html">trait</a></li>
-<li class="toctree-l4"><a class="reference internal" href="union.html">union</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../expressions/assert.html">assert</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../expressions/library.html">library</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">service</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../expressions/transform.html">transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../constructs/entity.html">entity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../constructs/enum.html">enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../constructs/key.html">key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../constructs/record.html">record</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../constructs/trait.html">trait</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../constructs/union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="assert.html">assert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="library.html">library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../constructs/service.html">service</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">transform</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../typesystem.html#scalar-types">Scalar types</a></li>
@@ -125,8 +125,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../typesystem.html#auxiliary-types">Auxiliary types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../expressions/expressions.html">Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../expressions/builtin-funcs.html">Builtin Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builtin-funcs.html">Builtin Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../otherfeatures.html">Other Features</a></li>
 </ul>
 </li>
@@ -184,7 +184,7 @@
         
           <li><a href="../typesystem.html">Type System</a> &raquo;</li>
         
-      <li>service</li>
+      <li>transform</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -201,28 +201,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="service">
-<span id="servicetype"></span><h1>service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h1>
-<p>A <code class="docutils literal notranslate"><span class="pre">service</span></code> defines an interface or API.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">service</span></code> can be used to describe a programming language interface, REST API, Open API, Serverless functions etc. As a modeller, you purely focus on the API abstractions, not implementation details.</p>
-<p>In addition to describing what methods are available on the API, an ALFA
-service declaration also captures how to create or instantiate the <code class="docutils literal notranslate"><span class="pre">service</span></code>. In the declaration below, the OrderService can be created by passing in an authToken attribute.</p>
-<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">service</span> <span class="nf">OrderService</span><span class="p">(</span> <span class="n">authToken</span> <span class="p">:</span> <span class="k">uuid</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="n">placeOrder</span><span class="p">(</span> <span class="n">ord</span> <span class="p">:</span> <span class="n">Order</span> <span class="p">)</span> <span class="p">:</span> <span class="k">try</span><span class="p">&lt;</span> <span class="n">ConfirmedOrder</span> <span class="p">&gt;</span>
-    <span class="n">getOrder</span><span class="p">(</span> <span class="n">Id</span> <span class="p">:</span> <span class="k">uuid</span> <span class="p">)</span> <span class="p">:</span> <span class="n">Order</span>
-    <span class="n">getOrders</span><span class="p">()</span> <span class="p">:</span> <span class="k">list</span><span class="p">&lt;</span> <span class="n">Order</span> <span class="p">&gt;</span>
+  <div class="section" id="transform">
+<span id="transformtype"></span><h1>transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">transform</span></code> is a top level declaration expressing how a type can be transformed to another.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">transform</span></code> definition accepts an objects of an input type, and returns an object of the
+output type by executing expressions/statements in the transformer. Multiple inputs can be specified.</p>
+<p><code class="docutils literal notranslate"><span class="pre">transform</span></code> definitions are generated into code to be used as part of a native-code code library or to be hosted in a service.
+A <code class="docutils literal notranslate"><span class="pre">transform</span></code> is uniquely identified by its input types and output type. The types specified to a <code class="docutils literal notranslate"><span class="pre">transform</span></code> will be resolved
+relative to the current namespace.</p>
+<p>Types specified to <code class="docutils literal notranslate"><span class="pre">tranform</span></code> need to be concrete types, <a class="reference internal" href="../constructs/trait.html#traittype"><span class="std std-ref">trait</span></a> cannot be specified to a <code class="docutils literal notranslate"><span class="pre">transform</span></code>.
+Future versions will allow transforms based on <a class="reference internal" href="../constructs/trait.html#traittype"><span class="std std-ref">trait</span></a> types.</p>
+<p>Also see <a class="reference internal" href="conversions/transform.html#transformexpr"><span class="std std-ref">transform</span></a> on how to use the <code class="docutils literal notranslate"><span class="pre">transform()</span></code> function.</p>
+<p><strong>Example Transform</strong></p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Single input value transform</span>
+<span class="n">transform</span><span class="p">(</span> <span class="n">i</span> <span class="p">:</span> <span class="n">InputType</span> <span class="p">)</span> <span class="p">:</span> <span class="n">OutputType</span> <span class="p">{</span>
+   <span class="p">...</span>
+   <span class="k">return</span> <span class="k">new</span> <span class="nf">OutputType</span><span class="p">(</span> <span class="p">...</span> <span class="p">)</span>
 <span class="p">}</span>
 
-<span class="k">service</span> <span class="n">UserMetrics</span> <span class="p">{</span>
-    <span class="n">loginEvents</span><span class="p">()</span> <span class="p">:</span> <span class="k">stream</span><span class="p">&lt;</span> <span class="n">LoginEvent</span> <span class="p">&gt;</span>
-    <span class="n">purge</span><span class="p">(</span> <span class="n">category</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">)</span> <span class="p">:</span> <span class="k">future</span><span class="p">&lt;</span> <span class="n">EventCompletion</span> <span class="p">&gt;</span>
+<span class="c1">// Multi-input value transform</span>
+<span class="n">transform</span><span class="p">(</span> <span class="n">x</span> <span class="p">:</span> <span class="n">InputTypeX</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">InputTypeY</span> <span class="p">)</span> <span class="p">:</span> <span class="n">OutputType</span> <span class="p">{</span>
+   <span class="p">...</span>
+   <span class="k">return</span> <span class="k">new</span> <span class="nf">OutputType</span><span class="p">(</span> <span class="p">...</span> <span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Unlike some languages, there are no Exceptions thrown from ALFA
-service functions. Error or exceptional conditions can be modelled
-using <code class="docutils literal notranslate"><span class="pre">either&lt;</span> <span class="pre">Result,</span> <span class="pre">Error</span> <span class="pre">&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">try&lt;Result&gt;</span></code>. The benefit is that Error conditions are made part of the result,
-and encourage them to be handled appropriately.</p>
+<p><strong>Syntax of a transform declaration</strong></p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>transform( &lt;list of named input parameters&gt; ) : &lt;result type&gt; {
+    &lt;statements&gt;
+    return &lt;new object of result type&gt;
+}
+</pre></div>
+</div>
 </div>
 
 

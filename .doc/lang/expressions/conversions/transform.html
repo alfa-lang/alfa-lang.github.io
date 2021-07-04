@@ -19,7 +19,7 @@
     </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>toDecimal &mdash; ALFA</title>
+  <title>transform &mdash; ALFA</title>
   
 
   
@@ -57,8 +57,8 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/alfa-theme.css" type="text/css" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="toDouble" href="toDouble.html" />
-    <link rel="prev" title="toDatetime" href="toDatetime.html" /> 
+    <link rel="next" title="abs" href="../mathfuncs/abs.html" />
+    <link rel="prev" title="toUri" href="toUri.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -113,7 +113,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../builtin-funcs.html#conversion">Conversion</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="toDate.html">toDate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="toDatetime.html">toDatetime</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">toDecimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toDecimal.html">toDecimal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="toDouble.html">toDouble</a></li>
 <li class="toctree-l4"><a class="reference internal" href="toInt.html">toInt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="toList.html">toList</a></li>
@@ -122,7 +122,7 @@
 <li class="toctree-l4"><a class="reference internal" href="toString.html">toString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="toTime.html">toTime</a></li>
 <li class="toctree-l4"><a class="reference internal" href="toUri.html">toUri</a></li>
-<li class="toctree-l4"><a class="reference internal" href="transform.html">transform</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">transform</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../builtin-funcs.html#math">Math</a></li>
@@ -189,7 +189,7 @@
         
           <li><a href="../builtin-funcs.html">Builtin Functions</a> &raquo;</li>
         
-      <li>toDecimal</li>
+      <li>transform</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,9 +206,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="todecimal">
-<span id="todecimalexpr"></span><h1>toDecimal<a class="headerlink" href="#todecimal" title="Permalink to this headline">¶</a></h1>
-<p>Convert <code class="docutils literal notranslate"><span class="pre">string</span></code> to <code class="docutils literal notranslate"><span class="pre">decimal</span></code>.</p>
+  <div class="section" id="transform">
+<span id="transformexpr"></span><h1>transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h1>
+<p>Invoke matching <a class="reference internal" href="../transform.html#transformtype"><span class="std std-ref">transform</span></a> definition to convert input type(s)
+to the output type.</p>
+<p>If no matching type transform exists, an error will be reported.</p>
+<p><strong>Inferred transforms:</strong></p>
+<p>Transforms can be inferred (by default). When being inferred even if no immediate transform is
+available, if input to output can be achieved by used other transforms, it is permitted - i.e.
+it can find a path between the input and output types.</p>
+<p>This behaviour can be disabled by setting the last parameter to <code class="docutils literal notranslate"><span class="pre">false</span></code>. If a multi-step transform
+is found and the last parameter is not set, a warming will be reported requesting to explicitly
+set the last parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>Consider if there are transformations defined for:</p>
+<ol class="arabic simple">
+<li>TypeA -&gt; TypeB</li>
+<li>TypeB -&gt; TypeC</li>
+</ol>
+<p>Then <code class="docutils literal notranslate"><span class="pre">transform&lt;</span> <span class="pre">TypeC</span> <span class="pre">&gt;(</span> <span class="pre">i</span> <span class="pre">:</span> <span class="pre">TypeA</span> <span class="pre">)</span></code> would be valid. To avoid a warning, it should be expressed
+as <code class="docutils literal notranslate"><span class="pre">transform&lt;</span> <span class="pre">TypeC</span> <span class="pre">&gt;(</span> <span class="pre">i</span> <span class="pre">:</span> <span class="pre">TypeA,</span> <span class="pre">true</span> <span class="pre">)</span></code>.</p>
+<p>If the 1st tranform definition was to be removed, <code class="docutils literal notranslate"><span class="pre">transform&lt;</span> <span class="pre">TypeC</span> <span class="pre">&gt;(</span> <span class="pre">i</span> <span class="pre">:</span> <span class="pre">TypeA,</span> <span class="pre">true</span> <span class="pre">)</span></code> would
+fail to compile as there is no valid path from TypeA to TypeC.</p>
 <p><strong>Parameters:</strong></p>
 <table border="1" class="docutils">
 <colgroup>
@@ -224,17 +242,30 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
-<td><a class="reference internal" href="../../datatypes/scalar/string.html#stringtype"><span class="std std-ref">string</span></a></td>
-<td>String representation of decimal value</td>
+<td>1st user-defined-type</td>
+<td>1st type of the transformer to be used</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>2nd user-defined-type</td>
+<td>Optional 2nd type of the transformer to be used</td>
+</tr>
+<tr class="row-even"><td></td>
+<td>…</td>
+<td>Optional n’th type of the transformer to be used</td>
+</tr>
+<tr class="row-odd"><td>last parameter</td>
+<td>boolean</td>
+<td>Optional boolean indicating if inferred transforms can be used. True by default</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Returns:</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">decimal</span></code> - The value as decimal</p>
+<p>user-defined-type - Output result</p>
 <p><strong>Usages:</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">toDecimal(</span> <span class="pre">v:string</span> <span class="pre">)</span> <span class="pre">:</span> <span class="pre">decimal</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">o1</span> <span class="pre">=</span> <span class="pre">transform&lt;</span> <span class="pre">OutputType</span> <span class="pre">&gt;(</span> <span class="pre">i</span> <span class="pre">:</span> <span class="pre">InputType</span> <span class="pre">)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">o2</span> <span class="pre">=</span> <span class="pre">transform&lt;</span> <span class="pre">OutputType</span> <span class="pre">&gt;(</span> <span class="pre">a</span> <span class="pre">:</span> <span class="pre">InputTypeA,</span> <span class="pre">b</span> <span class="pre">:</span> <span class="pre">InputTypeB</span> <span class="pre">)</span></code></li>
 </ul>
 </div></blockquote>
 </div>
