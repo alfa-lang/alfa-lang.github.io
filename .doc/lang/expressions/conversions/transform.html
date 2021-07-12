@@ -211,22 +211,6 @@
 <p>Invoke matching <a class="reference internal" href="../transform.html#transformtype"><span class="std std-ref">transform</span></a> definition to convert input type(s)
 to the output type.</p>
 <p>If no matching type transform exists, an error will be reported.</p>
-<p><strong>Inferred transforms:</strong></p>
-<p>Transforms can be inferred (by default). When being inferred even if no immediate transform is
-available, if input to output can be achieved by used other transforms, it is permitted - i.e.
-it can find a path between the input and output types.</p>
-<p>This behaviour can be disabled by setting the last parameter to <code class="docutils literal notranslate"><span class="pre">false</span></code>. If a multi-step transform
-is found and the last parameter is not set, a warming will be reported requesting to explicitly
-set the last parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
-<p>Consider if there are transformations defined for:</p>
-<ol class="arabic simple">
-<li>TypeA -&gt; TypeB</li>
-<li>TypeB -&gt; TypeC</li>
-</ol>
-<p>Then <code class="docutils literal notranslate"><span class="pre">transform&lt;</span> <span class="pre">TypeC</span> <span class="pre">&gt;(</span> <span class="pre">i</span> <span class="pre">:</span> <span class="pre">TypeA</span> <span class="pre">)</span></code> would be valid. To avoid a warning, it should be expressed
-as <code class="docutils literal notranslate"><span class="pre">transform&lt;</span> <span class="pre">TypeC</span> <span class="pre">&gt;(</span> <span class="pre">i</span> <span class="pre">:</span> <span class="pre">TypeA,</span> <span class="pre">true</span> <span class="pre">)</span></code>.</p>
-<p>If the 1st tranform definition was to be removed, <code class="docutils literal notranslate"><span class="pre">transform&lt;</span> <span class="pre">TypeC</span> <span class="pre">&gt;(</span> <span class="pre">i</span> <span class="pre">:</span> <span class="pre">TypeA,</span> <span class="pre">true</span> <span class="pre">)</span></code> would
-fail to compile as there is no valid path from TypeA to TypeC.</p>
 <p><strong>Parameters:</strong></p>
 <table border="1" class="docutils">
 <colgroup>
@@ -252,10 +236,6 @@ fail to compile as there is no valid path from TypeA to TypeC.</p>
 <tr class="row-even"><td></td>
 <td>…</td>
 <td>Optional n’th type of the transformer to be used</td>
-</tr>
-<tr class="row-odd"><td>last parameter</td>
-<td>boolean</td>
-<td>Optional boolean indicating if inferred transforms can be used. True by default</td>
 </tr>
 </tbody>
 </table>
